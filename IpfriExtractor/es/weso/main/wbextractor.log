@@ -170,3 +170,88 @@ AttributeError: 'IpfriExtractor' object has no attribute 'target_file'
 2014-01-15 19:09:35,739 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
 2014-01-15 19:09:37,079 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ended.
 2014-01-15 19:09:37,080 - ipfriextractor - INFO - Data extraction from IPFRI ended
+2014-01-16 13:36:00,899 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:36:00,971 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:36:01,953 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.AttributeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, self.config.read("target_dowloaded_file_pattern").replace("{year}", str(year)))
+AttributeError: 'list' object has no attribute 'replace'
+2014-01-16 13:36:01,998 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
+2014-01-16 13:36:03,238 - ipfriextractor - ERROR - Unable to download info from 2013. Data of that year will be ignored. Cause: <type 'exceptions.AttributeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, self.config.read("target_dowloaded_file_pattern").replace("{year}", str(year)))
+AttributeError: 'list' object has no attribute 'replace'
+2014-01-16 13:36:03,293 - ipfriextractor - INFO - Data extraction from IPFRI ended
+2014-01-16 13:37:04,740 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:37:04,807 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:37:05,311 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, self.config.read("IPFRI","target_dowloaded_file_pattern").replace("{year}", str(year)))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:37:05,329 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
+2014-01-16 13:37:06,933 - ipfriextractor - ERROR - Unable to download info from 2013. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, self.config.read("IPFRI","target_dowloaded_file_pattern").replace("{year}", str(year)))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:37:06,938 - ipfriextractor - INFO - Data extraction from IPFRI ended
+2014-01-16 13:38:29,335 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:38:29,368 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:38:29,859 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, (self.config.read("IPFRI","target_dowloaded_file_pattern")).replace("{year}", str(year)))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:38:29,877 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
+2014-01-16 13:38:31,789 - ipfriextractor - ERROR - Unable to download info from 2013. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, (self.config.read("IPFRI","target_dowloaded_file_pattern")).replace("{year}", str(year)))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:38:31,793 - ipfriextractor - INFO - Data extraction from IPFRI ended
+2014-01-16 13:40:25,879 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:40:25,952 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:40:26,447 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    file_name = self.config.read("IPFRI","target_dowloaded_file_pattern").replace("{year}", str(year))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:40:26,465 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
+2014-01-16 13:40:28,329 - ipfriextractor - ERROR - Unable to download info from 2013. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    file_name = self.config.read("IPFRI","target_dowloaded_file_pattern").replace("{year}", str(year))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:40:28,334 - ipfriextractor - INFO - Data extraction from IPFRI ended
+2014-01-16 13:41:02,176 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:41:02,209 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:41:02,931 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    file_name = self.config.read("IPFRI","target_dowloaded_file_pattern").replace("{year}", str(year))
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:41:53,056 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:41:53,124 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:41:53,607 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.TypeError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 65, in download_year_data
+    file_pattern = self.config.read("IPFRI","target_dowloaded_file_pattern")
+TypeError: read() takes exactly 2 arguments (3 given)
+2014-01-16 13:42:56,558 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:42:56,628 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:42:57,636 - ipfriextractor - ERROR - Unable to download info from 2012. Data of that year will be ignored. Cause: <type 'exceptions.IOError'>
+Traceback (most recent call last):
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\extractor\IpfriExtractor.py", line 66, in download_year_data
+    FileWriter. write_binary_to_file(xls_content, file_name)
+  File "C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\es\weso\util\file_writer.py", line 27, in write_binary_to_file
+    fileStream = open(str(file_name), "wb")
+IOError: [Errno 2] No se puede encontrar una parte de la ruta de acceso 'C:\Users\Dani\Documents\EII\WESO\wesopace\IpfriExtractor\dowloaded_data\InforXLSX_2012.xlsx'.: ../../../dowloaded_data/InforXLSX_2012.xlsx
+2014-01-16 13:43:24,768 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-01-16 13:43:24,836 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-01-16 13:43:25,489 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ended.
+2014-01-16 13:43:25,490 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
+2014-01-16 13:43:29,042 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ended.
+2014-01-16 13:43:29,043 - ipfriextractor - INFO - Data extraction from IPFRI ended

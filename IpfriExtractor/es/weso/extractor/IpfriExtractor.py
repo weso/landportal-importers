@@ -5,10 +5,9 @@ Created on 14/01/2014
 '''
 import logging
 import urllib2
-import xlrd
 import sys
 from ConfigParser import ConfigParser
-
+from es.weso.util.file_writer import FileWriter
 class IpfriExtractor(object):
     '''
     classdocs
@@ -61,45 +60,16 @@ class IpfriExtractor(object):
         try:
             valid_url = self.url_pattern.replace("{year}", str(year))
             self.log.info("Tracking data from {0} ...".format(valid_url))
-            #The second parameter in the next function is the final path of the downloaded file
-            #self.downloading_action(valid_url, "TestXLS" + str(year) + ".xlsx")
             response = urllib2.urlopen(valid_url)
             xls_content = response.read()
-            self.write_binary_to_file(xls_content, "TestXLS" + str(year) + ".xlsx")
+            file_name = self.config.get("IPFRI","target_dowloaded_file_pattern").replace("{year}", str(year))
+            FileWriter. write_binary_to_file(xls_content, file_name)
             self.log.info("Tracking data from {0} ended.".format(valid_url))
             
         except:
             e = sys.exc_info()[0]
             self.log.exception("Unable to download info from {0}. Data of that year will be ignored. Cause: {1}".format(str(year), e))
-        
-        
-    '''
-    In this case, it looks like dowloading using urlretrieve or 
-    similar methods of the urllib2 retrieve a corrupt file. However,
-    reading it byte by byte, it works
-    '''
-    def downloading_action(self, valid_url, file_name):
-        content = urllib2.urlopen(valid_url) 
-        tamano_archivo = int(content.info().getheaders("Content-Length")[0]) / 1024 #size in kbs
-        byte = 0
-        print 'eeeeee'
-        xls_file = open(file_name, 'wb') 
-        while (byte != tamano_archivo): 
-                xls_file.write(content.read(byte)) 
-                byte += 1 
-                #sys.stdout.write('\r[*]Descargados:  %8s Kbs de %s Kbs' % (byte, tamano_archivo)) 
-        xls_file.close()
-        try:
-            doc = xlrd.open_workbook(file_name)
-            print doc.nsheets
-            
-        except:
-            print 'No abre, ves?'
-    
-    def write_binary_to_file(self, text, file_name):
-        fileStream = open(str(file_name), "wb")
-        fileStream.write(text)
-        fileStream.close()
+            raise #delete on final version
         
         
         
