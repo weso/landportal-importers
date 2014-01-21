@@ -6,16 +6,21 @@ Created on 15/01/2014
 
 import logging
 from es.weso.extractor.FaostatExtractor import FaostatExtractor
+from es.weso.indicator_catcher.FaostatIndicatorCatcher import FaostatIndicatorCatcher
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(filename='faostat.log', level=logging.INFO, 
                         format=FORMAT)
 
+
 def run():
+
     configure_log()
     csv_extractor = FaostatExtractor()
     csv_extractor.run()
+    csv_indicatorcatcher = FaostatIndicatorCatcher()
+    csv_indicatorcatcher.run()
     print 'Done!'
     '''
     extractor = WorldBankExtractor()
@@ -25,6 +30,8 @@ def run():
         extractor.extract_countries()
         extractor.extract_observations()
     '''
+    
+    
 
 if __name__ == '__main__':
     run()

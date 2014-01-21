@@ -29,7 +29,7 @@ class FaostatExtractor(object):
     This method dowload the entire data base of faostat in csv format.
     The estructure of the scv is as follows:
     CountryCode(int),Country(string),ItemCode(int),Item(string),ElementGroup(int),
-    ElementCode(int),Element(string),Year(int),Unit(string),Value(float),Flag(cahr)
+    ElementCode(int),Element(string),Year(int),Unit(string),Value(float),Flag(char)
     '''
     def run(self):
         self.log.info("Starting process...")
