@@ -5,8 +5,8 @@ Created on 13/01/2014
 '''
 
 import logging
-from es.weso.landmatrixextractor.xml.LandMatrixExtractorXML import LandMatrixExtractorXML
-
+from es.weso.landmatrix.extractor.LandMatrixExtractorXML import LandMatrixExtractorXML
+from es.weso.landmatrix.translator.LandMatrixTranslator import LandMatrixTranslator
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -16,7 +16,9 @@ def configure_log():
 def run():
     configure_log()
     xml_extractor = LandMatrixExtractorXML()
-    xml_extractor.run()
+    #xml_extractor.run()
+    translator = LandMatrixTranslator()
+    translator.run(True)
     print 'Done!'
 
 if __name__ == '__main__':

@@ -7,7 +7,7 @@ Created on 13/01/2014
 import urllib2
 import logging
 import sys
-import ConfigParser
+from ConfigParser import ConfigParser
 from es.weso.util.file_writer import FileWriter
 class LandMatrixExtractorXML(object):
     
@@ -21,7 +21,7 @@ class LandMatrixExtractorXML(object):
         Constructor
         '''
         self.config = ConfigParser()
-        self.config.read("../../../files/configuration.ini")
+        self.config.read("../../../../files/configuration.ini")
         self.log = logging.getLogger('landmatrixlog')
     '''
     Downloads the entire Land Matrix database
@@ -35,6 +35,6 @@ class LandMatrixExtractorXML(object):
             self.log.info('Land matrix xml extractor finished')
         except:
             e = sys.exc_info()[0]
-            self.log.info("Unable to track data from {0}... Cause: {1}".format(self.config.get("LAND_MATRIX", "url_download"), e))
+            self.log.error("Unable to track data from {0}... Cause: {1}".format(self.config.get("LAND_MATRIX", "url_download"), e))
             raise
         
