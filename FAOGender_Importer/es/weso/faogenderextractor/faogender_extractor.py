@@ -5,7 +5,7 @@ Created on 21/01/2014
 '''
 
 import logging
-from es.weso.faogenderextractor.fileaccess.file_access import FileAccess
+from es.weso.faogenderextractor.web_access.selenium_access import SeleniumAccess
 
 class FaoGenderExtractor(object):
     '''
@@ -13,7 +13,7 @@ class FaoGenderExtractor(object):
     '''
     
     logger = logging.getLogger('faogender_extractor')
-    file_access= FileAccess()
+    rest_client= SeleniumAccess()
 
     def __init__(self):
         '''
@@ -22,6 +22,6 @@ class FaoGenderExtractor(object):
         self.countries = []
         
     def extract_countries(self):
-        self.file_access.obtain_countries()
+        self.rest_client.obtain_countries()
     
     

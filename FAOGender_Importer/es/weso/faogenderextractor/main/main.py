@@ -9,7 +9,7 @@ from es.weso.faogenderextractor.faogender_extractor import FaoGenderExtractor
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(filename='oecd_extractor.log', level=logging.INFO, 
+    logging.basicConfig(filename='faogender_extractor.log', level=logging.INFO, 
                         format=FORMAT)
 
 def run():
