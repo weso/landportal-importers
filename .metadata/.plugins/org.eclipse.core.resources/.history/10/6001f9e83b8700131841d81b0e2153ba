@@ -1,0 +1,20 @@
+'''
+Created on 13/01/2014
+
+@author: Miguel Otero
+'''
+
+class Region(object):
+    '''
+    classdocs
+    '''
+
+
+    def __init__(self, name):
+        '''
+        Constructor
+        '''
+        self.name = name
+        
+    def __eq__(self, other):
+        return self.name == other.name

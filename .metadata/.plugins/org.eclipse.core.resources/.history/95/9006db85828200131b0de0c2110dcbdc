@@ -1,0 +1,17 @@
+'''
+Created on 21/01/2014
+
+@author: Miguel Otero
+'''
+
+class FaoGenderExtractor(object):
+    '''
+    classdocs
+    '''
+
+
+    def __init__(self, params):
+        '''
+        Constructor
+        '''
+        

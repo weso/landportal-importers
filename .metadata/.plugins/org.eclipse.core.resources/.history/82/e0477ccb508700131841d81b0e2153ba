@@ -1,0 +1,20 @@
+'''
+Created on 27/01/2014
+
+@author: Miguel Otero
+'''
+
+class Observation(object):
+    '''
+    classdocs
+    '''
+
+
+    def __init__(self, value, ref_area, ref_time, issued,
+                 computation, measure_unit, indicator, slice,
+                 provider):
+        '''
+        Constructor
+        '''
+        self.value = value
+        

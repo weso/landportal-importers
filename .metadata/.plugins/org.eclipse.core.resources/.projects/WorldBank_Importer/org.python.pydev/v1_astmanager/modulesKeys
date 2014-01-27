@@ -1,0 +1,14 @@
+MODULES_MANAGER_V2
+es.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\__init__.py
+es.weso.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\__init__.py
+es.weso.wbextractor.WorldBankExtractor|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\WorldBankExtractor.py
+es.weso.wbextractor.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\__init__.py
+es.weso.wbextractor.configuration.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\configuration\__init__.py
+es.weso.wbextractor.entities.Country|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\entities\Country.py
+es.weso.wbextractor.entities.Indicator|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\entities\Indicator.py
+es.weso.wbextractor.entities.Observation|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\entities\Observation.py
+es.weso.wbextractor.entities.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\entities\__init__.py
+es.weso.wbextractor.main.Main|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\main\Main.py
+es.weso.wbextractor.main.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\main\__init__.py
+es.weso.wbextractor.rest.RestClient|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\rest\RestClient.py
+es.weso.wbextractor.rest.__init__|C:\Users\PC\Desktop\workspace-landportal\WorldBank_Importer\es\weso\wbextractor\rest\__init__.py

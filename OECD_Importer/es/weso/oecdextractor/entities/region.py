@@ -10,13 +10,12 @@ class Region(object):
     '''
 
 
-    def __init__(self, name, code, order):
+    def __init__(self, name, is_part_of):
         '''
         Constructor
         '''
         self.name = name
-        self.code = code
-        self.order = order
+        self.is_part_of = is_part_of
         
     def __eq__(self, other):
-        return self.code == other.code
+        return self.name == other.name

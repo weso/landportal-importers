@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://www.fao.org/gender/landrights/topic-selection/en/ -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta charset="utf-8">
+<!-- 
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2012 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at http://typo3.org/
+-->
+
+<!--<base href="http://www.fao.org/">--><base href=".">
+<link rel="shortcut icon" href="http://www.fao.org/fileadmin/images/icons/favicon.ico" type="image/x-ico; charset=binary">
+<link rel="icon" href="http://www.fao.org/fileadmin/images/icons/favicon.ico" type="image/x-ico; charset=binary">
+
+<meta name="generator" content="TYPO3 4.5 CMS">
+
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/stylesheet_622fbd1280.css" media="all">
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/liMenu.css" media="all">
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/style_permreps_home.css" media="screen">
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/toggleTree.css" media="all">
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/typo.css" media="all">
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/ja_contentslide.css" media="all">
+<link rel="stylesheet" type="text/css" href="./Gender  Topic Selection_files/style_faohome_print.css" media="print">
+
+
+
+<script src="./Gender  Topic Selection_files/javascript_93077bb238.js" type="text/javascript"></script>
+
+
+
+
+	<!-- pp_lib:headmgr BEGIN  -->
+
+	<!-- pp_lib:headmgr END -->
+<title>Gender:&nbsp;Topic Selection</title><meta name="description" content="Food and Agriculture Organization of the United Nations: essential documents, statistics, maps and multimedia resources">
+<meta name="keywords" content="agriculture, agricultural, hunger, food security, safety, documents, statistics, maps, multimedia resources, full-text publications, trade, country-specific, Codes of conduct, early warning, disaster prevention,  Biodiversity, Biotechnology, Desertification, Ethics, Gender, Organic, Participation, Integrated Production Systems, Farming, Livestock, Economic Policy, Education, Extension, Environment, Fisheries, Forestry, Genetic Resources, Agro-business, Sustainable Development, Rural, Social, Plant Production, Nutrition, Livestock, Land, Water, Geographic, Regional Info, Capacity Building"><script type="text/javascript" src="./Gender  Topic Selection_files/ajax_tree_functions.js"></script>
+<script type="text/javascript" src="./Gender  Topic Selection_files/ajaxLib.js"></script>
+<script src="./Gender  Topic Selection_files/prototype.js" type="text/javascript"></script>
+<script src="./Gender  Topic Selection_files/scriptaculous.js" type="text/javascript"></script><script type="text/javascript" src="./Gender  Topic Selection_files/builder.js"></script><script type="text/javascript" src="./Gender  Topic Selection_files/effects.js"></script><script type="text/javascript" src="./Gender  Topic Selection_files/dragdrop.js"></script><script type="text/javascript" src="./Gender  Topic Selection_files/controls.js"></script><script type="text/javascript" src="./Gender  Topic Selection_files/slider.js"></script><script type="text/javascript" src="./Gender  Topic Selection_files/sound.js"></script>
+<script src="./Gender  Topic Selection_files/dragtable.js" type="text/javascript"></script>
+<script src="./Gender  Topic Selection_files/sorttable.js" type="text/javascript"></script>
+
+
+<script language="javascript" type="text/javascript" src="./Gender  Topic Selection_files/toggleTree.js"></script>
+<script language="javascript" type="text/javascript" src="./Gender  Topic Selection_files/tiny_mce.js"></script>
+<script language="javascript" type="text/javascript">
+tinyMCE.init({
+  mode : "textareas",
+  theme : "advanced",
+  theme_advanced_buttons1 : "bold,italic,underline,separator,sup,strikethrough,justifyleft,justifycenter,justifyright,  justifyfull,bullist,numlist,undo,redo,link,unlink",
+  theme_advanced_buttons2 : "",
+  theme_advanced_buttons3 : "",
+  theme_advanced_toolbar_location : "top",
+  theme_advanced_toolbar_align : "left",
+  theme_advanced_statusbar_location : "bottom",
+  extended_valid_elements : "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]"
+});
+</script><script type="text/javascript" src="./Gender  Topic Selection_files/en.js" onload="tinymce.dom.ScriptLoader._onLoad(this,&#39;http://www.fao.org/fileadmin/templates/landrights/javascripts/tiny_mce/langs/en.js&#39;,0);"></script><style type="text/css"></style><script type="text/javascript" src="./Gender  Topic Selection_files/editor_template.js" onload="tinymce.dom.ScriptLoader._onLoad(this,&#39;http://www.fao.org/fileadmin/templates/landrights/javascripts/tiny_mce/themes/advanced/editor_template.js&#39;,1);"></script><script type="text/javascript" src="./Gender  Topic Selection_files/en(1).js"></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+try {
+  var pageTracker = _gat._getTracker("UA-16957842-1"); //website
+  pageTracker._setAllowHash(false);
+  pageTracker._setAllowLinker(true);
+  pageTracker._trackPageview();
+  var rollupTracker = _gat._getTracker("UA-16796074-1"); //rollup account fao
+  rollupTracker._setAllowHash(false);
+  rollupTracker._setDomainName(".fao.org");
+  rollupTracker._setAllowLinker(true);
+  rollupTracker._trackPageview();
+  var rollupTracker = _gat._getTracker("UA-16957552-1"); //rollup account all internet
+  rollupTracker._setAllowHash(false);
+  rollupTracker._setDomainName(".fao.org");
+  rollupTracker._setAllowLinker(true);
+  rollupTracker._trackPageview();
+}
+catch(err) {}
+
+</script>
+<link rel="schema.dc" href="http://purl.org/metadata/dublin_core_elements">
+<!-- Begin Styles added by af_css_select -->
+<!-- PAGE STYLESHEET, uid:27/pid:139/persistent -->
+<!-- End Styles added by af_css_select -->
+
+
+
+<script type="text/javascript" src="./Gender  Topic Selection_files/only.js"></script></head>
+<body>
+
+
+<div class="menuLangs">
+  <div class="menuLangsLeft">
+    <img src="./Gender  Topic Selection_files/spacer.gif">
+  </div>
+  <div class="menuLangsRight">
+    <div class="tx-srlanguagemenu-pi1"><div class="CUR" id="{}"><a href="./Gender  Topic Selection_files/Gender  Topic Selection.htm" onfocus="blurLink(this);">english</a></div><div class="NO"><a href="http://www.fao.org/gender/landrights/rapport-par-categorie/fr/" onfocus="blurLink(this);">français</a></div><div class="NO"><a href="http://www.fao.org/gender/landrights/seleccion-de-categorias/es/" onfocus="blurLink(this);">Español</a></div></div>
+  </div>
+</div>
+<div style="clear:both"></div>
+<table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td colspan="2">
+        <table class="contentPage" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td class="leftcolumn" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td class="logo">
+                        <div id="c139653" class="csc-default"><a href="http://www.fao.org/" target="_blank"><img src="./Gender  Topic Selection_files/FAO-emblem_en.gif" border="0"></a></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="search">
+                        <div id="c144624" class="csc-default"><div id="search" align="center">
+<form action="http://www.fao.org/gender/landrights/components/search-result/en/" method="get" target="_self" id="searchbox_018170620143701104933:qq82jsfba7w">
+<input type="hidden" name="cx" value="018170620143701104933:qq82jsfba7w">
+<!-- Google CSE Search Box Begins -->
+<input name="q" type="text" class="inputbox" size="18" style="border: 1px solid rgb(126, 157, 185); padding: 2px; background-image: url(http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif); background-color: rgb(255, 255, 255); background-position: 0% 50%; background-repeat: no-repeat no-repeat;">
+<input type="image" class="button" src="./Gender  Topic Selection_files/search_go.gif" alt="Search" title="Search" style="vertical-align: bottom;">
+<input type="hidden" name="cof" value="FORID:9">
+<input name="siteurl" type="hidden" value="www.fao.org/gender/landrights/topic-selection/en/"><input name="ref" type="hidden" value="www.fao.org/gender/landrights/topic-selection/en/"><input name="ss" type="hidden" value=""></form>
+</div>
+<script type="text/javascript" src="./Gender  Topic Selection_files/brand"></script><!-- Google CSE Search Box Ends --></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table style="width: 96%" class="table_menu" align="right" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr><td colspan="2" id="navigation"><div class="toc home"><ul><li></li></ul></div></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/" target="_blank">FAO Home</a></td></tr>
+                            <tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/en/" target="_blank">Gender Home</a></td></tr>
+                            <tr><td colspan="2" id="navigation"><div class="toc"><ul></ul></div></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/landrights/home/en/" onfocus="blurLink(this);">Database Home</a></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/landrights/report/en/" onfocus="blurLink(this);">Full Country Report</a></td></tr><tr><td class="menuon" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuon&#39;;" height="24">&nbsp;<a href="./Gender  Topic Selection_files/Gender  Topic Selection.htm" onfocus="blurLink(this);" class="selected">Topic Selection</a></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/landrights/comparative-report/en/" onfocus="blurLink(this);">Comparative Report</a></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/landrights/search/en/" onfocus="blurLink(this);">Free Text Search</a></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/landrights/more-resources/en/" onfocus="blurLink(this);">More Resources</a></td></tr><tr><td class="menuoff" onmouseover="className=&#39;menuon&#39;;" onmouseout="className=&#39;menuoff&#39;;" height="24">&nbsp;<a href="http://www.fao.org/gender/landrights/new/en/" onfocus="blurLink(this);">New</a></td></tr>
+                            
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="rightcolumn" valign="top" width="100%">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tbody>
+                    <tr>
+                      <td valign="top" width="100%">
+                        <div id="c139840" class="csc-default"><div class="csc-textpic csc-textpic-center csc-textpic-above"><div class="csc-textpic-imagewrap csc-textpic-single-image" style="width:800px;"><img src="./Gender  Topic Selection_files/web_banner_en.jpg" width="800" height="109" alt="Gender and Land Rights Database"></div></div><div class="csc-textpic-clear"><!-- --></div></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="maincontent" valign="top" width="100%"><a id="c15"></a>
+                        <p class="bodytext">
+                          </p><div id="ja-pathway"></div>
+                          <table class="contentpaneopen">
+                            <tbody><tr>
+                              <td valign="top">  
+                                <div id="c141328" class="csc-default"><div class="tx-lumophpinclude-pi1">
+		<a class="rootLineMenu" href="http://www.fao.org/home/">Home</a> &gt;&gt; <a class="rootLineMenu" href="./Gender  Topic Selection_files/Gender  Topic Selection.htm">Topic Selection</a> &gt; <b class="rootLineMenu">Selected Land Related Statistics</b>  :: <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#92_top">Angola</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#85_top">Botswana</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#83_top">Burkina Faso</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#76_top">Côte d'Ivoire</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#81_top">Cameroon</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#301_top">Cape Verde</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#72_top">Democratic Republic of the Congo</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#66_top">Equatorial Guinea</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#65_top">Eritrea</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#64_top">Ethiopia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#62_top">Gambia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#60_top">Ghana</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#48_top">Kenya</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#45_top">Lesotho</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#44_top">Madagascar</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#43_top">Malawi</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#41_top">Mali</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#37_top">Mozambique</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#36_top">Namibia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#33_top">Niger</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#32_top">Nigeria</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#25_top">Senegal</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#23_top">Somalia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#22_top">South Africa</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#19_top">Sudan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#13_top">Uganda</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#17_top">United Republic of Tanzania</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#7_top">Zambia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#6_top">Zimbabwe</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#89_top">Azerbaijan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#88_top">Bangladesh</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#82_top">Cambodia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#79_top">China</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#56_top">India</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#55_top">Indonesia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#50_top">Japan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#47_top">Kyrgyzstan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#46_top">Lao People's Democratic Republic</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#42_top">Malaysia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#35_top">Nepal</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#31_top">Pakistan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#27_top">Philippines</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#73_top">Republic of Korea</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#20_top">Sri Lanka</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#18_top">Tajikistan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#16_top">Thailand</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#14_top">Turkmenistan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#10_top">Uzbekistan</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#8_top">Viet Nam</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#63_top">France</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#52_top">Italy</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#21_top">Spain</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#12_top">United Kingdom</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#91_top">Argentina</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#86_top">Bolivia (Plurinational State of)</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#84_top">Brazil</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#80_top">Chile</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#78_top">Colombia</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#77_top">Costa Rica</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#75_top">Cuba</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#70_top">Dominican Republic</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#69_top">Ecuador</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#67_top">El Salvador</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#59_top">Guatemala</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#58_top">Haiti</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#57_top">Honduras</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#51_top">Jamaica</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#39_top">Mexico</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#34_top">Nicaragua</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#30_top">Panama</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#29_top">Paraguay</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#28_top">Peru</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#15_top">Trinidad and Tobago</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#11_top">Uruguay</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#9_top">Venezuela (Bolivarian Republic of)</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#93_top">Algeria</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#68_top">Egypt</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#40_top">Mauritania</a> | <a class="rootLineMenu" href="http://www.fao.org/gender/landrights/topic-selection/en/#38_top">Morocco</a> [ <a class="rootLineMenu" href="./Gender  Topic Selection_files/Gender  Topic Selection.htm">Modify</a> ]<table class="contentpaneopen"><tbody><tr><td align="right" width="100%" class="buttonheading"><div class="printButton"><a href="JavaScript:window.print();"><img alt="Print" src="./Gender  Topic Selection_files/printButton.png" title="Print"></a></div></td><td align="right" width="100%" class="buttonheading"><div class="printButton"><a href="http://www.fao.org/gender/landrights/components/excel-report/en/?c[]=92&c[]=85&c[]=83&c[]=76&c[]=81&c[]=301&c[]=72&c[]=66&c[]=65&c[]=64&c[]=62&c[]=60&c[]=48&c[]=45&c[]=44&c[]=43&c[]=41&c[]=37&c[]=36&c[]=33&c[]=32&c[]=25&c[]=23&c[]=22&c[]=19&c[]=13&c[]=17&c[]=7&c[]=6&c[]=89&c[]=88&c[]=82&c[]=79&c[]=56&c[]=55&c[]=50&c[]=47&c[]=46&c[]=42&c[]=35&c[]=31&c[]=27&c[]=73&c[]=20&c[]=18&c[]=16&c[]=14&c[]=10&c[]=8&c[]=63&c[]=52&c[]=21&c[]=12&c[]=91&c[]=86&c[]=84&c[]=80&c[]=78&c[]=77&c[]=75&c[]=70&c[]=69&c[]=67&c[]=59&c[]=58&c[]=57&c[]=51&c[]=39&c[]=34&c[]=30&c[]=29&c[]=28&c[]=15&c[]=11&c[]=9&c[]=93&c[]=68&c[]=40&c[]=38"><img alt="Print" src="./Gender  Topic Selection_files/excelButton.png" title="Export to Excel"></a></div></td></tr></tbody></table><div id="report_92">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="92_top"></a>
+      <div class="country">
+        Angola<span class="dls">Français|<a href="javascript:translate2(0,1,92,12,10);">Português</a></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#92_top">back to top</a></div>
+                        </div>
+</div><div id="report_85">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="85_top"></a>
+      <div class="country">
+        Botswana<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>50 690 [2004] (15)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>17 576 [2004] (15)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>202 669 [2006] (1)</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.4369 [2001] (27)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#85_top">back to top</a></div>
+                        </div>
+</div><div id="report_83">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="83_top"></a>
+      <div class="country">
+        Burkina Faso<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>886 638 [1993] (21)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>74 559 [1993] (21)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p><span style="font-size: 9.0pt; line-height: 115%; font-family: ">0.42 [1993] (31)&nbsp;</span></p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#83_top">back to top</a></div>
+                        </div>
+</div><div id="report_76">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="76_top"></a>
+      <div class="country">
+        Côte d'Ivoire<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>1 117 667 [2001] (21)</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>113 312 [2001] (21)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>0,65 [2001] (22)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#76_top">back to top</a></div>
+                        </div>
+</div><div id="report_81">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="81_top"></a>
+      <div class="country">
+        Cameroun<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#81_top">back to top</a></div>
+                        </div>
+</div><div id="report_301">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="301_top"></a>
+      <div class="country">
+        Cap - Vert<span class="dls">Français|<a href="javascript:translate2(0,1,301,12,10);">Português</a></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>44 450 [2004] (5)</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>22461 [50.53%] [2004] (5)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#301_top">back to top</a></div>
+                        </div>
+</div><div id="report_72">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="72_top"></a>
+      <div class="country">
+        République Démocratique du Congo<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>4 479 600 [1990] (22)</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>398 400 [1990] (23)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.<br></p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>0,37 [1990] (22)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#72_top">back to top</a></div>
+                        </div>
+</div><div id="report_66">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="66_top"></a>
+      <div class="country">
+        Guinea Ecuatorial<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#66_top">back to top</a></div>
+                        </div>
+</div><div id="report_65">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="65_top"></a>
+      <div class="country">
+        Eritrea<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#65_top">back to top</a></div>
+                        </div>
+</div><div id="report_64">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="64_top"></a>
+      <div class="country">
+        Ethiopia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>13,943,377&nbsp;[2006-2007] (21)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>2 149 675 [2001-2002] (21)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>0.47 [2002] (1)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#64_top">back to top</a></div>
+                        </div>
+</div><div id="report_62">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="62_top"></a>
+      <div class="country">
+        Gambia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>69 140 [2001-2002] (14)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>5 731 [2001-2002] (14)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#62_top">back to top</a></div>
+                        </div>
+</div><div id="report_60">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="60_top"></a>
+      <div class="country">
+        Ghana<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data">N/A</div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#60_top">back to top</a></div>
+                        </div>
+</div><div id="report_48">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="48_top"></a>
+      <div class="country">
+        Kenya<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#48_top">back to top</a></div>
+                        </div>
+</div><div id="report_45">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="45_top"></a>
+      <div class="country">
+        Lesotho<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>337 795 [1999-2000] (21)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>103 878 [1999-2000] (21)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.49 [1990] (22)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#45_top">back to top</a></div>
+                        </div>
+</div><div id="report_44">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="44_top"></a>
+      <div class="country">
+        Madagascar<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>2 428 492 [2004-2005] (19)</p><br>
+<p>&nbsp;</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>371 158 [2004-2005] (19)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#44_top">back to top</a></div>
+                        </div>
+</div><div id="report_43">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="43_top"></a>
+      <div class="country">
+        Malawi<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>1 561 416 [1993] (27)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>501 919 [1993] (27)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.52 [1993] (14)</p><br>
+<p>&nbsp;</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#43_top">back to top</a></div>
+                        </div>
+</div><div id="report_41">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="41_top"></a>
+      <div class="country">
+        Mali<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>805 194 [2004-2005] (30)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>24 636 [2004-2005] (30)</p><br>
+<p>&nbsp;</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#41_top">back to top</a></div>
+                        </div>
+</div><div id="report_37">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="37_top"></a>
+      <div class="country">
+        Mozambique<span class="dls">English|<a href="javascript:translate2(0,1,37,12,10);">Português</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>3 064 195&nbsp; [1999-2000] (26)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>708 353 [1999-2000] (26)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.473 [in 2002–2003] (7)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#37_top">back to top</a></div>
+                        </div>
+</div><div id="report_36">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="36_top"></a>
+      <div class="country">
+        Namibia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>39 350 [2002−2003] (11)</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p><span style="font-size: 9.0pt; line-height: 115%; font-family: ">0.36 [1997] (10)&nbsp;</span></p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#36_top">back to top</a></div>
+                        </div>
+</div><div id="report_33">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="33_top"></a>
+      <div class="country">
+        Niger<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#33_top">back to top</a></div>
+                        </div>
+</div><div id="report_32">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="32_top"></a>
+      <div class="country">
+        Nigeria<span class="dls">English|<a href="javascript:translate2(0,1,32,12,2);">Français</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>15,732,850 (2007) (25)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>1,579,341 (2007) (25)</p><br>
+<div><br></div></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A </div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data">N/A </div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#32_top">back to top</a></div>
+                        </div>
+</div><div id="report_25">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="25_top"></a>
+      <div class="country">
+        Sénégal<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>437 036 [1998-1999] (17)</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>39 597 [1998-1999] (17)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>0,50 [1999] (25)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#25_top">back to top</a></div>
+                        </div>
+</div><div id="report_23">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="23_top"></a>
+      <div class="country">
+        Somalia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#23_top">back to top</a></div>
+                        </div>
+</div><div id="report_22">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="22_top"></a>
+      <div class="country">
+        South Africa<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>21 000&nbsp;[2000] (22)</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#22_top">back to top</a></div>
+                        </div>
+</div><div id="report_19">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="19_top"></a>
+      <div class="country">
+        Sudan<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data">N/A</div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#19_top">back to top</a></div>
+                        </div>
+</div><div id="report_13">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="13_top"></a>
+      <div class="country">
+        Uganda<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>1 704 721 [1991] (18)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>277 693 [1991] (18)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>637 684&nbsp; [1991] (18)</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.59 [1991] (19)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#13_top">back to top</a></div>
+                        </div>
+</div><div id="report_17">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="17_top"></a>
+      <div class="country">
+        United Republic of Tanzania<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>4 901 837 [2002-2003] (27)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>966 076 [2002-2003] (27)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.38 [1996] (4)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#17_top">back to top</a></div>
+                        </div>
+</div><div id="report_7">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="7_top"></a>
+      <div class="country">
+        Zambia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>1 305 783 [2000] (25)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>250 710 [2000] (25)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>&nbsp;</p><br>
+<p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#7_top">back to top</a></div>
+                        </div>
+</div><div id="report_6">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="6_top"></a>
+      <div class="country">
+        Zimbabwe<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data">N/A</div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#6_top">back to top</a></div>
+                        </div>
+</div><div id="report_89">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="89_top"></a>
+      <div class="country">
+        Azerbaijan<span class="dls">English|<a href="javascript:translate2(0,1,89,12,8);">Pусский</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p style="text-align: justify;">623 240 [2004] (20)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>1 164 [2004] (20)</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#89_top">back to top</a></div>
+                        </div>
+</div><div id="report_88">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="88_top"></a>
+      <div class="country">
+        Bangladesh<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>28 165 700 [2005] (31)</p><br>
+<div><br></div></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>797 378 [2005] (30)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A<br></p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p><br>N/A<br></p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p><br>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p><br>0.48 [1996] (29)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#88_top">back to top</a></div>
+                        </div>
+</div><div id="report_82">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="82_top"></a>
+      <div class="country">
+        Cambodia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.69 [2004] (13)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#82_top">back to top</a></div>
+                        </div>
+</div><div id="report_79">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="79_top"></a>
+      <div class="country">
+        中 国<span class="dls"><a href="javascript:translate2(0,1,79,12,1);">English</a>|中文</span>
+      </div>  
+                        <div class="category">农业和农村的土地所有权</div>
+                                                            <div class="subcategory_notopborder">地块总数</div>
+                                              <div class="data"><p>193 446 000&nbsp; [1997年]&nbsp; (28)</p></div>
+                                                            <div class="subcategory">女性所有人</div>
+                                              <div class="data"><p>无资料</p></div>
+                                                            <div class="subcategory">共同所有的地块数</div>
+                                              <div class="data"><p>合作社59 700块[1997年](28)</p></div>
+                                                            <div class="subcategory">共有财产</div>
+                                              <div class="data"><p>无资料</p></div>
+                                                            <div class="subcategory">女性为户主的户数</div>
+                                              <div class="data"><p>无资料</p></div>
+                                                            <div class="subcategory">基尼集中指数</div>
+                                              <div class="data"><p>0.41[2004年](6)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#79_top">back to top</a></div>
+                        </div>
+</div><div id="report_56">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="56_top"></a>
+      <div class="country">
+        India<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>119 621 000 [2000-2001] (31)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>12 987 000 [2000-2001] (31)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>14 785 000 (11)</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.45 [1995] (30)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#56_top">back to top</a></div>
+                        </div>
+</div><div id="report_55">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="55_top"></a>
+      <div class="country">
+        Indonesia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>20 331 746 [1993] (28)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>1 790 741 [1993] (28)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.46 [1993] (27)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#55_top">back to top</a></div>
+                        </div>
+</div><div id="report_50">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="50_top"></a>
+      <div class="country">
+        Japan<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.59 [1995] (36)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#50_top">back to top</a></div>
+                        </div>
+</div><div id="report_47">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="47_top"></a>
+      <div class="country">
+        Kyrgyzstan<span class="dls">English|<a href="javascript:translate2(0,1,47,12,8);">Pусский</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>244 404 [2002] (12)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>30 254 [2002] (12)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p><span style="font-size: 9.0pt; line-height: 115%; font-family: ">0.9 [2002] (21)&nbsp;</span></p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#47_top">back to top</a></div>
+                        </div>
+</div><div id="report_46">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="46_top"></a>
+      <div class="country">
+        Lao People's Democratic Republic<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>667 900 [1998-1999] (13)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>60 600 [1998-1999] (13)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.39 [1999] (9)</p><br>
+<p><br></p><br>
+<p>&nbsp;</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#46_top">back to top</a></div>
+                        </div>
+</div><div id="report_42">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="42_top"></a>
+      <div class="country">
+        Malaysia<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>526,265&nbsp;[2005] (30)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>94,906&nbsp;[2005] &nbsp;(30)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>33 026 [2005] (30)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#42_top">back to top</a></div>
+                        </div>
+</div><div id="report_35">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="35_top"></a>
+      <div class="country">
+        Nepal<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>3 364 139 [2002] (38)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>271 507 [2002] (38)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A </div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.49 [2002] (9)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#35_top">back to top</a></div>
+                        </div>
+</div><div id="report_31">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="31_top"></a>
+      <div class="country">
+        Pakistan<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.41 [2001] (27)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#31_top">back to top</a></div>
+                        </div>
+</div><div id="report_27">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="27_top"></a>
+      <div class="country">
+        Philippines<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>4 822 739 [2002] (15)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>516 572 [2002] (15)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>13 629&nbsp; [2002] (15)</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.57 [2002] (21)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#27_top">back to top</a></div>
+                        </div>
+</div><div id="report_73">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="73_top"></a>
+      <div class="country">
+        Republic of Korea<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>1 767 033 [1990] (40)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.34 [1990] (41)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#73_top">back to top</a></div>
+                        </div>
+</div><div id="report_20">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="20_top"></a>
+      <div class="country">
+        Sri Lanka<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>1,748,341 [2002] (27)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>285,214 [2002] (27)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#20_top">back to top</a></div>
+                        </div>
+</div><div id="report_18">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="18_top"></a>
+      <div class="country">
+        Tajikistan<span class="dls">English|<a href="javascript:translate2(0,1,18,12,8);">Pусский</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data">N/A</div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#18_top">back to top</a></div>
+                        </div>
+</div><div id="report_16">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="16_top"></a>
+      <div class="country">
+        Thailand<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>5 787 774 [2003] (33)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>1 585 850 [2003] (33)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>8 933&nbsp; [1988] (34)</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p><br>0.47 [1993] (8)</p><br>
+<p>&nbsp;</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#16_top">back to top</a></div>
+                        </div>
+</div><div id="report_14">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="14_top"></a>
+      <div class="country">
+        Turkmenistan<span class="dls">English|<a href="javascript:translate2(0,1,14,12,8);">Pусский</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#14_top">back to top</a></div>
+                        </div>
+</div><div id="report_10">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="10_top"></a>
+      <div class="country">
+        Uzbekistan<span class="dls">English|<a href="javascript:translate2(0,1,10,12,8);">Pусский</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>2 271&nbsp; [1995] (29)</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data">N/A</div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#10_top">back to top</a></div>
+                        </div>
+</div><div id="report_8">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="8_top"></a>
+      <div class="country">
+        Viet Nam<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>61 017&nbsp; [2001] (28)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>5 382 [2001] (28)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.50 [1998] (9)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#8_top">back to top</a></div>
+                        </div>
+</div><div id="report_63">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="63_top"></a>
+      <div class="country">
+        France<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>427 630 [2007] (17)</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p><br>98 840 [2007] (17)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>0,58 [2000] (21)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#63_top">back to top</a></div>
+                        </div>
+</div><div id="report_52">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="52_top"></a>
+      <div class="country">
+        Italy<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>&nbsp;1 663 510 [2007] (36)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>535 620 [2007] (36)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>45 778 [2000] (30)</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>1 684 000 [2003] (1)</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.80 [2004] (9)</p><br>
+<p>&nbsp;</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#52_top">back to top</a></div>
+                        </div>
+</div><div id="report_21">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="21_top"></a>
+      <div class="country">
+        España<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>988 060 [2007] (14)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>284 620 [2007]&nbsp;(14)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>651 [2002] (6)</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p><span style="font-size: 9.0pt; line-height: 115%; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: Calibri; mso-bidi-font-family: &quot;Times New Roman&quot;; color: #333333; background: white; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">to 0.77 [2000] (7)&nbsp;</span></p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#21_top">back to top</a></div>
+                        </div>
+</div><div id="report_12">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="12_top"></a>
+      <div class="country">
+        United Kingdom<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>283 390 [2007] (37)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>53 320&nbsp;[2007]&nbsp; (37)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.66 [2000] (38)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#12_top">back to top</a></div>
+                        </div>
+</div><div id="report_91">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="91_top"></a>
+      <div class="country">
+        Argentina<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p><br>202 423 [2002] (9)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>36 846&nbsp; [2002] (9)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p><br>240 [2002] (9)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p><br>6 300 [2002] (12)</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>2 787 961 [2001] (31)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,85&nbsp; [2002] (30)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#91_top">back to top</a></div>
+                        </div>
+</div><div id="report_86">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="86_top"></a>
+      <div class="country">
+        Bolivia (Estado Plurinacional de)<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>333 403 [2002] (8)</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0, 7677 [1981-1990] (8)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#86_top">back to top</a></div>
+                        </div>
+</div><div id="report_84">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="84_top"></a>
+      <div class="country">
+        Brasil<span class="dls">Español|<a href="javascript:translate2(0,1,84,12,10);">Português</a></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>954 724 [2000] (22)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,85 [1996] (31)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#84_top">back to top</a></div>
+                        </div>
+</div><div id="report_80">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="80_top"></a>
+      <div class="country">
+        Chile<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>268 787 [2007] (23)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>80 255 [2007] (23)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>8 659 [2002] (13)&nbsp;</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>&nbsp;1 325 257 [2004] (17)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,58 [1997] (21)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#80_top">back to top</a></div>
+                        </div>
+</div><div id="report_78">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="78_top"></a>
+      <div class="country">
+        Colombia<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p><br>636 [2001] (12)</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p><br>484 762 [2008] (20)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0.8 [2001] (13)&nbsp;<span style="font-size: 9.0pt; line-height: 115%; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: Calibri; mso-bidi-font-family: &quot;Times New Roman&quot;; color: #333333; background: white; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">&nbsp;</span></p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#78_top">back to top</a></div>
+                        </div>
+</div><div id="report_77">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="77_top"></a>
+      <div class="country">
+        Costa Rica<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>164 400 [2000] (20)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#77_top">back to top</a></div>
+                        </div>
+</div><div id="report_75">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="75_top"></a>
+      <div class="country">
+        Cuba<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>1 100 [2009] (15)</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#75_top">back to top</a></div>
+                        </div>
+</div><div id="report_70">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="70_top"></a>
+      <div class="country">
+        República Dominicana<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>243 104 [1998] (22)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>24 772 [1998] (22)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>774 161 [2002]&nbsp; (21)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,73 [1985] (15)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#70_top">back to top</a></div>
+                        </div>
+</div><div id="report_69">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="69_top"></a>
+      <div class="country">
+        Ecuador<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>842 882 [2000] (14)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>213 731 [2000] (14)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,71 [2000] (22)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#69_top">back to top</a></div>
+                        </div>
+</div><div id="report_67">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="67_top"></a>
+      <div class="country">
+        El Salvador<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p><br>346 [1994] (22)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p><br>611 301 [2007] (1)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#67_top">back to top</a></div>
+                        </div>
+</div><div id="report_59">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="59_top"></a>
+      <div class="country">
+        Guatemala<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>819 162 [2003] (15)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>63 627&nbsp;[2003] (15)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N. D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#59_top">back to top</a></div>
+                        </div>
+</div><div id="report_58">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="58_top"></a>
+      <div class="country">
+        Haïti<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#58_top">back to top</a></div>
+                        </div>
+</div><div id="report_57">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="57_top"></a>
+      <div class="country">
+        Honduras<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,66 [1994] (11)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#57_top">back to top</a></div>
+                        </div>
+</div><div id="report_51">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="51_top"></a>
+      <div class="country">
+        Jamaica<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>182 169 [1978/79] (2)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>35 185&nbsp; [1978-1979] (2)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0.79 [1996] (13)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#51_top">back to top</a></div>
+                        </div>
+</div><div id="report_39">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="39_top"></a>
+      <div class="country">
+        México<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>1 017 124 [2005]&nbsp; (23)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,486 [2006] (2)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#39_top">back to top</a></div>
+                        </div>
+</div><div id="report_34">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="34_top"></a>
+      <div class="country">
+        Nicaragua<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>196 909 [2001] (28)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>35 586 [2001] (16)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>1 642 [2001] (15)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>3 893 [2001] (12)</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>81 581 [2005] (14)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p><span style="font-size: 9.0pt; line-height: 115%; font-family: &quot;Verdana&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: Calibri; mso-bidi-font-family: &quot;Times New Roman&quot;; color: #333333; background: white; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">to 0.72 [2001] (19)&nbsp;</span></p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#34_top">back to top</a></div>
+                        </div>
+</div><div id="report_30">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="30_top"></a>
+      <div class="country">
+        Panamá<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>232 464 [2001] (20)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p><br>68 152 [2001] (20)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p><br>118 210 [2000] (5)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p><br>0,514 [2005] (2)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#30_top">back to top</a></div>
+                        </div>
+</div><div id="report_29">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="29_top"></a>
+      <div class="country">
+        Paraguay<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p><br>94 036 [2002] (2)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p><br>0,93 [1991] (1)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#29_top">back to top</a></div>
+                        </div>
+</div><div id="report_28">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="28_top"></a>
+      <div class="country">
+        Perú<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>1 750 640 [1994] (7)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>357 176 [1994] (7)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p>397 202 [1994] (7)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p>0,86 [1994] (14)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#28_top">back to top</a></div>
+                        </div>
+</div><div id="report_15">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="15_top"></a>
+      <div class="country">
+        Trinidad and Tobago<span class="dls"></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p>19&nbsp;051 [2004] (11)</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>2 802 [2004] (11)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>460 [2004] (11)</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data"><p>303 871 [2000] (2)</p></div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>N/A</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#15_top">back to top</a></div>
+                        </div>
+</div><div id="report_11">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="11_top"></a>
+      <div class="country">
+        Uruguay<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p>49 302 [2000] (22)</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p>8 922 [2000] (22)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p><br>16 639 [2000] (12)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p><br>0,79 [2000] (20)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#11_top">back to top</a></div>
+                        </div>
+</div><div id="report_9">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="9_top"></a>
+      <div class="country">
+        Venezuela (República Bolivariana de)<span class="dls"></span>
+      </div>  
+                        <div class="category">Algunas estadísticas sobre tierra</div>
+                                                            <div class="subcategory_notopborder">Número Total de Poseedores</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número Total de Poseedores Mujeres</div>
+                                              <div class="data"><p><br>66 976 [1997-98] (8)</p></div>
+                                                            <div class="subcategory">Número de Explotaciones bajo Co-propiedad</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número de Explotaciones en Propiedad Comunitaria</div>
+                                              <div class="data"><p><br>N.D.</p></div>
+                                                            <div class="subcategory">Número de hogares rurales encabezados por mujeres</div>
+                                              <div class="data"><p><br>1 900 000 [2004] (3)</p></div>
+                                                            <div class="subcategory">Índice GINI sobre concentración de tierra</div>
+                                              <div class="data"><p><br>0,88 [1997] (24)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#9_top">back to top</a></div>
+                        </div>
+</div><div id="report_93">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="93_top"></a>
+      <div class="country">
+        Algérie<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>1 023 799 [2001] (26)</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>41 793 [2001] (26)</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>0.65 [2001] (27)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#93_top">back to top</a></div>
+                        </div>
+</div><div id="report_68">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="68_top"></a>
+      <div class="country">
+        Egypt<span class="dls">English|<a href="javascript:translate2(0,1,68,12,2);">Français</a></span>
+      </div>  
+                        <div class="category">Selected Land Related Statistics</div>
+                                                            <div class="subcategory_notopborder">Total number of holders</div>
+                                              <div class="data"><p><br>4 537 319 [1999-2000] (14)</p><br>
+<p>&nbsp;</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Women holders</div>
+                                              <div class="data"><p>236 632&nbsp;[1999-2000] (14)</p></div>
+                                                            <div class="subcategory">Number of holdings under co-ownership</div>
+                                              <div class="data"><p>N/A</p></div>
+                                                            <div class="subcategory">Communal Property</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">Number of rural households headed by women</div>
+                                              <div class="data">N/A</div>
+                                                            <div class="subcategory">GINI Concentration index</div>
+                                              <div class="data"><p>0,38 [2000] (32)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#68_top">back to top</a></div>
+                        </div>
+</div><div id="report_40">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="40_top"></a>
+      <div class="country">
+        Mauritanie<span class="dls"><a href="javascript:translate2(0,1,40,12,1);">English</a>|Français</span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>1 294 [1996] (13)</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>N.D.</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#40_top">back to top</a></div>
+                        </div>
+</div><div id="report_38">  
+  <div class="report_x">
+             <!-- Topic Selection-->
+      <a name="38_top"></a>
+      <div class="country">
+        Maroc<span class="dls"></span>
+      </div>  
+                        <div class="category">Quelques statistiques sur le foncier</div>
+                                                            <div class="subcategory_notopborder">Nombre total de détenteurs</div>
+                                              <div class="data"><p>1 492 844 [1996] (25)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Détentrices</div>
+                                              <div class="data"><p>66 395 [1996] (25)</p><br>
+<p>&nbsp;</p></div>
+                                                            <div class="subcategory">Nombre d’exploitations en copropriété</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Propriétés communautaires</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Nombre de ménages ruraux dirigés par des femmes</div>
+                                              <div class="data"><p>N.D.</p></div>
+                                                            <div class="subcategory">Indice GINI de concentration de terre</div>
+                                              <div class="data"><p>0,40 [2004] (26)</p></div>
+            
+                                <div class="backToTop"><a href="http://www.fao.org/gender/landrights/topic-selection/en/#38_top">back to top</a></div>
+                        </div>
+</div>
+	</div>
+	</div>
+                              </td>
+                            </tr>
+                          </tbody></table>
+                          <span class="article_separator">&nbsp;</span>
+                        <p></p>
+                      </td>
+                    </tr>  
+                  </tbody>
+                </table>  
+              </td>
+              <td class="rightCol" valign="top" rowspan="2">
+                <div id="c154023" class="csc-default"><p class="bodytext">&nbsp;</p>
+<p class="bodytext"><a href="http://www.fao.org/gender/gender-home/en/" target="_top"><img src="./Gender  Topic Selection_files/Gender2.jpg" width="147" height="87" alt=""></a>
+</p>
+<p class="bodytext"><b>FAO's Gender and Food Security website</b>
+</p>
+<p class="bodytext">&nbsp;</p></div><div id="c154019" class="csc-default"><p class="bodytext"><a href="http://www.fao.org/sofa/gender" target="_top"><img height="87" width="147" src="./Gender  Topic Selection_files/RTEmagicC_New-website-bann.jpg.jpg" alt=""></a>
+</p>
+<p class="bodytext"><b>New website</b>
+</p>
+<p class="bodytext">&nbsp;</p></div><div id="c220685" class="csc-default"><p class="bodytext"><a href="http://www.fao.org/fileadmin/user_upload/landright/docs/Technical_Guide.pdf" title="Initiates file download" class="download"><img src="./Gender  Topic Selection_files/RTEmagicC_technical_guide.JPG.jpg" height="187" width="145" alt=""></a>
+</p>
+<p class="bodytext"><b>Governance of tenure: </b><b>Technical Guide on Governing land for women and men</b>
+</p>
+<p class="bodytext">&nbsp;</p></div><div id="c220287" class="csc-default"><p class="bodytext"><a href="http://faolex.fao.org/%E2%80%8E" title="Opens external link in new window" target="_blank" class="external-link-new-window"><img src="./Gender  Topic Selection_files/RTEmagicC_faolex_01.gif.gif" height="50" width="119" alt=""></a>
+</p>
+<p class="bodytext"><b>FAOLEX</b>
+</p>
+<p class="bodytext">&nbsp;</p></div><div id="c152681" class="csc-default"><p class="bodytext"><a href="http://landportal.info/" target="_top"><img width="147" src="./Gender  Topic Selection_files/Land-portal.jpg" height="147" alt=""></a><br><b>Land Portal</b>
+</p>
+<p class="bodytext">&nbsp;</p></div><div id="c152680" class="csc-default"><p class="bodytext"><a href="http://www.landcoalition.org/" target="_top"><img height="56" width="147" src="./Gender  Topic Selection_files/ILC.jpg" alt=""></a>
+</p>
+<p class="bodytext"><b>International Land Coalition</b>
+</p>
+<p class="bodytext">&nbsp;</p></div><div id="c152666" class="csc-default"><h3>Contact </h3><div class="indent"><p class="bodytext"><b>Gender and Land Rights Database</b>
+</p>
+<p class="bodytext">Gender, Equity and Rural Employment Division&nbsp; (ESW)
+</p>
+<p class="bodytext">Food and Agriculture Organization of the United Nations
+</p>
+<p class="bodytext">email: <a href="mailto:gender@fao.org" class="mail">gender@fao.org</a></p></div></div>
+              </td>
+            </tr>
+            <tr>
+              <td class="leftcolumn"></td>
+              <td class="rightcolumn" valign="top"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td colspan="3" valign="top" width="100%">
+                <!--####  FOOTER STARTS ####-->
+                <table style="width: 100%" border="0" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td id="footer_lx_cont" align="left" valign="top">
+                        
+                      </td>
+                      <td id="footer_bg"><img src="./Gender  Topic Selection_files/spacer(1).gif" width="100%" height="21px"></td>
+                      <td id="footer_rx_cont" align="right" valign="top">
+                        <!-- <p class="bodytext"><a href="http://www.fao.org/contact-us/terms/en" target="_blank" class="internal-link">© FAO,&nbsp;2014</a> </p>  start--> <!-- <p class="bodytext"><a href="http://www.fao.org/contact-us/terms/en" target="_blank" class="internal-link">© FAO,&nbsp;2014</a> </p>  end-->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!--####  FOOTER ENDS ####-->
+              </td>
+            </tr>
+            <tr><td><div id="L" style="visibility:hidden"><!-- ###CATEGORY_TREE_L### start -->&nbsp;<!--###CATEGORY_TREE_L### end --></div></td></tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script type="text/javascript">
+  function printWindow(){
+    browserVersion = parseInt(navigator.appVersion)
+      if (browserVersion >= 4) window.print()
+        }
+  
+  /*if(window.attachEvent){
+  window.attachEvent("onload", loadCategoryTree);
+  }
+  else{
+  window.addEventListener('load',loadCategoryTree,false);
+  }
+  function loadCategoryTree() {  
+  getCategories(document.getElementById('L').innerHTML);
+  }*/
+  
+</script> 
+
+
+<!--[if lt IE 7]>
+<script language="JavaScript">
+function correctPNG() // correctly handle PNG transparency in Win IE 5.5 & 6.
+{
+var arVersion = navigator.appVersion.split("MSIE")
+var version = parseFloat(arVersion[1])
+if ((version >= 5.5) && (document.body.filters)) 
+{
+for(var i=0; i<document.images.length; i++)
+{
+var img = document.images[i]
+var imgName = img.src.toUpperCase()
+if (imgName.substring(imgName.length-3, imgName.length) == "PNG")
+{
+var imgID = (img.id) ? "id='" + img.id + "' " : ""
+var imgClass = (img.className) ? "class='" + img.className + "' " : ""
+var imgTitle = (img.title) ? "title='" + img.title + "' " : "title='" + img.alt + "' "
+var imgStyle = "display:inline-block;" + img.style.cssText 
+if (img.align == "left") imgStyle = "float:left;" + imgStyle
+if (img.align == "right") imgStyle = "float:right;" + imgStyle
+if (img.parentElement.href) imgStyle = "cursor:hand;" + imgStyle
+var strNewHTML = "<span " + imgID + imgClass + imgTitle
++ " style=\"" + "width:" + img.width + "px; height:" + img.height + "px;" + imgStyle + ";"
++ "filter:progid:DXImageTransform.Microsoft.AlphaImageLoader"
++ "(src=\'" + img.src + "\', sizingMethod='scale');\"></span>" 
+img.outerHTML = strNewHTML
+i = i-1
+}
+}
+}    
+}
+window.attachEvent("onload", correctPNG);
+</script>
+<![endif]-->
+
+
+
+
+
+<img src="http://whos.amung.us/swidget/pluginta.png" style="display: none;"></body></html>

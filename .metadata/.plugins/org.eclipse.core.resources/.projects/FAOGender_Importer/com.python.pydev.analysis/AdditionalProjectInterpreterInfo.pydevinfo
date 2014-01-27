@@ -1,0 +1,56 @@
+-- VERSION_3
+-- START DISKCACHE
+C:\Users\PC\Desktop\landportal-importers\.metadata\.plugins\org.eclipse.core.resources\.projects\FAOGender_Importer\com.python.pydev.analysis\v1_indexcache
+.v1_indexcache
+es.weso.faogenderextractor.__init__|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\__init__.py
+es.weso.__init__|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\__init__.py
+es.weso.faogenderextractor.web_access.selenium_access|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\web_access\selenium_access.py
+es.weso.faogenderextractor.web_access.__init__|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\web_access\__init__.py
+es.weso.faogenderextractor.entities.country|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\entities\country.py
+es.__init__|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\__init__.py
+es.weso.faogenderextractor.main.main|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\main\main.py
+es.weso.faogenderextractor.main.__init__|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\main\__init__.py
+es.weso.faogenderextractor.faogender_extractor|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\faogender_extractor.py
+es.weso.faogenderextractor.entities.observation|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\entities\observation.py
+es.weso.faogenderextractor.entities.__init__|0|C:\Users\PC\Desktop\landportal-importers\FAOGender_Importer\es\weso\faogenderextractor\entities\__init__.py
+-- END DISKCACHE
+-- START DICTIONARY
+12
+12=Observation.__init__
+5=es.weso.faogenderextractor.web_access.selenium_access
+2=es.weso.faogenderextractor.entities.country
+6=SeleniumAccess
+9=Observation
+1=es.weso.faogenderextractor.main.main
+3=es.weso.faogenderextractor.faogender_extractor
+11=FaoGenderExtractor.__init__
+10=Country.__init__
+8=Country
+7=FaoGenderExtractor
+4=es.weso.faogenderextractor.entities.observation
+-- END DICTIONARY
+-- START TREE 1
+6
+con|1|configure_log!10@
+cou|1|Country!17@
+fao|1|FaoGenderExtractor!25@
+obs|1|Observation!33@
+run|1|run!10@
+sel|1|SeleniumAccess!41@
+-- END TREE
+-- START TREE 2
+13
+__i|4|__init__!6&42@__init__!7&26@__init__!8&18@__init__!9&34@
+com|1|communalProperty!10&19@
+coo|1|coownershipHoldings!10&19@
+cou|1|countries!11&27@
+ext|1|extract_countries!7&26@
+hol|1|holdersTotal!10&19@
+log|2|logger!7&27@logger!6&43@
+nam|1|name!12&35@
+obt|1|obtain_countries!6&42@
+res|1|rest_client!7&27@
+val|1|value!12&35@
+wom|2|womenHouseholds!10&19@womenHolders!10&19@
+yea|1|year!12&35@
+-- END TREE

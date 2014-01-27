@@ -1,0 +1,55 @@
+'''
+Created on 21/01/2014
+
+@author: Miguel Otero
+'''
+
+import logging
+from selenium import webdriver
+
+class RestClient(object):
+    '''
+    classdocs
+    ''' 
+    logger = logging.getLogger('file_access')
+
+    def __init__(self):
+        '''
+        Constructor
+        '''
+        
+    def append_jquery(self, webdriver):
+        JavascriptExecutor js = (JavascriptExecutor) webdriver;
+        js.executeScript("""
+                        var script = document.createElement('script'); 
+                        script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+                        script.type = 'text/javascript';
+                        document.getElementsByTagName('head')[0].appendChild(script);
+                        """)
+        
+    def obtain_countries(self):
+        driver = webdriver.Firefox()
+        
+        driver.get('http://www.fao.org/gender/landrights/topic-selection/en/')
+        radioButton = driver.find_element_by_id('7')
+        radioButton.click()
+        countryCheckboxes = driver.find_elements_by_css_selector("input[type='checkbox']")
+        for checkbox in countryCheckboxes:
+            checkbox.click()
+        submitButton = driver.find_element_by_id('report')
+        submitButton.click()
+        self.append_jquery(driver)
+        countryReports = driver.find_elements_by_css_selector("div[class='report_x']")
+        for countryReport in countryReports:
+            country = countryReport.find_element_by_css_selector("div[class='country']")
+            indicatorValues = country.find_elements_by_css_selector("div[class='data'] p")
+            countryName = js.execute_script("""
+                return jQuery(arguments[0]).contents().filter(function() {
+                    return this.nodeType == Node.TEXT_NODE;
+                }).text();
+                """, country)
+            print countryName
+            for value in indicatorValues:
+                print '\t' + value.text
+        driver.close()
+    

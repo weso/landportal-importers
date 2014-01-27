@@ -1,0 +1,9 @@
+INSTUPes.weso.oecdextractor.entities.observation
+C:\Users\PC\Desktop\landportal-importers\OECD_Importer\es\weso\oecdextractor\entities\observation.py
+INFOS:&&1|1|2|0&&2|3|2|1&&3|4|2|5&&3|6|2|5
+es.weso.oecdextractor.entities.observation=2
+Observation.__init__=5
+__init__=3
+value=4
+Observation=1
+ref_area=6
