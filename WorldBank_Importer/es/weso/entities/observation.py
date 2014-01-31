@@ -10,12 +10,11 @@ class Observation(object):
     '''
 
 
-    def __init__(self, year, indicator, value, country):
+    def __init__(self, year, indicator, value):
         '''
         Constructor
         '''
         self.year = year
         self.indicator = indicator
         self.value = value
-        self.country = country
         
