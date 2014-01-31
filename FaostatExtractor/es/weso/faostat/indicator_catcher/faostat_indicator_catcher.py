@@ -16,7 +16,7 @@ class FaostatIndicatorCatcher(object):
 
     def __init__(self):
         self.config = ConfigParser()
-        self.config.read("../../../files/configuration.ini")
+        self.config.read("../../../../files/configuration.ini")
         '''
         Constructor
         '''
