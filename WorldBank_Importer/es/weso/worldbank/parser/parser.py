@@ -23,13 +23,13 @@ class Parser(object):
         '''
         Constructor
         '''
-        self.logger = logging.getLogger("es.weso.worldbank.extractor.extractor")    
+        self.logger = logging.getLogger("es.weso.worldbank.parser.parser")    
         self.rest_client = RestClient()
         self.config = ConfigParser.ConfigParser()
         self.config.read('../configuration/configuration.ini')
         self.countries_url = self.config.get('URLs', 'country_list')
         self.observations_url = self.config.get('URLs', 'indicator_pattern')
-        self.indicator_codes = dict(self.config.items('indicator_codes'))
+        self.indicator_names = dict(self.config.items('indicator_codes'))
         
     
     def extract_countries(self):
@@ -46,11 +46,12 @@ class Parser(object):
     def extract_observations(self):
         self.logger.info("Extracting observations")
         for country in self.countries :
-            for indicator_code in self.indicator_codes:
-                uri = self.observations_url.replace('{ISO2CODE}', country.iso2).replace('{INDICATOR.CODE}', self.config.get('indicator_codes', indicator_code))
+            for indicator_name in self.indicator_names:
+                indicator_code = self.config.get('indicator_codes', indicator_name)
+                uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
+                uri = uri.replace('{INDICATOR.CODE}', indicator_code)
                 try:
-                    response = self.rest_client.get(uri, 
-                                                {"format": "json"})
+                    response = self.rest_client.get(uri, {"format": "json"})
                     observations = response[1]
                     if observations != None :
                         for observation in observations :

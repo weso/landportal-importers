@@ -17,7 +17,8 @@ class RestClient(object):
         self.logger = logging.getLogger("es.weso.worldbank.rest.rest_client")
         
     def get(self, uri, params):
-        self.logger.info("Performing a get request from {0} with following parameters {1}".format(uri, params))
+        self.logger.info("Performing a get request from {0} " + 
+                         "with following parameters {1}".format(uri, params))
         s = requests.Session()
         s.mount(uri, HTTPAdapter(max_retries=10))
         json_response = requests.get(uri, params=params).json()

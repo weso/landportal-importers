@@ -1,0 +1,152 @@
+2014-02-02 13:05:27,065 - es.weso.worldbank.parser.parser - INFO - Extracting countries
+2014-02-02 13:05:27,065 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/ with following parameters {'format': 'json'}
+2014-02-02 13:05:27,101 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:27,757 - es.weso.worldbank.parser.parser - INFO - Extracting observations
+2014-02-02 13:05:27,757 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:27,760 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:28,265 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:28,266 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:28,778 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:28,779 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:29,144 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:29,145 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:29,530 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:29,533 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:29,917 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:29,921 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:30,438 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:30,440 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:30,815 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:30,816 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:31,338 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:31,341 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:31,714 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AW/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:31,719 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:32,157 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:32,158 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:32,500 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:32,503 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:32,868 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:32,871 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:33,252 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:33,253 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:33,783 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:33,786 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:34,289 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:34,293 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:34,802 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:34,805 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:35,184 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:35,186 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:35,562 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:35,566 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:35,950 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AF/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:35,953 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:36,477 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:36,480 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:36,851 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:36,855 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:37,173 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:37,176 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:37,555 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:37,558 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:37,890 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:37,891 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:38,270 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:38,273 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:38,644 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:38,645 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:39,029 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:39,033 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:39,377 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:39,381 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:39,733 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/A9/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:39,734 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:40,066 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:40,069 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:40,592 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:40,595 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:41,108 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:41,109 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:41,473 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:41,474 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:42,000 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:42,000 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:42,553 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:42,555 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:42,918 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:42,921 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:43,285 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:43,288 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:43,815 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:43,818 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:44,326 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AO/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:44,328 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:44,851 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:44,854 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:45,219 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:45,220 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:45,589 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:45,592 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:45,973 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:45,974 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:46,358 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:46,359 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:46,884 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:46,884 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:47,259 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:47,263 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:47,648 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:47,650 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:48,026 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:48,029 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:48,411 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AL/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:48,417 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:48,802 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:48,805 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:49,321 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:49,322 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:49,691 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:49,694 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:50,040 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:50,045 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:50,398 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:50,401 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:50,930 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:50,933 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:51,305 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:51,308 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:51,836 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:51,839 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:52,197 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:52,201 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:52,585 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AD/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:52,588 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:52,973 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:52,974 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:53,352 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:53,355 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:53,881 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:53,882 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:54,394 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:54,395 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:54,904 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SL.AGR.EMPL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:54,907 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:55,421 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SP.RUR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:55,424 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:55,928 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/NV.AGR.TOTL.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:55,930 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:56,446 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SP.DYN.LE00.MA.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:56,447 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:56,961 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SP.POP.GROW with following parameters {'format': 'json'}
+2014-02-02 13:05:56,964 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:57,532 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/1A/indicators/SH.DYN.MORT with following parameters {'format': 'json'}
+2014-02-02 13:05:57,533 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:58,051 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AE/indicators/AG.SRF.TOTL.K2 with following parameters {'format': 'json'}
+2014-02-02 13:05:58,055 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:58,505 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AE/indicators/SP.DYN.LE00.FE.IN with following parameters {'format': 'json'}
+2014-02-02 13:05:58,507 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:59,009 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AE/indicators/SP.POP.TOTL with following parameters {'format': 'json'}
+2014-02-02 13:05:59,012 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-02-02 13:05:59,387 - es.weso.worldbank.rest.rest_client - INFO - Performing a get request from http://api.worldbank.org/v2/countries/AE/indicators/SP.POP.TOTL.FE.ZS with following parameters {'format': 'json'}
+2014-02-02 13:05:59,390 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org

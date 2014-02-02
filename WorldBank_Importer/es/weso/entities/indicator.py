@@ -10,12 +10,11 @@ class Indicator(object):
     '''
 
 
-    def __init__(self, indicator_id, name, source_notes, source_organization):
+    def __init__(self, name, description, license):
         '''
         Constructor
         '''
-        self.indicator_id = indicator_id
         self.name = name
-        self.source_notes = source_notes
-        self.source_organization = source_organization
+        self.description = description
+        self.license = license
         
