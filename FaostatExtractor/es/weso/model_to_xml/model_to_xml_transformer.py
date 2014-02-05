@@ -27,11 +27,11 @@ class ModelToXMLTransformer(object):
     OBSERVATION_ATT_RELATED = "relatedObs"
     OBSERVATION_ATT_RELATION_PROPERTY = "relationProperty"
     
-    OBSERVATION_ATT_COUNTRY_PREFIX = "&country;"
-    OBSERVATION_ATT_MEASURE_PREFIX = "&currency;"
-    OBSERVATION_ATT_INDICATOR_PREFIX = "&indicator;"
-    OBSERVATION_ATT_TIME_PREFIX = "&year;"
-    OBSERVATION_ATT_RELATION_PROPERTY_PREFIX = "&relation;"
+    OBSERVATION_ATT_COUNTRY_PREFIX = "http://landportal.info/ontology/country/"
+    OBSERVATION_ATT_MEASURE_PREFIX = "http://landportal.info/ontology/country/currency/"
+    OBSERVATION_ATT_INDICATOR_PREFIX = "http://landportal.info/ontology/country/indicator/"
+    OBSERVATION_ATT_TIME_PREFIX = "http://landportal.info/ontology/year/"
+    OBSERVATION_ATT_RELATION_PROPERTY_PREFIX = "http://landportal.info/ontology/relation/"
     #OBSERVATION_ATT_ID_PREFIX = NO PREFIX NEEDED
     #OBSERVATION_ATT_VALUE_PREFIX = "NO PREFIX NEEDED
     #OBSERVATION_ATT_RELATED_PREFIX = NO PREFIX NEEDED
@@ -42,9 +42,9 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_ATT_TYPE = "type"
     IMPORT_PROCESS_ATT_TIME = "time"
     IMPORT_PROCESS_ATT_USER = "user"
-    IMPORT_PROCESS_ATT_DATASOURCE_PREFIX = "&datasource;"
-    IMPORT_PROCESS_ATT_TYPE_PREFIX = "&importProcess;"
-    IMPORT_PROCESS_ATT_USER_PREFIX = "&user;user"
+    IMPORT_PROCESS_ATT_DATASOURCE_PREFIX = "http://landportal.info/ontology/dataSource/"
+    IMPORT_PROCESS_ATT_TYPE_PREFIX = "http://landportal.info/ontology/importProcess/"
+    IMPORT_PROCESS_ATT_USER_PREFIX = "http://landportal.info/ontology/user/"
     #IMPORT_PROCESS_ATT_TIME_PREFIX = NO PREFIX FOR TIME
     '''
     classdocs
