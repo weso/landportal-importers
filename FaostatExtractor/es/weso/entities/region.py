@@ -1,5 +1,5 @@
 '''
-Created on 13/01/2014
+Created on 31/01/2014
 
 @author: Miguel Otero
 '''
@@ -16,6 +16,8 @@ class Region(object):
         '''
         self.name = name
         self.is_part_of = is_part_of
+        self.observations = []
         
-    def __eq__(self, other):
-        return self.name == other.name
+    def add_observation(self, observation):
+        self.observations.append(observation)
+        observation.region = self

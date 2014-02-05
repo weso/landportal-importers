@@ -1,7 +1,7 @@
 '''
-Created on 13/01/2014
+Created on 19/12/2013
 
-@author: Miguel Otero
+@author: Nacho
 '''
 
 class Indicator(object):
@@ -10,14 +10,11 @@ class Indicator(object):
     '''
 
 
-    def __init__(self, name, description, is_part_of):
+    def __init__(self, name, description, license_type):
         '''
         Constructor
         '''
         self.name = name
         self.description = description
-        self.is_part_of = is_part_of
+        self.license_type = license_type
         
-    def __eq__(self, other):
-        return self.name == other.name
-    

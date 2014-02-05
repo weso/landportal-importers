@@ -1,5 +1,5 @@
 '''
-Created on 27/01/2014
+Created on 02/02/2014
 
 @author: Miguel Otero
 '''
@@ -17,3 +17,4 @@ class DataSource(object):
         self.name = name
         self.description = description
         self.organization = organization
+        

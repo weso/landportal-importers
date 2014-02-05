@@ -1,10 +1,10 @@
 '''
-Created on 27/01/2014
+Created on 02/02/2014
 
 @author: Miguel Otero
 '''
 
-from es.weso.oecdextractor.entities.time import Time
+from es.weso.entities.time import Time
 
 class Instant(Time):
     '''
@@ -12,7 +12,9 @@ class Instant(Time):
     '''
 
 
-    def __init__(self):
+    def __init__(self, time):
+        self.time = time
+        
         '''
         Constructor
         '''
