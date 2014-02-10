@@ -10,8 +10,11 @@ class License(object):
     '''
 
 
-    def __init__(self):
+    def __init__(self, name = None, description = None, republish = None, url = None):
         '''
         Constructor
         '''
-        
+        self.name = name
+        self.description = description
+        self.republish = republish
+        self.url = url

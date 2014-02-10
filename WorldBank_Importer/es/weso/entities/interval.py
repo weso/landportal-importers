@@ -12,10 +12,12 @@ class Interval(Time):
     '''
 
 
-    def __init__(self, start_time, end_time):
+    def __init__(self, start_time = None, end_time = None):
         '''
         Constructor
         '''
         self.start_time = start_time
         self.end_time = end_time
-        
+    
+    def get_time_string(self):
+        return str(self.start_time) + '-' + str(self.end_time)

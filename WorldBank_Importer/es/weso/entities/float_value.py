@@ -12,8 +12,12 @@ class FloatValue(Value):
     '''
 
 
-    def __init__(self, value):
+    def __init__(self, obs_status = None, value = None):
         '''
         Constructor
         '''
+        super(FloatValue, self).__init__(obs_status)
         self.value = value
+        
+    def get_value(self):
+        return self.value

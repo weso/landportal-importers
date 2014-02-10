@@ -17,7 +17,7 @@ def run():
     configure_log()
     parser = Parser()
     parser.extract_countries()
-    parser.extract_observations()
+    parser.extract_observations(True, '2007')
 
 if __name__ == '__main__':
     run()

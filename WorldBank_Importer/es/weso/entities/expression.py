@@ -12,8 +12,13 @@ class Expression(Value):
     '''
 
 
-    def __init__(self):
+    def __init__(self, obs_status = None, value = None):
         '''
         Constructor
         '''
+        super(Expression, self).__init__(obs_status)
+        self.value = value
         
+    def get_value(self):
+        return self.value
+    

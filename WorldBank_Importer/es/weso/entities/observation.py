@@ -10,17 +10,16 @@ class Observation(object):
     '''
 
 
-    def __init__(self, ref_time, issued, computation, value, 
-                 measure_unit, indicator, slice, provider):
+    def __init__(self, observation_id = None, ref_time = None, issued = None,
+                 computation = None, value = None, indicator = None, provider = None):
         '''
         Constructor
         '''
+        self.observation_id = observation_id
         self.ref_time = ref_time
         self.issued = issued
         self.computation = computation
         self.value = value
-        self.measure_unit = measure_unit
         self.indicator = indicator
-        self.slice = slice
         self.provider = provider
         

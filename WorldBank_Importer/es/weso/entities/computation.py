@@ -9,10 +9,8 @@ class Computation(object):
     classdocs
     '''
 
-
-    def __init__(self, computation_type):
+    def __init__(self, uri = None):
         '''
         Constructor
         '''
-        self.computation_type = computation_type
-        
+        self.uri = uri
