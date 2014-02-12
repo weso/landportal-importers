@@ -10,24 +10,35 @@ class ParsedCountry(object):
     '''
 
 
-    def __init__(self, uri = None, name_en = None, name_es = None, \
-                 name_fr = None, iso2 = None, iso3 = None, faostat_cod = None, \
-                 undp_cod = None, gaul_cod = None, faoterm_cod = None, \
-                 agrovoc_cod = None, un_cod = None):
-        
-        self.uri = uri
-        self.name_en = name_en
-        self.name_es = name_es
-        self.name_fr = name_fr
-        self.iso2 = iso2
-        self.iso3 = iso3
-        self.faostat_cod = faostat_cod
-        self.undp_cod = undp_cod
-        self.gaul_cod = gaul_cod
-        self.faoterm_cod = faoterm_cod
-        self.agrovoc_cod = agrovoc_cod
-        self.un_cod = un_cod
+    def __init__(self, row_in_file=None, iso3_official=None, iso3_fao=None, \
+                   name_official=None, name_fao=None, un_code=None, \
+                   un_opt_code=None):
+        self.iso3_official = iso3_official
+        self.iso3_fao = iso3_fao
+        self.name_official = name_official
+        self.name_fao = name_fao
+        self.un_code = un_code
+        self.un_opt_code = un_opt_code
+        self.row_in_file = row_in_file
+
         '''
         Constructor
         '''
         
+    def get_iso3(self):
+        if not self.iso3_official =="" and not self.iso3_official == None:
+            return self.iso3_official
+        else:
+            return self.iso3_fao
+            
+    def get_name(self):
+        if not self.name_official == "" and not self.name_official == None:
+            return self.iso3_official
+        else:
+            return self.name_fao
+        
+    def get_un_code(self):
+        if not self.un_code == None: #If the code was correctly parsed, there will be an int in un_code. Else, a None
+            return self.un_code
+        else:
+            return self.un_opt_code
