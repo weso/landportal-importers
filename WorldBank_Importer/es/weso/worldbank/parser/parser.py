@@ -81,17 +81,18 @@ class Parser(object):
                 start = indicator_element.index('(') + 1
                 end = indicator_element.index(')')
                 measurement_unit = MeasurementUnit(indicator_element[start:end])
-                indicator = Indicator(self.config.get(indicators_section, indicator_element), 
+                indicator = Indicator(self.config.get(indicators_section, indicator_element),
+                                      indicator_element,
                                       indicator_element, 
                                       license_object, 
                                       measurement_unit)
                 print '\t' + indicator.name
                 for country in self.countries:
-                    slice_id = 'sli_' + indicator.name + '_' + country.iso3
+                    slice_id = 'sli_' + indicator.indicator_id + '_' + country.iso3
                     slice_object = Slice(slice_id, country, dataset, indicator)
                     print '\t\t' + slice_object.slice_id + '\t' + slice_object.dimension.get_dimension_string()
                     uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
-                    uri = uri.replace('{INDICATOR.CODE}', indicator.name)
+                    uri = uri.replace('{INDICATOR.CODE}', indicator.indicator_id)
                     try:
                         response = self.rest_client.get(uri, {"format": "json"})
                         observations = response[1]

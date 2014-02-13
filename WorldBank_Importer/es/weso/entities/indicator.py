@@ -10,13 +10,13 @@ class Indicator(object):
     '''
 
 
-    def __init__(self, name = None, description = None,
+    def __init__(self, indicator_id = None, name = None, description = None,
                  license_type = None, measurement_unit = None):
         '''
         Constructor
         '''
         self.name = name
-        self.id = "http://landportal.info/ontology/indicator/" + name
+        self.indicator_id = indicator_id
         self.description = description
         self.license_type = license_type
         self.measurement_unit = measurement_unit
