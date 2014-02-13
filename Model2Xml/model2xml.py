@@ -13,12 +13,16 @@ class ModelToXMLTransformer(object):
     '''
     ROOT ="dataset"
     INDICATORS = "indicators"
-    INDICATOR = "indicator"
     SLICE = "slice"
     SLICE_ATT_ID = "id"
+    OBSERVATIONS = "observations"
+    
     
     OBSERVATION = "observation"
     OBSERVATION_ATT_ID = "id"
+    OBSERVATION_ATT_ISSUED = "issued"
+    OBSERVATION_ATT_OBS_STATUS = "obs-status"
+    OBSERVATION_ATT_COMPUTATION = "computation"
     OBSERVATION_ATT_COUNTRY = "country"
     OBSERVATION_ATT_VALUE = "value"
     OBSERVATION_ATT_MEASURE = "measure"
@@ -32,9 +36,6 @@ class ModelToXMLTransformer(object):
     OBSERVATION_ATT_INDICATOR_PREFIX = "http://landportal.info/ontology/country/indicator/"
     OBSERVATION_ATT_TIME_PREFIX = "http://landportal.info/ontology/year/"
     OBSERVATION_ATT_RELATION_PROPERTY_PREFIX = "http://landportal.info/ontology/relation/"
-    #OBSERVATION_ATT_ID_PREFIX = NO PREFIX NEEDED
-    #OBSERVATION_ATT_VALUE_PREFIX = "NO PREFIX NEEDED
-    #OBSERVATION_ATT_RELATED_PREFIX = NO PREFIX NEEDED
     
     
     IMPORT_PROCESS = "importProcess"
@@ -47,14 +48,29 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_ATT_TYPE_PREFIX = "http://landportal.info/ontology/importProcess/"
     IMPORT_PROCESS_ATT_USER_PREFIX = "http://landportal.info/ontology/user/"
     #IMPORT_PROCESS_ATT_TIME_PREFIX = NO PREFIX FOR TIME
+    
+    INDICATOR = "indicator"
+    INDICATOR_ATT_ID = "id"
+    INDICATOR_ATT_NAME = "name"
+    INDICATOR_ATT_DESCRIPTION = "description"
+    INDICATOR_ATT_MEASURE_UNIT  = "measure_unit"
+    
+    LICENSE = "license"
+    LICENSE_ATT_NAME = "name"
+    LICENSE_ATT_DESCRIPTION = "description"
+    LICENSE_ATT_REPUBLISH = "republish"
+    LICENSE_ATT_URL = "republish"
     '''
     classdocs
     '''
 
 
     def __init__(self, dataset, import_type):
+        self.datasource = dataset.source
         self.dataset = dataset
         self.import_type = import_type
+        self.indicator_dic = {} #It will store an indicator object with it id as key.
+                                #One per indicator referred by the observations
         
         '''
         Constructor
@@ -63,16 +79,37 @@ class ModelToXMLTransformer(object):
     def run(self):
         self.build_root()
         self.build_import_process_node()
+        self.build_observations_node()
         self.build_indicators_node()
-        self.build_dataset()
+        self.build_slices_node()
         
         self.write_tree_to_xml()
+      
+      
+    def build_observations_node(self):
+        observations_node = Element(self.OBSERVATIONS)
+        for data_obs in self.datasource.observations:
+            observations_node.append(self.build_observation_node(data_obs))
+        self.root.append(observations_node)
         
+      
     def build_indicators_node(self):
-        self.root.append(Element(self.INDICATORS))
+        result = Element(self.INDICATORS)
+        for data_indicator in self.indicator_dic:
+            result.append(self.build_indicator_node(data_indicator))
+        
         #No further actions needed. Nodes <indicator>
         #should be included to this while parsing
         #observations
+        self.root.append(result)
+        
+    def build_indicator_node(self, data_indicator):
+        #Building node
+        result = Element(self.INDICATOR)
+        
+        #Attaching attribs
+        
+        return result
         
     def write_tree_to_xml(self):
         ElementTree(self.root).write("file.xml")
@@ -103,53 +140,101 @@ class ModelToXMLTransformer(object):
             
     def add_att_to_slice(self, a_slice_node, data_slice):
         a_slice_node.attrib[self.SLICE_ATT_ID] = \
-                        data_slice.slice_id
-            
+                        data_slice.slice_id     
         pass
-    def build_observation(self, data_obs):
-        
+  
+    
+    
+    def build_observation_node(self, data_obs):
+        #Building node
         result = Element(self.OBSERVATION)
+        
+        #Attaching attributes
+        #id, issued, (obs-status, value), computation, country, time, indicator, (related-obs, related-prop)
         result.attrib[self.OBSERVATION_ATT_ID] = \
                         str(data_obs.observation_id)
+        result.attrib[self.OBSERVATION_ATT_ISSUED] = \
+                        data_obs.issued.get_time_string()
+        result.attrib[self.OBSERVATION_ATT_COMPUTATION] = \
+                        + data_obs.computation.uri                                        
         result.attrib[self.OBSERVATION_ATT_COUNTRY] = \
                         self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                        + str(data_obs.region.name)
-        result.attrib[self.OBSERVATION_ATT_VALUE] = \
-                        str(data_obs.value.value)
-        result.attrib[self.OBSERVATION_ATT_MEASURE] = \
-                        self.OBSERVATION_ATT_MEASURE_PREFIX \
-                        + str(data_obs.measure_unit.name)
-        result.attrib[self.OBSERVATION_ATT_INDICATOR] = \
-                        self.OBSERVATION_ATT_INDICATOR_PREFIX \
-                        + str(data_obs.indicator.name)
+                        + str(data_obs.region.iso3)
         result.attrib[self.OBSERVATION_ATT_TIME] = \
                         self.OBSERVATION_ATT_TIME_PREFIX \
-                        + str(data_obs.ref_time.time)
-#         result[self.OBSERVATION_ATT_RELATED] = 
-#         result[self.OBSERVATION_ATT_RELATION_PROPERTY] = 
+                        + str(data_obs.ref_time.time)   
+        #Attaching value properties
+        self.attach_value_att_to_observation(result, data_obs)
+        
+        #Managing indicator´s info
+        result.attrib[self.OBSERVATION_ATT_INDICATOR] = \
+                        self.OBSERVATION_ATT_INDICATOR_PREFIX \
+                        + str(data_obs.indicator.indicator_id)
+        self.include_indicator_if_needed(data_obs.indicator)
+        
+        #Attaching optional info
+        self.attach_related_obs_info_to_observation(result, data_obs)
+
+        #Returning the builded node  
         return result
     
+    def attach_related_obs_info_to_observation(self,node_obs, data_obs):
+        if(data_obs.is_related_to == None):
+            return
+        node_obs.attrib[self.OBSERVATION_ATT_RELATED] = \
+                self.OBSERVATION_ATT_ID \
+                + data_obs.is_related_to.observation_id
+        node_obs.attrib[self.OBSERVATION_ATT_RELATION_PROPERTY] = \
+                self.OBSERVATION_ATT_RELATION_PROPERTY_PREFIX \
+                + data_obs.is_related_to.indicator.indicator_id
+        #We could try to include the previous indicator in the list if needed,
+        #in the same way we do when attaching indicator property in an <indicator>
+        #node, but we are suppousing that if there is a related obs, it indicator
+        #will be including quen treating that obs
+        
+        #No return sentence. We are modifying the received object
+        pass
+    
+    def include_indicator_if_needed(self, data_indicator):
+        if(self.indicator_dic.has_key(data_indicator.indicator_id)):
+            return
+        self.indicator_dic[data_indicator.indicator_id] = data_indicator
+        pass
+    
+    def attach_value_att_to_observation(self, obs_node, data_obs):
+        #Adding obligatory att obs-status
+        status = data_obs.value.obs_status
+        obs_node.attrib[self.OBSERVATION_ATT_OBS_STATUS] = status
+        
+        #Adding value if needed
+        if not status == data_obs.value.MISSING:
+            obs_node.attrib[self.OBSERVATION_ATT_VALUE] = \
+                    str(data_obs.value.value)
+        #No return sentence. We are modifying the received obs_node object
+    
     def build_import_process_node(self):
+        #Building node
         metadata = Element(self.IMPORT_PROCESS)
+        
+        #Attaching attributes
         metadata.attrib[self.IMPORT_PROCESS_ATT_DATASOURCE] = \
                         self.IMPORT_PROCESS_ATT_DATASOURCE_PREFIX \
-                        + self.dataset.source.source_id
+                        + self.datasource.name
                         
         metadata.attrib[self.IMPORT_PROCESS_ATT_TYPE] = \
                         self.IMPORT_PROCESS_ATT_TYPE_PREFIX \
                         + self.import_type
                         
         metadata.attrib[self.IMPORT_PROCESS_ATT_TIME] = \
-                        self.dataset.data_source.organization.user.timestamp
+                        self.datasource.organization.user.timestamp
                                     
         metadata.attrib[self.IMPORT_PROCESS_ATT_USER] = \
                         self.IMPORT_PROCESS_ATT_USER_PREFIX \
-                        + self.dataset.data_source.organization.user.user_id
+                        + self.datasource.organization.user.user_id
                         
         metadata.attrib[self.IMPORT_PROCESS_ATT_IP] = \
-                        self.dataset.data_source.organization.user.ip
+                        self.datasource.organization.user.ip
+        #Addind node to root
         self.root.append(metadata)
-        
-        
-               
+     
         
