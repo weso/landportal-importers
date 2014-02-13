@@ -25,14 +25,12 @@ class ModelToXMLTransformer(object):
     OBSERVATION_ATT_COMPUTATION = "computation"
     OBSERVATION_ATT_COUNTRY = "country"
     OBSERVATION_ATT_VALUE = "value"
-    OBSERVATION_ATT_MEASURE = "measure"
     OBSERVATION_ATT_INDICATOR = "indicator"
     OBSERVATION_ATT_TIME = "time"
     OBSERVATION_ATT_RELATED = "relatedObs"
     OBSERVATION_ATT_RELATION_PROPERTY = "relationProperty"
     
     OBSERVATION_ATT_COUNTRY_PREFIX = "http://landportal.info/ontology/country/"
-    OBSERVATION_ATT_MEASURE_PREFIX = "http://landportal.info/ontology/country/currency/"
     OBSERVATION_ATT_INDICATOR_PREFIX = "http://landportal.info/ontology/country/indicator/"
     OBSERVATION_ATT_TIME_PREFIX = "http://landportal.info/ontology/year/"
     OBSERVATION_ATT_RELATION_PROPERTY_PREFIX = "http://landportal.info/ontology/relation/"
@@ -54,6 +52,9 @@ class ModelToXMLTransformer(object):
     INDICATOR_ATT_NAME = "name"
     INDICATOR_ATT_DESCRIPTION = "description"
     INDICATOR_ATT_MEASURE_UNIT  = "measure_unit"
+    
+    INDICATOR_ATT_ID_PREFIX = "http://landportal.info/ontology/country/indicator/"
+    INDICATOR_ATT_MEASURE_UNIT_PREFIX = "http://landportal.info/ontology/country/currency/"
     
     LICENSE = "license"
     LICENSE_ATT_NAME = "name"
@@ -108,9 +109,39 @@ class ModelToXMLTransformer(object):
         result = Element(self.INDICATOR)
         
         #Attaching attribs
+        #id name description measureUnit
+        result.attrib[self.INDICATOR_ATT_ID] = \
+                self.INDICATOR_ATT_ID_PREFIX \
+                + data_indicator.indicator_id
+        result.attrib[self.INDICATOR_ATT_NAME] = \
+                data_indicator.name
+        result.attrib[self.INDICATOR_ATT_DESCRIPTION] = \
+                data_indicator.description
+        result.attrib[self.INDICATOR_ATT_MEASURE_UNIT] = \
+                self.INDICATOR_ATT_MEASURE_UNIT_PREFIX \
+                + data_indicator.measure_unit
         
+        #Adding license node
+        result.append(self.build_license_node(data_indicator.license))
+        
+        #Returning complete node
         return result
         
+    def build_license_node(self, data_indicator):
+        #Building node
+        result = Element(self.LICENSE)
+        
+        #Attaching atts.
+        #name description republish url
+        result.attrib[self.LICENSE_ATT_NAME] = data_indicator.name
+        result.attrib[self.LICENSE_ATT_DESCRIPTION] = data_indicator.description
+        result.attrib[self.LICENSE_ATT_REPUBLISH] = data_indicator.republish
+        result.attrib[self.LICENSE_ATT_URL] = data_indicator.url
+        
+        #Returning complete node
+        return result
+        
+    
     def write_tree_to_xml(self):
         ElementTree(self.root).write("file.xml")
         
