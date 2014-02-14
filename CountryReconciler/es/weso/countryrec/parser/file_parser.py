@@ -7,7 +7,6 @@ Created on 10/02/2014
 
 import xlrd
 from es.weso.countryrec.entities.parsed_country import ParsedCountry
-from es.weso.countryrec.normalizer.country_name_normalizer import CountryNameNormalizer
 class FileParser(object):
     '''
     classdocs
@@ -66,27 +65,17 @@ class FileParser(object):
         book = xlrd.open_workbook(self.source_file).sheet_by_index(0)
         self.parse_row_range(book, self.FIRST_ROW, self.LAST_ROW)
 
-
-#     def parse_self_governing(self, book):
-#         self.parse_row_range(book, self.SELF_GOVERNING_FIRST, self.SELF_GOVERNING_LAST+1)
-#     
-#     def parse_non_self_governing(self, book):
-#         self.parse_row_range(book, self.NON_SELF_GOVERNING_FIRST, self.NON_SELF_GOVERNING_LAST+1)
-#     
-#     def parse_others(self, book):
-#         self.parse_row_range(book, self.OTHERS_FIRST, self.OTHERS_LAST+1)
     
     def parse_row_range(self, book, first, last):
         for row in range(first, last+1):
             country = ParsedCountry()
             country.iso3_official = self.parse_some_string(book, row, self.ISO3_OFFICIAL_COL)
             country.iso3_fao = self.parse_some_string(book, row, self.ISO3_FAO_COL)
-            country.name_fao = self.parse_name_en(book, row, self.NAME_FAO_COL)
-            country.name_official = self.parse_name_en(book, row, self.NAME_OFFICIAL_COL)
+            country.name_fao = self.parse_some_string(book, row, self.NAME_FAO_COL)
+            country.name_official = self.parse_some_string(book, row, self.NAME_OFFICIAL_COL)
             country.un_code = self.parse_some_code(book, row, self.UN_OFFICIAL_CODE)
             country.un_opt_code = self.parse_some_code(book, row, self.UN_ALT_CODE)
             
-            country.row_in_file = row
             
 #             country.uri = self.parse_some_string(book, row, self.URI_COL)
 #             country.name_es = self.parse_name_es(book, row)
@@ -116,23 +105,6 @@ class FileParser(object):
             return None  
         return str(value).strip()
     
-#     def parse_name_es(self, book, row):
-#         value = book.row(row)[self.NAME_ES_COL].value
-#         if self.whiteValue(value):
-#             return None
-#         return CountryNameNormalizer.normalize_es_country(value)
-    
-    def parse_name_en(self, book, row, col):
-        value = book.row(row)[col].value
-        if self.whiteValue(value):
-            return None
-        return CountryNameNormalizer.normalize_en_country(value)
-    
-#     def parse_name_fr(self, book, row):
-#         value = book.row(row)[self.NAME_FR_COL].value
-#         if self.whiteValue(value):
-#             return None
-#         return CountryNameNormalizer.normalize_fr_country(value)
     
     def parse_some_code(self, book, row, col):
         value = book.row(row)[col].value
