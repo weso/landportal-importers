@@ -15,4 +15,3 @@ class MeasurementUnit(object):
         Constructor
         '''
         self.name = name
-        

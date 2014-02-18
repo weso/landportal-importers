@@ -1,8 +1,8 @@
-'''
+"""
 Created on 18/12/2013
 
 @author: Nacho
-'''
+"""
 import logging
 import ConfigParser
 import socket
@@ -19,44 +19,36 @@ from es.weso.entities.computation import Computation
 from es.weso.entities.measurement_unit import MeasurementUnit
 from es.weso.entities.indicator import Indicator
 from es.weso.entities.value import Value
-from es.weso.entities.float_value import FloatValue
 from es.weso.entities.year_interval import YearInterval
 from es.weso.worldbank.rest.rest_client import RestClient
 from es.weso.entities.slice import Slice
 
 from requests.exceptions import ConnectionError
 
+
 class Parser(object):
-    '''
-    classdocs
-    '''  
     countries = []
     observations = []
-    counter = 1
-
 
     def __init__(self):
-        '''
-        Constructor
-        '''
-        self.logger = logging.getLogger("es.weso.worldbank.parser.parser")    
+        self.logger = logging.getLogger("es.weso.worldbank.parser.parser")
         self.rest_client = RestClient()
         self.config = ConfigParser.ConfigParser()
         self.config.read('../configuration/api_access.ini')
         self.countries_url = self.config.get('URLs', 'country_list')
         self.observations_url = self.config.get('URLs', 'indicator_pattern')
         self.data_sources = dict(self.config.items('data_sources'))
-        
+
     def extract_countries(self):
         response = self.rest_client.get(self.countries_url, {"format": "json"})
         countries = response[1]
-        for country in countries :
+        for country in countries:
             self.logger.info('Extracting country ' + country['iso2Code'] + ' (' + country['name'] + ')')
             self.countries.append(Country(country['name'],
                                           None,
                                           country['iso2Code'],
                                           country['id']))
-    
+
     def extract_observations(self, historic, requested_year):
         organization = Organization("World Bank", 'http://www.worldbank.org/', None)
         ip = socket.gethostbyname(socket.gethostname())
@@ -70,12 +62,12 @@ class Parser(object):
             organization.add_data_source(data_source)
             frequency = 'http://purl.org/linked-data/sdmx/2009/code#freq-A'
             dataset_id = 'wb_dataset_' + indicators_section
-            dataset = Dataset(dataset_id, data_source_name, frequency, data_source)
-            data_source.add_dataset(dataset)
-            license_object = License('World Bank License', 
-                                     'World Bank License', 
-                                     True, 
+            license_object = License('World Bank License',
+                                     'World Bank License',
+                                     True,
                                      'www.worldbank.org/terms-of-use-datasets')
+            dataset = Dataset(dataset_id, data_source_name, frequency, license_object, data_source)
+            data_source.add_dataset(dataset)
             print data_source_name
             for indicator_element in requested_indicators:
                 start = indicator_element.index('(') + 1
@@ -83,8 +75,8 @@ class Parser(object):
                 measurement_unit = MeasurementUnit(indicator_element[start:end])
                 indicator = Indicator(self.config.get(indicators_section, indicator_element),
                                       indicator_element,
-                                      indicator_element, 
-                                      license_object, 
+                                      indicator_element,
+                                      license_object,
                                       measurement_unit)
                 print '\t' + indicator.name
                 for country in self.countries:
@@ -96,36 +88,38 @@ class Parser(object):
                     try:
                         response = self.rest_client.get(uri, {"format": "json"})
                         observations = response[1]
-                        if observations != None :
-                            for observation_element in observations :
-                                value_object = FloatValue('http://purl.org/linked-data/sdmx/2009/code#obsStatus-A',
-                                                          observation_element['value'])
-                                if(value_object.value is None):
-                                    value_object = Value('http://purl.org/linked-data/sdmx/2009/code#obsStatus-M')
+                        if observations is not None:
+                            for observation_element in observations:
+                                value_object = Value(observation_element['value'],
+                                                     "float",
+                                                     'http://purl.org/linked-data/sdmx/2009/code#obsStatus-A')
+                                if value_object.value is None:
+                                    value_object = Value(None,
+                                                         None,
+                                                         'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M')
                                 time = YearInterval(observation_element['date'],
                                                     observation_element['date'],
                                                     observation_element['date'])
                                 observation_id = "obs_" + indicator.name + '_' + country.iso3 + '_' + time.get_time_string()
                                 observation = Observation(observation_id,
                                                           time,
-                                                          None,
+                                                          timestamp,
                                                           Computation('http://purl.org/weso/ontology/computex#Raw'),
                                                           value_object,
                                                           indicator,
                                                           data_source)
-                                if(historic or observation_element['date'] == requested_year):
+                                if historic or observation_element['date'] == requested_year:
                                     country.add_observation(observation)
-                                    data_source.add_observation(observation)
+                                    dataset.add_observation(observation)
                                     slice_object.add_observation(observation)
-                                    self.counter += 1
-                                    self.logger.info(observation.ref_time.year + ' ' + indicator.name + ' ' + country.iso2)
-                                    if(observation.value.obs_status is not 'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M'):
-                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + observation.value.get_value() + ' ' + indicator.measurement_unit.name
+                                    self.logger.info(
+                                        observation.ref_time.year + ' ' + indicator.name + ' ' + country.iso2)
+                                    if observation.value.obs_status is not 'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M':
+                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + observation.value.value + ' ' + indicator.measurement_unit.name
                                     else:
-                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing (in action)'
-                                    self.logger.info('Observation retrieved for ' + indicator.name + 
+                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
+                                    self.logger.info('Observation retrieved for ' + indicator.name +
                                                      ' for country ' + country.iso3 + ' and time ' + time.get_time_string())
                     except (KeyError, ConnectionError, ValueError):
-                        self.logger.error('Error retrieving observation ' + indicator.name + 
-                                          ' for country ' + country.iso3 + ' and time ' + time.get_time_string())
+                        self.logger.error('Error requesting \'' + uri + '\'')
                 print indicator.name + 'FINISHED'
