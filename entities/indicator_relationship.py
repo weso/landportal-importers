@@ -16,4 +16,3 @@ class IndicatorRelationship(object):
         '''
         self.source = source
         self.target = target
-        
