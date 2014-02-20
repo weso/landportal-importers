@@ -17,4 +17,3 @@ class Becomes(IndicatorRelationship):
         Constructor
         '''
         super(Becomes, self).__init__(source, target)
-        

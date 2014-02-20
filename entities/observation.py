@@ -9,9 +9,8 @@ class Observation(object):
     classdocs
     '''
 
-
-    def __init__(self, observation_id = None, ref_time = None, issued = None,
-                 computation = None, value = None, indicator = None, provider = None):
+    def __init__(self, observation_id=None, ref_time=None, issued=None,
+                 computation=None, value=None, indicator=None, dataset=None):
         '''
         Constructor
         '''
@@ -21,5 +20,6 @@ class Observation(object):
         self.computation = computation
         self.value = value
         self.indicator = indicator
-        self.provider = provider
-        
+        self.dataset = dataset
+        self.group = None
+        self.indicator_group = None

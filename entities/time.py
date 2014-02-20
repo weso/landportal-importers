@@ -14,7 +14,8 @@ class Time(Dimension):
     __metaclass__ = ABCMeta
     
     @abstractmethod
-    def get_time_string(self): pass
+    def get_time_string(self):
+        pass
     
     def get_dimension_string(self):
         return self.get_time_string()
