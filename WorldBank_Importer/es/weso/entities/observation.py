@@ -22,3 +22,4 @@ class Observation(object):
         self.indicator = indicator
         self.dataset = dataset
         self.group = None
+        self.indicator_group = None

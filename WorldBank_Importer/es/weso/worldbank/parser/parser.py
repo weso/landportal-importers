@@ -22,6 +22,8 @@ from es.weso.entities.value import Value
 from es.weso.entities.year_interval import YearInterval
 from es.weso.worldbank.rest.rest_client import RestClient
 from es.weso.entities.slice import Slice
+from es.weso.entities.instant import Instant
+from weso.modeltoxml.model2xml import ModelToXMLTransformer
 
 from requests.exceptions import ConnectionError
 
@@ -30,20 +32,27 @@ class Parser(object):
     countries = []
     observations = []
 
+
     def __init__(self):
         self.logger = logging.getLogger("es.weso.worldbank.parser.parser")
-        self.rest_client = RestClient()
         self.config = ConfigParser.ConfigParser()
         self.config.read('../configuration/api_access.ini')
         self.countries_url = self.config.get('URLs', 'country_list')
         self.observations_url = self.config.get('URLs', 'indicator_pattern')
         self.data_sources = dict(self.config.items('data_sources'))
+        self.user = None
+
+    def model_to_xml(self):
+        for datasource in self.user.organization.data_sources:
+            for dataset in datasource.datasets:
+                transformer = ModelToXMLTransformer(dataset, "Request", self.user)
+                transformer.run()
+
 
     def extract_countries(self):
-        response = self.rest_client.get(self.countries_url, {"format": "json"})
+        response = RestClient.get(self.countries_url, {"format": "json"})
         countries = response[1]
         for country in countries:
-            self.logger.info('Extracting country ' + country['iso2Code'] + ' (' + country['name'] + ')')
             self.countries.append(Country(country['name'],
                                           None,
                                           country['iso2Code'],
@@ -53,7 +62,7 @@ class Parser(object):
         organization = Organization("World Bank", 'http://www.worldbank.org/', None)
         ip = socket.gethostbyname(socket.gethostname())
         timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        user = User("worldbank_importer", ip, timestamp, organization)
+        self.user = User("worldbank_importer", ip, timestamp, organization)
         for data_source_name in self.data_sources:
             indicators_section = self.config.get('data_sources', data_source_name)
             requested_indicators = dict(self.config.items(indicators_section))
@@ -86,7 +95,7 @@ class Parser(object):
                     uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
                     uri = uri.replace('{INDICATOR.CODE}', indicator.indicator_id)
                     try:
-                        response = self.rest_client.get(uri, {"format": "json"})
+                        response = RestClient.get(uri, {"format": "json"})
                         observations = response[1]
                         if observations is not None:
                             for observation_element in observations:
@@ -97,13 +106,15 @@ class Parser(object):
                                     value_object = Value(None,
                                                          None,
                                                          'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M')
+                                    self.logger.warning('Missing value for ' + indicator.name + ', ' + country.name +
+                                                        ', ' + observation_element['date'])
                                 time = YearInterval(observation_element['date'],
                                                     observation_element['date'],
                                                     observation_element['date'])
                                 observation_id = "obs_" + indicator.name + '_' + country.iso3 + '_' + time.get_time_string()
                                 observation = Observation(observation_id,
                                                           time,
-                                                          timestamp,
+                                                          Instant(datetime.now()),
                                                           Computation('http://purl.org/weso/ontology/computex#Raw'),
                                                           value_object,
                                                           indicator,
@@ -112,14 +123,10 @@ class Parser(object):
                                     country.add_observation(observation)
                                     dataset.add_observation(observation)
                                     slice_object.add_observation(observation)
-                                    self.logger.info(
-                                        observation.ref_time.year + ' ' + indicator.name + ' ' + country.iso2)
                                     if observation.value.obs_status is not 'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M':
                                         print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + observation.value.value + ' ' + indicator.measurement_unit.name
                                     else:
                                         print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
-                                    self.logger.info('Observation retrieved for ' + indicator.name +
-                                                     ' for country ' + country.iso3 + ' and time ' + time.get_time_string())
                     except (KeyError, ConnectionError, ValueError):
-                        self.logger.error('Error requesting \'' + uri + '\'')
-                print indicator.name + 'FINISHED'
+                        self.logger.error('Error retrieving response for \'' + uri + '\'')
+                print indicator.name + ' FINISHED'

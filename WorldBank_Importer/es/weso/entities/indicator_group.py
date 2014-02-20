@@ -7,14 +7,12 @@ Created on 18/02/2014
 from es.weso.entities.indicator import Indicator
 
 
-class IndicatorGroup(Indicator):
+class IndicatorGroup(object):
 
-    def __init__(self, indicator_id=None, name=None, description=None,
-                 dataset=None, measurement_unit=None, group_id=None):
-        super(IndicatorGroup, self).__init__(indicator_id, name, description,
-                                             dataset, measurement_unit)
+    def __init__(self, group_id=None, compound_indicator=None, observations=None):
         self.group_id = group_id
-        self.observations = []
+        self.compound_indicator = compound_indicator
+        self.observations = observations
 
     def add_observation(self, observation):
         self.observations.append(observation)
