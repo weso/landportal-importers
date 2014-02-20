@@ -14,7 +14,7 @@ class CountryReconciler(object):
 
     def __init__(self):
         self.config = ConfigParser()
-        self.config.read("../../../../files/configuration.ini")
+        self.config.read("../conf/configuration.ini")
         self.log = logging.getLogger("countryRec.log")
         self.clist = FileParser(self.config, self.log).run()
         '''

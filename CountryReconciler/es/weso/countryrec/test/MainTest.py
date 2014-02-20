@@ -14,4 +14,3 @@ if __name__ == '__main__':
 #     config = ConfigParser()
 #     config.read("../../../../files/configuration.ini")
     print len(rec.clist)
-    
