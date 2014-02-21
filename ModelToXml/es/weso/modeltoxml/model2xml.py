@@ -78,7 +78,7 @@ class ModelToXMLTransformer(object):
     TIME_ATT_UNIT = "unit"
 
     INDICATOR_GROUPS = "indicator_groups"
-    GROUP = "group"
+    GROUP = "indicator_group"
     GROUP_ATT_ID = "id"
     GROUP_ATT_INDICATOR = "indicator"
 
