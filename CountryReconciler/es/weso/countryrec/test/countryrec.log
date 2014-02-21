@@ -1,0 +1,255 @@
+2014-02-21 11:53:44,874 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 6, col 4
+2014-02-21 11:53:44,874 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 6, col 5
+2014-02-21 11:53:44,877 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 12, col 25
+2014-02-21 11:53:44,878 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 13, col 4
+2014-02-21 11:53:44,878 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 13, col 5
+2014-02-21 11:53:44,878 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 13, col 25
+2014-02-21 11:53:44,878 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 14, col 4
+2014-02-21 11:53:44,878 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 14, col 5
+2014-02-21 11:53:44,878 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 14, col 25
+2014-02-21 11:53:44,900 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 55, col 4
+2014-02-21 11:53:44,900 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 55, col 5
+2014-02-21 11:53:44,900 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 55, col 25
+2014-02-21 11:53:44,900 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 55, col 24
+2014-02-21 11:53:44,910 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 79, col 4
+2014-02-21 11:53:44,910 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 79, col 5
+2014-02-21 11:53:44,911 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 81, col 3
+2014-02-21 11:53:44,911 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 81, col 2
+2014-02-21 11:53:44,911 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 81, col 25
+2014-02-21 11:53:44,911 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 81, col 24
+2014-02-21 11:53:44,911 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 82, col 3
+2014-02-21 11:53:44,911 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 82, col 2
+2014-02-21 11:53:44,913 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 82, col 25
+2014-02-21 11:53:44,913 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 82, col 24
+2014-02-21 11:53:44,915 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 89, col 4
+2014-02-21 11:53:44,915 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 89, col 5
+2014-02-21 11:53:44,917 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 92, col 3
+2014-02-21 11:53:44,917 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 92, col 2
+2014-02-21 11:53:44,917 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 92, col 25
+2014-02-21 11:53:44,917 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 92, col 24
+2014-02-21 11:53:44,918 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 94, col 4
+2014-02-21 11:53:44,918 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 94, col 5
+2014-02-21 11:53:44,918 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 95, col 4
+2014-02-21 11:53:44,920 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 95, col 5
+2014-02-21 11:53:44,920 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 95, col 25
+2014-02-21 11:53:44,921 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 101, col 4
+2014-02-21 11:53:44,921 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 101, col 5
+2014-02-21 11:53:44,923 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 103, col 4
+2014-02-21 11:53:44,923 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 103, col 5
+2014-02-21 11:53:44,924 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 103, col 25
+2014-02-21 11:53:44,924 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 103, col 24
+2014-02-21 11:53:44,924 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 104, col 4
+2014-02-21 11:53:44,924 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 104, col 5
+2014-02-21 11:53:44,924 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 104, col 25
+2014-02-21 11:53:44,927 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 112, col 4
+2014-02-21 11:53:44,927 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 112, col 5
+2014-02-21 11:53:44,928 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 115, col 4
+2014-02-21 11:53:44,928 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 115, col 5
+2014-02-21 11:53:44,928 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 115, col 25
+2014-02-21 11:53:44,928 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 115, col 24
+2014-02-21 11:53:44,933 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 123, col 4
+2014-02-21 11:53:44,933 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 123, col 5
+2014-02-21 11:53:44,933 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 123, col 25
+2014-02-21 11:53:44,933 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 123, col 24
+2014-02-21 11:53:44,937 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 136, col 4
+2014-02-21 11:53:44,937 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 136, col 5
+2014-02-21 11:53:44,944 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 151, col 4
+2014-02-21 11:53:44,944 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 151, col 5
+2014-02-21 11:53:44,953 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 173, col 4
+2014-02-21 11:53:44,953 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 173, col 5
+2014-02-21 11:53:44,966 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 183, col 4
+2014-02-21 11:53:44,966 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 183, col 5
+2014-02-21 11:53:44,967 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 187, col 3
+2014-02-21 11:53:44,967 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 187, col 2
+2014-02-21 11:53:44,969 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 187, col 25
+2014-02-21 11:53:44,969 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 187, col 24
+2014-02-21 11:53:44,970 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 190, col 4
+2014-02-21 11:53:44,970 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 190, col 5
+2014-02-21 11:53:44,971 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 196, col 4
+2014-02-21 11:53:44,971 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 196, col 5
+2014-02-21 11:53:44,973 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 196, col 25
+2014-02-21 11:53:44,974 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 202, col 4
+2014-02-21 11:53:44,974 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 202, col 5
+2014-02-21 11:53:44,974 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 202, col 25
+2014-02-21 11:53:44,976 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 202, col 24
+2014-02-21 11:53:44,983 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 220, col 3
+2014-02-21 11:53:44,983 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 220, col 2
+2014-02-21 11:53:44,983 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 220, col 25
+2014-02-21 11:53:44,983 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 220, col 24
+2014-02-21 11:53:44,986 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 227, col 25
+2014-02-21 11:53:44,990 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 238, col 4
+2014-02-21 11:53:44,990 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 238, col 5
+2014-02-21 11:53:44,994 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 247, col 3
+2014-02-21 11:53:44,994 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 247, col 2
+2014-02-21 11:53:44,994 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 247, col 25
+2014-02-21 11:53:44,994 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 247, col 24
+2014-02-21 11:58:46,976 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 6, col 4
+2014-02-21 11:58:46,976 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 6, col 5
+2014-02-21 11:58:46,979 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 12, col 25
+2014-02-21 11:58:46,979 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 13, col 4
+2014-02-21 11:58:46,979 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 13, col 5
+2014-02-21 11:58:46,980 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 13, col 25
+2014-02-21 11:58:46,980 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 14, col 4
+2014-02-21 11:58:46,980 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 14, col 5
+2014-02-21 11:58:46,980 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 14, col 25
+2014-02-21 11:58:46,997 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 55, col 4
+2014-02-21 11:58:46,997 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 55, col 5
+2014-02-21 11:58:46,999 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 55, col 25
+2014-02-21 11:58:46,999 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 55, col 24
+2014-02-21 11:58:47,009 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 79, col 4
+2014-02-21 11:58:47,009 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 79, col 5
+2014-02-21 11:58:47,010 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 81, col 3
+2014-02-21 11:58:47,010 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 81, col 2
+2014-02-21 11:58:47,010 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 81, col 25
+2014-02-21 11:58:47,010 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 81, col 24
+2014-02-21 11:58:47,012 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 82, col 3
+2014-02-21 11:58:47,012 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 82, col 2
+2014-02-21 11:58:47,012 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 82, col 25
+2014-02-21 11:58:47,012 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 82, col 24
+2014-02-21 11:58:47,016 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 89, col 4
+2014-02-21 11:58:47,016 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 89, col 5
+2014-02-21 11:58:47,016 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 92, col 3
+2014-02-21 11:58:47,017 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 92, col 2
+2014-02-21 11:58:47,017 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 92, col 25
+2014-02-21 11:58:47,017 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 92, col 24
+2014-02-21 11:58:47,019 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 94, col 4
+2014-02-21 11:58:47,019 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 94, col 5
+2014-02-21 11:58:47,019 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 95, col 4
+2014-02-21 11:58:47,019 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 95, col 5
+2014-02-21 11:58:47,019 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 95, col 25
+2014-02-21 11:58:47,022 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 101, col 4
+2014-02-21 11:58:47,023 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 101, col 5
+2014-02-21 11:58:47,023 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 103, col 4
+2014-02-21 11:58:47,023 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 103, col 5
+2014-02-21 11:58:47,023 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 103, col 25
+2014-02-21 11:58:47,023 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 103, col 24
+2014-02-21 11:58:47,023 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 104, col 4
+2014-02-21 11:58:47,025 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 104, col 5
+2014-02-21 11:58:47,025 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 104, col 25
+2014-02-21 11:58:47,028 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 112, col 4
+2014-02-21 11:58:47,028 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 112, col 5
+2014-02-21 11:58:47,029 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 115, col 4
+2014-02-21 11:58:47,029 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 115, col 5
+2014-02-21 11:58:47,029 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 115, col 25
+2014-02-21 11:58:47,029 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 115, col 24
+2014-02-21 11:58:47,033 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 123, col 4
+2014-02-21 11:58:47,033 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 123, col 5
+2014-02-21 11:58:47,033 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 123, col 25
+2014-02-21 11:58:47,033 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 123, col 24
+2014-02-21 11:58:47,039 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 136, col 4
+2014-02-21 11:58:47,039 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 136, col 5
+2014-02-21 11:58:47,046 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 151, col 4
+2014-02-21 11:58:47,046 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 151, col 5
+2014-02-21 11:58:47,055 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 173, col 4
+2014-02-21 11:58:47,055 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 173, col 5
+2014-02-21 11:58:47,059 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 183, col 4
+2014-02-21 11:58:47,059 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 183, col 5
+2014-02-21 11:58:47,062 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 187, col 3
+2014-02-21 11:58:47,062 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 187, col 2
+2014-02-21 11:58:47,062 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 187, col 25
+2014-02-21 11:58:47,062 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 187, col 24
+2014-02-21 11:58:47,063 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 190, col 4
+2014-02-21 11:58:47,063 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 190, col 5
+2014-02-21 11:58:47,066 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 196, col 4
+2014-02-21 11:58:47,066 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 196, col 5
+2014-02-21 11:58:47,066 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 196, col 25
+2014-02-21 11:58:47,069 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 202, col 4
+2014-02-21 11:58:47,069 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 202, col 5
+2014-02-21 11:58:47,069 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 202, col 25
+2014-02-21 11:58:47,069 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 202, col 24
+2014-02-21 11:58:47,078 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 220, col 3
+2014-02-21 11:58:47,078 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 220, col 2
+2014-02-21 11:58:47,078 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 220, col 25
+2014-02-21 11:58:47,078 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 220, col 24
+2014-02-21 11:58:47,082 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 227, col 25
+2014-02-21 11:58:47,085 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 238, col 4
+2014-02-21 11:58:47,086 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 238, col 5
+2014-02-21 11:58:47,089 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 247, col 3
+2014-02-21 11:58:47,091 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 247, col 2
+2014-02-21 11:58:47,091 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 247, col 25
+2014-02-21 11:58:47,091 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 247, col 24
+2014-02-21 12:04:48,674 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 6, col 4
+2014-02-21 12:04:48,674 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 6, col 5
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 12, col 25
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 13, col 4
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 13, col 5
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 13, col 25
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 14, col 4
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 14, col 5
+2014-02-21 12:04:48,677 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 14, col 25
+2014-02-21 12:04:48,696 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 55, col 4
+2014-02-21 12:04:48,696 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 55, col 5
+2014-02-21 12:04:48,696 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 55, col 25
+2014-02-21 12:04:48,697 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 55, col 24
+2014-02-21 12:04:48,706 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 79, col 4
+2014-02-21 12:04:48,706 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 79, col 5
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 81, col 3
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 81, col 2
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 81, col 25
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 81, col 24
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 82, col 3
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 82, col 2
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 82, col 25
+2014-02-21 12:04:48,707 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 82, col 24
+2014-02-21 12:04:48,710 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 89, col 4
+2014-02-21 12:04:48,710 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 89, col 5
+2014-02-21 12:04:48,713 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 92, col 3
+2014-02-21 12:04:48,713 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 92, col 2
+2014-02-21 12:04:48,713 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 92, col 25
+2014-02-21 12:04:48,713 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 92, col 24
+2014-02-21 12:04:48,713 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 94, col 4
+2014-02-21 12:04:48,713 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 94, col 5
+2014-02-21 12:04:48,714 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 95, col 4
+2014-02-21 12:04:48,714 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 95, col 5
+2014-02-21 12:04:48,714 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 95, col 25
+2014-02-21 12:04:48,717 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 101, col 4
+2014-02-21 12:04:48,717 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 101, col 5
+2014-02-21 12:04:48,717 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 103, col 4
+2014-02-21 12:04:48,719 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 103, col 5
+2014-02-21 12:04:48,719 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 103, col 25
+2014-02-21 12:04:48,719 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 103, col 24
+2014-02-21 12:04:48,719 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 104, col 4
+2014-02-21 12:04:48,719 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 104, col 5
+2014-02-21 12:04:48,720 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 104, col 25
+2014-02-21 12:04:48,723 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 112, col 4
+2014-02-21 12:04:48,723 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 112, col 5
+2014-02-21 12:04:48,723 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 115, col 4
+2014-02-21 12:04:48,724 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 115, col 5
+2014-02-21 12:04:48,724 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 115, col 25
+2014-02-21 12:04:48,724 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 115, col 24
+2014-02-21 12:04:48,727 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 123, col 4
+2014-02-21 12:04:48,727 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 123, col 5
+2014-02-21 12:04:48,727 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 123, col 25
+2014-02-21 12:04:48,729 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 123, col 24
+2014-02-21 12:04:48,733 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 136, col 4
+2014-02-21 12:04:48,733 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 136, col 5
+2014-02-21 12:04:48,740 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 151, col 4
+2014-02-21 12:04:48,740 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 151, col 5
+2014-02-21 12:04:48,749 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 173, col 4
+2014-02-21 12:04:48,750 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 173, col 5
+2014-02-21 12:04:48,755 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 183, col 4
+2014-02-21 12:04:48,755 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 183, col 5
+2014-02-21 12:04:48,756 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 187, col 3
+2014-02-21 12:04:48,756 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 187, col 2
+2014-02-21 12:04:48,756 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 187, col 25
+2014-02-21 12:04:48,756 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 187, col 24
+2014-02-21 12:04:48,757 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 190, col 4
+2014-02-21 12:04:48,759 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 190, col 5
+2014-02-21 12:04:48,760 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 196, col 4
+2014-02-21 12:04:48,760 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 196, col 5
+2014-02-21 12:04:48,762 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 196, col 25
+2014-02-21 12:04:48,763 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 202, col 4
+2014-02-21 12:04:48,765 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 202, col 5
+2014-02-21 12:04:48,765 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 202, col 25
+2014-02-21 12:04:48,765 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 202, col 24
+2014-02-21 12:04:48,772 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 220, col 3
+2014-02-21 12:04:48,772 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 220, col 2
+2014-02-21 12:04:48,773 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 220, col 25
+2014-02-21 12:04:48,773 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 220, col 24
+2014-02-21 12:04:48,776 - es.weso.countryrec.parser.file_parser - WARNING - Invalid un code value in row 227, col 25
+2014-02-21 12:04:48,780 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 238, col 4
+2014-02-21 12:04:48,780 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 238, col 5
+2014-02-21 12:04:48,785 - es.weso.countryrec.parser.file_parser - WARNING - Blank iso value in row 247, col 3
+2014-02-21 12:04:48,785 - es.weso.countryrec.parser.file_parser - WARNING - Blank name value in row 247, col 2
+2014-02-21 12:04:48,785 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 247, col 25
+2014-02-21 12:04:48,785 - es.weso.countryrec.parser.file_parser - WARNING - Blank un code value in row 247, col 24

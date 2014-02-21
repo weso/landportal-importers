@@ -1,14 +1,11 @@
-'''
+"""
 Created on 10/02/2014
 
 @author: Dani
-'''
+"""
 
 
 class ParsedCountry(object):
-    '''
-    classdocs
-    '''
 
     def __init__(self, row_in_file=None, iso3_official=None, iso3_fao=None,
                  name_official=None, name_fao=None, un_code=None,
@@ -29,7 +26,7 @@ class ParsedCountry(object):
 
     def get_name(self):
         if self.name_official != "" and self.name_official is not None:
-            return self.iso3_official
+            return self.name_official
         else:
             return self.name_fao
 
