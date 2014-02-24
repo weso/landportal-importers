@@ -17,25 +17,17 @@ def configure_log():
 
 def run():
 
-    configure_log()
-#     csv_extractor = FaostatExtractor()
-#     csv_extractor.run()
-#    csv_indicatorcatcher = FaostatIndicatorCatcher()
-#    csv_indicatorcatcher.run()
+    # configure_log()
+    # csv_extractor = FaostatExtractor()
+    # csv_extractor.run()
+    # csv_indicatorcatcher = FaostatIndicatorCatcher()
+    # csv_indicatorcatcher.run()
     csv_translator = FaostatTranslator()
     csv_translator.run(True)  
     
     
     
     print 'Done!'
-    '''
-    extractor = WorldBankExtractor()
-    topic_id = extractor.extract_topic()
-    if topic_id != None :
-        extractor.extract_indicators_by_topic(topic_id)
-        extractor.extract_countries()
-        extractor.extract_observations()
-    '''
     
     
 

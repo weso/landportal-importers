@@ -12,10 +12,12 @@ class Instant(Time):
     '''
 
 
-    def __init__(self, time):
-        self.time = time
-        
+    def __init__(self, instant = None):
         '''
         Constructor
         '''
+        self.instant = instant
         
+    
+    def get_time_string(self):
+        return self.instant.strftime("%Y-%m-%dT%H:%M:%S")

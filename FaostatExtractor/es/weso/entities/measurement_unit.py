@@ -10,9 +10,8 @@ class MeasurementUnit(object):
     '''
 
 
-    def __init__(self, name):
+    def __init__(self, name = None):
         '''
         Constructor
         '''
         self.name = name
-        

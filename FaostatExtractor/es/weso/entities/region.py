@@ -4,13 +4,15 @@ Created on 31/01/2014
 @author: Miguel Otero
 '''
 
-class Region(object):
+from es.weso.entities.dimension import Dimension
+
+class Region(Dimension):
     '''
     classdocs
     '''
 
 
-    def __init__(self, name, is_part_of):
+    def __init__(self, name = None, is_part_of = None):
         '''
         Constructor
         '''
@@ -21,3 +23,6 @@ class Region(object):
     def add_observation(self, observation):
         self.observations.append(observation)
         observation.region = self
+        
+    def get_dimension_string(self):
+        return self.name

@@ -24,9 +24,9 @@ class FaostatExtractor(object):
         '''
         
         pass
-    
+
     '''
-    This method dowload the entire data base of faostat in csv format.
+    This method dowloads the entire data base of faostat in csv format.
     The estructure of the scv is as follows:
     CountryCode(int),Country(string),ItemCode(int),Item(string),ElementGroup(int),
     ElementCode(int),Element(string),Year(int),Unit(string),Value(float),Flag(char)

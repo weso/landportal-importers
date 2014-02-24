@@ -9,8 +9,8 @@ class Observation(object):
     classdocs
     '''
 
-    def __init__(self,observation_id = "obs", ref_time=None, issued=None, computation=None, value=None, 
-                 measure_unit=None, indicator=None, data_slice=None, provider=None):
+    def __init__(self, observation_id=None, ref_time=None, issued=None,
+                 computation=None, value=None, indicator=None, dataset=None):
         '''
         Constructor
         '''
@@ -19,9 +19,7 @@ class Observation(object):
         self.issued = issued
         self.computation = computation
         self.value = value
-        self.measure_unit = measure_unit
         self.indicator = indicator
-        self.data_slice = data_slice
-        self.provider = provider
-  
-        
+        self.dataset = dataset
+        self.group = None
+        self.indicator_group = None

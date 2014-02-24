@@ -10,17 +10,16 @@ class Slice(object):
     '''
 
 
-    def __init__(self, slice_id = None, dataset = None, indicator= None):
+    def __init__(self, slice_id = None, dimension = None, dataset = None, indicator = None):
         '''
         Constructor
         '''
         self.dataset = dataset
         self.indicator = indicator
-        self.slice_id = slice_id 
+        self.slice_id = slice_id
+        self.dimension = dimension
         self.observations = []
         
-    
     def add_observation(self, observation):
         self.observations.append(observation)
         observation.data_slice = self
-    

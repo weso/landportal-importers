@@ -8,15 +8,11 @@ class Computation(object):
     '''
     classdocs
     '''
-    RAW = 0
-    NORMALIZED = 1
-    CALCULED = 2
-    
 
+    RAW = "purl.org/weso/ontology/computex#raw"
 
-    def __init__(self, computation_type):
+    def __init__(self, uri = None):
         '''
         Constructor
         '''
-        self.computation_type = computation_type
-        
+        self.uri = uri
