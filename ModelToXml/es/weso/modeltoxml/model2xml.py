@@ -5,7 +5,10 @@ Created on 03/02/2014
 @author: Dani
 """
 from __future__ import unicode_literals
-from elementtree.ElementTree import Element, ElementTree
+try:
+    from xml.etree.cElementTree import Element, ElementTree
+except:
+    from xml.etree.ElementTree import Element, ElementTree
 from es.weso.entities.interval import Interval
 from es.weso.entities.instant import Instant
 from es.weso.entities.year_interval import YearInterval
@@ -88,9 +91,6 @@ class ModelToXMLTransformer(object):
     classdocs
     '''
 
-    @staticmethod
-    def decir_pene():
-        print 'PENE'
 
     def __init__(self, dataset, import_process, user):
         self.datasource = dataset.source
@@ -102,13 +102,14 @@ class ModelToXMLTransformer(object):
         self.group_dic = {}
         # One per indicator referred by the observations
 
+        self.root = Element(self.ROOT)
+
         '''
         Constructor
         '''
 
     def run(self):
         #The order calling these methods should not be changed
-        self.build_root()  # Done
         self.build_import_process_node()  # Done
         self.build_license_node()  # Done CHANGE NAMES
         self.build_observations_node()  # Done CHANGE NAMES
@@ -265,9 +266,6 @@ class ModelToXMLTransformer(object):
 
     def write_tree_to_xml(self):
         ElementTree(self.root).write("file.xml")
-
-    def build_root(self):
-        self.root = Element(self.ROOT)
 
 
     def build_observation_node(self, data_obs):
