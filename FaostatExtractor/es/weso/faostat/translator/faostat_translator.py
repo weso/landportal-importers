@@ -7,16 +7,16 @@ Created on 27/01/2014
 import logging
 import os
 import re
+import codecs
 from datetime import date
 from ConfigParser import ConfigParser
-from es.weso.entities.organization import Organization
+from datetime import datetime
+
 from es.weso.faostat.translator.indicator_needed_resolver import IndicatorNeededResolver
 from es.weso.faostat.translator.model_object_builder import ModelObjectBuilder
 from es.weso.faostat.translator.translator_const import TranslatorConst
-from weso.modeltoxml.model2xml import ModelToXMLTransformer
-from es.weso.entities.user import User
-
-from datetime import datetime
+from model2xml.model2xml import ModelToXMLTransformer
+from lpentities.user import User
 
 
 class FaostatTranslator(object):
@@ -81,16 +81,20 @@ class FaostatTranslator(object):
 
 
     def turn_raw_data_into_registers(self, look_for_historical):
-        raw_data_file = open(self.get_csv_file_name())
+        raw_data_file = codecs.open(self.get_csv_file_name(), encoding='latin-1')
+        # raw_data_file = open(self.get_csv_file_name())
         lines = raw_data_file.readlines()
         raw_data_file.close()
         result = []
         for i in range(1, len(lines)):
+            #print lines[i].encode(encoding="utf-8")
+            properLine = lines[i].encode(encoding="utf-8")
+            # print properLine
             try:
-                candidate_register = self.create_field_list(lines[i], i + 1)
+                candidate_register = self.create_field_list(properLine, i + 1)
                 if (self.pass_filters(candidate_register, look_for_historical)):
                     self.actualize_land_area_data_if_needed(candidate_register)
-                    result.append(self.create_field_list(lines[i], i + 1))
+                    result.append(self.create_field_list(properLine, i + 1))
             except RuntimeError as e:
                 self.log.error("Error while parsing a row form the csv_file: {0}. Row will be ignored".format(str(e)))
         return result

@@ -1,3 +1,4 @@
+# coding=utf-8
 '''
 Created on 02/02/2014
 
@@ -5,27 +6,23 @@ Created on 02/02/2014
 '''
 
 
-from es.weso.entities.observation import Observation
-from es.weso.entities.country import Country
-from es.weso.entities.indicator import Indicator
-from es.weso.entities.license import License
-from es.weso.entities.measurement_unit import MeasurementUnit
-from es.weso.entities.computation import Computation
-from es.weso.entities.instant import Instant
-from es.weso.entities.data_source import DataSource
-from es.weso.entities.organization import Organization
-from es.weso.entities.dataset import Dataset
-from es.weso.entities.slice import Slice
-from es.weso.entities.value import Value
+from lpentities.observation import Observation
+from lpentities.country import Country
+from lpentities.indicator import Indicator
+from lpentities.license import License
+from lpentities.measurement_unit import MeasurementUnit
+from lpentities.computation import Computation
+from lpentities.instant import Instant
+from lpentities.data_source import DataSource
+from lpentities.organization import Organization
+from lpentities.dataset import Dataset
+from lpentities.value import Value
 from es.weso.faostat.translator.translator_const import TranslatorConst
 
 
 from datetime import datetime
 
-
-
-#from es.weso.faostat.translator.faostat_translator import FaostatTranslator
-from weso.entities.year_interval import YearInterval
+from lpentities.year_interval import YearInterval
 
 
 class ModelObjectBuilder(object):
@@ -78,7 +75,7 @@ class ModelObjectBuilder(object):
     def build_model_objects_from_register(self, register):
         country = self.get_asociated_country(register[TranslatorConst.COUNTRY])  # Done. BUT REVIEW HOW WE GET COUNTRIES
 
-        new_observation = Observation()
+        new_observation = Observation(observation_id="abba")
 
         self.add_indicator_to_observation(new_observation, register)  # DONE
         self.add_value_to_observation(new_observation, register)  # DONE
@@ -88,13 +85,14 @@ class ModelObjectBuilder(object):
 
 
         country.add_observation(new_observation)
+        self.dataset.add_observation(new_observation)
 
     def add_issued_to_observation(self, observation, register):
         #Adding time in which the observation has been treated by us
         observation.issued = Instant(datetime.now())
 
     def add_reftime_to_observation(self, observation, register):
-        observation.ref_time = YearInterval(register[TranslatorConst.YEAR])
+        observation.ref_time = YearInterval(year=register[TranslatorConst.YEAR])
 
     def add_computation_to_observation(self, observation):
         observation.computation = self.default_computation
@@ -117,9 +115,9 @@ class ModelObjectBuilder(object):
 
     def add_indicator_to_observation(self, observation, register):
         #name, description, id
-        indicator = Indicator(register[TranslatorConst.ITEM],
-                              self.get_indicator_description(register[TranslatorConst.ITEM_CODE]),
-                              self.get_indicator_id(register))
+        indicator = Indicator(name=register[TranslatorConst.ITEM],
+                              description=self.get_indicator_description(register[TranslatorConst.ITEM_CODE]),
+                              indicator_id=self.get_indicator_id(register))
         self.add_measurement_unit_to_indicator(indicator, register)
         observation.indicator = indicator
 
@@ -166,7 +164,8 @@ class ModelObjectBuilder(object):
 
     def TEMPORAL_get_country(self, country_name):
         no_whites_name = country_name.replace(" ", "")
-        return Country(country_name, no_whites_name, no_whites_name)
+        return Country(name=country_name, iso3=no_whites_name, iso2=no_whites_name)
+
         
         
         
