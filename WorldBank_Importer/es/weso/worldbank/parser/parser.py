@@ -8,22 +8,22 @@ import ConfigParser
 import socket
 from datetime import datetime
 
-from es.weso.entities.user import User
-from es.weso.entities.organization import Organization
-from es.weso.entities.data_source import DataSource
-from es.weso.entities.dataset import Dataset
-from es.weso.entities.license import License
-from es.weso.entities.country import Country
-from es.weso.entities.observation import Observation
-from es.weso.entities.computation import Computation
-from es.weso.entities.measurement_unit import MeasurementUnit
-from es.weso.entities.indicator import Indicator
-from es.weso.entities.value import Value
-from es.weso.entities.year_interval import YearInterval
+from lpentities.user import User
+from lpentities.organization import Organization
+from lpentities.data_source import DataSource
+from lpentities.dataset import Dataset
+from lpentities.license import License
+from lpentities.country import Country
+from lpentities.observation import Observation
+from lpentities.computation import Computation
+from lpentities.measurement_unit import MeasurementUnit
+from lpentities.indicator import Indicator
+from lpentities.value import Value
+from lpentities.year_interval import YearInterval
 from es.weso.worldbank.rest.rest_client import RestClient
-from es.weso.entities.slice import Slice
-from es.weso.entities.instant import Instant
-from weso.modeltoxml.model2xml import ModelToXMLTransformer
+from lpentities.slice import Slice
+from lpentities.instant import Instant
+from model2xml.model2xml import ModelToXMLTransformer
 
 from requests.exceptions import ConnectionError
 
@@ -101,11 +101,11 @@ class Parser(object):
                             for observation_element in observations:
                                 value_object = Value(observation_element['value'],
                                                      "float",
-                                                     'http://purl.org/linked-data/sdmx/2009/code#obsStatus-A')
+                                                     Value.AVAILABLE)
                                 if value_object.value is None:
                                     value_object = Value(None,
                                                          None,
-                                                         'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M')
+                                                         Value.MISSING)
                                     self.logger.warning('Missing value for ' + indicator.name + ', ' + country.name +
                                                         ', ' + observation_element['date'])
                                 time = YearInterval(observation_element['date'],
@@ -115,7 +115,7 @@ class Parser(object):
                                 observation = Observation(observation_id,
                                                           time,
                                                           Instant(datetime.now()),
-                                                          Computation('http://purl.org/weso/ontology/computex#Raw'),
+                                                          Computation(Computation.RAW),
                                                           value_object,
                                                           indicator,
                                                           data_source)
@@ -123,7 +123,7 @@ class Parser(object):
                                     country.add_observation(observation)
                                     dataset.add_observation(observation)
                                     slice_object.add_observation(observation)
-                                    if observation.value.obs_status is not 'http://purl.org/linked-data/sdmx/2009/code#obsStatus-M':
+                                    if observation.value.obs_status is not Value.MISSING:
                                         print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + observation.value.value + ' ' + indicator.measurement_unit.name
                                     else:
                                         print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
