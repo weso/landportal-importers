@@ -1,10 +1,11 @@
-from es.weso.entities.dataset import Dataset
-from es.weso.entities.user import User
-from es.weso.entities.organization import Organization
-from es.weso.entities.data_source import DataSource
-from es.weso.modeltoxml.model2xml import ModelToXMLTransformer
-
 from datetime import datetime
+
+from lpentities.dataset import Dataset
+from lpentities.user import User
+from lpentities.organization import Organization
+from lpentities.data_source import DataSource
+from model2xml.model2xml import ModelToXMLTransformer
+
 
 __author__ = 'Dani'
 

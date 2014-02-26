@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../FaostatExtractor/.idea/FaostatExtractor.iml" filepath="$PROJECT_DIR$/../FaostatExtractor/.idea/FaostatExtractor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../LandPortalEntities/.idea/LandPortalEntities.iml" filepath="$PROJECT_DIR$/../LandPortalEntities/.idea/LandPortalEntities.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ModelToXml.iml" filepath="$PROJECT_DIR$/.idea/ModelToXml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WorldBank_Importer/.idea/WorldBank_Importer.iml" filepath="$PROJECT_DIR$/../WorldBank_Importer/.idea/WorldBank_Importer.iml" />
     </modules>
   </component>
 </project>

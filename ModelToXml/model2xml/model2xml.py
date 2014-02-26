@@ -5,15 +5,16 @@ Created on 03/02/2014
 @author: Dani
 """
 from __future__ import unicode_literals
+
 try:
     from xml.etree.cElementTree import Element, ElementTree
 except:
     from xml.etree.ElementTree import Element, ElementTree
-from es.weso.entities.interval import Interval
-from es.weso.entities.instant import Instant
-from es.weso.entities.year_interval import YearInterval
-from es.weso.entities.time import Time
-from es.weso.entities.region import Region
+from lpentities.interval import Interval
+from lpentities.instant import Instant
+from lpentities.year_interval import YearInterval
+from lpentities.time import Time
+from lpentities.region import Region
 
 
 class ModelToXMLTransformer(object):
@@ -126,14 +127,9 @@ class ModelToXMLTransformer(object):
             groups.append(group_node)
         self.root.append(groups)
 
-    def build_license_node(self):
-        #Building node
-        #license_node = Element()
-        pass
-
     def build_slices_node(self):
         #Building node
-        slices_node = Element(self.SLICE)
+        slices_node = Element(self.SLICES)
         #Building child nodes
         for data_slice in self.dataset.slices:
             slices_node.append(self.build_slice_node(data_slice))
@@ -170,7 +166,7 @@ class ModelToXMLTransformer(object):
         elif isinstance(data_slice.dimension, Region):
             region_node = Element(self.OBSERVATION_REGION)
             region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                               + data_slice.dimension.iso3 # Mmmm... region ISO3? only country
+                               + data_slice.dimension.iso3  # ... region ISO3? only country
             metadata_node.append(region_node)
 
         else:
@@ -290,8 +286,12 @@ class ModelToXMLTransformer(object):
 
         #country
         country_node = Element(self.OBSERVATION_REGION)
+        # try:
         country_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                            + str(data_obs.region.iso3)
+                            + self._read_external_field(data_obs.region.iso3)
+        #                        + data_obs.region.iso3
+        # except:
+        #     raise
         observation_node.append(country_node)
 
         #time
@@ -315,23 +315,26 @@ class ModelToXMLTransformer(object):
         time_node = Element(self.TIME)
 
         #Managging different time instances
-        if isinstance(ref_time, Instant):
+        if type(ref_time) is Instant:
             time_node.attrib[self.TIME_ATT_UNIT] = "instant"
             time_node.text = ref_time.get_time_string()
-        elif isinstance(ref_time, YearInterval):
+        elif type(ref_time) is YearInterval:
             time_node.attrib[self.TIME_ATT_UNIT] = "years"
             time_node.text = ref_time.get_time_string()
-        elif isinstance(ref_time, Interval):
+        elif type(ref_time) is Interval:
             time_node.attrib[self.TIME_ATT_UNIT] = "years"
             interval_node = Element(self.TIME_INTERVAL)
             beg_node = Element(self.TIME_INTERVAL_BEG)
-            beg_node.text = ref_time.start_time
+            beg_node.text = str(ref_time.start_time)
             end_node = Element(self.TIME_INTERVAL_END)
-            end_node.text = ref_time.end_time
+            end_node.text = str(ref_time.end_time)
             interval_node.append(beg_node)
             interval_node.append(end_node)
             time_node.append(interval_node)
         else:
+            print type(ref_time)
+            print YearInterval
+            print Interval
             raise RuntimeError("Unrecognized time type. Impossible to build node")
         #Returning final node
         return time_node
@@ -411,7 +414,7 @@ class ModelToXMLTransformer(object):
 
         #timestamp
         timestamp_node = Element(self.IMPORT_PROCESS_TIMESTAMP)
-        timestamp_node.text = self.user.timestamp
+        timestamp_node.text = str(self.user.timestamp)
         metadata.append(timestamp_node)
 
         #ip
@@ -422,3 +425,10 @@ class ModelToXMLTransformer(object):
 
         #Addind node to root
         self.root.append(metadata)
+
+    @staticmethod
+    def _read_external_field(original):
+        try:
+            return unicode(original, errors="ignore")
+        except:
+            return original
