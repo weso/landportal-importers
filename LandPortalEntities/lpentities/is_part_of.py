@@ -4,9 +4,9 @@ Created on 02/02/2014
 @author: Miguel Otero
 '''
 
-from es.weso.entities.indicator_relationship import IndicatorRelationship
+from .indicator_relationship import IndicatorRelationship
 
-class Becomes(IndicatorRelationship):
+class IsPartOf(IndicatorRelationship):
     '''
     classdocs
     '''
@@ -16,4 +16,4 @@ class Becomes(IndicatorRelationship):
         '''
         Constructor
         '''
-        super(Becomes, self).__init__(source, target)
+        super(IsPartOf, self).__init__(source, target)

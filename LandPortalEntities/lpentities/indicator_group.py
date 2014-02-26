@@ -1,10 +1,10 @@
+
 """
 Created on 18/02/2014
 
 @author: Miguel Otero
 """
 
-from es.weso.entities.indicator import Indicator
 
 
 class IndicatorGroup(object):

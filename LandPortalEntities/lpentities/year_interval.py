@@ -4,7 +4,7 @@ Created on 02/02/2014
 @author: Miguel Otero
 '''
 
-from es.weso.entities.interval import Interval
+from .interval import Interval
 
 class YearInterval(Interval):
     '''

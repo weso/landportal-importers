@@ -5,6 +5,8 @@ Created on 02/02/2014
 '''
 
 class Computation(object):
+
+    RAW = "purl.org/weso/ontology/computex#raw"
     '''
     classdocs
     '''

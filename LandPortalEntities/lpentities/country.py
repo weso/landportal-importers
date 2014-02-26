@@ -4,7 +4,7 @@ Created on 18/12/2013
 @author: Nacho
 '''
 
-from es.weso.entities.region import Region
+from .region import Region
 
 class Country(Region):
     '''

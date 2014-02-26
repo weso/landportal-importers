@@ -4,7 +4,7 @@ Created on 31/01/2014
 @author: Miguel Otero
 '''
 
-from es.weso.entities.dimension import Dimension
+from .dimension import Dimension
 
 class Region(Dimension):
     '''
