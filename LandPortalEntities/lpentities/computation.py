@@ -7,6 +7,7 @@ Created on 02/02/2014
 class Computation(object):
 
     RAW = "purl.org/weso/ontology/computex#raw"
+    ESTIMATED = "purl.org/weso/ontology/computex#estimated"
     '''
     classdocs
     '''

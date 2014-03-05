@@ -12,11 +12,12 @@ class YearInterval(Interval):
     '''
 
 
-    def __init__(self, start_time = None, end_time = None, year = None):
-        '''
+    def __init__(self, year):
+        """
         Constructor
-        '''
-        super(YearInterval, self).__init__(start_time, end_time)
+
+        """
+        super(YearInterval, self).__init__(year, year)
         self.year = year
     
     def get_time_string(self):
