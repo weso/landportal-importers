@@ -5,6 +5,7 @@ Created on 14/01/2014
 '''
 import logging
 from es.weso.extractor.IpfriExtractor import IpfriExtractor
+from es.weso.translator.ipfri_trasnlator import IpfriTranslator
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -13,8 +14,10 @@ def configure_log():
 
 def run():
     configure_log()
-    xml_extractor = IpfriExtractor()
-    xml_extractor.run()
+    # xml_extractor = IpfriExtractor()
+    # xml_extractor.run()
+    xml_translator = IpfriTranslator("InforXLSX_2013.xlsx")
+    xml_translator.run()
     print 'Done!'
 
 

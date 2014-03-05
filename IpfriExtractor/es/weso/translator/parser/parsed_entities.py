@@ -10,7 +10,7 @@ class ParsedIndicator(object):
 
 
 class ParsedDate(object):
-    def __init__(self, string_date, beg_column=None, end_column=None):
+    def __init__(self, string_date=None, beg_column=None, end_column=None):
         self.string_date = string_date
         self.beg_col = beg_column
         self.end_col = end_column
