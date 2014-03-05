@@ -1,9 +1,9 @@
 __author__ = 'Dani'
 
-from .parser.parser import Parser
-from .model_object_builder import IpfriModelObjectBuilder
 import xlrd
 
+from .parser.parser import Parser
+from .object_builder.model_object_builder import IpfriModelObjectBuilder
 
 class IpfriTranslator(object):
 
