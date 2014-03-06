@@ -7,6 +7,8 @@
     <orderEntry type="module" module-name="FaostatExtractor" />
     <orderEntry type="module" module-name="WorldBank_Importer" />
     <orderEntry type="module" module-name="LandPortalEntities" />
+    <orderEntry type="module" module-name="IpfriExtractor" />
+    <orderEntry type="module" module-name="MisTest" />
   </component>
 </module>
 

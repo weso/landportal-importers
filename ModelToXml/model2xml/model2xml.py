@@ -286,12 +286,9 @@ class ModelToXMLTransformer(object):
 
         #country
         country_node = Element(self.OBSERVATION_REGION)
-        # try:
         country_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
                             + self._read_external_field(data_obs.region.iso3)
-        #                        + data_obs.region.iso3
-        # except:
-        #     raise
+
         observation_node.append(country_node)
 
         #time
@@ -303,6 +300,7 @@ class ModelToXMLTransformer(object):
             self.OBSERVATION_ATT_INDICATOR_PREFIX \
             + str(data_obs.indicator.indicator_id)
         self.include_indicator_if_needed(data_obs.indicator)  # Managing ind. info
+        observation_node.append(indicator_ref_node)
 
         #Attaching optional group info
         self.attach_groups_info_if_needed(observation_node, data_obs)
