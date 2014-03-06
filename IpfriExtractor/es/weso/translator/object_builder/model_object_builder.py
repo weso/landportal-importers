@@ -17,6 +17,7 @@ from lpentities.organization import Organization
 
 
 from .dates_builder import get_model_object_time_from_parsed_string
+from ..dataset_user_pair import DatasetUserPair
 
 from datetime import datetime
 class IpfriModelObjectBuilder(object):
@@ -35,6 +36,8 @@ class IpfriModelObjectBuilder(object):
         self.dataset = None
         self.user = None
 
+        print len(parsed_indicators)
+
 
     def run(self):
         self.prepare_base_hierarchy_objects()
@@ -42,6 +45,8 @@ class IpfriModelObjectBuilder(object):
         self.complete_dates_dict()
         self.complete_countries_dict()
         self.fetch_elements_by_index_and_translate()
+        return DatasetUserPair(self.dataset, self.user)
+
 
     def prepare_base_hierarchy_objects(self):
         #Building dataset
@@ -100,9 +105,11 @@ class IpfriModelObjectBuilder(object):
 
     def complete_indicators_dict(self):
         default_unit = MeasurementUnit("%")
+        i = 0
         for pindicator in self.parsed_indicators:
+            i += 1
             new_indicator = Indicator()
-            new_indicator.indicator_id = "indicator_id"  # Change! TODO
+            new_indicator.indicator_id = "indicator_id" + str(i)  # Change! TODO
             new_indicator.name = pindicator.name
             new_indicator.description = pindicator.name
             new_indicator.measurement_unit = default_unit
@@ -112,7 +119,7 @@ class IpfriModelObjectBuilder(object):
 
 
     def fetch_elements_by_index_and_translate(self):
-        for pdate in self.parsed_dates():
+        for pdate in self.parsed_dates:
             pindicator = self.find_pindicator_by_pdate(pdate)
             for pcountry in self.parsed_countries:
                 self.generate_observation_with_model_objects(pindicator, pdate, pcountry)
@@ -122,7 +129,7 @@ class IpfriModelObjectBuilder(object):
         excell_value = self.look_for_value_in_a_pdate(pdate, pcountry)
         new_obs = Observation()
         new_obs.id = "obsid"  # Change! TODO
-        self.add_value_object_to_observation(pdate, excell_value, new_obs)
+        self.add_value_object_to_observation(excell_value, new_obs)
         self.add_indicator_object_to_observation(pindicator, new_obs)
         self.add_computation_object_to_observation(excell_value, new_obs)
         self.add_issued_object_to_observation(new_obs)
@@ -149,21 +156,22 @@ class IpfriModelObjectBuilder(object):
         #No return. Modifying received new_obs
 
     def add_computation_object_to_observation(self, excell_value, new_obs):
-        if excell_value.estimated:
-            if not self.__dict__.has_key("default_estimated"):
-                self.default_estimated = Computation(uri=Computation.ESTIMATED)
-            new_obs.computation = self.default_estimated
-        else:
+        if excell_value is None or not excell_value.estimated:
             if not self.__dict__.has_key("default_raw"):
                 self.default_raw = Computation(uri=Computation.RAW)
             new_obs.computation = self.default_raw
+        else:
+            if not self.__dict__.has_key("default_estimated"):
+                self.default_estimated = Computation(uri=Computation.ESTIMATED)
+            new_obs.computation = self.default_estimated
+
         # No returning sentence needed
 
 
     def add_indicator_object_to_observation(self, pindicator, new_obs):
         new_obs.indicator = self.indicators_dict[pindicator.name]
 
-    def add_value_object_to_observation(self, pdate, excell_value, new_obs):
+    def add_value_object_to_observation(self,excell_value, new_obs):
         obs_value = Value()
 
         if excell_value is None:
@@ -173,7 +181,7 @@ class IpfriModelObjectBuilder(object):
         else:
             obs_value.value = excell_value.value
             obs_value.obs_status = Value.AVAILABLE
-            obs_value.value = "float"
+            obs_value.value_type = "float"
 
         new_obs.value = obs_value
         # No return sentence needed. Modifying received new_obs object
@@ -185,7 +193,7 @@ class IpfriModelObjectBuilder(object):
 
         """
         for a_value in pcountry.values:
-            if a_value.column >= pdate.beg_col and a_value <= pdate.end_col:
+            if pdate.beg_col <= a_value.column <= pdate.end_col:
                 return a_value
         return None  # We reach this sentence only if the loop ends without executing the if´s body
 

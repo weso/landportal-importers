@@ -19,7 +19,7 @@ def _get_model_object_interval(str_time):
 
 
 def _get_model_object_year_interval(str_time):
-    return YearInterval(year=float(str_time))
+    return YearInterval(year=int(float(str_time)))
 
 
 def _transform_twodigited_date_into_forudigited(two_digited_str):

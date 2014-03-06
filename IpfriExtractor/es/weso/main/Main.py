@@ -4,6 +4,7 @@ Created on 14/01/2014
 @author: Dani
 '''
 import logging
+from ConfigParser import ConfigParser
 from es.weso.extractor.IpfriExtractor import IpfriExtractor
 from es.weso.translator.ipfri_trasnlator import IpfriTranslator
 
@@ -14,9 +15,13 @@ def configure_log():
 
 def run():
     configure_log()
-    # xml_extractor = IpfriExtractor()
-    # xml_extractor.run()
-    xml_translator = IpfriTranslator("InforXLSX_2013.xlsx")
+    log = logging.getLogger('ipfriextractor')
+    config = ConfigParser()
+    config.read("../../../files/configuration.ini")
+
+    xml_extractor = IpfriExtractor(log, config)
+    xml_extractor.run()
+    xml_translator = IpfriTranslator(log, config)
     xml_translator.run()
     print 'Done!'
 
