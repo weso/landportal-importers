@@ -35,9 +35,17 @@ class FileParser(object):
     ISO2_COL = 27
     UN_OFFICIAL_CODE_COL = 29
     FAOSTAT_CODE_COL = 47
+
     SNAME_EN_FAO_COL = 6
     SNAME_ES_FAO_COL = 8
     SNAME_FR_FAO_COL = 10
+
+    LNAME_EN_FAO_COL = 5
+    LNAME_ES_FAO_COL = 7
+    LNAME_FR_FAO_COL = 9
+
+    ALT_EN_NAME_1_COL = 2
+    ALT_EN_NAME_2_COL = 11
 
 
 
@@ -53,7 +61,7 @@ class FileParser(object):
         return self.country_list
 
     def parse_file(self, path):
-        book = xlrd.open_workbook(path).sheet_by_index(0)
+        book = xlrd.open_workbook(path, encoding_override='latin-1').sheet_by_index(0)
         self.parse_row_range(book, self.FIRST_ROW, self.LAST_ROW)
 
     def parse_row_range(self, book, first, last):
@@ -61,11 +69,21 @@ class FileParser(object):
             iso3_official = self.parse_iso(book, row, self.ISO3_OFFICIAL_COL)
             iso3_fao = self.parse_iso(book, row, self.ISO3_FAO_COL)
             iso2 = self.parse_iso(book, row, self.ISO2_COL)
+
             sname_en = self.parse_name(book, row, self.SNAME_EN_FAO_COL)
             sname_es = self.parse_name(book, row, self.SNAME_ES_FAO_COL)
             sname_fr = self.parse_name(book, row, self.SNAME_FR_FAO_COL)
+
             un_code = self.parse_numeric_code(book, row, self.UN_OFFICIAL_CODE_COL)
             faostat_code = self.parse_numeric_code(book, row, self.FAOSTAT_CODE_COL)
+
+            lname_en = self.parse_name(book, row, self.LNAME_EN_FAO_COL)
+            lname_es = self.parse_name(book, row, self.LNAME_ES_FAO_COL)
+            lname_fr = self.parse_name(book, row, self.LNAME_FR_FAO_COL)
+
+            alt_en_name1 = self.parse_name(book, row, self.ALT_EN_NAME_1_COL)
+            alt_en_name2 = self.parse_name(book, row, self.ALT_EN_NAME_2_COL)
+
             country = ParsedCountry(iso3_official,
                                     iso3_fao,
                                     iso2,
@@ -101,7 +119,7 @@ class FileParser(object):
         value = unicode(book.row(row)[col].value)
         if self.is_white_value(value):
             return None
-        return value
+        return value.encode(encoding="utf-8")
 
     def parse_numeric_code(self, book, row, col):
         value = book.row(row)[col].value
