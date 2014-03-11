@@ -10,6 +10,7 @@ import xlrd
 
 from reconciler.entities.parsed_country import ParsedCountry
 from reconciler.exceptions.parsing_error import ParsingError
+from reconciler.exceptions.unknown_country_error import UnknownCountryError
 
 
 class FileParser(object):
@@ -56,11 +57,37 @@ class FileParser(object):
         self.country_list = []
 
     def run(self):
-        source_file = self.config.get('SOURCE', 'path_file')
-        self.parse_file(source_file)
+        countries_source_file = self.config.get('SOURCE', 'path_file_countries')
+        self.parse_countries(countries_source_file)
+        alias_file = self.config.get('SOURCE', 'path_file_alias')
+        self.parse_alias(alias_file)
         return self.country_list
 
-    def parse_file(self, path):
+    def parse_alias(self, alias_file):
+        alias_file_content = open(alias_file)
+        lines = alias_file_content.readlines()
+        for a_line in lines:
+            self._process_alias_line(a_line)
+        alias_file_content.close()
+        pass
+
+    def _process_alias_line(self, a_line):
+        line_parts = a_line.split("=")
+        if not len(line_parts) == 2:
+            return #We have found a white line. Just ignore it
+        target_country = self.get_country_by_iso3(line_parts[0])
+        target_country.add_alias(line_parts[1])
+
+        pass
+
+    def get_country_by_iso3(self, iso3):
+        for a_country in self.country_list:
+            if a_country.get_iso3() == iso3:
+                return a_country
+        #We reach the next sentence if we could not find a coincidence with the iso3
+        raise UnknownCountryError("Trying to add a alias to a non recognized country: {0}".format(iso3))
+        # print "Trying to add a alias to a non recognized country: {0}".format(iso3)
+    def parse_countries(self, path):
         book = xlrd.open_workbook(path, encoding_override='latin-1').sheet_by_index(0)
         self.parse_row_range(book, self.FIRST_ROW, self.LAST_ROW)
 
@@ -91,7 +118,13 @@ class FileParser(object):
                                     sname_es,
                                     sname_fr,
                                     un_code,
-                                    faostat_code)
+                                    faostat_code,
+                                    lname_en,
+                                    lname_es,
+                                    lname_fr,
+                                    alt_en_name1,
+                                    alt_en_name2
+                                    )
             if country.get_iso3() is not None:
                 self.country_list.append(country)
 

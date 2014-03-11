@@ -1,0 +1,7 @@
+COD=Congo, Dem. Rep.
+COG=Congo, Rep.
+EGY=Egypt, Arab Rep.
+IRN=Iran, Islamic Rep.
+MKD=Macedonia, FYR
+VEN=Venezuela, RB
+YEM=Yemen, Rep.

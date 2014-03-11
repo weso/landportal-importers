@@ -36,7 +36,9 @@ class ParsedCountry(object):
         self.alt_en_name1 = alt_en_name1
         self.alt_en_name2 = alt_en_name2
 
+        self.alias = []
         self.model_object = Country(iso3=self.get_iso3(), name=self.sname_en, iso2=self.iso2)
+
         #TODO: modify the model object build process, to prevent empty fields
 
     def get_iso3(self):
@@ -46,3 +48,6 @@ class ParsedCountry(object):
             return self.iso3_official
         else:
             return self.iso3_fao  # If this is None, we are doomed
+
+    def add_alias(self, alias):
+        self.alias.append(alias)

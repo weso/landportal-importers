@@ -35,7 +35,7 @@ class CountryNormalizer(object):
 
 
     @staticmethod
-    def equals_ignore_case(str1, str2):
+    def _equals_ignore_case(str1, str2):
         if str1.lower() == str2.lower():
             return True
         return False
@@ -55,27 +55,51 @@ class CountryNormalizer(object):
                                                                         CountryNormalizer.FR_REMOVABLE_EXPRESSIONS)
 
     @staticmethod
-    def _normalize_country_by_given_language_removable_expressions(original_string, given_exp):
-        print "---------# NORMALIZER"
+    def _normalize_country_by_given_language_removable_expressions(original_string, given_exp_removables):
+
+        # print "---------# NORMALIZER"
         result = str(original_string)
-        print result
+        # print result
         result = CountryNormalizer._substitute_conflictive_chars(result)
-        print result
+        # print result
         result = CountryNormalizer._delete_text_between_brackets(result)
-        print result
+        # print result
         result = result.lower()
-        print result
-        result = CountryNormalizer._rem_words_by_language(result, given_exp)
-        print result
+        # print result
+        result = CountryNormalizer._substitute_commom_abreviations(result)
+        # print result
+        result = CountryNormalizer._rem_words_by_language(result, given_exp_removables)
+        # print result
         result = CountryNormalizer._rem_white_spaces(result)
-        print result
-        print "---------# NORMALIZER"
+        # print result
+        # print "---------# NORMALIZER"
 
         return result
 
+
+    @staticmethod
+    def _substitute_commom_abreviations(original_string):
+        result = original_string
+        #Republic
+        result = re.sub("(republic|republica|republique)", "rep", result)
+        #Democratic
+        result = re.sub('(democratic|democratica|democratique)', "dem", result)
+        #Monarchy
+        result = re.sub('(monarchy|monarquia|monarchie)', "mon", result)
+        #Federation
+        result = re.sub('(federation|federacion)', "fed", result)
+
+        return result
+
+
+
     @staticmethod
     def _rem_white_spaces(original_string):
-        return original_string.replace(" ", "")
+        result = original_string.replace(" ", "")
+        result = result.replace("\n", "")
+        result = result.replace("\t", "")
+        result = result.replace("\r", "")
+        return result
 
 
     @staticmethod
