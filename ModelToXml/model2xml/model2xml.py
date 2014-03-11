@@ -157,12 +157,13 @@ class ModelToXMLTransformer(object):
         #Adding info
         #indicator-ref
         indicator_ref_node = Element(self.INDICATOR_REF)
-        indicator_ref_node.attrib[self.INDICATOR_ATT_ID] = data_slice.indicator
+        indicator_ref_node.attrib[self.INDICATOR_ATT_ID] = data_slice.indicator.indicator_id
         metadata_node.append(indicator_ref_node)
 
         #time/region
         if isinstance(data_slice.dimension, Time):
             metadata_node.append(self.build_time_node(data_slice.dimension))
+            print "Comprueba que mis huevo van en BICI"
         elif isinstance(data_slice.dimension, Region):
             region_node = Element(self.OBSERVATION_REGION)
             region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
@@ -261,7 +262,9 @@ class ModelToXMLTransformer(object):
 
 
     def write_tree_to_xml(self):
-        ElementTree(self.root).write("file.xml")
+
+            ElementTree(self.root).write("file.xml")
+
 
 
     def build_observation_node(self, data_obs):
@@ -370,7 +373,6 @@ class ModelToXMLTransformer(object):
         if data_indicator.indicator_id in self.indicator_dic:
             return
         self.indicator_dic[data_indicator.indicator_id] = data_indicator
-        pass
 
     def attach_value_to_observation(self, obs_node, data_obs):
         #Adding obligatory node obs-status

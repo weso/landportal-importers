@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="LandPortalEntities" />
     <orderEntry type="module" module-name="IpfriExtractor" />
     <orderEntry type="module" module-name="MisTest" />
+    <orderEntry type="module" module-name="CountryReconciler" />
   </component>
 </module>
 

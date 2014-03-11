@@ -12,10 +12,11 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ModelToXml$Main.coverage" NAME="Main Coverage Results" MODIFIED="1394102500557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../IpfriExtractor/es/weso/main" />
+    <SUITE FILE_PATH="coverage/ModelToXml$Main.coverage" NAME="Main Coverage Results" MODIFIED="1394528066053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../IpfriExtractor/es/weso/main" />
     <SUITE FILE_PATH="coverage/ModelToXml$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1393418100317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../WorldBank_Importer/es/weso/worldbank/main" />
     <SUITE FILE_PATH="coverage/ModelToXml$main.coverage" NAME="main Coverage Results" MODIFIED="1393417319638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../FaostatExtractor/es/weso/faostat/main" />
-    <SUITE FILE_PATH="coverage/ModelToXml$MainMisTest.coverage" NAME="MainMisTest Coverage Results" MODIFIED="1393955150754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MisTest/es/dani/test" />
+    <SUITE FILE_PATH="coverage/ModelToXml$Unittests_in_main_test.coverage" NAME="Unittests in main_test Coverage Results" MODIFIED="1394457188332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../CountryReconciler/reconciler/testing" />
+    <SUITE FILE_PATH="coverage/ModelToXml$MainMisTest.coverage" NAME="MainMisTest Coverage Results" MODIFIED="1394197379166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MisTest/es/dani/test" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -23,57 +24,17 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="IpfriExtractor.py" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/extractor/IpfriExtractor.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="63" column="34" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.4848485" vertical-offset="863" max-vertical-offset="1394">
-                    <folding>
-                      <element signature="e#46#60#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="configuration.ini" pinned="false" current="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/../IpfriExtractor/files/configuration.ini">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="1" column="12" selection-start="20" selection-end="80" vertical-scroll-proportion="0.021601016" vertical-offset="0" max-vertical-offset="787">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="ModelToXml" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="model_object_builder.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/model_object_builder.py">
+      <file leaf-file-name="country_reconciler.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/country_reconciler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="39" selection-start="3748" selection-end="3748" vertical-scroll-proportion="0.0" vertical-offset="1706" max-vertical-offset="3604">
-              <folding>
-                <element signature="e#37#83#0" expanded="true" />
-              </folding>
+            <state line="137" column="17" selection-start="6244" selection-end="6244" vertical-scroll-proportion="0.0" vertical-offset="1996" max-vertical-offset="2482">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,27 +42,7 @@
       <file leaf-file-name="model2xml.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model2xml/model2xml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="302" column="50" selection-start="9997" selection-end="9997" vertical-scroll-proportion="0.8306998" vertical-offset="4766" max-vertical-offset="7429">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dates_builder.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/dates_builder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="21" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="799">
-              <folding>
-                <element signature="e#21#70#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataset_user_pair.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/dataset_user_pair.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="24" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+            <state line="431" column="53" selection-start="14867" selection-end="14867" vertical-scroll-proportion="0.6201117" vertical-offset="7105" max-vertical-offset="7463">
               <folding />
             </state>
           </provider>
@@ -110,21 +51,86 @@
       <file leaf-file-name="ipfri_trasnlator.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/ipfri_trasnlator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="46" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1309">
+            <state line="39" column="57" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1190">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="country_normalizer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/country_normalizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="100" column="40" selection-start="3629" selection-end="3629" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2737">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="known_alias.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/files/known_alias.txt">
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="15" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file_parser.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/file_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="34" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="2924">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="configuration.ini" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/conf/configuration.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="170">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_test.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/testing/main_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="19" selection-start="4136" selection-end="4136" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1428">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model_object_builder.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/model_object_builder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="146" column="30" selection-start="5298" selection-end="5298" vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="2278">
               <folding>
-                <element signature="e#21#32#0" expanded="true" />
+                <element signature="e#37#83#0" expanded="true" />
+                <element signature="e#1726#2965#0" expanded="false" />
+                <element signature="e#3370#3548#0" expanded="false" />
+                <element signature="e#3599#4160#0" expanded="false" />
+                <element signature="e#6072#6172#0" expanded="false" />
+                <element signature="e#6239#6358#0" expanded="false" />
+                <element signature="e#6444#6928#0" expanded="false" />
+                <element signature="e#7146#7589#0" expanded="false" />
+                <element signature="e#7657#7979#0" expanded="false" />
+                <element signature="e#7657#7743#1" expanded="false" />
+                <element signature="e#8036#8300#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/main/Main.py">
+      <file leaf-file-name="ElementTree.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/xml/etree/ElementTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="9" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="595">
-              <folding>
-                <element signature="e#45#59#0" expanded="true" />
-              </folding>
+            <state line="828" column="63" selection-start="28359" selection-end="28359" vertical-scroll-proportion="0.0" vertical-offset="13840" max-vertical-offset="28424">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,11 +164,7 @@
         <option value="$PROJECT_DIR$/../WorldBank_Importer/es/weso/worldbank/configuration/api_access.ini" />
         <option value="$PROJECT_DIR$/../MisTest/es/dani/test/Main.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/parsed_entities.py" />
-        <option value="$PROJECT_DIR$/../MisTest/es/dani/test/MainMisTest.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/util/excell_utils.py" />
-        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/dates_parser.py" />
-        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/indicators_parser.py" />
-        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/countries_parser.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/parser.py" />
         <option value="$PROJECT_DIR$/../LandPortalEntities/lpentities/computation.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/model_object_builder.py" />
@@ -172,10 +174,21 @@
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/dataset_user_pair.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/main/Main.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/extractor/IpfriExtractor.py" />
-        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/ipfri_trasnlator.py" />
         <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/dates_builder.py" />
-        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/model_object_builder.py" />
+        <option value="$PROJECT_DIR$/../MisTest/es/dani/test/MainMisTest.py" />
+        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/ipfri_trasnlator.py" />
+        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/indicators_parser.py" />
+        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/dates_parser.py" />
+        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/countries_parser.py" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/conf/configuration.ini" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/entities/parsed_country.py" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/files/known_alias.txt" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/file_parser.py" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/country_normalizer.py" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/testing/main_test.py" />
+        <option value="$PROJECT_DIR$/../CountryReconciler/reconciler/country_reconciler.py" />
         <option value="$PROJECT_DIR$/model2xml/model2xml.py" />
+        <option value="$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/model_object_builder.py" />
       </list>
     </option>
   </component>
@@ -211,6 +224,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -219,73 +233,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ModelToXml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IpfriExtractor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ModelToXml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IpfriExtractor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ModelToXml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IpfriExtractor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weso" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ModelToXml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IpfriExtractor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weso" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,9 +244,10 @@
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MisTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CountryReconciler" />
     <property name="recentsLimit" value="5" />
     <property name="LayoutCode.rearrangeEntriesPython" value="false" />
+    <property name="last.edited.regexp" value="republique" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -390,6 +340,31 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../IpfriExtractor/es/weso/main/Main.py" />
       <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in main_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../CountryReconciler/reconciler/testing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WorldBank_Importer" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../CountryReconciler/reconciler/testing/main_test.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
@@ -544,18 +519,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main" />
       <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
       <item index="2" class="java.lang.String" itemvalue="Python.MainMisTest" />
       <item index="3" class="java.lang.String" itemvalue="Python.Main" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in main_test" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MainMisTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in main_test" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MainMisTest" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -594,16 +571,16 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24924472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26435044" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.398374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23987034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34359807" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32554257" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32357723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -628,66 +605,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/becomes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/compound_indicator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="448" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/country.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/data_source.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/dataset.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/dimension.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="427" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/indicator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/indicator_group.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="427" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/indicator_relationship.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="427" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/interval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="5" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/is_part_of.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/license.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="427" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/observation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
@@ -701,11 +618,6 @@
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/region.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="12" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/slice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/time.py">
@@ -743,11 +655,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../FaostatExtractor/es/weso/faostat/translator/faostat_translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0" vertical-offset="215" max-vertical-offset="4709" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/value.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442" />
@@ -783,24 +690,9 @@
         <state line="26" column="0" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0" vertical-offset="377" max-vertical-offset="578" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../MisTest/es/dani/test/MainMisTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="38" selection-start="4020" selection-end="4020" vertical-scroll-proportion="0.0" vertical-offset="2304" max-vertical-offset="3247" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/util/excell_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="20" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="453" max-vertical-offset="799" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/countries_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="562" selection-end="562" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1802" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/indicators_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="30" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1275" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../FaostatExtractor/es/weso/faostat/translator/model_object_builder.py">
@@ -813,13 +705,6 @@
         <state line="14" column="8" selection-start="139" selection-end="139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="45" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="41" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/computation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="22" selection-start="323" selection-end="323" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408" />
@@ -827,14 +712,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/year_interval.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/dates_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1703" selection-end="1703" vertical-scroll-proportion="0.0" vertical-offset="586" max-vertical-offset="1207" />
+        <state line="19" column="22" selection-start="245" selection-end="245" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/measurement_unit.py">
@@ -844,73 +722,181 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/parsed_entities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="28" selection-start="428" selection-end="457" vertical-scroll-proportion="0.31064573" vertical-offset="22" max-vertical-offset="595">
-          <folding />
-        </state>
+        <state line="18" column="28" selection-start="428" selection-end="457" vertical-scroll-proportion="0.31064573" vertical-offset="22" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/dataset_user_pair.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="24" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+        <state line="8" column="24" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/dates_builder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="21" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="799" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/files/configuration.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="12" selection-start="20" selection-end="80" vertical-scroll-proportion="0.021601016" vertical-offset="0" max-vertical-offset="787" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/ConfigParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="608" column="20" selection-start="22145" selection-end="22145" vertical-scroll-proportion="0.0" vertical-offset="10162" max-vertical-offset="12903" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/entities/normalized_country.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="176" selection-end="176" vertical-scroll-proportion="0.4934037" vertical-offset="0" max-vertical-offset="379" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/extractor/IpfriExtractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="34" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.25058004" vertical-offset="912" max-vertical-offset="1343" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/virtualenvs/lpImporters/Lib/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="0" selection-start="7252" selection-end="7252" vertical-scroll-proportion="0.0" vertical-offset="2390" max-vertical-offset="5576" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/exceptions/unknown_country_error.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="8" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FaostatExtractor/es/weso/faostat/translator/faostat_translator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="28" selection-start="3390" selection-end="3390" vertical-scroll-proportion="0.0" vertical-offset="1303" max-vertical-offset="4709" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MisTest/es/dani/test/MainMisTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="266" column="4" selection-start="7279" selection-end="7376" vertical-scroll-proportion="0.0" vertical-offset="2001" max-vertical-offset="2380" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../LandPortalEntities/lpentities/slice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="34" selection-start="377" selection-end="377" vertical-scroll-proportion="0.5465313" vertical-offset="0" max-vertical-offset="591">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/main/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="9" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0" vertical-offset="152" max-vertical-offset="595">
-          <folding>
-            <element signature="e#45#59#0" expanded="true" />
-          </folding>
+        <state line="28" column="26" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="51" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/indicators_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="54" selection-start="1979" selection-end="1985" vertical-scroll-proportion="-1.9636364" vertical-offset="657" max-vertical-offset="1275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/dates_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="2597" selection-end="2597" vertical-scroll-proportion="-4.0363636" vertical-offset="866" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/parser/countries_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="55" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.0" vertical-offset="622" max-vertical-offset="1785" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/conf/configuration.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/file_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="34" selection-start="2198" selection-end="2198" vertical-scroll-proportion="0.0" vertical-offset="1190" max-vertical-offset="2924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/files/known_alias.txt">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="15" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/country_normalizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="40" selection-start="3629" selection-end="3629" vertical-scroll-proportion="0.0" vertical-offset="1700" max-vertical-offset="2737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/testing/main_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="19" selection-start="4136" selection-end="4136" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/country_reconciler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="17" selection-start="6244" selection-end="6244" vertical-scroll-proportion="0.0" vertical-offset="1996" max-vertical-offset="2482">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/xml/etree/ElementTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="828" column="63" selection-start="28359" selection-end="28359" vertical-scroll-proportion="0.0" vertical-offset="13840" max-vertical-offset="28424">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/ipfri_trasnlator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="46" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.0" vertical-offset="397" max-vertical-offset="1309">
-          <folding>
-            <element signature="e#21#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/extractor/IpfriExtractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="34" selection-start="1488" selection-end="1488" vertical-scroll-proportion="0.4848485" vertical-offset="863" max-vertical-offset="1394">
-          <folding>
-            <element signature="e#46#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/dates_builder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="21" selection-start="1010" selection-end="1010" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="799">
-          <folding>
-            <element signature="e#21#70#0" expanded="true" />
-          </folding>
+        <state line="39" column="57" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.0" vertical-offset="832" max-vertical-offset="1190">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../IpfriExtractor/es/weso/translator/object_builder/model_object_builder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="39" selection-start="3748" selection-end="3748" vertical-scroll-proportion="0.0" vertical-offset="1706" max-vertical-offset="3604">
+        <state line="146" column="30" selection-start="5298" selection-end="5298" vertical-scroll-proportion="0.0" vertical-offset="1479" max-vertical-offset="2278">
           <folding>
             <element signature="e#37#83#0" expanded="true" />
+            <element signature="e#1726#2965#0" expanded="false" />
+            <element signature="e#3370#3548#0" expanded="false" />
+            <element signature="e#3599#4160#0" expanded="false" />
+            <element signature="e#6072#6172#0" expanded="false" />
+            <element signature="e#6239#6358#0" expanded="false" />
+            <element signature="e#6444#6928#0" expanded="false" />
+            <element signature="e#7146#7589#0" expanded="false" />
+            <element signature="e#7657#7979#0" expanded="false" />
+            <element signature="e#7657#7743#1" expanded="false" />
+            <element signature="e#8036#8300#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../IpfriExtractor/files/configuration.ini">
+    <entry file="file://$PROJECT_DIR$/../CountryReconciler/reconciler/entities/parsed_country.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="12" selection-start="20" selection-end="80" vertical-scroll-proportion="0.021601016" vertical-offset="0" max-vertical-offset="787">
+        <state line="34" column="32" selection-start="1299" selection-end="1299" vertical-scroll-proportion="0.05336427" vertical-offset="555" max-vertical-offset="986">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model2xml/model2xml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="302" column="50" selection-start="9997" selection-end="9997" vertical-scroll-proportion="0.8306998" vertical-offset="4766" max-vertical-offset="7429">
+        <state line="431" column="53" selection-start="14867" selection-end="14867" vertical-scroll-proportion="0.6201117" vertical-offset="7105" max-vertical-offset="7463">
           <folding />
         </state>
       </provider>
