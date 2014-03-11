@@ -36,7 +36,7 @@ class CountriesParser(object):
     def _parse_country_name(self, country_row):
         if is_empty_cell(country_row[0]):
             raise RuntimeError("Unable to detect name country in row {0}.".format(country_row))
-        return country_row[0].value
+        return country_row[0].value.encode('utf-8')
 
     def _parse_country_values(self, country_row):
         values = []
@@ -45,6 +45,7 @@ class CountriesParser(object):
 
         while cell_cursor < self.sheet.ncols:
             cell_value = country_row[cell_cursor].value
+
             if is_an_asterisc(cell_value):
                 current_value.estimated = False  # It must be here a ParsedValue
             elif is_empty_value(cell_value):

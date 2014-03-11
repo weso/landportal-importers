@@ -64,7 +64,7 @@ class IpfriTranslator(object):
 
 
     def take_data_sheet_from_file_path(self, a_path):
-        book = xlrd.open_workbook(a_path)
+        book = xlrd.open_workbook(a_path, encoding_override='latin-1')
         #We are assuming that the sheet with the data is placed the last in the book
         return book.sheet_by_index(book.nsheets - 1)
 

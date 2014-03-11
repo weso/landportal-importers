@@ -44,7 +44,7 @@ class IndicatorsParser(object):
 
     def _build_parsed_indicator(self, index_beg, index_end):
         new_indicator = ParsedIndicator()
-        new_indicator.name = self.row[index_beg].value
+        new_indicator.name = self.row[index_beg].value.encode("utf-8")
         new_indicator.beg_col = index_beg
         new_indicator.end_col = index_end
         return new_indicator
