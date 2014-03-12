@@ -75,7 +75,7 @@ class Parser(object):
                                      'World Bank License',
                                      True,
                                      'www.worldbank.org/terms-of-use-datasets')
-            dataset = Dataset(dataset_id, data_source_name, frequency, license_object, data_source)
+            dataset = Dataset(dataset_id, frequency, license_object, data_source)
             data_source.add_dataset(dataset)
             print data_source_name
             for indicator_element in requested_indicators:
@@ -108,9 +108,7 @@ class Parser(object):
                                                          Value.MISSING)
                                     self.logger.warning('Missing value for ' + indicator.name + ', ' + country.name +
                                                         ', ' + observation_element['date'])
-                                time = YearInterval(observation_element['date'],
-                                                    observation_element['date'],
-                                                    observation_element['date'])
+                                time = YearInterval(observation_element['date'])
                                 observation_id = "obs_" + indicator.name + '_' + country.iso3 + '_' + time.get_time_string()
                                 observation = Observation(observation_id,
                                                           time,
