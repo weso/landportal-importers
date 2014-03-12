@@ -49,5 +49,17 @@ class ParsedCountry(object):
         else:
             return self.iso3_fao  # If this is None, we are doomed
 
+    def _get_valid_en_name(self):
+        if self.sname_en is not None:
+            return self.sname_en
+        elif self.lname_en is not None:
+            return self.lname_en
+        elif self.alt_en_name1 is not None:
+            return self.alt_en_name1
+        elif self.alt_en_name2 is not None:
+            return self.alt_en_name2
+        else:
+            return None  # But return something...
+
     def add_alias(self, alias):
         self.alias.append(alias)
