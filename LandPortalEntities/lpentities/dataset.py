@@ -10,13 +10,12 @@ class Dataset(object):
     classdocs
     '''
 
-    def __init__(self, dataset_id=None, name=None, frequency=None,
+    def __init__(self, dataset_id=None, frequency=None,
                  license_type=None, source=None):
         '''
         Constructor
         '''
         self.dataset_id = dataset_id
-        self.name = name
         self.frequency = frequency
         self.license_type = license_type
         self.source = source
