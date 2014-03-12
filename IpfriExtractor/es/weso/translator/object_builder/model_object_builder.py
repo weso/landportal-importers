@@ -57,7 +57,6 @@ class IpfriModelObjectBuilder(object):
     def prepare_base_hierarchy_objects(self):
         #Building dataset
         self.dataset = Dataset(dataset_id=self.dataset_name)  # Change TODO
-        self.dataset.name = self.dataset_name
         self.dataset.frequency = "yearly"
 
         #Building license
