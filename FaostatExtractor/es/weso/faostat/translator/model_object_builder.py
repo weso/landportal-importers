@@ -46,7 +46,7 @@ class ModelObjectBuilder(object):
 
     def build_dataset(self):
         #Creating dataset object
-        dataset = Dataset(dataset_id="resources_land_e", name="Faostat land usage data", frequency="")
+        dataset = Dataset(dataset_id="resources_land_e", frequency="")
 
         #creating related objects
         #Organization
