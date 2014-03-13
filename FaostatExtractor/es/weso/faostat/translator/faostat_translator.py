@@ -20,11 +20,16 @@ from lpentities.user import User
 
 
 class FaostatTranslator(object):
-    '''
+    """
     classdocs
-    '''
+
+    """
 
     def __init__(self):
+        """
+        Constructor
+
+        """
         self.config = ConfigParser()
         self.config.read("../../../../files/configuration.ini")
         self.log = logging.getLogger('faostatlog')
@@ -34,28 +39,26 @@ class FaostatTranslator(object):
         # The key of the dictionary will be formed by
         # country_name + year, and will contain the land_area
         # data associated to this value par
-        '''
-        Constructor
-        '''
+
 
     def run(self, look_for_historical):
-        '''
+        """
         Steps:
         
         Turn into list with fields
         Build model objects
         
-        '''
+        """
 
         registers = self.turn_raw_data_into_registers(look_for_historical)
         dataset_model = self.build_model_objects_from_registers(registers)
-        registers = None  #Liberating memory
+        registers = None  # Liberating memory
         self.generate_xml_from_dataset_model(dataset_model)
 
         #calculated_registers = RelativeRegistersCalculator(registers, self.land_area_reference)
         #calculated_registers = RelativeRegistersCalculator(registers, self.land_area_reference).run()
         #model_objects = turn_registers_into_model_objects(registers)
-        #model_objects.append
+        #model_objects.append TODO: CALCULATED!
 
     def generate_xml_from_dataset_model(self, dataset_model):
         xml_gen = ModelToXMLTransformer(dataset_model, "CSV",self.build_user_object(dataset_model.source.organization))
