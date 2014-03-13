@@ -37,6 +37,15 @@ class Parser(object):
         self.logger = logging.getLogger("es.weso.worldbank.parser.parser")
         self.config = ConfigParser.ConfigParser()
         self.config.read('../configuration/api_access.ini')
+
+        self._org_id = self.config.get("TRANSLATOR", "org_id")
+        self._obs_int = int(self.config.get("TRANSLATOR", "obs_int"))
+        self._sli_int = int(self.config.get("TRANSLATOR", "sli_int"))
+        self._dat_int = int(self.config.get("TRANSLATOR", "dat_int"))
+        self._igr_int = int(self.config.get("TRANSLATOR", "igr_int"))
+        self._ind_int = int(self.config.get("TRANSLATOR", "ind_int"))
+        self._sou_int = int(self.config.get("TRANSLATOR", "sou_int"))
+
         self.countries_url = self.config.get('URLs', 'country_list')
         self.observations_url = self.config.get('URLs', 'indicator_pattern')
         self.data_sources = dict(self.config.items('data_sources'))
@@ -59,41 +68,59 @@ class Parser(object):
                                           country['id']))
 
     def extract_observations(self, historic, requested_year):
-        organization = Organization("World Bank", 'http://www.worldbank.org/', None)
+        organization = Organization(chain_for_id=self._org_id,
+                                    name="World Bank",
+                                    url='http://www.worldbank.org/',
+                                    is_part_of=None)
         ip = socket.gethostbyname(socket.gethostname())
         timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
         self.user = User("worldbank_importer", ip, timestamp, organization)
         for data_source_name in self.data_sources:
             indicators_section = self.config.get('data_sources', data_source_name)
             requested_indicators = dict(self.config.items(indicators_section))
-            data_source_id = 'wb_source_' + indicators_section
-            data_source = DataSource(data_source_id, data_source_name, organization)
+            data_source = DataSource(chain_for_id=self._org_id,
+                                     int_for_id=self._sou_int,
+                                     name=data_source_name,
+                                     organization=organization)
+            self._sou_int += 1  # Updating datasource int id value
             organization.add_data_source(data_source)
             frequency = 'http://purl.org/linked-data/sdmx/2009/code#freq-A'
-            dataset_id = 'wb_dataset_' + indicators_section
             license_object = License('World Bank License',
                                      'World Bank License',
                                      True,
                                      'www.worldbank.org/terms-of-use-datasets')
-            dataset = Dataset(dataset_id, frequency, license_object, data_source)
+            dataset = Dataset(chain_for_id=self._org_id,
+                              int_for_id=self._dat_int,
+                              frequency=frequency,
+                              license_type=license_object,
+                              source=data_source)
+            self._dat_int += 1  # Updating dataset int id value
             data_source.add_dataset(dataset)
             print data_source_name
             for indicator_element in requested_indicators:
                 start = indicator_element.index('(') + 1
                 end = indicator_element.index(')')
                 measurement_unit = MeasurementUnit(indicator_element[start:end])
-                indicator = Indicator(self.config.get(indicators_section, indicator_element),
-                                      indicator_element,
-                                      indicator_element,
-                                      license_object,
-                                      measurement_unit)
+                indicator = Indicator(chain_for_id=self._org_id,
+                                      int_for_id=self._ind_int,
+                                      name=indicator_element,
+                                      description=indicator_element,
+                                      dataset=dataset,
+                                      measurement_unit=measurement_unit)
+                self._ind_int += 1  # Updating indicator id int value
                 print '\t' + indicator.name
+                web_indiccator_id = self.config.get(indicators_section, indicator_element)
                 for country in self.countries:
-                    slice_id = 'sli_' + indicator.indicator_id + '_' + country.iso3
-                    slice_object = Slice(slice_id, country, dataset, indicator)
+                    slice_object = Slice(chain_for_id=self._org_id,
+                                         int_for_id=self._sli_int,
+                                         dimension=country,
+                                         dataset=dataset,
+                                         indicator=indicator)
+                    dataset.add_slice(slice_object)  # TESTING EFFECT
+                    self._sli_int += 1  # Updating int id slice value
                     print '\t\t' + slice_object.slice_id + '\t' + slice_object.dimension.get_dimension_string()
                     uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
-                    uri = uri.replace('{INDICATOR.CODE}', indicator.indicator_id)
+                    uri = uri.replace('{INDICATOR.CODE}', web_indiccator_id)
                     try:
                         response = RestClient.get(uri, {"format": "json"})
                         observations = response[1]
@@ -109,20 +136,21 @@ class Parser(object):
                                     self.logger.warning('Missing value for ' + indicator.name + ', ' + country.name +
                                                         ', ' + observation_element['date'])
                                 time = YearInterval(observation_element['date'])
-                                observation_id = "obs_" + indicator.name + '_' + country.iso3 + '_' + time.get_time_string()
-                                observation = Observation(observation_id,
-                                                          time,
-                                                          Instant(datetime.now()),
-                                                          Computation(Computation.RAW),
-                                                          value_object,
-                                                          indicator,
-                                                          data_source)
+                                observation = Observation(chain_for_id=self._org_id,
+                                                          int_for_id=self._obs_int,
+                                                          ref_time=time,
+                                                          issued=Instant(datetime.now()),
+                                                          computation=Computation(Computation.RAW),
+                                                          value=value_object,
+                                                          indicator=indicator,
+                                                          dataset=dataset)
+                                self._obs_int += 1  # Updating obs int value
                                 if historic or observation_element['date'] == requested_year:
                                     country.add_observation(observation)
                                     dataset.add_observation(observation)
                                     slice_object.add_observation(observation)
                                     if observation.value.obs_status is not Value.MISSING:
-                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + observation.value.value + ' ' + indicator.measurement_unit.name
+                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + str(observation.value.value) + ' ' + indicator.measurement_unit.name
                                     else:
                                         print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
                     except (KeyError, ConnectionError, ValueError):
