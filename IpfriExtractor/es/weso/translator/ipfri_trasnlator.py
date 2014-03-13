@@ -32,7 +32,7 @@ class IpfriTranslator(object):
             i += 1
             a_sheet = self.take_data_sheet_from_file_path(a_path)
             indicators, dates, countries = Parser(a_sheet).run()
-            a_pair = IpfriModelObjectBuilder(indicators, dates, countries, "IPFRI" + str(i)).run()  # cHANGE NAME! TODO
+            a_pair = IpfriModelObjectBuilder(self.config, indicators, dates, countries).run()
             self.dataset_user_pairs.append(a_pair)
 
     def translate_model_objects_into_xml(self):

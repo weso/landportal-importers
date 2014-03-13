@@ -27,22 +27,30 @@ from datetime import datetime
 
 class IpfriModelObjectBuilder(object):
 
-    def __init__(self, parsed_indicators, parsed_dates, parsed_countries, dataset_name):
+    def __init__(self, config, parsed_indicators, parsed_dates, parsed_countries):
 
+        self.config = config
         self.parsed_indicators = parsed_indicators
         self.parsed_dates = parsed_dates
         self.parsed_countries = parsed_countries
-        self.dataset_name = dataset_name
 
         self.indicators_dict = {}
         self.dates_dict = {}
         self.countries_dict = {}
 
+        #Initializing variable ids
+        self._org_id = self.config.get("TRANSLATOR", "org_id")
+        self._obs_int = int(self.config.get("TRANSLATOR", "obs_int"))
+        self._sli_int = int(self.config.get("TRANSLATOR", "sli_int"))
+        self._dat_int = int(self.config.get("TRANSLATOR", "dat_int"))
+        self._igr_int = int(self.config.get("TRANSLATOR", "igr_int"))
+        self._ind_int = int(self.config.get("TRANSLATOR", "ind_int"))
+        self._sou_int = int(self.config.get("TRANSLATOR", "sou_int"))
+
         self.dataset = None
         self.user = None
         self.reconciler = CountryReconciler()
 
-        print len(parsed_indicators)
 
 
     def run(self):
@@ -56,8 +64,9 @@ class IpfriModelObjectBuilder(object):
 
     def prepare_base_hierarchy_objects(self):
         #Building dataset
-        self.dataset = Dataset(dataset_id=self.dataset_name)  # Change TODO
-        self.dataset.frequency = "yearly"
+        self.dataset = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
+        self._dat_int += 1  # Updating int_id value
+        self.dataset.frequency = "yearly"  # TODO. This should be centralized
 
         #Building license
         new_license = License()
@@ -69,13 +78,14 @@ class IpfriModelObjectBuilder(object):
         self.dataset.license_type = new_license
 
         #building datasource
-        new_datasource = DataSource(source_id="IPFRI")
+        new_datasource = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
+        self._sou_int += 1  # Updating internal id_int value
         new_datasource.name = "IFPRI - International Food Policy Research Institute"
 
         new_datasource.add_dataset(self.dataset)
 
         # Building organization
-        new_organization = Organization()
+        new_organization = Organization(chain_for_id=self._org_id)
         new_organization.name = "IFPRI - International Food Policy Research Institute"
         new_organization.url = "http://www.ifpri.org/"
 
@@ -109,8 +119,8 @@ class IpfriModelObjectBuilder(object):
         i = 0
         for pindicator in self.parsed_indicators:
             i += 1
-            new_indicator = Indicator()
-            new_indicator.indicator_id = "indicator_id" + str(i)  # Change! TODO
+            new_indicator = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+            self._ind_int += 1  # Updating internal int_id value
             new_indicator.name = pindicator.name
             new_indicator.description = pindicator.name
             new_indicator.measurement_unit = default_unit
@@ -133,7 +143,8 @@ class IpfriModelObjectBuilder(object):
             self.dataset.add_slice(new_slice)
 
     def _generate_slice_by_pdate_and_pindicator(self, pdate, pindicator, sliceid):
-        result = Slice(slice_id="ipfri_sli_" + str(sliceid))
+        result = Slice(chain_for_id=self._org_id, int_for_id=self._sli_int)
+        self._sli_int += 1  # Updating int id value
         result.indicator = self.indicators_dict[pindicator.name]
         result.dimension = self.dates_dict[pdate.string_date]
 
@@ -142,8 +153,8 @@ class IpfriModelObjectBuilder(object):
     def generate_observation_with_model_objects(self, pindicator, pdate, pcountry):
         #Building obs
         excell_value = self.look_for_value_in_a_pdate(pdate, pcountry)
-        new_obs = Observation()
-        new_obs.observation_id = "obsid"  # Change! TODO
+        new_obs = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
+        self._obs_int += 1  # Update int id value
         self.add_value_object_to_observation(excell_value, new_obs)
         self.add_indicator_object_to_observation(pindicator, new_obs)
         self.add_computation_object_to_observation(excell_value, new_obs)
