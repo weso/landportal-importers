@@ -11,14 +11,22 @@ class DataSource(object):
     '''
 
 
-    def __init__(self, source_id=None, name=None, organization=None):
+    def __init__(self, chain_for_id=None, int_for_id=None, name=None, organization=None):
         '''
         Constructor
         '''
-        self.source_id = source_id
+
         self.name = name
         self.organization = organization
         self.datasets = []
+        self._chain_for_id = chain_for_id
+        self._int_for_id = int_for_id
+        self.source_id = self._generate_id()
+
+
+    def _generate_id(self):
+        return "sou_" + self._chain_for_id + "_" + str(self._int_for_id)
+
 
     def add_dataset(self, dataset):
         self.datasets.append(dataset)

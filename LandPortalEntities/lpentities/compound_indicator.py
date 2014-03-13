@@ -4,9 +4,10 @@ from .indicator import Indicator
 
 
 class CompoundIndicator(Indicator):
-    def __init__(self, indicator_id=None, name=None, description=None,
+
+    def __init__(self, chain_for_id, int_for_id, name=None, description=None,
                  dataset=None, measurement_unit=None, indicators=None):
-        super(CompoundIndicator, self).__init__(indicator_id, name, description,
+        super(CompoundIndicator, self).__init__(chain_for_id, int_for_id, name, description,
                                                 dataset, measurement_unit)
 
         self.indicators = indicators

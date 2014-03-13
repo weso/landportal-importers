@@ -10,18 +10,25 @@ class Dataset(object):
     classdocs
     '''
 
-    def __init__(self, dataset_id=None, frequency=None,
+    def __init__(self, chain_for_id, int_for_id, frequency=None,
                  license_type=None, source=None):
         '''
         Constructor
         '''
-        self.dataset_id = dataset_id
+        self._chain_for_id = chain_for_id
+        self._int_for_id = int_for_id
         self.frequency = frequency
         self.license_type = license_type
         self.source = source
+
         self.slices = []
         self.observations = []
         self.indicators = []
+
+        self.dataset_id = self._generate_id()
+
+    def _generate_id(self):
+        return "dat_" + self._chain_for_id + "_" + str(self._int_for_id)
 
     def add_slice(self, data_slice):
         self.slices.append(data_slice)

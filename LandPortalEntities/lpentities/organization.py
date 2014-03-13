@@ -10,16 +10,24 @@ class Organization(object):
     '''
 
 
-    def __init__(self, name = None, url = None, is_part_of = None):
+    def __init__(self, chain_for_id, name=None, url=None, is_part_of=None):
         '''
         Constructor
         '''
+
+        self._chain_for_id = chain_for_id
         self.name = name
         self.url = url
         self.is_part_of = is_part_of
         self.data_sources = []
         self.users = []
 
+
+        self.organization_id = self._generate_id()
+
+
+    def _generate_id(self):
+        return "org_" + self._chain_for_id
 
     def add_user(self, user):
         self.users.append(user)

@@ -10,7 +10,7 @@ class User(object):
     '''
 
 
-    def __init__(self, user_id = None, ip = None, timestamp = None, organization = None):
+    def __init__(self, user_id=None, ip=None, timestamp=None, organization=None):
         '''
         Constructor
         '''

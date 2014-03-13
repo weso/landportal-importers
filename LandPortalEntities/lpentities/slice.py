@@ -10,15 +10,23 @@ class Slice(object):
     '''
 
 
-    def __init__(self, slice_id = None, dimension = None, dataset = None, indicator = None):
+    def __init__(self, chain_for_id, int_for_id, dimension=None, dataset=None, indicator=None):
         '''
         Constructor
+
         '''
+        self._chain_for_id = chain_for_id
+        self._int_for_id = int_for_id
         self.dataset = dataset
         self.indicator = indicator
-        self.slice_id = slice_id
         self.dimension = dimension
+
         self.observations = []
+
+        self.slice_id = self._generate_id()
+
+    def _generate_id(self):
+        return "sli_" + self._chain_for_id + "_" + str(self._int_for_id)
         
     def add_observation(self, observation):
         self.observations.append(observation)
