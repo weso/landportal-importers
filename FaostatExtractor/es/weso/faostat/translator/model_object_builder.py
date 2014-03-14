@@ -83,7 +83,7 @@ class ModelObjectBuilder(object):
     def build_dataset(self):
         #Creating dataset object
         print self._org_id
-        dataset = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int, frequency="yearly")  # TODO: put frequency
+        dataset = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int, frequency=Dataset.YEARLY)
         self._dat_int += 1  # Updating id value
 
         #creating related objects
