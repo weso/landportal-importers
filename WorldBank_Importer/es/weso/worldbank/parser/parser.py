@@ -84,7 +84,7 @@ class Parser(object):
                                      organization=organization)
             self._sou_int += 1  # Updating datasource int id value
             organization.add_data_source(data_source)
-            frequency = 'http://purl.org/linked-data/sdmx/2009/code#freq-A'
+            frequency = Dataset.YEARLY
             license_object = License('World Bank License',
                                      'World Bank License',
                                      True,
