@@ -66,7 +66,7 @@ class IpfriModelObjectBuilder(object):
         #Building dataset
         self.dataset = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
         self._dat_int += 1  # Updating int_id value
-        self.dataset.frequency = "yearly"  # TODO. This should be centralized
+        self.dataset.frequency = Dataset.YEARLY
 
         #Building license
         new_license = License()
