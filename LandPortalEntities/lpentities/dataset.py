@@ -6,9 +6,12 @@ Created on 02/02/2014
 
 
 class Dataset(object):
-    '''
+    """
     classdocs
-    '''
+
+    """
+
+    YEARLY = "http://purl.org/linked-data/sdmx/2009/code#freq-A"
 
     def __init__(self, chain_for_id, int_for_id, frequency=None,
                  license_type=None, source=None):
