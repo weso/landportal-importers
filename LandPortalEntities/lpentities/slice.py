@@ -15,18 +15,18 @@ class Slice(object):
         Constructor
 
         '''
-        self._chain_for_id = chain_for_id
-        self._int_for_id = int_for_id
+
         self.dataset = dataset
         self.indicator = indicator
         self.dimension = dimension
 
         self.observations = []
 
-        self.slice_id = self._generate_id()
+        self.slice_id = self._generate_id(chain_for_id, int_for_id)
 
-    def _generate_id(self):
-        return "sli_" + self._chain_for_id + "_" + str(self._int_for_id)
+    @staticmethod
+    def _generate_id(chain_for_id, int_for_id):
+        return "SLI" + chain_for_id.upper() + str(int_for_id).upper()
         
     def add_observation(self, observation):
         self.observations.append(observation)

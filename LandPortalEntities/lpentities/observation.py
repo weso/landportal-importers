@@ -15,8 +15,7 @@ class Observation(object):
         Constructor
         '''
 
-        self._chain_for_id = chain_for_id
-        self._int_for_id = int_for_id
+
         self.ref_time = ref_time
         self.issued = issued
         self.computation = computation
@@ -26,7 +25,8 @@ class Observation(object):
         self.group = None
         self.indicator_group = None
 
-        self.observation_id = self._generate_id()
+        self.observation_id = self._generate_id(chain_for_id, int_for_id)
 
-    def _generate_id(self):
-        return "obs_" + self._chain_for_id + "_" + str(self._int_for_id)
+    @staticmethod
+    def _generate_id(chain_for_id, int_for_id):
+        return "OBS" + chain_for_id.upper() + str(int_for_id).upper()

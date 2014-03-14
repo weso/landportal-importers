@@ -15,8 +15,6 @@ class Dataset(object):
         '''
         Constructor
         '''
-        self._chain_for_id = chain_for_id
-        self._int_for_id = int_for_id
         self.frequency = frequency
         self.license_type = license_type
         self.source = source
@@ -25,10 +23,11 @@ class Dataset(object):
         self.observations = []
         self.indicators = []
 
-        self.dataset_id = self._generate_id()
+        self.dataset_id = self._generate_id(chain_for_id, int_for_id)
 
-    def _generate_id(self):
-        return "dat_" + self._chain_for_id + "_" + str(self._int_for_id)
+    @staticmethod
+    def _generate_id(chain_for_id, int_for_id):
+        return "DAT" + chain_for_id.upper() + "_" + str(int_for_id).upper()
 
     def add_slice(self, data_slice):
         self.slices.append(data_slice)
