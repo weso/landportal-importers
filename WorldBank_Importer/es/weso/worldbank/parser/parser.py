@@ -74,7 +74,7 @@ class Parser(object):
                                     is_part_of=None)
         ip = socket.gethostbyname(socket.gethostname())
         timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        self.user = User("worldbank_importer", ip, timestamp, organization)
+        self.user = User(user_login="worldbank_importer", ip=ip, timestamp=timestamp, organization=organization)
         for data_source_name in self.data_sources:
             indicators_section = self.config.get('data_sources', data_source_name)
             requested_indicators = dict(self.config.items(indicators_section))
