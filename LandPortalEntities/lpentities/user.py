@@ -10,11 +10,21 @@ class User(object):
     '''
 
 
-    def __init__(self, user_id=None, ip=None, timestamp=None, organization=None):
+    def __init__(self, user_login, ip=None, timestamp=None, organization=None):
         '''
         Constructor
         '''
-        self.user_id = user_id
         self.ip = ip
         self.timestamp = timestamp
         self.organization = organization
+        self.user_id = self._generate_id(user_login)
+
+    @staticmethod
+    def _generate_id(user_login):
+        return "USR" + user_login.upper()
+
+
+
+
+        # TODO : what about ip and timestamp? I think it would be better to catch this values when receiving data,
+        # TODO : if the Receiver is a web service.
