@@ -33,7 +33,7 @@ class ModelObjectBuilder(object):
     '''
 
 
-    def __init__(self, registers, config, log):
+    def __init__(self, registers, config, log, reconciler):
         """
         Constructor
 
@@ -54,18 +54,19 @@ class ModelObjectBuilder(object):
         self.country_dict = {}
         self.dataset = self.build_dataset()
         self.indicators_dict = {}
-        self.default_computation = Computation(Computation.RAW)
+        self.computations_dict = {}
+        # self.default_computation = Computation(Computation.RAW)
 
-        self.reconciler = CountryReconciler()
+        self.reconciler = reconciler
 
 
     def run(self):
 
 
-        # for register in self.registers:
-        #     self.build_model_objects_from_register(register)
-        for i in range(1, 2000):
-            self.build_model_objects_from_register(self.registers[i])
+        for register in self.registers:
+            self.build_model_objects_from_register(register)
+        # for i in range(1, 2000):
+        #     self.build_model_objects_from_register(self.registers[i])
         self._update_config_id_values()
         return self.dataset
 
@@ -112,16 +113,13 @@ class ModelObjectBuilder(object):
 
     def build_model_objects_from_register(self, register):
         country = self.get_asociated_country(register[TranslatorConst.COUNTRY_CODE])
-        if country is None:
-            return  # It means that we are processing an obs from a non recognised country.
-                    # We just have to ignore it
 
         new_observation = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
         self._obs_int += 1
 
         self.add_indicator_to_observation(new_observation, register)  # DONE
         self.add_value_to_observation(new_observation, register)  # DONE
-        self.add_computation_to_observation(new_observation)  # DONE
+        self.add_computation_to_observation(new_observation, register)  # DONE
         self.add_reftime_to_observation(new_observation, register)  # DONE
         self.add_issued_to_observation(new_observation, register)  # DONE
 
@@ -136,8 +134,19 @@ class ModelObjectBuilder(object):
     def add_reftime_to_observation(self, observation, register):
         observation.ref_time = YearInterval(year=register[TranslatorConst.YEAR])
 
-    def add_computation_to_observation(self, observation):
-        observation.computation = self.default_computation
+    def add_computation_to_observation(self, observation, register):
+        """
+        In this method we are using an internal dictionary that could be avoided. We are doing this because
+        it is expected that most of the received values for observations will be identical. So, if we store
+        an object that represents a concrete string value, we don´t have to create plenty of Computation
+        objects with the same internal properties. We are saving memory without introducing too much
+        execution time (probably we also reduce it)
+
+        """
+        computation_text = register[TranslatorConst.COMPUTATION_PROCESS]
+        if not computation_text in self.computations_dict:
+            self.computations_dict[computation_text] = Computation(uri=computation_text)
+        observation.computation = self.computations_dict[computation_text]
 
     def add_value_to_observation(self, observation, register):
         value = Value()
@@ -172,18 +181,22 @@ class ModelObjectBuilder(object):
         self.add_measurement_unit_to_indicator(indicator, register)
         self.indicators_dict[register[TranslatorConst.ITEM_CODE]] = indicator
 
-    def get_indicator_id(self, register):
-        return "FAOSTAT_" + str(register[TranslatorConst.ITEM_CODE])
-
     def get_indicator_description(self, indicator_code):
-        if indicator_code == 6601:
+
+        if indicator_code == TranslatorConst.CODE_LAND_AREA:
             return "Land Area. Total area in sq. km of the referred region"
-        elif indicator_code == 6610:
+        elif indicator_code == TranslatorConst.CODE_AGRICULTURAL_LAND:
             return "Agricultural land. Total area in sq. km. for agriculture of the referred region"
-        elif indicator_code == 6661:
+        elif indicator_code == TranslatorConst.CODE_FOREST_LAND:
             return "Forest land. Total forest surface in sq. km of the referred region"
-        elif indicator_code == 6621:
-            return "Arable area. Total arable surface in sq. km. of the referred region"
+        elif indicator_code == TranslatorConst.CODE_ARABLE_LAND:
+            return "Arable land. Total arable surface in sq. km. of the referred region"
+        elif indicator_code == TranslatorConst.CODE_RELATIVE_ARABLE_LAND:
+            return "Relative arable land. Percentage of arable land from the total land area of the referred region"
+        elif indicator_code == TranslatorConst.CODE_RELATIVE_FOREST_LAND:
+            return "Relative forest land. Percentage of forest land from the total land area of the referred region"
+        elif indicator_code == TranslatorConst.CODE_RELATIVE_AGRICULTURAL_LAND:
+            return "Arable agricultural land. Percentage of agricultural land from the total land area of the referred region"
         else:
             raise RuntimeError("Unknown indicator. No description found")
 

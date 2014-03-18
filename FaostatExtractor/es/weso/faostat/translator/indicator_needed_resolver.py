@@ -18,10 +18,12 @@ class IndicatorNeededResolver(object):
         Constructor
         '''
     
-    '''
-    returns a list of string with the needed indicators
-    '''
+
     def run(self):
+        """
+        Returns a list of string with the needed indicators
+
+        """
         indicator_needed_filename = self.config.get("TRANSLATOR", "indicator_names_valid_path")
         return self.parse(indicator_needed_filename)
     
@@ -34,8 +36,8 @@ class IndicatorNeededResolver(object):
     def filter_unusefull_lines(self, all_lines):
         result = []
         for line in all_lines:
-            if(line[0] != "#" and line != "" and line != "\n" and line != "\r" and line != "\n\r"):
-                result.append(re.sub("\n", "", line))
+            if line not in ["", "\n", "\r", "\n\r"] and line[0] != "#":
+                result.append(re.sub('\n', "", line))
         return result
         
         
