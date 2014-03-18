@@ -92,7 +92,7 @@ class IpfriModelObjectBuilder(object):
         new_organization.add_data_source(new_datasource)
 
         #Building user
-        self.user = User("IPFRIImporter")
+        self.user = User(user_login="IPFRIImporter")
         self.user.ip = "156.35.80.80"  # Change TODO
         self.user.timestamp = datetime.now()
 
