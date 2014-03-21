@@ -7,14 +7,18 @@ import logging
 
 from es.weso.extractor.undp_extractor import UNDPExtractor
 from es.weso.translator.undp_translator import UNDPTranslator
+from ConfigParser import ConfigParser
 
 import os.path
 
 def run():
     configure_log()
-    xml_extractor = UNDPExtractor("xml")
+    config = ConfigParser()
+    config.read("../../../files/configuration.ini")
+    log = logging.getLogger("UNDP_extractor")
+    xml_extractor = UNDPExtractor(config, log, "xml")
     xml_extractor.run()
-    xml_translator = UNDPTranslator()
+    xml_translator = UNDPTranslator(config, log)
     xml_translator.run()
     print 'Done!'
 

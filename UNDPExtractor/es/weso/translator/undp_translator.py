@@ -19,6 +19,8 @@ from lpentities.license import License
 from model2xml.model2xml import ModelToXMLTransformer
 
 import os
+import sys
+import codecs
 from datetime import datetime
 
 try:
@@ -83,6 +85,7 @@ class UNDPTranslator(object):
         ModelToXMLTransformer(dataset=dataset,
                               import_process="xml",
                               user=self._user).run()
+
 
 
     @staticmethod
@@ -161,34 +164,38 @@ class UNDPTranslator(object):
 
     def _create_dataset_from_table(self, tree):
         dataset = self._create_empty_dataset()
-        base_node = tree.getroot().find(self.BASE_ROW)
+        print tree
+        base_node = tree.find(self.BASE_ROW)
         for country_node in base_node.getchildren():
             self._add_country_info_to_dataset_from_country_node(dataset, country_node)
         return dataset
 
     def _add_country_info_to_dataset_from_country_node(self, dataset, country_node):
         valid_info_subnodes = self._filter_valid_info_subnodes(country_node)
-        complete_observations = self._generate_complete_observations_from_valid_subnodes(valid_info_subnodes)
-        for obs in complete_observations:
-            dataset.add_observation(obs)
-            #No return needed
+        try:
+            complete_observations = self._generate_complete_observations_from_valid_subnodes(valid_info_subnodes)
+            for obs in complete_observations:
+                dataset.add_observation(obs)
+                #No return needed
+        except UnknownCountryError as e:
+            self._log.info("Ignoring row node. This is the message thrown by the app: {0}". format(e))
 
     def _generate_complete_observations_from_valid_subnodes(self, subnodes):
         # Declaring needed temporal variables
         country_iso3 = ""
         country_name = ""
-        no_country_obs = []
+        no_country_observations = []
 
         # Detecting type of received nodes. Putting their info in the temporal variables.
         for node in subnodes:
             if node.tag == self.COUNTRY_CODE:
-                country_iso3 = node.text
+                country_iso3 = self._node_text(node)
             elif node.tag == self.COUNTRY_NAME:
-                country_name = node.text
+                country_name = self._node_text(node)
             elif node.tag.endswith(self.HDI_ENDING):
-                no_country_obs.append(self._build_hdi_obs_without_country(node))
+                no_country_observations.append(self._build_hdi_obs_without_country(node))
             elif node.tag.endswith(self.RANK_ENDING):
-                no_country_obs.append(self._build_rank_obs_without_country(node))
+                no_country_observations.append(self._build_rank_obs_without_country(node))
             else:
                 raise RuntimeError('Trying to process an unexpected node: "{0}".'.format(node.tag))
 
@@ -196,11 +203,11 @@ class UNDPTranslator(object):
         country_object = self._resolve_country(country_iso3=country_iso3, country_name=country_name)
 
         #Adding observations to country
-        for obs in no_country_obs:
+        for obs in no_country_observations:
             country_object.add_observation(obs)
 
         #returnig every complete obs that we have built
-        return no_country_obs  # They already have an associated country
+        return no_country_observations  # They already have an associated country
 
 
     def _build_rank_obs_without_country(self, node):
@@ -249,20 +256,18 @@ class UNDPTranslator(object):
         return self._default_computation
 
 
-    @staticmethod
-    def _build_observation_hdi_value_object(node):
+    def _build_observation_hdi_value_object(self, node):
         value = Value()
         value.obs_status = Value.AVAILABLE
         value.value_type = "float"
-        value.value = float(node.text) * 100  # Turning a value between 0,1 into a percentage
+        value.value = float(self._node_text(node)) * 100  # Turning a value between 0,1 into a percentage
         return value
 
-    @staticmethod
-    def _build_observation_rank_value_object(node):
+    def _build_observation_rank_value_object(self, node):
         value = Value()
         value.obs_status = Value.AVAILABLE
         value.value_type = "int"
-        value.value = int(node.text)
+        value.value = int(self._node_text(node))
         return value
 
 
@@ -282,8 +287,8 @@ class UNDPTranslator(object):
             try:
                 return self._reconciler.get_country_by_en_name(country_name)
             except UnknownCountryError:
-                raise RuntimeError('Unable to recognize country with the next info. Name: "{0}". ISO3: "{1}"' \
-                                   .format(country_name, country_iso3))
+                raise UnknownCountryError('Unable to recognize country with the next info. Name: "{0}". ISO3: "{1}"' \
+                                   .format(country_name, country_iso3))  # we are just changing the error message
 
     def _filter_valid_info_subnodes(self, country_node):
         result = []
@@ -314,18 +319,46 @@ class UNDPTranslator(object):
         """
         result = []
         base_directory = self._config.get("TRANSLATOR", "downloaded_data")
+        print base_directory
         candidate_files = os.listdir(base_directory)
         for candidate_file in candidate_files:
-            if os.path.splitext(candidate_file)[1] == "xml":
-                result.append(self._turn_table_file_into_xml_object(candidate_file))
+            if os.path.splitext(candidate_file)[1] == ".xml":
+                result.append(self._turn_table_file_into_xml_object(base_directory + "/" + candidate_file))
         return result
 
     @staticmethod
     def _turn_table_file_into_xml_object(file_path):
         try:
-            return ETree.parse(file_path)
-        except:
+            content_file = codecs.open(file_path, encoding='utf-8')
+            lines = content_file.readlines()
+            content_file.close()
+            intermediary =  lines[0].encode(encoding="utf-8")
+            print intermediary
+            result = ETree.fromstring(intermediary)
+            ETree.dump(result)
+
+            return result
+        except BaseException as e:
+            print e
             raise RuntimeError("Impossible to parse xml in path: {0}. \
                     It looks that it is not a valid xml file.".format(str(file_path)))
+        # try:
+        #     content_file = codecs.open(file_path, encoding='utf-8')
+        #     lines = content_file.readlines()
+        #     content_file.close()
+        #     print lines[0].encode(encoding="utf-8")
+        #     result = ETree.fromstring(lines[0].encode(encoding="utf-8"))
+        #     ETree.dump(result)
+        #
+        #     return result
+        # except BaseException as e:
+        #     print e
+        #     raise RuntimeError("Impossible to parse xml in path: {0}. \
+        #             It looks that it is not a valid xml file.".format(str(file_path)))
 
-
+    @staticmethod
+    def _node_text(node):
+        if node.text == "C&#244;te d'Ivoire" or node.text == "Côte d'Ivoire" or "Ivoire" in node.text:
+            print node.text
+            print "C&#244;te d'Ivoire".encode(encoding="utf-8")
+        return node.text.encode(encoding="utf-8")

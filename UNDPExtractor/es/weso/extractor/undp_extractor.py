@@ -20,17 +20,16 @@ class UNDPExtractor(object):
     '''
 
 
-    def __init__(self, extension):
+    def __init__(self, config, log,  extension):
         '''
         Constructor
 
         '''
 
-        self.config = ConfigParser()
-        self.config.read("../../../files/configuration.ini")
+        self.config = config
+        self.log = log
         self.extension = extension
         self.tables = self.parse_urls()
-        self.log = logging.getLogger("UNDP_extractor")
     
 
     def parse_urls(self):
