@@ -10,6 +10,7 @@
     <orderEntry type="module" module-name="IpfriExtractor" />
     <orderEntry type="module" module-name="MisTest" />
     <orderEntry type="module" module-name="CountryReconciler" />
+    <orderEntry type="module" module-name="UNDPExtractor" />
   </component>
 </module>
 

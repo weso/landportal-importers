@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/../LandPortalEntities/.idea/LandPortalEntities.iml" filepath="$PROJECT_DIR$/../LandPortalEntities/.idea/LandPortalEntities.iml" />
       <module fileurl="file://$PROJECT_DIR$/../MisTest/.idea/MisTest.iml" filepath="$PROJECT_DIR$/../MisTest/.idea/MisTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ModelToXml.iml" filepath="$PROJECT_DIR$/.idea/ModelToXml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../UNDPExtractor/.idea/UNDPExtractor.iml" filepath="$PROJECT_DIR$/../UNDPExtractor/.idea/UNDPExtractor.iml" />
       <module fileurl="file://$PROJECT_DIR$/../WorldBank_Importer/.idea/WorldBank_Importer.iml" filepath="$PROJECT_DIR$/../WorldBank_Importer/.idea/WorldBank_Importer.iml" />
     </modules>
   </component>

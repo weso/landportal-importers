@@ -49,11 +49,12 @@ class ModelToXMLTransformer(object):
     OBSERVATION_ATT_TIME_PREFIX = "http://landportal.info/ontology/year/"
 
     IMPORT_PROCESS = "import_process"
+    IMPORT_PROCESS_ORGANIZATION_NAME = "organization_name"
+    IMPORT_PROCESS_ORGANIZATION_URL = "organization_url"
     IMPORT_PROCESS_DATASOURCE = "datasource"
     IMPORT_PROCESS_TYPE = "type"
     IMPORT_PROCESS_TIMESTAMP = "timestamp"
     IMPORT_PROCESS_USER = "user"
-    IMPORT_PROCESS_IP = "ip"
     IMPORT_PROCESS_DATASOURCE_PREFIX = "http://landportal.info/ontology/dataSource/"
     IMPORT_PROCESS_TYPE_PREFIX = "http://landportal.info/ontology/importProcess/"
     IMPORT_PROCESS_USER_PREFIX = "http://landportal.info/ontology/user/"
@@ -163,7 +164,6 @@ class ModelToXMLTransformer(object):
         #time/region
         if isinstance(data_slice.dimension, Time):
             metadata_node.append(self.build_time_node(data_slice.dimension))
-            print "Comprueba que mis huevo van en BICI"
         elif isinstance(data_slice.dimension, Region):
             region_node = Element(self.OBSERVATION_REGION)
             region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
@@ -263,7 +263,7 @@ class ModelToXMLTransformer(object):
 
     def write_tree_to_xml(self):
 
-            ElementTree(self.root).write("file.xml")
+            ElementTree(self.root).write("file.xml", encoding="utf-8")
 
 
 
@@ -333,9 +333,6 @@ class ModelToXMLTransformer(object):
             interval_node.append(end_node)
             time_node.append(interval_node)
         else:
-            print type(ref_time)
-            print YearInterval
-            print Interval
             raise RuntimeError("Unrecognized time type. Impossible to build node")
         #Returning final node
         return time_node
@@ -394,6 +391,15 @@ class ModelToXMLTransformer(object):
         metadata = Element(self.IMPORT_PROCESS)
 
         #Attaching nodes
+        #Organization_name
+        organization_name_node = Element(self.IMPORT_PROCESS_ORGANIZATION_NAME)
+        organization_name_node.text = self.datasource.organization.name
+        metadata.append(organization_name_node)
+        #Organization_url
+        organization_url_node = Element(self.IMPORT_PROCESS_ORGANIZATION_URL)
+        organization_url_node.text = self.datasource.organization.url
+        metadata.append(organization_url_node)
+
         #datasource
         datasource_node = Element(self.IMPORT_PROCESS_DATASOURCE)
         datasource_node.text = self.IMPORT_PROCESS_DATASOURCE_PREFIX \
@@ -411,16 +417,6 @@ class ModelToXMLTransformer(object):
         user_node.text = self.IMPORT_PROCESS_USER_PREFIX \
                          + self.user.user_id
         metadata.append(user_node)
-
-        #timestamp
-        timestamp_node = Element(self.IMPORT_PROCESS_TIMESTAMP)
-        timestamp_node.text = str(self.user.timestamp)
-        metadata.append(timestamp_node)
-
-        #ip
-        ip_node = Element(self.IMPORT_PROCESS_IP)
-        ip_node.text = self.user.ip
-        metadata.append(ip_node)
 
 
         #Addind node to root
