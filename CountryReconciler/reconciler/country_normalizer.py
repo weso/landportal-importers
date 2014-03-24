@@ -45,10 +45,12 @@ class CountryNormalizer(object):
     def normalize_country_by_en_name(en_name):
         return CountryNormalizer._normalize_country_by_given_language_removable_expressions(en_name,
                                                                         CountryNormalizer.EN_REMOVABLE_EXPRESSIONS)
+
     @staticmethod
     def normalize_country_by_es_name(es_name):
         return CountryNormalizer._normalize_country_by_given_language_removable_expressions(es_name,
-                                                                        CountryNormalizer.ES_REMOVABLE_EXPRESSIONS)
+                                                                         CountryNormalizer.ES_REMOVABLE_EXPRESSIONS)
+
     @staticmethod
     def normalize_country_by_fr_name(fr_name):
         return CountryNormalizer._normalize_country_by_given_language_removable_expressions(fr_name,
@@ -90,7 +92,6 @@ class CountryNormalizer(object):
         result = re.sub('(federation|federacion)', "fed", result)
 
         return result
-
 
 
     @staticmethod

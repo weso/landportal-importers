@@ -60,22 +60,25 @@ class ReconcilerTest(unittest.TestCase):
             self.reconciler.get_country_by_en_name('Spai')
 
     def test_conflictive_ipfri(self):
-        #We expect to non have any exception with the next calls
-        central_african_rep = self.reconciler.get_country_by_en_name("Central African Rep.")
-        central_african_rep = self.reconciler.get_country_by_en_name("Congo, Dem. Rep.")
-        central_african_rep = self.reconciler.get_country_by_en_name("Congo, Rep.")
-        central_african_rep = self.reconciler.get_country_by_en_name("Egypt, Arab Rep.")
-        central_african_rep = self.reconciler.get_country_by_en_name("Iran, Islamic Rep.")
-        central_african_rep = self.reconciler.get_country_by_en_name("Kyrgyz Republic")
-        central_african_rep = self.reconciler.get_country_by_en_name("Lao PDR")
-        central_african_rep = self.reconciler.get_country_by_en_name("Macedonia, FYR")
-        central_african_rep = self.reconciler.get_country_by_en_name("North Korea")
-        central_african_rep = self.reconciler.get_country_by_en_name("Russian Federation")
-        central_african_rep = self.reconciler.get_country_by_en_name("Slovak Republic")
-        central_african_rep = self.reconciler.get_country_by_en_name("Tanzania")
-        central_african_rep = self.reconciler.get_country_by_en_name("Venezuela, RB")
-        central_african_rep = self.reconciler.get_country_by_en_name("Yemen, Rep.")
+        #We expect to not have any exception with the next calls
+        a_country = self.reconciler.get_country_by_en_name("Central African Rep.")
+        a_country = self.reconciler.get_country_by_en_name("Congo, Dem. Rep.")
+        a_country = self.reconciler.get_country_by_en_name("Congo, Rep.")
+        a_country = self.reconciler.get_country_by_en_name("Egypt, Arab Rep.")
+        a_country = self.reconciler.get_country_by_en_name("Iran, Islamic Rep.")
+        a_country = self.reconciler.get_country_by_en_name("Kyrgyz Republic")
+        a_country = self.reconciler.get_country_by_en_name("Lao PDR")
+        a_country = self.reconciler.get_country_by_en_name("Macedonia, FYR")
+        a_country = self.reconciler.get_country_by_en_name("North Korea")
+        a_country = self.reconciler.get_country_by_en_name("Russian Federation")
+        a_country = self.reconciler.get_country_by_en_name("Slovak Republic")
+        a_country = self.reconciler.get_country_by_en_name("Tanzania")
+        a_country = self.reconciler.get_country_by_en_name("Venezuela, RB")
+        a_country = self.reconciler.get_country_by_en_name("Yemen, Rep.")
 
+    def test_conflictive_undp(self):
+        #We expect to not have any exception with the next calls
+        a_country = self.reconciler.get_country_by_en_name("Occupied Palestinian Territory")
 
 if __name__ == '__main__':
     unittest.main()

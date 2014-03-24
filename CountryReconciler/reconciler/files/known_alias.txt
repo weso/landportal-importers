@@ -5,3 +5,4 @@ IRN=Iran, Islamic Rep.
 MKD=Macedonia, FYR
 VEN=Venezuela, RB
 YEM=Yemen, Rep.
+PSX=Occupied Palestinian Territory

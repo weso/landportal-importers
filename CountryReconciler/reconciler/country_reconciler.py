@@ -16,6 +16,14 @@ class CountryReconciler(object):
         self.normalizer = CountryNormalizer()
 
 
+
+    def get_country_by_iso3(self, iso3):
+        for country in self.parsed_countries:
+            if country.get_iso3() == iso3:
+                return country.model_object
+        raise UnknownCountryError("Unknown country for ISO3 " + iso3)
+
+
     def get_country_by_iso2(self, iso2):
         for country in self.parsed_countries:
             if country.iso2 == iso2:
