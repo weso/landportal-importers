@@ -12,7 +12,7 @@ class Instant(Time):
     '''
 
 
-    def __init__(self, instant = None):
+    def __init__(self, instant=None):
         '''
         Constructor
         '''
