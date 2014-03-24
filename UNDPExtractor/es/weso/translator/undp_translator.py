@@ -139,11 +139,7 @@ class UNDPTranslator(object):
                             int_for_id=self._ind_int)
         self._ind_int += 1  # Updating indicator int id value
         ind_hdi.name = "HDI"
-        ind_hdi.description = "Human Development Index. A tool developed by the United Nations to measure and \
-                                rank countries' levels of social and economic development based on four criteria: \
-                                Life expectancy at birth, mean years of schooling, expected years of schooling and \
-                                gross national income per capita. The HDI makes it possible to track changes in \
-                                development levels over time and to compare development levels in different countries."
+        ind_hdi.description = self._config.get("IND_DESCRIPTION", "hdi_desc")
         ind_hdi.measurement_unit = MeasurementUnit(name="%")
         result_dict[self.HDI_ENDING] = ind_hdi  # Adding to dictionary
 
@@ -152,7 +148,7 @@ class UNDPTranslator(object):
                              int_for_id=self._ind_int)
         self._ind_int += 1  # Updating indicator int id value
         ind_rank.name = "HDI rank"
-        ind_rank.description = "Position in the world´s HDI ranking."
+        ind_rank.description = self._config.get("IND_DESCRIPTION", "hdi_rank_desc")
         ind_rank.measurement_unit = MeasurementUnit("rank")
         result_dict[self.RANK_ENDING] = ind_rank  # Adding to dictionary
 
@@ -164,7 +160,6 @@ class UNDPTranslator(object):
 
     def _create_dataset_from_table(self, tree):
         dataset = self._create_empty_dataset()
-        print tree
         base_node = tree.find(self.BASE_ROW)
         for country_node in base_node.getchildren():
             self._add_country_info_to_dataset_from_country_node(dataset, country_node)
@@ -260,7 +255,7 @@ class UNDPTranslator(object):
         value = Value()
         value.obs_status = Value.AVAILABLE
         value.value_type = "float"
-        value.value = float(self._node_text(node)) * 100  # Turning a value between 0,1 into a percentage
+        value.value = float(self._node_text(node))
         return value
 
     def _build_observation_rank_value_object(self, node):
@@ -282,10 +277,18 @@ class UNDPTranslator(object):
 
     def _resolve_country(self, country_iso3, country_name):
         try:
-            return self._reconciler.get_country_by_iso3(country_iso3)
+            # return self._reconciler.get_country_by_iso3(country_iso3)
+            result = self._reconciler.get_country_by_iso3(country_iso3)
+            if "Ivoire" in result.name:
+                raise UnknownCountryError("")
+            return result
         except UnknownCountryError:
             try:
-                return self._reconciler.get_country_by_en_name(country_name)
+                # return self._reconciler.get_country_by_en_name(country_name)
+                result = self._reconciler.get_country_by_en_name(country_name)
+                if "Ivoire" in result.name:
+                    raise UnknownCountryError("")
+                return result
             except UnknownCountryError:
                 raise UnknownCountryError('Unable to recognize country with the next info. Name: "{0}". ISO3: "{1}"' \
                                    .format(country_name, country_iso3))  # we are just changing the error message
@@ -319,7 +322,6 @@ class UNDPTranslator(object):
         """
         result = []
         base_directory = self._config.get("TRANSLATOR", "downloaded_data")
-        print base_directory
         candidate_files = os.listdir(base_directory)
         for candidate_file in candidate_files:
             if os.path.splitext(candidate_file)[1] == ".xml":
@@ -332,33 +334,12 @@ class UNDPTranslator(object):
             content_file = codecs.open(file_path, encoding='utf-8')
             lines = content_file.readlines()
             content_file.close()
-            intermediary =  lines[0].encode(encoding="utf-8")
-            print intermediary
-            result = ETree.fromstring(intermediary)
-            ETree.dump(result)
+            return ETree.fromstring(lines[0].encode(encoding="utf-8"))
 
-            return result
-        except BaseException as e:
-            print e
+        except BaseException:
             raise RuntimeError("Impossible to parse xml in path: {0}. \
                     It looks that it is not a valid xml file.".format(str(file_path)))
-        # try:
-        #     content_file = codecs.open(file_path, encoding='utf-8')
-        #     lines = content_file.readlines()
-        #     content_file.close()
-        #     print lines[0].encode(encoding="utf-8")
-        #     result = ETree.fromstring(lines[0].encode(encoding="utf-8"))
-        #     ETree.dump(result)
-        #
-        #     return result
-        # except BaseException as e:
-        #     print e
-        #     raise RuntimeError("Impossible to parse xml in path: {0}. \
-        #             It looks that it is not a valid xml file.".format(str(file_path)))
 
     @staticmethod
     def _node_text(node):
-        if node.text == "C&#244;te d'Ivoire" or node.text == "Côte d'Ivoire" or "Ivoire" in node.text:
-            print node.text
-            print "C&#244;te d'Ivoire".encode(encoding="utf-8")
         return node.text.encode(encoding="utf-8")
