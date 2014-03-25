@@ -5,7 +5,7 @@ Created on 09/01/2014
 '''
 
 import logging
-from es.weso.oecdextractor.oecd_extractor import OECDExtractor
+from es.weso.oecdextractor.rest.rest_client import RestClient
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -16,11 +16,8 @@ def run():
     configure_log()
     logger = logging.getLogger('main')
     logger.info('Starting run')
-    extractor = OECDExtractor()
-    extractor.extract_members('dataset_id_09')
-    extractor.extract_data('dataset_id_09')
-    extractor.extract_members('dataset_id_12')
-    extractor.extract_data('dataset_id_12')
+    extractor = RestClient()
+    extractor.run()
 
 if __name__ == '__main__':
     run()
