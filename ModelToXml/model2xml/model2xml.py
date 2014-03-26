@@ -61,8 +61,12 @@ class ModelToXMLTransformer(object):
 
     INDICATOR = "indicator"
     INDICATOR_ATT_ID = "id"
-    INDICATOR_NAME = "ind_name"
-    INDICATOR_DESCRIPTION = "ind_description"
+    INDICATOR_NAME_EN = "ind_name_en"
+    INDICATOR_NAME_ES = "ind_name_es"
+    INDICATOR_NAME_FR = "ind_name_fr"
+    INDICATOR_DESCRIPTION_EN = "ind_description_en"
+    INDICATOR_DESCRIPTION_ES = "ind_description_es"
+    INDICATOR_DESCRIPTION_FR = "ind_description_fr"
     INDICATOR_MEASURE_UNIT = "measure_unit"
 
     INDICATOR_REF = "indicator-ref"
@@ -212,15 +216,15 @@ class ModelToXMLTransformer(object):
         result.attrib[self.INDICATOR_ATT_ID] = \
             self.INDICATOR_ATT_ID_PREFIX \
             + data_indicator.indicator_id
-        #name
-        node_name = Element(self.INDICATOR_NAME)
-        node_name.text = data_indicator.name
-        result.append(node_name)
+        #names
+        names = self._extract_indicator_name_nodes(data_indicator)
+        for a_name in names:
+            result.append(a_name)
 
-        #description
-        node_desc = Element(self.INDICATOR_DESCRIPTION)
-        node_desc.text = data_indicator.description
-        result.append(node_desc)
+        #descriptions
+        descriptions = self._extract_indicator_description_nodes(data_indicator)
+        for a_desc in descriptions:
+            result.append(a_desc)
 
         #MeasureUnit
         node_measure = Element(self.INDICATOR_MEASURE_UNIT)
@@ -229,6 +233,41 @@ class ModelToXMLTransformer(object):
         result.append(node_measure)
 
         #Returning complete node
+        return result
+
+    def _extract_indicator_description_nodes(self, data_indicator):
+        result = []
+
+        #EN
+        node_desc_en = Element(self.INDICATOR_DESCRIPTION_EN)
+        node_desc_en.text = data_indicator.description_en
+        result.append(node_desc_en)
+        #ES
+        node_desc_es = Element(self.INDICATOR_DESCRIPTION_ES)
+        node_desc_es.text = data_indicator.description_es
+        result.append(node_desc_es)
+        #FR
+        node_desc_fr = Element(self.INDICATOR_DESCRIPTION_FR)
+        node_desc_fr.text = data_indicator.description_fr
+        result.append(node_desc_fr)
+
+        return result
+
+    def _extract_indicator_name_nodes(self, data_indicator):
+        result = []
+        #EN
+        node_name_en = Element(self.INDICATOR_NAME_EN)
+        node_name_en.text = data_indicator.name_en
+        result.append(node_name_en)
+        #ES
+        node_name_es = Element(self.INDICATOR_NAME_ES)
+        node_name_es.text = data_indicator.name_es
+        result.append(node_name_es)
+        #FR
+        node_name_fr = Element(self.INDICATOR_NAME_FR)
+        node_name_fr.text = data_indicator.name_fr
+        result.append(node_name_fr)
+
         return result
 
     def build_license_node(self):
