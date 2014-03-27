@@ -50,6 +50,6 @@ class FaostatIndicatorCatcher(object):
     def treat_interesting_word(self, wlist, word):
         if not word in wlist:
             wlist.append(word)
-            print word #Comment?
+            print word  # Comment?
             
     

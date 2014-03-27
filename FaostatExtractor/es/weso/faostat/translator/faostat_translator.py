@@ -76,9 +76,7 @@ class FaostatTranslator(object):
         xml_gen.run()
 
     def build_user_object(self, organization):
-        user = User(user_login="FaostatImporter",
-                    ip="156.35.90.35",
-                    timestamp=datetime.now())  # How could we get this value?
+        user = User(user_login="FaostatImporter")
         user.organization = organization
         return user
 

@@ -48,7 +48,6 @@ class RelativeRegistersCalculator(object):
         relative.insert(TranslatorConst.FLAG, self._infer_flag(imported))
         relative.insert(TranslatorConst.COMPUTATION_PROCESS, self._infer_computation_type()) #Always the same
 
-        # print "Comprueba la longitud de mis testiculos"
 
 
         return relative
@@ -94,7 +93,6 @@ class RelativeRegistersCalculator(object):
 
     @staticmethod
     def _infer_item(imported):
-        print "Comprueba la longitud de mis testiculos INDICATOR name"
 
         imported_code = imported[TranslatorConst.ITEM_CODE]
         if imported_code == TranslatorConst.CODE_FOREST_LAND:
@@ -108,7 +106,6 @@ class RelativeRegistersCalculator(object):
                                                                                             format(imported_code))
     @staticmethod
     def _infer_item_code(imported):
-        print "Comprueba la longitud de mis testiculos INDICATOR"
 
         imported_code = imported[TranslatorConst.ITEM_CODE]
         if imported_code == TranslatorConst.CODE_FOREST_LAND:

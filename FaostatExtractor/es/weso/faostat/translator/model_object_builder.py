@@ -173,10 +173,15 @@ class ModelObjectBuilder(object):
 
     def _add_indicator_to_dict(self, register):
         #name, description, id
-        indicator = Indicator(name=register[TranslatorConst.ITEM],
-                              description=self.get_indicator_description(register[TranslatorConst.ITEM_CODE]),
+        indicator = Indicator(name_en=register[TranslatorConst.ITEM],
+                              name_fr="",  # TODO: translate
+                              name_es="",  # TODO: translate
+                              description_en=self.get_indicator_description(register[TranslatorConst.ITEM_CODE]),
+                              description_es="",  # TODO: translate
+                              description_fr="",  # TODO: translate
                               chain_for_id=self._org_id,
-                              int_for_id=self._ind_int)
+                              int_for_id=self._ind_int,
+                              topic=Indicator.TOPIC_TEMPORAL)
         self._ind_int += 1  # Updating id value
         self.add_measurement_unit_to_indicator(indicator, register)
         self.indicators_dict[register[TranslatorConst.ITEM_CODE]] = indicator
