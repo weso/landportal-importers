@@ -91,8 +91,6 @@ class UNDPTranslator(object):
     @staticmethod
     def _create_user():
         user = User(user_login="UNDPImporter")
-        user.ip = "156.35.X.X"  # CHANGE TODO
-        user.timestamp = datetime.now()
         return user
 
     def _create_organization(self):
@@ -138,21 +136,40 @@ class UNDPTranslator(object):
         ind_hdi = Indicator(chain_for_id=self._org_id,
                             int_for_id=self._ind_int)
         self._ind_int += 1  # Updating indicator int id value
-        ind_hdi.name = "HDI"
-        ind_hdi.description = self._config.get("IND_DESCRIPTION", "hdi_desc")
+        ind_hdi.name_en = self._read_config_value("IND_DESCRIPTION", "hdi_name_en")  # Done
+        ind_hdi.name_es = self._read_config_value("IND_DESCRIPTION", "hdi_name_es")  # Done
+        ind_hdi.name_fr = self._read_config_value("IND_DESCRIPTION", "hdi_name_fr")  # Done
+        ind_hdi.description_en = self._read_config_value("IND_DESCRIPTION", "hdi_desc_en")  # Done
+        ind_hdi.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_desc_es")  # Done
+        ind_hdi.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_desc_fr")  # TODO: not translated
         ind_hdi.measurement_unit = MeasurementUnit(name="%")
+
+        ind_hdi.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
+
         result_dict[self.HDI_ENDING] = ind_hdi  # Adding to dictionary
 
         #Indicator rank
         ind_rank = Indicator(chain_for_id=self._org_id,
                              int_for_id=self._ind_int)
         self._ind_int += 1  # Updating indicator int id value
-        ind_rank.name = "HDI rank"
-        ind_rank.description = self._config.get("IND_DESCRIPTION", "hdi_rank_desc")
+        ind_rank.name_en = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_en")  # Done
+        ind_rank.name_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_es")  # Done
+        ind_rank.name_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_fr")  # Done
+
+        ind_rank.description_en = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_en")   # Done
+        ind_rank.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_es")  # TODO: not translated
+        ind_rank.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_fr")  # TODO: not translated
         ind_rank.measurement_unit = MeasurementUnit("rank")
+
+        ind_rank.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
+
         result_dict[self.RANK_ENDING] = ind_rank  # Adding to dictionary
 
         return result_dict
+
+
+    def _read_config_value(self, section, field):
+        return (self._config.get(section, field)).decode(encoding="utf-8")
 
     @staticmethod
     def _build_default_computation():
