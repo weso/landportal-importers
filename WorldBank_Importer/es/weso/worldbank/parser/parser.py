@@ -5,7 +5,6 @@ Created on 18/12/2013
 """
 import logging
 import ConfigParser
-import socket
 from datetime import datetime
 
 from lpentities.user import User
@@ -72,9 +71,8 @@ class Parser(object):
                                     name="World Bank",
                                     url='http://www.worldbank.org/',
                                     is_part_of=None)
-        ip = socket.gethostbyname(socket.gethostname())
-        timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
-        self.user = User(user_login="worldbank_importer", ip=ip, timestamp=timestamp, organization=organization)
+        self.user = User(user_login="worldbank_importer",
+                         organization=organization)
         for data_source_name in self.data_sources:
             indicators_section = self.config.get('data_sources', data_source_name)
             requested_indicators = dict(self.config.items(indicators_section))
@@ -103,12 +101,17 @@ class Parser(object):
                 measurement_unit = MeasurementUnit(indicator_element[start:end])
                 indicator = Indicator(chain_for_id=self._org_id,
                                       int_for_id=self._ind_int,
-                                      name=indicator_element,
-                                      description=indicator_element,
+                                      name_en=indicator_element,
+                                      name_es="Desconocido",  # TODO: translate
+                                      name_fr="Inconnu",  # TODO: translate
+                                      description_en=indicator_element,  # TODO: right now, same as name
+                                      description_es="Desconocido",  # TODO: translate
+                                      description_fr="Inconnu",  # TODO: translate
                                       dataset=dataset,
-                                      measurement_unit=measurement_unit)
+                                      measurement_unit=measurement_unit,
+                                      topic=Indicator.TOPIC_TEMPORAL)  # TODO: temporal value
                 self._ind_int += 1  # Updating indicator id int value
-                print '\t' + indicator.name
+                print '\t' + indicator.name_en
                 web_indiccator_id = self.config.get(indicators_section, indicator_element)
                 for country in self.countries:
                     slice_object = Slice(chain_for_id=self._org_id,
@@ -133,7 +136,7 @@ class Parser(object):
                                     value_object = Value(None,
                                                          None,
                                                          Value.MISSING)
-                                    self.logger.warning('Missing value for ' + indicator.name + ', ' + country.name +
+                                    self.logger.warning('Missing value for ' + indicator.name_en + ', ' + country.name +
                                                         ', ' + observation_element['date'])
                                 time = YearInterval(observation_element['date'])
                                 observation = Observation(chain_for_id=self._org_id,
@@ -155,4 +158,4 @@ class Parser(object):
                                         print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
                     except (KeyError, ConnectionError, ValueError):
                         self.logger.error('Error retrieving response for \'' + uri + '\'')
-                print indicator.name + ' FINISHED'
+                print indicator.name_en + ' FINISHED'
