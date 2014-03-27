@@ -44,9 +44,9 @@ class ModelToXMLTransformer(object):
     OBSERVATION_TIME = "time"
     OBSERVATION_ATT_GROUP = "group"
 
-    OBSERVATION_ATT_COUNTRY_PREFIX = "http://landportal.info/ontology/country/"
-    OBSERVATION_ATT_INDICATOR_PREFIX = "http://landportal.info/ontology/country/indicator/"
-    OBSERVATION_ATT_TIME_PREFIX = "http://landportal.info/ontology/year/"
+    OBSERVATION_ATT_COUNTRY_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    OBSERVATION_ATT_INDICATOR_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    OBSERVATION_ATT_TIME_PREFIX = ""  # Empty value, but t remains here because it could still be changed
 
     IMPORT_PROCESS = "import_process"
     IMPORT_PROCESS_ORGANIZATION_NAME = "organization_name"
@@ -55,9 +55,9 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_TYPE = "type"
     IMPORT_PROCESS_TIMESTAMP = "timestamp"
     IMPORT_PROCESS_USER = "user"
-    IMPORT_PROCESS_DATASOURCE_PREFIX = "http://landportal.info/ontology/dataSource/"
-    IMPORT_PROCESS_TYPE_PREFIX = "http://landportal.info/ontology/importProcess/"
-    IMPORT_PROCESS_USER_PREFIX = "http://landportal.info/ontology/user/"
+    IMPORT_PROCESS_DATASOURCE_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    IMPORT_PROCESS_TYPE_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    IMPORT_PROCESS_USER_PREFIX = ""  # Empty value, but t remains here because it could still be changed
 
     INDICATOR = "indicator"
     INDICATOR_ATT_ID = "id"
@@ -68,11 +68,12 @@ class ModelToXMLTransformer(object):
     INDICATOR_DESCRIPTION_ES = "ind_description_es"
     INDICATOR_DESCRIPTION_FR = "ind_description_fr"
     INDICATOR_MEASURE_UNIT = "measure_unit"
+    INDICATOR_TOPIC = "topic-ref"
 
     INDICATOR_REF = "indicator-ref"
 
-    INDICATOR_ATT_ID_PREFIX = "http://landportal.info/ontology/country/indicator/"
-    INDICATOR_ATT_MEASURE_UNIT_PREFIX = "http://landportal.info/ontology/country/currency/"
+    INDICATOR_ATT_ID_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    INDICATOR_ATT_MEASURE_UNIT_PREFIX = ""  # Empty value, but t remains here because it could still be changed
 
     LICENSE = "license"
     LICENSE_NAME = "lic_name"
@@ -225,6 +226,11 @@ class ModelToXMLTransformer(object):
         descriptions = self._extract_indicator_description_nodes(data_indicator)
         for a_desc in descriptions:
             result.append(a_desc)
+
+        #topic
+        node_topic = Element(self.INDICATOR_TOPIC)
+        node_topic.text = data_indicator.topic
+        result.append(node_topic)
 
         #MeasureUnit
         node_measure = Element(self.INDICATOR_MEASURE_UNIT)
