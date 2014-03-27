@@ -10,12 +10,10 @@ class User(object):
     '''
 
 
-    def __init__(self, user_login, ip=None, timestamp=None, organization=None):
+    def __init__(self, user_login, organization=None):
         '''
         Constructor
         '''
-        self.ip = ip
-        self.timestamp = timestamp
         self.organization = organization
         self.user_id = self._generate_id(user_login)
 
