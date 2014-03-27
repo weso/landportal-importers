@@ -52,7 +52,7 @@ class IpfriTranslator(object):
     def determine_paths_to_every_available_year(self, path_pattern):
         available_years = self.config.get("IPFRI", "available_years").split(",")
         for year in available_years:
-            self.paths_to_files.append( path_pattern.replace("{year}", year))
+            self.paths_to_files.append(path_pattern.replace("{year}", year))
 
     def determine_paths_to_current_year(self, path_pattern):
         today = datetime.now()

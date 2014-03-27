@@ -93,9 +93,6 @@ class IpfriModelObjectBuilder(object):
 
         #Building user
         self.user = User(user_login="IPFRIImporter")
-        self.user.ip = "156.35.80.80"  # Change TODO
-        self.user.timestamp = datetime.now()
-
         new_organization.add_user(self.user)
 
 
@@ -121,9 +118,16 @@ class IpfriModelObjectBuilder(object):
             i += 1
             new_indicator = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
             self._ind_int += 1  # Updating internal int_id value
-            new_indicator.name = pindicator.name
-            new_indicator.description = pindicator.name
+            new_indicator.name_en = pindicator.name  # Done
+            new_indicator.name_es = "Desconocido"  # TODO: translate
+            new_indicator.name_fr = "Inconnu"  # TODO: translate
+            new_indicator.description_en = pindicator.name  # TODO: right now, same as name
+            new_indicator.description_es = "Desconocido"  # TODO: Translate
+            new_indicator.description_fr = "Inconnu"  # TODO: translate
             new_indicator.measurement_unit = default_unit
+
+            new_indicator.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
+
             self.indicators_dict[pindicator.name] = new_indicator
             #Completing dataset object
             self.dataset.add_indicator(new_indicator)
