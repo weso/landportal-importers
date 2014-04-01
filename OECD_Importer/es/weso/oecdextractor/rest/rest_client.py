@@ -17,13 +17,13 @@ class RestClient(object):
     CHAIN_TO_REPLACE_FOR_ID = "{DAT_ID}"
 
 
-    def __init__(self):
+    def __init__(self, log, config):
         '''
         Constructor
         '''
-        self.logger = logging.getLogger('rest_client')
-        self._config = ConfigParser.ConfigParser()
-        self._config.read('../configuration/data_sources.ini')
+        self._log = log
+        self._config = config
+
 
 
     def run(self):
@@ -42,15 +42,13 @@ class RestClient(object):
     def _track_data(self, req_to_do):
         file_id = 1
         for a_req in req_to_do:
-            json_response = requests.get(a_req).json()
-            print json_response
+            json_response = requests.get(a_req).text
             self._save_to_file(json_response, file_id)
             file_id += 1
 
     def _save_to_file(self, json_response, file_id):
         base_dir = self._config.get("DATASETS", "base_dir")
         file_name = base_dir + "/oecddataset" + str(file_id) + ".json"
-        print file_name
         file_stream = open(str(file_name), "w")
         file_stream.write(str(json_response))
         file_stream.close()

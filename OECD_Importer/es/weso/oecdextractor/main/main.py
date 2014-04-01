@@ -5,7 +5,9 @@ Created on 09/01/2014
 '''
 
 import logging
+import ConfigParser
 from es.weso.oecdextractor.rest.rest_client import RestClient
+from es.weso.oecdextractor.translator.oecd_translator import OecdTranslator
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -16,8 +18,15 @@ def run():
     configure_log()
     logger = logging.getLogger('main')
     logger.info('Starting run')
-    extractor = RestClient()
+
+    config = ConfigParser.ConfigParser()
+    config.read('../configuration/data_sources.ini')
+
+    extractor = RestClient(logger, config)
     extractor.run()
+    translator = OecdTranslator(logger, config)
+    translator.run()
+    print "unWE"
 
 if __name__ == '__main__':
     run()

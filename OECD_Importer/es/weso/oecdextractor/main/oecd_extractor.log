@@ -8,3 +8,24 @@
 2014-03-25 14:03:20,982 - main - INFO - Starting run
 2014-03-25 14:03:21,002 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
 2014-03-25 14:03:22,644 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 12:00:18,714 - main - INFO - Starting run
+2014-03-28 12:00:18,897 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 12:00:21,779 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:07:11,990 - main - INFO - Starting run
+2014-03-28 13:07:12,013 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:07:13,342 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:10:24,696 - main - INFO - Starting run
+2014-03-28 13:10:24,720 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:10:25,532 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:10:37,119 - main - INFO - Starting run
+2014-03-28 13:10:37,138 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:10:38,095 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:11:00,762 - main - INFO - Starting run
+2014-03-28 13:11:00,786 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:11:01,342 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:11:45,815 - main - INFO - Starting run
+2014-03-28 13:11:45,834 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:11:46,467 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:12:09,930 - main - INFO - Starting run
+2014-03-28 13:12:09,947 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-03-28 13:12:10,546 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
