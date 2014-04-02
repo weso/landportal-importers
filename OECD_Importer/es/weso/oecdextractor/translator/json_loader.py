@@ -2,6 +2,7 @@ __author__ = 'Dani'
 
 import json
 import os
+import codecs
 class JsonLoader(object):
 
     def __init__(self, log, config):
@@ -23,7 +24,7 @@ class JsonLoader(object):
 
     @staticmethod
     def _turn_file_into_json_object(path_to_file):
-        json_file = open(path_to_file)
+        json_file = codecs.open(path_to_file)
         json_string = json_file.read()
         json_file.close()
         return json.loads(json_string)

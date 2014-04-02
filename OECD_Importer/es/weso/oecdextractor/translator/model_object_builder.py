@@ -15,6 +15,7 @@ from lpentities.license import License
 from lpentities.organization import Organization
 from lpentities.year_interval import YearInterval
 
+
 from reconciler.country_reconciler import CountryReconciler
 
 from datetime import datetime
@@ -25,7 +26,10 @@ class ModelObjectBuilder(object):
     INDICATOR_JSON = "VARIABLE"
     ISO3_JSON = "LOCATION"
     VALUE_JSON = "Value"
+
+    #Depending on the json file, the concept "year" could be referred with one of the next:
     YEAR_JSON = "YEAR"
+    TIME_JSON = "TIME"
 
 
 
@@ -49,7 +53,7 @@ class ModelObjectBuilder(object):
         self._indicators_dict = self._build_indicators_dict()
         self._default_computation = self._build_default_computation()
         self._countries_dict = {}  # It will be completed during the parsing process
-        self._reconciler = CountryReconciler
+        self._reconciler = CountryReconciler()
         self._default_user = self._build_default_user()
         self._default_organization = self._build_default_organization()
         self._default_datasource = self._build_default_datasource()
@@ -75,6 +79,8 @@ class ModelObjectBuilder(object):
 
     def _build_default_datasource(self):
         result = DataSource(chain_for_id=self._org_id, int_for_id=self._dat_int)
+        result.name=self._config.get("DATASOURCE", "datasource_name")
+
         self._dat_int += 1  # Updating int id dataset value
         return result
 
@@ -99,7 +105,7 @@ class ModelObjectBuilder(object):
         result = []
         for a_json in self._json_objects:
             result.append(self._turn_json_into_dataset_object(a_json))
-        return result
+        return result, self._default_user, "json"
 
     @staticmethod
     def _build_default_computation():
@@ -214,9 +220,13 @@ class ModelObjectBuilder(object):
         #of the observations in root dict under 'value' key
         observations_list = a_json["value"]
         for obs_dict in observations_list:
-            obs_object = self._build_observation_object_from_dict(obs_dict)
-            if self._pass_observation_filters(obs_object):
-                dataset.add_observation(obs_object)
+            try:
+                obs_object = self._build_observation_object_from_dict(obs_dict)
+                if self._pass_observation_filters(obs_object):
+                    dataset.add_observation(obs_object)
+            except RuntimeError as e:
+                print e.message
+                self._log.info("Observation ignored. " + e.message)
         #No return needed
 
     def _pass_observation_filters(self, obs_object):
@@ -247,15 +257,30 @@ class ModelObjectBuilder(object):
             country_obj = self._countries_dict[country_key]
             country_obj.add_observation(obs_object)
         except UnknownCountryError:
-            raise RuntimeError("Unknown country while parsing observation. IDO3: {0}".format(country_key))
+            raise RuntimeError("Unknown country while parsing observation. ISO3: {0}".format(country_key))
 
     def _build_ref_time_of_observation(self, obs_dict):
+        """
+        Depending on the parsed file, the concept 'Year' could be referred through YEAR_JONS or TIME_JSON
+        It could be a good ugly, but we must use code that fit in both cases. Using regex here to produce
+        general solutions could be a bit exaggerated.
+
+        """
         try:
-            numeric_date = int(obs_dict[self.YEAR_JSON])
-            return YearInterval(year=numeric_date)
-        except:
+            if self.YEAR_JSON in obs_dict:
+                numeric_date = int(obs_dict[self.YEAR_JSON])
+                return YearInterval(year=numeric_date)
+            elif self.TIME_JSON in obs_dict:
+                numeric_date = int(obs_dict[self.TIME_JSON])
+                return YearInterval(year=numeric_date)
+            else:
+                raise RuntimeError("Error while parsing an obs. Ir looks that it has not got an asociated date."
+                                   "Country {0}, indicator {1}".format(obs_dict[self.ISO3_JSON],
+                                                                       obs_dict[self.INDICATOR_JSON]))
+        except KeyError:
             raise RuntimeError("Error while parsing an obs date. It looks like the date in not well formed: "
-                               "Country {0}, Indicator {1}.".format(obs_dict[self.ISO3_JSON], self.INDICATOR_JSON))
+                               "Country {0}, Indicator {1}.".format(obs_dict[self.ISO3_JSON],
+                                                                    obs_dict[self.INDICATOR_JSON]))
 
     @staticmethod
     def _build_issued_object_of_observation():
@@ -287,8 +312,8 @@ class ModelObjectBuilder(object):
         elif result.value_type == Value.INTEGER:
             result.value = int(obs_dict[self.VALUE_JSON])
         else:
-            raise RuntimeError("Error while parsing value of observation. Country {0}, year {1}, variable {2}" \
-                            .format(obs_dict[self.ISO3_JSON], obs_dict[self.YEAR_JSON], obs_dict[self.INDICATOR_JSON]))
+            raise RuntimeError("Error while parsing value of observation. Country {0}, variable {2}" \
+                            .format(obs_dict[self.ISO3_JSON], obs_dict[self.INDICATOR_JSON]))
 
         return result
 

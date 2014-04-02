@@ -20,7 +20,7 @@ def run():
     logger.info('Starting run')
 
     config = ConfigParser.ConfigParser()
-    config.read('../configuration/data_sources.ini')
+    config.read('../configuration/data_sources.ini', )
 
     extractor = RestClient(logger, config)
     extractor.run()

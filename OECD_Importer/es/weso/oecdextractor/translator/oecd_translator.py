@@ -2,6 +2,7 @@ __author__ = 'Dani'
 
 from .json_loader import JsonLoader
 from .model_object_builder import ModelObjectBuilder
+from model2xml.model2xml import ModelToXMLTransformer
 
 class OecdTranslator(object):
 
@@ -20,6 +21,9 @@ class OecdTranslator(object):
 
         """
         json_objects = JsonLoader(self._log, self._config).run()
-        datasets = ModelObjectBuilder(self._log, self._config, json_objects).run()
+        datasets, user, import_process = ModelObjectBuilder(self._log, self._config, json_objects).run()
 
-        pass
+        for dataset in datasets:
+            xmlTransformer = ModelToXMLTransformer(dataset=dataset,
+                                                   user=user,
+                                                   import_process=import_process).run()
