@@ -18,8 +18,14 @@ class CountryReconciler(object):
 
 
     def get_country_by_iso3(self, iso3):
+        #Checking first preference iso available
         for country in self.parsed_countries:
             if country.get_iso3() == iso3:
+                return country.model_object
+
+        #Cehcking iso3_a2, that looks to be the only one which value w.r.t. the others (not being none any of them)
+        for country in self.parsed_countries:
+            if country.iso3_a2 == iso3:
                 return country.model_object
         raise UnknownCountryError("Unknown country for ISO3 " + iso3)
 

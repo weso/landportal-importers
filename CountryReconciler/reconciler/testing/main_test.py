@@ -55,7 +55,7 @@ class ReconcilerTest(unittest.TestCase):
         self.assertEqual(long_spain.name, 'Spain')
         curacao = self.reconciler.get_country_by_en_name('Curaþao')
         self.assertEqual(curacao.iso3, 'CUW', 'Unexpected ISO3. Encountered ' + str(curacao.iso3) + ', expected CUW')
-        self.assertEqual(curacao.name, 'Curaþao')
+        self.assertEqual(curacao.name, u'Curaþao')
         with self.assertRaises(UnknownCountryError):
             self.reconciler.get_country_by_en_name('Spai')
 
@@ -79,6 +79,11 @@ class ReconcilerTest(unittest.TestCase):
     def test_conflictive_undp(self):
         #We expect to not have any exception with the next calls
         a_country = self.reconciler.get_country_by_en_name("Occupied Palestinian Territory")
+
+    def test_conflictive_oecd(self):
+        #We expect to not have any exception with the next calls
+        a_country = self.reconciler.get_country_by_iso3("PSE")
+
 
 if __name__ == '__main__':
     unittest.main()
