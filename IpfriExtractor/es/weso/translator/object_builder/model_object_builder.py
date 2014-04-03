@@ -126,6 +126,7 @@ class IpfriModelObjectBuilder(object):
             new_indicator.description_fr = "Inconnu"  # TODO: translate
             new_indicator.measurement_unit = default_unit
 
+            new_indicator.preferable_tendency = Indicator.DECREASE
             new_indicator.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
 
             self.indicators_dict[pindicator.name] = new_indicator
