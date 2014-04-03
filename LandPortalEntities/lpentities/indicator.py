@@ -7,6 +7,12 @@ Created on 19/12/2013
 
 class Indicator(object):
 
+    #Simulated Enum Values
+    INCREASE = "increase"
+    DECREASE = "decrease"
+    IRRELEVANT = "irrelevant "
+
+    #Possible topics
     TOPIC_CLIMATE_CHANGE = "TOP1"
     TOPIC_COUNTRY_DATA = "TOP2"
     TOPIC_FOOD_SEC_AND_HUNGER = "TOP3"
@@ -15,16 +21,16 @@ class Indicator(object):
     TOPIC_SOCIO_ECONOMIC_AND_POVERTY = "TOP6"
     TOPIC_USAGE_AND_INVESTMENT = "TOP7"
 
-    TOPIC_TEMPORAL = "TOP99"   # the finla topic list is still unknown. We will be using this for now
+    TOPIC_TEMPORAL = "TOP99"   # the final topic list is still unknown. We will be using this for now
 
     '''
     classdocs
     '''
 
-    def __init__(self, chain_for_id, int_for_id, name_en=None ,name_es=None,
+    def __init__(self, chain_for_id, int_for_id, name_en=None, name_es=None,
                  name_fr=None, description_en=None, description_es=None,
                  description_fr=None, dataset=None, measurement_unit=None,
-                 topic=None):
+                 topic=None, preferable_tendency=None):
         '''
         Constructor
         '''
@@ -37,6 +43,7 @@ class Indicator(object):
         self.dataset = dataset
         self.measurement_unit = measurement_unit
         self.topic = topic
+        self.preferable_tendency = preferable_tendency
 
         self.indicator_id = self._generate_id(chain_for_id, int_for_id)
 

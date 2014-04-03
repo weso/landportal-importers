@@ -12,6 +12,7 @@ class Dataset(object):
     """
 
     YEARLY = "http://purl.org/linked-data/sdmx/2009/code#freq-A"
+    THREE_YEARS = "http://purl.org/linked-data/sdmx/2009/code#freq-UNKNOKNW"  # TODO: temporal. Talk with Labra
 
     def __init__(self, chain_for_id, int_for_id, frequency=None,
                  license_type=None, source=None):
