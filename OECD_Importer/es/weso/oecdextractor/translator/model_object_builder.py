@@ -130,6 +130,7 @@ class ModelObjectBuilder(object):
         sigi_ind.description_fr = self._config.get("INDICATORS", "sigi_desc_fr")  # TODO: translation is possibly av.
         sigi_ind.topic = Indicator.TOPIC_TEMPORAL
         sigi_ind.measurement_unit = index_unit
+        sigi_ind.preferable_tendency = Indicator.DECREASE
         result[self._config.get("INDICATORS", "sigi_key")] = sigi_ind
 
         #SIGI RANK
@@ -143,6 +144,7 @@ class ModelObjectBuilder(object):
         sigi_rank_ind.description_fr = self._config.get("INDICATORS", "sigi_rank_desc_fr")  # TODO: tr possibly av.
         sigi_rank_ind.topic = Indicator.TOPIC_TEMPORAL
         sigi_rank_ind.measurement_unit = rank_unit
+        sigi_rank_ind.preferable_tendency = Indicator.DECREASE
         result[self._config.get("INDICATORS", "sigi_rank_key")] = sigi_rank_ind
 
 
@@ -157,6 +159,7 @@ class ModelObjectBuilder(object):
         fc_ind.description_fr = self._config.get("INDICATORS", "fc_rank_name_fr")  # TODO: translation is possibly av.
         fc_ind.topic = Indicator.TOPIC_TEMPORAL
         fc_ind.measurement_unit = index_unit
+        fc_ind.preferable_tendency = Indicator.DECREASE
         result[self._config.get("INDICATORS", "fc_key")] = fc_ind
 
         #FC RANK
@@ -170,6 +173,7 @@ class ModelObjectBuilder(object):
         fc_rank_ind.description_fr = self._config.get("INDICATORS", "fc_rank_name_fr")  # TODO: tr. possibly av.
         fc_rank_ind.topic = Indicator.TOPIC_TEMPORAL
         fc_rank_ind.measurement_unit = rank_unit
+        fc_rank_ind.preferable_tendency = Indicator.DECREASE
         result[self._config.get("INDICATORS", "fc_rank_key")] = fc_rank_ind
 
         #CIVIL
@@ -183,6 +187,7 @@ class ModelObjectBuilder(object):
         civil_ind.description_fr = self._config.get("INDICATORS", "civil_rank_name_fr")  # TODO: TR. POSSIBLY AV.
         civil_ind.topic = Indicator.TOPIC_TEMPORAL
         civil_ind.measurement_unit = index_unit
+        civil_ind.preferable_tendency = Indicator.DECREASE
         result[self._config.get("INDICATORS", "civil_key")] = civil_ind
 
         #CIVIL RANK
@@ -196,6 +201,7 @@ class ModelObjectBuilder(object):
         civil_rank_ind.description_fr = self._config.get("INDICATORS", "civil_rank_name_fr")  # TODO: tr. possibly av.
         civil_rank_ind.measurement_unit = rank_unit
         civil_rank_ind.topic = Indicator.TOPIC_TEMPORAL
+        civil_rank_ind.preferable_tendency = Indicator.DECREASE
         result[self._config.get("INDICATORS", "civil_rank_key")] = civil_rank_ind
 
         return result
