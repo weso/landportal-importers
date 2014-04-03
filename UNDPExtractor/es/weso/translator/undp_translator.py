@@ -143,6 +143,7 @@ class UNDPTranslator(object):
         ind_hdi.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_desc_es")  # Done
         ind_hdi.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_desc_fr")  # TODO: not translated
         ind_hdi.measurement_unit = MeasurementUnit(name="%")
+        ind_hdi.preferable_tendency = Indicator.INCREASE
 
         ind_hdi.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
 
@@ -160,6 +161,7 @@ class UNDPTranslator(object):
         ind_rank.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_es")  # TODO: not translated
         ind_rank.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_fr")  # TODO: not translated
         ind_rank.measurement_unit = MeasurementUnit("rank")
+        ind_rank.preferable_tendency = Indicator.DECREASE
 
         ind_rank.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
 
