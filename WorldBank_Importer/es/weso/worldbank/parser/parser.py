@@ -109,9 +109,10 @@ class Parser(object):
                                       description_fr="Inconnu",  # TODO: translate
                                       dataset=dataset,
                                       measurement_unit=measurement_unit,
+                                      preferable_tendency=self._get_preferable_tendency_of_indicator(indicator_element),
                                       topic=Indicator.TOPIC_TEMPORAL)  # TODO: temporal value
                 self._ind_int += 1  # Updating indicator id int value
-                print '\t' + indicator.name_en
+                print '\t' + indicator.name_en  + "--------------" + indicator.preferable_tendency + "-----------"
                 web_indiccator_id = self.config.get(indicators_section, indicator_element)
                 for country in self.countries:
                     slice_object = Slice(chain_for_id=self._org_id,
@@ -159,3 +160,11 @@ class Parser(object):
                     except (KeyError, ConnectionError, ValueError):
                         self.logger.error('Error retrieving response for \'' + uri + '\'')
                 print indicator.name_en + ' FINISHED'
+
+    @staticmethod
+    def _get_preferable_tendency_of_indicator(name):
+        #todo: Change this method, please.....
+        if name.lower() == "mortality rate, under-5 (per 1,000 live births)":
+            return Indicator.DECREASE
+        else:
+            return Indicator.INCREASE
