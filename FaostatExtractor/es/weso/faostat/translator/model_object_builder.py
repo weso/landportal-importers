@@ -181,7 +181,8 @@ class ModelObjectBuilder(object):
                               description_fr="",  # TODO: translate
                               chain_for_id=self._org_id,
                               int_for_id=self._ind_int,
-                              topic=Indicator.TOPIC_TEMPORAL)
+                              topic=Indicator.TOPIC_TEMPORAL,
+                              preferable_tendency=Indicator.INCREASE)
         self._ind_int += 1  # Updating id value
         self.add_measurement_unit_to_indicator(indicator, register)
         self.indicators_dict[register[TranslatorConst.ITEM_CODE]] = indicator
