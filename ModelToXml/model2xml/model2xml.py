@@ -38,15 +38,15 @@ class ModelToXMLTransformer(object):
     OBSERVATION_ISSUED = "issued"
     OBSERVATION_OBS_STATUS = "obs-status"
     OBSERVATION_COMPUTATION = "computation"
-    OBSERVATION_REGION = "country"
+    OBSERVATION_REGION = "region"
     OBSERVATION_VALUE = "value"
     OBSERVATION_INDICATOR = "indicator"
     OBSERVATION_TIME = "time"
     OBSERVATION_ATT_GROUP = "group"
 
-    OBSERVATION_ATT_COUNTRY_PREFIX = ""  # Empty value, but t remains here because it could still be changed
-    OBSERVATION_ATT_INDICATOR_PREFIX = ""  # Empty value, but t remains here because it could still be changed
-    OBSERVATION_ATT_TIME_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    OBSERVATION_ATT_COUNTRY_PREFIX = ""  # Empty value, but it remains here because it could still be changed
+    OBSERVATION_ATT_INDICATOR_PREFIX = ""  # Empty value, but it remains here because it could still be changed
+    OBSERVATION_ATT_TIME_PREFIX = ""  # Empty value, but it remains here because it could still be changed
 
     IMPORT_PROCESS = "import_process"
     IMPORT_PROCESS_ORGANIZATION_NAME = "organization_name"
@@ -55,9 +55,9 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_TYPE = "type"
     IMPORT_PROCESS_TIMESTAMP = "timestamp"
     IMPORT_PROCESS_USER = "user"
-    IMPORT_PROCESS_DATASOURCE_PREFIX = ""  # Empty value, but t remains here because it could still be changed
-    IMPORT_PROCESS_TYPE_PREFIX = ""  # Empty value, but t remains here because it could still be changed
-    IMPORT_PROCESS_USER_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    IMPORT_PROCESS_DATASOURCE_PREFIX = ""  # Empty value, but it remains here because it could still be changed
+    IMPORT_PROCESS_TYPE_PREFIX = ""  # Empty value, but it remains here because it could still be changed
+    IMPORT_PROCESS_USER_PREFIX = ""  # Empty value, but it remains here because it could still be changed
 
     INDICATOR = "indicator"
     INDICATOR_ATT_ID = "id"
@@ -69,11 +69,12 @@ class ModelToXMLTransformer(object):
     INDICATOR_DESCRIPTION_FR = "ind_description_fr"
     INDICATOR_MEASURE_UNIT = "measure_unit"
     INDICATOR_TOPIC = "topic-ref"
+    INDICATOR_PREFERABLE_TENDENCY = "preferable_tendency"
 
     INDICATOR_REF = "indicator-ref"
 
-    INDICATOR_ATT_ID_PREFIX = ""  # Empty value, but t remains here because it could still be changed
-    INDICATOR_ATT_MEASURE_UNIT_PREFIX = ""  # Empty value, but t remains here because it could still be changed
+    INDICATOR_ATT_ID_PREFIX = ""  # Empty value, but it remains here because it could still be changed
+    INDICATOR_ATT_MEASURE_UNIT_PREFIX = ""  # Empty value, but it remains here because it could still be changed
 
     LICENSE = "license"
     LICENSE_NAME = "lic_name"
@@ -118,12 +119,12 @@ class ModelToXMLTransformer(object):
     def run(self):
         #The order calling these methods should not be changed
         self.build_import_process_node()  # Done
-        self.build_license_node()  # Done CHANGE NAMES
-        self.build_observations_node()  # Done CHANGE NAMES
-        self.build_indicators_node()  # Done CHANGE NAMES
+        self.build_license_node()  # Done
+        self.build_observations_node()  # Done
+        self.build_indicators_node()  # Done
         self.build_indicator_groups_node()  # Done
         self.build_slices_node()  # Done
-        self.write_tree_to_xml()
+        self.write_tree_to_xml()  # PROVISIONAL. The final task y consuming web service, not writing
 
 
     def build_indicator_groups_node(self):
@@ -232,6 +233,11 @@ class ModelToXMLTransformer(object):
         node_topic.text = data_indicator.topic
         result.append(node_topic)
 
+        #preferable_tendency
+        node_tendency = Element(self.INDICATOR_PREFERABLE_TENDENCY)
+        node_tendency.text = data_indicator.preferable_tendency
+        result.append(node_tendency)
+
         #MeasureUnit
         node_measure = Element(self.INDICATOR_MEASURE_UNIT)
         node_measure.text = self.INDICATOR_ATT_MEASURE_UNIT_PREFIX \
@@ -332,10 +338,10 @@ class ModelToXMLTransformer(object):
         computation_node.text = data_obs.computation.uri
         observation_node.append(computation_node)
 
-        #country
+        #region
         country_node = Element(self.OBSERVATION_REGION)
         country_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                            + self._read_external_field(data_obs.region.iso3)
+                            + str(data_obs.region.un_code)
 
         observation_node.append(country_node)
 
