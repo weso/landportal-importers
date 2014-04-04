@@ -12,11 +12,12 @@ class Region(Dimension):
     '''
 
 
-    def __init__(self, name = None, is_part_of = None):
+    def __init__(self, name=None, is_part_of=None, un_code=None):
         '''
         Constructor
         '''
         self.name = name
+        self.un_code = un_code
         self.is_part_of = is_part_of
         self.observations = []
         
