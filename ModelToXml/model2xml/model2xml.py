@@ -173,7 +173,7 @@ class ModelToXMLTransformer(object):
         elif isinstance(data_slice.dimension, Region):
             region_node = Element(self.OBSERVATION_REGION)
             region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                               + data_slice.dimension.iso3  # ... region ISO3? only country
+                               + data_slice.dimension.un_code
             metadata_node.append(region_node)
 
         else:
