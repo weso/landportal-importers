@@ -41,7 +41,8 @@ class ParsedCountry(object):
         self.alias = []
         self.model_object = Country(iso3=self.get_iso3(),
                                     name=self._get_valid_en_name(),
-                                    iso2=self.get_iso2())
+                                    iso2=self.get_iso2(),
+                                    un_code=un_code)
 
 
     def get_iso2(self):
