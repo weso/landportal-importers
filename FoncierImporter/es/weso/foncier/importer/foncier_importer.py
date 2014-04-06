@@ -1,6 +1,7 @@
 __author__ = 'Dani'
 
 
+
 from lpentities.observation import Observation
 from lpentities.value import Value
 from lpentities.indicator import Indicator
@@ -12,6 +13,7 @@ from lpentities.user import User
 from lpentities.data_source import DataSource
 from lpentities.license import License
 from lpentities.organization import Organization
+from .xml_management.rest_xml_tracker import RestXmlTracker
 
 from reconciler.country_reconciler import CountryReconciler
 from model2xml.model2xml import ModelToXMLTransformer
@@ -28,6 +30,10 @@ class FoncierImporter(object):
         self._config = config
         self._look_for_historical = look_for_historical
         self._reconciler = CountryReconciler()
+
+        #Building parsing instances
+        self._xml_tracker = self._build_xml_tracker()
+        self._xml_parser = self._build_xml_parser()
 
         # Building common objects
         self._default_user = self._build_default_user()  # TODO
@@ -87,6 +93,12 @@ class FoncierImporter(object):
 
         #And it is done. No return needed
 
+    def _build_xml_tracker(self):
+        return RestXmlTracker(url_pattern=self._config.get("IMPORTER", "url_pattern"),
+                                year_pattern=self._config.get("IMPORTER", "year_pattern"),
+                                month_pattern=self._config.get("IMPORTER", "month_pattern"))
+
+
     def _actualize_config_values(self, last_year):
         #TODO: ids int values and last checked year
         pass
@@ -104,7 +116,17 @@ class FoncierImporter(object):
         return result
 
     def _build_observation_from_a_concrete_month(self, year, month):
-        # TODO: Do everythin! Call the API, parse the result,...
+        """
+        Steps:
+         - Call the API and track the data from a month
+         - Turn the xml into an intermediate structure (list or dict)
+         - build obs from that structure
+
+        """
+        xml_data = self._xml_tracker.track_xml(year, month)
+        register = self._xml_parser.turn_xml_into_register(xml_data)
+        self._build_observations_from_register(register, year, month)
+
         pass
 
     def _determine_years_to_query(self):
