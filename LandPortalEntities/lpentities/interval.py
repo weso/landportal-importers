@@ -6,13 +6,14 @@ Created on 02/02/2014
 
 from .time import Time
 
+
 class Interval(Time):
     '''
     classdocs
     '''
 
 
-    def __init__(self, start_time = None, end_time = None):
+    def __init__(self, start_time=None, end_time=None):
         '''
         Constructor
         '''
