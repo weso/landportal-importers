@@ -19,22 +19,22 @@ class XmlContentParser(object):
     #               reperages=self._look_for_field(tree, self.REPERAGES),
     #     reproduction_des_plants=self._look_for_field(tree, self.REP_DES_PLANS)
 
-    BORNAGES = "iTopBornagesEff"
-    CSJ = "iDomCvjDel"
-    MUTATIONS = "iDomMutationsEff"
-    TITRES_CREES = "iDomTitreCrees"
-    REPERAGES = "iTopReperagesEff"
-    REP_DES_PLANS = "iTopReproductionPlans"
+    BORNAGES = ".//iTopBornagesEff"
+    CSJ = ".//iDomCvjDel"
+    MUTATIONS = ".//iDomMutationsEff"
+    TITRES_CREES = ".//iDomTitreCrees"
+    REPERAGES = ".//iTopReperagesEff"
+    REP_DES_PLANS = ".//iTopReproductionPlans"
 
     VALUE = "value"
 
 
     def __init__(self, log):
         self._log = log
-        pass
 
     def turn_xml_into_register(self, year, month, xml_content):
         tree = ETree.fromstring(xml_content)
+        # print year, month
 
         result = XmlRegister(year=year,
                              month=month,

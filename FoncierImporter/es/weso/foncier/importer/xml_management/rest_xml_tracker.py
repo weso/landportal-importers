@@ -15,8 +15,8 @@ class RestXmlTracker(object):
         return requests.get(url).content
 
     def _prepare_url(self, year, month):
-        result = self._url_pattern.replace(self._year_pattern, year)
-        result = result.replace(self._month_pattern, month)
+        result = self._url_pattern.replace(self._year_pattern, str(year))
+        result = result.replace(self._month_pattern, str(month))
         return result
 
 

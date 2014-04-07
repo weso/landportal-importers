@@ -1,7 +1,5 @@
 __author__ = 'Dani'
 
-
-
 from lpentities.observation import Observation
 from lpentities.value import Value
 from lpentities.indicator import Indicator
@@ -13,16 +11,27 @@ from lpentities.user import User
 from lpentities.data_source import DataSource
 from lpentities.license import License
 from lpentities.organization import Organization
+from lpentities.month_interval import MonthInterval
+
 from .xml_management.rest_xml_tracker import RestXmlTracker
+from .xml_management.xml_content_parser import XmlContentParser
 
 from reconciler.country_reconciler import CountryReconciler
 from model2xml.model2xml import ModelToXMLTransformer
 
 from ..exceptions.no_new_data_available_error import NoNewDataAvailableError
 
+from datetime import datetime
 
 
 class FoncierImporter(object):
+
+    TITRES_CREES = 0
+    MUTATIONS = 1
+    CSJ = 2
+    REPERAGES = 3
+    BORNAGES = 4
+    REP_DES_PLANS = 5
 
 
     def __init__(self, log, config, look_for_historical):
@@ -31,22 +40,7 @@ class FoncierImporter(object):
         self._look_for_historical = look_for_historical
         self._reconciler = CountryReconciler()
 
-        #Building parsing instances
-        self._xml_tracker = self._build_xml_tracker()
-        self._xml_parser = self._build_xml_parser()
-
-        # Building common objects
-        self._default_user = self._build_default_user()  # TODO
-        self._default_datasource = self._build_default_datasource()  # TODO
-        self._default_dataset = self._build_default_dataset()  # TODO
-        self._default_organization = self._build_default_organization()  # TODO
-        self._default_license = self._build_default_license()  # TODO
-        self._relate_common_objects()  # TODO
-        self._default_country = self._get_default_country()  # Done =)
-
-        # Objects that will be needed during the parsing process
         #Initializing variable ids
-        self._indicators_dict = self._build_indicators_dict()
         self._org_id = self._config.get("TRANSLATOR", "org_id")
         self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
@@ -54,6 +48,25 @@ class FoncierImporter(object):
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
         self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
         self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
+
+        #Indicators_dict
+        self._indicators_dict = self._build_indicators_dict()
+
+        #Building parsing instances
+        self._xml_tracker = self._build_xml_tracker()
+        self._xml_parser = self._build_xml_parser()
+
+        # Building common objects
+        self._default_user = self._build_default_user()  # Done
+        self._default_datasource = self._build_default_datasource()  # Done
+        self._default_dataset = self._build_default_dataset()  # Done
+        self._default_organization = self._build_default_organization()  # Done
+        self._default_license = self._build_default_license()  # Done
+        self._relate_common_objects()  # Done
+        self._default_country = self._get_default_country()  # Done =)
+        self._default_computation = Computation(uri=Computation.RAW)
+
+
 
 
     def run(self):
@@ -77,6 +90,7 @@ class FoncierImporter(object):
 
         except NoNewDataAvailableError:
             #TODO: make something noisy
+            print "NO NEW DATA AVAILABLE"  # Provisional Strategy
             return  # It is quite noisy eh?
 
         #Generate observations and incorpore it to the common objects
@@ -89,19 +103,27 @@ class FoncierImporter(object):
         translator.run()
 
         #Actualizing config values in case of success
-        self._actualize_config_values(last_year)
+        #self._actualize_config_values(last_year)
 
         #And it is done. No return needed
 
     def _build_xml_tracker(self):
         return RestXmlTracker(url_pattern=self._config.get("IMPORTER", "url_pattern"),
-                                year_pattern=self._config.get("IMPORTER", "year_pattern"),
-                                month_pattern=self._config.get("IMPORTER", "month_pattern"))
+                              year_pattern=self._config.get("IMPORTER", "year_pattern"),
+                              month_pattern=self._config.get("IMPORTER", "month_pattern"))
 
+    def _build_xml_parser(self):
+        return XmlContentParser(self._log)
 
     def _actualize_config_values(self, last_year):
-        #TODO: ids int values and last checked year
-        pass
+        self._config.set("TRANSLATOR", "org_id", self._org_id)
+        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
+        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
+        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
+        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
+        self._config.set("TRANSLATOR", "ind_int", self._ind_int)
+        self._config.set("TRANSLATOR", "sou_int", self._sou_int)
+        self._config.set("AVAILABLE_TIME", "last_checked_year", last_year)
 
     def _build_observations_from_available_years(self, first_year, last_year):
         result = []
@@ -110,9 +132,9 @@ class FoncierImporter(object):
         return result
 
     def _build_observations_from_a_single_year(self, year):
-        result =[]
-        for month in range(1,13):
-            result.append(self._build_observation_from_a_concrete_month(year, month))
+        result = []
+        for month in range(1, 13):
+            result += self._build_observation_from_a_concrete_month(year, month)
         return result
 
     def _build_observation_from_a_concrete_month(self, year, month):
@@ -124,49 +146,256 @@ class FoncierImporter(object):
 
         """
         xml_data = self._xml_tracker.track_xml(year, month)
-        register = self._xml_parser.turn_xml_into_register(xml_data)
-        self._build_observations_from_register(register, year, month)
+        register = self._xml_parser.turn_xml_into_register(xml_content=xml_data,
+                                                           year=year,
+                                                           month=month)
+        return self._build_observations_from_register(register)
 
-        pass
+    def _build_observations_from_register(self, register):
+        """
+        We have to build 6 observations for each register. An observation per indicator.
+        The thing that change
+
+        """
+        result = []
+
+        #Titres
+        result.append(self._build_observation_for_a_given_indicator_and_value(
+            self._indicators_dict[self.TITRES_CREES],
+            register.mutations,
+            register.year,
+            register.month))
+        #Mutations
+        result.append(self._build_observation_for_a_given_indicator_and_value(
+            self._indicators_dict[self.MUTATIONS],
+            register.mutations,
+            register.year,
+            register.month))
+        #Csj
+        result.append(self._build_observation_for_a_given_indicator_and_value(
+            self._indicators_dict[self.CSJ],
+            register.csj,
+            register.year,
+            register.month))
+        #Reperages
+        result.append(self._build_observation_for_a_given_indicator_and_value(
+            self._indicators_dict[self.REPERAGES],
+            register.reperages,
+            register.year,
+            register.month))
+        #Bornages
+        result.append(self._build_observation_for_a_given_indicator_and_value(
+            self._indicators_dict[self.BORNAGES],
+            register.bornages,
+            register.year,
+            register.month))
+        #Reproduction des plans
+        result.append(self._build_observation_for_a_given_indicator_and_value(
+            self._indicators_dict[self.REP_DES_PLANS],
+            register.reproduction_des_plans,
+            register.year,
+            register.month))
+
+        return result
+
+    def _build_observation_for_a_given_indicator_and_value(self, indicator, value, year, month):
+        """
+        It is expected to receive an indicator object completely built and a numeric value.
+        Also needs an year and a month value.
+        It should produce an observation completely built and properly related with the rest
+        of the model objects
+
+        """
+        result = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
+        self._obs_int += 1  # Updating id value
+        result.indicator = indicator
+        result.value = self._build_value_object(value)
+        result.computation = self._get_computation_object()  # Always the same, no param needed
+        result.issued = self._build_issued_object()  # No param needed
+        result.ref_time = self._build_ref_time_object(year, month)
+        self._default_country.add_observation(result)  # And that stablish therelation in both directions
+
+        return result
+
+    @staticmethod
+    def _build_ref_time_object(year, month):
+        return MonthInterval(year=year, month=month)
+
+    def _build_issued_object(self):
+        return Instant(datetime.now())
+
+
+    def _get_computation_object(self):
+        return self._default_computation
+
+    @staticmethod
+    def _build_value_object(value):
+        if not (value is None or value == ""):
+            return Value(value=value,
+                         value_type=Value.INTEGER,
+                         obs_status=Value.AVAILABLE)
+        else:
+            return Value(value=None,
+                         value_type=Value.INTEGER,
+                         obs_status=Value)
 
     def _determine_years_to_query(self):
         first_year = int(self._config.get("AVAILABLE_TIME", "first_year"))
         last_year = int(self._config.get("AVAILABLE_TIME", "last_year"))
 
-        if not self._look_for_historical:
+        print first_year, last_year
+
+        if self._look_for_historical:
             return first_year, last_year
         else:
             last_checked = int(self._config.get("AVAILABLE_TIME", "last_checked_year"))
             if last_year <= last_checked:
                 raise NoNewDataAvailableError("No new data available. Source has not been updated since last execution")
             else:
-                return last_checked + 1, last_year
+                return last_checked, last_year
+
+
 
 
     def _get_default_country(self):
         return self._reconciler.get_country_by_iso3("MDG")
-        pass
 
     def _build_default_user(self):
-        return "a"
+        return User(user_login="FONCIERIMPORTER")
 
     def _build_default_datasource(self):
-        return "a"
-
+        result = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
+        self._sou_int += 1  # Update
+        result.name = self._config.get("DATASOURCE", "name")
+        return result
     def _build_default_dataset(self):
         result = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
         self._dat_int += 1  # Needed increment
+        result.frequency
         return result
 
     def _build_default_organization(self):
-        return "a"
+        result = Organization(chain_for_id=self._org_id)
+        result.name = self._config.get("ORGANIZATION", "name")
+        result.url = self._config.get("ORGANIZATION", "url")
+        result.url_logo = self._config.get("ORGANIZATION", "url_logo")
+        result.description = self._config.get("ORGANIZATION", "description")
+
+        return result
+
 
     def _build_default_license(self):
-        return "a"
+        # TODO: Revise ALL this data. There is not clear license
+        result = License()
+        result.republish = self._config.get("LICENSE", "republish")
+        result.description = self._config.get("LICENSE", "description")
+        result.name = self._config.get("LICENSE", "name")
+        result.url = self._config.get("LICENSE", "url")
+
+        return result
 
     def _build_indicators_dict(self):
-        return "a"
+        result = {}
+        #Titres crees
+        titres_crees_ind = Indicator(chain_for_id=self._org_id,
+                                     int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating id value
+        titres_crees_ind.name_en = self._read_config_value("INDICATOR", "titres_name_en")
+        titres_crees_ind.name_es = self._read_config_value("INDICATOR", "titres_name_es")
+        titres_crees_ind.name_fr = self._read_config_value("INDICATOR", "titres_name_fr")
+        titres_crees_ind.description_en = self._read_config_value("INDICATOR", "titres_desc_en")
+        titres_crees_ind.description_es = self._read_config_value("INDICATOR", "titres_desc_es")
+        titres_crees_ind.description_fr = self._read_config_value("INDICATOR", "titres_desc_fr")
+        titres_crees_ind.measurement_unit = MeasurementUnit("units")
+        titres_crees_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+
+        result[self.TITRES_CREES] = titres_crees_ind
+
+        #Mutations
+        mutations_ind = Indicator(chain_for_id=self._org_id,
+                                  int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating id value
+        mutations_ind.name_en = self._read_config_value("INDICATOR", "mutations_name_en")
+        mutations_ind.name_es = self._read_config_value("INDICATOR", "mutations_name_es")
+        mutations_ind.name_fr = self._read_config_value("INDICATOR", "mutations_name_fr")
+        mutations_ind.description_en = self._read_config_value("INDICATOR", "mutations_desc_en")
+        mutations_ind.description_es = self._read_config_value("INDICATOR", "mutations_desc_es")
+        mutations_ind.description_fr = self._read_config_value("INDICATOR", "mutations_desc_fr")
+        mutations_ind.measurement_unit = MeasurementUnit("units")
+        mutations_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+
+        result[self.MUTATIONS] = mutations_ind
+
+        #CSJ
+        csj_ind = Indicator(chain_for_id=self._org_id,
+                            int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating id value
+        csj_ind.name_en = self._read_config_value("INDICATOR", "csj_name_en")
+        csj_ind.name_es = self._read_config_value("INDICATOR", "csj_name_es")
+        csj_ind.name_fr = self._read_config_value("INDICATOR", "csj_name_fr")
+        csj_ind.description_en = self._read_config_value("INDICATOR", "csj_desc_en")
+        csj_ind.description_es = self._read_config_value("INDICATOR", "csj_desc_es")
+        csj_ind.description_fr = self._read_config_value("INDICATOR", "csj_desc_fr")
+        csj_ind.measurement_unit = MeasurementUnit("units")
+        csj_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+
+        result[self.CSJ] = csj_ind
+
+        #Reperages
+        reperages_ind = Indicator(chain_for_id=self._org_id,
+                                  int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating id value
+        reperages_ind.name_en = self._read_config_value("INDICATOR", "reperages_name_en")
+        reperages_ind.name_es = self._read_config_value("INDICATOR", "reperages_name_es")
+        reperages_ind.name_fr = self._read_config_value("INDICATOR", "reperages_name_fr")
+        reperages_ind.description_en = self._read_config_value("INDICATOR", "reperages_desc_en")
+        reperages_ind.description_es = self._read_config_value("INDICATOR", "reperages_desc_es")
+        reperages_ind.description_fr = self._read_config_value("INDICATOR", "reperages_desc_fr")
+        reperages_ind.measurement_unit = MeasurementUnit("units")
+        reperages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+
+        result[self.REPERAGES] = reperages_ind
+
+        #Bornages
+        bornages_ind = Indicator(chain_for_id=self._org_id,
+                                 int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating id value
+        bornages_ind.name_en = self._read_config_value("INDICATOR", "bornages_name_en")
+        bornages_ind.name_es = self._read_config_value("INDICATOR", "bornages_name_es")
+        bornages_ind.name_fr = self._read_config_value("INDICATOR", "bornages_name_fr")
+        bornages_ind.description_en = self._read_config_value("INDICATOR", "bornages_desc_en")
+        bornages_ind.description_es = self._read_config_value("INDICATOR", "bornages_desc_es")
+        bornages_ind.description_fr = self._read_config_value("INDICATOR", "bornages_desc_fr")
+        bornages_ind.measurement_unit = MeasurementUnit("units")
+        bornages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+
+        result[self.BORNAGES] = bornages_ind
+
+        #Rep_des_plans
+        rep_des_plans_ind = Indicator(chain_for_id=self._org_id,
+                                      int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating id value
+        rep_des_plans_ind.name_en = self._read_config_value("INDICATOR", "rep_des_plans_name_en")
+        rep_des_plans_ind.name_es = self._read_config_value("INDICATOR", "rep_des_plans_name_es")
+        rep_des_plans_ind.name_fr = self._read_config_value("INDICATOR", "rep_des_plans_name_fr")
+        rep_des_plans_ind.description_en = self._read_config_value("INDICATOR", "rep_des_plans_desc_en")
+        rep_des_plans_ind.description_es = self._read_config_value("INDICATOR", "rep_des_plans_desc_es")
+        rep_des_plans_ind.description_fr = self._read_config_value("INDICATOR", "rep_des_plans_desc_fr")
+        rep_des_plans_ind.measurement_unit = MeasurementUnit("units")
+        rep_des_plans_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+
+        result[self.REP_DES_PLANS] = rep_des_plans_ind
+
+        #Returning final dict
+        return result
+
+    def _read_config_value(self, section, field):
+        return (self._config.get(section, field)).decode(encoding="utf-8")
+
 
     def _relate_common_objects(self):
+        self._default_organization.add_user(self._default_user)
+        self._default_organization.add_data_source(self._default_datasource)
+        self._default_datasource.add_dataset(self._default_dataset)
+        self._default_dataset.license_type = self._default_license
         #No return needed
-        pass

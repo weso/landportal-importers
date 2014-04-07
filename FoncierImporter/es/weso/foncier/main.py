@@ -4,7 +4,7 @@ __author__ = 'Dani'
 import logging
 from ConfigParser import ConfigParser
 
-from .importer.foncier_importer import FoncierImporter
+from es.weso.foncier.importer.foncier_importer import FoncierImporter
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -15,10 +15,10 @@ def run():
     configure_log()
     log = logging.getLogger("foncierextractor")
     config = ConfigParser()
-    config.read("../../files/configuration.ini")
+    config.read("../../../files/configuration.ini")
 
-    foncierImporter = FoncierImporter(log, config)
-    foncierImporter.run()
+    foncier_importer = FoncierImporter(log, config, True)
+    foncier_importer.run()
 
     print "Done!"
 
