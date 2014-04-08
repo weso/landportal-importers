@@ -71,6 +71,7 @@ class ModelToXMLTransformer(object):
     INDICATOR_DESCRIPTION_FR = "ind_description_fr"
     INDICATOR_MEASURE_UNIT = "measure_unit"
     INDICATOR_TOPIC = "topic-ref"
+    INDICATOR_SPLITS_IN = "splitsIn"
     INDICATOR_PREFERABLE_TENDENCY = "preferable_tendency"
 
     INDICATOR_REF = "indicator-ref"
@@ -102,7 +103,7 @@ class ModelToXMLTransformer(object):
     '''
 
 
-    def __init__(self, dataset, import_process, user):
+    def __init__(self, dataset, import_process, user, indicator_relations=None):
         self.datasource = dataset.source
         self.dataset = dataset
         self.user = user
@@ -110,6 +111,7 @@ class ModelToXMLTransformer(object):
         self.root = None
         self.indicator_dic = {}  # It will store an indicator object with it id as key.
         self.group_dic = {}
+        self.indicator_relations = indicator_relations
         # One per indicator referred by the observations
 
         self.root = Element(self.ROOT)
@@ -126,8 +128,40 @@ class ModelToXMLTransformer(object):
         self.build_indicators_node()  # Done
         self.build_indicator_groups_node()  # Done
         self.build_slices_node()  # Done
+        self.include_indicator_relations()  # Done? TODO: UNTESTED
         self.write_tree_to_xml()  # PROVISIONAL. The final task y consuming web service, not writing
 
+
+    def include_indicator_relations(self):
+        if self.indicator_relations is None or len(self.indicator_relations) == 0:
+            return  # Nothing to fo (most of cases)
+        else:
+            for a_relation in self.indicator_relations:
+                self.include_relation_in_the_tree(a_relation)
+
+    def include_relation_in_the_tree(self, a_relation):
+        #Looking for source node in the tree
+        source_node = self._get_indicator_node_by_id(a_relation.source.indicator_id)
+        relations_node = source_node.find(self.INDICATOR_SPLITS_IN)
+
+        #Creating base relation node if needed, and incorporating it to the tree
+        if relations_node is None:
+            relations_node = Element(self.INDICATOR_SPLITS_IN)
+            source_node.append(relations_node)
+
+        #Creating and adding new relation
+        new_node = Element(self.INDICATOR_REF)
+        new_node.text = a_relation.target.indicator_id
+        source_node.append(new_node)
+
+
+    def _get_indicator_node_by_id(self, indicator_id):
+        indicator_nodes= self.root.find(self.INDICATORS).getchildren()
+        for ind in indicator_nodes:
+            if ind[self.INDICATOR_ATT_ID] == indicator_id:
+                return ind
+        raise RuntimeError("Impossible to find indicator with id {0}. Unable to relate indicators with it"
+                           .format(indicator_id))
 
     def build_indicator_groups_node(self):
         groups = Element(self.INDICATOR_GROUPS)
