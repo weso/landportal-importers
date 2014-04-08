@@ -307,6 +307,7 @@ class FoncierImporter(object):
         titres_crees_ind.description_es = self._read_config_value("INDICATOR", "titres_desc_es")
         titres_crees_ind.description_fr = self._read_config_value("INDICATOR", "titres_desc_fr")
         titres_crees_ind.measurement_unit = MeasurementUnit("units")
+        titres_crees_ind.topic = Indicator.TOPIC_TEMPORAL
         titres_crees_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.TITRES_CREES] = titres_crees_ind
@@ -322,6 +323,7 @@ class FoncierImporter(object):
         mutations_ind.description_es = self._read_config_value("INDICATOR", "mutations_desc_es")
         mutations_ind.description_fr = self._read_config_value("INDICATOR", "mutations_desc_fr")
         mutations_ind.measurement_unit = MeasurementUnit("units")
+        mutations_ind.topic = Indicator.TOPIC_TEMPORAL
         mutations_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.MUTATIONS] = mutations_ind
@@ -337,6 +339,7 @@ class FoncierImporter(object):
         csj_ind.description_es = self._read_config_value("INDICATOR", "csj_desc_es")
         csj_ind.description_fr = self._read_config_value("INDICATOR", "csj_desc_fr")
         csj_ind.measurement_unit = MeasurementUnit("units")
+        csj_ind.topic = Indicator.TOPIC_TEMPORAL
         csj_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.CSJ] = csj_ind
@@ -351,6 +354,7 @@ class FoncierImporter(object):
         reperages_ind.description_en = self._read_config_value("INDICATOR", "reperages_desc_en")
         reperages_ind.description_es = self._read_config_value("INDICATOR", "reperages_desc_es")
         reperages_ind.description_fr = self._read_config_value("INDICATOR", "reperages_desc_fr")
+        reperages_ind.topic = Indicator.TOPIC_TEMPORAL
         reperages_ind.measurement_unit = MeasurementUnit("units")
         reperages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
@@ -366,6 +370,7 @@ class FoncierImporter(object):
         bornages_ind.description_en = self._read_config_value("INDICATOR", "bornages_desc_en")
         bornages_ind.description_es = self._read_config_value("INDICATOR", "bornages_desc_es")
         bornages_ind.description_fr = self._read_config_value("INDICATOR", "bornages_desc_fr")
+        bornages_ind.topic = Indicator.TOPIC_TEMPORAL
         bornages_ind.measurement_unit = MeasurementUnit("units")
         bornages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
@@ -381,6 +386,7 @@ class FoncierImporter(object):
         rep_des_plans_ind.description_en = self._read_config_value("INDICATOR", "rep_des_plans_desc_en")
         rep_des_plans_ind.description_es = self._read_config_value("INDICATOR", "rep_des_plans_desc_es")
         rep_des_plans_ind.description_fr = self._read_config_value("INDICATOR", "rep_des_plans_desc_fr")
+        rep_des_plans_ind.topic = Indicator.TOPIC_TEMPORAL
         rep_des_plans_ind.measurement_unit = MeasurementUnit("units")
         rep_des_plans_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
