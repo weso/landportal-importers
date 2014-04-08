@@ -268,10 +268,11 @@ class FoncierImporter(object):
         self._sou_int += 1  # Update
         result.name = self._config.get("DATASOURCE", "name")
         return result
+
     def _build_default_dataset(self):
         result = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
         self._dat_int += 1  # Needed increment
-        result.frequency
+        result.frequency = Dataset.YEARLY
         return result
 
     def _build_default_organization(self):
