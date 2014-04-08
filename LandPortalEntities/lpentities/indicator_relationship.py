@@ -10,7 +10,7 @@ class IndicatorRelationship(object):
     '''
 
 
-    def __init__(self, source = None, target = None):
+    def __init__(self, source, target):
         '''
         Constructor
         '''
