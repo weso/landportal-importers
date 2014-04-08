@@ -12,6 +12,7 @@ except:
     from xml.etree.ElementTree import Element, ElementTree
 from lpentities.interval import Interval
 from lpentities.instant import Instant
+from lpentities.month_interval import MonthInterval
 from lpentities.year_interval import YearInterval
 from lpentities.time import Time
 from lpentities.region import Region
@@ -55,6 +56,7 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_TYPE = "type"
     IMPORT_PROCESS_TIMESTAMP = "timestamp"
     IMPORT_PROCESS_USER = "user"
+    IMPORT_PROCESS_SDMX_FREQUENCY = "sdmx_frequency"
     IMPORT_PROCESS_DATASOURCE_PREFIX = ""  # Empty value, but it remains here because it could still be changed
     IMPORT_PROCESS_TYPE_PREFIX = ""  # Empty value, but it remains here because it could still be changed
     IMPORT_PROCESS_USER_PREFIX = ""  # Empty value, but it remains here because it could still be changed
@@ -373,6 +375,9 @@ class ModelToXMLTransformer(object):
         elif type(ref_time) is YearInterval:
             time_node.attrib[self.TIME_ATT_UNIT] = "years"
             time_node.text = ref_time.get_time_string()
+        elif type(ref_time) is MonthInterval:
+            time_node.attrib[self.TIME_ATT_UNIT] = "months"
+            time_node.text = ref_time.get_time_string()
         elif type(ref_time) is Interval:
             time_node.attrib[self.TIME_ATT_UNIT] = "years"
             interval_node = Element(self.TIME_INTERVAL)
@@ -411,11 +416,14 @@ class ModelToXMLTransformer(object):
             group_node.attrib[self.GROUP_ATT_INDICATOR] = \
                 self.INDICATOR_ATT_ID_PREFIX + data_group.indicator_id
             self.group_dic[data_group.group_id] = group_node
-        #Adding obs to node
-        obs_node_ref = Element(self.OBSERVATION_REF)
-        obs_node_ref.attrib[self.OBSERVATION_REF_ID] = data_obs.observation_id
-        group_node.append(obs_node_ref)
-        pass
+
+        # We don't need to add observations to this node according to the current spec. but it could change.
+        # So code for that remains in this comment
+        #
+        # #Adding obs to node
+        # obs_node_ref = Element(self.OBSERVATION_REF)
+        # obs_node_ref.attrib[self.OBSERVATION_REF_ID] = data_obs.observation_id
+        # group_node.append(obs_node_ref)
 
     def include_indicator_if_needed(self, data_indicator):
         if data_indicator.indicator_id in self.indicator_dic:
@@ -468,6 +476,10 @@ class ModelToXMLTransformer(object):
         user_node.text = self.IMPORT_PROCESS_USER_PREFIX \
                          + self.user.user_id
         metadata.append(user_node)
+        #sdmx_frequency
+        sdmx_freq_node = Element(self.IMPORT_PROCESS_SDMX_FREQUENCY)
+        sdmx_freq_node.text = self.dataset.frequency
+        metadata.append(sdmx_freq_node)
 
 
         #Addind node to root
