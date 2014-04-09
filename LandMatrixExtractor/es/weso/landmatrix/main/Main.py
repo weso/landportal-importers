@@ -6,7 +6,7 @@ Created on 13/01/2014
 
 import logging
 from es.weso.landmatrix.extractor.LandMatrixExtractorXML import LandMatrixExtractorXML
-from es.weso.landmatrix.translator.LandMatrixTranslator import LandMatrixTranslator
+from es.weso.landmatrix.translator.land_matrix_translator import LandMatrixTranslator
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

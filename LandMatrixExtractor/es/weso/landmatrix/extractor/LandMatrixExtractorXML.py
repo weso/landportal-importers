@@ -17,16 +17,18 @@ class LandMatrixExtractorXML(object):
 
 
     def __init__(self):
-        '''
+        """
         Constructor
-        '''
+        """
         self.config = ConfigParser()
         self.config.read("../../../../files/configuration.ini")
         self.log = logging.getLogger('landmatrixlog')
-    '''
-    Downloads the entire Land Matrix database
-    '''
+
     def run(self):
+        """
+        Downloads the entire Land Matrix database
+
+        """
         try:
             self.log.info('Running Land matrix xml extractor...')
             response = urllib2.urlopen(self.config.get("LAND_MATRIX", "url_download"))
@@ -37,4 +39,5 @@ class LandMatrixExtractorXML(object):
             e = sys.exc_info()[0]
             self.log.error("Unable to track data from {0}... Cause: {1}".format(self.config.get("LAND_MATRIX", "url_download"), e))
             raise
-        
+
+
