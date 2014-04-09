@@ -17,6 +17,10 @@ from lpentities.year_interval import YearInterval
 from lpentities.time import Time
 from lpentities.region import Region
 
+import codecs
+
+import urllib, urllib2
+
 
 class ModelToXMLTransformer(object):
     #
@@ -129,7 +133,18 @@ class ModelToXMLTransformer(object):
         self.build_indicator_groups_node()  # Done
         self.build_slices_node()  # Done
         self.include_indicator_relations()  # Done? TODO: UNTESTED
-        self.write_tree_to_xml()  # PROVISIONAL. The final task y consuming web service, not writing
+        self.write_tree_to_xml()  # PROVISIONAL. The final task is consuming web service, not writing
+        self.send_to_receiver()
+
+
+    def send_to_receiver(self):
+        url = "http://156.35.82.103/receiver"
+        file_path = "file.xml"
+        with codecs.open(file_path, encoding="utf-8") as xml:
+            file_content = xml.read()
+            data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')})
+            req = urllib2.Request(url, data)
+            resp = urllib2.urlopen(req)
 
 
     def include_indicator_relations(self):
@@ -349,8 +364,7 @@ class ModelToXMLTransformer(object):
 
 
     def write_tree_to_xml(self):
-
-            ElementTree(self.root).write("file.xml", encoding="utf-8")
+        ElementTree(self.root).write("file.xml", encoding="utf-8")
 
 
 
