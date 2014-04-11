@@ -4,6 +4,9 @@ from ..entities.deal import Deal
 
 
 class DealsBuilder(object):
+    INTENDED = 0
+    CONCLUDED = 1
+    FAILED = 2
 
     def __init__(self):
         pass
@@ -17,8 +20,11 @@ class DealsBuilder(object):
         a_deal = Deal()
         a_deal.target_country = _extract_target_country(info_node)
         a_deal.date = _extract_date(info_node)
-        a_deal.hectares = _extract_hectares(info_node)
+        a_deal.production_hectares = _extract_production_hectares(info_node)
+        a_deal.intended_hectares = _extract_intended_hectares(info_node)
+        a_deal.contract_hectares = _extract_contract_hectares(info_node)
         a_deal.sectors = _extract_sectors(info_node)
+        a_deal.negotiation_status = _extract_negotiation_status(info_node)
 
         return a_deal
 
@@ -29,14 +35,54 @@ class DealsBuilder(object):
 
 ###  Contants
 
+
 PROPERTY = "name"
 TARGET_COUNTRY = "target_country"
-SECTROS = "intention"
+SECTORS = "intention"
+NEGOTIATION_STATUS = "negotiation_status"
 NO_VALUE = "None"
-
+INTENDED_SIZE = "intended_size"
+CONTRACT_SIZE = "contract_size"
+PRODUCTION_SIZE = "production_size"
 
 
 #Functions
+
+def _extract_hectares(info_node, hectares_type):
+    hectares_container = _get_node_data(info_node, hectares_type)
+    if hectares_container == NO_VALUE:
+        return None
+    elif hectares_container.isdigit():
+        return int(hectares_container)
+    else:
+        return None
+
+
+def _extract_intended_hectares(info_node):
+    return _extract_hectares(info_node, INTENDED_SIZE)
+
+
+def _extract_contract_hectares(info_node):
+    return _extract_hectares(info_node, CONTRACT_SIZE)
+
+
+def _extract_production_hectares(info_node):
+    return _extract_hectares(info_node, PRODUCTION_SIZE)
+
+
+def _extract_negotiation_status(info_node):
+    #Looking for the target text
+    status_container = _get_node_data(info_node, NEGOTIATION_STATUS)
+    if status_container == NO_VALUE:
+        return None
+    elif status_container.__contains__(DealsBuilder.FAILED):
+        return DealsBuilder.FAILED
+    elif status_container.__contains__(DealsBuilder.CONCLUDED):
+        return DealsBuilder.CONCLUDED
+    elif status_container.__contains__(DealsBuilder.INTENDED):
+        return DealsBuilder.INTENDED
+    else:
+        return None  # We shouldn't reach this condition... but if we reach it, obviously, we haven't valid status
 
 
 def _extract_target_country(info_node):
@@ -47,13 +93,56 @@ def _extract_target_country(info_node):
 
 
 def _extract_date(info_node):
-    #TODO: no idea yet of what to consider date
-    return "a"
+    #Looking for the target text
+    date_container = _get_node_data(info_node, NEGOTIATION_STATUS)
+    if date_container == NO_VALUE:
+        return None
+
+    #Obtaining possible dates
+    aperture_sign_list = _find_index_all_occurrences_of_a_sequence(date_container, "[")
+    closure_sign_list = _find_index_all_occurrences_of_a_sequence(date_container, "]")
+
+    complete_pairs = _lower_lenght(aperture_sign_list, closure_sign_list)
+
+    candidate_dates = []
+    for i in range(0, complete_pairs):
+        candidate_dates.append(date_container[aperture_sign_list[i] + 1:closure_sign_list[i]])
+
+    #Chechking if they are valid dates and returning the highest
+    result = -1
+    for a_date in candidate_dates:
+        if len(a_date) == 4 and a_date.isdigit():
+            int_date = int(a_date)
+            if int_date > result:
+                result = int_date
+    if result == -1:
+        return None
+    else:
+        return result
 
 
-def _extract_hectares(info_node):
-    #TODO: no idea yet of what to consider valid hectares
-    return "a"
+def _lower_lenght(elem1, elem2):
+    if len(elem1) <= len(elem2):
+        return len(elem1)
+    return len(elem2)
+
+
+def _find_index_all_occurrences_of_a_sequence(string, sequence):
+    result = []
+    index_tmp = 0
+    last_found_pos = 0
+    while index_tmp != -1:
+        last_found_pos = string.find(sequence, last_found_pos)
+        if last_found_pos != -1:
+            result.append(last_found_pos)
+    return result
+
+
+def _get_node_data(info_node, tag):
+    for subnode in info_node.getchildren():
+        if subnode[PROPERTY] == tag:
+            return subnode.text
+    return NO_VALUE
 
 
 def _extract_sectors(info_node):
@@ -76,8 +165,6 @@ def _extract_sectors(info_node):
     return result
 
 
-
 def raise_error(concrete_filed, cause):
     raise RuntimeError("Error while parsing {0} in a node. Cause: {1}. Node will be ignored".format(concrete_filed,
                                                                                                     cause))
-

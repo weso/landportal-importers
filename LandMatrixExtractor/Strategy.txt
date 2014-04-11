@@ -1,0 +1,32 @@
+That will be the created indicators:
+
+ - total deals: total number of deals associated to a country.
+
+ BY NEGOTIATION STATUS
+ - deals in negotiations status intended (NUMBER)
+ - deals in negotiation status concluded (NUMBER)
+ - deals in negotiation status failed (NUMBER)
+
+ BY TOPIC
+ - deals referred to Agriculture
+  - deals referred to Conservation
+ - deals referred to Forestry
+ - deals referred to Industry
+ - deals referred to Renewable Energy
+ - deals referred to Tourism
+ - deals referred to Other
+ - deals referred to Unknown
+
+ ABOUT HECTARES
+  - total hectares: from the numbers that appear, we should take as value the most restrictive one.
+  - total intended hectares
+  - total contract hectares
+  - total product hectares
+
+
+ Each country will only have an observation per indicator. The associated date will be the most recent one
+ found in an negotiation_status node.
+ It will mean: accumulated values up to that date.
+
+
+
