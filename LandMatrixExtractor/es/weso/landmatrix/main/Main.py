@@ -3,6 +3,7 @@ Created on 13/01/2014
 
 @author: Dani
 '''
+from ConfigParser import ConfigParser
 
 import logging
 from es.weso.landmatrix.extractor.LandMatrixExtractorXML import LandMatrixExtractorXML
@@ -15,9 +16,12 @@ def configure_log():
 
 def run():
     configure_log()
+    log = logging.getLogger("lmextractor")
     xml_extractor = LandMatrixExtractorXML()
-    #xml_extractor.run()
-    translator = LandMatrixTranslator()
+    config = ConfigParser()
+    config.read("../../../../files/configuration.ini")
+    # xml_extractor.run()
+    translator = LandMatrixTranslator(log, config)
     translator.run(True)
     print 'Done!'
 

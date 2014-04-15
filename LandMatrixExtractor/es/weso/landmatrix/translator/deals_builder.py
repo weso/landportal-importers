@@ -4,9 +4,6 @@ from ..entities.deal import Deal
 
 
 class DealsBuilder(object):
-    INTENDED = 0
-    CONCLUDED = 1
-    FAILED = 2
 
     def __init__(self):
         pass
@@ -76,20 +73,20 @@ def _extract_negotiation_status(info_node):
     if status_container == NO_VALUE:
         return None
     elif status_container.__contains__(DealsBuilder.FAILED):
-        return DealsBuilder.FAILED
+        return Deal.FAILED
     elif status_container.__contains__(DealsBuilder.CONCLUDED):
-        return DealsBuilder.CONCLUDED
+        return Deal.CONCLUDED
     elif status_container.__contains__(DealsBuilder.INTENDED):
-        return DealsBuilder.INTENDED
+        return Deal.INTENDED
     else:
         return None  # We shouldn't reach this condition... but if we reach it, obviously, we haven't valid status
 
 
 def _extract_target_country(info_node):
     for subnode in info_node.getchildren():
-        if subnode[PROPERTY] == TARGET_COUNTRY:
+        if subnode.attrib[PROPERTY] == TARGET_COUNTRY:
             return subnode.text
-    raise_error("country", "not found")
+    _raise_error("country", "not found")
 
 
 def _extract_date(info_node):
@@ -129,10 +126,9 @@ def _lower_lenght(elem1, elem2):
 
 def _find_index_all_occurrences_of_a_sequence(string, sequence):
     result = []
-    index_tmp = 0
     last_found_pos = 0
-    while index_tmp != -1:
-        last_found_pos = string.find(sequence, last_found_pos)
+    while last_found_pos != -1:
+        last_found_pos = string.find(sequence, last_found_pos+1)
         if last_found_pos != -1:
             result.append(last_found_pos)
     return result
@@ -140,7 +136,7 @@ def _find_index_all_occurrences_of_a_sequence(string, sequence):
 
 def _get_node_data(info_node, tag):
     for subnode in info_node.getchildren():
-        if subnode[PROPERTY] == tag:
+        if subnode.attrib[PROPERTY] == tag:
             return subnode.text
     return NO_VALUE
 
@@ -149,11 +145,11 @@ def _extract_sectors(info_node):
     #Looking for text
     text = None
     for subnode in info_node.getchildren():
-        if subnode[PROPERTY] == TARGET_COUNTRY:
+        if subnode.attrib[PROPERTY] == TARGET_COUNTRY:
             text = subnode.text
             break
     if text is None or text == NO_VALUE:
-        raise_error("sectors", "not found")
+        _raise_error("sectors", "not found")
         return  # It will throw an error, the next won't execute.... but let's ensure that
     result = []
     candidate_sectors = text.split(",")
@@ -161,10 +157,10 @@ def _extract_sectors(info_node):
         if not (candidate is None or candidate == ""):
             result.append(candidate.replace(" ", ""))
     if len(result) == 0:
-        raise_error("sectors", "not found")
+        _raise_error("sectors", "not found")
     return result
 
 
-def raise_error(concrete_filed, cause):
+def _raise_error(concrete_filed, cause):
     raise RuntimeError("Error while parsing {0} in a node. Cause: {1}. Node will be ignored".format(concrete_filed,
                                                                                                     cause))

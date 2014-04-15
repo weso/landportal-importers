@@ -5,6 +5,7 @@ Created on 22/01/2014
 '''
 
 #from ConfigParser import ConfigParser
+import codecs
 from lpentities.observation import Observation
 from lpentities.value import Value
 from lpentities.indicator import Indicator
@@ -17,7 +18,9 @@ from lpentities.data_source import DataSource
 from lpentities.license import License
 from lpentities.organization import Organization
 from lpentities.month_interval import MonthInterval
+from es.weso.landmatrix.translator.deals_analyser import DealsAnalyser
 from es.weso.landmatrix.translator.deals_builder import DealsBuilder
+from .keys_dicts import KeyDicts
 
 try:
     import xml.etree.cElementTree as ETree
@@ -32,25 +35,7 @@ class LandMatrixTranslator(object):
 
     INFO_NODE = "item"
 
-    #INDICATOR KEYS
-    TOTAL_DEALS = 0
-    AGRICULTURE_DEALS = 1
-    CONSERVATION_DEALS = 2
-    INDUSTRY_DEALS = 3
-    RENEWABLE_ENERGY_DEALS = 4
-    TOURISM_DEALS = 5
-    OTHER_DEALS = 6
-    UNKNOWN_DEALS = 7
-    FORESTRY_DEALS = 99
 
-    INTENDED_DEALS = 8
-    CONCLUDED_DEALS = 9
-    FAILED_DEALS = 10
-
-    HECTARES_TOTAL_DEALS = 11
-    HECTARES_INTENDED_DEALS = 12
-    HECTARES_CONTRACT_DEALS = 13
-    HECTARES_PRODUCTION_DEALS = 14
 
 
     def __init__(self, log, config):
@@ -70,8 +55,9 @@ class LandMatrixTranslator(object):
         self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
         self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
-        #Indicators' dict
+        #Indicators's dict
         self._indicators_dict = self._build_indicators_dict()
+
 
         #Common objects
         self._default_user = self._build_default_user()
@@ -132,9 +118,14 @@ class LandMatrixTranslator(object):
         """
         info_nodes = self._get_info_nodes_from_file()
         deals = self._turn_info_nodes_into_deals(info_nodes)
+        result = self._turn_deals_into_obs_objects(deals)
 
 
-    def f(self, info_nodes):
+    def _turn_deals_into_obs_objects(self, deals):
+        return DealsAnalyser(deals, self._indicators_dict).run()
+
+
+    def _turn_info_nodes_into_deals(self, info_nodes):
         result = []
         for info_node in info_nodes:
             result.append(DealsBuilder.turn_node_into_deal_object(info_node))
@@ -145,9 +136,17 @@ class LandMatrixTranslator(object):
         Return a list of node objects that contains
 
         """
-        xml_tree = ETree.parse(self._config.get("LAND_MATRIX", "target_file"))
-        return xml_tree.findall(self.INFO_NODE)
-
+        file_path = self._config.get("LAND_MATRIX", "target_file")
+        try:
+            content_file = codecs.open(file_path, encoding="utf-8")
+            lines = content_file.read()
+            content_file.close()
+            return ETree.fromstring(lines.encode(encoding="utf-8"))
+        except BaseException as e:
+            print e.message
+            # raise RuntimeError("Impossible to parse xml in path: {0}. \
+            #         It looks that it is not a valid xml file.".format(file_path))
+            raise e
 
     def _build_indicators_dict(self):
 
@@ -175,7 +174,7 @@ class LandMatrixTranslator(object):
         total_deals.topic = Indicator.TOPIC_TEMPORAL
         total_deals.measurement_unit = units
         total_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.TOTAL_DEALS] = total_deals
+        result[KeyDicts.TOTAL_DEALS] = total_deals
 
 
         #BY TOPIC
@@ -191,7 +190,7 @@ class LandMatrixTranslator(object):
         agriculture_deals.topic = Indicator.TOPIC_TEMPORAL
         agriculture_deals.measurement_unit = units
         agriculture_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.AGRICULTURE_DEALS] = agriculture_deals
+        result[KeyDicts.AGRICULTURE_DEALS] = agriculture_deals
 
         #Conservation
         conservation_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
@@ -205,8 +204,8 @@ class LandMatrixTranslator(object):
         conservation_deals.topic = Indicator.TOPIC_TEMPORAL
         conservation_deals.measurement_unit = units
         conservation_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.CONSERVATION_DEALS] = conservation_deals
-        
+        result[KeyDicts.CONSERVATION_DEALS] = conservation_deals
+
         #Forestry
         forestry_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -219,8 +218,8 @@ class LandMatrixTranslator(object):
         forestry_deals.topic = Indicator.TOPIC_TEMPORAL
         forestry_deals.measurement_unit = units
         forestry_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.FORESTRY_DEALS] = forestry_deals
-        
+        result[KeyDicts.FORESTRY_DEALS] = forestry_deals
+
         #Industry
         industry_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -233,8 +232,8 @@ class LandMatrixTranslator(object):
         industry_deals.topic = Indicator.TOPIC_TEMPORAL
         industry_deals.measurement_unit = units
         industry_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.INDUSTRY_DEALS] = industry_deals
-        
+        result[KeyDicts.INDUSTRY_DEALS] = industry_deals
+
         #Renewable energy
         renewable_energy_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -247,8 +246,8 @@ class LandMatrixTranslator(object):
         renewable_energy_deals.topic = Indicator.TOPIC_TEMPORAL
         renewable_energy_deals.measurement_unit = units
         renewable_energy_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.RENEWABLE_ENERGY_DEALS] = renewable_energy_deals
-        
+        result[KeyDicts.RENEWABLE_ENERGY_DEALS] = renewable_energy_deals
+
         #Tourism
         tourism_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -261,8 +260,8 @@ class LandMatrixTranslator(object):
         tourism_deals.topic = Indicator.TOPIC_TEMPORAL
         tourism_deals.measurement_unit = units
         tourism_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.TOURISM_DEALS] = tourism_deals
-        
+        result[KeyDicts.TOURISM_DEALS] = tourism_deals
+
         #Other
         other_topic_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -275,8 +274,8 @@ class LandMatrixTranslator(object):
         other_topic_deals.topic = Indicator.TOPIC_TEMPORAL
         other_topic_deals.measurement_unit = units
         other_topic_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.OTHER_DEALS] = other_topic_deals
-        
+        result[KeyDicts.OTHER_DEALS] = other_topic_deals
+
         #Unknown
         unknown_topic_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -289,7 +288,7 @@ class LandMatrixTranslator(object):
         unknown_topic_deals.topic = Indicator.TOPIC_TEMPORAL
         unknown_topic_deals.measurement_unit = units
         unknown_topic_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.UNKNOWN_DEALS] = unknown_topic_deals
+        result[KeyDicts.UNKNOWN_DEALS] = unknown_topic_deals
 
         #BY NEGOTIATION STATUS
         #Intended
@@ -304,7 +303,7 @@ class LandMatrixTranslator(object):
         intended_deals.topic = Indicator.TOPIC_TEMPORAL
         intended_deals.measurement_unit = units
         intended_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.INTENDED_DEALS] = intended_deals
+        result[KeyDicts.INTENDED_DEALS] = intended_deals
 
         #Concluded
         concluded_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
@@ -318,8 +317,8 @@ class LandMatrixTranslator(object):
         concluded_deals.topic = Indicator.TOPIC_TEMPORAL
         concluded_deals.measurement_unit = units
         concluded_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.CONCLUDED_DEALS] = concluded_deals
-        
+        result[KeyDicts.CONCLUDED_DEALS] = concluded_deals
+
         #Failed
         failed_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -332,7 +331,7 @@ class LandMatrixTranslator(object):
         failed_deals.topic = Indicator.TOPIC_TEMPORAL
         failed_deals.measurement_unit = units
         failed_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.FAILED_DEALS] = failed_deals
+        result[KeyDicts.FAILED_DEALS] = failed_deals
 
         #ABOUT HECTARES
         #Total hectares
@@ -347,8 +346,8 @@ class LandMatrixTranslator(object):
         hectares_total_deals.topic = Indicator.TOPIC_TEMPORAL
         hectares_total_deals.measurement_unit = hectares
         hectares_total_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.HECTARES_TOTAL_DEALS] = hectares_total_deals
-        
+        result[KeyDicts.HECTARES_TOTAL_DEALS] = hectares_total_deals
+
         #intended hectares
         hectares_intended_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating id value
@@ -361,7 +360,7 @@ class LandMatrixTranslator(object):
         hectares_intended_deals.topic = Indicator.TOPIC_TEMPORAL
         hectares_intended_deals.measurement_unit = hectares
         hectares_intended_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.HECTARES_INTENDED_DEALS] = hectares_intended_deals
+        result[KeyDicts.HECTARES_INTENDED_DEALS] = hectares_intended_deals
 
         #contract hectares
         hectares_contract_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
@@ -375,7 +374,7 @@ class LandMatrixTranslator(object):
         hectares_contract_deals.topic = Indicator.TOPIC_TEMPORAL
         hectares_contract_deals.measurement_unit = hectares
         hectares_contract_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.HECTARES_CONTRACT_DEALS] = hectares_contract_deals
+        result[KeyDicts.HECTARES_CONTRACT_DEALS] = hectares_contract_deals
 
         #production hectares
         hectares_production_deals = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
@@ -389,9 +388,10 @@ class LandMatrixTranslator(object):
         hectares_production_deals.topic = Indicator.TOPIC_TEMPORAL
         hectares_production_deals.measurement_unit = hectares
         hectares_production_deals.preferable_tendency = Indicator.IRRELEVANT
-        result[self.HECTARES_PRODUCTION_DEALS] = hectares_production_deals
+        result[KeyDicts.HECTARES_PRODUCTION_DEALS] = hectares_production_deals
 
         #And, at last, return the dict
         return result
+
     
     
