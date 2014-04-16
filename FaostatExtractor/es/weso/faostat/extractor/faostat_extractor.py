@@ -9,6 +9,8 @@ import logging
 from zipfile import ZipFile
 from ConfigParser import ConfigParser
 from es.weso.util.file_writer import FileWriter
+
+
 class FaostatExtractor(object):
     '''
     classdocs
@@ -25,13 +27,14 @@ class FaostatExtractor(object):
         
         pass
 
-    '''
-    This method dowloads the entire data base of faostat in csv format.
-    The estructure of the scv is as follows:
-    CountryCode(int),Country(string),ItemCode(int),Item(string),ElementGroup(int),
-    ElementCode(int),Element(string),Year(int),Unit(string),Value(float),Flag(char)
-    '''
+
     def run(self):
+        '''
+        This method dowloads the entire data base of faostat in csv format.
+        The estructure of the scv is as follows:
+        CountryCode(int),Country(string),ItemCode(int),Item(string),ElementGroup(int),
+        ElementCode(int),Element(string),Year(int),Unit(string),Value(float),Flag(char)
+        '''
         self.log.info("Starting process...")
         try:
             zip_file_name = self.download_zip_file()
@@ -41,11 +44,12 @@ class FaostatExtractor(object):
             self.log.error(strerror)
             print strerror
 
-    '''
-    Extracts the content of a zip file in the path zip_file_name and put it
-    content in the place specified by the configuration parameter ["FAOSTAT", "datapath"] 
-    '''
+
     def extract_zip_file(self, zip_file_name):
+        '''
+        Extracts the content of a zip file in the path zip_file_name and put it
+        content in the place specified by the configuration parameter ["FAOSTAT", "datapath"]
+        '''
         self.log.info("Extracting data from zip file...")
         sourceZip = ZipFile(zip_file_name) #open the zip File
         if len(sourceZip.namelist()) != 1: #The zip file should contain a single element
@@ -55,10 +59,12 @@ class FaostatExtractor(object):
             self.log.info("Data extracted to {0}".format(self.config.get("FAOSTAT", "data_file_path")))
 
         
-    '''
-    Returns the name of a zip file containing the entire faostat database
-    '''
+
     def download_zip_file(self):
+        '''
+        Returns the name of a zip file containing the entire faostat database
+        '''
+
         try:
             self.log.info("Downloading data from {0}".format(self.config.get("FAOSTAT", "zip_url")))
             response = urllib2.urlopen(self.config.get("FAOSTAT", "zip_url"))
@@ -72,9 +78,3 @@ class FaostatExtractor(object):
             e = sys.exc_info()[0]
             raise RuntimeError("Unable to save data from {0}. Cause: {1}".format(self.config.get("FAOSTAT", "zip_url"), e))
             
-    
-    
-    
-    
-    
-    

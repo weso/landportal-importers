@@ -17,11 +17,11 @@ def configure_log():
 
 def run():
 
-    # configure_log()
-    # csv_extractor = FaostatExtractor()
-    # csv_extractor.run()
-    # csv_indicatorcatcher = FaostatIndicatorCatcher()
-    # csv_indicatorcatcher.run()
+    configure_log()
+    csv_extractor = FaostatExtractor()
+    csv_extractor.run()
+    csv_indicatorcatcher = FaostatIndicatorCatcher()
+    csv_indicatorcatcher.run()
     csv_translator = FaostatTranslator()
     csv_translator.run(True)  
     
