@@ -21,27 +21,31 @@ class CsvDownloader(object):
 
     def download_csv(self, indicator, profile, countries, regions, file_name):
         downloaded = False
-        connection_attempts = 3
         
-        url = self._prepare_url(indicator, profile, countries, regions)
-        
-        #Check if folder exists
-        if not os.path.exists(__data__.path()):
-            os.makedirs(__data__.path())
+        if os.path.exists(os.path.join(__data__.path(), os.path.basename(file_name))) :
+            print "File already downloaded, please erase it"
+        else :    
+            connection_attempts = 3
             
-        outpath = os.path.join(__data__.path(), os.path.basename(file_name))
-        
-        while not downloaded and connection_attempts > 0:
-            try:
-                downloaded = True
-                downloaded_file = urllib2.urlopen(url)
-                data = downloaded_file.read()
-                with open(outpath, "wb") as code:
-                    code.write(data)
-                    
-            except:
-                downloaded = False
-                connection_attempts = connection_attempts-1
+            url = self._prepare_url(indicator, profile, countries, regions)
+            
+            #Check if folder exists
+            if not os.path.exists(__data__.path()):
+                os.makedirs(__data__.path())
+                
+            outpath = os.path.join(__data__.path(), os.path.basename(file_name))
+            
+            while not downloaded and connection_attempts > 0:
+                try:
+                    downloaded_file = urllib2.urlopen(url)
+                    data = downloaded_file.read()
+                    with open(outpath, "wb") as code:
+                        code.write(data)
+                        
+                    downloaded = True
+                except:
+                    downloaded = False
+                    connection_attempts = connection_attempts-1
         
         return downloaded
 
