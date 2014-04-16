@@ -17,9 +17,9 @@ def configure_log():
 def run():
     configure_log()
     log = logging.getLogger("lmextractor")
-    xml_extractor = LandMatrixExtractorXML()
     config = ConfigParser()
     config.read("../../../../files/configuration.ini")
+    # xml_extractor = LandMatrixExtractorXML()
     # xml_extractor.run()
     translator = LandMatrixTranslator(log, config)
     translator.run(True)

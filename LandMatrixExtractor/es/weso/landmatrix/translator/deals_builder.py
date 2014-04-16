@@ -72,11 +72,11 @@ def _extract_negotiation_status(info_node):
     status_container = _get_node_data(info_node, NEGOTIATION_STATUS)
     if status_container == NO_VALUE:
         return None
-    elif status_container.__contains__(DealsBuilder.FAILED):
+    elif status_container.__contains__(Deal.FAILED):
         return Deal.FAILED
-    elif status_container.__contains__(DealsBuilder.CONCLUDED):
+    elif status_container.__contains__(Deal.CONCLUDED):
         return Deal.CONCLUDED
-    elif status_container.__contains__(DealsBuilder.INTENDED):
+    elif status_container.__contains__(Deal.INTENDED):
         return Deal.INTENDED
     else:
         return None  # We shouldn't reach this condition... but if we reach it, obviously, we haven't valid status
