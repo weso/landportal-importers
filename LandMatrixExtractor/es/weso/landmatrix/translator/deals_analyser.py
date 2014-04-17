@@ -20,9 +20,8 @@ class DealsAnalyser(object):
 
     def __init__(self, deals_list, indicators_dict):
         self._list_deals = deals_list
-        self._deals_dict = {}
         self._reconciler = CountryReconciler()
-        self._observations_dict = {}
+        self._deals_dict = {}
         self._indicators_dict = indicators_dict
 
 
@@ -38,7 +37,7 @@ class DealsAnalyser(object):
             else:
                 print "WOOOOOOO", a_deal.target_country
 
-            # self._process_intended_hectares()
+        return self._deals_dict
 
     def _process_target_country(self, target_country):
         try:
@@ -64,7 +63,7 @@ class DealsAnalyser(object):
         compound_key = _get_compound_key(KeyDicts.TOTAL_DEALS, target_country)  # We have to get an entry of some
                                                                         #indicator, it does not matter which...
                                                                         #but we know that TOTAL_DEALS exists with                                                                     #no doucbt when reaching this point
-        current_date = self._observations_dict[compound_key].date
+        current_date = self._deals_dict[compound_key].date
         if deal.date is not None and deal.date > current_date:
             self._update_date_of_all_entrys_of_a_country(target_country, deal.date)
 
@@ -92,10 +91,10 @@ class DealsAnalyser(object):
 
         """
         compound_key = _get_compound_key(deal_key, country)
-        if not compound_key in self._observations_dict:  # If there is no entry, nothing to do
+        if not compound_key in self._deals_dict:  # If there is no entry, nothing to do
             return
         else:
-            self._observations_dict[compound_key].date = date
+            self._deals_dict[compound_key].date = date
 
 
     def _process_deals_by_topic(self, deal, target_country):
@@ -165,15 +164,15 @@ class DealsAnalyser(object):
         compound_key = _get_compound_key(deal_key, country)
 
         #Creating new entry if needed
-        if not compound_key in self._observations_dict:
+        if not compound_key in self._deals_dict:
             new_entry = DealAnalyserEntry(indicator=self._indicators_dict[deal_key],
                                           country=country,
                                           date=None,
                                           value=0)
-            self._observations_dict[compound_key] = new_entry
+            self._deals_dict[compound_key] = new_entry
 
         #Updating entry
-        entry = self._observations_dict[compound_key]
+        entry = self._deals_dict[compound_key]
         entry.value += hectares
         #Done, no return needed
 
@@ -189,14 +188,14 @@ class DealsAnalyser(object):
         compound_key = _get_compound_key(deal_key, country)
 
         #Creating new entry in obs_dict if needed
-        if not compound_key in self._observations_dict:
+        if not compound_key in self._deals_dict:
             new_entry = DealAnalyserEntry(indicator=self._indicators_dict[deal_key],
                                           country=country,
                                           date=None,
                                           value=0)
-            self._observations_dict[compound_key] = new_entry
+            self._deals_dict[compound_key] = new_entry
         #Updating entry
-        entry = self._observations_dict[compound_key]
+        entry = self._deals_dict[compound_key]
         entry.value += 1
         #Done. No return needed
 

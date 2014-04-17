@@ -21,6 +21,9 @@ from lpentities.month_interval import MonthInterval
 from es.weso.landmatrix.translator.deals_analyser import DealsAnalyser
 from es.weso.landmatrix.translator.deals_builder import DealsBuilder
 from .keys_dicts import KeyDicts
+from datetime import datetime
+from lpentities.year_interval import YearInterval
+from model2xml.model2xml import ModelToXMLTransformer
 
 try:
     import xml.etree.cElementTree as ETree
@@ -65,12 +68,18 @@ class LandMatrixTranslator(object):
         self._default_datasource = self._build_default_datasource()
         self._default_dataset = self._build_default_dataset()
         self._default_license = self._build_default_license()
+        self._default_computation = self._build_default_computation()
 
         self._relate_common_objects()
 
     @staticmethod
     def _build_default_user():
         return User(user_login="LANDMATRIXIMPORTER")
+
+
+    @staticmethod
+    def _build_default_computation():
+        return Computation(Computation.RAW)
 
     def _build_default_organization(self):
         result = Organization(chain_for_id=self._org_id)
@@ -118,14 +127,62 @@ class LandMatrixTranslator(object):
         """
         info_nodes = self._get_info_nodes_from_file()
         deals = self._turn_info_nodes_into_deals(info_nodes)
-        result = self._turn_deals_into_obs_objects(deals)
+        deal_entrys = self._turn_deals_into_deal_entrys(deals)
+        observations = self._turn_deal_entrys_into_obs_objects(deal_entrys)
+        for obs in observations:
+            self._default_dataset.add_observation(obs)
+        m2x = ModelToXMLTransformer(dataset=self._default_dataset,
+                                    import_process="xml",
+                                    user=self._default_user)
+        m2x.run()
 
 
-    def _turn_deals_into_obs_objects(self, deals):
+    def _turn_deal_entrys_into_obs_objects(self, deal_entrys):
+        result = []
+        for key in deal_entrys:
+            result.append(self._turn_deal_entry_into_obs(deal_entrys[key]))  # The method returns a list
+        return result
+
+    def _turn_deal_entry_into_obs(self, deal_entry):
+        result = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
+        self._obs_int += 1  # Updating obs id
+
+        #Indicator
+        result.indicator = deal_entry.indicator
+        #Value
+        result.value = self._build_value_object(deal_entry)  # Done
+        #Computation
+        result.computation = self._default_computation
+        #Issued
+        result.issued = self._build_issued_object()  # No param needed
+        #ref_time
+        result.ref_time = self._build_ref_time_object(deal_entry)  # Done
+        #country
+        deal_entry.country.add_observation(result)  # And that establish the relationship in both directions
+
+        return result
+
+    @staticmethod
+    def _build_issued_object():
+        return Instant(datetime.now())
+
+    @staticmethod
+    def _build_ref_time_object(deal_entry):
+        return YearInterval(deal_entry.date)
+
+    def _build_value_object(self, deal_entry):
+        result = Value()
+        result.value = deal_entry.value
+        result.value_type = Value.INTEGER
+        result.obs_status = Value.AVAILABLE
+        return result
+
+    def _turn_deals_into_deal_entrys(self, deals):
         return DealsAnalyser(deals, self._indicators_dict).run()
 
 
-    def _turn_info_nodes_into_deals(self, info_nodes):
+    @staticmethod
+    def _turn_info_nodes_into_deals(info_nodes):
         result = []
         for info_node in info_nodes:
             result.append(DealsBuilder.turn_node_into_deal_object(info_node))
@@ -142,11 +199,10 @@ class LandMatrixTranslator(object):
             lines = content_file.read()
             content_file.close()
             return ETree.fromstring(lines.encode(encoding="utf-8"))
-        except BaseException as e:
-            print e.message
-            # raise RuntimeError("Impossible to parse xml in path: {0}. \
-            #         It looks that it is not a valid xml file.".format(file_path))
-            raise e
+        except:
+            raise RuntimeError("Impossible to parse xml in path: {0}. \
+                    It looks that it is not a valid xml file.".format(file_path))
+
 
     def _build_indicators_dict(self):
 
