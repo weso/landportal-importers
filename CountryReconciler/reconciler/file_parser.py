@@ -12,6 +12,8 @@ from reconciler.entities.parsed_country import ParsedCountry
 from reconciler.exceptions.parsing_error import ParsingError
 from reconciler.exceptions.unknown_country_error import UnknownCountryError
 
+import os.path
+
 
 class FileParser(object):
     """
@@ -52,15 +54,17 @@ class FileParser(object):
 
 
     def __init__(self):
-        self.config = ConfigParser.ConfigParser()
-        # self.config.read('../conf/configuration.ini')
-        self.config.read('C:/Users/Dani/Documents/EII/WESO/wesopace/CountryReconciler/reconciler/conf/configuration.ini')
+        # self.config = ConfigParser.ConfigParser()
+        # # self.config.read('../conf/configuration.ini')
+        # self.config.read('C:/Users/Dani/Documents/EII/WESO/wesopace/CountryReconciler/reconciler/conf/configuration.ini')
         self.country_list = []
 
     def run(self):
-        countries_source_file = self.config.get('SOURCE', 'path_file_countries')
+        # countries_source_file = self.config.get('SOURCE', 'path_file_countries')
+        countries_source_file = os.path.dirname(__file__) + "/files/country_list.xlsx" # Without config, but works better
         self.parse_countries(countries_source_file)
-        alias_file = self.config.get('SOURCE', 'path_file_alias')
+        # alias_file = self.config.get('SOURCE', 'path_file_alias')
+        alias_file = os.path.dirname(__file__) + "/files/known_alias.txt"  # Without config, but works better
         self.parse_alias(alias_file)
         return self.country_list
 
@@ -88,6 +92,7 @@ class FileParser(object):
         #We reach the next sentence if we could not find a coincidence with the iso3
         raise UnknownCountryError("Trying to add a alias to a non recognized country: {0}".format(iso3))
         # print "Trying to add a alias to a non recognized country: {0}".format(iso3)
+
     def parse_countries(self, path):
         book = xlrd.open_workbook(path, encoding_override='latin-1').sheet_by_index(0)
         self.parse_row_range(book, self.FIRST_ROW, self.LAST_ROW)
