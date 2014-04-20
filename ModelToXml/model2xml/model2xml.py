@@ -5,6 +5,7 @@ Created on 03/02/2014
 @author: Dani
 """
 from __future__ import unicode_literals
+from lpentities.country import Country
 
 try:
     from xml.etree.cElementTree import Element, ElementTree
@@ -44,6 +45,7 @@ class ModelToXMLTransformer(object):
     OBSERVATION_OBS_STATUS = "obs-status"
     OBSERVATION_COMPUTATION = "computation"
     OBSERVATION_REGION = "region"
+    OBSERVATION_COUNTRY = "country"
     OBSERVATION_VALUE = "value"
     OBSERVATION_INDICATOR = "indicator"
     OBSERVATION_TIME = "time"
@@ -134,7 +136,7 @@ class ModelToXMLTransformer(object):
         self.build_slices_node()  # Done
         self.include_indicator_relations()  # Done? TODO: UNTESTED
         self.write_tree_to_xml()  # PROVISIONAL. The final task is consuming web service, not writing
-        self.send_to_receiver()
+        # self.send_to_receiver()
 
 
     def send_to_receiver(self):
@@ -171,7 +173,7 @@ class ModelToXMLTransformer(object):
 
 
     def _get_indicator_node_by_id(self, indicator_id):
-        indicator_nodes= self.root.find(self.INDICATORS).getchildren()
+        indicator_nodes = self.root.find(self.INDICATORS).getchildren()
         for ind in indicator_nodes:
             if ind[self.INDICATOR_ATT_ID] == indicator_id:
                 return ind
@@ -222,10 +224,17 @@ class ModelToXMLTransformer(object):
         if isinstance(data_slice.dimension, Time):
             metadata_node.append(self.build_time_node(data_slice.dimension))
         elif isinstance(data_slice.dimension, Region):
-            region_node = Element(self.OBSERVATION_REGION)
-            region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                               + data_slice.dimension.un_code
-            metadata_node.append(region_node)
+            if type(data_slice.dimension) == Region:
+                region_node = Element(self.OBSERVATION_REGION)
+                region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
+                                   + data_slice.dimension.un_code
+                metadata_node.append(region_node)
+            elif type(data_slice.dimension) == Country:
+                country_node = Element(self.OBSERVATION_COUNTRY)
+                country_node.text = str(data_slice.dimension.iso3)  # It will have it
+            else:
+                raise RuntimeError("Unrecognized area type {0} while building slice. Impossible to generate xml".
+                                   format(type(data_slice.dimension)))
 
         else:
             raise RuntimeError("Unknown dimension while building slice.")
@@ -367,7 +376,6 @@ class ModelToXMLTransformer(object):
         ElementTree(self.root).write("file.xml", encoding="utf-8")
 
 
-
     def build_observation_node(self, data_obs):
         #Building node
         observation_node = Element(self.OBSERVATION)
@@ -388,12 +396,20 @@ class ModelToXMLTransformer(object):
         computation_node.text = data_obs.computation.uri
         observation_node.append(computation_node)
 
-        #region
-        country_node = Element(self.OBSERVATION_REGION)
-        country_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                            + str(data_obs.region.un_code)
+        #region TODO: other region here
+        if type(data_obs.region) == Region:
+            region_node = Element(self.OBSERVATION_REGION)
+            region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
+                                + str(data_obs.region.un_code)
 
-        observation_node.append(country_node)
+            observation_node.append(region_node)
+        elif type(data_obs.region) == Country:
+            country_node = Element(self.OBSERVATION_COUNTRY)
+            country_node.text = str(data_obs.region.iso3)  # It will have it, do not worry.
+            observation_node.append(country_node)
+        else:
+            raise RuntimeError("Unrecognized area type {0} while building observation. Unable to build xml".
+                               format(type(data_obs.region)))
 
         #time
         observation_node.append(self.build_time_node(data_obs.ref_time))
@@ -465,13 +481,13 @@ class ModelToXMLTransformer(object):
                 self.INDICATOR_ATT_ID_PREFIX + data_group.indicator_id
             self.group_dic[data_group.group_id] = group_node
 
-        # We don't need to add observations to this node according to the current spec. but it could change.
-        # So code for that remains in this comment
-        #
-        # #Adding obs to node
-        # obs_node_ref = Element(self.OBSERVATION_REF)
-        # obs_node_ref.attrib[self.OBSERVATION_REF_ID] = data_obs.observation_id
-        # group_node.append(obs_node_ref)
+            # We don't need to add observations to this node according to the current spec. but it could change.
+            # So code for that remains in this comment
+            #
+            # #Adding obs to node
+            # obs_node_ref = Element(self.OBSERVATION_REF)
+            # obs_node_ref.attrib[self.OBSERVATION_REF_ID] = data_obs.observation_id
+            # group_node.append(obs_node_ref)
 
     def include_indicator_if_needed(self, data_indicator):
         if data_indicator.indicator_id in self.indicator_dic:
