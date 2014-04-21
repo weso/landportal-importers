@@ -17,6 +17,17 @@ class CountryReconciler(object):
 
 
 
+    def get_all_countries(self):
+        """
+        Returns a list of every available lpentities.country.Country
+
+
+        """
+        result = []
+        for country in self.parsed_countries:
+            result.append(country.model_object)
+        return result
+
     def get_country_by_iso3(self, iso3):
         #Checking first preference iso available
         for country in self.parsed_countries:
