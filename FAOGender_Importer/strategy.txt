@@ -1,0 +1,56 @@
+We will acces the data through simple querys to a REST API web. Each qeury will return an xml as follows:
+
+<country iso3="ZAF" name="South Africa">
+<lang code="EN">
+<topics>
+<topic name="Selected Land Related Statistics" code="SLS">
+<subtopic name="GINI Concentration index" code="GCI"><p>N/A</p></subtopic>
+<subtopic name="Number of rural households headed by women" code="NRW"><p>N/A</p></subtopic>
+<subtopic name="Communal Property" code="CPR"><p>21 000&nbsp;[2000] (22)</p></subtopic>
+<subtopic name="Number of holdings under co-ownership" code="NHC"><p>N/A</p></subtopic>
+<subtopic name="Women holders" code="WHO">N/A</subtopic>
+<subtopic name="Total number of holders" code="TNH"><p>N/A</p></subtopic>
+</topic>
+</topics>
+</lang>
+</country>
+
+
+Thing to take in account:
+
+ - If several languajes are available, there will be more than one <lang> node under <country> node.
+    We don´t have to care about languaje, just take a random one (the first). in <subtopic>, the att "code"
+    is constant accross different languajes, and the node.text that we have to parse does not contain
+    meaningfull words.
+ - The content in subnode "GCI" is not coherent with the rest of the <subtopic> nodes: dates, numbers,
+    special elements,.... but it is not a problem. We only have to track four indicators, and GINI is not
+    one of them
+ - It looks that there are two ways to say "No data available" inside a subtopic. Containing the text "N/A" or
+    containing the text "N.D."
+ - Dates are placed between "[]". It looks that there can be single years or intervals. i.e.: [2009] or [2008-2010]
+ - The concret data could be hard to parse, because:
+        - It is mixed with everything: extramge chars, dates, ranks, html notation...
+        - When numbers are bigger than 999, they try to make a graphical separation with a spaces between every 3 digits
+            i.e.: 111 222 333 means the number 111222333.
+   So, to parse it we will have to:
+        - Remove text between "[]" (dates)
+        - Remove text between "()" (rank)
+        - Remove text between "<>" (html notations)
+        - Remove twxt between "&" and ";" (special html chars)
+        - After all these things, remove every white space in the resulting chain.
+    Following that steps we should obtain a string parseable to a number that represents the indicator value.
+
+ - If we send a petition for a country non-stored we will obtanin an xml such as the next:
+
+ <country iso3="GAMBA" name="">No records found</country>
+
+ 3 ways to identify it, that looks constant:
+
+    - empty attribute name
+    - only a node, not children
+    - node.text = No records found.
+
+  Probably the safest option to determine if we have data or not, and maybe even the fastest, is the second one.
+  Whit no children there is no info, not mattering the rest of the content. And thinking in computing terms,
+  we would only have to cehck the existence or not of childs. Similar to check if name is empty, but better that
+  checking the third option
