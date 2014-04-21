@@ -34,5 +34,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+<<<<<<< HEAD
 .metadata/
 .idea/
+=======
+.metadata
+>>>>>>> 7b67327ad38490e333b963a9e3369c5a9dc74109
