@@ -130,17 +130,13 @@ class XmlContentParser(object):
         return result
 
 
-    @staticmethod
-    def _look_for_node_date(text):
+    def _look_for_node_date(self, text):
         """
         It returns an lpentities Interval if ot finds an intervalic date or a YearInterval object if
         it find a single value. In case of not finding any valid date, returns None
 
         Asumptions:
          - Dates appear betwen "[]"
-         - Only dates (no other data) appear between "[]"
-         - There only one date per node
-
         """
 
         try:
@@ -150,12 +146,28 @@ class XmlContentParser(object):
             return None
         if "-" in string_date:  # Interval (two values)
             years = string_date.split("-")
-            return Interval(start_time=int(years[0]),
-                            end_time=int(years[1]))
+            return Interval(start_time=self._return_4_digits_year(years[0]),
+                            end_time=self._return_4_digits_year(years[1]))
+        elif "/" in string_date:
+            years = string_date.split("/")
+            return Interval(start_time=self._return_4_digits_year(years[0]),
+                            end_time=self._return_4_digits_year(years[1]))
+
         else:  # YearInterval (single value)
             return YearInterval(year=int(string_date))
 
 
+    def _return_4_digits_year(self, year_string):
+        if len(year_string) == 4:
+            return int(year_string)
+        elif len(year_string) == 2:
+            final_digits = int(year_string)
+            if final_digits < 30:  # So, in 2030, this will stop working.
+                return 2000 + final_digits
+            else:
+                return 1900 + final_digits
+        else:
+            raise RuntimeError("Date with a number of digits different tahn 2 or 4: " + year_string)
 
     def _get_country_of_tree(self, tree):
         iso3 = tree.attrib[self.ISO3_ATTR]
