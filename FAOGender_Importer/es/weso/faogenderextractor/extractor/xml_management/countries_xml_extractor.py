@@ -24,11 +24,19 @@ class CountriesXmlExtractor(object):
         result = []
         for a_country in self._reconciler.get_all_countries():
             result.append(self._get_xml_of_a_country(a_country))
+
+        ## This comented code is usefull for fast test. It asks only for 15 countries to the API
+        #
+        # tris = self._reconciler.get_all_countries()
+        # for i in range(0, 15):
+        #     result.append((self._get_xml_of_a_country(tris[i])))
+
         return result
 
 
     def _get_xml_of_a_country(self, country):
         string_request = self._query_pattern.replace(self._replace_by_iso, country.iso3)
+        print "Pesco uno!" + country.iso3
         return requests.get(string_request).content
 
 

@@ -19,7 +19,7 @@ def run():
     configure_log()
     logger = logging.getLogger('main')
     config = ConfigParser()
-    config.read("../../../../configuration.ini")
+    config.read("../../../../files/configuration.ini")
     logger.info('Starting run')
     extractor = FaoGenderExtractor(logger, config)
     extractor.run()

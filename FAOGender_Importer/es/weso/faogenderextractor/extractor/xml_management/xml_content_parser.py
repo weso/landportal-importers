@@ -9,16 +9,12 @@ except:
 from ...entities.xml_entities import XmlRegister, IndicatorData
 from lpentities.year_interval import YearInterval
 from lpentities.interval import Interval
+from ..keys_dict import KeysDict
 
 
 class XmlContentParser(object):
 
     ISO3_ATTR = "iso3"
-
-    RURAL_HOUSEHOLDS_WOMEN_CODE = "NRW"
-    HOLDINGS_CO_OWNERSHIP_CODE = "NHC"
-    WOMEN_HOLDERS_CODE = "WHO"
-    TOTAL_HOLDERS_CODE = "TNH"
 
     def __init__(self, log, config, reconciler, responses):
         self._log = log
@@ -51,6 +47,7 @@ class XmlContentParser(object):
         tree = None
         try:
             tree = ETree.fromstring(response)
+            print "SUPE HACER UNO!"
 
         except:
             #TODO. Beeter info here
@@ -62,21 +59,28 @@ class XmlContentParser(object):
 
     def _turn_tree_into_xml_register(self, tree):
         if self._is_empty_tree(tree):
+                return None
+        country = self._get_country_of_tree(tree)
+        result = XmlRegister(country=country)
+
+        try:
+
+
+            #The next two local variables will be needed in the for loop.
+            base_node_in_wich_to_look_for = tree.find("lang").find("topics").find("topic")  # Exploring the tree
+            codes_to_look_for = [KeysDict.TOTAL_HOLDERS_CODE,
+                                 KeysDict.WOMEN_HOLDERS_CODE,
+                                 KeysDict.HOLDINGS_CO_OWNERSHIP_CODE,
+                                 KeysDict.RURAL_HOUSEHOLDS_WOMEN_CODE]
+            for code in codes_to_look_for:
+                data_of_an_indicator = self._look_for_indicator_data(base_node_in_wich_to_look_for, code)
+                if not data_of_an_indicator is None:
+                    result.add_indicator_data(data_of_an_indicator)
+
+            return result
+        except BaseException as e:
+            print "_______________LAAAA LIAMOS con", country.iso3, e.message
             return None
-        result = XmlRegister(country=self._get_country_of_tree(tree))
-
-        #The next two local variables will be needed in the for loop.
-        base_node_in_wich_to_look_for = tree.find("lang").find("topics").find("topic")  # Exploring the tree
-        codes_to_look_for = [self.TOTAL_HOLDERS_CODE,
-                             self.WOMEN_HOLDERS_CODE,
-                             self.HOLDINGS_CO_OWNERSHIP_CODE,
-                             self.RURAL_HOUSEHOLDS_WOMEN_CODE]
-        for code in codes_to_look_for:
-            data_of_an_indicator = self._look_for_indicator_data(base_node_in_wich_to_look_for, code)
-            if not data_of_an_indicator is None:
-                result.add_indicator_data(data_of_an_indicator)
-
-        return result
 
 
     def _look_for_indicator_data(self, base_node, code):
@@ -95,6 +99,7 @@ class XmlContentParser(object):
         node_date = self._look_for_node_date(node.text)
 
         if not (node_value is None or node_date is None):
+            print "Aqui hay algo que merece la pena: ", node_value, node_date.get_time_string()
             return IndicatorData(indicator_code=code,
                                  value=node_value,
                                  date=node_date)
@@ -114,8 +119,15 @@ class XmlContentParser(object):
 
     @staticmethod
     def _remove_text_between_certain_sequences(text, beg, end):
-        return text
-
+        # return text[text.index]
+        result = text
+        pos_beg = text.find(beg)
+        pos_end = text.find(end)
+        while not (pos_beg == -1 or pos_end == -1):
+            result = result[:result.index(beg)] + result[result.index(end) + len(end):]
+            pos_beg = result.find(beg)
+            pos_end = result.find(end)
+        return result
 
 
     @staticmethod
@@ -130,10 +142,13 @@ class XmlContentParser(object):
          - There only one date per node
 
         """
-        string_date = text[text.index('[') + 1:text.index(']')]
-        if string_date is None or string_date == "":
+
+        try:
+            string_date = text[text.index('[') + 1:text.index(']')]
+        except ValueError:
+            print "Aqui hay un string chunguele:", text
             return None
-        elif "-" in string_date:  # Interval (two values)
+        if "-" in string_date:  # Interval (two values)
             years = string_date.split("-")
             return Interval(start_time=int(years[0]),
                             end_time=int(years[1]))
@@ -143,7 +158,7 @@ class XmlContentParser(object):
 
 
     def _get_country_of_tree(self, tree):
-        iso3 = tree.attr[self.ISO3_ATTR]
+        iso3 = tree.attrib[self.ISO3_ATTR]
         return self._reconciler.get_country_by_iso3(iso3)
 
 
@@ -153,7 +168,7 @@ class XmlContentParser(object):
         Empty means taht it hasn't got available data
 
         """
-        if len(tree.getchildren) == 0:
+        if len(tree.getchildren()) == 0:
             return True
         else:
             return False
