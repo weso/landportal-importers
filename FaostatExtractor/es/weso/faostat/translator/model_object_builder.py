@@ -7,7 +7,6 @@ Created on 02/02/2014
 
 
 from lpentities.observation import Observation
-from lpentities.country import Country
 from lpentities.indicator import Indicator
 from lpentities.license import License
 from lpentities.measurement_unit import MeasurementUnit
@@ -18,7 +17,6 @@ from lpentities.organization import Organization
 from lpentities.dataset import Dataset
 from lpentities.value import Value
 from es.weso.faostat.translator.translator_const import TranslatorConst
-from reconciler.country_reconciler import CountryReconciler
 
 
 from datetime import datetime
@@ -91,7 +89,8 @@ class ModelObjectBuilder(object):
         #Organization
         org = Organization(chain_for_id=self._org_id,
                            name="FAO: Food and Agriculture Organization of the United Nations",
-                           url="http://www.fao.org/")
+                           url="http://www.fao.org/",
+                           url_logo="http://www.fao.org/fileadmin/templates/faoweb/images/FAO-logo.png")
         #datasource
         datasource = DataSource(name="Faostat. Statistcis division of the FAO",
                                 chain_for_id=self._org_id,
