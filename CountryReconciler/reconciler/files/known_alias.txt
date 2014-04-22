@@ -6,3 +6,4 @@ MKD=Macedonia, FYR
 VEN=Venezuela, RB
 YEM=Yemen, Rep.
 PSX=Occupied Palestinian Territory
+VIR=Virgin Islands, United States
