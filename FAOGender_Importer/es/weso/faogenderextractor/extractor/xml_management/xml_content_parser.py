@@ -137,24 +137,53 @@ class XmlContentParser(object):
 
         Asumptions:
          - Dates appear betwen "[]"
+         - Sometimes, more things than dates appear between "[]"
+         - We have got several date formats: XXXX, XX, XXXX-XXXX, XXXX-XX, XX-XX, XXXX/XXXX, XXXX/XX, XX/XX
+
         """
+        beg_pos = text.find('[')
+        end_pos = text.find(']')
+        while not (beg_pos == -1 or end_pos == -1):
+            string_date = text[beg_pos + 1:end_pos]
+            #Trying to return a valid date
+            if "-" in string_date:  # Interval (two values)
+                years = string_date.split("-")
+                return Interval(start_time=self._return_4_digits_year(years[0]),
+                                end_time=self._return_4_digits_year(years[1]))
+            elif "/" in string_date:
+                years = string_date.split("/")
+                return Interval(start_time=self._return_4_digits_year(years[0]),
+                                end_time=self._return_4_digits_year(years[1]))
+            elif "&minus;" in string_date:
+                years = string_date.split("&minus;")
+                return Interval(start_time=self._return_4_digits_year(years[0]),
+                                end_time=self._return_4_digits_year(years[1]))
 
-        try:
-            string_date = text[text.index('[') + 1:text.index(']')]
-        except ValueError:
-            print "Aqui hay un string chunguele:", text
-            return None
-        if "-" in string_date:  # Interval (two values)
-            years = string_date.split("-")
-            return Interval(start_time=self._return_4_digits_year(years[0]),
-                            end_time=self._return_4_digits_year(years[1]))
-        elif "/" in string_date:
-            years = string_date.split("/")
-            return Interval(start_time=self._return_4_digits_year(years[0]),
-                            end_time=self._return_4_digits_year(years[1]))
+            elif self._is_single_year(string_date):  # YearInterval (single value)
+                return YearInterval(year=int(string_date))
 
-        else:  # YearInterval (single value)
-            return YearInterval(year=int(string_date))
+            #Preparing end_pos and beg_pos for potential next iteration
+            beg_pos = text.find('[', beg_pos + 1)
+            end_pos = text.find(']', end_pos + 1)
+
+        #TODO: maybe make some noise in the log... but probably not. There are so many cases like this
+        return None  # We reach this if no fate was found
+
+    @staticmethod
+    def _is_single_year(year):
+        if year.isdigit():
+            try:
+                int_year = int(year)
+                if 0 < int_year < 100:  # Year of the form 01.02,...,98,99
+                    return True
+                elif 999 < int_year < 2150:  # Year of 4 digits. In 2150 it will stop working :)
+                    return True
+                else:  # Unknown year format
+                    return False
+            except ValueError:
+                return False
+        else:
+            return False
 
 
     def _return_4_digits_year(self, year_string):
