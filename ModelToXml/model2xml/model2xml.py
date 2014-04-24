@@ -136,7 +136,7 @@ class ModelToXMLTransformer(object):
         self.build_slices_node()  # Done
         self.include_indicator_relations()  # Done? TODO: UNTESTED
         self.write_tree_to_xml()  # PROVISIONAL. The final task is consuming web service, not writing
-        # self.send_to_receiver()
+        self.send_to_receiver()
 
 
     def send_to_receiver(self):
