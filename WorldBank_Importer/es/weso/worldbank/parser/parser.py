@@ -94,7 +94,7 @@ class Parser(object):
                               source=data_source)
             self._dat_int += 1  # Updating dataset int id value
             data_source.add_dataset(dataset)
-            print data_source_name
+            #print data_source_name
             for indicator_element in requested_indicators:
                 start = indicator_element.index('(') + 1
                 end = indicator_element.index(')')
@@ -122,7 +122,7 @@ class Parser(object):
                                          indicator=indicator)
                     dataset.add_slice(slice_object)  # TESTING EFFECT
                     self._sli_int += 1  # Updating int id slice value
-                    print '\t\t' + slice_object.slice_id + '\t' + slice_object.dimension.get_dimension_string()
+                    #print '\t\t' + slice_object.slice_id + '\t' + slice_object.dimension.get_dimension_string()
                     uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
                     uri = uri.replace('{INDICATOR.CODE}', web_indiccator_id)
                     try:
@@ -153,10 +153,10 @@ class Parser(object):
                                     country.add_observation(observation)
                                     dataset.add_observation(observation)
                                     slice_object.add_observation(observation)
-                                    if observation.value.obs_status is not Value.MISSING:
-                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + str(observation.value.value) + ' ' + indicator.measurement_unit.name
-                                    else:
-                                        print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
+                                    #if observation.value.obs_status is not Value.MISSING:
+                                    #    print '\t\t\t' + observation.ref_time.get_time_string() + '\t' + str(observation.value.value) + ' ' + indicator.measurement_unit.name
+                                    #else:
+                                    #    print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
                     except (KeyError, ConnectionError, ValueError):
                         self.logger.error('Error retrieving response for \'' + uri + '\'')
                 print indicator.name_en + ' FINISHED'
