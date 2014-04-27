@@ -1,7 +1,6 @@
 # coding=utf-8
 __author__ = 'Dani'
 
-
 from lpentities.observation import Observation
 from lpentities.value import Value
 from lpentities.indicator import Indicator
@@ -18,7 +17,6 @@ from lpentities.slice import Slice
 from reconciler.country_reconciler import CountryReconciler
 from reconciler.exceptions.unknown_country_error import UnknownCountryError
 
-
 from .dates_builder import get_model_object_time_from_parsed_string
 from ..dataset_user_pair import DatasetUserPair
 
@@ -26,31 +24,29 @@ from datetime import datetime
 
 
 class IpfriModelObjectBuilder(object):
-
     def __init__(self, config, parsed_indicators, parsed_dates, parsed_countries):
 
-        self.config = config
-        self.parsed_indicators = parsed_indicators
-        self.parsed_dates = parsed_dates
-        self.parsed_countries = parsed_countries
+        self._config = config
+        self._parsed_indicators = parsed_indicators
+        self._parsed_dates = parsed_dates
+        self._parsed_countries = parsed_countries
 
-        self.indicators_dict = {}
-        self.dates_dict = {}
-        self.countries_dict = {}
+        self._indicators_dict = {}
+        self._dates_dict = {}
+        self._countries_dict = {}
 
         #Initializing variable ids
-        self._org_id = self.config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self.config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self.config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self.config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self.config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self.config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self.config.get("TRANSLATOR", "sou_int"))
+        self._org_id = self._config.get("TRANSLATOR", "org_id")
+        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
+        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
+        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
+        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         self.dataset = None
         self.user = None
         self.reconciler = CountryReconciler()
-
 
 
     def run(self):
@@ -70,77 +66,98 @@ class IpfriModelObjectBuilder(object):
 
         #Building license
         new_license = License()
-        new_license.name = "IPFRI Copyright"
-        new_license.description = "Attribution, no modification and non commercial without permission."
-        new_license.republish = True
-        new_license.url = "http://www.ifpri.org/copyright"
+        new_license.name = self._config.get("LICENSE", "name")  #
+        new_license.description = self._config.get("LICENSE", "description")  #
+        new_license.republish = self._config.get("LICENSE", "republish")  #
+        new_license.url = self._config.get("LICENSE", "url")  #
 
         self.dataset.license_type = new_license
 
         #building datasource
         new_datasource = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
         self._sou_int += 1  # Updating internal id_int value
-        new_datasource.name = "IFPRI - International Food Policy Research Institute"
+        new_datasource.name = self._config.get("DATASOURCE", "name")
 
         new_datasource.add_dataset(self.dataset)
 
         # Building organization
         new_organization = Organization(chain_for_id=self._org_id)
-        new_organization.name = "IFPRI - International Food Policy Research Institute"
-        new_organization.url = "http://www.ifpri.org/"
+        new_organization.name = self._config.get("ORGANIZATION", "name")
+        new_organization.url = self._config.get("ORGANIZATION", "url")
 
         new_organization.add_data_source(new_datasource)
 
         #Building user
-        self.user = User(user_login="IPFRIImporter")
+        self.user = User(user_login=self._config.get("USER", "login"))
         new_organization.add_user(self.user)
 
 
     def complete_countries_dict(self):
-        for pcountry in self.parsed_countries:
+        for pcountry in self._parsed_countries:
             try:
                 new_country = self.reconciler.get_country_by_en_name(pcountry.name)
             except UnknownCountryError, e:
                 print e.message
                 new_country = None
-            self.countries_dict[pcountry.name] = new_country
+            self._countries_dict[pcountry.name] = new_country
 
     def complete_dates_dict(self):
-        for pdate in self.parsed_dates:
+        for pdate in self._parsed_dates:
             time_object = get_model_object_time_from_parsed_string(pdate.string_date)
-            self.dates_dict[pdate.string_date] = time_object
+            self._dates_dict[pdate.string_date] = time_object
 
 
     def complete_indicators_dict(self):
+        """
+        In order to unify thge possible variant names that comes form the excell, in this point
+        we are going to change the pindicator.name of every pindicator object
+        """
         default_unit = MeasurementUnit("%")
-        i = 0
-        for pindicator in self.parsed_indicators:
-            i += 1
+        for pindicator in self._parsed_indicators:
+            if "undernourishment" in pindicator.name or "undernourished" in pindicator.name:
+                pindicator.name = "undernourishment"
+                self._add_indicator_to_dict_if_needed(pindicator.name, "undernourishment")
+            elif "underweight" in pindicator.name:
+                pindicator.name = "underweight"
+                self._add_indicator_to_dict_if_needed(pindicator.name, "underweight")
+            elif "Mortality" in pindicator.name or "mortality" in pindicator.name:
+                pindicator.name = "mortality"
+                self._add_indicator_to_dict_if_needed(pindicator.name, "mortality")
+            elif "GHI" in pindicator.name or "Hunger Index" in pindicator.name:
+                pindicator.name = "GHI"
+                self._add_indicator_to_dict_if_needed(pindicator.name, "ghi")
+            else:
+                raise RuntimeError("Unrecognized indicator: {0}".format(pindicator.name))
+
+    def _add_indicator_to_dict_if_needed(self, key, begin_of_the_pattern):
+        if key in self._indicators_dict:
+            return
+        else:
             new_indicator = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
             self._ind_int += 1  # Updating internal int_id value
-            new_indicator.name_en = pindicator.name  # Done
-            new_indicator.name_es = "Desconocido"  # TODO: translate
-            new_indicator.name_fr = "Inconnu"  # TODO: translate
-            new_indicator.description_en = pindicator.name  # TODO: right now, same as name
-            new_indicator.description_es = "Desconocido"  # TODO: Translate
-            new_indicator.description_fr = "Inconnu"  # TODO: translate
-            new_indicator.measurement_unit = default_unit
+            new_indicator.name_en = self._config.get("INDICATOR", begin_of_the_pattern + "_name_en")
+            new_indicator.name_es = self._config.get("INDICATOR", begin_of_the_pattern + "_name_es")
+            new_indicator.name_fr = self._config.get("INDICATOR", begin_of_the_pattern + "_name_fr")
+            new_indicator.description_en = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_en")
+            new_indicator.description_es = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_es")
+            new_indicator.description_fr = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_fr")
+            new_indicator.measurement_unit = MeasurementUnit("%")
 
             new_indicator.preferable_tendency = Indicator.DECREASE
             new_indicator.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
 
-            self.indicators_dict[pindicator.name] = new_indicator
+            self._indicators_dict[key] = new_indicator
             #Completing dataset object
             self.dataset.add_indicator(new_indicator)
 
 
     def fetch_elements_by_index_and_translate(self):
         sliceid = 0
-        for pdate in self.parsed_dates:
+        for pdate in self._parsed_dates:
             pindicator = self.find_pindicator_by_pdate(pdate)
             sliceid += 1
             new_slice = self._generate_slice_by_pdate_and_pindicator(pdate, pindicator, sliceid)
-            for pcountry in self.parsed_countries:
+            for pcountry in self._parsed_countries:
                 new_obs = self.generate_observation_with_model_objects(pindicator, pdate, pcountry)
                 new_slice.add_observation(new_obs)
                 self.dataset.add_observation(new_obs)
@@ -150,8 +167,8 @@ class IpfriModelObjectBuilder(object):
     def _generate_slice_by_pdate_and_pindicator(self, pdate, pindicator, sliceid):
         result = Slice(chain_for_id=self._org_id, int_for_id=self._sli_int)
         self._sli_int += 1  # Updating int id value
-        result.indicator = self.indicators_dict[pindicator.name]
-        result.dimension = self.dates_dict[pdate.string_date]
+        result.indicator = self._indicators_dict[pindicator.name]
+        result.dimension = self._dates_dict[pdate.string_date]
 
         return result
 
@@ -171,12 +188,12 @@ class IpfriModelObjectBuilder(object):
         return new_obs
 
     def add_country_object_to_observation(self, pcountry, new_obs):
-        country_object = self.countries_dict[pcountry.name]
+        country_object = self._countries_dict[pcountry.name]
         country_object.add_observation(new_obs)
         #No return needed. Modyfing new_obs object
 
     def add_ref_time_object_to_observation(self, pdate, new_obs):
-        new_obs.ref_time = self.dates_dict[pdate.string_date]
+        new_obs.ref_time = self._dates_dict[pdate.string_date]
         #No return. Modifying received new_obs
 
     def add_issued_object_to_observation(self, new_obs):
@@ -194,12 +211,12 @@ class IpfriModelObjectBuilder(object):
                 self.default_estimated = Computation(uri=Computation.ESTIMATED)
             new_obs.computation = self.default_estimated
 
-        # No returning sentence needed
+            # No returning sentence needed
 
     def add_indicator_object_to_observation(self, pindicator, new_obs):
-        new_obs.indicator = self.indicators_dict[pindicator.name]
+        new_obs.indicator = self._indicators_dict[pindicator.name]
 
-    def add_value_object_to_observation(self,excell_value, new_obs):
+    def add_value_object_to_observation(self, excell_value, new_obs):
         obs_value = Value()
 
         if excell_value is None:
@@ -225,7 +242,7 @@ class IpfriModelObjectBuilder(object):
         return None  # We reach this sentence only if the loop ends without executing the if´s body
 
     def find_pindicator_by_pdate(self, pdate):
-        for pindicator in self.parsed_indicators:
+        for pindicator in self._parsed_indicators:
             if pdate.beg_col >= pindicator.beg_col and pdate.end_col <= pindicator.end_col:
                 return pindicator
         raise RuntimeError("Unable to find indicator to the date {0}".format(pdate.string_date))

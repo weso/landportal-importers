@@ -3,6 +3,7 @@ __author__ = 'Dani'
 from lpentities.year_interval import YearInterval
 from lpentities.interval import Interval
 
+
 def get_model_object_time_from_parsed_string(original_time):
     str_time = str(original_time).replace(" ", "")  # we could already receive a str, but we need to ensure it
     if "-" in str_time:
