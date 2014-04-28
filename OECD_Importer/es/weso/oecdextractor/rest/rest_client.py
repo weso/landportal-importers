@@ -5,8 +5,6 @@ Created on 10/01/2014
 '''
 
 import requests
-import logging
-import ConfigParser
 
 class RestClient(object):
     '''

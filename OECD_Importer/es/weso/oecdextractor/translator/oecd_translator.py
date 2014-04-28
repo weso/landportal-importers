@@ -4,6 +4,7 @@ from .json_loader import JsonLoader
 from .model_object_builder import ModelObjectBuilder
 from model2xml.model2xml import ModelToXMLTransformer
 
+
 class OecdTranslator(object):
 
     def __init__(self, log, config):
@@ -24,6 +25,6 @@ class OecdTranslator(object):
         datasets, user, import_process = ModelObjectBuilder(self._log, self._config, json_objects).run()
 
         for dataset in datasets:
-            xmlTransformer = ModelToXMLTransformer(dataset=dataset,
-                                                   user=user,
-                                                   import_process=import_process).run()
+            ModelToXMLTransformer(dataset=dataset,
+                                  user=user,
+                                  import_process=import_process).run()

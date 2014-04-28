@@ -3,6 +3,8 @@ __author__ = 'Dani'
 import json
 import os
 import codecs
+
+
 class JsonLoader(object):
 
     def __init__(self, log, config):

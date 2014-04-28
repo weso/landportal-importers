@@ -6,8 +6,9 @@ Created on 09/01/2014
 
 import logging
 import ConfigParser
-from es.weso.oecdextractor.rest.rest_client import RestClient
+
 from es.weso.oecdextractor.translator.oecd_translator import OecdTranslator
+from es.weso.oecdextractor.rest.rest_client import RestClient
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
