@@ -12,20 +12,16 @@ from lpentities.organization import Organization
 from lpentities.user import User
 from lpentities.value import Value
 from lpentities.year_interval import YearInterval
+from model2xml.model2xml import ModelToXMLTransformer
 from reconciler.country_reconciler import CountryReconciler
 
-from es.weso.who.exceptions.no_new_data_available_error import NoNewDataAvailableError
 from es.weso.who.importers.data_management.csv_reader import CsvReader
 
 from .data_management.csv_downloader import CsvDownloader
 from .data_management.indicator_endpoint import IndicatorEndpoint
-from model2xml.model2xml import ModelToXMLTransformer
+
 
 __author__ = 'BorjaGB'
-
-
-
-
 
 class WhoImporter(object):
 
@@ -44,8 +40,6 @@ class WhoImporter(object):
         self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
         self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
-        #Indicators code
-        self.GNI = self._read_config_value("INDICATOR", "gni_code_value").replace('GHO/', '')
         #Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
         self._indicators_endpoints = self._build_indicators_endpoint()
@@ -114,7 +108,7 @@ class WhoImporter(object):
     def _download_csvs(self):
         print "Downloading csv files..."
         for ind_end in self._indicators_endpoints:
-            if self._csv_downloader.download_csv(self._indicators_endpoints[ind_end].code, self._indicators_endpoints[ind_end].profile, self._indicators_endpoints[ind_end].countries, self._indicators_endpoints[ind_end].regions, self._indicators_endpoints[ind_end].file_name) :
+            if self._csv_downloader.download_csv(self._indicators_endpoints[ind_end].indicator_code, self._indicators_endpoints[ind_end].profile, self._indicators_endpoints[ind_end].countries, self._indicators_endpoints[ind_end].regions, self._indicators_endpoints[ind_end].file_name) :
                 print "\tSUCCESS downloading: " + self._indicators_endpoints[ind_end].file_name
             else:
                 print "\tERROR downloading: " + self._indicators_endpoints[ind_end].file_name
@@ -179,22 +173,6 @@ class WhoImporter(object):
     def _get_country_by_name(self, country_name):
         return self._reconciler.get_country_by_iso3(country_name)
 
-    def _determine_years_to_query(self):
-        first_year = int(self._config.get("AVAILABLE_TIME", "first_year"))
-        last_year = int(self._config.get("AVAILABLE_TIME", "last_year"))
-
-        print first_year, last_year
-
-        if self._look_for_historical:
-            return first_year, last_year
-        else:
-            last_checked = int(self._config.get("AVAILABLE_TIME", "last_checked_year"))
-            if last_year <= last_checked:
-                raise NoNewDataAvailableError("No new data available. Source has not been updated since last execution")
-            else:
-                return last_checked, last_year
-
-
     def _build_default_user(self):
         return User(user_login="WHOIMPORTER")
 
@@ -232,37 +210,49 @@ class WhoImporter(object):
 
     def _build_indicators_dict(self):
         result = {}
+        requested_indicators = dict(self._config.items("INDICATORS"))
         
-        #Gross National Income
-        gni_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
-        gni_ind.name_en = self._read_config_value("INDICATOR", "gni_name_en")
-        gni_ind.name_es = self._read_config_value("INDICATOR", "gni_name_es")
-        gni_ind.name_fr = self._read_config_value("INDICATOR", "gni_name_fr")
-        gni_ind.description_en = self._read_config_value("INDICATOR", "gni_desc_en")
-        gni_ind.description_es = self._read_config_value("INDICATOR", "gni_desc_es")
-        gni_ind.description_fr = self._read_config_value("INDICATOR", "gni_desc_fr")
-        gni_ind.measurement_unit = MeasurementUnit("units")
-        gni_ind.topic = Indicator.TOPIC_TEMPORAL
-        gni_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
-        result[self.GNI] = gni_ind
-
-        #Returning final dict
+        for indicator_element in requested_indicators:
+            indicator_code = self._config.get("INDICATORS", indicator_element)
+            indicator_object = Indicator(chain_for_id=self._org_id,
+                                         int_for_id=self._ind_int)
+            self._ind_int += 1  # Updating id value
+            indicator_object.name_en = self._read_config_value(indicator_code, "name_en")
+            indicator_object.name_es = self._read_config_value(indicator_code, "name_es")
+            indicator_object.name_fr = self._read_config_value(indicator_code, "name_fr")
+            indicator_object.description_en = self._read_config_value(indicator_code, "desc_en")
+            indicator_object.description_es = self._read_config_value(indicator_code, "desc_es")
+            indicator_object.description_fr = self._read_config_value(indicator_code, "desc_fr")
+            indicator_object.measurement_unit = MeasurementUnit("units")
+            indicator_object.topic = Indicator.TOPIC_TEMPORAL
+            indicator_object.preferable_tendency = self._parse_preferable_tendency(self._read_config_value(indicator_code, "tendency"))
+    
+            result[indicator_code] = indicator_object
+    
+            #Returning final dict
         return result
+
+    def _parse_preferable_tendency(self, tendency):
+        if tendency.lower() == "increase":
+            return Indicator.INCREASE
+        elif tendency.lower() == "decrease":
+            return Indicator.DECREASE
+        return Indicator.IRRELEVANT
 
     def _build_indicators_endpoint(self):
         result = {}
+        requested_indicators = dict(self._config.items("INDICATORS"))
         
-        gni_ind_end = IndicatorEndpoint()
-        gni_ind_end.code = self._read_config_value("INDICATOR", "gni_code_value")
-        gni_ind_end.profile = self._read_config_value("INDICATOR", "gni_profile_value")
-        gni_ind_end.countries = self._read_config_value("INDICATOR", "gni_countries_value")
-        gni_ind_end.regions = self._read_config_value("INDICATOR", "gni_regions_value")
-        gni_ind_end.file_name = self._read_config_value("INDICATOR", "gni_file_name")
-        
-        result[self.GNI] = gni_ind_end
+        for indicator_element in requested_indicators:
+            indicator_code = self._config.get("INDICATORS", indicator_element)
+            indicator_endpoint = IndicatorEndpoint()
+            indicator_endpoint.indicator_code = "GHO/"+indicator_code
+            indicator_endpoint.profile = self._read_config_value(indicator_code, "profile_value")
+            indicator_endpoint.countries = self._read_config_value(indicator_code, "countries_value")
+            indicator_endpoint.regions = self._read_config_value(indicator_code, "regions_value")
+            indicator_endpoint.file_name = self._read_config_value(indicator_code, "file_name")
+            
+            result[indicator_code] = indicator_endpoint
         
         return result;
         

@@ -9,11 +9,11 @@ class IndicatorEndpoint(object):
     classdocs
     '''
 
-    def __init__(self, code = None, profile = None, countries = None, regions = None, file_name = None):
+    def __init__(self, indicator_code = None, profile = None, countries = None, regions = None, file_name = None):
         '''
         Constructor
         '''
-        self.code = code
+        self.indicator_code = indicator_code
         self.profile = profile
         self.countries = countries
         self.regions = regions
