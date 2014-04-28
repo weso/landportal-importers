@@ -108,18 +108,18 @@ class Parser(object):
         self._dat_int += 1  # Updating dataset int id value
         return dataset
     
-    def _build_indicator(self, indicator_element, dataset, measurement_unit):
+    def _build_indicator(self, indicator_code, dataset, measurement_unit):
         indicator = Indicator(chain_for_id=self._org_id,
                               int_for_id=self._ind_int,
-                              name_en=indicator_element,
-                              name_es="Desconocido",  # TODO: translate
-                              name_fr="Inconnu",  # TODO: translate
-                              description_en=indicator_element,  # TODO: right now, same as name
-                              description_es="Desconocido",  # TODO: translate
-                              description_fr="Inconnu",  # TODO: translate
+                              name_en=self.config.get(indicator_code, "name_en").decode(encoding="utf-8"),
+                              name_es=self.config.get(indicator_code, "name_es").decode(encoding="utf-8"),
+                              name_fr=self.config.get(indicator_code, "name_fr").decode(encoding="utf-8"), 
+                              description_en=self.config.get(indicator_code, "desc_en").decode(encoding="utf-8"),
+                              description_es=self.config.get(indicator_code, "desc_es").decode(encoding="utf-8"),
+                              description_fr=self.config.get(indicator_code, "desc_fr").decode(encoding="utf-8"),
                               dataset=dataset,
                               measurement_unit=measurement_unit,
-                              preferable_tendency=self._get_preferable_tendency_of_indicator(indicator_element),
+                              preferable_tendency=self._get_preferable_tendency_of_indicator(self.config.get(indicator_code, "tendency")),
                               topic=Indicator.TOPIC_TEMPORAL)  # TODO: temporal value
         self._ind_int += 1  # Updating indicator id int value
         
@@ -179,19 +179,19 @@ class Parser(object):
             
             #print data_source_name
             for indicator_element in requested_indicators:
+                indicator_code = self.config.get(indicators_section, indicator_element)
                 start = indicator_element.index('(') + 1
                 end = indicator_element.index(')')
                 measurement_unit = MeasurementUnit(indicator_element[start:end])
-                indicator = self._build_indicator(indicator_element, dataset, measurement_unit)
+                indicator = self._build_indicator(indicator_code, dataset, measurement_unit)
                 
-                print '\t' + indicator.name_en  + "--------------" + indicator.preferable_tendency + "-----------"
-                web_indiccator_id = self.config.get(indicators_section, indicator_element)
+                #print '\t' + indicator.name_en  + "--------------" + indicator.preferable_tendency + "-----------"
                 for country in self.countries:
                     slice_object = self._build_slice(country, dataset, indicator)
                     dataset.add_slice(slice_object)  # TESTING EFFECT
                     #print '\t\t' + slice_object.slice_id + '\t' + slice_object.dimension.get_dimension_string()
                     uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
-                    uri = uri.replace('{INDICATOR.CODE}', web_indiccator_id)
+                    uri = uri.replace('{INDICATOR.CODE}', indicator_code)
                     try:
                         response = RestClient.get(uri, {"format": "json"})
                         observations = response[1]
@@ -217,9 +217,8 @@ class Parser(object):
                 print indicator.name_en + ' FINISHED'
 
     @staticmethod
-    def _get_preferable_tendency_of_indicator(name):
-        #todo: Change this method, please.....
-        if name.lower() == "mortality rate, under-5 (per 1,000 live births)":
+    def _get_preferable_tendency_of_indicator(tendency):
+        if tendency.lower() == "decrease":
             return Indicator.DECREASE
         else:
             return Indicator.INCREASE
