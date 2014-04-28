@@ -190,7 +190,7 @@ class Parser(object):
                     slice_object = self._build_slice(country, dataset, indicator)
                     dataset.add_slice(slice_object)  # TESTING EFFECT
                     #print '\t\t' + slice_object.slice_id + '\t' + slice_object.dimension.get_dimension_string()
-                    uri = self.observations_url.replace('{ISO2CODE}', country.iso2)
+                    uri = self.observations_url.replace('{ISO3CODE}', country.iso3)
                     uri = uri.replace('{INDICATOR.CODE}', indicator_code)
                     try:
                         response = RestClient.get(uri, {"format": "json"})
