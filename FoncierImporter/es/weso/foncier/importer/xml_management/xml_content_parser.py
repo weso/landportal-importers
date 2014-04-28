@@ -49,7 +49,7 @@ class XmlContentParser(object):
 
     def _look_for_field(self, tree, field_to_look_for):
         base_node = tree.find(field_to_look_for)
-        return base_node.find(self.VALUE)  # TODO: Sure it works like this?
+        return base_node.find(self.VALUE).text
 
 
 

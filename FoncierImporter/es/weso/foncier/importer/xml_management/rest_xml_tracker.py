@@ -1,6 +1,7 @@
 __author__ = 'Dani'
 
 import requests
+from requests.adapters import HTTPAdapter
 
 
 class RestXmlTracker(object):
@@ -11,8 +12,14 @@ class RestXmlTracker(object):
         self._month_pattern = month_pattern
 
     def track_xml(self, year, month):
+        """
+        Sometimes the server block us or fail. We sould retry
+        """
         url = self._prepare_url(year, month)
-        return requests.get(url).content
+        s = requests.Session()
+        s.mount(url, HTTPAdapter(max_retries=10))
+        result = requests.get(url).content
+        return result
 
     def _prepare_url(self, year, month):
         result = self._url_pattern.replace(self._year_pattern, str(year))

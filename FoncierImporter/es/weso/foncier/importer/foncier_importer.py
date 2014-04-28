@@ -98,7 +98,7 @@ class FoncierImporter(object):
         for obs in observations:
             self._default_dataset.add_observation(obs)
 
-        #Send model for its trasnlation
+        #Send model for its translation
         translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
         translator.run()
 
