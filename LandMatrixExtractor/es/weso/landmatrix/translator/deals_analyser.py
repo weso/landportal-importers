@@ -23,6 +23,7 @@ class DealsAnalyser(object):
         self._reconciler = CountryReconciler()
         self._deals_dict = {}
         self._indicators_dict = indicators_dict
+        self.latest_date = 0  # It will store the latest date found between the date of every observations.
 
 
     def run(self):
@@ -66,6 +67,8 @@ class DealsAnalyser(object):
         current_date = self._deals_dict[compound_key].date
         if deal.date is not None and deal.date > current_date:
             self._update_date_of_all_entrys_of_a_country(target_country, deal.date)
+        if deal.date is not None and deal.date > self.latest_date:
+            self.latest_date = deal.date
 
     def _update_date_of_all_entrys_of_a_country(self, country, date):
         self._update_date_of_an_entry(KeyDicts.TOTAL_DEALS, country, date)
