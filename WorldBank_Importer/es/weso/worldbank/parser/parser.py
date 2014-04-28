@@ -48,6 +48,7 @@ class Parser(object):
         self._sou_int = int(self.config.get("TRANSLATOR", "sou_int"))
 
         self.countries_url = self.config.get('URLs', 'country_list')
+        print "Finish with countries"
         self.observations_url = self.config.get('URLs', 'indicator_pattern')
         self.data_sources = dict(self.config.items('data_sources'))
         
@@ -68,10 +69,7 @@ class Parser(object):
             try:
                 self.countries.append(self._reconciler.get_country_by_iso2(country['iso2Code']))
             except:
-                try:
-                    self.countries.append(self._reconciler.get_country_by_en_name(country['name']))
-                except:
-                    self.logger.warning("No country matches found for iso code" + country['iso2Code'])
+                self.logger.warning("No country matches found for iso code" + country['iso2Code'])
                 
     def _build_default_organization(self):
         return Organization(chain_for_id=self._org_id,
