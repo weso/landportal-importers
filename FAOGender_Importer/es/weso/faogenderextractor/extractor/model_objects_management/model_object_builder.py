@@ -108,7 +108,7 @@ class ModelObjectBuilder(object):
 
     @staticmethod
     def _build_value_object_from_indicator_data(indicator_data):
-        if indicator_data.value is None:
+        if indicator_data.value is None or not indicator_data.value.isdigit():
             return Value(value=None,
                          obs_status=Value.MISSING,
                          value_type=Value.INTEGER)
@@ -116,6 +116,7 @@ class ModelObjectBuilder(object):
             return Value(value=indicator_data.value,
                          obs_status=Value.AVAILABLE,
                          value_type=Value.INTEGER)
+
 
 
     def _build_default_user(self):

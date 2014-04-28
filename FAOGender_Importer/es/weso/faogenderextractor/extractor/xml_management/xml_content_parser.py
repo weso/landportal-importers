@@ -114,6 +114,10 @@ class XmlContentParser(object):
         result = self._remove_text_between_certain_sequences(result, "&", ";")
         result = self._remove_text_between_certain_sequences(result, "<", ">")  # They should be encoded...
         result = result.replace(" ", "")
+        result = result.replace(",", "")
+        result = result.replace("\n", "")
+        result = result.replace("\t", "")
+        result = result.replace("\r", "")
         return result
 
 
