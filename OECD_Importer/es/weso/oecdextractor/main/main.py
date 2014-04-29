@@ -10,6 +10,8 @@ import ConfigParser
 from es.weso.oecdextractor.translator.oecd_translator import OecdTranslator
 from es.weso.oecdextractor.rest.rest_client import RestClient
 
+
+
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(filename='oecd_extractor.log', level=logging.INFO, 

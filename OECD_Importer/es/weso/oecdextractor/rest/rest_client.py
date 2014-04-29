@@ -26,14 +26,12 @@ class RestClient(object):
 
     def run(self):
         #Tasks:
-        # - Take dataset ids
-        # - Take query pattern
-        # - Build every final url request with them
+        # - Cahrgue querys
         # - Get the data through a request
         # - Save it in a json
-        dataset_ids = self._charge_dataset_ids()
-        query_pattern = self._charge_query_pattern()
-        requests_to_do = self._build_url_request(query_pattern, dataset_ids)
+        # dataset_ids = self._charge_dataset_ids()
+        # query_pattern = self._charge_query_pattern()
+        requests_to_do = self._build_url_request()
         self._track_data(requests_to_do)
 
 
@@ -62,11 +60,9 @@ class RestClient(object):
     def _charge_query_pattern(self):
         return self._config.get("URLs", "query_pattern")
 
-    def _build_url_request(self, query_pattern, dataset_ids):
-        result = []
-        for an_id in dataset_ids:
-            result.append(query_pattern.replace(self.CHAIN_TO_REPLACE_FOR_ID, an_id))
-        return result
+    def _build_url_request(self):
+        return self._config.get("URLs", "querys").split("|")
+        # return result
 
 
 

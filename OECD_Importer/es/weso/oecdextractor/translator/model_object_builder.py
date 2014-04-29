@@ -16,6 +16,9 @@ from lpentities.organization import Organization
 from lpentities.year_interval import YearInterval
 
 
+from .indicator_key_mapper import KeyMapper
+
+
 from reconciler.country_reconciler import CountryReconciler
 
 from datetime import datetime
@@ -79,14 +82,13 @@ class ModelObjectBuilder(object):
 
     def _build_default_datasource(self):
         result = DataSource(chain_for_id=self._org_id, int_for_id=self._dat_int)
-        result.name=self._config.get("DATASOURCE", "datasource_name")
+        result.name = self._config.get("DATASOURCE", "datasource_name")
 
         self._dat_int += 1  # Updating int id dataset value
         return result
 
     def _build_default_user(self):
-        result = User(user_login=self._config.get("USER", "user_name"))
-        return result
+        return User(user_login=self._config.get("USER", "user_name"))
 
     def relate_common_objects(self):
         """
@@ -115,96 +117,184 @@ class ModelObjectBuilder(object):
         result = {}
 
         #Prepearing measurement units
-        index_unit = MeasurementUnit(name="1 to 1 index")
+        index_unit = MeasurementUnit(name="0 to 1 index")
         rank_unit = MeasurementUnit(name="rank")
 
 
         #SIGI
         sigi_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        sigi_ind.name_en = self._config.get("INDICATORS", "sigi_name_en")  # TODO:
-        sigi_ind.name_es = self._config.get("INDICATORS", "sigi_name_es")  # TODO:
-        sigi_ind.name_fr = self._config.get("INDICATORS", "sigi_name_fr")  # TODO: translation is possibly available
-        sigi_ind.description_en = self._config.get("INDICATORS", "sigi_desc_en")  # TODO:
-        sigi_ind.description_es = self._config.get("INDICATORS", "sigi_desc_es")  # TODO:
-        sigi_ind.description_fr = self._config.get("INDICATORS", "sigi_desc_fr")  # TODO: translation is possibly av.
+        sigi_ind.name_en = self._read_config_value("INDICATORS", "sigi_name_en")
+        sigi_ind.name_es = self._read_config_value("INDICATORS", "sigi_name_es")
+        sigi_ind.name_fr = self._read_config_value("INDICATORS", "sigi_name_fr")
+        sigi_ind.description_en = self._read_config_value("INDICATORS", "sigi_desc_en")
+        sigi_ind.description_es = self._read_config_value("INDICATORS", "sigi_desc_es")
+        sigi_ind.description_fr = self._read_config_value("INDICATORS", "sigi_desc_fr")
         sigi_ind.topic = Indicator.TOPIC_TEMPORAL
         sigi_ind.measurement_unit = index_unit
         sigi_ind.preferable_tendency = Indicator.DECREASE
-        result[self._config.get("INDICATORS", "sigi_key")] = sigi_ind
+        result[KeyMapper.SIGI_KEY] = sigi_ind
 
         #SIGI RANK
         sigi_rank_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        sigi_rank_ind.name_en = self._config.get("INDICATORS", "sigi_rank_name_en")  # TODO:
-        sigi_rank_ind.name_es = self._config.get("INDICATORS", "sigi_rank_name_es")  # TODO:
-        sigi_rank_ind.name_fr = self._config.get("INDICATORS", "sigi_rank_name_fr")  # TODO: translation is possibly av.
-        sigi_rank_ind.description_en = self._config.get("INDICATORS", "sigi_rank_desc_en")  # TODO:
-        sigi_rank_ind.description_es = self._config.get("INDICATORS", "sigi_rank_desc_es")  # TODO:
-        sigi_rank_ind.description_fr = self._config.get("INDICATORS", "sigi_rank_desc_fr")  # TODO: tr possibly av.
+        sigi_rank_ind.name_en = self._read_config_value("INDICATORS", "sigi_rank_name_en")
+        sigi_rank_ind.name_es = self._read_config_value("INDICATORS", "sigi_rank_name_es")
+        sigi_rank_ind.name_fr = self._read_config_value("INDICATORS", "sigi_rank_name_fr")
+        sigi_rank_ind.description_en = self._read_config_value("INDICATORS", "sigi_rank_desc_en")
+        sigi_rank_ind.description_es = self._read_config_value("INDICATORS", "sigi_rank_desc_es")
+        sigi_rank_ind.description_fr = self._read_config_value("INDICATORS", "sigi_rank_desc_fr")
         sigi_rank_ind.topic = Indicator.TOPIC_TEMPORAL
         sigi_rank_ind.measurement_unit = rank_unit
         sigi_rank_ind.preferable_tendency = Indicator.DECREASE
-        result[self._config.get("INDICATORS", "sigi_rank_key")] = sigi_rank_ind
+        result[KeyMapper.SIGI_RANK_KEY] = sigi_rank_ind
 
 
         #FC
         fc_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        fc_ind.name_en = self._config.get("INDICATORS", "fc_name_en")  # TODO:
-        fc_ind.name_es = self._config.get("INDICATORS", "fc_name_es")  # TODO:
-        fc_ind.name_fr = self._config.get("INDICATORS", "fc_name_fr")  # TODO: translation is possibly av.
-        fc_ind.description_en = self._config.get("INDICATORS", "fc_rank_name_en")  # TODO:
-        fc_ind.description_es = self._config.get("INDICATORS", "fc_rank_name_es")  # TODO:
-        fc_ind.description_fr = self._config.get("INDICATORS", "fc_rank_name_fr")  # TODO: translation is possibly av.
+        fc_ind.name_en = self._read_config_value("INDICATORS", "fc_name_en")
+        fc_ind.name_es = self._read_config_value("INDICATORS", "fc_name_es")
+        fc_ind.name_fr = self._read_config_value("INDICATORS", "fc_name_fr")
+        fc_ind.description_en = self._read_config_value("INDICATORS", "fc_rank_name_en")
+        fc_ind.description_es = self._read_config_value("INDICATORS", "fc_rank_name_es")
+        fc_ind.description_fr = self._read_config_value("INDICATORS", "fc_rank_name_fr")
         fc_ind.topic = Indicator.TOPIC_TEMPORAL
         fc_ind.measurement_unit = index_unit
         fc_ind.preferable_tendency = Indicator.DECREASE
-        result[self._config.get("INDICATORS", "fc_key")] = fc_ind
+        result[KeyMapper.FAMILY_CODE_KEY] = fc_ind
 
         #FC RANK
         fc_rank_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        fc_rank_ind.name_en = self._config.get("INDICATORS", "fc_rank_name_en")  # TODO:
-        fc_rank_ind.name_es = self._config.get("INDICATORS", "fc_rank_name_es")  # TODO:
-        fc_rank_ind.name_fr = self._config.get("INDICATORS", "fc_rank_name_fr")  # TODO: translation is possibly av.
-        fc_rank_ind.description_en = self._config.get("INDICATORS", "fc_rank_name_en")  # TODO:
-        fc_rank_ind.description_es = self._config.get("INDICATORS", "fc_rank_name_es")  # TODO:
-        fc_rank_ind.description_fr = self._config.get("INDICATORS", "fc_rank_name_fr")  # TODO: tr. possibly av.
+        fc_rank_ind.name_en = self._read_config_value("INDICATORS", "fc_rank_name_en")
+        fc_rank_ind.name_es = self._read_config_value("INDICATORS", "fc_rank_name_es")
+        fc_rank_ind.name_fr = self._read_config_value("INDICATORS", "fc_rank_name_fr")
+        fc_rank_ind.description_en = self._read_config_value("INDICATORS", "fc_rank_name_en")
+        fc_rank_ind.description_es = self._read_config_value("INDICATORS", "fc_rank_name_es")
+        fc_rank_ind.description_fr = self._read_config_value("INDICATORS", "fc_rank_name_fr")
         fc_rank_ind.topic = Indicator.TOPIC_TEMPORAL
         fc_rank_ind.measurement_unit = rank_unit
         fc_rank_ind.preferable_tendency = Indicator.DECREASE
-        result[self._config.get("INDICATORS", "fc_rank_key")] = fc_rank_ind
+        result[KeyMapper.FAMILY_CODE_RANK_KEY] = fc_rank_ind
 
         #CIVIL
         civil_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        civil_ind.name_en = self._config.get("INDICATORS", "civil_name_en")  # TODO:
-        civil_ind.name_es = self._config.get("INDICATORS", "civil_name_es")  # TODO :
-        civil_ind.name_fr = self._config.get("INDICATORS", "civil_name_fr")  # TODO: translation is possibly av.
-        civil_ind.description_en = self._config.get("INDICATORS", "civil_rank_name_en")  # TODO:
-        civil_ind.description_es = self._config.get("INDICATORS", "civil_rank_name_es")  # TODO:
-        civil_ind.description_fr = self._config.get("INDICATORS", "civil_rank_name_fr")  # TODO: TR. POSSIBLY AV.
+        civil_ind.name_en = self._read_config_value("INDICATORS", "civil_name_en")
+        civil_ind.name_es = self._read_config_value("INDICATORS", "civil_name_es")
+        civil_ind.name_fr = self._read_config_value("INDICATORS", "civil_name_fr")
+        civil_ind.description_en = self._read_config_value("INDICATORS", "civil_rank_name_en")
+        civil_ind.description_es = self._read_config_value("INDICATORS", "civil_rank_name_es")
+        civil_ind.description_fr = self._read_config_value("INDICATORS", "civil_rank_name_fr")
         civil_ind.topic = Indicator.TOPIC_TEMPORAL
         civil_ind.measurement_unit = index_unit
         civil_ind.preferable_tendency = Indicator.DECREASE
-        result[self._config.get("INDICATORS", "civil_key")] = civil_ind
+        result[KeyMapper.CIVIL_KEY] = civil_ind
 
         #CIVIL RANK
         civil_rank_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        civil_rank_ind.name_en = self._config.get("INDICATORS", "civil_rank_name_en")  # TODO:
-        civil_rank_ind.name_es = self._config.get("INDICATORS", "civil_rank_name_es")  # TODO:
-        civil_rank_ind.name_fr = self._config.get("INDICATORS", "civil_rank_name_fr")  # TODO: tr. possibly av.
-        civil_rank_ind.description_en = self._config.get("INDICATORS", "civil_rank_name_en")  # TODO:
-        civil_rank_ind.description_es = self._config.get("INDICATORS", "civil_rank_name_es")  # TODO:
-        civil_rank_ind.description_fr = self._config.get("INDICATORS", "civil_rank_name_fr")  # TODO: tr. possibly av.
+        civil_rank_ind.name_en = self._read_config_value("INDICATORS", "civil_rank_name_en")
+        civil_rank_ind.name_es = self._read_config_value("INDICATORS", "civil_rank_name_es")
+        civil_rank_ind.name_fr = self._read_config_value("INDICATORS", "civil_rank_name_fr")
+        civil_rank_ind.description_en = self._read_config_value("INDICATORS", "civil_rank_name_en")
+        civil_rank_ind.description_es = self._read_config_value("INDICATORS", "civil_rank_name_es")
+        civil_rank_ind.description_fr = self._read_config_value("INDICATORS", "civil_rank_name_fr")
         civil_rank_ind.measurement_unit = rank_unit
         civil_rank_ind.topic = Indicator.TOPIC_TEMPORAL
         civil_rank_ind.preferable_tendency = Indicator.DECREASE
-        result[self._config.get("INDICATORS", "civil_rank_key")] = civil_rank_ind
+        result[KeyMapper.CIVIL_RANK_KEY] = civil_rank_ind
+        
+        
+        #ENTITLEMENTS
+        entitlements_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating ind id int value
+        entitlements_ind.name_en = self._read_config_value("INDICATORS", "entitlements_name_en")
+        entitlements_ind.name_es = self._read_config_value("INDICATORS", "entitlements_name_es")
+        entitlements_ind.name_fr = self._read_config_value("INDICATORS", "entitlements_name_fr")
+        entitlements_ind.description_en = self._read_config_value("INDICATORS", "entitlements_name_en")
+        entitlements_ind.description_es = self._read_config_value("INDICATORS", "entitlements_name_es")
+        entitlements_ind.description_fr = self._read_config_value("INDICATORS", "entitlements_name_fr")
+        entitlements_ind.measurement_unit = index_unit
+        entitlements_ind.topic = Indicator.TOPIC_TEMPORAL
+        entitlements_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.ENTITLEMENTS_KEY] = entitlements_ind
+        
+        #ENTITLEMENTS RANK
+        entitlements_rank_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating ind id int value
+        entitlements_rank_ind.name_en = self._read_config_value("INDICATORS", "entitlements_rank_name_en")
+        entitlements_rank_ind.name_es = self._read_config_value("INDICATORS", "entitlements_rank_name_es")
+        entitlements_rank_ind.name_fr = self._read_config_value("INDICATORS", "entitlements_rank_name_fr")
+        entitlements_rank_ind.description_en = self._read_config_value("INDICATORS", "entitlements_rank_name_en")
+        entitlements_rank_ind.description_es = self._read_config_value("INDICATORS", "entitlements_rank_name_es")
+        entitlements_rank_ind.description_fr = self._read_config_value("INDICATORS", "entitlements_rank_name_fr")
+        entitlements_rank_ind.measurement_unit = rank_unit
+        entitlements_rank_ind.topic = Indicator.TOPIC_TEMPORAL
+        entitlements_rank_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.ENTITLEMENTS_RANK_KEY] = entitlements_rank_ind
+        
+        #ACCESS TO LAND
+        land_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating ind id int value
+        land_ind.name_en = self._read_config_value("INDICATORS", "land_name_en")
+        land_ind.name_es = self._read_config_value("INDICATORS", "land_name_es")
+        land_ind.name_fr = self._read_config_value("INDICATORS", "land_name_fr")
+        land_ind.description_en = self._read_config_value("INDICATORS", "land_name_en")
+        land_ind.description_es = self._read_config_value("INDICATORS", "land_name_es")
+        land_ind.description_fr = self._read_config_value("INDICATORS", "land_name_fr")
+        land_ind.measurement_unit = index_unit
+        land_ind.topic = Indicator.TOPIC_TEMPORAL
+        land_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.LAND_KEY] = land_ind
+        
+        #INHERITANCE GENERAL
+        inheritance_general_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating ind id int value
+        inheritance_general_ind.name_en = self._read_config_value("INDICATORS", "inheritance_general_name_en")
+        inheritance_general_ind.name_es = self._read_config_value("INDICATORS", "inheritance_general_name_es")
+        inheritance_general_ind.name_fr = self._read_config_value("INDICATORS", "inheritance_general_name_fr")
+        inheritance_general_ind.description_en = self._read_config_value("INDICATORS", "inheritance_general_name_en")
+        inheritance_general_ind.description_es = self._read_config_value("INDICATORS", "inheritance_general_name_es")
+        inheritance_general_ind.description_fr = self._read_config_value("INDICATORS", "inheritance_general_name_fr")
+        inheritance_general_ind.measurement_unit = index_unit
+        inheritance_general_ind.topic = Indicator.TOPIC_TEMPORAL
+        inheritance_general_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.INHERITANCE_GENERAL_KEY] = inheritance_general_ind
+        
+        #INHERITANCE DAUGHTERS
+        inheritance_daughters_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating ind id int value
+        inheritance_daughters_ind.name_en = self._read_config_value("INDICATORS", "inheritance_daughters_name_en")
+        inheritance_daughters_ind.name_es = self._read_config_value("INDICATORS", "inheritance_daughters_name_es")
+        inheritance_daughters_ind.name_fr = self._read_config_value("INDICATORS", "inheritance_daughters_name_fr")
+        inheritance_daughters_ind.description_en = self._read_config_value("INDICATORS", "inheritance_daughters_name_en")
+        inheritance_daughters_ind.description_es = self._read_config_value("INDICATORS", "inheritance_daughters_name_es")
+        inheritance_daughters_ind.description_fr = self._read_config_value("INDICATORS", "inheritance_daughters_name_fr")
+        inheritance_daughters_ind.measurement_unit = index_unit
+        inheritance_daughters_ind.topic = Indicator.TOPIC_TEMPORAL
+        inheritance_daughters_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.INHERITANCE_DAUGHTERS_KEY] = inheritance_daughters_ind
+        
+        #INHERITANCE WIDOWS
+        inheritance_widows_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        self._ind_int += 1  # Updating ind id int value
+        inheritance_widows_ind.name_en = self._read_config_value("INDICATORS", "inheritance_widows_name_en")
+        inheritance_widows_ind.name_es = self._read_config_value("INDICATORS", "inheritance_widows_name_es")
+        inheritance_widows_ind.name_fr = self._read_config_value("INDICATORS", "inheritance_widows_name_fr")
+        inheritance_widows_ind.description_en = self._read_config_value("INDICATORS", "inheritance_widows_name_en")
+        inheritance_widows_ind.description_es = self._read_config_value("INDICATORS", "inheritance_widows_name_es")
+        inheritance_widows_ind.description_fr = self._read_config_value("INDICATORS", "inheritance_widows_name_fr")
+        inheritance_widows_ind.measurement_unit = index_unit
+        inheritance_widows_ind.topic = Indicator.TOPIC_TEMPORAL
+        inheritance_widows_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.INHERITANCE_WIDOWS_KEY] = inheritance_widows_ind
 
         return result
+    
+    def _read_config_value(self, section, field):
+        return (self._config.get(section, field)).decode(encoding="utf-8")
 
 
     def _turn_json_into_dataset_object(self, a_json):
@@ -224,10 +314,11 @@ class ModelObjectBuilder(object):
     def _add_observation_objects(self, dataset, a_json):
         #Because of the format of the json file, we wiil find the list
         #of the observations in root dict under 'value' key
+        oecd_id_of_dataset = KeyMapper.identify_dataset(a_json["odata.metadata"])
         observations_list = a_json["value"]
         for obs_dict in observations_list:
             try:
-                obs_object = self._build_observation_object_from_dict(obs_dict)
+                obs_object = self._build_observation_object_from_dict(obs_dict, oecd_id_of_dataset)
                 if self._pass_observation_filters(obs_object):
                     dataset.add_observation(obs_object)
             except RuntimeError as e:
@@ -240,11 +331,11 @@ class ModelObjectBuilder(object):
         # TODO: but not sure about which filters are we going to have
         return True
 
-    def _build_observation_object_from_dict(self, obs_dict):
+    def _build_observation_object_from_dict(self, obs_dict, oecd_id_of_dataset):
         result = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
         self._obs_int += 1  # Updating obs id int value
 
-        result.indicator = self._get_indicator_of_observation(obs_dict[self.INDICATOR_JSON])
+        result.indicator = self._get_indicator_of_observation(obs_dict[self.INDICATOR_JSON], oecd_id_of_dataset)
         result.value = self._build_value_of_observation(obs_dict)
         result.computation = self._get_computation_of_observation()  # Always the same, no parameter needed
         result.issued = self._build_issued_object_of_observation()  # No param needed. It should be calculated
@@ -318,17 +409,19 @@ class ModelObjectBuilder(object):
         elif result.value_type == Value.INTEGER:
             result.value = int(obs_dict[self.VALUE_JSON])
         else:
-            raise RuntimeError("Error while parsing value of observation. Country {0}, variable {2}" \
-                            .format(obs_dict[self.ISO3_JSON], obs_dict[self.INDICATOR_JSON]))
+            raise RuntimeError("Error while parsing value of observation. Country {0}, variable {2}".
+                               format(obs_dict[self.ISO3_JSON], obs_dict[self.INDICATOR_JSON]))
 
         return result
 
 
-    def _get_indicator_of_observation(self, indicator_key):
+    def _get_indicator_of_observation(self, indicator_key, oecd_id_of_dataset):
         try:
-            return self._indicators_dict[indicator_key]
+            return KeyMapper.map_key(key=indicator_key,
+                                     dataset_id=oecd_id_of_dataset)
         except:
-            raise RuntimeError("Trying to build an unknown indicator: {0}".format(indicator_key))
+            raise RuntimeError("Trying to build an unknown indicator: {0}, dataset {1}".format(indicator_key,
+                                                                                               oecd_id_of_dataset))
 
 
 
