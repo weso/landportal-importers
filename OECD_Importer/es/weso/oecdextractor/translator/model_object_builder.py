@@ -14,6 +14,7 @@ from lpentities.data_source import DataSource
 from lpentities.license import License
 from lpentities.organization import Organization
 from lpentities.year_interval import YearInterval
+from lpentities.indicator_relationship import IndicatorRelationship
 
 
 from .indicator_key_mapper import KeyMapper
@@ -54,6 +55,7 @@ class ModelObjectBuilder(object):
 
         # Creating objects that would be necessary during the construction of the model
         self._indicators_dict = self._build_indicators_dict()
+        self._indicator_relations = self._build_indicator_relations()
         self._default_computation = self._build_default_computation()
         self._countries_dict = {}  # It will be completed during the parsing process
         self._reconciler = CountryReconciler()
@@ -107,7 +109,7 @@ class ModelObjectBuilder(object):
         result = []
         for a_json in self._json_objects:
             result.append(self._turn_json_into_dataset_object(a_json))
-        return result, self._default_user, "json"
+        return result, self._default_user, "json", self._indicator_relations
 
     @staticmethod
     def _build_default_computation():
@@ -236,18 +238,18 @@ class ModelObjectBuilder(object):
         result[KeyMapper.ENTITLEMENTS_RANK_KEY] = entitlements_rank_ind
         
         #ACCESS TO LAND
-        land_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
+        women_land_access_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
         self._ind_int += 1  # Updating ind id int value
-        land_ind.name_en = self._read_config_value("INDICATORS", "land_name_en")
-        land_ind.name_es = self._read_config_value("INDICATORS", "land_name_es")
-        land_ind.name_fr = self._read_config_value("INDICATORS", "land_name_fr")
-        land_ind.description_en = self._read_config_value("INDICATORS", "land_name_en")
-        land_ind.description_es = self._read_config_value("INDICATORS", "land_name_es")
-        land_ind.description_fr = self._read_config_value("INDICATORS", "land_name_fr")
-        land_ind.measurement_unit = index_unit
-        land_ind.topic = Indicator.TOPIC_TEMPORAL
-        land_ind.preferable_tendency = Indicator.DECREASE
-        result[KeyMapper.LAND_KEY] = land_ind
+        women_land_access_ind.name_en = self._read_config_value("INDICATORS", "women_land_access_name_en")
+        women_land_access_ind.name_es = self._read_config_value("INDICATORS", "women_land_access_name_es")
+        women_land_access_ind.name_fr = self._read_config_value("INDICATORS", "women_land_access_name_fr")
+        women_land_access_ind.description_en = self._read_config_value("INDICATORS", "women_land_access_name_en")
+        women_land_access_ind.description_es = self._read_config_value("INDICATORS", "women_land_access_name_es")
+        women_land_access_ind.description_fr = self._read_config_value("INDICATORS", "women_land_access_name_fr")
+        women_land_access_ind.measurement_unit = index_unit
+        women_land_access_ind.topic = Indicator.TOPIC_TEMPORAL
+        women_land_access_ind.preferable_tendency = Indicator.DECREASE
+        result[KeyMapper.LAND_KEY] = women_land_access_ind
         
         #INHERITANCE GENERAL
         inheritance_general_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
@@ -296,16 +298,32 @@ class ModelObjectBuilder(object):
     def _read_config_value(self, section, field):
         return (self._config.get(section, field)).decode(encoding="utf-8")
 
+    def _build_indicator_relations(self):
+        result = [
+            IndicatorRelationship(source=self._indicators_dict[KeyMapper.INHERITANCE_GENERAL_KEY],
+                                  target=self._indicators_dict[KeyMapper.INHERITANCE_DAUGHTERS_KEY]),
+            IndicatorRelationship(source=self._indicators_dict[KeyMapper.INHERITANCE_GENERAL_KEY],
+                                  target=self._indicators_dict[KeyMapper.INHERITANCE_WIDOWS_KEY])
+        ]
+        return result
+
 
     def _turn_json_into_dataset_object(self, a_json):
         dataset = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
         self._dat_int += 1  # updating id int dataset value
+
         dataset.frequency = Dataset.THREE_YEARS
 
         self._add_observation_objects(dataset, a_json)
         self._decorate_dataset_with_common_objects(dataset)
+        self._include_all_indicators(dataset)
 
         return dataset
+
+
+    def _include_all_indicators(self, dataset):
+        for key in self._indicators_dict:
+            dataset.add_indicator(self._indicators_dict[key])
 
     def _decorate_dataset_with_common_objects(self, dataset):
         self._default_datasource.add_dataset(dataset)
@@ -417,8 +435,9 @@ class ModelObjectBuilder(object):
 
     def _get_indicator_of_observation(self, indicator_key, oecd_id_of_dataset):
         try:
-            return KeyMapper.map_key(key=indicator_key,
+            mapped_key = KeyMapper.map_key(key=indicator_key,
                                      dataset_id=oecd_id_of_dataset)
+            return self._indicators_dict[mapped_key]
         except:
             raise RuntimeError("Trying to build an unknown indicator: {0}, dataset {1}".format(indicator_key,
                                                                                                oecd_id_of_dataset))

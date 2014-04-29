@@ -3542,3 +3542,1554 @@
 2014-04-24 10:17:05,020 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
 2014-04-24 10:17:05,022 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
 2014-04-24 10:17:05,023 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:24:01,194 - main - INFO - Starting run
+2014-04-29 17:24:01,275 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:24:02,690 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:24:40,474 - main - INFO - Starting run
+2014-04-29 17:24:40,493 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:24:41,760 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:26:24,055 - main - INFO - Starting run
+2014-04-29 17:26:24,076 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:26:25,348 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:26:26,825 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,825 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,825 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,825 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,826 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,826 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,826 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,826 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,828 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,829 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,829 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,831 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,831 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,831 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,831 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,832 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,832 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,832 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,832 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,832 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,832 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,834 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,834 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,834 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,834 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,834 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,834 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,835 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,836 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,836 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,836 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,836 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,836 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,838 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,839 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,839 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,839 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,841 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,841 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,841 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,841 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,842 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,844 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,844 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,844 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,845 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,846 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,846 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,846 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,848 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,848 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,848 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,848 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,848 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,848 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,849 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,849 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,849 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,851 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,852 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,852 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,852 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,852 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,854 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,854 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,854 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,854 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,854 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,854 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,855 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,857 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,857 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,857 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,857 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,858 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,859 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,859 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,859 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,859 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,859 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,861 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,862 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,864 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,865 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,867 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,867 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,867 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,867 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,868 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,869 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,869 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,869 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,869 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,871 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,872 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,872 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,872 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,872 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,874 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,874 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,874 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,874 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,875 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,877 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,877 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,877 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,878 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,880 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,880 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,880 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,881 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,882 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,884 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,884 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,884 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,884 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,884 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,885 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,885 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,887 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,888 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,888 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,888 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,888 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,888 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,890 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,891 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,891 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,891 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,892 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,892 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,894 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,895 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,895 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,897 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,897 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,897 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,897 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,898 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,898 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,898 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,898 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,898 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,898 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,900 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,900 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,900 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,900 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,901 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,901 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,901 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,901 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,901 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,901 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,903 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,903 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,903 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,903 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,903 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,904 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,905 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,905 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,905 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,905 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,905 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,907 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,908 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,908 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,908 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,908 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,910 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,910 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,910 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,910 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,911 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,913 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,913 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,913 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,913 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,913 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,914 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,915 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,915 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,915 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,915 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,917 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,918 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,918 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,918 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,918 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,920 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,920 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,920 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,920 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,921 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,923 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,923 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,923 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,923 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,924 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,926 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,926 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,926 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,926 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,927 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,928 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,928 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,928 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,928 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,930 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,931 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,931 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,931 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,931 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,933 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,933 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,933 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,933 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,934 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,936 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,936 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,936 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,937 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,938 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,938 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,938 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,938 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,940 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,940 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,940 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,940 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,940 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,940 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,941 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,941 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,941 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,941 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,943 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,943 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,943 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,943 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,944 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,944 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,944 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,946 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,946 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,946 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,947 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,948 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,948 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,950 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,951 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,951 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,951 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,953 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,954 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,954 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,954 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,956 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,956 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,956 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,957 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,957 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,957 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,957 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,957 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,957 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,959 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,959 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,959 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,960 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,960 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,960 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,960 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,960 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,960 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,961 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,961 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,961 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,963 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,964 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,964 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,966 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,966 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,967 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,969 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,969 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,970 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,971 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,971 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,971 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,971 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,973 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,974 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,974 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,974 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,974 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,974 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,976 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,977 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,977 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,977 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,977 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,977 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,979 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,979 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,979 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,979 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,980 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,982 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,982 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,982 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,982 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,982 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,983 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,984 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,984 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,984 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,984 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,984 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,986 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,987 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,987 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,987 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,987 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,987 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,989 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,989 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,989 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,989 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,990 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,992 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,992 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,992 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,992 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,992 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,993 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,994 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,994 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,994 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,994 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,994 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,996 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,997 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,997 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,997 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,997 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,997 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,997 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,999 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,999 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:26,999 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:26,999 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,000 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,002 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,002 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,002 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,002 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,002 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,003 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,005 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,005 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,005 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,005 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,005 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,005 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,006 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,007 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,007 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,009 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,009 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,009 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,009 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,009 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,009 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,010 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,010 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,010 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,010 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,012 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,012 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,012 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,012 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,012 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,013 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,015 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,015 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,015 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,015 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,015 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,015 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,016 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,017 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,017 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,017 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,017 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,019 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,020 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,020 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,020 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,020 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,020 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,022 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,022 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,022 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,022 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,022 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,023 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,025 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,025 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,025 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,025 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,025 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,026 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,028 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,028 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,028 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,028 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,029 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,030 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,030 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,030 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,030 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,030 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,030 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,032 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,033 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,033 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,033 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,033 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,035 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,035 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,035 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,035 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,035 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,035 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,036 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,038 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,038 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,038 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,038 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,039 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,040 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,040 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,040 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,042 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,043 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,043 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,043 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,045 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,045 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,045 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,046 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,046 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,046 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,046 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,046 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,046 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,055 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,055 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,056 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,056 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,056 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,058 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,058 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,058 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,059 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,059 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,059 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,059 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,059 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,059 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,061 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,061 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,062 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,062 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,062 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,062 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,062 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,062 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,063 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,063 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,065 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,066 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,066 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,066 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,068 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,069 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,071 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,072 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,072 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,075 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,075 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,076 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,076 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,076 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,078 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,079 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,081 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,082 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,084 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,085 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:26:27,085 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,085 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,086 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,086 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,086 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,086 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,086 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,088 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,089 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,089 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,089 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,089 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,089 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,089 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,091 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,091 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,092 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,094 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,094 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,094 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,095 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,096 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,096 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,096 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,096 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,096 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,098 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,099 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,099 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,099 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,099 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,099 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,099 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,101 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,101 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,101 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,101 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,102 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,102 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,102 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,102 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,102 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,104 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,104 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,104 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,104 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,104 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,105 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,107 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,107 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,107 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,107 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,107 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,108 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,109 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,109 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,109 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,109 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,109 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,111 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,111 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,111 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,111 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:26:27,111 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_2, dataset GID2
+2014-04-29 17:26:27,111 - main - INFO - Observation ignored. Trying to build an unknown indicator: FC_RANK, dataset GID2
+2014-04-29 17:28:41,528 - main - INFO - Starting run
+2014-04-29 17:28:41,548 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:28:46,588 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:28:48,762 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,763 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,763 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,765 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,765 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,766 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,766 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,766 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,767 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,767 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,769 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,769 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,769 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,770 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,772 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,772 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,773 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,773 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,773 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,775 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,865 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,867 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,867 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,868 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,868 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,868 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,869 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,871 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,871 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,871 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,872 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,872 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,874 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,874 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,875 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,875 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,875 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,877 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,878 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:28:48,878 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:30:58,677 - main - INFO - Starting run
+2014-04-29 17:30:58,700 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:31:04,220 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 17:31:06,071 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,072 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,073 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,073 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,075 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,075 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,076 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,076 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,078 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,078 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,079 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,081 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,082 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,082 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,082 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,084 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,084 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,085 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,085 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,085 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,176 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,177 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,177 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,177 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,178 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,178 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,180 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,180 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,180 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,181 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,181 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,183 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,184 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,184 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,184 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,184 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,186 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,187 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,187 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 17:31:06,187 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:55,430 - main - INFO - Starting run
+2014-04-29 18:06:55,450 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:06:56,766 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:06:58,365 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,367 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,368 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,368 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,368 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,369 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,369 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,371 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,371 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,371 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,372 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,372 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,374 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,375 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,375 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,375 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,375 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,377 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,378 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,378 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,464 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,466 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,466 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,467 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,467 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,467 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,469 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,470 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,470 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,470 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,470 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,471 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,473 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,473 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,473 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,474 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,474 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,476 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,476 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:06:58,476 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:41,233 - main - INFO - Starting run
+2014-04-29 18:17:41,253 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:17:42,371 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:17:43,957 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,957 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,959 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,960 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,960 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,960 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,961 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,961 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,963 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,963 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,963 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,964 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,966 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,967 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,967 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,967 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,967 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,969 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,970 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:43,970 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,059 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,061 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,062 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,062 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,062 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,063 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,063 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,065 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,065 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,065 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,066 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,066 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,068 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,069 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,069 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,069 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,071 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,071 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,072 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:17:44,072 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:25,196 - main - INFO - Starting run
+2014-04-29 18:18:25,216 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:18:27,243 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:18:28,703 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,704 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,704 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,706 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,706 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,707 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,707 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,707 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,709 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,710 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,710 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,710 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,710 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,711 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,713 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,713 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,713 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,714 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,714 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,716 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,803 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,805 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,805 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,805 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,806 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,806 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,808 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,809 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,809 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,809 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,811 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,811 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,812 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,812 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,812 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,813 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,813 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,815 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,815 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:18:28,815 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:20,691 - main - INFO - Starting run
+2014-04-29 18:19:20,710 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:19:25,055 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:19:28,253 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,253 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,255 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,255 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,256 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,256 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,256 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,257 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,260 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,262 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,262 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,265 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,265 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,352 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,354 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,357 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,358 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,358 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,358 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,359 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,361 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,361 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,361 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,362 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,364 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,364 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,365 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,365 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:19:28,365 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:23:59,539 - main - INFO - Starting run
+2014-04-29 18:23:59,561 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:25:22,197 - main - INFO - Starting run
+2014-04-29 18:25:22,220 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:28:25,336 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:28:28,377 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,378 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,378 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,378 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,380 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,381 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,381 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,381 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,381 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,382 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,384 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,384 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,384 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,385 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,385 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,387 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,387 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,388 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,388 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,388 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,474 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,476 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,476 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,476 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,477 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,479 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,479 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,480 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,480 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,480 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,482 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,483 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,483 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,483 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,483 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,484 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,486 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,486 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,486 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:28:28,487 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:31:32,697 - main - INFO - Starting run
+2014-04-29 18:31:32,717 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:34:33,187 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:34:45,256 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,257 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,257 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,259 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,260 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,260 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,262 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,263 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,265 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,266 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,266 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,266 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,267 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,267 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,269 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,352 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,354 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,354 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,355 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,357 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,357 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,358 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,358 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,358 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,359 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,359 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,361 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,361 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,361 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,362 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,362 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,364 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:34:45,365 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:15,926 - main - INFO - Starting run
+2014-04-29 18:36:15,944 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:36:17,819 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:36:19,799 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,799 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,801 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,802 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,802 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,802 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,803 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,803 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,805 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,805 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,805 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,806 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,806 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,808 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,808 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,809 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,809 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,809 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,811 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,812 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,900 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,901 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,901 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,901 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,903 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,903 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,904 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,904 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,904 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,905 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,905 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,907 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,907 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,907 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,908 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,910 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,910 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,911 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,911 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:36:19,911 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:05,062 - main - INFO - Starting run
+2014-04-29 18:39:05,114 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:39:06,240 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 18:39:07,776 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,778 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,779 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,779 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,779 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,780 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,780 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,782 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,782 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,782 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,783 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,783 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,785 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,786 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,786 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,786 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,788 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,788 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,789 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,789 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,875 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,877 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,877 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,878 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,878 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,878 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,880 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,881 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,881 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,881 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,882 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,882 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,884 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,884 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,884 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,885 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,885 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,887 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,888 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 18:39:07,888 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:24,302 - main - INFO - Starting run
+2014-04-29 19:12:24,322 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 19:12:25,543 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 19:12:27,135 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,137 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,138 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,138 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,138 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,138 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,140 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,141 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,141 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,141 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,141 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,142 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,144 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,144 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,144 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,145 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,145 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,147 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,147 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,148 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,234 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,236 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,236 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,236 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,236 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,237 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,239 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,239 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,240 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,240 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,240 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,242 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,243 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,243 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,243 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,243 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,244 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,246 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,246 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:12:27,246 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:14,871 - main - INFO - Starting run
+2014-04-29 19:18:14,891 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 19:18:15,805 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-04-29 19:18:17,391 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,391 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,392 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,394 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,394 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,394 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,395 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,395 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,397 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,397 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,398 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,398 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,398 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,400 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,401 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,401 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,401 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,401 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,403 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,404 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,493 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,493 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,493 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,494 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,494 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,496 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,496 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,496 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,497 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,497 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,499 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,500 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,500 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,500 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,500 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,502 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,503 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,503 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,503 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-04-29 19:18:17,505 - main - INFO - Observation ignored. Unknown country while parsing observation. ISO3: SCG

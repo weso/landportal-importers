@@ -22,9 +22,10 @@ class OecdTranslator(object):
 
         """
         json_objects = JsonLoader(self._log, self._config).run()
-        datasets, user, import_process = ModelObjectBuilder(self._log, self._config, json_objects).run()
+        datasets, user, import_process, relations = ModelObjectBuilder(self._log, self._config, json_objects).run()
 
         for dataset in datasets:
             ModelToXMLTransformer(dataset=dataset,
                                   user=user,
-                                  import_process=import_process).run()
+                                  import_process=import_process,
+                                  indicator_relations=relations).run()
