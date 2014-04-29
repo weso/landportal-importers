@@ -110,17 +110,26 @@ class ModelToXMLTransformer(object):
 
 
     def __init__(self, dataset, import_process, user, indicator_relations=None):
-        self.datasource = dataset.source
-        self.dataset = dataset
-        self.user = user
-        self.import_process = import_process
-        self.root = None
-        self.indicator_dic = {}  # It will store an indicator object with it id as key.
-        self.group_dic = {}
-        self.indicator_relations = indicator_relations
+        """
+        Constructor:
+         - dataset: lpentities.dataset object containing most of the info
+         - user: user that strat the importation process. According to the model, it is not possible to
+        obtain it form the dataset
+         - import_proces: string chain that summarizes the way in which data were taken from the source: excell, api,...
+         - indicator_relations: list with lpentities.IndicatorRelationship objects
+
+        """
+        self._datasource = dataset.source
+        self._dataset = dataset
+        self._user = user
+        self._import_process = import_process
+        self._root = None
+        self._indicator_dic = {}  # It will store an indicator object with it id as key.
+        self._group_dic = {}
+        self._indicator_relations = indicator_relations
         # One per indicator referred by the observations
 
-        self.root = Element(self.ROOT)
+        self._root = Element(self.ROOT)
 
         '''
         Constructor
@@ -135,8 +144,8 @@ class ModelToXMLTransformer(object):
         self.build_indicator_groups_node()  # Done
         self.build_slices_node()  # Done
         self.include_indicator_relations()  # Done? TODO: UNTESTED
-        self.write_tree_to_xml()  # PROVISIONAL. The final task is consuming web service, not writing
-        self.send_to_receiver()
+        self.write_tree_to_xml()  #
+        # self.send_to_receiver()
 
 
     def send_to_receiver(self):
@@ -150,51 +159,60 @@ class ModelToXMLTransformer(object):
 
 
     def include_indicator_relations(self):
-        if self.indicator_relations is None or len(self.indicator_relations) == 0:
+        if self._indicator_relations is None or len(self._indicator_relations) == 0:
             return  # Nothing to fo (most of cases)
         else:
-            for a_relation in self.indicator_relations:
+            print "INCLUDE_INDICATOR_RELATIONS. REcibi un encargo de ", len(self._indicator_relations)
+            for a_relation in self._indicator_relations:
                 self.include_relation_in_the_tree(a_relation)
 
     def include_relation_in_the_tree(self, a_relation):
+        # print "Look at me here babyy! I´m a ", type(a_relation)
+        # print "source", a_relation.source.indicator_id, a_relation.source.name_en
+        # print "target", a_relation.target.indicator_id, a_relation.target.name_en
+
         #Looking for source node in the tree
         source_node = self._get_indicator_node_by_id(a_relation.source.indicator_id)
         relations_node = source_node.find(self.INDICATOR_SPLITS_IN)
 
         #Creating base relation node if needed, and incorporating it to the tree
         if relations_node is None:
+            # print "i shoulg appear at least one time, don't you think so? "
             relations_node = Element(self.INDICATOR_SPLITS_IN)
             source_node.append(relations_node)
 
         #Creating and adding new relation
+        # print "In my case, i should appear twice at least"
         new_node = Element(self.INDICATOR_REF)
         new_node.text = a_relation.target.indicator_id
-        source_node.append(new_node)
+        relations_node.append(new_node)
+
+        # print "No more to say. i'm done"
 
 
     def _get_indicator_node_by_id(self, indicator_id):
-        indicator_nodes = self.root.find(self.INDICATORS).getchildren()
+        indicator_nodes = self._root.find(self.INDICATORS).getchildren()
         for ind in indicator_nodes:
-            if ind[self.INDICATOR_ATT_ID] == indicator_id:
+            if ind.attrib[self.INDICATOR_ATT_ID] == indicator_id:
                 return ind
         raise RuntimeError("Impossible to find indicator with id {0}. Unable to relate indicators with it"
                            .format(indicator_id))
 
     def build_indicator_groups_node(self):
         groups = Element(self.INDICATOR_GROUPS)
-        for group_node in self.group_dic:
+        for group_node in self._group_dic:
             # The nodes are already built. We are storing nodes in the dict
             groups.append(group_node)
-        self.root.append(groups)
+        self._root.append(groups)
 
     def build_slices_node(self):
         #Building node
         slices_node = Element(self.SLICES)
         #Building child nodes
-        for data_slice in self.dataset.slices:
+        for data_slice in self._dataset.slices:
             slices_node.append(self.build_slice_node(data_slice))
         #Appending node to root
-        self.root.append(slices_node)
+        self._root.append(slices_node)
 
 
     def build_slice_node(self, data_slice):
@@ -257,17 +275,35 @@ class ModelToXMLTransformer(object):
 
     def build_observations_node(self):
         observations_node = Element(self.OBSERVATIONS)
-        for data_obs in self.dataset.observations:
+        for data_obs in self._dataset.observations:
             observations_node.append(self.build_observation_node(data_obs))
-        self.root.append(observations_node)
+        self._root.append(observations_node)
 
 
     def build_indicators_node(self):
         result = Element(self.INDICATORS)
-        for data_indicator in self.indicator_dic:
-            result.append(self.build_indicator_node(self.indicator_dic[data_indicator]))
+        self._add_possible_dataset_specified_indicators_to_dict()
+        for data_indicator in self._indicator_dic:
+            result.append(self.build_indicator_node(self._indicator_dic[data_indicator]))
 
-        self.root.append(result)
+
+        self._root.append(result)
+
+    def _add_possible_dataset_specified_indicators_to_dict(self):
+        """
+        Some importers have been built linking indicator objects with datasets, and some does not link them.
+        It does not cause this module to crash: indicators are incorporated on the fly while parsing observations.
+        But, if the links exist, this module ensures at this point that they are stored in the internal ind_dict,
+        preventing situations such as:
+         - We want to introduce an indicator, but no observation points to it.
+         - We need an indicator for an 'plitsIn' node, but no observation points to it.
+
+        """
+        if self._dataset.indicators is None:
+            return
+        for an_ind in self._dataset.indicators:
+            self.include_indicator_if_needed(an_ind)
+        pass
 
     def build_indicator_node(self, data_indicator):
         #Building node
@@ -349,31 +385,31 @@ class ModelToXMLTransformer(object):
         #Attaching info
         #name
         name_node = Element(self.LICENSE_NAME)
-        name_node.text = self.dataset.license_type.name
+        name_node.text = self._dataset.license_type.name
         license_node.append(name_node)
 
         #description
         desc_node = Element(self.LICENSE_DESCRIPTION)
-        desc_node.text = self.dataset.license_type.description
+        desc_node.text = self._dataset.license_type.description
         license_node.append(desc_node)
 
         #republish
         republish_node = Element(self.LICENSE_REPUBLISH)
-        republish_node.text = str(self.dataset.license_type.republish)
+        republish_node.text = str(self._dataset.license_type.republish)
         license_node.append(republish_node)
 
         #url
         url_node = Element(self.LICENSE_URL)
-        url_node.text = self.dataset.license_type.url
+        url_node.text = self._dataset.license_type.url
         license_node.append(url_node)
 
 
         #Attaching node to root
-        self.root.append(license_node)
+        self._root.append(license_node)
 
 
     def write_tree_to_xml(self):
-        ElementTree(self.root).write("file.xml", encoding="utf-8")
+        ElementTree(self._root).write("file.xml", encoding="utf-8")
 
 
     def build_observation_node(self, data_obs):
@@ -472,14 +508,14 @@ class ModelToXMLTransformer(object):
         #Treating group_node info
         group_node = None
         #Looking for node/adding node to internal dict if needed
-        if data_group.group_id in self.group_dic:
-            group_node = self.group_dic[data_group.group_id]
+        if data_group.group_id in self._group_dic:
+            group_node = self._group_dic[data_group.group_id]
         else:
             group_node = Element(self.GROUP)
             group_node.attrib[self.GROUP_ATT_ID] = str(data_group.group_id)
             group_node.attrib[self.GROUP_ATT_INDICATOR] = \
                 self.INDICATOR_ATT_ID_PREFIX + data_group.indicator_id
-            self.group_dic[data_group.group_id] = group_node
+            self._group_dic[data_group.group_id] = group_node
 
             # We don't need to add observations to this node according to the current spec. but it could change.
             # So code for that remains in this comment
@@ -490,9 +526,9 @@ class ModelToXMLTransformer(object):
             # group_node.append(obs_node_ref)
 
     def include_indicator_if_needed(self, data_indicator):
-        if data_indicator.indicator_id in self.indicator_dic:
+        if data_indicator.indicator_id in self._indicator_dic:
             return
-        self.indicator_dic[data_indicator.indicator_id] = data_indicator
+        self._indicator_dic[data_indicator.indicator_id] = data_indicator
 
     def attach_value_to_observation(self, obs_node, data_obs):
         #Adding obligatory node obs-status
@@ -516,38 +552,38 @@ class ModelToXMLTransformer(object):
         #Attaching nodes
         #Organization_name
         organization_name_node = Element(self.IMPORT_PROCESS_ORGANIZATION_NAME)
-        organization_name_node.text = self.datasource.organization.name
+        organization_name_node.text = self._datasource.organization.name
         metadata.append(organization_name_node)
         #Organization_url
         organization_url_node = Element(self.IMPORT_PROCESS_ORGANIZATION_URL)
-        organization_url_node.text = self.datasource.organization.url
+        organization_url_node.text = self._datasource.organization.url
         metadata.append(organization_url_node)
 
         #datasource
         datasource_node = Element(self.IMPORT_PROCESS_DATASOURCE)
         datasource_node.text = self.IMPORT_PROCESS_DATASOURCE_PREFIX \
-                               + self.datasource.name
+                               + self._datasource.name
         metadata.append(datasource_node)
 
         #type
         type_node = Element(self.IMPORT_PROCESS_TYPE)
         type_node.text = self.IMPORT_PROCESS_TYPE_PREFIX \
-                         + self.import_process
+                         + self._import_process
         metadata.append(type_node)
 
         #user
         user_node = Element(self.IMPORT_PROCESS_USER)
         user_node.text = self.IMPORT_PROCESS_USER_PREFIX \
-                         + self.user.user_id
+                         + self._user.user_id
         metadata.append(user_node)
         #sdmx_frequency
         sdmx_freq_node = Element(self.IMPORT_PROCESS_SDMX_FREQUENCY)
-        sdmx_freq_node.text = self.dataset.frequency
+        sdmx_freq_node.text = self._dataset.frequency
         metadata.append(sdmx_freq_node)
 
 
         #Addind node to root
-        self.root.append(metadata)
+        self._root.append(metadata)
 
     @staticmethod
     def _read_external_field(original):

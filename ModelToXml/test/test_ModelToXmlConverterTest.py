@@ -51,7 +51,7 @@ class ModelToXmlTest(unittest.TestCase):
 
     def test_build_import_process_node(self):
         self.transformer.build_import_process_node()
-        node = self.transformer.root.find(ModelToXMLTransformer.IMPORT_PROCESS)
+        node = self.transformer._root.find(ModelToXMLTransformer.IMPORT_PROCESS)
 
         self.assertIsNotNone(node)
         self.assertEquals(len(node.getchildren()), 5)
