@@ -19,7 +19,6 @@ from lpentities.license import License
 from model2xml.model2xml import ModelToXMLTransformer
 
 import os
-import sys
 import codecs
 from datetime import datetime
 
@@ -88,30 +87,30 @@ class UNDPTranslator(object):
 
 
 
-    @staticmethod
-    def _create_user():
-        user = User(user_login="UNDPImporter")
+    def _create_user(self ):
+        user = User(user_login=self._config.get("USER", "login"))
         return user
 
     def _create_organization(self):
         organization = Organization(chain_for_id=self._org_id)
-        organization.name = "UNDP: United Nations Development Programme"
-        organization.url = "http://www.undp.org/"
+        organization.name = self._config.get("ORGANIZATION", "name")
+        organization.url = self._config.get("ORGANIZATION", "url")
+        organization.url_logo = self._config.get("ORGANIZATION", "url_logo")
         return organization
 
     def _create_datasource(self):
         datasource = DataSource(chain_for_id=self._org_id,
                                 int_for_id=self._sou_int)
         self._sou_int += 1  # Updating ind id value for datasource
-        datasource.name = "Human Development Index Data"
+        datasource.name = self._config.get("DATASOURCE", "name")
         return datasource
 
     def _create_license(self):
         obj_license = License()
-        obj_license.name = "Free to use"  # TODO: Confirm with Carlos
-        obj_license.description = "No use restrictions"
-        obj_license.republish = True
-        obj_license.url = "None!!"  # TODO : Confirm with Carlos
+        obj_license.name = self._config.get("LICENSE", "name")
+        obj_license.description = self._config.get("LICENSE", "description")
+        obj_license.republish = self._config.get("LICENSE", "republish")
+        obj_license.url = self._config.get("LICENSE", "url")
         return obj_license
 
     def _establish_relations_common_objects(self):
@@ -122,8 +121,8 @@ class UNDPTranslator(object):
     def _decorate_dataset_with_common_objects(self, dataset):
         self._datasource.add_dataset(dataset)
         dataset.license_type = self._license  # The rest of the relations between with the objects that
-        # we´ve just link to the dataset had already been stablished in
-        #other methods
+        # we've just link to the dataset had already been established in other methods
+
 
     @staticmethod
     def _build_default_issued():
