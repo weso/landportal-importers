@@ -14,12 +14,10 @@ class Indicator(object):
 
     #Possible topics
     TOPIC_CLIMATE_CHANGE = "TOP1"
-    TOPIC_COUNTRY_DATA = "TOP2"
-    TOPIC_FOOD_SEC_AND_HUNGER = "TOP3"
+    TOPIC_GEOGRPH_AND_SOCIO_ECONOMIC = "TOP2"
     TOPIC_LAND_AND_GENDER = "TOP4"
     TOPIC_LAND_TENURE = "TOP5"
-    TOPIC_SOCIO_ECONOMIC_AND_POVERTY = "TOP6"
-    TOPIC_USAGE_AND_INVESTMENT = "TOP7"
+    TOPIC_LAND_USE_AGRICULRE_INVESTIMENT = "TOP6"
 
     TOPIC_TEMPORAL = "TOP99"   # the final topic list is still unknown. We will be using this for now
 
