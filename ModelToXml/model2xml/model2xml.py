@@ -409,6 +409,7 @@ class ModelToXMLTransformer(object):
 
 
     def write_tree_to_xml(self):
+
         ElementTree(self._root).write("file.xml", encoding="utf-8")
 
 
@@ -591,3 +592,122 @@ class ModelToXMLTransformer(object):
             return unicode(original, errors="ignore")
         except:
             return original
+
+
+
+
+############################################################################
+#                               XmlSplitter                                #
+############################################################################
+
+
+
+
+class XmlSplitter(object):
+    """
+    It receives an xml tree object and return a list of files with the tree serialized.
+    It will split its content into files if it is too big, following this formula:
+
+     - Each file will contain a top of 10.000 observations
+     - If we have slices, they will be in tis own file.
+     - Information of indicators, organization, license, etc, will be repeated in all the files,
+        according to the xsd definition
+
+    """
+
+    _MAX_OBSERVATIONS_ALLOWED = 10000
+
+    def __init__(self, log, config, tree):
+        self._log = log
+        self._config = config
+        self._tree = tree
+        self._path_counter = 0
+
+
+    def run(self):
+        """
+        It return a list of files that contains all the info of the xml in a format that can be sended
+        to the receiver
+
+        """
+        if self._too_much_observations_for_a_file():
+            return self._return_tree_splitted_in_files()  # TODO
+        else:
+            return self._return_tree_in_a_single_file()
+
+    def _return_tree_splitted_in_files(self):
+        """
+        Steps:
+         - Look for observations node
+         - Remove it from the tree, but store it
+         - remove the slices node and substitute it for an empty one
+         - getchildren of observations_node and, for i in len(getchildren)
+            -pop an element (an observation) from the list
+            - put this element in a new observation node
+            - when reaching max_allowed_observations, put this observation node
+            in the global tree.
+            - Serialize it
+            - Save the path of serialization and add it to the result
+         - Do something similar with the slices_node (with an empty observations_node)
+            In this case, no need to control number of slices. Just a file containing only slices
+
+
+        """
+        result = []
+        original_obs_node = self._get_observations_node_of_a_tree(self._tree)
+        empty_obs_node = Element(ModelToXMLTransformer.OBSERVATIONS)
+        self._replace_node(parent=self._tree,
+                           old_node=original_obs_node,
+                           new_node=empty_obs_node)
+        every_obs = original_obs_node.getchildren()
+
+        #TODO: Continue here!
+        return result
+
+
+    @staticmethod
+    def _replace_node(parent, old_node, new_node):
+        parent.remove(old_node)
+        parent.append(new_node)
+
+    def _too_much_observations_for_a_file(self):
+        """
+        It returns a bool indicating if the tree should be splitted because it has too much observations.
+
+        """
+        observations_node = self._get_observations_node_of_a_tree(self._tree)
+        if len(observations_node.getchildren()) > self._MAX_OBSERVATIONS_ALLOWED:
+            return True
+        return False
+
+    @staticmethod
+    def _get_observations_node_of_a_tree(tree):
+        """
+        It return the observations node of the received tree. It should build an special string for
+        executing the search
+
+        """
+        param_for_the_search = ".//" + ModelToXMLTransformer.OBSERVATIONS
+        return tree.find(param_for_the_search)
+
+
+    def _return_tree_in_a_single_file(self):
+        """
+        Even returning a single file, we must place it in a list. model2xml expects a list
+
+        """
+        result = []
+        file_path = self._get_a_new_file_path()
+        self.write_tree_in_path(self._tree, file_path)
+        result.append(file_path)
+        return result
+
+
+    def _get_a_new_file_path(self):
+        self._path_counter += 1
+        return "file_" + str(self._path_counter) + ".xml"
+
+
+    @staticmethod
+    def write_tree_in_path(tree, file_path):
+        ElementTree(tree).write(file_path, encoding="utf-8")
