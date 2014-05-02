@@ -143,19 +143,31 @@ class ModelToXMLTransformer(object):
         self.build_indicators_node()  # Done
         self.build_indicator_groups_node()  # Done
         self.build_slices_node()  # Done
-        self.include_indicator_relations()  # Done? TODO: UNTESTED
-        self.write_tree_to_xml()  #
-        # self.send_to_receiver()
+        self.include_indicator_relations()  # Done
+        paths = self._persist_tree()  #
+        self._send_to_receiver(paths)
 
 
-    def send_to_receiver(self):
+
+    def _send_to_receiver(self, paths):
         url = "http://156.35.82.103/receiver"
-        file_path = "file.xml"
-        with codecs.open(file_path, encoding="utf-8") as xml:
-            file_content = xml.read()
-            data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')})
-            req = urllib2.Request(url, data)
-            resp = urllib2.urlopen(req)
+        exceptions = []
+        for file_path in paths:
+            try:
+                with codecs.open(file_path, encoding="utf-8") as xml:
+                    file_content = xml.read()
+                    data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')})
+                    req = urllib2.Request(url, data)
+                    resp = urllib2.urlopen(req)
+            except BaseException as e:
+                exceptions.append(e)
+        self._process_sending_exceptions(exceptions)
+
+
+    @staticmethod
+    def _process_sending_exceptions(exceptions):
+        for e in exceptions:
+            print e.message
 
 
     def include_indicator_relations(self):
@@ -408,9 +420,9 @@ class ModelToXMLTransformer(object):
         self._root.append(license_node)
 
 
-    def write_tree_to_xml(self):
+    def _persist_tree(self):
 
-        ElementTree(self._root).write("file.xml", encoding="utf-8")
+        return XmlSplitter(self._root).run()
 
 
     def build_observation_node(self, data_obs):
@@ -617,9 +629,7 @@ class XmlSplitter(object):
 
     _MAX_OBSERVATIONS_ALLOWED = 10000
 
-    def __init__(self, log, config, tree):
-        self._log = log
-        self._config = config
+    def __init__(self, tree):
         self._tree = tree
         self._path_counter = 0
 
@@ -631,7 +641,7 @@ class XmlSplitter(object):
 
         """
         if self._too_much_observations_for_a_file():
-            return self._return_tree_splitted_in_files()  # TODO
+            return self._return_tree_splitted_in_files()
         else:
             return self._return_tree_in_a_single_file()
 
@@ -654,15 +664,85 @@ class XmlSplitter(object):
 
         """
         result = []
+        #Getting original obs and slices
         original_obs_node = self._get_observations_node_of_a_tree(self._tree)
+        every_obs = original_obs_node.getchildren()
+        original_sli_node = self._get_slices_node_of_a_tree(self._tree)
+
+        #Removing obs and slices from the original tree
+        self._remove_slices_and_obs_from_the_original_tree()
+
+        #putting groups of obs in the tree and serializing
+        original_length = len(every_obs)
+        temporal_observations_node = Element(ModelToXMLTransformer.OBSERVATIONS)
+        for i in range(1, original_length + 1):
+            if i % self._MAX_OBSERVATIONS_ALLOWED == 0:  # cycle of _MAX_OBSERVATIONS_ALLOWED: serialize and new node
+                result.append(self._persist_tree_with_obs_node(temporal_observations_node))
+                temporal_observations_node = Element(ModelToXMLTransformer.OBSERVATIONS)
+            temporal_observations_node.append(every_obs.pop())
+        if len(temporal_observations_node.getchildren()):  # Out of the for loop, but we may have obs to include yet
+            result.append(self._persist_tree_with_obs_node(temporal_observations_node))
+
+        #managing slices:
+        if len(original_sli_node.getchildren()) == 0:
+            return result  # No more to do. The original tree hadn't got slices.
+        else:
+            result.append(self._persist_tree_with_sli_node(original_sli_node))
+
+        #No more to do but returning result. We could restore the original tree object, but there is no reason to do it.
+
+        return result
+
+    def _remove_slices_and_obs_from_the_original_tree(self):
         empty_obs_node = Element(ModelToXMLTransformer.OBSERVATIONS)
         self._replace_node(parent=self._tree,
-                           old_node=original_obs_node,
+                           old_node=self._get_observations_node_of_a_tree(self._tree),
                            new_node=empty_obs_node)
-        every_obs = original_obs_node.getchildren()
+        empty_sli_node = Element(ModelToXMLTransformer.SLICES)
+        self._replace_node(parent=self._tree,
+                           old_node=self._get_slices_node_of_a_tree(self._tree),
+                           new_node=empty_sli_node)
 
-        #TODO: Continue here!
+
+    def _persist_tree_with_obs_node(self, temporal_observations_node):
+        """
+        It return the path to the file where the xml has been persisted
+        """
+        original_observations_node = self._get_observations_node_of_a_tree(self._tree)
+        self._replace_node(parent=self._tree,
+                           old_node=original_observations_node,
+                           new_node=temporal_observations_node)
+        result = self._presist_current_tree()
+        #Restoring state of the tree
+        self._replace_node(parent=self._tree,
+                           old_node=temporal_observations_node,
+                           new_node=original_observations_node)
         return result
+
+    def _persist_tree_with_sli_node(self, temporal_sli_node):
+        """
+        It returns the path to the file where the xml has been persisted.
+
+        """
+        original_sli_node = self._get_slices_node_of_a_tree(self._tree)
+        self._replace_node(parent=self._tree,
+                           old_node=original_sli_node,
+                           new_node=temporal_sli_node)
+        result = self._presist_current_tree()
+        #Restoring state of the tree
+        self._replace_node(parent=self._tree,
+                           old_node=temporal_sli_node,
+                           new_node=original_sli_node)
+        return result
+
+    def _presist_current_tree(self):
+        """
+        It returns the path of the xml file where the tree has been persisted
+
+        """
+        path = self._get_a_new_file_path()
+        ElementTree(self._tree).write(path, encoding="utf-8")
+        return path
 
 
     @staticmethod
@@ -683,11 +763,21 @@ class XmlSplitter(object):
     @staticmethod
     def _get_observations_node_of_a_tree(tree):
         """
-        It return the observations node of the received tree. It should build an special string for
+        It returns the observations node of the received tree. It should build an special string for
         executing the search
 
         """
         param_for_the_search = ".//" + ModelToXMLTransformer.OBSERVATIONS
+        return tree.find(param_for_the_search)
+
+    @staticmethod
+    def _get_slices_node_of_a_tree(tree):
+        """
+        It returns the slices node of the received tree. It should build an special string for executing
+        teh search.
+
+        """
+        param_for_the_search = ".//" + ModelToXMLTransformer.SLICES
         return tree.find(param_for_the_search)
 
 
