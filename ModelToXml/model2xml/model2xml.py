@@ -422,7 +422,7 @@ class ModelToXMLTransformer(object):
 
     def _persist_tree(self):
 
-        return XmlSplitter(self._root).run()
+        return XmlSplitter(self._root, self._dataset._dataset_id).run()
 
 
     def build_observation_node(self, data_obs):
@@ -627,10 +627,11 @@ class XmlSplitter(object):
 
     """
 
-    _MAX_OBSERVATIONS_ALLOWED = 10000
+    _MAX_OBSERVATIONS_ALLOWED = 100000000000
 
-    def __init__(self, tree):
+    def __init__(self, tree, dataset_id):
         self._tree = tree
+        self._int_for_file = dataset_id
         self._path_counter = 0
 
 
@@ -794,8 +795,9 @@ class XmlSplitter(object):
 
 
     def _get_a_new_file_path(self):
-        self._path_counter += 1
-        return "file_" + str(self._path_counter) + ".xml"
+        self._int_for_file += 1
+        return "file_" + self._int_for_file + "_" + str(self._path_counter) + ".xml"
+
 
 
     @staticmethod
