@@ -635,8 +635,7 @@ class XmlSplitter(object):
 
     def __init__(self, tree, dataset_id):
         self._tree = tree
-        self._dataset_id = dataset_id
-        self._int_for_file = 0
+        self._int_for_file = dataset_id
         self._path_counter = 0
 
 
@@ -801,7 +800,7 @@ class XmlSplitter(object):
 
     def _get_a_new_file_path(self):
         self._int_for_file += 1
-        return "file_" + self._dataset_id + "_" + str(self._int_for_file) + "_" + str(self._path_counter) + ".xml"
+        return "file_" + self._int_for_file + "_" + str(self._path_counter) + ".xml"
 
 
 
