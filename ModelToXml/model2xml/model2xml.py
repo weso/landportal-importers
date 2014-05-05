@@ -76,6 +76,8 @@ class ModelToXMLTransformer(object):
     INDICATOR_DESCRIPTION_ES = "ind_description_es"
     INDICATOR_DESCRIPTION_FR = "ind_description_fr"
     INDICATOR_MEASURE_UNIT = "measure_unit"
+    INDICATOR_MEASURE_UNIT_CONVERT_TO_ATT = "convertible_to"
+    INDICATOR_MEASURE_UNIT_FACTOR_ATT = "factor"
     INDICATOR_TOPIC = "topic-ref"
     INDICATOR_SPLITS_IN = "splitsIn"
     INDICATOR_PREFERABLE_TENDENCY = "preferable_tendency"
@@ -145,7 +147,7 @@ class ModelToXMLTransformer(object):
         self.build_slices_node()  # Done
         self.include_indicator_relations()  # Done
         paths = self._persist_tree()  #
-        self._send_to_receiver(paths)
+        # self._send_to_receiver(paths)
 
 
 
@@ -350,6 +352,8 @@ class ModelToXMLTransformer(object):
         node_measure = Element(self.INDICATOR_MEASURE_UNIT)
         node_measure.text = self.INDICATOR_ATT_MEASURE_UNIT_PREFIX \
                             + data_indicator.measurement_unit.name
+        node_measure.attrib[self.INDICATOR_MEASURE_UNIT_CONVERT_TO_ATT] = data_indicator.measurement_unit.convert_to
+        node_measure.attrib[self.INDICATOR_MEASURE_UNIT_FACTOR_ATT] = data_indicator.measurement_unit.factor
         result.append(node_measure)
 
         #Returning complete node
@@ -422,7 +426,7 @@ class ModelToXMLTransformer(object):
 
     def _persist_tree(self):
 
-        return XmlSplitter(self._root, self._dataset._dataset_id).run()
+        return XmlSplitter(self._root, self._dataset.dataset_id).run()
 
 
     def build_observation_node(self, data_obs):
