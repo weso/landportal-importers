@@ -13,13 +13,7 @@ class Indicator(object):
     IRRELEVANT = "irrelevant "
 
     #Possible topics
-    TOPIC_CLIMATE_CHANGE = "TOP1"
-    TOPIC_GEOGRPH_AND_SOCIO_ECONOMIC = "TOP2"
-    TOPIC_LAND_AND_GENDER = "TOP4"
-    TOPIC_LAND_TENURE = "TOP5"
-    TOPIC_LAND_USE_AGRICULRE_INVESTIMENT = "TOP6"
-
-    TOPIC_TEMPORAL = "TOP99"   # the final topic list is still unknown. We will be using this for now
+    _topics_set = ['CLIMATE_CHANGE', 'GEOGRAPH_SOCIO', 'LAND_GENDER', 'LAND_TENURE', 'FSECURITY_HUNGER', 'TEMP_TOPIC']
 
     '''
     classdocs
@@ -45,7 +39,18 @@ class Indicator(object):
 
         self.indicator_id = self._generate_id(chain_for_id, int_for_id)
 
-
+    
+    def __get_topic(self):
+        return self.topic
+    
+    def __set_topic(self, topic):
+        if topic.upper() in self._topics_set:
+            self.topic = topic
+        else :
+            raise ValueError("Provided topic not in the specified list")
+        
+    topic = property(fget = __get_topic, fset = __set_topic, doc="Topic of the indicator")
+    
     @staticmethod
     def _generate_id(chain_for_id, int_for_id):
         return "IND" + chain_for_id.upper() + str(int_for_id).upper()
