@@ -47,8 +47,6 @@ class UNDPTranslator(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         #Creating objects that we will need during the parsing process
         self._datasets = []
@@ -87,7 +85,7 @@ class UNDPTranslator(object):
 
 
 
-    def _create_user(self ):
+    def _create_user(self):
         user = User(user_login=self._config.get("USER", "login"))
         return user
 
@@ -100,8 +98,7 @@ class UNDPTranslator(object):
 
     def _create_datasource(self):
         datasource = DataSource(chain_for_id=self._org_id,
-                                int_for_id=self._sou_int)
-        self._sou_int += 1  # Updating ind id value for datasource
+                                int_for_id=self._config.get("DATASOURCE", "id"))
         datasource.name = self._config.get("DATASOURCE", "name")
         return datasource
 
@@ -133,25 +130,23 @@ class UNDPTranslator(object):
 
         #Indicator hdi
         ind_hdi = Indicator(chain_for_id=self._org_id,
-                            int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating indicator int id value
+                            int_for_id=self._config.get("IND_DESCRIPTION", "hdi_id"))
         ind_hdi.name_en = self._read_config_value("IND_DESCRIPTION", "hdi_name_en")  # Done
         ind_hdi.name_es = self._read_config_value("IND_DESCRIPTION", "hdi_name_es")  # Done
         ind_hdi.name_fr = self._read_config_value("IND_DESCRIPTION", "hdi_name_fr")  # Done
         ind_hdi.description_en = self._read_config_value("IND_DESCRIPTION", "hdi_desc_en")  # Done
         ind_hdi.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_desc_es")  # Done
         ind_hdi.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_desc_fr")  # TODO: not translated
-        ind_hdi.measurement_unit = MeasurementUnit(name="%")
+        ind_hdi.measurement_unit = MeasurementUnit(name="HDI value",
+                                                   convert_to=MeasurementUnit.INDEX)
         ind_hdi.preferable_tendency = Indicator.INCREASE
-
-        ind_hdi.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
+        ind_hdi.topic = self._config.get("IND_DESCRIPTION", "hdi_topic")
 
         result_dict[self.HDI_ENDING] = ind_hdi  # Adding to dictionary
 
         #Indicator rank
         ind_rank = Indicator(chain_for_id=self._org_id,
-                             int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating indicator int id value
+                             int_for_id=self._config.get("IND_DESCRIPTION", "hdi_rank_id"))
         ind_rank.name_en = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_en")  # Done
         ind_rank.name_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_es")  # Done
         ind_rank.name_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_fr")  # Done
@@ -159,10 +154,11 @@ class UNDPTranslator(object):
         ind_rank.description_en = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_en")   # Done
         ind_rank.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_es")  # TODO: not translated
         ind_rank.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_fr")  # TODO: not translated
-        ind_rank.measurement_unit = MeasurementUnit("rank")
+        ind_rank.measurement_unit = MeasurementUnit(name="Ranking",
+                                                    convert_to=MeasurementUnit.RANK)
         ind_rank.preferable_tendency = Indicator.DECREASE
 
-        ind_rank.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
+        ind_rank.topic = self._config.get("IND_DESCRIPTION", "hdi_rank_topic")
 
         result_dict[self.RANK_ENDING] = ind_rank  # Adding to dictionary
 
