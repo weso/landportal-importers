@@ -24,16 +24,16 @@ class MeasurementUnit(object):
         Constructor
         '''
         self.name = name
-        self.convert_to = convert_to
+        self._convert_to = convert_to
         self.factor = factor
 
     def __get_convert_to(self):
-        return self.convert_to
+        return self._convert_to
 
     def __set_convert_to(self, value):
         if value not in [self.RANK, self.INDEX, self.UNITS, self.SQ_KM, self.PERCENTAGE]:
             raise ValueError("Invalid provided convert_to value: {0}".format(value))
-        self.convert_to = value
+        self._convert_to = value
 
     convert_to = property(fget=__get_convert_to,
                           fset=__set_convert_to,
