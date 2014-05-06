@@ -17,7 +17,7 @@ class Indicator(object):
     IRRELEVANT = "irrelevant "
 
     #Possible topics
-    _topics_set = ['CLIMATE_CHANGE', 'GEOGRAPH_SOCIO', 'LAND_GENDER', 'LAND_TENURE', 'FSECURITY_HUNGER', 'TEMP_TOPIC']
+    _topics_set = ['CLIMATE_CHANGE', 'GEOGRAPH_SOCIO', 'LAND_USE', 'LAND_GENDER', 'LAND_TENURE', 'FSECURITY_HUNGER', 'TEMP_TOPIC']
 
 
 
