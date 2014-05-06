@@ -36,18 +36,18 @@ class Indicator(object):
         self.description_fr = description_fr
         self.dataset = dataset
         self.measurement_unit = measurement_unit
-        self.topic = topic
+        self._topic = topic
         self.preferable_tendency = preferable_tendency
 
         self.indicator_id = self._generate_id(chain_for_id, int_for_id)
 
     
     def __get_topic(self):
-        return self.topic
+        return self._topic
     
     def __set_topic(self, topic):
         if topic.upper() in self._topics_set:
-            self.topic = topic
+            self._topic = topic
         else:
             raise ValueError("Provided topic not in the specified list")
         
