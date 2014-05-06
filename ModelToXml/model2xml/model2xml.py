@@ -801,7 +801,7 @@ class XmlSplitter(object):
 
     def _get_a_new_file_path(self):
         self._int_for_file += 1
-        return self._dataset_id + "_" + self._int_for_file + "_" + str(self._path_counter) + ".xml"
+        return self._dataset_id + "_" + str(self._int_for_file) + "_" + str(self._path_counter) + ".xml"
 
 
 
