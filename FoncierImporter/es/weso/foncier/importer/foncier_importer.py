@@ -46,8 +46,6 @@ class FoncierImporter(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         #Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
@@ -121,8 +119,6 @@ class FoncierImporter(object):
         self._config.set("TRANSLATOR", "sli_int", self._sli_int)
         self._config.set("TRANSLATOR", "dat_int", self._dat_int)
         self._config.set("TRANSLATOR", "igr_int", self._igr_int)
-        self._config.set("TRANSLATOR", "ind_int", self._ind_int)
-        self._config.set("TRANSLATOR", "sou_int", self._sou_int)
         self._config.set("AVAILABLE_TIME", "last_checked_year", last_year)
 
     def _build_observations_from_available_years(self, first_year, last_year):
@@ -264,8 +260,7 @@ class FoncierImporter(object):
         return User(user_login="FONCIERIMPORTER")
 
     def _build_default_datasource(self):
-        result = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
-        self._sou_int += 1  # Update
+        result = DataSource(chain_for_id=self._org_id, int_for_id=self._config.get("DATASOURCE", "id"))
         result.name = self._config.get("DATASOURCE", "name")
         return result
 
@@ -297,98 +292,95 @@ class FoncierImporter(object):
 
     def _build_indicators_dict(self):
         result = {}
+        default_measurement_unit = MeasurementUnit(name="Units",
+                                                   convert_to=MeasurementUnit.UNITS,
+                                                   factor=1)
         #Titres crees
         titres_crees_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "titres_id"))
         titres_crees_ind.name_en = self._read_config_value("INDICATOR", "titres_name_en")
         titres_crees_ind.name_es = self._read_config_value("INDICATOR", "titres_name_es")
         titres_crees_ind.name_fr = self._read_config_value("INDICATOR", "titres_name_fr")
         titres_crees_ind.description_en = self._read_config_value("INDICATOR", "titres_desc_en")
         titres_crees_ind.description_es = self._read_config_value("INDICATOR", "titres_desc_es")
         titres_crees_ind.description_fr = self._read_config_value("INDICATOR", "titres_desc_fr")
-        titres_crees_ind.measurement_unit = MeasurementUnit("units")
-        titres_crees_ind.topic = Indicator.TOPIC_TEMPORAL
+        titres_crees_ind.measurement_unit = default_measurement_unit
+        titres_crees_ind.topic = 'TEMP_TOPIC'
         titres_crees_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.TITRES_CREES] = titres_crees_ind
 
         #Mutations
         mutations_ind = Indicator(chain_for_id=self._org_id,
-                                  int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                  int_for_id=self._config.get("INDICATOR", "mutations_id"))
         mutations_ind.name_en = self._read_config_value("INDICATOR", "mutations_name_en")
         mutations_ind.name_es = self._read_config_value("INDICATOR", "mutations_name_es")
         mutations_ind.name_fr = self._read_config_value("INDICATOR", "mutations_name_fr")
         mutations_ind.description_en = self._read_config_value("INDICATOR", "mutations_desc_en")
         mutations_ind.description_es = self._read_config_value("INDICATOR", "mutations_desc_es")
         mutations_ind.description_fr = self._read_config_value("INDICATOR", "mutations_desc_fr")
-        mutations_ind.measurement_unit = MeasurementUnit("units")
-        mutations_ind.topic = Indicator.TOPIC_TEMPORAL
+        mutations_ind.measurement_unit = default_measurement_unit
+        mutations_ind.topic = 'TEMP_TOPIC'
         mutations_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.MUTATIONS] = mutations_ind
 
         #CSJ
         csj_ind = Indicator(chain_for_id=self._org_id,
-                            int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                            int_for_id=self._config.get("INDICATOR", "csj_id"))
         csj_ind.name_en = self._read_config_value("INDICATOR", "csj_name_en")
         csj_ind.name_es = self._read_config_value("INDICATOR", "csj_name_es")
         csj_ind.name_fr = self._read_config_value("INDICATOR", "csj_name_fr")
         csj_ind.description_en = self._read_config_value("INDICATOR", "csj_desc_en")
         csj_ind.description_es = self._read_config_value("INDICATOR", "csj_desc_es")
         csj_ind.description_fr = self._read_config_value("INDICATOR", "csj_desc_fr")
-        csj_ind.measurement_unit = MeasurementUnit("units")
-        csj_ind.topic = Indicator.TOPIC_TEMPORAL
+        csj_ind.measurement_unit = default_measurement_unit
+        csj_ind.topic = 'TEMP_TOPIC'
         csj_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.CSJ] = csj_ind
 
         #Reperages
         reperages_ind = Indicator(chain_for_id=self._org_id,
-                                  int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                  int_for_id=self._config.get("INDICATOR", "reperages_id"))
         reperages_ind.name_en = self._read_config_value("INDICATOR", "reperages_name_en")
         reperages_ind.name_es = self._read_config_value("INDICATOR", "reperages_name_es")
         reperages_ind.name_fr = self._read_config_value("INDICATOR", "reperages_name_fr")
         reperages_ind.description_en = self._read_config_value("INDICATOR", "reperages_desc_en")
         reperages_ind.description_es = self._read_config_value("INDICATOR", "reperages_desc_es")
         reperages_ind.description_fr = self._read_config_value("INDICATOR", "reperages_desc_fr")
-        reperages_ind.topic = Indicator.TOPIC_TEMPORAL
-        reperages_ind.measurement_unit = MeasurementUnit("units")
+        reperages_ind.topic = 'TEMP_TOPIC'
+        reperages_ind.measurement_unit = default_measurement_unit
         reperages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.REPERAGES] = reperages_ind
 
         #Bornages
         bornages_ind = Indicator(chain_for_id=self._org_id,
-                                 int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                 int_for_id=self._config.get("INDICATOR", "bornages_id"))
         bornages_ind.name_en = self._read_config_value("INDICATOR", "bornages_name_en")
         bornages_ind.name_es = self._read_config_value("INDICATOR", "bornages_name_es")
         bornages_ind.name_fr = self._read_config_value("INDICATOR", "bornages_name_fr")
         bornages_ind.description_en = self._read_config_value("INDICATOR", "bornages_desc_en")
         bornages_ind.description_es = self._read_config_value("INDICATOR", "bornages_desc_es")
         bornages_ind.description_fr = self._read_config_value("INDICATOR", "bornages_desc_fr")
-        bornages_ind.topic = Indicator.TOPIC_TEMPORAL
-        bornages_ind.measurement_unit = MeasurementUnit("units")
+        bornages_ind.topic = 'TEMP_TOPIC'
+        bornages_ind.measurement_unit = default_measurement_unit
         bornages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.BORNAGES] = bornages_ind
 
         #Rep_des_plans
         rep_des_plans_ind = Indicator(chain_for_id=self._org_id,
-                                      int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                      int_for_id=self._config.get("INDICATOR", "rep_des_plans_id"))
         rep_des_plans_ind.name_en = self._read_config_value("INDICATOR", "rep_des_plans_name_en")
         rep_des_plans_ind.name_es = self._read_config_value("INDICATOR", "rep_des_plans_name_es")
         rep_des_plans_ind.name_fr = self._read_config_value("INDICATOR", "rep_des_plans_name_fr")
         rep_des_plans_ind.description_en = self._read_config_value("INDICATOR", "rep_des_plans_desc_en")
         rep_des_plans_ind.description_es = self._read_config_value("INDICATOR", "rep_des_plans_desc_es")
         rep_des_plans_ind.description_fr = self._read_config_value("INDICATOR", "rep_des_plans_desc_fr")
-        rep_des_plans_ind.topic = Indicator.TOPIC_TEMPORAL
-        rep_des_plans_ind.measurement_unit = MeasurementUnit("units")
+        rep_des_plans_ind.topic = 'TEMP_TOPIC'
+        rep_des_plans_ind.measurement_unit = default_measurement_unit
         rep_des_plans_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
 
         result[self.REP_DES_PLANS] = rep_des_plans_ind
