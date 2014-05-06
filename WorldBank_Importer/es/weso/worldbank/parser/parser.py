@@ -1,7 +1,7 @@
 """
 Created on 18/12/2013
 
-@author: Nacho
+@author: Nacho, BorjaGB
 """
 import ConfigParser
 from datetime import datetime
@@ -44,8 +44,6 @@ class Parser(object):
         self._sli_int = int(self.config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self.config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self.config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self.config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self.config.get("TRANSLATOR", "sou_int"))
 
         self.countries_url = self.config.get('URLs', 'country_list')
         print "Finish with countries"
@@ -90,10 +88,9 @@ class Parser(object):
         
     def _build_data_source(self, data_source_name):
         data_source = DataSource(chain_for_id=self._org_id,
-                                 int_for_id=self._sou_int,
+                                 int_for_id=self.config.get("datasource", "datasource_id"),
                                  name=data_source_name,
                                  organization=self._organization)
-        self._sou_int += 1 # Updating data sources id value
         return data_source
         
     def _build_data_set(self, data_source):
@@ -108,7 +105,7 @@ class Parser(object):
     
     def _build_indicator(self, indicator_code, dataset, measurement_unit):
         indicator = Indicator(chain_for_id=self._org_id,
-                              int_for_id=self._ind_int,
+                              int_for_id=int(self.config.get(indicator_code, "indicator_id")),
                               name_en=self.config.get(indicator_code, "name_en").decode(encoding="utf-8"),
                               name_es=self.config.get(indicator_code, "name_es").decode(encoding="utf-8"),
                               name_fr=self.config.get(indicator_code, "name_fr").decode(encoding="utf-8"), 
@@ -117,9 +114,8 @@ class Parser(object):
                               description_fr=self.config.get(indicator_code, "desc_fr").decode(encoding="utf-8"),
                               dataset=dataset,
                               measurement_unit=measurement_unit,
-                              preferable_tendency=self._get_preferable_tendency_of_indicator(self.config.get(indicator_code, "tendency")),
-                              topic=Indicator.TOPIC_TEMPORAL)  # TODO: temporal value
-        self._ind_int += 1  # Updating indicator id int value
+                              preferable_tendency=self._get_preferable_tendency_of_indicator(self.config.get(indicator_code, "indicator_tendency")),
+                              topic=self.config.get(indicator_code, "indicator_topic"))
         
         return indicator
     
@@ -178,9 +174,8 @@ class Parser(object):
             #print data_source_name
             for indicator_element in requested_indicators:
                 indicator_code = self.config.get(indicators_section, indicator_element)
-                start = indicator_element.index('(') + 1
-                end = indicator_element.index(')')
-                measurement_unit = MeasurementUnit(indicator_element[start:end])
+                measurement_unit = MeasurementUnit(name = self.config.get(indicator_code, "indicator_unit_name"),
+                                                   convert_to = self.config.get(indicator_code, "indicator_unit_type"))
                 indicator = self._build_indicator(indicator_code, dataset, measurement_unit)
                 
                 #print '\t' + indicator.name_en  + "--------------" + indicator.preferable_tendency + "-----------"
