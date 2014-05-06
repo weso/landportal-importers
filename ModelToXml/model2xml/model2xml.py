@@ -353,7 +353,7 @@ class ModelToXMLTransformer(object):
         node_measure.text = self.INDICATOR_ATT_MEASURE_UNIT_PREFIX \
                             + data_indicator.measurement_unit.name
         node_measure.attrib[self.INDICATOR_MEASURE_UNIT_CONVERT_TO_ATT] = data_indicator.measurement_unit.convert_to
-        node_measure.attrib[self.INDICATOR_MEASURE_UNIT_FACTOR_ATT] = data_indicator.measurement_unit.factor
+        node_measure.attrib[self.INDICATOR_MEASURE_UNIT_FACTOR_ATT] = str(data_indicator.measurement_unit.factor)
         result.append(node_measure)
 
         #Returning complete node
@@ -635,7 +635,8 @@ class XmlSplitter(object):
 
     def __init__(self, tree, dataset_id):
         self._tree = tree
-        self._int_for_file = dataset_id
+        self._int_for_file = 0
+        self._dataset_id = dataset_id
         self._path_counter = 0
 
 
@@ -800,7 +801,7 @@ class XmlSplitter(object):
 
     def _get_a_new_file_path(self):
         self._int_for_file += 1
-        return "file_" + self._int_for_file + "_" + str(self._path_counter) + ".xml"
+        return self._dataset_id + "_" + self._int_for_file + "_" + str(self._path_counter) + ".xml"
 
 
 
