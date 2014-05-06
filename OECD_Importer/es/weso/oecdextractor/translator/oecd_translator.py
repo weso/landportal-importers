@@ -1,8 +1,9 @@
 __author__ = 'Dani'
 
+from model2xml.model2xml import ModelToXMLTransformer
+
 from .json_loader import JsonLoader
 from .model_object_builder import ModelObjectBuilder
-from model2xml.model2xml import ModelToXMLTransformer
 
 
 class OecdTranslator(object):
