@@ -33,8 +33,7 @@ class ModelObjectBuilder(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
+
 
 
         self._indicators_dict = self._build_indicators_dict()
@@ -124,8 +123,7 @@ class ModelObjectBuilder(object):
 
     def _build_default_datasource(self):
         result = DataSource(chain_for_id=self._org_id,
-                            int_for_id=self._sou_int)
-        self._sou_int += 1  # Updating int id value
+                            int_for_id=self._config.get("DATASOURCE", "id"))
         result.name = self._config.get("DATASOURCE", "name")
         return result
 
@@ -163,63 +161,69 @@ class ModelObjectBuilder(object):
 
     def _build_indicators_dict(self):
         result = {}
+        default_measurement_unit = MeasurementUnit(name="Units",
+                                                   convert_to=MeasurementUnit.UNITS)
         
         #rural_household_women
-        rural_households_women_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
-        self._ind_int += 1
+        rural_households_women_ind = Indicator(chain_for_id=self._org_id,
+                                               int_for_id=self._config.get("INDICATOR", "rural_households_women_id"))
         rural_households_women_ind.name_en = self._read_config_value("INDICATOR", "rural_households_women_name_en")
         rural_households_women_ind.name_es = self._read_config_value("INDICATOR", "rural_households_women_name_es")
         rural_households_women_ind.name_fr = self._read_config_value("INDICATOR", "rural_households_women_name_fr")
-        rural_households_women_ind.description_en = self._read_config_value("INDICATOR", "rural_households_women_desc_en")
-        rural_households_women_ind.description_es = self._read_config_value("INDICATOR", "rural_households_women_desc_es")
-        rural_households_women_ind.description_fr = self._read_config_value("INDICATOR", "rural_households_women_desc_fr")
-        rural_households_women_ind.measurement_unit = MeasurementUnit("units")
-        rural_households_women_ind.topic = Indicator.TOPIC_TEMPORAL
+        rural_households_women_ind.description_en = self._read_config_value("INDICATOR",
+                                                                            "rural_households_women_desc_en")
+        rural_households_women_ind.description_es = self._read_config_value("INDICATOR",
+                                                                            "rural_households_women_desc_es")
+        rural_households_women_ind.description_fr = self._read_config_value("INDICATOR",
+                                                                            "rural_households_women_desc_fr")
+        rural_households_women_ind.measurement_unit = default_measurement_unit
+
+        rural_households_women_ind.topic = self._read_config_value("INDICATOR", "rural_households_women_topic")
         rural_households_women_ind.preferable_tendency = Indicator.INCREASE
         
         result[KeysDict.RURAL_HOUSEHOLDS_WOMEN_CODE] = rural_households_women_ind
         
         #holdings_co_ownership
-        holdings_co_ownership_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
-        self._ind_int += 1
+        holdings_co_ownership_ind = Indicator(chain_for_id=self._org_id,
+                                              int_for_id=self._config.get("INDICATOR", "holdings_co_ownership_id"))
         holdings_co_ownership_ind.name_en = self._read_config_value("INDICATOR", "holdings_co_ownership_name_en")
         holdings_co_ownership_ind.name_es = self._read_config_value("INDICATOR", "holdings_co_ownership_name_es")
         holdings_co_ownership_ind.name_fr = self._read_config_value("INDICATOR", "holdings_co_ownership_name_fr")
         holdings_co_ownership_ind.description_en = self._read_config_value("INDICATOR", "holdings_co_ownership_desc_en")
         holdings_co_ownership_ind.description_es = self._read_config_value("INDICATOR", "holdings_co_ownership_desc_es")
         holdings_co_ownership_ind.description_fr = self._read_config_value("INDICATOR", "holdings_co_ownership_desc_fr")
-        holdings_co_ownership_ind.measurement_unit = MeasurementUnit("units")
-        holdings_co_ownership_ind.topic = Indicator.TOPIC_TEMPORAL
+        holdings_co_ownership_ind.measurement_unit = default_measurement_unit
+        holdings_co_ownership_ind.topic = self._read_config_value("INDICATOR", "holdings_co_ownership_topic")
         holdings_co_ownership_ind.preferable_tendency = Indicator.INCREASE
         
         result[KeysDict.HOLDINGS_CO_OWNERSHIP_CODE] = holdings_co_ownership_ind
         
         #women_holders
-        women_holders_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
-        self._ind_int += 1
+        women_holders_ind = Indicator(chain_for_id=self._org_id,
+                                      int_for_id=self._config.get("INDICATOR", "women_holders_id"))
         women_holders_ind.name_en = self._read_config_value("INDICATOR", "women_holders_name_en")
         women_holders_ind.name_es = self._read_config_value("INDICATOR", "women_holders_name_es")
         women_holders_ind.name_fr = self._read_config_value("INDICATOR", "women_holders_name_fr")
         women_holders_ind.description_en = self._read_config_value("INDICATOR", "women_holders_desc_en")
         women_holders_ind.description_es = self._read_config_value("INDICATOR", "women_holders_desc_es")
         women_holders_ind.description_fr = self._read_config_value("INDICATOR", "women_holders_desc_fr")
-        women_holders_ind.measurement_unit = MeasurementUnit("units")
-        women_holders_ind.topic = Indicator.TOPIC_TEMPORAL
+        women_holders_ind.measurement_unit = default_measurement_unit
+        women_holders_ind.topic = self._read_config_value("INDICATOR", "women_holders_topic")
         women_holders_ind.preferable_tendency = Indicator.INCREASE
         
         result[KeysDict.WOMEN_HOLDERS_CODE] = women_holders_ind
         
         #total_holders
-        total_holders_ind = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
-        self._ind_int += 1
+        total_holders_ind = Indicator(chain_for_id=self._org_id,
+                                      int_for_id=self._config.get("INDICATOR", "total_holders_id"))
         total_holders_ind.name_en = self._read_config_value("INDICATOR", "total_holders_name_en")
         total_holders_ind.name_es = self._read_config_value("INDICATOR", "total_holders_name_es")
         total_holders_ind.name_fr = self._read_config_value("INDICATOR", "total_holders_name_fr")
         total_holders_ind.description_en = self._read_config_value("INDICATOR", "total_holders_desc_en")
         total_holders_ind.description_es = self._read_config_value("INDICATOR", "total_holders_desc_es")
         total_holders_ind.description_fr = self._read_config_value("INDICATOR", "total_holders_desc_fr")
-        total_holders_ind.measurement_unit = MeasurementUnit("units")
-        total_holders_ind.topic = Indicator.TOPIC_TEMPORAL
+        total_holders_ind.measurement_unit = default_measurement_unit
+        total_holders_ind.topic = self._read_config_value("INDICATOR", "total_holders_topic")
         total_holders_ind.preferable_tendency = Indicator.INCREASE
         
         result[KeysDict.TOTAL_HOLDERS_CODE] = total_holders_ind
