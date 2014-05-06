@@ -35,8 +35,6 @@ class FaoImporter(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         self.data_sources = dict(self._config.items('data_sources'))
         
@@ -100,13 +98,13 @@ class FaoImporter(object):
         file_name = self._config.get("PARSER", "file_name")
         years_row = int(self._config.get("PARSER", "year_row"))-1
         
-        index = 0;
         for data_source_name in self.data_sources:
             indicators_section = self._config.get('data_sources', data_source_name)
             requested_indicators = dict(self._config.items(indicators_section))
             
             for indicator_element in requested_indicators:
                 indicator_code = self._config.get(indicators_section, indicator_element)
+                index = int(self._config.get(indicator_code, "indicator_id"))
                 print "Processing indicator %s with index %d" %(indicator_code,index)
         #indicator_code = "EA-FOPRILEV"
                 indicator_sheet = self._config.get(indicator_code, "excel_sheet")
@@ -124,7 +122,6 @@ class FaoImporter(object):
                                                                            value,
                                                                            country))
                     #result += self._extract_data_from_matrix(file_name.strip(), data)
-                index+=1
         print "Done with Excel file %s" % (file_name)
         
         return result
@@ -210,8 +207,8 @@ class FaoImporter(object):
         return User(user_login="FAOIMPORTER")
 
     def _build_default_datasource(self):
-        result = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
-        self._sou_int += 1  # Update
+        result = DataSource(chain_for_id=self._org_id,
+                            int_for_id=int(self._config.get("DATASOURCE", "datasource_id")))
         result.name = self._config.get("DATASOURCE", "name")
         return result
 
@@ -250,25 +247,24 @@ class FaoImporter(object):
             for indicator_element in requested_indicators:
                 indicator_code = self._config.get(indicators_section, indicator_element)
                 #print "%s, %d" %(indicator_code,self._ind_int) 
-                result[self._ind_int-1] = self._build_indicator(indicator_code)
+                result[int(self._config.get(indicator_code, "indicator_id"))] = self._build_indicator(indicator_code)
                 
         # Returning final dict
         return result
 
     def _build_indicator(self, indicator_code):
         indicator = Indicator(chain_for_id=self._org_id,
-                          int_for_id=self._ind_int,
+                          int_for_id=int(self._config.get(indicator_code, "indicator_id")),
                           name_en=self._config.get(indicator_code, "name_en").decode(encoding="utf-8"),
                           name_es=self._config.get(indicator_code, "name_es").decode(encoding="utf-8"),
                           name_fr=self._config.get(indicator_code, "name_fr").decode(encoding="utf-8"), 
                           description_en=self._config.get(indicator_code, "desc_en").decode(encoding="utf-8"),
                           description_es=self._config.get(indicator_code, "desc_es").decode(encoding="utf-8"),
                           description_fr=self._config.get(indicator_code, "desc_fr").decode(encoding="utf-8"),
-                          measurement_unit= MeasurementUnit("units"),
-                          preferable_tendency=self._get_preferable_tendency_of_indicator(self._config.get(indicator_code, "tendency")),
-                          topic=Indicator.TOPIC_TEMPORAL)  # TODO: temporal value
-        
-        self._ind_int += 1  # Updating indicator id int value
+                          measurement_unit= MeasurementUnit(name= self._config.get(indicator_code, "indicator_unit_name"),
+                                                            convert_to = self._config.get(indicator_code, "indicator_unit_type")),
+                          preferable_tendency=self._get_preferable_tendency_of_indicator(self._config.get(indicator_code, "indicator_tendency")),
+                          topic=self._config.get(indicator_code, "indicator_topic"))  # TODO: temporal value
     
         return indicator
 
