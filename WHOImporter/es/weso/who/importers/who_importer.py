@@ -37,8 +37,6 @@ class WhoImporter(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         #Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
@@ -177,8 +175,8 @@ class WhoImporter(object):
         return User(user_login="WHOIMPORTER")
 
     def _build_default_datasource(self):
-        result = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
-        self._sou_int += 1  # Update
+        result = DataSource(chain_for_id=self._org_id, 
+                            int_for_id= int(self._read_config_value("DATASOURCE", "datasource_id")))
         result.name = self._config.get("DATASOURCE", "name")
         return result
 
@@ -215,17 +213,17 @@ class WhoImporter(object):
         for indicator_element in requested_indicators:
             indicator_code = self._config.get("INDICATORS", indicator_element)
             indicator_object = Indicator(chain_for_id=self._org_id,
-                                         int_for_id=self._ind_int)
-            self._ind_int += 1  # Updating id value
+                                         int_for_id=self._config.get(indicator_code, "indicator_id"))
             indicator_object.name_en = self._read_config_value(indicator_code, "name_en")
             indicator_object.name_es = self._read_config_value(indicator_code, "name_es")
             indicator_object.name_fr = self._read_config_value(indicator_code, "name_fr")
             indicator_object.description_en = self._read_config_value(indicator_code, "desc_en")
             indicator_object.description_es = self._read_config_value(indicator_code, "desc_es")
             indicator_object.description_fr = self._read_config_value(indicator_code, "desc_fr")
-            indicator_object.measurement_unit = MeasurementUnit("units")
-            indicator_object.topic = Indicator.TOPIC_TEMPORAL
-            indicator_object.preferable_tendency = self._parse_preferable_tendency(self._read_config_value(indicator_code, "tendency"))
+            indicator_object.measurement_unit = MeasurementUnit(name = self._read_config_value(indicator_code, "indicator_unit_name"),
+                                                                convert_to = self._read_config_value(indicator_code, "indicator_unit_type"))
+            indicator_object.topic = self._read_config_value(indicator_code, "indicator_topic")
+            indicator_object.preferable_tendency = self._parse_preferable_tendency(self._read_config_value(indicator_code, "indicator_tendency"))
     
             result[indicator_code] = indicator_object
     
