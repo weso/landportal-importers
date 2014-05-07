@@ -35,8 +35,6 @@ class FaoImporter(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         # Indicators code
         self.TNH = 0  # Total number of holdings
@@ -47,16 +45,16 @@ class FaoImporter(object):
         self.AOW = 5  # Areas operated as owner
         self.ATE = 6  # Areas operated as tenant
         self.AOT = 7  # Areas operated as others
-        self.SNOW = 5  # Shares in number operated as owner
-        self.SNTE = 6  # Shares in number operated as tenant
-        self.SNOT = 7  # Shares in number operated as others
-        self.SAOW = 8  # Shares in areas operated as owner
-        self.SATE = 9  # Shares in areas operated as tenant
-        self.SAOT = 10  # Shares in areas operated as others
-        self.NMO = 11  # Number in more than one form of tenure
-        self.SNMO = 12  # Shares in number under more than one for of tenure
-        self.AMO = 13  # Areas in more than one form of tenure
-        self.SAMO = 14  # Shares is areas operated in more than one form of tenure
+        self.SNOW = 8  # Shares in number operated as owner
+        self.SNTE = 9  # Shares in number operated as tenant
+        self.SNOT = 10  # Shares in number operated as others
+        self.SAOW = 11  # Shares in areas operated as owner
+        self.SATE = 12  # Shares in areas operated as tenant
+        self.SAOT = 13  # Shares in areas operated as others
+        self.NMO = 14  # Number in more than one form of tenure
+        self.SNMO = 15  # Shares in number under more than one for of tenure
+        self.AMO = 16  # Areas in more than one form of tenure
+        self.SAMO = 17  # Shares is areas operated in more than one form of tenure
         
         # Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
@@ -122,7 +120,7 @@ class FaoImporter(object):
             data = self._xsl_reader.load_xsl(file_name.strip(), rows_range, cols_range)
             result += self._extract_data_from_matrix(file_name.strip(), data)
             print "Done with Excel file %s" % (file_name)
-        
+            
         return result
     
     def _extract_data_from_matrix(self, file_name, data):
@@ -131,9 +129,9 @@ class FaoImporter(object):
         if file_name == "Land_operated_by_tenure_type 2000.xls":
             result += self._extract_data_operated_tenure_type(data)
         elif file_name == "Land_tenure 2000.xls":
-            self._extract_data_land_tenure_2000(data)
+            result +=self._extract_data_land_tenure_2000(data)
         elif file_name == "Land tenure_1970.1980.1990.xlsx":
-            self._extract_data_land_tenure_old(data)
+            result +=self._extract_data_land_tenure_old(data)
         
         return result
     
@@ -290,8 +288,8 @@ class FaoImporter(object):
         return User(user_login="FAOIMPORTER")
 
     def _build_default_datasource(self):
-        result = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
-        self._sou_int += 1  # Update
+        result = DataSource(chain_for_id=self._org_id, 
+                            int_for_id=self._config.get("DATASOURCE", "datasource_id"))
         result.name = self._config.get("DATASOURCE", "name")
         return result
 
@@ -312,7 +310,6 @@ class FaoImporter(object):
 
 
     def _build_default_license(self):
-        # TODO: Revise ALL this data. There is not clear license
         result = License()
         result.republish = self._config.get("LICENSE", "republish")
         result.description = self._config.get("LICENSE", "description")
@@ -321,295 +318,307 @@ class FaoImporter(object):
 
         return result
 
+    def _parse_preferable_tendency(self, tendency):
+        if tendency.lower() == "increase":
+            return Indicator.INCREASE
+        elif tendency.lower() == "decrease":
+            return Indicator.DECREASE
+        return Indicator.IRRELEVANT
+    
     def _build_indicators_dict(self):
         result = {}
 
+        number_measure = MeasurementUnit(name = None, convert_to = "units")
+        area_measure = MeasurementUnit(name = None, convert_to = "sq. km", factor=10)
+        share_measure = MeasurementUnit(name = None, convert_to = "%")
+        
         # Total Number of Holdings
         tnh_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "tnh_id"))
         tnh_ind.name_en = self._read_config_value("INDICATOR", "tnh_name_en")
         tnh_ind.name_es = self._read_config_value("INDICATOR", "tnh_name_es")
         tnh_ind.name_fr = self._read_config_value("INDICATOR", "tnh_name_fr")
         tnh_ind.description_en = self._read_config_value("INDICATOR", "tnh_desc_en")
         tnh_ind.description_es = self._read_config_value("INDICATOR", "tnh_desc_es")
         tnh_ind.description_fr = self._read_config_value("INDICATOR", "tnh_desc_fr")
-        tnh_ind.measurement_unit = MeasurementUnit("units")
-        tnh_ind.topic = Indicator.TOPIC_TEMPORAL
-        tnh_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        number_measure.name = self._read_config_value("INDICATOR", "tnh_unit_name")
+        tnh_ind.measurement_unit = number_measure
+        tnh_ind.topic = self._read_config_value("INDICATOR", "tnh_topic")
+        tnh_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "tnh_tendency"))
 
         result[self.TNH] = tnh_ind
                 
         # Total Area of Holdings
         tah_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "tah_id"))
         tah_ind.name_en = self._read_config_value("INDICATOR", "tah_name_en")
         tah_ind.name_es = self._read_config_value("INDICATOR", "tah_name_es")
         tah_ind.name_fr = self._read_config_value("INDICATOR", "tah_name_fr")
         tah_ind.description_en = self._read_config_value("INDICATOR", "tah_desc_en")
         tah_ind.description_es = self._read_config_value("INDICATOR", "tah_desc_es")
         tah_ind.description_fr = self._read_config_value("INDICATOR", "tah_desc_fr")
-        tah_ind.measurement_unit = MeasurementUnit("units")
-        tah_ind.topic = Indicator.TOPIC_TEMPORAL
-        tah_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        area_measure.name = self._read_config_value("INDICATOR", "tah_unit_name")
+        tah_ind.measurement_unit = area_measure
+        tah_ind.topic = self._read_config_value("INDICATOR", "tah_topic")
+        tah_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "tah_tendency"))
         result[self.TAH] = tah_ind
         
         # Number Operated as Owner
         now_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "now_id"))
         now_ind.name_en = self._read_config_value("INDICATOR", "now_name_en")
         now_ind.name_es = self._read_config_value("INDICATOR", "now_name_es")
         now_ind.name_fr = self._read_config_value("INDICATOR", "now_name_fr")
         now_ind.description_en = self._read_config_value("INDICATOR", "now_desc_en")
         now_ind.description_es = self._read_config_value("INDICATOR", "now_desc_es")
         now_ind.description_fr = self._read_config_value("INDICATOR", "now_desc_fr")
-        now_ind.measurement_unit = MeasurementUnit("units")
-        now_ind.topic = Indicator.TOPIC_TEMPORAL
-        now_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        number_measure.name = self._read_config_value("INDICATOR", "now_unit_name")
+        now_ind.measurement_unit = number_measure
+        now_ind.topic = self._read_config_value("INDICATOR", "now_topic")
+        now_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "now_tendency"))
         result[self.NOW] = now_ind
         
         # Number Operated as Tenant
         nte_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "nte_id"))
         nte_ind.name_en = self._read_config_value("INDICATOR", "nte_name_en")
         nte_ind.name_es = self._read_config_value("INDICATOR", "nte_name_es")
         nte_ind.name_fr = self._read_config_value("INDICATOR", "nte_name_fr")
         nte_ind.description_en = self._read_config_value("INDICATOR", "nte_desc_en")
         nte_ind.description_es = self._read_config_value("INDICATOR", "nte_desc_es")
         nte_ind.description_fr = self._read_config_value("INDICATOR", "nte_desc_fr")
-        nte_ind.measurement_unit = MeasurementUnit("units")
-        nte_ind.topic = Indicator.TOPIC_TEMPORAL
-        nte_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        number_measure.name = self._read_config_value("INDICATOR", "nte_unit_name")
+        nte_ind.measurement_unit = number_measure
+        nte_ind.topic = self._read_config_value("INDICATOR", "nte_topic")
+        nte_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "nte_tendency"))
         result[self.NTE] = nte_ind
 
         # Number Operated as Others
         not_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "not_id"))
         not_ind.name_en = self._read_config_value("INDICATOR", "not_name_en")
         not_ind.name_es = self._read_config_value("INDICATOR", "not_name_es")
         not_ind.name_fr = self._read_config_value("INDICATOR", "not_name_fr")
         not_ind.description_en = self._read_config_value("INDICATOR", "not_desc_en")
         not_ind.description_es = self._read_config_value("INDICATOR", "not_desc_es")
         not_ind.description_fr = self._read_config_value("INDICATOR", "not_desc_fr")
-        not_ind.measurement_unit = MeasurementUnit("units")
-        not_ind.topic = Indicator.TOPIC_TEMPORAL
-        not_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        number_measure.name = self._read_config_value("INDICATOR", "not_unit_name")
+        not_ind.measurement_unit = number_measure
+        not_ind.topic = self._read_config_value("INDICATOR", "not_topic")
+        not_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "not_tendency"))
         result[self.NOT] = not_ind
         
         # Area Operated as Owner
         aow_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "aow_id"))
         aow_ind.name_en = self._read_config_value("INDICATOR", "aow_name_en")
         aow_ind.name_es = self._read_config_value("INDICATOR", "aow_name_es")
         aow_ind.name_fr = self._read_config_value("INDICATOR", "aow_name_fr")
         aow_ind.description_en = self._read_config_value("INDICATOR", "aow_desc_en")
         aow_ind.description_es = self._read_config_value("INDICATOR", "aow_desc_es")
         aow_ind.description_fr = self._read_config_value("INDICATOR", "aow_desc_fr")
-        aow_ind.measurement_unit = MeasurementUnit("units")
-        aow_ind.topic = Indicator.TOPIC_TEMPORAL
-        aow_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        area_measure.name = self._read_config_value("INDICATOR", "aow_unit_name")
+        aow_ind.measurement_unit = area_measure
+        aow_ind.topic = self._read_config_value("INDICATOR", "aow_topic")
+        aow_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "aow_tendency"))
         result[self.AOW] = aow_ind
         
         # Area Operated as Tenant
         ate_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "ate_id"))
         ate_ind.name_en = self._read_config_value("INDICATOR", "ate_name_en")
         ate_ind.name_es = self._read_config_value("INDICATOR", "ate_name_es")
         ate_ind.name_fr = self._read_config_value("INDICATOR", "ate_name_fr")
         ate_ind.description_en = self._read_config_value("INDICATOR", "ate_desc_en")
         ate_ind.description_es = self._read_config_value("INDICATOR", "ate_desc_es")
         ate_ind.description_fr = self._read_config_value("INDICATOR", "ate_desc_fr")
-        ate_ind.measurement_unit = MeasurementUnit("units")
-        ate_ind.topic = Indicator.TOPIC_TEMPORAL
-        ate_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        area_measure.name = self._read_config_value("INDICATOR", "ate_unit_name")
+        ate_ind.measurement_unit = area_measure
+        ate_ind.topic = self._read_config_value("INDICATOR", "ate_topic")
+        ate_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "ate_tendency"))
         result[self.ATE] = ate_ind
 
         # Area Operated as Others
         aot_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "aot_id"))
         aot_ind.name_en = self._read_config_value("INDICATOR", "aot_name_en")
         aot_ind.name_es = self._read_config_value("INDICATOR", "aot_name_es")
         aot_ind.name_fr = self._read_config_value("INDICATOR", "aot_name_fr")
         aot_ind.description_en = self._read_config_value("INDICATOR", "aot_desc_en")
         aot_ind.description_es = self._read_config_value("INDICATOR", "aot_desc_es")
         aot_ind.description_fr = self._read_config_value("INDICATOR", "aot_desc_fr")
-        aot_ind.measurement_unit = MeasurementUnit("units")
-        aot_ind.topic = Indicator.TOPIC_TEMPORAL
-        aot_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        area_measure.name = self._read_config_value("INDICATOR", "aot_unit_name")
+        aot_ind.measurement_unit = area_measure
+        aot_ind.topic = self._read_config_value("INDICATOR", "aot_topic")
+        aot_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "aot_tendency"))
         result[self.AOT] = aot_ind
 
         # Shares in Number Operated as Owner
         snow_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "snow_id"))
         snow_ind.name_en = self._read_config_value("INDICATOR", "snow_name_en")
         snow_ind.name_es = self._read_config_value("INDICATOR", "snow_name_es")
         snow_ind.name_fr = self._read_config_value("INDICATOR", "snow_name_fr")
         snow_ind.description_en = self._read_config_value("INDICATOR", "snow_desc_en")
         snow_ind.description_es = self._read_config_value("INDICATOR", "snow_desc_es")
         snow_ind.description_fr = self._read_config_value("INDICATOR", "snow_desc_fr")
-        snow_ind.measurement_unit = MeasurementUnit("units")
-        snow_ind.topic = Indicator.TOPIC_TEMPORAL
-        snow_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "snow_unit_name")
+        snow_ind.measurement_unit = share_measure
+        snow_ind.topic = self._read_config_value("INDICATOR", "snow_topic")
+        snow_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "snow_tendency"))
         result[self.SNOW] = snow_ind
 
         # Shares in Number Operated as Tenant
         snte_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "snte_id"))
         snte_ind.name_en = self._read_config_value("INDICATOR", "snte_name_en")
         snte_ind.name_es = self._read_config_value("INDICATOR", "snte_name_es")
         snte_ind.name_fr = self._read_config_value("INDICATOR", "snte_name_fr")
         snte_ind.description_en = self._read_config_value("INDICATOR", "snte_desc_en")
         snte_ind.description_es = self._read_config_value("INDICATOR", "snte_desc_es")
         snte_ind.description_fr = self._read_config_value("INDICATOR", "snte_desc_fr")
-        snte_ind.measurement_unit = MeasurementUnit("units")
-        snte_ind.topic = Indicator.TOPIC_TEMPORAL
-        snte_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "snte_unit_name")
+        snte_ind.measurement_unit = share_measure
+        snte_ind.topic = self._read_config_value("INDICATOR", "snte_topic")
+        snte_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "snte_tendency"))
         result[self.SNTE] = snte_ind
 
         # Shares in Number Operated as Others
         snot_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "snot_id"))
         snot_ind.name_en = self._read_config_value("INDICATOR", "snot_name_en")
         snot_ind.name_es = self._read_config_value("INDICATOR", "snot_name_es")
         snot_ind.name_fr = self._read_config_value("INDICATOR", "snot_name_fr")
         snot_ind.description_en = self._read_config_value("INDICATOR", "snot_desc_en")
         snot_ind.description_es = self._read_config_value("INDICATOR", "snot_desc_es")
         snot_ind.description_fr = self._read_config_value("INDICATOR", "snot_desc_fr")
-        snot_ind.measurement_unit = MeasurementUnit("units")
-        snot_ind.topic = Indicator.TOPIC_TEMPORAL
-        snot_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "snot_unit_name")
+        snot_ind.measurement_unit = share_measure
+        snot_ind.topic = self._read_config_value("INDICATOR", "snot_topic")
+        snot_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "snot_tendency"))
         result[self.SNOT] = snot_ind
         
         # Shares in Area Operated as Owner
         saow_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "saow_id"))
         saow_ind.name_en = self._read_config_value("INDICATOR", "saow_name_en")
         saow_ind.name_es = self._read_config_value("INDICATOR", "saow_name_es")
         saow_ind.name_fr = self._read_config_value("INDICATOR", "saow_name_fr")
         saow_ind.description_en = self._read_config_value("INDICATOR", "saow_desc_en")
         saow_ind.description_es = self._read_config_value("INDICATOR", "saow_desc_es")
         saow_ind.description_fr = self._read_config_value("INDICATOR", "saow_desc_fr")
-        saow_ind.measurement_unit = MeasurementUnit("units")
-        saow_ind.topic = Indicator.TOPIC_TEMPORAL
-        saow_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "saow_unit_name")
+        saow_ind.measurement_unit = share_measure
+        saow_ind.topic = self._read_config_value("INDICATOR", "saow_topic")
+        saow_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "saow_tendency"))
         result[self.SAOW] = saow_ind
 
         # Shares in Area Operated as Tenant
         sate_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "sate_id"))
         sate_ind.name_en = self._read_config_value("INDICATOR", "sate_name_en")
         sate_ind.name_es = self._read_config_value("INDICATOR", "sate_name_es")
         sate_ind.name_fr = self._read_config_value("INDICATOR", "sate_name_fr")
         sate_ind.description_en = self._read_config_value("INDICATOR", "sate_desc_en")
         sate_ind.description_es = self._read_config_value("INDICATOR", "sate_desc_es")
         sate_ind.description_fr = self._read_config_value("INDICATOR", "sate_desc_fr")
-        sate_ind.measurement_unit = MeasurementUnit("units")
-        sate_ind.topic = Indicator.TOPIC_TEMPORAL
-        sate_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "sate_unit_name")
+        sate_ind.measurement_unit = share_measure
+        sate_ind.topic = self._read_config_value("INDICATOR", "sate_topic")
+        sate_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "sate_tendency"))
         result[self.SATE] = sate_ind
 
         # Shares in Area Operated as Others
         saot_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "saot_id"))
         saot_ind.name_en = self._read_config_value("INDICATOR", "saot_name_en")
         saot_ind.name_es = self._read_config_value("INDICATOR", "saot_name_es")
         saot_ind.name_fr = self._read_config_value("INDICATOR", "saot_name_fr")
         saot_ind.description_en = self._read_config_value("INDICATOR", "saot_desc_en")
         saot_ind.description_es = self._read_config_value("INDICATOR", "saot_desc_es")
         saot_ind.description_fr = self._read_config_value("INDICATOR", "saot_desc_fr")
-        saot_ind.measurement_unit = MeasurementUnit("units")
-        saot_ind.topic = Indicator.TOPIC_TEMPORAL
-        saot_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "saot_unit_name")
+        saot_ind.measurement_unit = share_measure
+        saot_ind.topic = self._read_config_value("INDICATOR", "saot_topic")
+        saot_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "saot_tendency"))
         result[self.SAOT] = saot_ind
 
         # Number operated under more than one form of tenure
         nmo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "nmo_id"))
         nmo_ind.name_en = self._read_config_value("INDICATOR", "nmo_name_en")
         nmo_ind.name_es = self._read_config_value("INDICATOR", "nmo_name_es")
         nmo_ind.name_fr = self._read_config_value("INDICATOR", "nmo_name_fr")
         nmo_ind.description_en = self._read_config_value("INDICATOR", "nmo_desc_en")
         nmo_ind.description_es = self._read_config_value("INDICATOR", "nmo_desc_es")
         nmo_ind.description_fr = self._read_config_value("INDICATOR", "nmo_desc_fr")
-        nmo_ind.measurement_unit = MeasurementUnit("units")
-        nmo_ind.topic = Indicator.TOPIC_TEMPORAL
-        nmo_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        number_measure.name = self._read_config_value("INDICATOR", "nmo_unit_name")
+        nmo_ind.measurement_unit = number_measure
+        nmo_ind.topic = self._read_config_value("INDICATOR", "nmo_topic")
+        nmo_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "nmo_tendency"))
         result[self.NMO] = nmo_ind
         
         # Shares number operated under more than one form of tenure
         snmo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "snmo_id"))
         snmo_ind.name_en = self._read_config_value("INDICATOR", "snmo_name_en")
         snmo_ind.name_es = self._read_config_value("INDICATOR", "snmo_name_es")
         snmo_ind.name_fr = self._read_config_value("INDICATOR", "snmo_name_fr")
         snmo_ind.description_en = self._read_config_value("INDICATOR", "snmo_desc_en")
         snmo_ind.description_es = self._read_config_value("INDICATOR", "snmo_desc_es")
         snmo_ind.description_fr = self._read_config_value("INDICATOR", "snmo_desc_fr")
-        snmo_ind.measurement_unit = MeasurementUnit("units")
-        snmo_ind.topic = Indicator.TOPIC_TEMPORAL
-        snmo_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "snmo_unit_name")
+        snmo_ind.measurement_unit = share_measure
+        snmo_ind.topic = self._read_config_value("INDICATOR", "snmo_topic")
+        snmo_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "snmo_tendency"))
         result[self.SNMO] = snmo_ind
 
         # Areas operated under more than one form of tenure
         amo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "amo_id"))
         amo_ind.name_en = self._read_config_value("INDICATOR", "amo_name_en")
         amo_ind.name_es = self._read_config_value("INDICATOR", "amo_name_es")
         amo_ind.name_fr = self._read_config_value("INDICATOR", "amo_name_fr")
         amo_ind.description_en = self._read_config_value("INDICATOR", "amo_desc_en")
         amo_ind.description_es = self._read_config_value("INDICATOR", "amo_desc_es")
         amo_ind.description_fr = self._read_config_value("INDICATOR", "amo_desc_fr")
-        amo_ind.measurement_unit = MeasurementUnit("units")
-        amo_ind.topic = Indicator.TOPIC_TEMPORAL
-        amo_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        area_measure.name = self._read_config_value("INDICATOR", "amo_unit_name")
+        amo_ind.measurement_unit = area_measure
+        amo_ind.topic = self._read_config_value("INDICATOR", "amo_topic")
+        amo_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "amo_tendency"))
         result[self.AMO] = amo_ind
         
         # Shares number operated under more than one form of tenure
         samo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._ind_int)
-        self._ind_int += 1  # Updating id value
+                                     int_for_id=self._config.get("INDICATOR", "samo_id"))
         samo_ind.name_en = self._read_config_value("INDICATOR", "samo_name_en")
         samo_ind.name_es = self._read_config_value("INDICATOR", "samo_name_es")
         samo_ind.name_fr = self._read_config_value("INDICATOR", "samo_name_fr")
         samo_ind.description_en = self._read_config_value("INDICATOR", "samo_desc_en")
         samo_ind.description_es = self._read_config_value("INDICATOR", "samo_desc_es")
         samo_ind.description_fr = self._read_config_value("INDICATOR", "samo_desc_fr")
-        samo_ind.measurement_unit = MeasurementUnit("units")
-        samo_ind.topic = Indicator.TOPIC_TEMPORAL
-        samo_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
-
+        share_measure.name = self._read_config_value("INDICATOR", "samo_unit_name")
+        samo_ind.measurement_unit = share_measure
+        samo_ind.topic = self._read_config_value("INDICATOR", "samo_topic")
+        samo_ind.preferable_tendency = self._parse_preferable_tendency(
+                                                    self._read_config_value("INDICATOR", "samo_tendency"))
         result[self.SAMO] = samo_ind
 
         # Returning final dict
