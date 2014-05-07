@@ -8,9 +8,10 @@ from .model_object_builder import ModelObjectBuilder
 
 class OecdTranslator(object):
 
-    def __init__(self, log, config):
+    def __init__(self, log, config, look_for_historical=True):
         self._log = log
         self._config = config
+        self._look_for_historical = look_for_historical
         pass
 
 
@@ -23,7 +24,10 @@ class OecdTranslator(object):
 
         """
         json_objects = JsonLoader(self._log, self._config).run()
-        datasets, user, import_process, relations = ModelObjectBuilder(self._log, self._config, json_objects).run()
+        datasets, user, import_process, relations = ModelObjectBuilder(log=self._log,
+                                                                       config=self._config,
+                                                                       json_objects=json_objects,
+                                                                       look_for_historical=self._look_for_historical).run()
 
         for dataset in datasets:
             ModelToXMLTransformer(dataset=dataset,

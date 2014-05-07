@@ -25,7 +25,7 @@ def run():
 
     extractor = RestClient(logger, config)
     extractor.run()
-    translator = OecdTranslator(logger, config)
+    translator = OecdTranslator(logger, config, True)
     translator.run()
     print "unWE"
 

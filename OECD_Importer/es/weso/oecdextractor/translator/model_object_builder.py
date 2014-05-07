@@ -41,10 +41,11 @@ class ModelObjectBuilder(object):
 
 
 
-    def __init__(self, log, config, json_objects):
+    def __init__(self, log, config, json_objects, look_for_historical):
         self._log = log
         self._config = config
         self._json_objects = json_objects
+        self._look_for_historical = look_for_historical
 
 
         # Getting propper ids
@@ -125,7 +126,7 @@ class ModelObjectBuilder(object):
 
 
         #SIGI
-        sigi_ind = Indicator(chain_for_id=self._org_id, 
+        sigi_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "sigi_id")))
         sigi_ind.name_en = self._read_config_value("INDICATORS", "sigi_name_en")
         sigi_ind.name_es = self._read_config_value("INDICATORS", "sigi_name_es")
@@ -139,7 +140,7 @@ class ModelObjectBuilder(object):
         result[KeyMapper.SIGI_KEY] = sigi_ind
 
         #SIGI RANK
-        sigi_rank_ind = Indicator(chain_for_id=self._org_id, 
+        sigi_rank_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "sigi_rank_id")))
         sigi_rank_ind.name_en = self._read_config_value("INDICATORS", "sigi_rank_name_en")
         sigi_rank_ind.name_es = self._read_config_value("INDICATORS", "sigi_rank_name_es")
@@ -154,7 +155,7 @@ class ModelObjectBuilder(object):
 
 
         #FC
-        fc_ind = Indicator(chain_for_id=self._org_id, 
+        fc_ind = Indicator(chain_for_id=self._org_id,
                         int_for_id=int(self._read_config_value("INDICATORS", "fc_id")))
         fc_ind.name_en = self._read_config_value("INDICATORS", "fc_name_en")
         fc_ind.name_es = self._read_config_value("INDICATORS", "fc_name_es")
@@ -168,7 +169,7 @@ class ModelObjectBuilder(object):
         result[KeyMapper.FAMILY_CODE_KEY] = fc_ind
 
         #FC RANK
-        fc_rank_ind = Indicator(chain_for_id=self._org_id,  
+        fc_rank_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "fc_rank_id")))
         fc_rank_ind.name_en = self._read_config_value("INDICATORS", "fc_rank_name_en")
         fc_rank_ind.name_es = self._read_config_value("INDICATORS", "fc_rank_name_es")
@@ -182,7 +183,7 @@ class ModelObjectBuilder(object):
         result[KeyMapper.FAMILY_CODE_RANK_KEY] = fc_rank_ind
 
         #CIVIL
-        civil_ind = Indicator(chain_for_id=self._org_id, 
+        civil_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "civil_id")))
         civil_ind.name_en = self._read_config_value("INDICATORS", "civil_name_en")
         civil_ind.name_es = self._read_config_value("INDICATORS", "civil_name_es")
@@ -196,7 +197,7 @@ class ModelObjectBuilder(object):
         result[KeyMapper.CIVIL_KEY] = civil_ind
 
         #CIVIL RANK
-        civil_rank_ind = Indicator(chain_for_id=self._org_id, 
+        civil_rank_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "civil_rank_id")))
         civil_rank_ind.name_en = self._read_config_value("INDICATORS", "civil_rank_name_en")
         civil_rank_ind.name_es = self._read_config_value("INDICATORS", "civil_rank_name_es")
@@ -208,10 +209,10 @@ class ModelObjectBuilder(object):
         civil_rank_ind.topic = self._read_config_value("INDICATORS", "civil_rank_topic")
         civil_rank_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.CIVIL_RANK_KEY] = civil_rank_ind
-        
-        
+
+
         #ENTITLEMENTS
-        entitlements_ind = Indicator(chain_for_id=self._org_id, 
+        entitlements_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "entitlements_id")))
         entitlements_ind.name_en = self._read_config_value("INDICATORS", "entitlements_name_en")
         entitlements_ind.name_es = self._read_config_value("INDICATORS", "entitlements_name_es")
@@ -223,9 +224,9 @@ class ModelObjectBuilder(object):
         entitlements_ind.topic = self._read_config_value("INDICATORS", "entitlements_topic")
         entitlements_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.ENTITLEMENTS_KEY] = entitlements_ind
-        
+
         #ENTITLEMENTS RANK
-        entitlements_rank_ind = Indicator(chain_for_id=self._org_id, 
+        entitlements_rank_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "entitlements_rank_id")))
         entitlements_rank_ind.name_en = self._read_config_value("INDICATORS", "entitlements_rank_name_en")
         entitlements_rank_ind.name_es = self._read_config_value("INDICATORS", "entitlements_rank_name_es")
@@ -237,9 +238,9 @@ class ModelObjectBuilder(object):
         entitlements_rank_ind.topic = self._read_config_value("INDICATORS", "entitlements_rank_topic")
         entitlements_rank_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.ENTITLEMENTS_RANK_KEY] = entitlements_rank_ind
-        
+
         #ACCESS TO LAND
-        women_land_access_ind = Indicator(chain_for_id=self._org_id, 
+        women_land_access_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "women_land_access_id")))
         women_land_access_ind.name_en = self._read_config_value("INDICATORS", "women_land_access_name_en")
         women_land_access_ind.name_es = self._read_config_value("INDICATORS", "women_land_access_name_es")
@@ -251,9 +252,9 @@ class ModelObjectBuilder(object):
         women_land_access_ind.topic = self._read_config_value("INDICATORS", "women_land_access_topic")
         women_land_access_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.LAND_KEY] = women_land_access_ind
-        
+
         #INHERITANCE GENERAL
-        inheritance_general_ind = Indicator(chain_for_id=self._org_id, 
+        inheritance_general_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "inheritance_general_id")))
         inheritance_general_ind.name_en = self._read_config_value("INDICATORS", "inheritance_general_name_en")
         inheritance_general_ind.name_es = self._read_config_value("INDICATORS", "inheritance_general_name_es")
@@ -265,9 +266,9 @@ class ModelObjectBuilder(object):
         inheritance_general_ind.topic = self._read_config_value("INDICATORS", "inheritance_general_topic")
         inheritance_general_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.INHERITANCE_GENERAL_KEY] = inheritance_general_ind
-        
+
         #INHERITANCE DAUGHTERS
-        inheritance_daughters_ind = Indicator(chain_for_id=self._org_id, 
+        inheritance_daughters_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "inheritance_daughters_id")))
         inheritance_daughters_ind.name_en = self._read_config_value("INDICATORS", "inheritance_daughters_name_en")
         inheritance_daughters_ind.name_es = self._read_config_value("INDICATORS", "inheritance_daughters_name_es")
@@ -279,9 +280,9 @@ class ModelObjectBuilder(object):
         inheritance_daughters_ind.topic = self._read_config_value("INDICATORS", "inheritance_daughters_topic")
         inheritance_daughters_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.INHERITANCE_DAUGHTERS_KEY] = inheritance_daughters_ind
-        
+
         #INHERITANCE WIDOWS
-        inheritance_widows_ind = Indicator(chain_for_id=self._org_id,  
+        inheritance_widows_ind = Indicator(chain_for_id=self._org_id,
                              int_for_id=int(self._read_config_value("INDICATORS", "inheritance_widows_id")))
         inheritance_widows_ind.name_en = self._read_config_value("INDICATORS", "inheritance_widows_name_en")
         inheritance_widows_ind.name_es = self._read_config_value("INDICATORS", "inheritance_widows_name_es")
@@ -295,7 +296,7 @@ class ModelObjectBuilder(object):
         result[KeyMapper.INHERITANCE_WIDOWS_KEY] = inheritance_widows_ind
 
         return result
-    
+
     def _read_config_value(self, section, field):
         return (self._config.get(section, field)).decode(encoding="utf-8")
 
@@ -346,9 +347,15 @@ class ModelObjectBuilder(object):
         #No return needed
 
     def _pass_observation_filters(self, obs_object):
-        # TODO: Unimplemented method. Sure about there can be filters
-        # TODO: but not sure about which filters are we going to have
-        return True
+        if self._look_for_historical:
+            return True
+        if not "_current_year" in self.__dict__:
+            self._current_year = int(datetime.now().year)
+        else:
+            if int(obs_object.ref_time.get_time_string()) < self._current_year:
+                return False
+            return True
+
 
     def _build_observation_object_from_dict(self, obs_dict, oecd_id_of_dataset):
         result = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
