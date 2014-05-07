@@ -20,7 +20,8 @@ from lpentities.region import Region
 
 import codecs
 
-import urllib, urllib2
+import urllib
+import urllib2
 
 
 class ModelToXMLTransformer(object):
@@ -29,6 +30,7 @@ class ModelToXMLTransformer(object):
     # to use in the XML file
     #
     ROOT = "dataset"
+    ROOT_ID = "id"
     INDICATORS = "indicators"
 
     SLICES = "slices"
@@ -131,7 +133,7 @@ class ModelToXMLTransformer(object):
         self._indicator_relations = indicator_relations
         # One per indicator referred by the observations
 
-        self._root = Element(self.ROOT)
+        self._root = self._build_root()
 
         '''
         Constructor
@@ -150,6 +152,10 @@ class ModelToXMLTransformer(object):
         # self._send_to_receiver(paths)
 
 
+    def _build_root(self):
+        result = Element(self.ROOT)
+        result.attrib[self.ROOT_ID] = self._dataset.dataset_id
+        return result
 
     def _send_to_receiver(self, paths):
         url = "http://156.35.82.103/receiver"
@@ -801,7 +807,7 @@ class XmlSplitter(object):
 
     def _get_a_new_file_path(self):
         self._int_for_file += 1
-        return self._dataset_id + "_" + self._int_for_file + "_" + str(self._path_counter) + ".xml"
+        return self._dataset_id + "_" + str(self._int_for_file) + "_" + str(self._path_counter) + ".xml"
 
 
 
