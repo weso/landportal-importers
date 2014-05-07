@@ -36,10 +36,11 @@ class UNDPTranslator(object):
     HDI_ENDING = "_hdi"
     RANK_ENDING = "_rank"
 
-    def __init__(self, config, log):
+    def __init__(self, config, log, look_for_historical):
         self._config = config
         self._log = log
         self._reconciler = CountryReconciler()
+        self._look_for_historical = look_for_historical
 
         #Getting propper ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
@@ -136,7 +137,7 @@ class UNDPTranslator(object):
         ind_hdi.name_fr = self._read_config_value("IND_DESCRIPTION", "hdi_name_fr")  # Done
         ind_hdi.description_en = self._read_config_value("IND_DESCRIPTION", "hdi_desc_en")  # Done
         ind_hdi.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_desc_es")  # Done
-        ind_hdi.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_desc_fr")  # TODO: not translated
+        ind_hdi.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_desc_fr")  # Done
         ind_hdi.measurement_unit = MeasurementUnit(name="HDI value",
                                                    convert_to=MeasurementUnit.INDEX)
         ind_hdi.preferable_tendency = Indicator.INCREASE
@@ -152,8 +153,8 @@ class UNDPTranslator(object):
         ind_rank.name_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_name_fr")  # Done
 
         ind_rank.description_en = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_en")   # Done
-        ind_rank.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_es")  # TODO: not translated
-        ind_rank.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_fr")  # TODO: not translated
+        ind_rank.description_es = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_es")  # Done
+        ind_rank.description_fr = self._read_config_value("IND_DESCRIPTION", "hdi_rank_desc_fr")  # Done
         ind_rank.measurement_unit = MeasurementUnit(name="Ranking",
                                                     convert_to=MeasurementUnit.RANK)
         ind_rank.preferable_tendency = Indicator.DECREASE
@@ -211,12 +212,38 @@ class UNDPTranslator(object):
         # Resolving country with the obtained data
         country_object = self._resolve_country(country_iso3=country_iso3, country_name=country_name)
 
-        #Adding observations to country
+        result = []  # Will contain the valid final obs
+        #Adding observations to country and passing filters
         for obs in no_country_observations:
-            country_object.add_observation(obs)
+            if self._pass_filters(obs):
+                country_object.add_observation(obs)
+                result.append(obs)
+
 
         #returnig every complete obs that we have built
-        return no_country_observations  # They already have an associated country
+        return result  # They already have an associated country
+
+    def _pass_filters(self, obs):
+        if self._look_for_historical:
+            return True
+        if not "_target_date" in self.__dict__:
+            self._target_date = self._get_current_date()
+        elif self._get_year_of_observation(obs) < self._target_date:
+            return False
+        return True
+
+    @staticmethod
+    def _get_current_date():
+        return int(datetime.now().year)
+
+
+    @staticmethod
+    def _get_year_of_observation(obs):
+        date_obj = obs.ref_time
+        if type(date_obj) == YearInterval:
+            return int(date_obj.year)
+        else:
+            raise RuntimeError("Unexpected object date. Impossible to build observation from it: " + type(date_obj))
 
 
     def _build_rank_obs_without_country(self, node):

@@ -11,14 +11,14 @@ from ConfigParser import ConfigParser
 
 import os.path
 
-def run():
+def run(look_for_historical=True):
     configure_log()
     config = ConfigParser()
     config.read("../../../files/configuration.ini")
     log = logging.getLogger("UNDP_extractor")
     xml_extractor = UNDPExtractor(config, log, "xml")
     xml_extractor.run()
-    xml_translator = UNDPTranslator(config, log)
+    xml_translator = UNDPTranslator(config, log, look_for_historical)
     xml_translator.run()
     print 'Done!'
 
@@ -29,4 +29,4 @@ def configure_log():
 
 
 if __name__ == '__main__':
-    run()
+    run(True)
