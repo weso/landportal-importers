@@ -17,7 +17,7 @@ class FaoGenderExtractor(object):
     """
 
 
-    def __init__(self, log, config):
+    def __init__(self, log, config, look_for_historical=True):
         """
         Constructor
 
@@ -25,6 +25,7 @@ class FaoGenderExtractor(object):
         self._log = log
         self._config = config
         self._reconciler = CountryReconciler()
+        self._look_for_historical = look_for_historical
 
     def run(self):
         """
@@ -49,7 +50,11 @@ class FaoGenderExtractor(object):
         return CountriesXmlExtractor(self._log, self._config, self._reconciler).run()
 
     def _turn_responses_into_register_objects(self, responses):
-        return XmlContentParser(self._log, self._config, self._reconciler, responses).run()
+        return XmlContentParser(log=self._log,
+                                config=self._config,
+                                reconciler=self._reconciler,
+                                responses=responses,
+                                look_for_historical=self._look_for_historical).run()
 
     
     

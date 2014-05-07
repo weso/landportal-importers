@@ -11,16 +11,19 @@ from lpentities.year_interval import YearInterval
 from lpentities.interval import Interval
 from ..keys_dict import KeysDict
 
+from datetime import datetime
+
 
 class XmlContentParser(object):
 
     ISO3_ATTR = "iso3"
 
-    def __init__(self, log, config, reconciler, responses):
+    def __init__(self, log, config, reconciler, responses, look_for_historical):
         self._log = log
         self._config = config
         self._reconciler = reconciler
         self._responses = responses
+        self._look_for_historical = look_for_historical
 
 
 
@@ -47,11 +50,8 @@ class XmlContentParser(object):
         tree = None
         try:
             tree = ETree.fromstring(response)
-            print "SUPE HACER UNO!"
-
         except:
             #TODO. Beeter info here
-            print "Something is going wrong"
             return None
 
         return self._turn_tree_into_xml_register(tree)
@@ -74,14 +74,37 @@ class XmlContentParser(object):
                                  KeysDict.RURAL_HOUSEHOLDS_WOMEN_CODE]
             for code in codes_to_look_for:
                 data_of_an_indicator = self._look_for_indicator_data(base_node_in_wich_to_look_for, code)
-                if not data_of_an_indicator is None:
+                if (not data_of_an_indicator is None) and self._pass_filters(data_of_an_indicator):
                     result.add_indicator_data(data_of_an_indicator)
 
             return result
         except BaseException as e:
-            print "_______________LAAAA LIAMOS con", country.iso3, e.message
+            #TODO: BETTER INFO HERE
             return None
 
+    def _pass_filters(self, data_of_an_indicator):
+        if self._look_for_historical:
+            return True
+
+        if not "_target_date" in self.__dict__:
+            self._target_date = self._get_current_date()
+        elif self._get_year_of_data_indicator(data_of_an_indicator) < self._target_date:
+            return False
+        return True
+
+    @staticmethod
+    def _get_current_date():
+        return int(datetime.now().year)
+
+    @staticmethod
+    def _get_year_of_data_indicator(data_of_an_indicator):
+        date_obj = data_of_an_indicator.date
+        if type(date_obj) == YearInterval:
+            return int(date_obj.year)
+        elif type(date_obj) == Interval:
+            return int(date_obj.end_time)
+        else:
+            raise RuntimeError("Unexpected object date. Impossible to build observation from it: " + type(date_obj))
 
     def _look_for_indicator_data(self, base_node, code):
         """

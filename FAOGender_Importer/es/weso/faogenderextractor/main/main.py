@@ -21,7 +21,7 @@ def run():
     config = ConfigParser()
     config.read("../../../../files/configuration.ini")
     logger.info('Starting run')
-    extractor = FaoGenderExtractor(logger, config)
+    extractor = FaoGenderExtractor(logger, config, True)
     extractor.run()
 
 if __name__ == '__main__':
