@@ -137,20 +137,25 @@ def _find_index_all_occurrences_of_a_sequence(string, sequence):
 def _get_node_data(info_node, tag):
     for subnode in info_node.getchildren():
         if subnode.attrib[PROPERTY] == tag:
-            return subnode.text
+            return _remove_blanks(subnode.text)
     return NO_VALUE
+
+def _remove_blanks(text):
+    result = text.replace("\t", "")
+    result = result.replace("\n", "")
+    result = result.replace("\r", "")
+    return result
 
 
 def _extract_sectors(info_node):
     #Looking for text
-    text = None
-    for subnode in info_node.getchildren():
-        if subnode.attrib[PROPERTY] == TARGET_COUNTRY:
-            text = subnode.text
-            break
-    if text is None or text == NO_VALUE:
+    text = _get_node_data(info_node, SECTORS)
+    if text is None:
         _raise_error("sectors", "not found")
         return  # It will throw an error, the next won't execute.... but let's ensure that
+    elif text == NO_VALUE:
+        print
+        return ['Unknown']  # Unknowk sector
     result = []
     candidate_sectors = text.split(",")
     for candidate in candidate_sectors:
@@ -158,6 +163,7 @@ def _extract_sectors(info_node):
             result.append(candidate.replace(" ", ""))
     if len(result) == 0:
         _raise_error("sectors", "not found")
+    print result
     return result
 
 

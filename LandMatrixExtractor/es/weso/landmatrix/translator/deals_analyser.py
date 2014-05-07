@@ -121,6 +121,7 @@ class DealsAnalyser(object):
 
     def _process_deals_by_hectares(self, deal, target_country):
         max_hectares = None
+
         if not deal.production_hectares is None:
             max_hectares = self._update_max_hectares(max_hectares, deal.production_hectares)
             self._increase_hectares_indicator(KeyDicts.HECTARES_PRODUCTION_DEALS,

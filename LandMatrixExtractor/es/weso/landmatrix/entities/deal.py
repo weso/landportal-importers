@@ -13,7 +13,7 @@ class Deal(object):
     CONSERVATION = "Conservation"
     FORESTRY = "Forestry"
     INDUSTRY = "Industry"
-    RENEWABLE_ENERGY = "Renewable Energy"
+    RENEWABLE_ENERGY = "RenewableEnergy"
     TOURISM = "Tourism"
     OTHER = "Other"
     UNKNOWN = "Unknown"
