@@ -41,8 +41,6 @@ class IpfriModelObjectBuilder(object):
         self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
         self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
         self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._ind_int = int(self._config.get("TRANSLATOR", "ind_int"))
-        self._sou_int = int(self._config.get("TRANSLATOR", "sou_int"))
 
         self.dataset = None
         self.user = None
@@ -74,8 +72,8 @@ class IpfriModelObjectBuilder(object):
         self.dataset.license_type = new_license
 
         #building datasource
-        new_datasource = DataSource(chain_for_id=self._org_id, int_for_id=self._sou_int)
-        self._sou_int += 1  # Updating internal id_int value
+        new_datasource = DataSource(chain_for_id=self._org_id,
+                                    int_for_id=self._config.get("DATASOURCE", "id"))
         new_datasource.name = self._config.get("DATASOURCE", "name")
 
         new_datasource.add_dataset(self.dataset)
@@ -112,7 +110,6 @@ class IpfriModelObjectBuilder(object):
         In order to unify thge possible variant names that comes form the excell, in this point
         we are going to change the pindicator.name of every pindicator object
         """
-        default_unit = MeasurementUnit("%")
         for pindicator in self._parsed_indicators:
             if "undernourishment" in pindicator.name or "undernourished" in pindicator.name:
                 pindicator.name = "undernourishment"
@@ -133,18 +130,19 @@ class IpfriModelObjectBuilder(object):
         if key in self._indicators_dict:
             return
         else:
-            new_indicator = Indicator(chain_for_id=self._org_id, int_for_id=self._ind_int)
-            self._ind_int += 1  # Updating internal int_id value
+            new_indicator = Indicator(chain_for_id=self._org_id,
+                                      int_for_id=self._config.get("INDICATOR", begin_of_the_pattern + "_id"))
             new_indicator.name_en = self._config.get("INDICATOR", begin_of_the_pattern + "_name_en")
             new_indicator.name_es = self._config.get("INDICATOR", begin_of_the_pattern + "_name_es")
             new_indicator.name_fr = self._config.get("INDICATOR", begin_of_the_pattern + "_name_fr")
             new_indicator.description_en = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_en")
             new_indicator.description_es = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_es")
             new_indicator.description_fr = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_fr")
-            new_indicator.measurement_unit = MeasurementUnit("%")
+            new_indicator.measurement_unit = MeasurementUnit(name="%",
+                                                             convert_to=MeasurementUnit.PERCENTAGE)
 
             new_indicator.preferable_tendency = Indicator.DECREASE
-            new_indicator.topic = Indicator.TOPIC_TEMPORAL  # TODO: temporal value
+            new_indicator.topic = self._config.get("INDICATOR", begin_of_the_pattern + "_topic")
 
             self._indicators_dict[key] = new_indicator
             #Completing dataset object
