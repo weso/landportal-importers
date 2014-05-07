@@ -239,12 +239,12 @@ class FaoImporter(object):
         years = str(year).split("-")
         if len(years) == 1:
             if len(str(year)) == 2:
-                return YearInterval(year="19" + str(year))
-            return YearInterval(year=year)
+                return YearInterval(year=int("19" + str(year)))
+            return YearInterval(year=int(float(year)))
         else :
             if len(years[0]) == 2:
-                return Interval(start_time="19"+years[0], end_time="19"+years[1])
-            return Interval(start_time=years[0], end_time=years[1])
+                return Interval(start_time=int("19"+years[0]), end_time=int("19"+years[1]))
+            return Interval(start_time=int(years[0]), end_time=int(years[1]))
 
     def _build_issued_object(self):
         return Instant(datetime.now())
