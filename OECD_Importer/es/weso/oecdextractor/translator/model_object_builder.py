@@ -147,7 +147,7 @@ class ModelObjectBuilder(object):
         sigi_rank_ind.description_en = self._read_config_value("INDICATORS", "sigi_rank_desc_en")
         sigi_rank_ind.description_es = self._read_config_value("INDICATORS", "sigi_rank_desc_es")
         sigi_rank_ind.description_fr = self._read_config_value("INDICATORS", "sigi_rank_desc_fr")
-        sigi_ind.topic = self._read_config_value("INDICATORS", "sigi_topic")
+        sigi_rank_ind.topic = self._read_config_value("INDICATORS", "sigi_rank_topic")
         sigi_rank_ind.measurement_unit = rank_unit
         sigi_rank_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.SIGI_RANK_KEY] = sigi_rank_ind
@@ -162,7 +162,7 @@ class ModelObjectBuilder(object):
         fc_ind.description_en = self._read_config_value("INDICATORS", "fc_rank_name_en")
         fc_ind.description_es = self._read_config_value("INDICATORS", "fc_rank_name_es")
         fc_ind.description_fr = self._read_config_value("INDICATORS", "fc_rank_name_fr")
-        sigi_ind.topic = self._read_config_value("INDICATORS", "fc_topic")
+        fc_ind.topic = self._read_config_value("INDICATORS", "fc_topic")
         fc_ind.measurement_unit = index_unit
         fc_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.FAMILY_CODE_KEY] = fc_ind
@@ -176,7 +176,7 @@ class ModelObjectBuilder(object):
         fc_rank_ind.description_en = self._read_config_value("INDICATORS", "fc_rank_name_en")
         fc_rank_ind.description_es = self._read_config_value("INDICATORS", "fc_rank_name_es")
         fc_rank_ind.description_fr = self._read_config_value("INDICATORS", "fc_rank_name_fr")
-        sigi_ind.topic = self._read_config_value("INDICATORS", "fc_topic")
+        fc_rank_ind.topic = self._read_config_value("INDICATORS", "fc_rank_topic")
         fc_rank_ind.measurement_unit = rank_unit
         fc_rank_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.FAMILY_CODE_RANK_KEY] = fc_rank_ind
@@ -190,7 +190,7 @@ class ModelObjectBuilder(object):
         civil_ind.description_en = self._read_config_value("INDICATORS", "civil_rank_name_en")
         civil_ind.description_es = self._read_config_value("INDICATORS", "civil_rank_name_es")
         civil_ind.description_fr = self._read_config_value("INDICATORS", "civil_rank_name_fr")
-        sigi_ind.topic = self._read_config_value("INDICATORS", "civil_topic")
+        civil_ind.topic = self._read_config_value("INDICATORS", "civil_topic")
         civil_ind.measurement_unit = index_unit
         civil_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.CIVIL_KEY] = civil_ind
@@ -205,7 +205,7 @@ class ModelObjectBuilder(object):
         civil_rank_ind.description_es = self._read_config_value("INDICATORS", "civil_rank_name_es")
         civil_rank_ind.description_fr = self._read_config_value("INDICATORS", "civil_rank_name_fr")
         civil_rank_ind.measurement_unit = rank_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "civil_topic")
+        civil_rank_ind.topic = self._read_config_value("INDICATORS", "civil_rank_topic")
         civil_rank_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.CIVIL_RANK_KEY] = civil_rank_ind
         
@@ -220,7 +220,7 @@ class ModelObjectBuilder(object):
         entitlements_ind.description_es = self._read_config_value("INDICATORS", "entitlements_name_es")
         entitlements_ind.description_fr = self._read_config_value("INDICATORS", "entitlements_name_fr")
         entitlements_ind.measurement_unit = index_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "entitlements_topic")
+        entitlements_ind.topic = self._read_config_value("INDICATORS", "entitlements_topic")
         entitlements_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.ENTITLEMENTS_KEY] = entitlements_ind
         
@@ -234,7 +234,7 @@ class ModelObjectBuilder(object):
         entitlements_rank_ind.description_es = self._read_config_value("INDICATORS", "entitlements_rank_name_es")
         entitlements_rank_ind.description_fr = self._read_config_value("INDICATORS", "entitlements_rank_name_fr")
         entitlements_rank_ind.measurement_unit = rank_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "entitlements_topic")
+        entitlements_rank_ind.topic = self._read_config_value("INDICATORS", "entitlements_rank_topic")
         entitlements_rank_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.ENTITLEMENTS_RANK_KEY] = entitlements_rank_ind
         
@@ -248,7 +248,7 @@ class ModelObjectBuilder(object):
         women_land_access_ind.description_es = self._read_config_value("INDICATORS", "women_land_access_name_es")
         women_land_access_ind.description_fr = self._read_config_value("INDICATORS", "women_land_access_name_fr")
         women_land_access_ind.measurement_unit = index_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "women_land_access_topic")
+        women_land_access_ind.topic = self._read_config_value("INDICATORS", "women_land_access_topic")
         women_land_access_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.LAND_KEY] = women_land_access_ind
         
@@ -262,7 +262,7 @@ class ModelObjectBuilder(object):
         inheritance_general_ind.description_es = self._read_config_value("INDICATORS", "inheritance_general_name_es")
         inheritance_general_ind.description_fr = self._read_config_value("INDICATORS", "inheritance_general_name_fr")
         inheritance_general_ind.measurement_unit = index_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "inheritance_general_topic")
+        inheritance_general_ind.topic = self._read_config_value("INDICATORS", "inheritance_general_topic")
         inheritance_general_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.INHERITANCE_GENERAL_KEY] = inheritance_general_ind
         
@@ -276,7 +276,7 @@ class ModelObjectBuilder(object):
         inheritance_daughters_ind.description_es = self._read_config_value("INDICATORS", "inheritance_daughters_name_es")
         inheritance_daughters_ind.description_fr = self._read_config_value("INDICATORS", "inheritance_daughters_name_fr")
         inheritance_daughters_ind.measurement_unit = index_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "inheritance_daughters_topic")
+        inheritance_daughters_ind.topic = self._read_config_value("INDICATORS", "inheritance_daughters_topic")
         inheritance_daughters_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.INHERITANCE_DAUGHTERS_KEY] = inheritance_daughters_ind
         
@@ -290,7 +290,7 @@ class ModelObjectBuilder(object):
         inheritance_widows_ind.description_es = self._read_config_value("INDICATORS", "inheritance_widows_name_es")
         inheritance_widows_ind.description_fr = self._read_config_value("INDICATORS", "inheritance_widows_name_fr")
         inheritance_widows_ind.measurement_unit = index_unit
-        sigi_ind.topic = self._read_config_value("INDICATORS", "inheritance_widows_topic")
+        inheritance_widows_ind.topic = self._read_config_value("INDICATORS", "inheritance_widows_topic")
         inheritance_widows_ind.preferable_tendency = Indicator.DECREASE
         result[KeyMapper.INHERITANCE_WIDOWS_KEY] = inheritance_widows_ind
 
