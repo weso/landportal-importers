@@ -17,20 +17,23 @@ def configure_log():
 
 
 def run(look_for_historical=True):
-    config = ConfigParser()
-    config.read("../../../../files/configuration.ini")
-    log = logging.getLogger('faostatlog')
 
-    configure_log()
-    csv_extractor = FaostatExtractor(log, config)
-    csv_extractor.run()
-    # csv_indicatorcatcher = FaostatIndicatorCatcher()
-    # csv_indicatorcatcher.run()
-    csv_translator = FaostatTranslator(log, config, look_for_historical)
-    csv_translator.run()
+        config = ConfigParser()
+        config_path = "../../../../files/configuration.ini"
+        config.read(config_path)
+        log = logging.getLogger('faostatlog')
+        configure_log()
+        csv_extractor = FaostatExtractor(log, config)
+        csv_extractor.run()
+        csv_translator = FaostatTranslator(log, config, look_for_historical)
+        csv_translator.run()
 
-    
-    print 'Done!'
+        with open(config_path, 'w') as configfile:
+            config.write(configfile)
+
+        print 'Done!'
+
+
 
 
 if __name__ == '__main__':

@@ -61,7 +61,14 @@ class FaostatTranslator(object):
                                                            self._land_area_reference,
                                                            self.key_for_land_area_ref).\
                                                             run()  # The last arg. is a function
-        dataset_model = self.build_model_objects_from_registers(registers)
+        builder = ModelObjectBuilder(registers, self._config, self._log, self._reconciler, self._look_for_historical)
+        try:
+            dataset_model = builder.run()
+            self.generate_xml_from_dataset_model(dataset_model)
+            self._update_config_values(builder)
+        except BaseException as e:
+            self._log.error("Error while trying to sned xml to the receiver: " + e.message)
+            raise e
 
         # raw_registers = self.turn_raw_data_into_registers(look_for_historical)
         # calculated_registers = RelativeRegistersCalculator(raw_registers,
@@ -70,7 +77,16 @@ class FaostatTranslator(object):
         #                                                     run()  # The last arg. is a function
         #
         # dataset_model = self.build_model_objects_from_registers(calculated_registers + raw_registers)
-        self.generate_xml_from_dataset_model(dataset_model)
+
+    def _update_config_values(self, object_builder):
+        self._config.set("TRANSLATOR", "obs_int", object_builder._obs_int)
+        self._config.set("TRANSLATOR", "dat_int", object_builder._dat_int)
+        self._config.set("TRANSLATOR", "sli_int", object_builder._sli_int)
+        self._config.set("TRANSLATOR", "igr_int", object_builder._igr_int)
+        self._config.set("HISTORICAL", "first_valid_year", int(object_builder._last_checked_year) + 1)
+        #lastchecked + 1 == firstvalid
+
+
 
     def generate_xml_from_dataset_model(self, dataset_model):
         xml_gen = ModelToXMLTransformer(dataset_model, "CSV", self.build_user_object(dataset_model.source.organization))
@@ -81,9 +97,6 @@ class FaostatTranslator(object):
         user.organization = organization
         return user
 
-    def build_model_objects_from_registers(self, registers):
-        builder = ModelObjectBuilder(registers, self._config, self._log, self._reconciler)
-        return builder.run()
 
     def get_csv_file_name(self):
         csv_file = os.listdir(self._config.get("FAOSTAT", "data_file_path"))[0]

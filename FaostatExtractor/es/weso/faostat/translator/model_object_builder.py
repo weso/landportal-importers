@@ -30,7 +30,7 @@ class ModelObjectBuilder(object):
     """
 
 
-    def __init__(self, registers, config, log, reconciler):
+    def __init__(self, registers, config, log, reconciler, look_for_historical):
         """
         Constructor
 
@@ -40,10 +40,18 @@ class ModelObjectBuilder(object):
         self._config = config
 
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        self._last_checked_year = self._config.get("HISTORICAL", "first_valid_year")
+        if not look_for_historical:
+            self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
+            self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
+            self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+            self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        else:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
+
         self._registers = registers
 
         self._indicators_dict = self._build_indicators_dict()
@@ -61,18 +69,9 @@ class ModelObjectBuilder(object):
 
         for register in self._registers:
             self.build_model_objects_from_register(register)
-        # for i in range(1, 2000):
+        # for i in range(1, 2000):  # Para pruebas
         #     self.build_model_objects_from_register(self.registers[i])
-        self._update_config_id_values()
         return self._dataset
-
-    def _update_config_id_values(self):  # TODO. No actualiza el archivo!!
-
-        self._config.set("TRANSLATOR", "org_id", self._org_id)
-        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
-        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
-        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
-        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
 
 
     def build_dataset(self):
@@ -121,6 +120,12 @@ class ModelObjectBuilder(object):
         country.add_observation(new_observation)
         self._dataset.add_observation(new_observation)
 
+        self._actualize_last_checked_date_if_needed(new_observation)
+
+
+    def _actualize_last_checked_date_if_needed(self, new_observation):
+        if new_observation.ref_time.year > self._last_checked_year:
+            self._last_checked_year = new_observation.ref_time.year
 
     def add_issued_to_observation(self, observation, register):
         #Adding time in which the observation has been treated by us
@@ -200,7 +205,7 @@ class ModelObjectBuilder(object):
         arable_land_ind.description_en = self._read_config_value("INDICATOR", "arable_land_desc_en")
         arable_land_ind.description_es = self._read_config_value("INDICATOR", "arable_land_desc_es")
         arable_land_ind.description_fr = self._read_config_value("INDICATOR", "arable_land_desc_fr")
-        arable_land_ind.measurement_unit = MeasurementUnit(name = self._read_config_value("INDICATOR", "arable_land_unit_name"),
+        arable_land_ind.measurement_unit = MeasurementUnit(name=self._read_config_value("INDICATOR", "arable_land_unit_name"),
                                                             convert_to = self._read_config_value("INDICATOR", "arable_land_unit_type"),
                                                             factor = float(self._read_config_value("INDICATOR", "arable_land_unit_factor")))
         arable_land_ind.topic = self._read_config_value("INDICATOR", "arable_land_topic")
@@ -333,5 +338,3 @@ class ModelObjectBuilder(object):
         #     new_country = CountryReconciler.get_country_by_faostat_code()
         #     self.country_list.append(new_country)
         #     return new_country
-
-
