@@ -39,11 +39,15 @@ class Parser(object):
 
         self._reconciler = CountryReconciler()
 
+        self._look_for_historical = self.config.getboolean("TRANSLATOR", "historical_mode")
+        if not self._look_for_historical:
+            self._historical_year = self.config.getint("TRANSLATOR", "historical_year")
+        
         self._org_id = self.config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self.config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self.config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self.config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self.config.get("TRANSLATOR", "igr_int"))
+        self._obs_int = self.config.getint("TRANSLATOR", "obs_int")
+        self._sli_int = self.config.getint("TRANSLATOR", "sli_int")
+        self._dat_int = self.config.getint("TRANSLATOR", "dat_int")
+        self._igr_int = self.config.getint("TRANSLATOR", "igr_int")
 
         self.countries_url = self.config.get('URLs', 'country_list')
         print "Finish with countries"
@@ -57,8 +61,11 @@ class Parser(object):
     def model_to_xml(self):
         for datasource in self._user.organization.data_sources:
             for dataset in datasource.datasets:
-                transformer = ModelToXMLTransformer(dataset, "Request", self._user)
-                transformer.run()
+                if len(dataset.observations) > 0:
+                    transformer = ModelToXMLTransformer(dataset, "Request", self._user)
+                    transformer.run()
+                else:
+                    print "Dataset %s has no observations"%dataset.dataset_id
 
     def extract_countries(self):
         response = RestClient.get(self.countries_url, {"format": "json"})
@@ -137,18 +144,26 @@ class Parser(object):
             value_object = Value(None,
                                  None,
                                  Value.MISSING)
-            self.logger.warning('Missing value for ' + indicator.name_en + ', ' + country.name +
-                                                        ', ' + date)
+            self.logger.warning('Missing value for ' + indicator.name_en + ', ' + country.name + ', ' + date)
             
         return value_object
     
+    def _filter_historical_observations(self, year): 
+        if self._look_for_historical:
+            return True
+        else :
+            if isinstance(year, YearInterval):
+                return year.year > self._historical_year
+            else:
+                return year.end_time > self._historical_year
+ 
     def _build_observation(self, indicator, dataset, country, value, date):
         value_object = self._build_value(indicator,
                                          country, 
                                          date,
                                          value)
                                 
-        time = YearInterval(date)
+        time = YearInterval(year=int(date))
         observation = Observation(chain_for_id=self._org_id,
                                   int_for_id=self._obs_int,
                                   ref_time=time,
@@ -197,7 +212,7 @@ class Parser(object):
                                                                       observation_element['value'], 
                                                                       observation_element['date'])
                                 
-                                if historic or observation_element['date'] == requested_year:
+                                if self._filter_historical_observations(observation.ref_time):
                                     country.add_observation(observation)
                                     dataset.add_observation(observation)
                                     slice_object.add_observation(observation)
