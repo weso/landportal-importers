@@ -31,20 +31,29 @@ class WhoImporter(object):
         self._look_for_historical = look_for_historical
         if not self._look_for_historical:
             self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
+            self._last_year = self._historical_year
+            # Initializing variable ids, as is not historical mode, we use the values that we already have
+            self._org_id = self._config.get("TRANSLATOR", "org_id")
+            self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+            self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+            self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+            self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+        else :
+            # Initializing variable ids, as is historical mode, everything is empty data
+            self._org_id = self._config.get("TRANSLATOR", "org_id")
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
+            self._last_year = 0
         self._reconciler = CountryReconciler()
 
-        #Initializing variable ids
-        self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
-        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
-        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
-        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
-
-        #Indicators_dict
+       
+        # Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
         self._indicators_endpoints = self._build_indicators_endpoint()
         
-        #Building parsing instances
+        # Building parsing instances
         self._csv_downloader = self._build_csv_downloader()
         self._csv_reader = self._build_csv_reader()
         
@@ -71,22 +80,22 @@ class WhoImporter(object):
          - Send it to model2xml
          - Actualize config values (ids and last checked)
         """
-        #Download csv file for specified indicators in config file
+        # Download csv file for specified indicators in config file
         self._download_csvs()
         
-        #Generate observations and add it to the common objects
+        # Generate observations and add it to the common objects
         observations = self._build_observations()
         if len(observations) > 0:
-            print len(observations)
             for obs in observations :
                 self._default_dataset.add_observation(obs)
                     
-            #Send model for its trasnlation
+            # Send model for its trasnlation
             translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
             translator.run()
+            
         else:
             print "No observations found"
-        #And it is done. No return needed
+        # And it is done. No return needed
 
     def _build_csv_downloader(self):
         return CsvDownloader(url_pattern=self._config.get("IMPORTER", "url_pattern"),
@@ -128,11 +137,20 @@ class WhoImporter(object):
           
     def _filter_historical_observations(self, year): 
         if self._look_for_historical:
+            if isinstance(year, YearInterval):
+                if year.year > self._last_year:
+                    self._last_year = year.year
+            elif year.end_time > self._last_year:
+                    self._last_year = year.end_time
             return True
         else :
             if isinstance(year, YearInterval):
+                if year.year > self._last_year:
+                    self._last_year = year.year
                 return year.year > self._historical_year
             else:
+                if year.end_time > self._last_year:
+                    self._last_year = year.end_time
                 return year.end_time > self._historical_year
    
     def _build_observations_for_file(self, file_headers, file_content):
@@ -192,8 +210,8 @@ class WhoImporter(object):
         return User(user_login="WHOIMPORTER")
 
     def _build_default_datasource(self):
-        result = DataSource(chain_for_id=self._org_id, 
-                            int_for_id= int(self._read_config_value("DATASOURCE", "datasource_id")))
+        result = DataSource(chain_for_id=self._org_id,
+                            int_for_id=int(self._read_config_value("DATASOURCE", "datasource_id")))
         result.name = self._config.get("DATASOURCE", "name")
         return result
 
@@ -237,14 +255,14 @@ class WhoImporter(object):
             indicator_object.description_en = self._read_config_value(indicator_code, "desc_en")
             indicator_object.description_es = self._read_config_value(indicator_code, "desc_es")
             indicator_object.description_fr = self._read_config_value(indicator_code, "desc_fr")
-            indicator_object.measurement_unit = MeasurementUnit(name = self._read_config_value(indicator_code, "indicator_unit_name"),
-                                                                convert_to = self._read_config_value(indicator_code, "indicator_unit_type"))
+            indicator_object.measurement_unit = MeasurementUnit(name=self._read_config_value(indicator_code, "indicator_unit_name"),
+                                                                convert_to=self._read_config_value(indicator_code, "indicator_unit_type"))
             indicator_object.topic = self._read_config_value(indicator_code, "indicator_topic")
             indicator_object.preferable_tendency = self._parse_preferable_tendency(self._read_config_value(indicator_code, "indicator_tendency"))
     
             result[indicator_code] = indicator_object
     
-            #Returning final dict
+            # Returning final dict
         return result
 
     def _parse_preferable_tendency(self, tendency):
@@ -261,7 +279,7 @@ class WhoImporter(object):
         for indicator_element in requested_indicators:
             indicator_code = self._config.get("INDICATORS", indicator_element)
             indicator_endpoint = IndicatorEndpoint()
-            indicator_endpoint.indicator_code = "GHO/"+indicator_code
+            indicator_endpoint.indicator_code = "GHO/" + indicator_code
             indicator_endpoint.profile = self._read_config_value(indicator_code, "profile_value")
             indicator_endpoint.countries = self._read_config_value(indicator_code, "countries_value")
             indicator_endpoint.regions = self._read_config_value(indicator_code, "regions_value")
@@ -281,4 +299,4 @@ class WhoImporter(object):
         self._default_organization.add_data_source(self._default_datasource)
         self._default_datasource.add_dataset(self._default_dataset)
         self._default_dataset.license_type = self._default_license
-        #No return needed
+        # No return needed
