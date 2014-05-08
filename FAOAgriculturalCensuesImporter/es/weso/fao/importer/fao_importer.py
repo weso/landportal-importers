@@ -91,7 +91,7 @@ class FaoImporter(object):
         
         # Generate observations and add it to the common objects
         observations = self._load_xsls()
-        if len(observations > 0):
+        if len(observations) > 0:
             for obs in observations :
                 self._default_dataset.add_observation(obs)
                     
