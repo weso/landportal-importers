@@ -232,9 +232,9 @@ class UNDPTranslator(object):
             return False
         return True
 
-    @staticmethod
-    def _get_current_date():
-        return int(datetime.now().year)
+
+    def _get_current_date(self):
+        return int(self._config.get("HISTORICAL", "first_valid_year"))
 
 
     @staticmethod
