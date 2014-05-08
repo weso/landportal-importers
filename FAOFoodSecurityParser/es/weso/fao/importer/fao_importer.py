@@ -1,4 +1,5 @@
 from datetime import datetime
+import types
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -27,14 +28,16 @@ class FaoImporter(object):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
+        if not look_for_historical:
+            self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
         self._reconciler = CountryReconciler()
 
         # Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
 
         self.data_sources = dict(self._config.items('data_sources'))
         
@@ -71,9 +74,11 @@ class FaoImporter(object):
         
         # Generate observations and add it to the common objects
         observations = self._load_xsls()
-        for obs in observations :
-            self._default_dataset.add_observation(obs)
-                
+        if len(observations) > 0:
+            for obs in observations :
+                self._default_dataset.add_observation(obs)
+        else:
+            print "No observations found"
         # Send model for its trasnlation
         translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
         translator.run()
@@ -116,15 +121,25 @@ class FaoImporter(object):
                         for j in range(2, len(data[years_row])):
                             
                             year = self._build_ref_time_object(data[years_row][j])
-                            value = self._build_value_object(data[i][j], Value.FLOAT)
-                            result.append(self._build_observation_for_cell(index,
-                                                                           year,
-                                                                           value,
-                                                                           country))
+                            if self._filter_historical_observations(year):
+                                value = self._build_value_object(data[i][j], Value.FLOAT)
+                                result.append(self._build_observation_for_cell(index,
+                                                                               year,
+                                                                               value,
+                                                                               country))
                     #result += self._extract_data_from_matrix(file_name.strip(), data)
         print "Done with Excel file %s" % (file_name)
         
         return result
+    
+    def _filter_historical_observations(self, year): 
+        if self._look_for_historical:
+            return True
+        else :
+            if isinstance(year, YearInterval):
+                return year.year > self._historical_year
+            else:
+                return year.end_time > self._historical_year 
     
     def _extract_data_from_matrix(self, file_name, data):
         result = []
