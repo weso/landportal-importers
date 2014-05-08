@@ -350,7 +350,7 @@ class ModelObjectBuilder(object):
         if self._look_for_historical:
             return True
         if not "_current_year" in self.__dict__:
-            self._current_year = int(datetime.now().year)
+            self._current_year = int(self._config.get("HISTORICAL", "first_valid_year"))
         else:
             if int(obs_object.ref_time.get_time_string()) < self._current_year:
                 return False
