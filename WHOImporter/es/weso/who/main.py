@@ -18,7 +18,7 @@ def run():
     config = ConfigParser()
     config.read("../../../files/configuration.ini")
 
-    who_importer = WhoImporter(log, config, True)
+    who_importer = WhoImporter(log, config, config.getboolean("TRANSLATOR", "historical_mode"))
     who_importer.run()
 
     print "Done!"

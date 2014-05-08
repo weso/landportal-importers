@@ -29,14 +29,16 @@ class WhoImporter(object):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
+        if not self._look_for_historical:
+            self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
         self._reconciler = CountryReconciler()
 
         #Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
 
         #Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
@@ -74,13 +76,16 @@ class WhoImporter(object):
         
         #Generate observations and add it to the common objects
         observations = self._build_observations()
-        for obs in observations :
-            self._default_dataset.add_observation(obs)
-                
-        #Send model for its trasnlation
-        translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
-        translator.run()
-
+        if len(observations) > 0:
+            print len(observations)
+            for obs in observations :
+                self._default_dataset.add_observation(obs)
+                    
+            #Send model for its trasnlation
+            translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+            translator.run()
+        else:
+            print "No observations found"
         #And it is done. No return needed
 
     def _build_csv_downloader(self):
@@ -120,7 +125,16 @@ class WhoImporter(object):
             observations += self._build_observations_for_file(csv_headers, csv_content)
         
         return observations
-            
+          
+    def _filter_historical_observations(self, year): 
+        if self._look_for_historical:
+            return True
+        else :
+            if isinstance(year, YearInterval):
+                return year.year > self._historical_year
+            else:
+                return year.end_time > self._historical_year
+   
     def _build_observations_for_file(self, file_headers, file_content):
         observations = []
         
@@ -130,11 +144,14 @@ class WhoImporter(object):
         country_index = file_headers.index('COUNTRY (CODE)')
         
         for row in file_content:
-            observations.append(self._build_observation_for_line(row, indicator_index, year_index, value_index, country_index))
+            year = self._build_ref_time_object(row[year_index])
+            
+            if self._filter_historical_observations(year):
+                observations.append(self._build_observation_for_line(row, indicator_index, year, value_index, country_index))
         
         return observations
             
-    def _build_observation_for_line(self, row, indicator_index, year_index, value_index, country_index):
+    def _build_observation_for_line(self, row, indicator_index, year, value_index, country_index):
         result = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
         self._obs_int += 1  # Updating id value
         
@@ -142,14 +159,14 @@ class WhoImporter(object):
         result.value = self._build_value_object(row[value_index])
         result.computation = self._get_computation_object()  # Always the same, no param needed
         result.issued = self._build_issued_object()  # No param needed
-        result.ref_time = self._build_ref_time_object(row[year_index])
+        result.ref_time = year
         self._get_country_by_name(row[country_index]).add_observation(result)  # And that stablish therelation in both directions
         
         return result
     
     @staticmethod
     def _build_ref_time_object(year):
-        return YearInterval(year=year)
+        return YearInterval(year=int(year))
 
     def _build_issued_object(self):
         return Instant(datetime.now())
