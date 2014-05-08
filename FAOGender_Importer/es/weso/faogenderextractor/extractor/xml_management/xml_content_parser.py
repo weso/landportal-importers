@@ -92,9 +92,8 @@ class XmlContentParser(object):
             return False
         return True
 
-    @staticmethod
-    def _get_current_date():
-        return int(datetime.now().year)
+    def _get_current_date(self):
+        return int(self._config.get("HISTORICAL", "first_valid_year"))
 
     @staticmethod
     def _get_year_of_data_indicator(data_of_an_indicator):
