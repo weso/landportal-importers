@@ -21,7 +21,7 @@ def run():
 
     xml_extractor = IpfriExtractor(log, config)
     xml_extractor.run()
-    xml_translator = IpfriTranslator(log, config)
+    xml_translator = IpfriTranslator(log, config, True)
     xml_translator.run()
     print 'Done!'
 

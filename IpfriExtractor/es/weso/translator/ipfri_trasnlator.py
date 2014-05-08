@@ -55,8 +55,8 @@ class IpfriTranslator(object):
             self.paths_to_files.append(path_pattern.replace("{year}", year))
 
     def determine_paths_to_current_year(self, path_pattern):
-        today = datetime.now()
-        candidate_file = path_pattern.replace("{year}", str(today.year))
+        year = self.config.get("AVAILABLE_YEARS", "year_to_look_for")
+        candidate_file = path_pattern.replace("{year}", int(year))
         if os.path.exists(candidate_file):
             self.paths_to_files.append(candidate_file)
         else:
