@@ -29,25 +29,25 @@ class FaostatTranslator(object):
 
     """
 
-    def __init__(self):
+    def __init__(self, log, config, look_for_historical):
         """
         Constructor
 
         """
-        self.config = ConfigParser()
-        self.config.read("../../../../files/configuration.ini")
-        self.log = logging.getLogger('faostatlog')
-        self.observations = []  # it will contains all the data encapsuled in model objects
-        self.needed_indicators = IndicatorNeededResolver(self.config, self.log).run()
-        self.land_area_reference = {}
-        self.reconciler = CountryReconciler()
+        self._log = log
+        self._config = config
+        self._look_for_historical = look_for_historical
+        self._observations = []  # it will contains all the data encapsuled in model objects
+        self._needed_indicators = IndicatorNeededResolver(self._config, self._log).run()
+        self._land_area_reference = {}
+        self._reconciler = CountryReconciler()
         # It will contain data with the general country areas
         # The key of the dictionary will be formed by
         # country_name + year, and will contain the land_area
         # data associated to this value par
 
 
-    def run(self, look_for_historical):
+    def run(self):
         """
         Steps:
         
@@ -56,9 +56,9 @@ class FaostatTranslator(object):
         
         """
 
-        registers = self.turn_raw_data_into_registers(look_for_historical)
+        registers = self.turn_raw_data_into_registers(self._look_for_historical)
         registers += RelativeRegistersCalculator(registers,
-                                                           self.land_area_reference,
+                                                           self._land_area_reference,
                                                            self.key_for_land_area_ref).\
                                                             run()  # The last arg. is a function
         dataset_model = self.build_model_objects_from_registers(registers)
@@ -77,20 +77,20 @@ class FaostatTranslator(object):
         xml_gen.run()
 
     def build_user_object(self, organization):
-        user = User(user_login="FaostatImporter")
+        user = User(user_login=self._config.get("USER", "login"))
         user.organization = organization
         return user
 
     def build_model_objects_from_registers(self, registers):
-        builder = ModelObjectBuilder(registers, self.config, self.log, self.reconciler)
+        builder = ModelObjectBuilder(registers, self._config, self._log, self._reconciler)
         return builder.run()
 
     def get_csv_file_name(self):
-        csv_file = os.listdir(self.config.get("FAOSTAT", "data_file_path"))[0]
+        csv_file = os.listdir(self._config.get("FAOSTAT", "data_file_path"))[0]
         if csv_file[-4:] != '.csv':
             raise RuntimeError("Unexpected content while looking for indicators\
                 . CSV file expected but {0} was found".format(csv_file))
-        return self.config.get("FAOSTAT", "data_file_path") + "/" + csv_file
+        return self._config.get("FAOSTAT", "data_file_path") + "/" + csv_file
 
 
     def turn_raw_data_into_registers(self, look_for_historical):
@@ -109,7 +109,7 @@ class FaostatTranslator(object):
                     self.actualize_land_area_data_if_needed(candidate_register)
                     result.append(self.create_field_list(propper_line, i + 1))
             except RuntimeError as e:
-                self.log.error("Error while parsing a row form the csv_file: {0}. Row will be ignored".format(str(e)))
+                self._log.error("Error while parsing a row form the csv_file: {0}. Row will be ignored".format(str(e)))
         return result
 
 
@@ -118,8 +118,8 @@ class FaostatTranslator(object):
             return
         key = self.key_for_land_area_ref(candidate_register[TranslatorConst.COUNTRY_CODE],
                                          candidate_register[TranslatorConst.YEAR])
-        if not key in self.land_area_reference:
-            self.land_area_reference[key] = candidate_register[TranslatorConst.VALUE]
+        if not key in self._land_area_reference:
+            self._land_area_reference[key] = candidate_register[TranslatorConst.VALUE]
         else:
             raise RuntimeError("Duplicated land area value for country {0} and \
                 year {1}. The program will continue ignoring the new value, but\
@@ -143,17 +143,17 @@ class FaostatTranslator(object):
             return False
         elif not self.pass_filter_indicator_needed(candidate_register):
             return False
-        elif self.reconciler.get_country_by_faostat_code(candidate_register[TranslatorConst.COUNTRY_CODE]) is None:
+        elif self._reconciler.get_country_by_faostat_code(candidate_register[TranslatorConst.COUNTRY_CODE]) is None:
             return False
         return True
 
     def pass_filter_current_date(self, candidate_register):
-        if candidate_register[TranslatorConst.YEAR] == date.today().year:
+        if int(candidate_register[TranslatorConst.YEAR]) >= self._config.get("HISTORICAL", "first_valid_year"):
             return True
         return False
 
     def pass_filter_indicator_needed(self, candidate_register):
-        if (candidate_register[TranslatorConst.ITEM] in self.needed_indicators):
+        if (candidate_register[TranslatorConst.ITEM] in self._needed_indicators):
             return True
         return False
 

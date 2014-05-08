@@ -17,15 +17,9 @@ class FaostatExtractor(object):
     '''
 
 
-    def __init__(self):
-        self.config = ConfigParser()
-        self.config.read("../../../../files/configuration.ini")
-        self.log = logging.getLogger('faostatlog')
-        '''
-        Constructor
-        '''
-        
-        pass
+    def __init__(self, log, config):
+        self.log = log
+        self.config = config
 
 
     def run(self):
@@ -51,8 +45,8 @@ class FaostatExtractor(object):
         content in the place specified by the configuration parameter ["FAOSTAT", "datapath"]
         '''
         self.log.info("Extracting data from zip file...")
-        sourceZip = ZipFile(zip_file_name) #open the zip File
-        if len(sourceZip.namelist()) != 1: #The zip file should contain a single element
+        sourceZip = ZipFile(zip_file_name)  # open the zip File
+        if len(sourceZip.namelist()) != 1:  # The zip file should contain a single element
             raise RuntimeError("Unexpected zip file. Content will not be extracted")
         else:
             sourceZip.extract(sourceZip.namelist()[0], self.config.get("FAOSTAT", "data_file_path"))
@@ -77,4 +71,3 @@ class FaostatExtractor(object):
         except:
             e = sys.exc_info()[0]
             raise RuntimeError("Unable to save data from {0}. Cause: {1}".format(self.config.get("FAOSTAT", "zip_url"), e))
-            

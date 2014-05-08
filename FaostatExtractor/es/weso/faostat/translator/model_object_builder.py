@@ -121,6 +121,7 @@ class ModelObjectBuilder(object):
         country.add_observation(new_observation)
         self._dataset.add_observation(new_observation)
 
+
     def add_issued_to_observation(self, observation, register):
         #Adding time in which the observation has been treated by us
         observation.issued = Instant(datetime.now())

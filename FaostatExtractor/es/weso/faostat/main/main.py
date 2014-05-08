@@ -6,8 +6,9 @@ Created on 15/01/2014
 
 import logging
 from es.weso.faostat.extractor.faostat_extractor import FaostatExtractor
-from es.weso.faostat.indicator_catcher.faostat_indicator_catcher import FaostatIndicatorCatcher
 from es.weso.faostat.translator.faostat_translator import FaostatTranslator
+from ConfigParser import ConfigParser
+
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -15,21 +16,22 @@ def configure_log():
                         format=FORMAT)
 
 
-def run():
+def run(look_for_historical=True):
+    config = ConfigParser()
+    config.read("../../../../files/configuration.ini")
+    log = logging.getLogger('faostatlog')
 
     configure_log()
-    csv_extractor = FaostatExtractor()
+    csv_extractor = FaostatExtractor(log, config)
     csv_extractor.run()
-    csv_indicatorcatcher = FaostatIndicatorCatcher()
-    csv_indicatorcatcher.run()
-    csv_translator = FaostatTranslator()
-    csv_translator.run(True)  
-    
-    
+    # csv_indicatorcatcher = FaostatIndicatorCatcher()
+    # csv_indicatorcatcher.run()
+    csv_translator = FaostatTranslator(log, config, look_for_historical)
+    csv_translator.run()
+
     
     print 'Done!'
-    
-    
+
 
 if __name__ == '__main__':
-    run()
+    run(True)
