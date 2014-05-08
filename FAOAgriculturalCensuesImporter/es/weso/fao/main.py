@@ -18,7 +18,7 @@ def run():
     config = ConfigParser()
     config.read("../../../files/configuration.ini")
 
-    fao_importer = FaoImporter(log, config, True)
+    fao_importer = FaoImporter(log, config, config.getboolean("TRANSLATOR", "historical_year"))
     fao_importer.run()
 
     print "Done!"

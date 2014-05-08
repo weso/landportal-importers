@@ -27,14 +27,16 @@ class FaoImporter(object):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
+        if not self._look_for_historical:
+            self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
         self._reconciler = CountryReconciler()
 
         # Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
 
         # Indicators code
         self.TNH = 0  # Total number of holdings
@@ -89,13 +91,16 @@ class FaoImporter(object):
         
         # Generate observations and add it to the common objects
         observations = self._load_xsls()
-        for obs in observations :
-            self._default_dataset.add_observation(obs)
-                
-        # Send model for its trasnlation
-        translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
-        translator.run()
-
+        if len(observations > 0):
+            for obs in observations :
+                self._default_dataset.add_observation(obs)
+                    
+            # Send model for its trasnlation
+            translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+            translator.run()
+        else:
+            print "No observations found"
+            
         # And it is done. No return needed
 
     def _build_xsl_reader(self):
@@ -135,6 +140,15 @@ class FaoImporter(object):
         
         return result
     
+    def _filter_historical_observations(self, year): 
+        if self._look_for_historical:
+            return True
+        else :
+            if isinstance(year, YearInterval):
+                return year.year > self._historical_year
+            else:
+                return year.end_time > self._historical_year 
+ 
     def _extract_data_generic(self, data, country_col, year_col, tnh_col = None, tah_col = None, 
                               now_col = None, nte_col = None, not_col = None, nmo_col = None, 
                               aow_col = None, ate_col = None, aot_col = None, amo_col = None):
@@ -147,56 +161,57 @@ class FaoImporter(object):
                     country = self._get_country_by_name(element[country_col])
                 year = self._build_ref_time_object(str(element[year_col]).replace("/", "-"))
                 
-                if (tnh_col != None):
-                    tnh_result = self._build_observation_for_line(self.TNH, year, element[tnh_col], Value.INTEGER, country)
-                    result.append(tnh_result)        
-                if (tah_col != None):
-                    tah_result = self._build_observation_for_line(self.TAH, year, element[tah_col], Value.INTEGER, country)
-                    result.append(tah_result)
-                if (now_col != None):
-                    now_result = self._build_observation_for_line(self.NOW, year, element[now_col], Value.INTEGER, country)
-                    result.append(now_result)
-                if (aow_col != None):
-                    aow_result = self._build_observation_for_line(self.AOW, year, element[aow_col], Value.INTEGER, country)
-                    result.append(aow_result)
-                if (nte_col != None):
-                    nte_result = self._build_observation_for_line(self.NTE, year, element[nte_col], Value.INTEGER, country)
-                    result.append(nte_result)
-                if (ate_col != None):
-                    ate_result = self._build_observation_for_line(self.ATE, year, element[ate_col], Value.INTEGER, country)
-                    result.append(ate_result)
-                if (not_col != None):
-                    not_result = self._build_observation_for_line(self.NOT, year, element[not_col], Value.INTEGER, country)
-                    result.append(not_result)
-                if (aot_col != None):
-                    aot_result = self._build_observation_for_line(self.AOT, year, element[aot_col], Value.INTEGER, country)
-                    result.append(aot_result)
-                if (nmo_col != None):
-                    nmo_result = self._build_observation_for_line(self.NMO, year, element[nmo_col], Value.INTEGER, country)
-                    result.append(nmo_result)
-                if (amo_col != None):
-                    amo_result = self._build_observation_for_line(self.AMO, year, element[amo_col], Value.INTEGER, country)
-                    result.append(amo_result)
-                
-                if (tnh_col != None):
+                if self._filter_historical_observations(year):
+                    if (tnh_col != None):
+                        tnh_result = self._build_observation_for_line(self.TNH, year, element[tnh_col], Value.INTEGER, country)
+                        result.append(tnh_result)        
+                    if (tah_col != None):
+                        tah_result = self._build_observation_for_line(self.TAH, year, element[tah_col], Value.INTEGER, country)
+                        result.append(tah_result)
                     if (now_col != None):
-                        result.append(self._build_observation_for_line(self.SNOW, year, self._calculate_percentage_of_data(tnh_result.value.value, now_result.value.value), Value.FLOAT, country))
-                    if (nte_col != None):
-                        result.append(self._build_observation_for_line(self.SNTE, year, self._calculate_percentage_of_data(tnh_result.value.value, nte_result.value.value), Value.FLOAT, country))
-                    if (not_col != None):
-                        result.append(self._build_observation_for_line(self.SNOT, year, self._calculate_percentage_of_data(tnh_result.value.value, not_result.value.value), Value.FLOAT, country))
-                    if (nmo_col != None):
-                        result.append(self._build_observation_for_line(self.SNMO, year, self._calculate_percentage_of_data(tnh_result.value.value, nmo_result.value.value), Value.FLOAT, country))
-                        
-                if (tah_col != None):                        
+                        now_result = self._build_observation_for_line(self.NOW, year, element[now_col], Value.INTEGER, country)
+                        result.append(now_result)
                     if (aow_col != None):
-                        result.append(self._build_observation_for_line(self.SAOW, year, self._calculate_percentage_of_data(tah_result.value.value, aow_result.value.value), Value.FLOAT, country))
+                        aow_result = self._build_observation_for_line(self.AOW, year, element[aow_col], Value.INTEGER, country)
+                        result.append(aow_result)
+                    if (nte_col != None):
+                        nte_result = self._build_observation_for_line(self.NTE, year, element[nte_col], Value.INTEGER, country)
+                        result.append(nte_result)
                     if (ate_col != None):
-                        result.append(self._build_observation_for_line(self.SATE, year, self._calculate_percentage_of_data(tah_result.value.value, ate_result.value.value), Value.FLOAT, country))
+                        ate_result = self._build_observation_for_line(self.ATE, year, element[ate_col], Value.INTEGER, country)
+                        result.append(ate_result)
+                    if (not_col != None):
+                        not_result = self._build_observation_for_line(self.NOT, year, element[not_col], Value.INTEGER, country)
+                        result.append(not_result)
                     if (aot_col != None):
-                        result.append(self._build_observation_for_line(self.SAOT, year, self._calculate_percentage_of_data(tah_result.value.value, aot_result.value.value), Value.FLOAT, country))
+                        aot_result = self._build_observation_for_line(self.AOT, year, element[aot_col], Value.INTEGER, country)
+                        result.append(aot_result)
+                    if (nmo_col != None):
+                        nmo_result = self._build_observation_for_line(self.NMO, year, element[nmo_col], Value.INTEGER, country)
+                        result.append(nmo_result)
                     if (amo_col != None):
-                        result.append(self._build_observation_for_line(self.SAMO, year, self._calculate_percentage_of_data(tah_result.value.value, amo_result.value.value), Value.FLOAT, country))
+                        amo_result = self._build_observation_for_line(self.AMO, year, element[amo_col], Value.INTEGER, country)
+                        result.append(amo_result)
+                    
+                    if (tnh_col != None):
+                        if (now_col != None):
+                            result.append(self._build_observation_for_line(self.SNOW, year, self._calculate_percentage_of_data(tnh_result.value.value, now_result.value.value), Value.FLOAT, country))
+                        if (nte_col != None):
+                            result.append(self._build_observation_for_line(self.SNTE, year, self._calculate_percentage_of_data(tnh_result.value.value, nte_result.value.value), Value.FLOAT, country))
+                        if (not_col != None):
+                            result.append(self._build_observation_for_line(self.SNOT, year, self._calculate_percentage_of_data(tnh_result.value.value, not_result.value.value), Value.FLOAT, country))
+                        if (nmo_col != None):
+                            result.append(self._build_observation_for_line(self.SNMO, year, self._calculate_percentage_of_data(tnh_result.value.value, nmo_result.value.value), Value.FLOAT, country))
+                            
+                    if (tah_col != None):                        
+                        if (aow_col != None):
+                            result.append(self._build_observation_for_line(self.SAOW, year, self._calculate_percentage_of_data(tah_result.value.value, aow_result.value.value), Value.FLOAT, country))
+                        if (ate_col != None):
+                            result.append(self._build_observation_for_line(self.SATE, year, self._calculate_percentage_of_data(tah_result.value.value, ate_result.value.value), Value.FLOAT, country))
+                        if (aot_col != None):
+                            result.append(self._build_observation_for_line(self.SAOT, year, self._calculate_percentage_of_data(tah_result.value.value, aot_result.value.value), Value.FLOAT, country))
+                        if (amo_col != None):
+                            result.append(self._build_observation_for_line(self.SAMO, year, self._calculate_percentage_of_data(tah_result.value.value, amo_result.value.value), Value.FLOAT, country))
                         
         return result
         
