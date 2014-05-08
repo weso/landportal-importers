@@ -154,7 +154,6 @@ def _extract_sectors(info_node):
         _raise_error("sectors", "not found")
         return  # It will throw an error, the next won't execute.... but let's ensure that
     elif text == NO_VALUE:
-        print
         return ['Unknown']  # Unknowk sector
     result = []
     candidate_sectors = text.split(",")
@@ -163,7 +162,7 @@ def _extract_sectors(info_node):
             result.append(candidate.replace(" ", ""))
     if len(result) == 0:
         _raise_error("sectors", "not found")
-    print result
+
     return result
 
 

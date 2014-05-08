@@ -9,21 +9,23 @@ import logging
 from es.weso.landmatrix.extractor.LandMatrixExtractorXML import LandMatrixExtractorXML
 from es.weso.landmatrix.translator.land_matrix_translator import LandMatrixTranslator
 
+
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(filename='land_matrix_extractor.log', level=logging.INFO, 
                         format=FORMAT)
 
-def run():
+
+def run(look_for_historical=True):
     configure_log()
     log = logging.getLogger("lmextractor")
     config = ConfigParser()
     config.read("../../../../files/configuration.ini")
-    # xml_extractor = LandMatrixExtractorXML()
-    # xml_extractor.run()
-    translator = LandMatrixTranslator(log, config)
-    translator.run(True)
+    xml_extractor = LandMatrixExtractorXML()
+    xml_extractor.run()
+    translator = LandMatrixTranslator(log, config, look_for_historical=True)
+    translator.run()
     print 'Done!'
 
 if __name__ == '__main__':
-    run()
+    run(True)

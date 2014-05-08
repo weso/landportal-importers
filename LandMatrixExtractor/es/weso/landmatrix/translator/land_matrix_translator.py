@@ -41,13 +41,14 @@ class LandMatrixTranslator(object):
 
 
 
-    def __init__(self, log, config):
+    def __init__(self, log, config, look_for_historical):
         """
         Constructor
 
         """
         self._log = log
         self._config = config
+        self._look_for_historical = look_for_historical
 
         #Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
@@ -122,7 +123,7 @@ class LandMatrixTranslator(object):
         #No return needed
 
 
-    def run(self, look_for_historical):
+    def run(self):
         """
         Translates the downloaded data into model objects. look_for_historical is a boolean
         that indicates if we have to consider old information or only bear in mind actual one
@@ -143,8 +144,32 @@ class LandMatrixTranslator(object):
     def _turn_deal_entrys_into_obs_objects(self, deal_entrys):
         result = []
         for key in deal_entrys:
-            result.append(self._turn_deal_entry_into_obs(deal_entrys[key]))  # The method returns a list
+            new_obs = self._turn_deal_entry_into_obs(deal_entrys[key])
+            if self._pass_filters(new_obs):
+                result.append(new_obs)  # The method returns a list
         return result
+
+    def _pass_filters(self, obs):
+        if self._look_for_historical:
+            return True
+        if not "_target_date" in self.__dict__:
+            self._target_date = self._get_current_date()
+        elif self._get_year_of_observation(obs) < self._target_date:
+            return False
+        return True
+
+
+    @staticmethod
+    def _get_year_of_observation(obs):
+        date_obj = obs.ref_time
+        if type(date_obj) == YearInterval:
+            return int(date_obj.year)
+        else:
+            raise RuntimeError("Unexpected object date. Impossible to build observation from it: " + type(date_obj))
+
+
+    def _get_current_date(self):
+        return int(self._config.get("HISTORICAL", "first_valid_year"))
 
     def _turn_deal_entry_into_obs(self, deal_entry):
         result = Observation(chain_for_id=self._org_id, int_for_id=self._obs_int)
