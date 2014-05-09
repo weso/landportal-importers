@@ -1,8 +1,8 @@
-'''
+"""
 Created on 09/01/2014
 
 @author: Miguel Otero
-'''
+"""
 
 import logging
 import ConfigParser
@@ -15,19 +15,31 @@ def configure_log():
     logging.basicConfig(filename='oecd_extractor.log', level=logging.INFO, 
                         format=FORMAT)
 
+
 def run():
     configure_log()
     logger = logging.getLogger('main')
     logger.info('Starting run')
 
+    config_path = '../configuration/data_sources.ini'
     config = ConfigParser.ConfigParser()
-    config.read('../configuration/data_sources.ini', )
+    config.read(config_path)
 
     extractor = RestClient(logger, config)
     extractor.run()
-    translator = OecdTranslator(logger, config, True)
-    translator.run()
-    print "unWE"
+    try:
+        translator = OecdTranslator(logger, config, True)
+        translator.run()
+        print "Done!"
+
+    except BaseException as e:
+        print e.message
+
+    finally:
+        with open(config_path, 'wb') as configfile:
+            config.write(configfile)
+
+
 
 if __name__ == '__main__':
     run()

@@ -24,13 +24,23 @@ class OecdTranslator(object):
 
         """
         json_objects = JsonLoader(self._log, self._config).run()
-        datasets, user, import_process, relations = ModelObjectBuilder(log=self._log,
-                                                                       config=self._config,
-                                                                       json_objects=json_objects,
-                                                                       look_for_historical=self._look_for_historical).run()
+        object_builder = ModelObjectBuilder(log=self._log,
+                                            config=self._config,
+                                            json_objects=json_objects,
+                                            look_for_historical=self._look_for_historical)
+        datasets, user, import_process, relations = object_builder.run()
 
+        errors_count = 0
         for dataset in datasets:
-            ModelToXMLTransformer(dataset=dataset,
-                                  user=user,
-                                  import_process=import_process,
-                                  indicator_relations=relations).run()
+            try:
+                ModelToXMLTransformer(dataset=dataset,
+                                      user=user,
+                                      import_process=import_process,
+                                      indicator_relations=relations).run()
+            except BaseException as e:
+                self._log.error(e.message)
+                errors_count += 1
+        if errors_count < len(datasets):  # If some observation could reach the server, we have to actualize ids
+            object_builder.actualize_config_values()
+        if errors_count > 0:
+            raise RuntimeError("Program finalized with errors. Check logs")

@@ -22,12 +22,6 @@ from .indicator_key_mapper import KeyMapper
 __author__ = 'Dani'
 
 
-
-
-
-
-
-
 class ModelObjectBuilder(object):
 
     INDICATOR_JSON = "VARIABLE"
@@ -50,10 +44,18 @@ class ModelObjectBuilder(object):
 
         # Getting propper ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+        self._first_valid_year = int(self._config.get("HISTORICAL", "first_valid_year"))
+        self._last_checked_year = self._first_valid_year - 1
+        if not look_for_historical:
+            self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
+            self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
+            self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+            self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+        else:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._igr_int = 0
+            self._dat_int = 0
 
         # Creating objects that would be necessary during the construction of the model
         self._indicators_dict = self._build_indicators_dict()
@@ -67,6 +69,13 @@ class ModelObjectBuilder(object):
         self._default_license = self._build_default_license()
         self.relate_common_objects()
 
+    def actualize_config_values(self):
+        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
+        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
+        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
+        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
+
+        self._config.set("HISTORICAL", "first_valid_year", self._last_checked_year + 1)
 
 
     def _build_default_license(self):
@@ -349,10 +358,8 @@ class ModelObjectBuilder(object):
     def _pass_observation_filters(self, obs_object):
         if self._look_for_historical:
             return True
-        if not "_current_year" in self.__dict__:
-            self._current_year = int(self._config.get("HISTORICAL", "first_valid_year"))
         else:
-            if int(obs_object.ref_time.get_time_string()) < self._current_year:
+            if int(obs_object.ref_time.get_time_string()) < self._first_valid_year:
                 return False
             return True
 
@@ -366,11 +373,17 @@ class ModelObjectBuilder(object):
         result.computation = self._get_computation_of_observation()  # Always the same, no parameter needed
         result.issued = self._build_issued_object_of_observation()  # No param needed. It should be calculated
         result.ref_time = self._build_ref_time_of_observation(obs_dict)
+        self._actualize_last_checked_if_needed(result)
         #Referring country
         self._join_observation_and_country(result, obs_dict)
 
 
         return result
+
+    def _actualize_last_checked_if_needed(self, observation):
+        int_year = int(observation.ref_time.year)  # We can do that because we expect ref-time to be a YearInterval
+        if int_year > self._last_checked_year:
+            self._last_checked_year = int_year
 
     def _join_observation_and_country(self, obs_object, obs_dict):
         country_key = obs_dict[self.ISO3_JSON]
