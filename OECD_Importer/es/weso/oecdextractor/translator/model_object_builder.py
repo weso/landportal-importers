@@ -422,7 +422,7 @@ class ModelObjectBuilder(object):
             result.value_type = Value.FLOAT
 
         #Deciding status
-        if unicode(obs_dict[self.VALUE_JSON]).isnumeric():  # Means that we have a numeric obs value
+        if type(obs_dict[self.VALUE_JSON])in [type(1.0), type(1)]:  # Means that we have a numeric obs value
             result.obs_status = Value.AVAILABLE
         else:  # It means that we have a string value in observation, indicating 'None" value
             result.obs_status = Value.MISSING
