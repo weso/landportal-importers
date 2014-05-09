@@ -1,14 +1,10 @@
-'''
+"""
 Created on 27/01/2014
 
 @author: Dani
-'''
+"""
 
-from ConfigParser import ConfigParser
 import codecs
-from datetime import date
-from datetime import datetime
-import logging
 import os
 import re
 
@@ -58,9 +54,8 @@ class FaostatTranslator(object):
 
         registers = self.turn_raw_data_into_registers(self._look_for_historical)
         registers += RelativeRegistersCalculator(registers,
-                                                           self._land_area_reference,
-                                                           self.key_for_land_area_ref).\
-                                                            run()  # The last arg. is a function
+                                                 self._land_area_reference,
+                                                 self.key_for_land_area_ref).run()  # The last arg. is a function
         builder = ModelObjectBuilder(registers, self._config, self._log, self._reconciler, self._look_for_historical)
         try:
             dataset_model = builder.run()
@@ -122,7 +117,7 @@ class FaostatTranslator(object):
                     self.actualize_land_area_data_if_needed(candidate_register)
                     result.append(self.create_field_list(propper_line, i + 1))
             except RuntimeError as e:
-                self._log.error("Error while parsing a row form the csv_file: {0}. Row will be ignored".format(str(e)))
+                self._log.info("While parsing a row form the csv_file: {0}. Row will be ignored".format(e.message))
         return result
 
 
@@ -166,7 +161,7 @@ class FaostatTranslator(object):
         return False
 
     def pass_filter_indicator_needed(self, candidate_register):
-        if (candidate_register[TranslatorConst.ITEM] in self._needed_indicators):
+        if candidate_register[TranslatorConst.ITEM] in self._needed_indicators:
             return True
         return False
 
@@ -305,15 +300,3 @@ class FaostatTranslator(object):
 
         """
         return primitive_data[:-2]
-    
-    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
