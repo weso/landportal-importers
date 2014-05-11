@@ -10,7 +10,7 @@ class Dataset(object):
     classdocs
 
     """
-
+    MONTHLY = "http://purl.org/linked-data/sdmx/2009/code#freq-M"
     YEARLY = "http://purl.org/linked-data/sdmx/2009/code#freq-A"
     THREE_YEARS = "http://purl.org/linked-data/sdmx/2009/code#freq-UNKNOKNW"  # TODO: temporal. Talk with Labra
 
