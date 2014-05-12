@@ -22,29 +22,34 @@ from lpentities.organization import Organization
 
 class ModelObjectBuilder(object):
 
-    def __init__(self, log, config, registers):
+    def __init__(self, log, config, registers, look_for_historical):
         self._log = log
         self._config = config
         self._registers = registers
 
         #Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
 
-
+        if not look_for_historical:
+            self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
+            self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
+            self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+            self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        else:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
 
         self._indicators_dict = self._build_indicators_dict()
 
         #Building common objects
         self._default_user = self._build_default_user()  # Done
-        self._default_datasource = self._build_default_datasource()  # TODO
-        self._default_dataset = self._build_default_dataset()  # TODO
-        self._default_organization = self._build_default_organization()  # TODO
-        self._default_license = self._build_default_license()  # TODO
-        self._relate_common_objects()  # TODO
+        self._default_datasource = self._build_default_datasource()
+        self._default_dataset = self._build_default_dataset()
+        self._default_organization = self._build_default_organization()
+        self._default_license = self._build_default_license()
+        self._relate_common_objects()
 
         self._default_computation = Computation(uri=Computation.RAW)
 
@@ -130,7 +135,7 @@ class ModelObjectBuilder(object):
     def _build_default_dataset(self):
         result = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
         self._dat_int += 1  # Needed increment
-        result.frequency = Dataset.YEARLY  # TODO. No idea!
+        result.frequency = Dataset.YEARLY
         return result
 
     def _build_default_organization(self):

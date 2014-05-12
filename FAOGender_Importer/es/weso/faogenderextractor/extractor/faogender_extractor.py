@@ -43,7 +43,23 @@ class FaoGenderExtractor(object):
 
 
     def _build_model_objects_from_registers(self, registers):
-        ModelObjectBuilder(self._log, self._config, registers).run()
+        try:
+            builder = ModelObjectBuilder(self._log, self._config, registers, self._look_for_historical)
+            builder.run()
+            self.actualize_config_values(builder)
+        except BaseException as e:
+            self._log.error("Exception while sending xml to the receiver module: " + e.message)
+            raise e
+
+    def actualize_config_values(self, builder):
+        self._config.set("TRANSLATOR", "obs_int", builder._obs_int)
+        self._config.set("TRANSLATOR", "igr_int", builder._igr_int)
+        self._config.set("TRANSLATOR", "sli_int", builder._sli_int)
+        self._config.set("TRANSLATOR", "dat_int", builder._dat_int)
+
+        with open("../../../../files/configuration.ini", "wb") as config_file:
+            self._config.write(config_file)
+
 
 
     def _get_xml_info_for_all_countries(self):
