@@ -29,6 +29,7 @@ class WhoImporter(object):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
+        
         if not self._look_for_historical:
             self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
             self._last_year = self._historical_year
@@ -46,9 +47,9 @@ class WhoImporter(object):
             self._dat_int = 0
             self._igr_int = 0
             self._last_year = 0
+        
         self._reconciler = CountryReconciler()
 
-       
         # Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
         self._indicators_endpoints = self._build_indicators_endpoint()
@@ -94,7 +95,7 @@ class WhoImporter(object):
             translator.run()
             
         else:
-            print "No observations found"
+            self._log.warn("No observations found")
         # And it is done. No return needed
 
     def _build_csv_downloader(self):
@@ -107,50 +108,37 @@ class WhoImporter(object):
     def _build_csv_reader(self):
         return CsvReader()
     
-    def _actualize_config_values(self, last_year):
-        self._config.set("TRANSLATOR", "org_id", self._org_id)
-        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
-        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
-        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
-        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
-        self._config.set("TRANSLATOR", "ind_int", self._ind_int)
-        self._config.set("TRANSLATOR", "sou_int", self._sou_int)
-        self._config.set("AVAILABLE_TIME", "last_checked_year", last_year)
-
     def _download_csvs(self):
-        print "Downloading csv files..."
+        self._log.info("Downloading csv files...")
         for ind_end in self._indicators_endpoints:
             if self._csv_downloader.download_csv(self._indicators_endpoints[ind_end].indicator_code, self._indicators_endpoints[ind_end].profile, self._indicators_endpoints[ind_end].countries, self._indicators_endpoints[ind_end].regions, self._indicators_endpoints[ind_end].file_name) :
-                print "\tSUCCESS downloading: " + self._indicators_endpoints[ind_end].file_name
+                self._log.info("\tSUCCESS downloading: " + self._indicators_endpoints[ind_end].file_name)
             else:
-                print "\tERROR downloading: " + self._indicators_endpoints[ind_end].file_name
+                self._log.error("\tERROR downloading: " + self._indicators_endpoints[ind_end].file_name + " probably the file was already downloaded and processed")
 
     def _build_observations(self):
         observations = []
         
         for ind_end in self._indicators_endpoints:
             csv_headers, csv_content = self._csv_reader.load_csv(self._indicators_endpoints[ind_end].file_name)
-            
             observations += self._build_observations_for_file(csv_headers, csv_content)
         
         return observations
           
     def _filter_historical_observations(self, year): 
-        if self._look_for_historical:
-            if isinstance(year, YearInterval):
-                if year.year > self._last_year:
-                    self._last_year = year.year
-            elif year.end_time > self._last_year:
-                    self._last_year = year.end_time
+        # Update year value for historical
+        if isinstance(year, YearInterval):
+            if year.year > self._last_year:
+                self._last_year = year.year
+        elif year.end_time > self._last_year:
+                self._last_year = year.end_time
+                    
+        if self._look_for_historical:  
             return True
         else :
             if isinstance(year, YearInterval):
-                if year.year > self._last_year:
-                    self._last_year = year.year
                 return year.year > self._historical_year
             else:
-                if year.end_time > self._last_year:
-                    self._last_year = year.end_time
                 return year.end_time > self._historical_year
    
     def _build_observations_for_file(self, file_headers, file_content):
@@ -178,7 +166,7 @@ class WhoImporter(object):
         result.computation = self._get_computation_object()  # Always the same, no param needed
         result.issued = self._build_issued_object()  # No param needed
         result.ref_time = year
-        self._get_country_by_name(row[country_index]).add_observation(result)  # And that stablish therelation in both directions
+        self._get_country_by_iso3(row[country_index]).add_observation(result)  # And that stablish therelation in both directions
         
         return result
     
@@ -203,8 +191,8 @@ class WhoImporter(object):
                          value_type=Value.INTEGER,
                          obs_status=Value)
 
-    def _get_country_by_name(self, country_name):
-        return self._reconciler.get_country_by_iso3(country_name)
+    def _get_country_by_iso3(self, country_iso):
+        return self._reconciler.get_country_by_iso3(country_iso)
 
     def _build_default_user(self):
         return User(user_login="WHOIMPORTER")
@@ -232,7 +220,6 @@ class WhoImporter(object):
 
 
     def _build_default_license(self):
-        # TODO: Revise ALL this data. There is not clear license
         result = License()
         result.republish = self._config.get("LICENSE", "republish")
         result.description = self._config.get("LICENSE", "description")
