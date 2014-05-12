@@ -99,32 +99,22 @@ class FaoImporter(object):
             translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
             translator.run()
         else:
-            print "No observations found"
+            self._log.warning("No observations found")
             
         # And it is done. No return needed
 
     def _build_xsl_reader(self):
         return XslReader()
-    
-    def _actualize_config_values(self, last_year):
-        self._config.set("TRANSLATOR", "org_id", self._org_id)
-        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
-        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
-        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
-        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
-        self._config.set("TRANSLATOR", "ind_int", self._ind_int)
-        self._config.set("TRANSLATOR", "sou_int", self._sou_int)
-        self._config.set("AVAILABLE_TIME", "last_checked_year", last_year)
 
     def _load_xsls(self):
         result = []
-        print "Reading files..."
+        self._log.info("Reading files...")
         for file_name in self._config.get("PARSER", "file_names").split(","):
             rows_range = self._config.get("PARSER", "data_range_rows_" + file_name.strip()).split("-")
             cols_range = self._config.get("PARSER", "data_range_cols_" + file_name.strip()).split("-")
             data = self._xsl_reader.load_xsl(file_name.strip(), rows_range, cols_range)
             result += self._extract_data_from_matrix(file_name.strip(), data)
-            print "Done with Excel file %s" % (file_name)
+            self._log.info("Done with Excel file %s" % (file_name))
             
         return result
     
