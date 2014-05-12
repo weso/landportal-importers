@@ -1597,3 +1597,21 @@
 2014-05-07 14:11:20,921 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
 2014-05-07 14:11:20,956 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
 2014-05-07 14:11:20,990 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:40,486 - UNDP_extractor - INFO - Initializing data extraction from UNDP...
+2014-05-12 12:07:40,500 - UNDP_extractor - INFO - Extracting data form Table 2: Human Development Index Trends, with URL http://data.undp.org/resource/efc4-gjvq.xml...
+2014-05-12 12:07:43,726 - UNDP_extractor - INFO - data from Table 2: Human Development Index Trends extracted.
+2014-05-12 12:07:43,726 - UNDP_extractor - INFO - Data extraction from UNDP done.
+2014-05-12 12:07:44,227 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,269 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,312 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,348 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,391 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,431 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,467 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,506 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,545 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,581 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,641 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,678 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,717 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-12 12:07:44,760 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
