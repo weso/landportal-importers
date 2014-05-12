@@ -42,10 +42,16 @@ class FoncierImporter(object):
 
         #Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        if self._look_for_historical:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
+        else:
+            self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
+            self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
+            self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+            self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
 
         #Indicators_dict
         self._indicators_dict = self._build_indicators_dict()
@@ -96,12 +102,18 @@ class FoncierImporter(object):
         for obs in observations:
             self._default_dataset.add_observation(obs)
 
-        #Send model for its translation
-        translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
-        translator.run()
+        # Send model for its translation
+        try:
+            translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+            translator.run()
+            self._actualize_config_values(last_year)
+        except BaseException as e:
+            self._log("Error while sending info to the module receiver: " + e.message)
+            raise e
 
-        #Actualizing config values in case of success
-        #self._actualize_config_values(last_year)
+        # translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+        # translator.run()
+        # self._actualize_config_values(last_year)
 
         #And it is done. No return needed
 
@@ -114,12 +126,13 @@ class FoncierImporter(object):
         return XmlContentParser(self._log)
 
     def _actualize_config_values(self, last_year):
-        self._config.set("TRANSLATOR", "org_id", self._org_id)
         self._config.set("TRANSLATOR", "obs_int", self._obs_int)
         self._config.set("TRANSLATOR", "sli_int", self._sli_int)
         self._config.set("TRANSLATOR", "dat_int", self._dat_int)
         self._config.set("TRANSLATOR", "igr_int", self._igr_int)
         self._config.set("AVAILABLE_TIME", "last_checked_year", last_year)
+        with open("../../../files/configuration.ini", 'wb') as config_file:
+            self._config.write(config_file)
 
     def _build_observations_from_available_years(self, first_year, last_year):
         result = []
@@ -233,7 +246,7 @@ class FoncierImporter(object):
         else:
             return Value(value=None,
                          value_type=Value.INTEGER,
-                         obs_status=Value)
+                         obs_status=Value.MISSING)
 
     def _determine_years_to_query(self):
         first_year = int(self._config.get("AVAILABLE_TIME", "first_year"))
@@ -281,7 +294,6 @@ class FoncierImporter(object):
 
 
     def _build_default_license(self):
-        # TODO: Revise ALL this data. There is not clear license
         result = License()
         result.republish = self._config.get("LICENSE", "republish")
         result.description = self._config.get("LICENSE", "description")
@@ -306,7 +318,7 @@ class FoncierImporter(object):
         titres_crees_ind.description_fr = self._read_config_value("INDICATOR", "titres_desc_fr")
         titres_crees_ind.measurement_unit = default_measurement_unit
         titres_crees_ind.topic = 'TEMP_TOPIC'
-        titres_crees_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        titres_crees_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.TITRES_CREES] = titres_crees_ind
 
@@ -321,7 +333,7 @@ class FoncierImporter(object):
         mutations_ind.description_fr = self._read_config_value("INDICATOR", "mutations_desc_fr")
         mutations_ind.measurement_unit = default_measurement_unit
         mutations_ind.topic = 'TEMP_TOPIC'
-        mutations_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        mutations_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.MUTATIONS] = mutations_ind
 
@@ -336,7 +348,7 @@ class FoncierImporter(object):
         csj_ind.description_fr = self._read_config_value("INDICATOR", "csj_desc_fr")
         csj_ind.measurement_unit = default_measurement_unit
         csj_ind.topic = 'TEMP_TOPIC'
-        csj_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        csj_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.CSJ] = csj_ind
 
@@ -351,7 +363,7 @@ class FoncierImporter(object):
         reperages_ind.description_fr = self._read_config_value("INDICATOR", "reperages_desc_fr")
         reperages_ind.topic = 'TEMP_TOPIC'
         reperages_ind.measurement_unit = default_measurement_unit
-        reperages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        reperages_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.REPERAGES] = reperages_ind
 
@@ -366,7 +378,7 @@ class FoncierImporter(object):
         bornages_ind.description_fr = self._read_config_value("INDICATOR", "bornages_desc_fr")
         bornages_ind.topic = 'TEMP_TOPIC'
         bornages_ind.measurement_unit = default_measurement_unit
-        bornages_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        bornages_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.BORNAGES] = bornages_ind
 
@@ -381,7 +393,7 @@ class FoncierImporter(object):
         rep_des_plans_ind.description_fr = self._read_config_value("INDICATOR", "rep_des_plans_desc_fr")
         rep_des_plans_ind.topic = 'TEMP_TOPIC'
         rep_des_plans_ind.measurement_unit = default_measurement_unit
-        rep_des_plans_ind.preferable_tendency = Indicator.IRRELEVANT  # TODO: No idea
+        rep_des_plans_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.REP_DES_PLANS] = rep_des_plans_ind
 
