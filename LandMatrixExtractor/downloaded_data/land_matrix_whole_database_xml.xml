@@ -84001,7 +84001,7 @@
 			[2005] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			[2005] Startup phase (no production), In operation (production)
+			[2005] Startup phase (no production), [2008] In operation (production)
 		</field>
 		<field name="intended_size">
 			None
@@ -84016,13 +84016,13 @@
 			Outright Purchase, Lease / Concession
 		</field>
 		<field name="data_source">
-			2014-04-04 http://www.blackearthfarming.com/where.html Company sources , 2013-12-31 http://www.blackearthfarming.com/ownership.html Company sources , 2014-04-04 http://www.blackearthfarming.com/history.html Company sources , 2014-04-07 http://ejatlas.org/conflict/black-earth-farming-massive-agroinvest-farming-operation-russia Media report , 2014-04-11 http://files.shareholder.com/downloads/ABEA-4N3O94/3151360391x0x748153/1f2ce1fe-b011-49f5-97cd-9e630262df45/BEF_2013_Annual_Report_Website.pdf Company sources , 2011-01-01 http://www.ltonoord.nl/sites/ltonoord.nl/files/visserspoor-jps-landgrab-2011_0.pdf Research Paper / Policy Report 
+			2014-05-12 http://www.org-info.com/company/3942114/show/founders_history Media report , 2006-11-15 http://russiaprofile.org/business/a4055/print_edition/ Media report , 2014-04-04 http://www.blackearthfarming.com/where.html Company sources , 2013-12-31 http://www.blackearthfarming.com/ownership.html Company sources , 2014-04-04 http://www.blackearthfarming.com/history.html Company sources , 2014-04-07 http://ejatlas.org/conflict/black-earth-farming-massive-agroinvest-farming-operation-russia Media report , 2014-04-11 http://files.shareholder.com/downloads/ABEA-4N3O94/3151360391x0x748153/1f2ce1fe-b011-49f5-97cd-9e630262df45/BEF_2013_Annual_Report_Website.pdf Company sources , 2011-01-01 http://www.ltonoord.nl/sites/ltonoord.nl/files/visserspoor-jps-landgrab-2011_0.pdf Research Paper / Policy Report , 2009-12-01 http://files.shareholder.com/downloads/ABEA-4N3O94/3163271571x0x530874/d11c710d-aacf-429f-8134-64ffb5ac099a/bef_ar09_web.pdf Company sources 
 		</field>
 		<field name="contract_farming">
 			None
 		</field>
 		<field name="crop">
-			Barley, Sun Flower, Rapeseed, Oil Seeds, Corn (Maize)
+			Barley, Cereals (no specification), Sugar beet, Grains, Potatoes, Vegetables, Wheat
 		</field>
 	</item>
 	<item>
@@ -84048,7 +84048,7 @@
 			[2005] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			[2005] Startup phase (no production), In operation (production)
+			[2005] Startup phase (no production), [2008] In operation (production)
 		</field>
 		<field name="intended_size">
 			None
@@ -84063,13 +84063,13 @@
 			Outright Purchase, Lease / Concession
 		</field>
 		<field name="data_source">
-			2011-01-01 http://www.ltonoord.nl/sites/ltonoord.nl/files/visserspoor-jps-landgrab-2011_0.pdf Research Paper / Policy Report , 2014-04-07 http://ejatlas.org/conflict/black-earth-farming-massive-agroinvest-farming-operation-russia Media report , 2014-04-04 http://www.blackearthfarming.com/where.html Company sources , 2014-04-11 http://files.shareholder.com/downloads/ABEA-4N3O94/3151360391x0x748153/1f2ce1fe-b011-49f5-97cd-9e630262df45/BEF_2013_Annual_Report_Website.pdf Company sources 
+			2011-01-01 http://www.ltonoord.nl/sites/ltonoord.nl/files/visserspoor-jps-landgrab-2011_0.pdf Research Paper / Policy Report , 2014-04-07 http://ejatlas.org/conflict/black-earth-farming-massive-agroinvest-farming-operation-russia Media report , 2014-04-04 http://www.blackearthfarming.com/where.html Company sources , 2014-04-11 http://files.shareholder.com/downloads/ABEA-4N3O94/3151360391x0x748153/1f2ce1fe-b011-49f5-97cd-9e630262df45/BEF_2013_Annual_Report_Website.pdf Company sources , 2014-04-03 http://farmlandgrab.org/post/view/23356 Media report , 2009-12-01 http://www.blackearthfarming.com/pdf/bef_ar13.pdf Company sources 
 		</field>
 		<field name="contract_farming">
 			None
 		</field>
 		<field name="crop">
-			Barley, Rapeseed, Oil Seeds, Corn (Maize), Grains, Potatoes
+			Sun Flower, Corn (Maize), Wheat
 		</field>
 	</item>
 	<item>

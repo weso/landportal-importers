@@ -52,10 +52,16 @@ class LandMatrixTranslator(object):
 
         #Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        if self._look_for_historical:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
+        else:
+            self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
+            self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
+            self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
+            self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
 
         #Indicators's dict
         self._indicators_dict = self._build_indicators_dict()
@@ -138,7 +144,21 @@ class LandMatrixTranslator(object):
         m2x = ModelToXMLTransformer(dataset=self._default_dataset,
                                     import_process="xml",
                                     user=self._default_user)
-        m2x.run()
+        try:
+            m2x.run()
+            self._actualize_config_values()
+        except BaseException as e:
+            self._log.error("Error wuile sendig info to te receiver module: " + e.message)
+            raise e
+
+    def _actualize_config_values(self):
+        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
+        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
+        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
+        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
+
+        with open("../../../../files/configuration.ini", 'wb') as config_file:
+            self._config.write(config_file)
 
 
     def _turn_deal_entrys_into_obs_objects(self, deal_entrys):
