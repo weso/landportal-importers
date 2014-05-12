@@ -3,9 +3,7 @@ Created on 18/12/2013
 
 @author: Nacho, BorjaGB
 """
-import ConfigParser
 from datetime import datetime
-import logging
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -32,11 +30,9 @@ class Parser(object):
     observations = []
 
 
-    def __init__(self):
-        self.logger = logging.getLogger("es.weso.worldbank.parser.parser")
-        self.config = ConfigParser.ConfigParser()
-        self.config.read('../configuration/api_access.ini')
-
+    def __init__(self, config, log):
+        self.logger = log
+        self.config = config
         self._reconciler = CountryReconciler()
 
         self._look_for_historical = self.config.getboolean("TRANSLATOR", "historical_mode")
@@ -50,7 +46,6 @@ class Parser(object):
         self._igr_int = self.config.getint("TRANSLATOR", "igr_int")
 
         self.countries_url = self.config.get('URLs', 'country_list')
-        print "Finish with countries"
         self.observations_url = self.config.get('URLs', 'indicator_pattern')
         self.data_sources = dict(self.config.items('data_sources'))
         
@@ -65,7 +60,7 @@ class Parser(object):
                     transformer = ModelToXMLTransformer(dataset, "Request", self._user)
                     transformer.run()
                 else:
-                    print "Dataset %s has no observations"%dataset.dataset_id
+                    self.logger.warning("Dataset %s has no observations"%dataset.dataset_id)
 
     def extract_countries(self):
         response = RestClient.get(self.countries_url, {"format": "json"})
@@ -222,7 +217,7 @@ class Parser(object):
                                     #    print '\t\t\t' + observation.ref_time.get_time_string() + '\tMissing'
                     except (KeyError, ConnectionError, ValueError):
                         self.logger.error('Error retrieving response for \'' + uri + '\'')
-                print indicator.name_en + ' FINISHED'
+                self.logger.info("FINISHED: " + indicator.name_en)
 
     @staticmethod
     def _get_preferable_tendency_of_indicator(tendency):
