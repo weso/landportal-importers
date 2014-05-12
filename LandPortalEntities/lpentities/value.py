@@ -10,8 +10,8 @@ class Value(object):
     classdocs
     """
 
-    MISSING = "http://purl.org/linked-data/sdmx/2009/code#obsStatus-M"
-    AVAILABLE = "http://purl.org/linked-data/sdmx/2009/code#obsStatus-A"
+    MISSING = "obsStatus-M"
+    AVAILABLE = "obsStatus-A"
     FLOAT = "float"
     INTEGER = "int"
 
