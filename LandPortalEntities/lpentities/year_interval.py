@@ -17,7 +17,7 @@ class YearInterval(Interval):
         Constructor
 
         """
-        super(YearInterval, self).__init__(year, year)
+        super(YearInterval, self).__init__(Interval.YEARLY, year, year)
         self.year = year
     
     def get_time_string(self):

@@ -10,7 +10,7 @@ class MonthInterval(Interval):
         self.year = year
         self.month = month
         arg_for_super = self.get_time_string()  # We do not have to call the method two times
-        super(MonthInterval, self).__init__(arg_for_super, arg_for_super)
+        super(MonthInterval, self).__init__(Interval.MONTHLY, arg_for_super, arg_for_super)
 
     def get_time_string(self):
         str_month = str(self.month)
