@@ -1,5 +1,4 @@
 from datetime import datetime
-import types
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -78,7 +77,8 @@ class FaoImporter(object):
             for obs in observations :
                 self._default_dataset.add_observation(obs)
         else:
-            print "No observations found"
+            self._log.warning("No observations found")
+            
         # Send model for its trasnlation
         translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
         translator.run()
@@ -99,7 +99,7 @@ class FaoImporter(object):
 
     def _load_xsls(self):
         result = []
-        print "Reading files..."
+        self._log.info("Reading files...")
         file_name = self._config.get("PARSER", "file_name")
         years_row = int(self._config.get("PARSER", "year_row"))-1
         
@@ -110,8 +110,6 @@ class FaoImporter(object):
             for indicator_element in requested_indicators:
                 indicator_code = self._config.get(indicators_section, indicator_element)
                 index = int(self._config.get(indicator_code, "indicator_id"))
-                print "Processing indicator %s with index %d" %(indicator_code,index)
-        #indicator_code = "EA-FOPRILEV"
                 indicator_sheet = self._config.get(indicator_code, "excel_sheet")
                 data = self._xsl_reader.load_xsl(file_name, indicator_sheet)
                 
@@ -127,8 +125,7 @@ class FaoImporter(object):
                                                                                year,
                                                                                value,
                                                                                country))
-                    #result += self._extract_data_from_matrix(file_name.strip(), data)
-        print "Done with Excel file %s" % (file_name)
+        self._log.info("Done with Excel file %s" % (file_name))
         
         return result
     
