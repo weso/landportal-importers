@@ -37,10 +37,10 @@ class IpfriModelObjectBuilder(object):
 
         #Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
-        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
-        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
-        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
+        self._obs_int = int(self._config.get("TRANSLATOR", "obs_int", True))
+        self._sli_int = int(self._config.get("TRANSLATOR", "sli_int", True))
+        self._dat_int = int(self._config.get("TRANSLATOR", "dat_int", True))
+        self._igr_int = int(self._config.get("TRANSLATOR", "igr_int", True))
 
         self.dataset = None
         self.user = None
@@ -53,7 +53,15 @@ class IpfriModelObjectBuilder(object):
         self.complete_dates_dict()
         self.complete_countries_dict()
         self.fetch_elements_by_index_and_translate()
+        self._put_self_id_values_in_the_config_file()
         return DatasetUserPair(self.dataset, self.user)
+
+
+    def _put_self_id_values_in_the_config_file(self):
+        self._config.set("TRANSLATOR", "obs_int", self._obs_int)
+        self._config.set("TRANSLATOR", "sli_int", self._sli_int)
+        self._config.set("TRANSLATOR", "dat_int", self._dat_int)
+        self._config.set("TRANSLATOR", "igr_int", self._igr_int)
 
 
     def prepare_base_hierarchy_objects(self):
