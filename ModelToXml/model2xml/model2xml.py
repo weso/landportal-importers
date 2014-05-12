@@ -455,11 +455,10 @@ class ModelToXMLTransformer(object):
         computation_node.text = data_obs.computation.uri
         observation_node.append(computation_node)
 
-        #region TODO: other region here
+
         if type(data_obs.region) == Region:
             region_node = Element(self.OBSERVATION_REGION)
-            region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX \
-                                + str(data_obs.region.un_code)
+            region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX + str(data_obs.region.un_code)
 
             observation_node.append(region_node)
         elif type(data_obs.region) == Country:
@@ -502,7 +501,10 @@ class ModelToXMLTransformer(object):
             time_node.attrib[self.TIME_ATT_UNIT] = "months"
             time_node.text = ref_time.get_time_string()
         elif type(ref_time) is Interval:
-            time_node.attrib[self.TIME_ATT_UNIT] = "years"
+            if ref_time.frequency == Interval.YEARLY:
+                time_node.attrib[self.TIME_ATT_UNIT] = "years"
+            else:
+                time_node.attrib[self.TIME_ATT_UNIT] = "months"
             interval_node = Element(self.TIME_INTERVAL)
             beg_node = Element(self.TIME_INTERVAL_BEG)
             beg_node.text = str(ref_time.start_time)
@@ -511,6 +513,7 @@ class ModelToXMLTransformer(object):
             interval_node.append(beg_node)
             interval_node.append(end_node)
             time_node.append(interval_node)
+
         else:
             raise RuntimeError("Unrecognized time type. Impossible to build node")
         #Returning final node
