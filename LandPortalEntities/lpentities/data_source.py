@@ -3,6 +3,7 @@ Created on 02/02/2014
 
 @author: Miguel Otero
 '''
+from lpentities.dataset import Dataset
 
 
 class DataSource(object):
@@ -28,5 +29,8 @@ class DataSource(object):
 
 
     def add_dataset(self, dataset):
-        self.datasets.append(dataset)
-        dataset.source = self
+        if isinstance(dataset, Dataset):
+            self.datasets.append(dataset)
+            dataset.source = self
+        else:
+            raise ValueError("Trying to append a non dataset object to datasource")

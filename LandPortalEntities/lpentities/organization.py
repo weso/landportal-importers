@@ -3,6 +3,9 @@ Created on 02/02/2014
 
 @author: Miguel Otero
 '''
+from lpentities.user import User
+from lpentities.data_source import DataSource
+
 
 class Organization(object):
     '''
@@ -34,9 +37,15 @@ class Organization(object):
         return "ORG" + chain_for_id.upper()
 
     def add_user(self, user):
-        self.users.append(user)
-        user.organization = self
+        if isinstance(user, User):
+            self.users.append(user)
+            user.organization = self
+        else:
+            raise ValueError("Trying to append a non User value to Organization")
 
     def add_data_source(self, data_source):
-        self.data_sources.append(data_source)
-        data_source.organization = self
+        if isinstance(data_source, DataSource):
+            self.data_sources.append(data_source)
+            data_source.organization = self
+        else:
+            raise ValueError("Trying to append a non DataSource value to Organization")

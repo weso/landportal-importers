@@ -11,7 +11,6 @@ class Instant(Time):
     classdocs
     '''
 
-
     def __init__(self, instant=None):
         '''
         Constructor

@@ -25,7 +25,7 @@ class MeasurementUnit(object):
         '''
         self.name = name
         self._convert_to = convert_to
-        self.factor = factor
+        self._factor = factor
 
     def __get_convert_to(self):
         return self._convert_to
@@ -39,4 +39,15 @@ class MeasurementUnit(object):
                           fset=__set_convert_to,
                           doc="The MeasurementUnit is convertible to this value")
 
-
+    def __get_factor(self):
+        return self._factor
+    
+    def __set_factor(self, factor):
+        if factor >= 0:
+            self._factor = factor
+        else:
+            raise ValueError("Conversion factor must be at least zero")
+        
+    factor = property(fget=__get_factor,
+                      fset=__set_factor,
+                      doc="The MeasurementUnit is adjusted by this factor")
