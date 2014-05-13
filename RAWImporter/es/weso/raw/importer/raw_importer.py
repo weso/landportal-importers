@@ -8,6 +8,7 @@ from lpentities.instant import Instant
 from lpentities.interval import Interval
 from lpentities.license import License
 from lpentities.measurement_unit import MeasurementUnit
+from lpentities.month_interval import MonthInterval
 from lpentities.observation import Observation
 from lpentities.organization import Organization
 from lpentities.user import User
@@ -17,7 +18,6 @@ from model2xml.model2xml import ModelToXMLTransformer
 from reconciler.country_reconciler import CountryReconciler
 
 from weso.raw.ExcelManagement.excel_reader import XslReader
-from lpentities.month_interval import MonthInterval
 
 
 __author__ = 'BorjaGB'
@@ -35,6 +35,7 @@ class RawImporter(object):
 
         # Initializing variable ids
         self._org_id = org_id
+        self._ind_int = self._config.getint("TRANSLATOR", "ind_int")
         self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
         self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
         self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
@@ -47,8 +48,14 @@ class RawImporter(object):
         self._indicator_sheet_dictionary = self._load_indicator_data()
         self._organization_sheet_dictionary = self._load_organization_data()
         
+        try:
+            self.custom_ind_int = self._config.getint(self._indicator_sheet_dictionary["English name"], "id")
+            self.custom_dat_int = self._config.getint(self._indicator_sheet_dictionary["English name"], "dataset")
+        except:
+            pass
         
         self._indicator = self._build_indicator()
+        
         self._organization = self._build_organization()
         self._license = self._build_license()
         
@@ -97,8 +104,14 @@ class RawImporter(object):
         return self._xsl_reader.load_indicator_sheet(self._file_name)
 
     def _build_indicator(self):
+        if hasattr(self, 'custom_ind_int'):
+            ind_int = self.custom_ind_int
+        else:
+            self._ind_int+=1
+            ind_int = self._ind_int
+            
         return Indicator(chain_for_id=self._org_id,
-                         int_for_id=1,
+                         int_for_id=ind_int,
                          name_en=self._indicator_sheet_dictionary["English name"],
                          name_es=self._indicator_sheet_dictionary["Spanish name"],
                          name_fr=self._indicator_sheet_dictionary["French name"], 
@@ -175,10 +188,10 @@ class RawImporter(object):
         if self._dataset.frequency == Dataset.MONTHLY:
             months = str(time).split("-")
             if len(months) == 1:
-                #TO-DO ?
-                return MonthInterval(1900, month = int(time))
+                month_time = months[0].split("/") #01/1990
+                return MonthInterval(year = month_time[1], month = month_time[0])
             else:
-                return Interval(start_time=int(months[0]), end_time=int(months[1]))
+                return Interval(frequency = Interval.MONTHLY, start_time=months[0], end_time=months[1])
         else:
             years = str(time).split("-")
             if len(years) == 1:
@@ -234,8 +247,13 @@ class RawImporter(object):
         return result
 
     def _build_default_dataset(self):
-        result = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int)
-        self._dat_int += 1  # Needed increment
+        if hasattr(self, 'custom_dat_int'):
+            dat_int = self.custom_dat_int
+        else:
+            self._dat_int += 1  # Needed increment
+            dat_int = self._dat_int
+            
+        result = Dataset(chain_for_id=self._org_id, int_for_id=dat_int)
         if self._indicator_sheet_dictionary["Periodicity"].lower() == "yearly":
             result.frequency = Dataset.YEARLY
         else:
