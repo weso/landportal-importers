@@ -3,7 +3,6 @@ Created on 19/12/2013
 
 @author: Nacho
 '''
-from lpentities.dataset import Dataset
 from lpentities.measurement_unit import MeasurementUnit
 
 
@@ -36,23 +35,13 @@ class Indicator(object):
         self.description_en = description_en
         self.description_es = description_es
         self.description_fr = description_fr
-        self._dataset = dataset
+        self.dataset = dataset
         self._measurement_unit = measurement_unit
         self._topic = topic
         self._preferable_tendency = preferable_tendency
 
         self.indicator_id = self._generate_id(chain_for_id, int_for_id)
 
-    def __get_dataset(self):
-        return self._dataset
-    
-    def __set_dataset(self, dataset):
-        if isinstance(dataset, Dataset):
-            self._dataset = dataset
-        else:
-            raise ValueError("Expected Dataset object in Indicator")
-        
-    dataset = property(fget=__get_dataset, fset=__set_dataset, doc="Dataset of the indicator")
     
     def __get_measurement_unit(self):
         return self._measurement_unit
