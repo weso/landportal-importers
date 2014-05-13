@@ -5,6 +5,7 @@ Created on 03/02/2014
 @author: Dani
 """
 from __future__ import unicode_literals
+from lpentities.computation import Computation
 from lpentities.country import Country
 
 try:
@@ -69,6 +70,7 @@ class ModelToXMLTransformer(object):
     OBSERVATION_ISSUED = "issued"
     OBSERVATION_OBS_STATUS = "obs-status"
     OBSERVATION_COMPUTATION = "computation"
+    OBSERVATION_COMPUTATION_TYPE_ATT = "type"
     OBSERVATION_REGION = "region"
     OBSERVATION_COUNTRY = "country"
     OBSERVATION_VALUE = "value"
@@ -453,7 +455,8 @@ class ModelToXMLTransformer(object):
 
         #computation
         computation_node = Element(self.OBSERVATION_COMPUTATION)
-        computation_node.text = data_obs.computation.uri
+        computation_node.attrib[self.OBSERVATION_COMPUTATION_TYPE_ATT] = data_obs.computation.uri
+        computation_node.text = Computation.get_desc_of_uri(data_obs.computation.uri)
         observation_node.append(computation_node)
 
 
