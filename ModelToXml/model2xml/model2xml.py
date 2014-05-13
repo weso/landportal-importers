@@ -86,6 +86,7 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_ORGANIZATION_NAME = "organization_name"
     IMPORT_PROCESS_ORGANIZATION_URL = "organization_url"
     IMPORT_PROCESS_DATASOURCE = "datasource"
+    IMPORT_PROCESS_DATASOURCE_ID_ATT = "id"
     IMPORT_PROCESS_TYPE = "type"
     IMPORT_PROCESS_TIMESTAMP = "timestamp"
     IMPORT_PROCESS_USER = "user"
@@ -591,8 +592,8 @@ class ModelToXMLTransformer(object):
 
         #datasource
         datasource_node = Element(self.IMPORT_PROCESS_DATASOURCE)
-        datasource_node.text = self.IMPORT_PROCESS_DATASOURCE_PREFIX \
-                               + self._datasource.name
+        datasource_node.attrib[self.IMPORT_PROCESS_DATASOURCE_ID_ATT] = self._datasource.source_id
+        datasource_node.text = self.IMPORT_PROCESS_DATASOURCE_PREFIX + self._datasource.name
         metadata.append(datasource_node)
 
         #type
