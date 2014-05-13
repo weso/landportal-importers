@@ -25,6 +25,29 @@ import urllib2
 
 
 class ModelToXMLTransformer(object):
+
+    def __init__(self, dataset, import_process, user, indicator_relations=None):
+        """
+        Constructor:
+         - dataset: lpentities.dataset object containing most of the info
+         - user: user that strat the importation process. According to the model, it is not possible to
+        obtain it form the dataset
+         - import_proces: string chain that summarizes the way in which data were taken from the source: excell, api,...
+         - indicator_relations: list with lpentities.IndicatorRelationship objects
+
+        """
+        self._datasource = dataset.source
+        self._dataset = dataset
+        self._user = user
+        self._import_process = import_process
+        self._root = None
+        self._indicator_dic = {}  # It will store an indicator object with it id as key.
+        self._group_dic = {}
+        self._indicator_relations = indicator_relations
+        # One per indicator referred by the observations
+
+        self._root = self._build_root()
+
     #
     # Const containing names of tag or attributtes
     # to use in the XML file
@@ -113,31 +136,9 @@ class ModelToXMLTransformer(object):
     '''
 
 
-    def __init__(self, dataset, import_process, user, indicator_relations=None):
-        """
-        Constructor:
-         - dataset: lpentities.dataset object containing most of the info
-         - user: user that strat the importation process. According to the model, it is not possible to
-        obtain it form the dataset
-         - import_proces: string chain that summarizes the way in which data were taken from the source: excell, api,...
-         - indicator_relations: list with lpentities.IndicatorRelationship objects
 
-        """
-        self._datasource = dataset.source
-        self._dataset = dataset
-        self._user = user
-        self._import_process = import_process
-        self._root = None
-        self._indicator_dic = {}  # It will store an indicator object with it id as key.
-        self._group_dic = {}
-        self._indicator_relations = indicator_relations
-        # One per indicator referred by the observations
 
-        self._root = self._build_root()
 
-        '''
-        Constructor
-        '''
 
     def run(self):
         #The order calling these methods should not be changed
