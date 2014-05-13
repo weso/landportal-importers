@@ -26,6 +26,9 @@ import urllib2
 
 
 class ModelToXMLTransformer(object):
+    """
+    classdocs
+    """
 
     def __init__(self, dataset, import_process, user, indicator_relations=None):
         """
@@ -134,26 +137,35 @@ class ModelToXMLTransformer(object):
 
     OBSERVATION_REF = "observation-ref"
     OBSERVATION_REF_ID = "id"
-    '''
-    classdocs
-    '''
-
-
-
-
 
 
     def run(self):
+        #Building xml
         #The order calling these methods should not be changed
-        self.build_import_process_node()  # Done
-        self.build_license_node()  # Done
-        self.build_observations_node()  # Done
-        self.build_indicators_node()  # Done
-        self.build_indicator_groups_node()  # Done
-        self.build_slices_node()  # Done
-        self.include_indicator_relations()  # Done
-        paths = self._persist_tree()  #
-        # self._send_to_receiver(paths)
+        try:
+            self.build_import_process_node()  # Done
+            self.build_license_node()  # Done
+            self.build_observations_node()  # Done
+            self.build_indicators_node()  # Done
+            self.build_indicator_groups_node()  # Done
+            self.build_slices_node()  # Done
+            self.include_indicator_relations()  # Done
+        except BaseException as e:
+            raise RuntimeError("Error while building xml file. " + e.message)
+        paths = None
+
+        #Persisting xml
+        try:
+            paths = self._persist_tree()  #
+        except BaseException as e:
+            raise RuntimeError("Error while persisting the builded xml. " + e.message)
+
+        #Sending xml to the receiver
+        try:
+            # self._send_to_receiver(paths)
+            pass
+        except BaseException as e:
+            raise RuntimeError("Error while sending xml to the receiver module. " + e.message)
 
 
     def _build_root(self):
@@ -172,46 +184,42 @@ class ModelToXMLTransformer(object):
                     req = urllib2.Request(url, data)
                     resp = urllib2.urlopen(req)
             except BaseException as e:
+                e.message = 'File "{0}": {1}'.format(file_path, e.message)
                 exceptions.append(e)
         self._process_sending_exceptions(exceptions)
 
 
     @staticmethod
     def _process_sending_exceptions(exceptions):
+        if len(exceptions) == 0:
+            return
+        message = ""
         for e in exceptions:
-            print e.message
+            message += e.message + "\n"
+        raise RuntimeError("Error processing files:\n")
 
 
     def include_indicator_relations(self):
         if self._indicator_relations is None or len(self._indicator_relations) == 0:
             return  # Nothing to fo (most of cases)
         else:
-            print "INCLUDE_INDICATOR_RELATIONS. REcibi un encargo de ", len(self._indicator_relations)
             for a_relation in self._indicator_relations:
                 self.include_relation_in_the_tree(a_relation)
 
     def include_relation_in_the_tree(self, a_relation):
-        # print "Look at me here babyy! I´m a ", type(a_relation)
-        # print "source", a_relation.source.indicator_id, a_relation.source.name_en
-        # print "target", a_relation.target.indicator_id, a_relation.target.name_en
-
         #Looking for source node in the tree
         source_node = self._get_indicator_node_by_id(a_relation.source.indicator_id)
         relations_node = source_node.find(self.INDICATOR_SPLITS_IN)
 
         #Creating base relation node if needed, and incorporating it to the tree
         if relations_node is None:
-            # print "i shoulg appear at least one time, don't you think so? "
             relations_node = Element(self.INDICATOR_SPLITS_IN)
             source_node.append(relations_node)
 
         #Creating and adding new relation
-        # print "In my case, i should appear twice at least"
         new_node = Element(self.INDICATOR_REF)
         new_node.text = a_relation.target.indicator_id
         relations_node.append(new_node)
-
-        # print "No more to say. i'm done"
 
 
     def _get_indicator_node_by_id(self, indicator_id):
