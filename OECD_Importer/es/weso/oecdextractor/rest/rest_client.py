@@ -25,14 +25,20 @@ class RestClient(object):
 
 
     def run(self):
+        self._log.info("Initializing process of downloading data...")
         #Tasks:
         # - Cahrgue querys
         # - Get the data through a request
         # - Save it in a json
         # dataset_ids = self._charge_dataset_ids()
         # query_pattern = self._charge_query_pattern()
-        requests_to_do = self._build_url_request()
-        self._track_data(requests_to_do)
+        try:
+            requests_to_do = self._build_url_request()
+            self._track_data(requests_to_do)
+            self._log.info("The data has been succesfully downloaded.")
+        except BaseException as e:
+            self._log.error("Unable to download the data from the source.")
+            raise e
 
 
     def _track_data(self, req_to_do):

@@ -43,4 +43,5 @@ class OecdTranslator(object):
         if errors_count < len(datasets):  # If some observation could reach the server, we have to actualize ids
             object_builder.actualize_config_values()
         if errors_count > 0:
-            raise RuntimeError("Program finalized with errors. Check logs")
+            raise RuntimeError("Errors whie generating data from 1 or more datasets.")
+        self._log.info("Data has been successfully incropored to the system.")  # It will only execute if there were no errors

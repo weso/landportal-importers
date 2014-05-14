@@ -351,8 +351,7 @@ class ModelObjectBuilder(object):
                 if self._pass_observation_filters(obs_object):
                     dataset.add_observation(obs_object)
             except RuntimeError as e:
-                print e.message
-                self._log.info("Observation ignored. " + e.message)
+                self._log.warning("Observation ignored. " + e.message)
         #No return needed
 
     def _pass_observation_filters(self, obs_object):

@@ -24,16 +24,21 @@ def run():
     config_path = '../configuration/data_sources.ini'
     config = ConfigParser.ConfigParser()
     config.read(config_path)
-
-    extractor = RestClient(logger, config)
-    extractor.run()
     try:
-        translator = OecdTranslator(logger, config, True)
-        translator.run()
-        print "Done!"
+        try:
+            extractor = RestClient(logger, config)
+            extractor.run()
+        except BaseException as e:
+            logger.error("While trying to download data from teh source: " + e.message)
+            raise RuntimeError()
 
-    except BaseException as e:
-        print e.message
+        try:
+            translator = OecdTranslator(logger, config, True)
+            translator.run()
+
+        except BaseException as e:
+            logger.error("While trying to introduce raw info into our model: " + e.message)
+            raise RuntimeError
 
     finally:
         with open(config_path, 'wb') as configfile:
@@ -42,4 +47,8 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    try:
+        run()
+        print "Done!"
+    except:
+        print "Execution finalized with errors. Check log."
