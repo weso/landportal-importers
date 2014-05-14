@@ -34,7 +34,6 @@ class XmlContentParser(object):
 
     def turn_xml_into_register(self, year, month, xml_content):
         tree = ETree.fromstring(xml_content)
-        # print year, month
 
         result = XmlRegister(year=year,
                              month=month,

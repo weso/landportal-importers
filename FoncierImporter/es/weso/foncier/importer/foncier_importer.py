@@ -93,9 +93,8 @@ class FoncierImporter(object):
             first_year, last_year = self._determine_years_to_query()  # Done
 
         except NoNewDataAvailableError:
-            #TODO: make something noisy
-            print "NO NEW DATA AVAILABLE"  # Provisional Strategy
-            return  # It is quite noisy eh?
+            raise RuntimeError("The importer has been executed in non_historical mode, but it looks that "
+                               "there are not new data available")
 
         #Generate observations and incorpore it to the common objects
         observations = self._build_observations_from_available_years(first_year, last_year)
@@ -108,14 +107,8 @@ class FoncierImporter(object):
             translator.run()
             self._actualize_config_values(last_year)
         except BaseException as e:
-            self._log("Error while sending info to the module receiver: " + e.message)
-            raise e
+            raise RuntimeError("Error while sending info to the module receiver: " + e.message)
 
-        # translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
-        # translator.run()
-        # self._actualize_config_values(last_year)
-
-        #And it is done. No return needed
 
     def _build_xml_tracker(self):
         return RestXmlTracker(url_pattern=self._config.get("IMPORTER", "url_pattern"),
@@ -251,8 +244,6 @@ class FoncierImporter(object):
     def _determine_years_to_query(self):
         first_year = int(self._config.get("AVAILABLE_TIME", "first_year"))
         last_year = int(self._config.get("AVAILABLE_TIME", "last_year"))
-
-        print first_year, last_year
 
         if self._look_for_historical:
             return first_year, last_year

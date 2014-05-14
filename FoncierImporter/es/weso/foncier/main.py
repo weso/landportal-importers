@@ -17,10 +17,19 @@ def run():
     config = ConfigParser()
     config.read("../../../files/configuration.ini")
 
-    foncier_importer = FoncierImporter(log, config, True)
-    foncier_importer.run()
+    try:
+        foncier_importer = FoncierImporter(log, config, True)
+        foncier_importer.run()
+        log.info("Data successfully downloaded and incorpored to the system.")
+    except BaseException as e:
+        log.error("While trying to import data: " + e.message)
+        raise RuntimeError()
 
-    print "Done!"
+
 
 if __name__ == '__main__':
-    run()
+    try:
+        run()
+        print "Done!"
+    except:
+        print "Execution finalized with errors. Check log."
