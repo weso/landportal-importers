@@ -48,7 +48,6 @@ class UNDPExtractor(object):
                 line = line.replace("\r", "")
                 line = line.replace("\n", "")
                 arr = line.split("\t")
-                print arr[0]
                 result.append(DataTable(arr[0], arr[1] + "." + self.extension))
         return result
 
@@ -77,9 +76,8 @@ class UNDPExtractor(object):
             xml_content = response.read()
             FileWriter.write_text_to_file(xml_content, file_name)
             self.log.info('data from {0} extracted.'.format(table.name))
-        except:  # catch all
-            e = sys.exc_info()[0]
-            self.log.exception("Error during the extraction from {0}. Cause: {1}. Data from that table ignored.".format(table.name, e))
+        except BaseException as e:  # catch all
+            self.log.warning("Error during the extraction from {0}. Cause: {1}. Data from that table ignored.".format(table.name, e.message))
             
         
         

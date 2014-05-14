@@ -1615,3 +1615,21 @@
 2014-05-12 12:07:44,678 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
 2014-05-12 12:07:44,717 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
 2014-05-12 12:07:44,760 - UNDP_extractor - INFO - Ignoring row node. This is the message thrown by the app: 
+2014-05-14 14:08:21,657 - UNDP_extractor - INFO - Initializing data extraction from UNDP...
+2014-05-14 14:08:21,667 - UNDP_extractor - INFO - Extracting data form Table 2: Human Development Index Trends, with URL http://data.undp.org/resource/efc4-gjvq.xml...
+2014-05-14 14:08:24,132 - UNDP_extractor - INFO - data from Table 2: Human Development Index Trends extracted.
+2014-05-14 14:08:24,134 - UNDP_extractor - INFO - Data extraction from UNDP done.
+2014-05-14 14:08:24,588 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,628 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,663 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,694 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,727 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,760 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,792 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,825 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,858 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,891 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,924 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:24,956 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:25,009 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-14 14:08:25,042 - UNDP_extractor - INFO - Ignoring row node. Cause: 

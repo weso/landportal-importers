@@ -83,6 +83,8 @@ class UNDPTranslator(object):
 
         for dataset in self._datasets:
             self._decorate_dataset_with_common_objects(dataset)
+
+        for dataset in self._datasets:
             self._generate_xml_from_dataset_model(dataset)
 
     def _generate_xml_from_dataset_model(self, dataset):
@@ -203,7 +205,7 @@ class UNDPTranslator(object):
                 dataset.add_observation(obs)
                 #No return needed
         except UnknownCountryError as e:
-            self._log.info("Ignoring row node. This is the message thrown by the app: {0}". format(e))
+            self._log.info("Ignoring row node. Cause: {0}". format(e))
 
     def _generate_complete_observations_from_valid_subnodes(self, subnodes):
         # Declaring needed temporal variables
@@ -333,14 +335,12 @@ class UNDPTranslator(object):
 
     def _resolve_country(self, country_iso3, country_name):
         try:
-            # return self._reconciler.get_country_by_iso3(country_iso3)
             result = self._reconciler.get_country_by_iso3(country_iso3)
             if "Ivoire" in result.name:
                 raise UnknownCountryError("")
             return result
         except UnknownCountryError:
             try:
-                # return self._reconciler.get_country_by_en_name(country_name)
                 result = self._reconciler.get_country_by_en_name(country_name)
                 if "Ivoire" in result.name:
                     raise UnknownCountryError("")
