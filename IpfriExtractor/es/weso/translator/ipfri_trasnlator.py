@@ -6,7 +6,6 @@ from model2xml.model2xml import ModelToXMLTransformer
 from .parser.parser import Parser
 from .object_builder.model_object_builder import IpfriModelObjectBuilder
 
-from datetime import datetime
 import os.path
 
 
@@ -20,11 +19,23 @@ class IpfriTranslator(object):
         self._dataset_user_pairs = []
 
     def run(self):
-        self.determine_paths_to_files()
-        self._initialize_ids_propperly()
-        self.translate_files_into_model_objects()
-        self.translate_model_objects_into_xml()
-
+        try:
+            self.determine_paths_to_files()
+        except BaseException as e:
+            raise RuntimeError("While trying to determine paths to files to parse: " + e.message)
+        try:
+            self._initialize_ids_propperly()
+        except BaseException as e:
+            raise RuntimeError("While trying to initialize ids to create entities: " + e.message)
+        try:
+            self.translate_files_into_model_objects()
+        except BaseException as e:
+            raise RuntimeError("While trying to generate model objects: " + e.message)
+        try:
+            self.translate_model_objects_into_xml()
+        except BaseException as e:
+            raise RuntimeError("While trying to turn model objects into xml: " + e.message)
+        self._log.info("Final xml succesfully sent to the Receiver module")
 
     def _initialize_ids_propperly(self):
         """
@@ -49,7 +60,7 @@ class IpfriTranslator(object):
             i += 1
             a_sheet = self.take_data_sheet_from_file_path(a_path)
             indicators, dates, countries = Parser(a_sheet).run()
-            a_pair = IpfriModelObjectBuilder(self._config, indicators, dates, countries).run()
+            a_pair = IpfriModelObjectBuilder(self._log, self._config, indicators, dates, countries).run()
             self._dataset_user_pairs.append(a_pair)
 
     def translate_model_objects_into_xml(self):
@@ -83,7 +94,7 @@ class IpfriTranslator(object):
         if os.path.exists(candidate_file):
             self._paths_to_files.append(candidate_file)
         else:
-            raise RuntimeError("It looks like there is no available actual info. IpfriImporter will stop it execution")
+            raise RuntimeError("It looks like there is no available actual info. IpfriImporter will stop its execution")
 
 
     def take_data_sheet_from_file_path(self, a_path):

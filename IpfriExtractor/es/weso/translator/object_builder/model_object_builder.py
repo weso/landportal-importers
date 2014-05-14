@@ -24,8 +24,9 @@ from datetime import datetime
 
 
 class IpfriModelObjectBuilder(object):
-    def __init__(self, config, parsed_indicators, parsed_dates, parsed_countries):
+    def __init__(self, log, config, parsed_indicators, parsed_dates, parsed_countries):
 
+        self._log = log
         self._config = config
         self._parsed_indicators = parsed_indicators
         self._parsed_dates = parsed_dates
@@ -102,8 +103,8 @@ class IpfriModelObjectBuilder(object):
         for pcountry in self._parsed_countries:
             try:
                 new_country = self.reconciler.get_country_by_en_name(pcountry.name)
-            except UnknownCountryError, e:
-                print e.message
+            except UnknownCountryError:
+                self._log.warning("Unrecognized country: {0}. Its observations will be ignored".format(pcountry.name))
                 new_country = None
             self._countries_dict[pcountry.name] = new_country
 

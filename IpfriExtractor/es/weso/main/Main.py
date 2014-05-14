@@ -19,12 +19,23 @@ def run():
     config = ConfigParser()
     config.read("../../../files/configuration.ini")
 
-    xml_extractor = IpfriExtractor(log, config)
-    xml_extractor.run()
-    xml_translator = IpfriTranslator(log, config, True)
-    xml_translator.run()
-    print 'Done!'
+    try:
+        xml_extractor = IpfriExtractor(log, config)
+        xml_extractor.run()
+    except BaseException as e:
+        log.error("While extracting data from the source: " + e.message)
+        raise RuntimeError()
+    try:
+        xml_translator = IpfriTranslator(log, config, True)
+        xml_translator.run()
+    except BaseException as e:
+        log.error("While trying to introduce raw info into ourmodel: " + e.message)
+        raise RuntimeError()
 
 
 if __name__ == '__main__':
-    run()
+    try:
+        run()
+        print 'Done!'
+    except:
+        print 'Execution finalized with erros. Check logs'

@@ -71,11 +71,9 @@ class IpfriExtractor(object):
             FileWriter.write_binary_to_file(xls_content, file_name)
             self.log.info("Tracking data from {0} ended.".format(valid_url))
 
-        except:
-            e = sys.exc_info()[0]
-            self.log.exception(
-                "Unable to download info from {0}. Data of that year will be ignored. Cause: {1}".format(str(year), e))
-            raise  #delete on final version
+        except BaseException as e:
+            raise RuntimeError("Unable to download info from {0}. Data of that year will be ignored. Cause: {1}".
+                               format(str(year), e.message))
         
         
         
