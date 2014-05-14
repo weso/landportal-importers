@@ -66,7 +66,6 @@ class ModelObjectBuilder(object):
 
     def run(self):
 
-
         for register in self._registers:
             self.build_model_objects_from_register(register)
         # for i in range(1, 2000):  # Para pruebas
@@ -76,25 +75,24 @@ class ModelObjectBuilder(object):
 
     def build_dataset(self):
         #Creating dataset object
-        print self._org_id
         dataset = Dataset(chain_for_id=self._org_id, int_for_id=self._dat_int, frequency=Dataset.YEARLY)
         self._dat_int += 1  # Updating id value
 
         #creating related objects
         #Organization
         org = Organization(chain_for_id=self._org_id,
-                           name=self._config.get("ORGANIZATION", "name"), # ""
-                           url=self._config.get("ORGANIZATION", "url"),  # ""
-                           url_logo=self._config.get("ORGANIZATION", "url_logo"))  # ""
+                           name=self._config.get("ORGANIZATION", "name"),
+                           url=self._config.get("ORGANIZATION", "url"),
+                           url_logo=self._config.get("ORGANIZATION", "url_logo"))
         #datasource
-        datasource = DataSource(name=self._config.get("SOURCE", "name"),  # "F"
+        datasource = DataSource(name=self._config.get("SOURCE", "name"),
                                 chain_for_id=self._org_id,
                                 int_for_id=self._config.get("SOURCE", "datasource_id"))
         #license
-        license_type = License(description=self._config.get("LICENSE", "description"),  # ""
-                               name=self._config.get("LICENSE", "name"),  # ""
-                               republish=self._config.get("LICENSE", "republish"),  #
-                               url=self._config.get("LICENSE", "url"))  # ""
+        license_type = License(description=self._config.get("LICENSE", "description"),
+                               name=self._config.get("LICENSE", "name"),
+                               republish=self._config.get("LICENSE", "republish"),
+                               url=self._config.get("LICENSE", "url"))
         #linking objects
         org.add_data_source(datasource)
         datasource.add_dataset(dataset)
@@ -127,11 +125,13 @@ class ModelObjectBuilder(object):
         if new_observation.ref_time.year > self._last_checked_year:
             self._last_checked_year = new_observation.ref_time.year
 
-    def add_issued_to_observation(self, observation, register):
+    @staticmethod
+    def add_issued_to_observation(observation, register):
         #Adding time in which the observation has been treated by us
         observation.issued = Instant(datetime.now())
 
-    def add_reftime_to_observation(self, observation, register):
+    @staticmethod
+    def add_reftime_to_observation(observation, register):
         observation.ref_time = YearInterval(year=register[TranslatorConst.YEAR])
 
     def add_computation_to_observation(self, observation, register):
@@ -148,7 +148,8 @@ class ModelObjectBuilder(object):
             self._computations_dict[computation_text] = Computation(uri=computation_text)
         observation.computation = self._computations_dict[computation_text]
 
-    def add_value_to_observation(self, observation, register):
+    @staticmethod
+    def add_value_to_observation(observation, register):
         value = Value()
         value.value_type = "float"
         if register[TranslatorConst.VALUE] is None or register[TranslatorConst.VALUE] == "":
@@ -169,7 +170,8 @@ class ModelObjectBuilder(object):
     def _read_config_value(self, section, field):
         return (self._config.get(section, field)).decode(encoding="utf-8")
 
-    def _parse_preferable_tendency(self, tendency):
+    @staticmethod
+    def _parse_preferable_tendency(tendency):
         if tendency.lower() == "increase":
             return Indicator.INCREASE
         elif tendency.lower() == "decrease":
@@ -297,27 +299,6 @@ class ModelObjectBuilder(object):
 
         return result
 
-    #The next commented method is obsolete. Descriptions should come from config files
-
-    # def get_indicator_description(self, indicator_code):
-    #
-    #     if indicator_code == TranslatorConst.CODE_LAND_AREA:
-    #         return "Land Area. Total area in sq. km of the referred region"
-    #     elif indicator_code == TranslatorConst.CODE_AGRICULTURAL_LAND:
-    #         return "Agricultural land. Total area in sq. km. for agriculture of the referred region"
-    #     elif indicator_code == TranslatorConst.CODE_FOREST_LAND:
-    #         return "Forest land. Total forest surface in sq. km of the referred region"
-    #     elif indicator_code == TranslatorConst.CODE_ARABLE_LAND:
-    #         return "Arable land. Total arable surface in sq. km. of the referred region"
-    #     elif indicator_code == TranslatorConst.CODE_RELATIVE_ARABLE_LAND:
-    #         return "Relative arable land. Percentage of arable land from the total land area of the referred region"
-    #     elif indicator_code == TranslatorConst.CODE_RELATIVE_FOREST_LAND:
-    #         return "Relative forest land. Percentage of forest land from the total land area of the referred region"
-    #     elif indicator_code == TranslatorConst.CODE_RELATIVE_AGRICULTURAL_LAND:
-    #         return "Arable agricultural land. Percentage of agricultural land from the total land area of the referred region"
-    #     else:
-    #         raise RuntimeError("Unknown indicator. No description found")
-
 
     def get_asociated_country(self, country_code):
         if country_code not in self._country_dict:
@@ -327,14 +308,3 @@ class ModelObjectBuilder(object):
                 self._country_dict[country_code] = None  # By this, unsucessfull searches are executed only one time
                 return None  # return None as a signal of "invalid country"
         return self._country_dict[country_code]
-        # country_found = None
-        # for country in self.country_list:
-        #     if country.country_code == country_code:
-        #         country_found = country
-        #         break
-        # if country_found is not None:
-        #     return country_found
-        # else:
-        #     new_country = CountryReconciler.get_country_by_faostat_code()
-        #     self.country_list.append(new_country)
-        #     return new_country

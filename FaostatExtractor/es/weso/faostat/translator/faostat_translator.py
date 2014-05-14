@@ -53,7 +53,8 @@ class FaostatTranslator(object):
         """
 
         registers = self.turn_raw_data_into_registers(self._look_for_historical)
-        registers += RelativeRegistersCalculator(registers,
+        registers += RelativeRegistersCalculator(self._log,
+                                                 registers,
                                                  self._land_area_reference,
                                                  self.key_for_land_area_ref).run()  # The last arg. is a function
         builder = ModelObjectBuilder(registers, self._config, self._log, self._reconciler, self._look_for_historical)
@@ -65,13 +66,6 @@ class FaostatTranslator(object):
             self._log.error("Error while trying to sned xml to the receiver: " + e.message)
             raise e
 
-        # raw_registers = self.turn_raw_data_into_registers(look_for_historical)
-        # calculated_registers = RelativeRegistersCalculator(raw_registers,
-        #                                                    self.land_area_reference,
-        #                                                    self.key_for_land_area_ref).\
-        #                                                     run()  # The last arg. is a function
-        #
-        # dataset_model = self.build_model_objects_from_registers(calculated_registers + raw_registers)
 
     def _update_config_values(self, object_builder):
         self._config.set("TRANSLATOR", "obs_int", object_builder._obs_int)
@@ -103,14 +97,11 @@ class FaostatTranslator(object):
 
     def turn_raw_data_into_registers(self, look_for_historical):
         raw_data_file = codecs.open(self.get_csv_file_name(), encoding='latin-1')
-        # raw_data_file = open(self.get_csv_file_name())
         lines = raw_data_file.readlines()
         raw_data_file.close()
         result = []
         for i in range(1, len(lines)):
-            #print lines[i].encode(encoding="utf-8")
             propper_line = lines[i].encode(encoding="utf-8")
-            # print properLine
             try:
                 candidate_register = self.create_field_list(propper_line, i + 1)
                 if self.pass_filters(candidate_register, look_for_historical):

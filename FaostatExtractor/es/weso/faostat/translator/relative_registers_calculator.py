@@ -12,7 +12,7 @@ class RelativeRegistersCalculator(object):
     '''
 
 
-    def __init__(self, imported_registers, land_dictionary, key_generation_function):
+    def __init__(self, log, imported_registers, land_dictionary, key_generation_function):
         """
         Constructor
 
@@ -20,6 +20,7 @@ class RelativeRegistersCalculator(object):
         self.imported_registers = imported_registers
         self.land_dictionary = land_dictionary
         self.key_generation_function = key_generation_function
+        self._log = log
 
 
 
@@ -29,7 +30,10 @@ class RelativeRegistersCalculator(object):
 
         for imported in self.imported_registers:
             if self._need_to_calculate_a_relative_register(imported):
-                calculated_registers.append(self._calculate_relative_register(imported))
+                try:
+                    calculated_registers.append(self._calculate_relative_register(imported))
+                except BaseException as e:
+                    self._log.warning("Exception while calculating relative register, observation ignored: " + e.message)
         return calculated_registers
 
     def _calculate_relative_register(self, imported):
@@ -62,14 +66,14 @@ class RelativeRegistersCalculator(object):
 
     def _infer_value(self, imported):
         key_land = self.key_generation_function(country_code=imported[TranslatorConst.COUNTRY_CODE],
-                                                               year=imported[TranslatorConst.YEAR])
+                                                year=imported[TranslatorConst.YEAR])
         try:
 
             land_area = self.land_dictionary[key_land]
             return 100 * float(imported[TranslatorConst.VALUE]) / float(land_area)
-        except:
-            print "pfff............" + key_land
-            return 8
+        except BaseException as e:
+            raise RuntimeError("Error while infering relative value of an observation. Country {0}. Cause: {1}."
+                               .format(key_land, e.message))
 
     @staticmethod
     def _infer_unit():
