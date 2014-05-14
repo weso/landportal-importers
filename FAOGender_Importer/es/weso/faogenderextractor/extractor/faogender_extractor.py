@@ -47,6 +47,7 @@ class FaoGenderExtractor(object):
             builder = ModelObjectBuilder(self._log, self._config, registers, self._look_for_historical)
             builder.run()
             self.actualize_config_values(builder)
+            self._log.info("Data successfully processed by the receiver")
         except BaseException as e:
             self._log.error("Exception while sending xml to the receiver module: " + e.message)
             raise e

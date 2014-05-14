@@ -36,7 +36,7 @@ class CountriesXmlExtractor(object):
 
     def _get_xml_of_a_country(self, country):
         string_request = self._query_pattern.replace(self._replace_by_iso, country.iso3)
-        print "Pesco uno!" + country.iso3
+        self._log.info("Tracking data from " + country.iso3 + "...")
         return requests.get(string_request).content
 
 

@@ -1,8 +1,8 @@
-'''
+"""
 Created on 21/01/2014
 
 @author: Miguel Otero
-'''
+"""
 
 import logging
 from ConfigParser import ConfigParser
@@ -15,14 +15,23 @@ def configure_log():
     logging.basicConfig(filename='faogender_extractor.log', level=logging.INFO, 
                         format=FORMAT)
 
+
 def run():
     configure_log()
     logger = logging.getLogger('main')
     config = ConfigParser()
     config.read("../../../../files/configuration.ini")
     logger.info('Starting run')
-    extractor = FaoGenderExtractor(logger, config, True)
-    extractor.run()
+    try:
+        extractor = FaoGenderExtractor(logger, config, True)
+        extractor.run()
+    except BaseException as e:
+        logger.error("Error: " + e.message)
+        raise RuntimeError()
 
 if __name__ == '__main__':
-    run()
+    try:
+        run()
+        print "Done!"
+    except:
+        print "Execution finalized with errors. Check logs."

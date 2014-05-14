@@ -50,8 +50,9 @@ class XmlContentParser(object):
         tree = None
         try:
             tree = ETree.fromstring(response)
-        except:
-            #TODO. Beeter info here
+        except BaseException as e:
+            self._log.warning("Error while parsing a response. The importer will try to process the rest "
+                              "of the data. Cause: " + e.message)
             return None
 
         return self._turn_tree_into_xml_register(tree)
@@ -79,7 +80,8 @@ class XmlContentParser(object):
 
             return result
         except BaseException as e:
-            #TODO: BETTER INFO HERE
+            self._log.warning("Unable to track data from country {0}. Country will be ignored. Cause: {1}"
+                              .format(country.iso3, e.message))
             return None
 
     def _pass_filters(self, data_of_an_indicator):
@@ -113,6 +115,7 @@ class XmlContentParser(object):
         for node in base_node.getchildren():
             if node.attrib["code"] == code:
                 return self._get_data_from_a_given_indicator_node(node, code)
+
         return None
 
 
@@ -121,12 +124,10 @@ class XmlContentParser(object):
         node_date = self._look_for_node_date(node.text)
 
         if not (node_value is None or node_date is None):
-            print "Aqui hay algo que merece la pena: ", node_value, node_date.get_time_string()
             return IndicatorData(indicator_code=code,
                                  value=node_value,
                                  date=node_date)
         else:
-            #TODO: Maybe make some noise in the log
             return None
 
     def _look_for_node_value(self, text):
