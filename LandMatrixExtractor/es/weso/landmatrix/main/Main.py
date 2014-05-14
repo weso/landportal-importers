@@ -21,11 +21,25 @@ def run(look_for_historical=True):
     log = logging.getLogger("lmextractor")
     config = ConfigParser()
     config.read("../../../../files/configuration.ini")
-    xml_extractor = LandMatrixExtractorXML()
-    xml_extractor.run()
-    translator = LandMatrixTranslator(log, config, look_for_historical=True)
-    translator.run()
-    print 'Done!'
+    try:
+        xml_extractor = LandMatrixExtractorXML(log, config)
+        xml_extractor.run()
+    except BaseException as ex:
+        log.error("While downloading data: " + ex.message)
+        raise RuntimeError()
+
+    try:
+        translator = LandMatrixTranslator(log, config, look_for_historical=look_for_historical)
+        translator.run()
+    except BaseException as ex:
+        log.error("While trying to incropore raw info into our model: " + ex.message)
+        raise RuntimeError()
+
+
 
 if __name__ == '__main__':
-    run(True)
+    try:
+        run(True)
+        print 'Done!'
+    except BaseException as ex:
+        print "Execution finalized with errors. Check log."

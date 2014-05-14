@@ -135,12 +135,16 @@ class LandMatrixTranslator(object):
         that indicates if we have to consider old information or only bear in mind actual one
 
         """
-        info_nodes = self._get_info_nodes_from_file()
-        deals = self._turn_info_nodes_into_deals(info_nodes)
-        deal_entrys = self._turn_deals_into_deal_entrys(deals)
-        observations = self._turn_deal_entrys_into_obs_objects(deal_entrys)
-        for obs in observations:
-            self._default_dataset.add_observation(obs)
+        try:
+            info_nodes = self._get_info_nodes_from_file()
+            deals = self._turn_info_nodes_into_deals(info_nodes)
+            deal_entrys = self._turn_deals_into_deal_entrys(deals)
+            observations = self._turn_deal_entrys_into_obs_objects(deal_entrys)
+            for obs in observations:
+                self._default_dataset.add_observation(obs)
+        except BaseException as e:
+            raise RuntimeError("Error while trying to build model objects: " + e.message)
+
         m2x = ModelToXMLTransformer(dataset=self._default_dataset,
                                     import_process="xml",
                                     user=self._default_user)
@@ -148,8 +152,7 @@ class LandMatrixTranslator(object):
             m2x.run()
             self._actualize_config_values()
         except BaseException as e:
-            self._log.error("Error wuile sendig info to te receiver module: " + e.message)
-            raise e
+            raise RuntimeError("Error wuile sendig info to te receiver module: " + e.message)
 
     def _actualize_config_values(self):
         self._config.set("TRANSLATOR", "obs_int", self._obs_int)
@@ -237,11 +240,13 @@ class LandMatrixTranslator(object):
         return result
 
 
-    @staticmethod
-    def _turn_info_nodes_into_deals(info_nodes):
+    def _turn_info_nodes_into_deals(self, info_nodes):
         result = []
         for info_node in info_nodes:
-            result.append(DealsBuilder.turn_node_into_deal_object(info_node))
+            try:
+                result.append(DealsBuilder.turn_node_into_deal_object(info_node))
+            except BaseException as ex:
+                self._log.warning("Problem while parsing a node of a deal. Deal will be ignored. Cause: " + ex.message)
         return result
 
     def _get_info_nodes_from_file(self):

@@ -12469,10 +12469,10 @@
 			Startup phase (no production)
 		</field>
 		<field name="intended_size">
-			None
+			3000
 		</field>
 		<field name="contract_size">
-			728
+			2300
 		</field>
 		<field name="production_size">
 			None
@@ -13432,53 +13432,6 @@
 	</item>
 	<item>
 		<field name="deal_id">
-			671
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Gujarat, Mundra
-		</field>
-		<field name="investor_name">
-			Mundra Port and Special Economic Zone Ltd. (MPSEZL)
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			4499
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
 			672
 		</field>
 		<field name="target_country">
@@ -13967,16 +13920,16 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2005] Intended (Under negotiation), [2009] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			[2012] Project not started
 		</field>
 		<field name="intended_size">
 			1010
 		</field>
 		<field name="contract_size">
-			None
+			1010
 		</field>
 		<field name="production_size">
 			None
@@ -13985,54 +13938,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			683
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Maharashtra, Nagpur, location: Butibori
-		</field>
-		<field name="investor_name">
-			Maharashtra Industrial Development Corporation Ltd
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			383
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2008-11-15 http://news.outlookindia.com/items.aspx?artid=633842 Media report , 2012-01-01 http://www.ilfsindia.com/projects.aspx?prid=4&amp;catid=1&amp;slnk=107&amp;cid=5 Company sources , 2008-08-08 http://ilfsindia.com/press_room/press/sez_proj_08_08_2008.pdf Company sources , 2012-03-22 http://timesofindia.indiatimes.com/city/nagpur/Setback-to-Amravati-industrialization/articleshow/12365261.cms Media report , 2010-02-01 http://www.indiaenvironmentportal.org.in/files/sez_sam.pdf Research Paper / Policy Report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -14049,7 +13955,7 @@
 			India
 		</field>
 		<field name="location">
-			Maharashtra, Yavatmal
+			Latur, Maharashtra, India
 		</field>
 		<field name="investor_name">
 			Maharashtra Industrial Development Corporation Ltd
@@ -14058,16 +13964,63 @@
 			India
 		</field>
 		<field name="intention">
+			Agriculture, Industry
+		</field>
+		<field name="negotiation_status">
+			Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			[2014] Startup phase (no production)
+		</field>
+		<field name="intended_size">
+			200
+		</field>
+		<field name="contract_size">
+			200
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , http://latur.nic.in/html/industries.pdf Government sources , 2014-05-09 http://en.wikipedia.org/wiki/Latur Media report , 2010-02-01 http://www.indiaenvironmentportal.org.in/files/sez_sam.pdf Research Paper / Policy Report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			None
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			685
+		</field>
+		<field name="target_country">
+			India
+		</field>
+		<field name="location">
+			Maharashtra, Raigad, location: Chawk in Khalapur Taluka
+		</field>
+		<field name="investor_name">
+			Sinima Meadows Limited
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
 			None
 		</field>
 		<field name="intended_size">
-			208
+			242
 		</field>
 		<field name="contract_size">
 			None
@@ -14079,7 +14032,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , http://www.sezindiainvest.com/SEZ_Locator/0225_Maharashtra_Sinima_Meadows_Limited_Raigad.htm Media report , 2011-01-01 http://www.connect2projects.com/sez-details?id=652 Media report , 2010-02-01 http://www.indiaenvironmentportal.org.in/files/sez_sam.pdf Research Paper / Policy Report , 2011-01-01 http://www.progressiveindialtd.com/maharashtra-sez-approved.html Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -14108,7 +14061,7 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2007] Intended (Under negotiation)
 		</field>
 		<field name="implementation_status">
 			None
@@ -14126,7 +14079,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2011-01-01 http://www.connect2projects.com/sez-details?id=621 Media report , 2010-08-18 http://pib.nic.in/newsite/erelease.aspx?relid=64916 Government sources , 2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -14146,34 +14099,34 @@
 			Maharashtra, Mumbai, location: 169, Aarey Milk Colony, Goregaon East
 		</field>
 		<field name="investor_name">
-			Royal Palms India Private Limited
+			None
 		</field>
 		<field name="investor_country">
-			India
+			None
 		</field>
 		<field name="intention">
-			Industry
+			Industry, Other, Tourism
 		</field>
 		<field name="negotiation_status">
-			None
+			[2007] Intended (Under negotiation)
 		</field>
 		<field name="implementation_status">
-			None
+			In operation (production)
 		</field>
 		<field name="intended_size">
-			218
+			228
 		</field>
 		<field name="contract_size">
 			None
 		</field>
 		<field name="production_size">
-			None
+			97
 		</field>
 		<field name="nature_of_the_deal">
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2011-07-01 http://www.constructionworld.in/News.aspx?news=People-staying-in-Mumbai-will-prefer-to-come-to-Royal-Palms-instead-of-going-to-any-hill-station-India-Sector&amp;nid=pXGZl1/bA/F439Y9WUda6w== Media report , 2006-01-01 http://www.royalpalmsindia.com/main_aboutRoyalPalms.htm Company sources , 2006-01-01 http://www.royalpalmsindia.com/main_aboutTheCompany.htm Company sources , 2013-02-18 http://www.dnaindia.com/money/conversation-corner-goregaons-the-place-to-look-at-now-1800998 Media report , 2010-08-18 http://pib.nic.in/newsite/erelease.aspx?relid=64916 Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -14220,7 +14173,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2010-08-10 http://articles.economictimes.indiatimes.com/2011-08-10/news/29872222_1_sezs-khed-chakan-road-infrastructure Media report , 2012-07-03 http://archive.indianexpress.com/news/with-no-word-on-policy-change-bharat-forge-sez-phases-ii-and-iii-on-hold/969609/ Media report , 2013-08-10 http://www.livemint.com/Industry/fdbXbAL5Z58khcs0VRxrXM/Bharat-Forge-to-convert-Chakan-SEZ-into-industrial-area.html Media report , 2010-02-01 http://landmatrix.org/media/uploads/indiaenvironmentportalorginfilessez_sampdf.pdf Research Paper / Policy Report , http://landmatrix.org/media/uploads/livemintcomrlivemintperiod1oldpdfcc879a83-44b6-4eb1-ae30-3bea5b6ceea0pdf.pdf Research Paper / Policy Report 
+			2013-11-12 http://www.airportwatch.org.uk/?p=18362 Media report , 2011-10-27 http://landmovements.wordpress.com/2011/10/27/farmers-struggle-against-land-grab-in-pune-district/ Other (Please specify in comment  field) , 2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2010-08-10 http://articles.economictimes.indiatimes.com/2011-08-10/news/29872222_1_sezs-khed-chakan-road-infrastructure Media report , 2012-07-03 http://archive.indianexpress.com/news/with-no-word-on-policy-change-bharat-forge-sez-phases-ii-and-iii-on-hold/969609/ Media report , 2013-08-10 http://www.livemint.com/Industry/fdbXbAL5Z58khcs0VRxrXM/Bharat-Forge-to-convert-Chakan-SEZ-into-industrial-area.html Media report , 2010-02-01 http://landmatrix.org/media/uploads/indiaenvironmentportalorginfilessez_sampdf.pdf Research Paper / Policy Report , http://landmatrix.org/media/uploads/livemintcomrlivemintperiod1oldpdfcc879a83-44b6-4eb1-ae30-3bea5b6ceea0pdf.pdf Research Paper / Policy Report , 2006-01-01 http://www.business-standard.com/india/news/bharat-forge-maharashtra-ink-pune-sez-agreement/255694/ Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -26875,53 +26828,6 @@
 	</item>
 	<item>
 		<field name="deal_id">
-			1330
-		</field>
-		<field name="target_country">
-			Ghana
-		</field>
-		<field name="location">
-			Salaga, Ghana
-		</field>
-		<field name="investor_name">
-			Northern Sugar Resources Ltd
-		</field>
-		<field name="investor_country">
-			Ghana
-		</field>
-		<field name="intention">
-			Agriculture
-		</field>
-		<field name="negotiation_status">
-			[2008] Intended (Under negotiation)
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			30000
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2008-05-04 http://www.thelocal.se/11536/20080504/ Media report , http://www.planetunderpressure2012.net/pup_session.asp?19119 Media report , http://environmentalresearchweb.org/cws/article/news/51939 Media report , 2013-07-08 University of Leeds Personal information , http://www.regencyr.com/company/newsdetails.php?id=9 Company sources , http://articles.economictimes.indiatimes.com/2008-04-22/news/28396030_1_joint-venture-sugar-cane-biofuels Media report 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			Sugar Cane
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
 			1334
 		</field>
 		<field name="target_country">
@@ -28153,10 +28059,10 @@
 			Grand Bassa, Liberia
 		</field>
 		<field name="investor_name">
-			Equatorial Palm Oil plc
+			SIVA Group, Equatorial Palm Oil plc, Kuala Lumpur Kepong Berhad
 		</field>
 		<field name="investor_country">
-			United Kingdom of Great Britain and Northern Ireland
+			India, United Kingdom of Great Britain and Northern Ireland, Malaysia
 		</field>
 		<field name="intention">
 			Agriculture
@@ -28180,7 +28086,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			http://www.farmlandgrab.org/post/view/22611-sdi-calls-on-the-government-of-liberia-equatorial-palm-oil-to-immediately-cease-land-survey-in-grand-bassa-district-4 Media report , 2014-03-27 http://www.farmlandgrab.org/post/view/23316-lexpansion-des-plantations-dhuile-de-palme-stoppee-au-liberia Media report , http://www.leiti.org.lr/doc/LIBINIC_OIL_PALM_INC.pdf Contract , http://www.epoil.co.uk/operations.aspx Company sources , 2012-03-15 http://www.sivagroup.in/media-centre/in-the-news/23-major-foreign-bioenergy-investments.aspx Company sources , http://www.leiti.org.lr/doc/leiti4rp2.pdf Government sources , 2012-02-28 Company sources , 2014-01-10 Government sources , http://www.reuters.com/finance/stocks/companyProfile?symbol=PALO.L Media report , 2014-03-21 http://www.farmlandgrab.org/post/view/23300-is-liberia-s-president-going-cold-on-the-palm-oil-industry#sthash.VkueYfes.dpuf Media report 
+			http://www.leiti.org.lr/doc/leiti4rp2.pdf Government sources , 2012-02-28 Company sources , http://www.leiti.org.lr/doc/LIBINIC_OIL_PALM_INC.pdf Contract , 2014-03-27 http://www.farmlandgrab.org/post/view/23316-lexpansion-des-plantations-dhuile-de-palme-stoppee-au-liberia Media report , 2014-05-06 http://farmlandgrab.org/post/view/23462-resistance-to-liberia-landgrabs-a-warning-to-africa-investment-conference#sthash.clfufcdS.dpuf Media report , Media report , 2014-03-21 http://www.farmlandgrab.org/post/view/23300-is-liberia-s-president-going-cold-on-the-palm-oil-industry#sthash.VkueYfes.dpuf Media report , http://www.epoil.co.uk/operations.aspx Company sources , 2012-03-15 http://www.sivagroup.in/media-centre/in-the-news/23-major-foreign-bioenergy-investments.aspx Company sources , http://www.farmlandgrab.org/post/view/22611-sdi-calls-on-the-government-of-liberia-equatorial-palm-oil-to-immediately-cease-land-survey-in-grand-bassa-district-4 Media report , 2014-01-10 Government sources , http://www.reuters.com/finance/stocks/companyProfile?symbol=PALO.L Media report 
 		</field>
 		<field name="contract_farming">
 			True
@@ -41622,13 +41528,13 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2008-01-01 https://files.pbworks.com/download/TM8DBZaKBP/np-net/12639098/GEXSI%20%282008%29%20Global%20market%20study%20on%20Jatropha%20FULL-REPORT.pdf?ld=1 Research Paper / Policy Report , 2011-01-01 http://www.biofuel.no/index.php?txt=intro Company sources , http://www.fao.org/fileadmin/templates/est/INTERNATIONAL-TRADE/FDIs/Bugri_CURRENT_DYNAMICS_OF_AGRICULTURAL_INVESTMENTS_IN_GHANA.pdf Research Paper / Policy Report 
+			2008-01-01 https://files.pbworks.com/download/TM8DBZaKBP/np-net/12639098/GEXSI%20%282008%29%20Global%20market%20study%20on%20Jatropha%20FULL-REPORT.pdf?ld=1 Research Paper / Policy Report , 2011-01-01 http://www.biofuel.no/index.php?txt=intro Company sources , http://www.fao.org/fileadmin/templates/est/INTERNATIONAL-TRADE/FDIs/Bugri_CURRENT_DYNAMICS_OF_AGRICULTURAL_INVESTMENTS_IN_GHANA.pdf Research Paper / Policy Report , 2014-04-18 IIED Personal information 
 		</field>
 		<field name="contract_farming">
 			None
 		</field>
 		<field name="crop">
-			Jatropha, Food crops (no specification)
+			Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -84095,7 +84001,7 @@
 			[2005] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			[2005] Startup phase (no production), In operation (production)
+			[2005] Startup phase (no production), [2008] In operation (production)
 		</field>
 		<field name="intended_size">
 			None
@@ -84110,13 +84016,13 @@
 			Outright Purchase, Lease / Concession
 		</field>
 		<field name="data_source">
-			2011-01-01 http://www.ltonoord.nl/sites/ltonoord.nl/files/visserspoor-jps-landgrab-2011_0.pdf Research Paper / Policy Report , 2014-04-07 http://ejatlas.org/conflict/black-earth-farming-massive-agroinvest-farming-operation-russia Media report , 2014-04-04 http://www.blackearthfarming.com/where.html Company sources , 2014-04-11 http://files.shareholder.com/downloads/ABEA-4N3O94/3151360391x0x748153/1f2ce1fe-b011-49f5-97cd-9e630262df45/BEF_2013_Annual_Report_Website.pdf Company sources 
+			2011-01-01 http://www.ltonoord.nl/sites/ltonoord.nl/files/visserspoor-jps-landgrab-2011_0.pdf Research Paper / Policy Report , 2014-04-07 http://ejatlas.org/conflict/black-earth-farming-massive-agroinvest-farming-operation-russia Media report , 2014-04-04 http://www.blackearthfarming.com/where.html Company sources , 2014-04-11 http://files.shareholder.com/downloads/ABEA-4N3O94/3151360391x0x748153/1f2ce1fe-b011-49f5-97cd-9e630262df45/BEF_2013_Annual_Report_Website.pdf Company sources , 2008-07-28 http://www.berliner-zeitung.de/archiv/nach-dem-ende-der-sowjetunion-lagen-riesige-felder-in-russland-brach--jetzt-kaufen-auslaendische-investoren-die-flaechen-der-frueheren-kolchosen-fruchtbare-erde,10810590,10575630.html Media report , 2007-09-30 http://files.shareholder.com/downloads/ABEA-4N3O94/0x0x508656/579E5FBE-4201-4218-A7B3-98D37FB8F412/BEF_3Q_2007_report.pdf Company sources , 2009-12-01 http://files.shareholder.com/downloads/ABEA-4N3O94/3163271571x0x530874/d11c710d-aacf-429f-8134-64ffb5ac099a/bef_ar09_web.pdf Company sources 
 		</field>
 		<field name="contract_farming">
 			None
 		</field>
 		<field name="crop">
-			Barley, Sun Flower, Rapeseed, Oil Seeds, Corn (Maize), Grains, Wheat
+			Barley, Wheat
 		</field>
 	</item>
 </data>

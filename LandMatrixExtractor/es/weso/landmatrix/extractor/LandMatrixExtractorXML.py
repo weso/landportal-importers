@@ -18,13 +18,13 @@ class LandMatrixExtractorXML(object):
     '''
 
 
-    def __init__(self):
+    def __init__(self, log, config):
         """
         Constructor
         """
-        self.config = ConfigParser()
-        self.config.read("../../../../files/configuration.ini")
-        self.log = logging.getLogger('landmatrixlog')
+
+        self._config = config
+        self._log = log
 
     def run(self):
         """
@@ -32,14 +32,13 @@ class LandMatrixExtractorXML(object):
 
         """
         try:
-            self.log.info('Running Land matrix xml extractor...')
-            response = urllib2.urlopen(self.config.get("LAND_MATRIX", "url_download"))
+            self._log.info('Running Land matrix xml extractor...')
+            response = urllib2.urlopen(self._config.get("LAND_MATRIX", "url_download"))
             xml_content = response.read()
-            FileWriter.write_text_to_file(xml_content, self.config.get("LAND_MATRIX", "target_file"))       
-            self.log.info('Land matrix xml extractor finished')
-        except:
-            e = sys.exc_info()[0]
-            self.log.error("Unable to track data from {0}... Cause: {1}".format(self.config.get("LAND_MATRIX", "url_download"), e))
-            raise
+            FileWriter.write_text_to_file(xml_content, self._config.get("LAND_MATRIX", "target_file"))
+            self._log.info('Land matrix xml extractor finished')
+        except BaseException as e:
+            raise RuntimeError("Unable to track data from {0}... Cause: {1}"
+                               .format(self._config.get("LAND_MATRIX", "url_download"), e.message))
 
 

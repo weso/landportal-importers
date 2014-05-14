@@ -79,7 +79,7 @@ def _extract_negotiation_status(info_node):
     elif status_container.__contains__(Deal.INTENDED):
         return Deal.INTENDED
     else:
-        return None  # We shouldn't reach this condition... but if we reach it, obviously, we haven't valid status
+        raise RuntimeError("Unrecognized negotiation status in node: " + status_container)
 
 
 def _extract_target_country(info_node):
