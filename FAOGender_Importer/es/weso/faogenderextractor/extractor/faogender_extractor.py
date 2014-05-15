@@ -58,7 +58,7 @@ class FaoGenderExtractor(object):
         self._config.set("TRANSLATOR", "sli_int", builder._sli_int)
         self._config.set("TRANSLATOR", "dat_int", builder._dat_int)
 
-        with open("../../../../files/configuration.ini", "wb") as config_file:
+        with open("./files/configuration.ini", "wb") as config_file:
             self._config.write(config_file)
 
 

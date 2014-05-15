@@ -61,9 +61,14 @@ class ModelObjectBuilder(object):
         for obs in observations:
             self._default_dataset.add_observation(obs)
 
-        ModelToXMLTransformer(dataset=self._default_dataset, import_process="API Rest", user=self._default_user).run()
+        ModelToXMLTransformer(dataset=self._default_dataset,
+                              import_process=ModelToXMLTransformer.API,
+                              user=self._default_user,
+                              path_to_original_file=self._path_to_api()).run()
 
 
+    def _path_to_api(self):
+        return self._config.get("API", "api_url")
 
     def _build_observations_from_register(self, register):
         result = []
