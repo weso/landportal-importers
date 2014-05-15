@@ -7,6 +7,7 @@ Created on 03/02/2014
 from __future__ import unicode_literals
 from lpentities.computation import Computation
 from lpentities.country import Country
+from zipfile import ZipFile
 
 try:
     from xml.etree.cElementTree import Element, ElementTree
@@ -30,7 +31,14 @@ class ModelToXMLTransformer(object):
     classdocs
     """
 
-    def __init__(self, dataset, import_process, user, indicator_relations=None):
+    XML = "xml"
+    XLS = "excell"
+    CSV = "csv"
+    API = "api"
+    JSON = "json"
+    SCRAP = "scrap"
+
+    def __init__(self, dataset, import_process, user, path_to_original_file, indicator_relations=None):
         """
         Constructor:
          - dataset: lpentities.dataset object containing most of the info
@@ -48,6 +56,7 @@ class ModelToXMLTransformer(object):
         self._indicator_dic = {}  # It will store an indicator object with it id as key.
         self._group_dic = {}
         self._indicator_relations = indicator_relations
+        self._path_to_original_file = path_to_original_file
         # One per indicator referred by the observations
 
         self._root = self._build_root()
@@ -162,7 +171,7 @@ class ModelToXMLTransformer(object):
 
         #Sending xml to the receiver
         try:
-            # self._send_to_receiver(paths)
+            self._send_to_receiver(paths)
             pass
         except BaseException as e:
             raise RuntimeError("Error while sending xml to the receiver module. " + e.message)
@@ -180,7 +189,8 @@ class ModelToXMLTransformer(object):
             try:
                 with codecs.open(file_path, encoding="utf-8") as xml:
                     file_content = xml.read()
-                    data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')})
+                    data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')},
+                                            {'file': self._obtain_content_of_original_path()})
                     req = urllib2.Request(url, data)
                     resp = urllib2.urlopen(req)
             except BaseException as e:
@@ -188,6 +198,13 @@ class ModelToXMLTransformer(object):
                 exceptions.append(e)
         self._process_sending_exceptions(exceptions)
 
+
+    def _obtain_content_of_original_path(self):
+        file_zip = ZipFile(self._path_to_original_file + ".zip", "w")
+        file_zip.write(self._path_to_original_file)
+        file_zip.close()
+        with open(self._path_to_original_file + ".zip") as file_content:
+            return file_content
 
     @staticmethod
     def _process_sending_exceptions(exceptions):
