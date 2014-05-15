@@ -103,12 +103,14 @@ class FoncierImporter(object):
 
         # Send model for its translation
         try:
-            translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+            translator = ModelToXMLTransformer(self._default_dataset, ModelToXMLTransformer.API, self._default_user, self._path_to_api())
             translator.run()
             self._actualize_config_values(last_year)
         except BaseException as e:
             raise RuntimeError("Error while sending info to the module receiver: " + e.message)
 
+    def _path_to_api(self):
+        return self._config.get("IMPORTER", "url_api")
 
     def _build_xml_tracker(self):
         return RestXmlTracker(url_pattern=self._config.get("IMPORTER", "url_pattern"),
@@ -124,7 +126,7 @@ class FoncierImporter(object):
         self._config.set("TRANSLATOR", "dat_int", self._dat_int)
         self._config.set("TRANSLATOR", "igr_int", self._igr_int)
         self._config.set("AVAILABLE_TIME", "last_checked_year", last_year)
-        with open("../../../files/configuration.ini", 'wb') as config_file:
+        with open("./files/configuration.ini", 'wb') as config_file:
             self._config.write(config_file)
 
     def _build_observations_from_available_years(self, first_year, last_year):
