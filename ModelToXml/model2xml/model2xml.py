@@ -227,7 +227,6 @@ class ModelToXMLTransformer(object):
             if self._import_process in [self.API, self.SCRAP]:
                 return self._path_to_original_file
             else:
-                print self._path_to_original_file
                 file_zip = zipfile.ZipFile(self._zip_file_name(), "w")
                 file_zip.write(self._path_to_original_file)
                 file_zip.close()
