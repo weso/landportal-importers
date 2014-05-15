@@ -31,12 +31,12 @@ class ModelToXMLTransformer(object):
     classdocs
     """
 
-    XML = "xml"
-    XLS = "excell"
-    CSV = "csv"
-    API = "api"
-    JSON = "json"
-    SCRAP = "scrap"
+    XML = "XML"
+    XLS = "XML"
+    CSV = "CSV"
+    API = "API"
+    JSON = "JSON"
+    SCRAP = "SCRAP"
 
     def __init__(self, dataset, import_process, user, path_to_original_file, indicator_relations=None):
         """
@@ -106,6 +106,7 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_DATASOURCE_PREFIX = ""  # Empty value, but it remains here because it could still be changed
     IMPORT_PROCESS_TYPE_PREFIX = ""  # Empty value, but it remains here because it could still be changed
     IMPORT_PROCESS_USER_PREFIX = ""  # Empty value, but it remains here because it could still be changed
+    IMPORT_PROCESS_FILE_NAME = "file_name"
 
     INDICATOR = "indicator"
     INDICATOR_ATT_ID = "id"
@@ -198,13 +199,37 @@ class ModelToXMLTransformer(object):
                 exceptions.append(e)
         self._process_sending_exceptions(exceptions)
 
+    def _zip_file_name(self):
+        """
+        Return the path to where the zip file with the original contente must be.
+        """
+        return self._path_to_original_file + ".zip"
+
+    def _short_file_name(self):
+        """
+        Returns the name of the original file (remove the directory names in case we need it).
+        """
+        if self._import_process in [self.API, self.SCRAP]:
+            return self._path_to_original_file
+        else:
+            arr = self._path_to_original_file.split("/")
+            return arr[len(arr) - 1]
+
 
     def _obtain_content_of_original_path(self):
-        file_zip = ZipFile(self._path_to_original_file + ".zip", "w")
-        file_zip.write(self._path_to_original_file)
-        file_zip.close()
-        with open(self._path_to_original_file + ".zip") as file_content:
-            return file_content
+        """
+        It return the content that should be in the variable "file" when sending a request to the receiver.
+        If import procces in [SCRAP, API], then the content is a url.
+        Elsewhere, the content is a zipped file.
+        """
+        if self._import_process in [self.API, self.SCRAP]:
+            return self._path_to_original_file
+        else:
+            file_zip = ZipFile(self._zip_file_name, "w")
+            file_zip.write(self._path_to_original_file)
+            file_zip.close()
+            with open(self._zip_file_name()) as file_content:
+                return file_content
 
     @staticmethod
     def _process_sending_exceptions(exceptions):
@@ -569,8 +594,7 @@ class ModelToXMLTransformer(object):
         else:
             group_node = Element(self.GROUP)
             group_node.attrib[self.GROUP_ATT_ID] = str(data_group.group_id)
-            group_node.attrib[self.GROUP_ATT_INDICATOR] = \
-                self.INDICATOR_ATT_ID_PREFIX + data_group.indicator_id
+            group_node.attrib[self.GROUP_ATT_INDICATOR] = self.INDICATOR_ATT_ID_PREFIX + data_group.indicator_id
             self._group_dic[data_group.group_id] = group_node
 
             # We don't need to add observations to this node according to the current spec. but it could change.
@@ -622,15 +646,20 @@ class ModelToXMLTransformer(object):
         metadata.append(datasource_node)
 
         #type
+        if self._import_process not in [self.API, self.SCRAP, self.XML, self.CSV, self.JSON, self.XLS]:
+            raise RuntimeError("Unrecognized import process: " + self._import_process)
         type_node = Element(self.IMPORT_PROCESS_TYPE)
-        type_node.text = self.IMPORT_PROCESS_TYPE_PREFIX \
-                         + self._import_process
+        type_node.text = self.IMPORT_PROCESS_TYPE_PREFIX + self._import_process
         metadata.append(type_node)
+
+        #file_name
+        file_name_node = Element(self.IMPORT_PROCESS_FILE_NAME)
+        file_name_node.text = self._short_file_name()
+        metadata.append(file_name_node)
 
         #user
         user_node = Element(self.IMPORT_PROCESS_USER)
-        user_node.text = self.IMPORT_PROCESS_USER_PREFIX \
-                         + self._user.user_id
+        user_node.text = self.IMPORT_PROCESS_USER_PREFIX + self._user.user_id
         metadata.append(user_node)
         #sdmx_frequency
         sdmx_freq_node = Element(self.IMPORT_PROCESS_SDMX_FREQUENCY)
@@ -640,6 +669,7 @@ class ModelToXMLTransformer(object):
 
         #Addind node to root
         self._root.append(metadata)
+
 
     @staticmethod
     def _read_external_field(original):
