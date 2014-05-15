@@ -13685,16 +13685,16 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2006] Intended (Under negotiation), [2008] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			Startup phase (no production)
 		</field>
 		<field name="intended_size">
-			1263
+			3380
 		</field>
 		<field name="contract_size">
-			None
+			1263
 		</field>
 		<field name="production_size">
 			None
@@ -13703,7 +13703,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2006-08-17 http://articles.economictimes.indiatimes.com/2006-08-17/news/27440495_1_sez-application-sterling-biotech-special-economic-zone Media report , http://www.sterlingsez.com/sterling.php?tid=62 Company sources , http://www.sterlingsez.com/sterling.php?tid=90 Company sources , 2006-08-08 http://www.sezindia.nic.in/writereaddata/BOA/Final%20Minutes%20%203rd%20BOA%20-%208%20august.pdf Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -13732,25 +13732,25 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			[2013] Startup phase (no production)
 		</field>
 		<field name="intended_size">
 			203
 		</field>
 		<field name="contract_size">
-			None
+			203
 		</field>
 		<field name="production_size">
-			None
+			66
 		</field>
 		<field name="nature_of_the_deal">
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2009-01-01 http://www.kiadb.in/index.php?option=com_content&amp;view=article&amp;id=12&amp;Itemid=12 Company sources , 2013-03-18 http://www.kumbangalore.com/sez_karnataka.aspx?MenuID=26&amp;ParentID=5 Government sources , 2014-05-06 http://en.wikipedia.org/wiki/Economy_of_Mangalore Media report , http://sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -13767,7 +13767,7 @@
 			India
 		</field>
 		<field name="location">
-			Karnataka, Hassan
+			Kadechur, Karnataka, India, Yadgir, Karnataka, India
 		</field>
 		<field name="investor_name">
 			Karnataka Industrial Areas Development Board (KIADB)
@@ -13779,13 +13779,13 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2012] Intended (Expression of interest)
 		</field>
 		<field name="implementation_status">
-			None
+			[2013] Project not started
 		</field>
 		<field name="intended_size">
-			281
+			405
 		</field>
 		<field name="contract_size">
 			None
@@ -13794,10 +13794,10 @@
 			None
 		</field>
 		<field name="nature_of_the_deal">
-			None
+			Lease / Concession
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2013-08-30 http://www.nriforumkarnataka.org/ppp-projects-in-karnataka-industrial-infrastructure/ Government sources , 2012-04-01 http://www.karnatakaindustry.gov.in/Old-document/Pre_feasilibity_Report_%20for_%20setting_%20up_%20of_%20Pharmaceutical_%20Park_at_Yadgiri.pdf Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -13814,84 +13814,37 @@
 			India
 		</field>
 		<field name="location">
-			Karnataka, Mangalore, near the port
+			Padubidri, Karnataka 574111, India
 		</field>
 		<field name="investor_name">
-			Suzlon Infrastructure Ltd.
+			None
 		</field>
 		<field name="investor_country">
-			India
+			None
 		</field>
 		<field name="intention">
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			[2013] In operation (production)
 		</field>
 		<field name="intended_size">
 			259
 		</field>
 		<field name="contract_size">
-			None
+			259
 		</field>
 		<field name="production_size">
-			None
+			49
 		</field>
 		<field name="nature_of_the_deal">
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			681
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Kerala, Kochi, location: Puthuvypeen
-		</field>
-		<field name="investor_name">
-			Cochin Port Trust
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			285
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2013-01-01 http://www.sterlingandwilson.com/projects-plumbing-suzlon.html Company sources , 2014-01-01 http://synefra.com/Sez-Padubidri-land.html Company sources , 2010-11-11 http://timesofindia.indiatimes.com/city/mangalore/Chinese-team-tours-SEZ-in-Padubidri/articleshow/6909218.cms Media report , http://synefra.com/press-pdf/synefra_coimbatore_sez.pdf Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -26818,6 +26771,53 @@
 		</field>
 		<field name="data_source">
 			2010-01-01 http://www.foeeurope.org/agrofuels/FoEE_Africa_up_for_grabs_2010.pdf Research Paper / Policy Report , 2009-01-01 http://www.ghanabusinessnews.com/update-any-lessons-for-ghana-in-india%E2%80%99s-jatropha-failure/ Media report , 2008-01-01 http://israel21c.org/environment/israeli-seeds-could-solve-the-biofuel-food-crop-dilemma/ Media report , http://www.galtengroup.com/pressrelease.html Company sources , http://www.globes.co.il/serveen/globes/docview.asp?did=1000429866 Media report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Jatropha
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			1324
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Nsuta, Ghana
+		</field>
+		<field name="investor_name">
+			None
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2011] Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			[2012] In operation (production)
+		</field>
+		<field name="intended_size">
+			50000
+		</field>
+		<field name="contract_size">
+			4360
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			http://ghanabusinessnews.com/2009/05/23/update-any-lessons-for-ghana-in-india%e2%80%99s-jatropha-failure Media report , 2014-04-18 IIED Personal information , http://hmlindia.com/business_verticals/metals_minerals.asp Company sources , http://hazelghana.com/ Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -63697,22 +63697,22 @@
 			[2011] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			[2013] In operation (production)
+			[2011] In operation (production)
 		</field>
 		<field name="intended_size">
 			4000
 		</field>
 		<field name="contract_size">
-			1000
+			300
 		</field>
 		<field name="production_size">
-			700
+			300
 		</field>
 		<field name="nature_of_the_deal">
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			http://gadcompany.com/what_we_do.html#/what_we_do Government sources , 2014-01-15 http://thinkafricapress.com/ghana/companies-communities-friendly-farming-agriculture-ghana-gadco-rice Media report , http://www.aatif.lu/gadco.html Company sources , http://www.mofep.gov.gh/?q=news/040811_2 Media report , 2013-03-15 http://www.ft.com/cms/s/0/ee02394e-8735-11e2-bde6-00144feabdc0.html#axzz2poGp6tY6 Media report 
+			2014-01-15 http://thinkafricapress.com/ghana/companies-communities-friendly-farming-agriculture-ghana-gadco-rice Media report , http://www.mofep.gov.gh/?q=news/040811_2 Media report , 2014-04-18 IIED Personal information 
 		</field>
 		<field name="contract_farming">
 			True
@@ -80652,10 +80652,10 @@
 			Ubon Ratchathani, Thailand
 		</field>
 		<field name="investor_name">
-			Leopard Capital, Engage Resources (Thailand) Company Limited
+			Leopard Capital
 		</field>
 		<field name="investor_country">
-			Cayman Islands, Thailand
+			Cayman Islands
 		</field>
 		<field name="intention">
 			Agriculture, Industry

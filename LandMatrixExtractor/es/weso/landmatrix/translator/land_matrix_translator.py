@@ -6,6 +6,7 @@ Created on 22/01/2014
 
 #from ConfigParser import ConfigParser
 import codecs
+import os
 from lpentities.observation import Observation
 from lpentities.value import Value
 from lpentities.indicator import Indicator
@@ -109,7 +110,7 @@ class LandMatrixTranslator(object):
 
         for key in self._indicators_dict:
             result.add_indicator(self._indicators_dict[key])
-        result.frequency = Dataset.YEARLY  # TODO: sure?
+        result.frequency = Dataset.YEARLY
         return result
 
     def _build_default_license(self):
@@ -146,13 +147,18 @@ class LandMatrixTranslator(object):
             raise RuntimeError("Error while trying to build model objects: " + e.message)
 
         m2x = ModelToXMLTransformer(dataset=self._default_dataset,
-                                    import_process="xml",
-                                    user=self._default_user)
+                                    import_process=ModelToXMLTransformer.XML,
+                                    user=self._default_user,
+                                    path_to_original_file=self._path_to_original_file())
         try:
             m2x.run()
             self._actualize_config_values()
         except BaseException as e:
             raise RuntimeError("Error wuile sendig info to te receiver module: " + e.message)
+
+    def _path_to_original_file(self):
+        raw_path = self._config.get("LAND_MATRIX", "target_file")
+        return os.path.abspath(raw_path)
 
     def _actualize_config_values(self):
         self._config.set("TRANSLATOR", "obs_int", self._obs_int)
@@ -160,7 +166,7 @@ class LandMatrixTranslator(object):
         self._config.set("TRANSLATOR", "sli_int", self._sli_int)
         self._config.set("TRANSLATOR", "igr_int", self._igr_int)
 
-        with open("../../../../files/configuration.ini", 'wb') as config_file:
+        with open("./files/configuration.ini", 'wb') as config_file:
             self._config.write(config_file)
 
 
