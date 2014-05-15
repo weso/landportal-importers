@@ -78,8 +78,15 @@ class FaostatTranslator(object):
 
 
     def generate_xml_from_dataset_model(self, dataset_model):
-        xml_gen = ModelToXMLTransformer(dataset_model, "CSV", self.build_user_object(dataset_model.source.organization))
+        xml_gen = ModelToXMLTransformer(dataset_model, ModelToXMLTransformer.CSV
+                                        , self.build_user_object(dataset_model.source.organization)
+                                        , self._path_to_data_file())
         xml_gen.run()
+
+    def _path_to_data_file(self):
+        base_dir = self._config.get("FAOSTAT", "data_file_path")
+        return os.path.abspath(os.path.join(base_dir, os.listdir(base_dir)[0]))
+
 
     def build_user_object(self, organization):
         user = User(user_login=self._config.get("USER", "login"))

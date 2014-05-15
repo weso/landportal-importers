@@ -5,9 +5,7 @@ Created on 15/01/2014
 '''
 import sys
 import urllib2
-import logging
 from zipfile import ZipFile
-from ConfigParser import ConfigParser
 from es.weso.util.file_writer import FileWriter
 
 
@@ -36,7 +34,6 @@ class FaostatExtractor(object):
             self.log.info("Proccess succesfully ended")
         except RuntimeError, (strerror):
             self.log.error(strerror)
-            print strerror
 
 
     def extract_zip_file(self, zip_file_name):
