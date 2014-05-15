@@ -230,9 +230,8 @@ class ModelToXMLTransformer(object):
                 file_zip = zipfile.ZipFile(self._zip_file_name(), "w")
                 file_zip.write(self._path_to_original_file)
                 file_zip.close()
-                return ""
-                # with open(self._zip_file_name()) as file_content:
-                #     return ""
+                with open(self._zip_file_name()) as file_content:
+                    return ""
         except BaseException as e:
             traceback.format_exc()
             raise e
