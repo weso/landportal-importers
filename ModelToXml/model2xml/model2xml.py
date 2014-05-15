@@ -7,7 +7,8 @@ Created on 03/02/2014
 from __future__ import unicode_literals
 from lpentities.computation import Computation
 from lpentities.country import Country
-from zipfile import ZipFile
+import zipfile
+import traceback
 
 try:
     from xml.etree.cElementTree import Element, ElementTree
@@ -192,8 +193,8 @@ class ModelToXMLTransformer(object):
                     file_content = xml.read()
                     data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')},
                                             {'file': self._obtain_content_of_original_path()})
-                    req = urllib2.Request(url, data)
-                    resp = urllib2.urlopen(req)
+                    # req = urllib2.Request(url, data)
+                    # resp = urllib2.urlopen(req)
             except BaseException as e:
                 e.message = 'File "{0}": {1}'.format(file_path, e.message)
                 exceptions.append(e)
@@ -222,14 +223,20 @@ class ModelToXMLTransformer(object):
         If import procces in [SCRAP, API], then the content is a url.
         Elsewhere, the content is a zipped file.
         """
-        if self._import_process in [self.API, self.SCRAP]:
-            return self._path_to_original_file
-        else:
-            file_zip = ZipFile(self._zip_file_name, "w")
-            file_zip.write(self._path_to_original_file)
-            file_zip.close()
-            with open(self._zip_file_name()) as file_content:
-                return file_content
+        try:
+            if self._import_process in [self.API, self.SCRAP]:
+                return self._path_to_original_file
+            else:
+                print self._path_to_original_file
+                file_zip = zipfile.ZipFile(self._zip_file_name(), "w")
+                file_zip.write(self._path_to_original_file)
+                file_zip.close()
+                return ""
+                # with open(self._zip_file_name()) as file_content:
+                #     return ""
+        except BaseException as e:
+            traceback.format_exc()
+            raise e
 
     @staticmethod
     def _process_sending_exceptions(exceptions):
