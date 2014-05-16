@@ -213,8 +213,15 @@ class ModelToXMLTransformer(object):
         if self._import_process in [self.API, self.SCRAP]:
             return self._path_to_original_file
         else:
-            arr = self._path_to_original_file.split("/")
-            return arr[len(arr) - 1]
+            if "/" in self._path_to_original_file:
+                arr = self._path_to_original_file.split("/")
+                return arr[len(arr) - 1]
+            elif "\\" in self._path_to_original_file:
+                arr = self._path_to_original_file.split("\\")
+                return arr[len(arr) - 1]
+            else:
+                return self._path_to_original_file
+
 
 
     def _obtain_content_of_original_path(self):
