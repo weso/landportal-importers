@@ -1,5 +1,7 @@
 __author__ = 'Dani'
 
+from es.weso.oecdextractor.translator.path_object_pair import PathObjectPair
+
 import json
 import os
 import codecs
@@ -21,7 +23,8 @@ class JsonLoader(object):
         candidate_files = os.listdir(base_dir)
         for candidate_file in candidate_files:
             if os.path.splitext(candidate_file)[1] == ".json":
-                result.append(self._turn_file_into_json_object(base_dir + "/" + candidate_file))
+                result.append(PathObjectPair(os.path.abspath(base_dir + "/" + candidate_file),
+                                           self._turn_file_into_json_object(base_dir + "/" + candidate_file)))
         return result
 
     @staticmethod

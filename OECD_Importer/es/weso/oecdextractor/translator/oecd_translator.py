@@ -18,29 +18,27 @@ class OecdTranslator(object):
     def run(self):
         """
         Steps:
-         - Load json content from file
          - Turn json into model objects
          - Send model to model2xml
 
         """
-        json_objects = JsonLoader(self._log, self._config).run()
         object_builder = ModelObjectBuilder(log=self._log,
                                             config=self._config,
-                                            json_objects=json_objects,
                                             look_for_historical=self._look_for_historical)
-        datasets, user, import_process, relations = object_builder.run()
+        dataset_file_pair, user, relations = object_builder.run()
 
         errors_count = 0
-        for dataset in datasets:
+        for a_pair in dataset_file_pair:
             try:
-                ModelToXMLTransformer(dataset=dataset,
+                ModelToXMLTransformer(dataset=a_pair.other_object,
                                       user=user,
-                                      import_process=import_process,
-                                      indicator_relations=relations).run()
+                                      import_process=ModelToXMLTransformer.JSON,
+                                      indicator_relations=relations,
+                                      path_to_original_file=a_pair.file_path).run()
             except BaseException as e:
                 self._log.error(e.message)
                 errors_count += 1
-        if errors_count < len(datasets):  # If some observation could reach the server, we have to actualize ids
+        if errors_count < len(dataset_file_pair):  # If some observation could reach the server, we have to actualize ids
             object_builder.actualize_config_values()
         if errors_count > 0:
             raise RuntimeError("Errors whie generating data from 1 or more datasets.")

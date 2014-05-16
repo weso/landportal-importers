@@ -1,4 +1,6 @@
 from datetime import datetime
+from es.weso.oecdextractor.translator.json_loader import JsonLoader
+from es.weso.oecdextractor.translator.path_object_pair import PathObjectPair
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -35,11 +37,12 @@ class ModelObjectBuilder(object):
 
 
 
-    def __init__(self, log, config, json_objects, look_for_historical):
+    def __init__(self, log, config, look_for_historical):
         self._log = log
         self._config = config
-        self._json_objects = json_objects
         self._look_for_historical = look_for_historical
+        self._json_pairs = JsonLoader(self._log, self._config).run()
+
 
 
         # Getting propper ids
@@ -118,9 +121,10 @@ class ModelObjectBuilder(object):
 
         """
         result = []
-        for a_json in self._json_objects:
-            result.append(self._turn_json_into_dataset_object(a_json))
-        return result, self._default_user, "json", self._indicator_relations
+        for a_pair in self._json_pairs:
+            result.append(PathObjectPair(a_pair.file_path,
+                                         self._turn_json_into_dataset_object(a_pair.other_object)))
+        return result, self._default_user, self._indicator_relations
 
     @staticmethod
     def _build_default_computation():
