@@ -16,7 +16,7 @@ class IpfriTranslator(object):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
-        self._dataset_user_pairs = []
+        self._dataset_user_file_groups = []
 
     def run(self):
         try:
@@ -60,19 +60,25 @@ class IpfriTranslator(object):
             i += 1
             a_sheet = self.take_data_sheet_from_file_path(a_path)
             indicators, dates, countries = Parser(a_sheet).run()
-            a_pair = IpfriModelObjectBuilder(self._log, self._config, indicators, dates, countries).run()
-            self._dataset_user_pairs.append(a_pair)
+            a_group = IpfriModelObjectBuilder(self._log,
+                                              self._config,
+                                              indicators,
+                                              dates,
+                                              countries,
+                                              os.path.abspath(a_path)).run()
+            self._dataset_user_file_groups.append(a_group)
 
     def translate_model_objects_into_xml(self):
-        for a_pair in self._dataset_user_pairs:
-            ModelToXMLTransformer(dataset=a_pair.dataset,
-                                  import_process="excell",
-                                  user=a_pair.user).run()
+        for a_group in self._dataset_user_file_groups:
+            ModelToXMLTransformer(dataset=a_group.dataset,
+                                  import_process=ModelToXMLTransformer.XLS,
+                                  user=a_group.user,
+                                  path_to_original_file=a_group.file_path).run()
             self._persist_config_values()
 
 
     def _persist_config_values(self):
-        with open("../../../files/configuration.ini", "wb") as config_file:
+        with open("./files/configuration.ini", "wb") as config_file:
             self._config.write(config_file)
 
 
@@ -97,9 +103,8 @@ class IpfriTranslator(object):
             raise RuntimeError("It looks like there is no available actual info. IpfriImporter will stop its execution")
 
 
-    def take_data_sheet_from_file_path(self, a_path):
+    @staticmethod
+    def take_data_sheet_from_file_path(a_path):
         book = xlrd.open_workbook(a_path, encoding_override='latin-1')
         #We are assuming that the sheet with the data is placed the last in the book
         return book.sheet_by_index(book.nsheets - 1)
-
-

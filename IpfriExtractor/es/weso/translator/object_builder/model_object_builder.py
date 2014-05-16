@@ -18,19 +18,20 @@ from reconciler.country_reconciler import CountryReconciler
 from reconciler.exceptions.unknown_country_error import UnknownCountryError
 
 from .dates_builder import get_model_object_time_from_parsed_string
-from ..dataset_user_pair import DatasetUserPair
+from ..dataset_user_pair import DatasetUserFileGroup
 
 from datetime import datetime
 
 
 class IpfriModelObjectBuilder(object):
-    def __init__(self, log, config, parsed_indicators, parsed_dates, parsed_countries):
+    def __init__(self, log, config, parsed_indicators, parsed_dates, parsed_countries, file_path):
 
         self._log = log
         self._config = config
         self._parsed_indicators = parsed_indicators
         self._parsed_dates = parsed_dates
         self._parsed_countries = parsed_countries
+        self._file_path = file_path
 
         self._indicators_dict = {}
         self._dates_dict = {}
@@ -55,7 +56,7 @@ class IpfriModelObjectBuilder(object):
         self.complete_countries_dict()
         self.fetch_elements_by_index_and_translate()
         self._put_self_id_values_in_the_config_file()
-        return DatasetUserPair(self.dataset, self.user)
+        return DatasetUserFileGroup(self.dataset, self.user, self._file_path)
 
 
     def _put_self_id_values_in_the_config_file(self):

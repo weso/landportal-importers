@@ -820,3 +820,10 @@ IOError: [Errno 13] Permission denied: '../../../downloaded_data/InforXLSX_2012.
 2014-05-14 10:56:42,976 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ended.
 2014-05-14 10:56:42,976 - ipfriextractor - INFO - Data extraction from IPFRI ended
 2014-05-14 10:56:46,117 - ipfriextractor - INFO - Final xml succesfully sent to the Receiver module
+2014-05-16 12:02:21,825 - ipfriextractor - INFO - Initializing data extraction from IPFRI...
+2014-05-16 12:02:21,831 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ...
+2014-05-16 12:02:22,589 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2012datam.xlsx ended.
+2014-05-16 12:02:22,589 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ...
+2014-05-16 12:02:24,323 - ipfriextractor - INFO - Tracking data from http://www.ifpri.org/sites/default/files/ghi2013datam.xlsx ended.
+2014-05-16 12:02:24,323 - ipfriextractor - INFO - Data extraction from IPFRI ended
+2014-05-16 12:02:27,739 - ipfriextractor - INFO - Final xml succesfully sent to the Receiver module

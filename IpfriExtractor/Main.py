@@ -17,7 +17,7 @@ def run():
     configure_log()
     log = logging.getLogger('ipfriextractor')
     config = ConfigParser()
-    config.read("../../../files/configuration.ini")
+    config.read("./files/configuration.ini")
 
     try:
         xml_extractor = IpfriExtractor(log, config)
@@ -29,7 +29,7 @@ def run():
         xml_translator = IpfriTranslator(log, config, True)
         xml_translator.run()
     except BaseException as e:
-        log.error("While trying to introduce raw info into ourmodel: " + e.message)
+        log.error("While trying to introduce raw info into our model: " + e.message)
         raise RuntimeError()
 
 
