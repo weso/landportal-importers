@@ -1,4 +1,5 @@
 # coding=utf-8
+from es.weso.translator.pair_file_object import PairFileObject
 from reconciler.exceptions.unknown_country_error import UnknownCountryError
 
 __author__ = 'Dani'
@@ -77,20 +78,22 @@ class UNDPTranslator(object):
          - Turn model objects into a xml per dataset and send it to the receiver
 
         """
-        available_table_trees = self._turn_file_tables_into_xml_objects()
-        for tree in available_table_trees:
-            self._datasets.append(self._create_dataset_from_table(tree))
+        available_table_trees_pairs = self._turn_file_tables_into_xml_objects()
+        for pair in available_table_trees_pairs:
+            dataset = self._create_dataset_from_table(pair.other_object)
+            pair.other_object = dataset
 
-        for dataset in self._datasets:
-            self._decorate_dataset_with_common_objects(dataset)
+        for pair in available_table_trees_pairs:
+            self._decorate_dataset_with_common_objects(pair.other_object)
 
-        for dataset in self._datasets:
-            self._generate_xml_from_dataset_model(dataset)
+        for pair in available_table_trees_pairs:
+            self._generate_xml_from_dataset_model(pair)
 
-    def _generate_xml_from_dataset_model(self, dataset):
-        ModelToXMLTransformer(dataset=dataset,
-                              import_process="xml",
-                              user=self._user).run()
+    def _generate_xml_from_dataset_model(self, pair):
+        ModelToXMLTransformer(dataset=pair.other_object,
+                              import_process=ModelToXMLTransformer.XML,
+                              user=self._user,
+                              path_to_original_file=pair.file_path).run()
         self._actualize_config_values()
 
 
@@ -100,7 +103,7 @@ class UNDPTranslator(object):
         self._config.set("TRANSLATOR", "sli_int", self._sli_int)
         self._config.set("TRANSLATOR", "igr_int", self._igr_int)
 
-        with open("../../../files/configuration.ini", 'wb') as config_file:
+        with open("./files/configuration.ini", 'wb') as config_file:
             self._config.write(config_file)
 
     def _create_user(self):
@@ -381,7 +384,9 @@ class UNDPTranslator(object):
         candidate_files = os.listdir(base_directory)
         for candidate_file in candidate_files:
             if os.path.splitext(candidate_file)[1] == ".xml":
-                result.append(self._turn_table_file_into_xml_object(base_directory + "/" + candidate_file))
+                result.append(
+                    PairFileObject(os.path.abspath(os.path.join(base_directory, candidate_file)),
+                                   self._turn_table_file_into_xml_object(base_directory + "/" + candidate_file)))
         return result
 
     @staticmethod
