@@ -204,44 +204,60 @@ class ModelToXMLTransformer(object):
         """
         Return the path to where the zip file with the original contente must be.
         """
-        return self._path_to_original_file + ".zip"
+        if isinstance(self._path_to_original_file, str) or isinstance(self._path_to_original_file, unicode):
+            return self._path_to_original_file + ".zip"
+        elif isinstance(self._path_to_original_file, list):
+            return self._path_to_original_file[0] + ".zip"
+        else:
+            raise RuntimeError("Unrecognized type object in param path_to_original_file: " + type(self._path_to_original_file))
 
-    def _short_file_name(self):
+    def _short_file_name(self, original_name):
         """
         Returns the name of the original file (remove the directory names in case we need it).
         """
         if self._import_process in [self.API, self.SCRAP]:
-            return self._path_to_original_file
+            return original_name
         else:
-            if "/" in self._path_to_original_file:
-                arr = self._path_to_original_file.split("/")
+            if "/" in original_name:
+                arr = original_name.split("/")
                 return arr[len(arr) - 1]
-            elif "\\" in self._path_to_original_file:
-                arr = self._path_to_original_file.split("\\")
+            elif "\\" in original_name:
+                arr = original_name.split("\\")
                 return arr[len(arr) - 1]
             else:
-                return self._path_to_original_file
-
+                return original_name
 
 
     def _obtain_content_of_original_path(self):
         """
-        It return the content that should be in the variable "file" when sending a request to the receiver.
+        It returns the content that should be in the variable "file" when sending a request to the receiver.
         If import procces in [SCRAP, API], then the content is a url.
         Elsewhere, the content is a zipped file.
         """
-        try:
-            if self._import_process in [self.API, self.SCRAP]:
-                return self._path_to_original_file
-            else:
-                file_zip = zipfile.ZipFile(self._zip_file_name(), "w")
-                file_zip.write(self._path_to_original_file)
-                file_zip.close()
-                with open(self._zip_file_name()) as file_content:
-                    return ""
-        except BaseException as e:
-            traceback.format_exc()
-            raise e
+
+        if self._import_process in [self.API, self.SCRAP]:
+            return self._api_or_scrap_original_content()
+        else:
+            return self._persisted_file_original_content()
+
+    def _api_or_scrap_original_content(self):
+        return self._path_to_original_file
+
+    def _persisted_file_original_content(self):
+        file_zip = zipfile.ZipFile(self._zip_file_name(), "w")
+        if isinstance(self._path_to_original_file, list):
+            for path in self._path_to_original_file:
+                self._write_file_to_zip_object(file_zip, path)
+        elif isinstance(self._path_to_original_file, str) or isinstance(self._path_to_original_file, unicode):
+            self._write_file_to_zip_object(file_zip, self._path_to_original_file)
+        else:
+            raise RuntimeError("Unrecognized type object in param path_to_original_file: " + type(self._path_to_original_file))
+        file_zip.close()
+        with open(self._zip_file_name(), "rb") as file_content:
+            return file_content.read()
+
+    def _write_file_to_zip_object(self, zip_object, path):
+        zip_object.write(path, self._short_file_name(path))
 
     @staticmethod
     def _process_sending_exceptions(exceptions):
@@ -371,7 +387,6 @@ class ModelToXMLTransformer(object):
         self._add_possible_dataset_specified_indicators_to_dict()
         for data_indicator in self._indicator_dic:
             result.append(self.build_indicator_node(self._indicator_dic[data_indicator]))
-
 
         self._root.append(result)
 
@@ -522,7 +537,6 @@ class ModelToXMLTransformer(object):
         computation_node.text = Computation.get_desc_of_uri(data_obs.computation.uri)
         observation_node.append(computation_node)
 
-
         if type(data_obs.region) == Region:
             region_node = Element(self.OBSERVATION_REGION)
             region_node.text = self.OBSERVATION_ATT_COUNTRY_PREFIX + str(data_obs.region.un_code)
@@ -666,7 +680,7 @@ class ModelToXMLTransformer(object):
 
         #file_name
         file_name_node = Element(self.IMPORT_PROCESS_FILE_NAME)
-        file_name_node.text = self._short_file_name()
+        file_name_node.text = self._short_file_name(self._path_to_original_file)
         metadata.append(file_name_node)
 
         #user
@@ -689,8 +703,6 @@ class ModelToXMLTransformer(object):
             return unicode(original, errors="ignore")
         except:
             return original
-
-
 
 
 ############################################################################
@@ -883,7 +895,6 @@ class XmlSplitter(object):
     def _get_a_new_file_path(self):
         self._int_for_file += 1
         return self._dataset_id + "_" + str(self._int_for_file) + "_" + str(self._path_counter) + ".xml"
-
 
 
     @staticmethod
