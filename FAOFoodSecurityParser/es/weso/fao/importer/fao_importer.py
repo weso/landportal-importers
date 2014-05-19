@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -80,7 +81,10 @@ class FaoImporter(object):
             self._log.warning("No observations found")
             
         # Send model for its trasnlation
-        translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+        translator = ModelToXMLTransformer(dataset=self._default_dataset, 
+                                           import_process=ModelToXMLTransformer.XLS, 
+                                           user=self._default_user,
+                                           path_to_original_file=os.path.join(self._xsl_reader._data_path, os.path.basename(self._config.get("PARSER", "file_name"))))
         translator.run()
 
         # And it is done. No return needed
