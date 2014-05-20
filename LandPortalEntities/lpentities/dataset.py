@@ -44,7 +44,7 @@ class Dataset(object):
 
     @staticmethod
     def _generate_id(chain_for_id, int_for_id):
-        return "DAT" + chain_for_id.upper() + "_" + str(int_for_id).upper()
+        return "DAT" + chain_for_id.upper() + str(int_for_id).upper()
 
     def add_slice(self, data_slice):
         self.slices.append(data_slice)
