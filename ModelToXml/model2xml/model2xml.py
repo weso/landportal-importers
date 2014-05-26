@@ -57,6 +57,7 @@ class ModelToXMLTransformer(object):
         self._group_dic = {}
         self._indicator_relations = indicator_relations
         self._path_to_original_file = path_to_original_file
+        self._zip_file_name = self._zip_file_name()
         # One per indicator referred by the observations
 
         self._root = self._build_root()
@@ -700,7 +701,7 @@ class ModelToXMLTransformer(object):
 
         #file_name
         file_name_node = Element(self.IMPORT_PROCESS_FILE_NAME)
-        file_name_node.text = self._short_file_name(self._path_to_original_file)
+        file_name_node.text = self._short_file_name(self._zip_file_name)
         metadata.append(file_name_node)
 
         #user
