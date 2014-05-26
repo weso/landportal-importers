@@ -92,12 +92,19 @@ class IpfriModelObjectBuilder(object):
         new_organization = Organization(chain_for_id=self._org_id)
         new_organization.name = self._config.get("ORGANIZATION", "name")
         new_organization.url = self._config.get("ORGANIZATION", "url")
+        new_organization.description_en = self._read_config_value("ORGANIZATION", "description_en")
+        new_organization.description_es = self._read_config_value("ORGANIZATION", "description_es")
+        new_organization.description_fr = self._read_config_value("ORGANIZATION", "description_fr")
 
         new_organization.add_data_source(new_datasource)
 
         #Building user
         self.user = User(user_login=self._config.get("USER", "login"))
         new_organization.add_user(self.user)
+
+
+    def _read_config_value(self, section, field):
+        return (self._config.get(section, field)).decode(encoding="utf-8")
 
 
     def complete_countries_dict(self):
