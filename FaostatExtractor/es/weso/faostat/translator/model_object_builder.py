@@ -83,7 +83,10 @@ class ModelObjectBuilder(object):
         org = Organization(chain_for_id=self._org_id,
                            name=self._config.get("ORGANIZATION", "name"),
                            url=self._config.get("ORGANIZATION", "url"),
-                           url_logo=self._config.get("ORGANIZATION", "url_logo"))
+                           url_logo=self._config.get("ORGANIZATION", "url_logo"),
+                           description_en=self._read_config_value("ORGANIZATION", "description_en"),
+                           description_es=self._read_config_value("ORGANIZATION", "description_es"),
+                           description_fr=self._read_config_value("ORGANIZATION", "description_fr"))
         #datasource
         datasource = DataSource(name=self._config.get("SOURCE", "name"),
                                 chain_for_id=self._org_id,
@@ -101,6 +104,8 @@ class ModelObjectBuilder(object):
         #Returning result
         return dataset
 
+    def _read_config_value(self, section, field):
+        return (self._config.get(section, field)).decode(encoding="utf-8")
 
     def build_model_objects_from_register(self, register):
         country = self.get_asociated_country(register[TranslatorConst.COUNTRY_CODE])
