@@ -17,7 +17,7 @@ class XslReader(object):
         if not os.path.exists(__data__.path()):
             os.makedirs(__data__.path())
             
-        self._data_path = __data__.path();
+        self._data_path = __data__.path()
         
         
     def load_xsl(self, file_name, rows_range, cols_range):

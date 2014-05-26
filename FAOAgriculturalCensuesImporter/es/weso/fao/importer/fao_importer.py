@@ -96,7 +96,12 @@ class FaoImporter(object):
                 self._default_dataset.add_observation(obs)
                     
             # Send model for its trasnlation
-            translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+            # ModelToXMLTransformer construstor:
+            #       dataset, import_process, user, path_to_original_file, indicator_relations=None
+            translator = ModelToXMLTransformer(dataset=self._default_dataset,
+                                               import_process=ModelToXMLTransformer.API,
+                                               user=self._default_user)
+            #TODO: Not working version currently. Add path to original/s files
             translator.run()
         else:
             self._log.warning("No observations found")
@@ -309,7 +314,9 @@ class FaoImporter(object):
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
-        result.description = self._config.get("ORGANIZATION", "description")
+        result.description_en = self._config.get("ORGANIZATION", "description_en")
+        result.description_es = self._config.get("ORGANIZATION", "description_es")
+        result.description_fr = self._config.get("ORGANIZATION", "description_fr")
 
         return result
 
