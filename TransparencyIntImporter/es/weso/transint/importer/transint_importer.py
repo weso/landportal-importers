@@ -30,14 +30,20 @@ class TransIntImporter(object):
         self._look_for_historical = look_for_historical
         if not look_for_historical:
             self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
+            self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+            self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+            self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+            self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+        else:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
+
         self._reconciler = CountryReconciler()
 
-        # Initializing variable ids
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
-        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
-        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
-        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+
 
         self.data_sources = dict(self._config.items('indicators'))
 
@@ -82,8 +88,7 @@ class TransIntImporter(object):
         self._config.set("TRANSLATOR", "sli_int", self._sli_int)
         self._config.set("TRANSLATOR", "dat_int", self._dat_int)
         self._config.set("TRANSLATOR", "igr_int", self._igr_int)
-        self._config.set("TRANSLATOR", "ind_int", self._ind_int)
-        self._config.set("TRANSLATOR", "sou_int", self._sou_int)
+
 
     def _load_xsls(self):
         self._log.info("Reading files...")
@@ -295,7 +300,9 @@ class TransIntImporter(object):
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
-        result.description = self._config.get("ORGANIZATION", "description")
+        result.description_en = self._config.get("ORGANIZATION", "description_en")
+        result.description_es = self._config.get("ORGANIZATION", "description_es")
+        result.description_fr = self._config.get("ORGANIZATION", "description_fr")
 
         return result
 
