@@ -32,12 +32,12 @@ def update_ini_file(config, config_path, importer, log):
 def run():
     configure_log()
     log = logging.getLogger("faoextractor")
-    config_path = "files/configuration.ini"
+    config_path = "es/weso/worldbank/configuration/api_access.ini"
     config = ConfigParser.RawConfigParser()
     config.read(config_path)
 
     try:
-        wb_importer = Parser(log, config)
+        wb_importer = Parser(config, log)
         wb_importer.run()
         update_ini_file(config, config_path, wb_importer, log)
         

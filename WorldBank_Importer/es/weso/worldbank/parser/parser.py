@@ -52,12 +52,17 @@ class Parser(object):
         self._organization = self._build_default_organization()
         self._user = self._build_default_user()
         self._license = self._build_default_license()
-        
+
+
+
     def model_to_xml(self):
         for datasource in self._user.organization.data_sources:
             for dataset in datasource.datasets:
                 if len(dataset.observations) > 0:
-                    transformer = ModelToXMLTransformer(dataset, "Request", self._user)
+                    transformer = ModelToXMLTransformer(dataset,
+                                                        ModelToXMLTransformer.API,
+                                                        self._user,
+                                                        self.config.get("base_api"))
                     transformer.run()
                 else:
                     self.logger.warning("Dataset %s has no observations"%dataset.dataset_id)
@@ -76,8 +81,13 @@ class Parser(object):
                             name=self.config.get("ORGANIZATION", "name"),
                             url=self.config.get("ORGANIZATION", "url"),
                             url_logo=self.config.get("ORGANIZATION", "url_logo"),
-                            description=self.config.get("ORGANIZATION", "description"))
-                                  
+                            description_en=self._read_config_value("ORGANIZATION", "description_en"),
+                            description_es=self._read_config_value("ORGANIZATION", "description_es"),
+                            description_fr=self._read_config_value("ORGANIZATION", "description_fr"))
+
+    def _read_config_value(self, section, field):
+        return (self.config.get(section, field)).decode(encoding="utf-8")
+
     def _build_default_user(self):
         return User(user_login="worldbank_importer",
                          organization=self._organization)
