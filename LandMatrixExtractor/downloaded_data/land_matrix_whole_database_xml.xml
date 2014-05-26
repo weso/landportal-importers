@@ -10809,7 +10809,7 @@
 			Maharashtra, Nagpur, Mihan
 		</field>
 		<field name="investor_name">
-			Maharashtra Airport Development Ltd, City &amp; Industrial Development Corporation of Maharashtra Limited (CIDCO), Maharashtra Industrial Development Corporation Ltd
+			City &amp; Industrial Development Corporation of Maharashtra Limited (CIDCO), Maharashtra Industrial Development Corporation Ltd
 		</field>
 		<field name="investor_country">
 			India
@@ -10836,7 +10836,7 @@
 			Outright Purchase
 		</field>
 		<field name="data_source">
-			Personal information , Social Development Foundation, Delhi Personal information , http://www.sezindiainvest.com/SEZ_Locator/0235_Maharashtra_MADC_Nagpur.htm Media report , http://thehitavada.com/news-details/mihan-89-53-ha-land-not-yet-handed-over-to-madc Media report , http://www.sezindia.nic.in/writereaddata/pdf/ListofoperationalSEZs.pdf Government sources , http://madcindia.org/ Company sources 
+			Personal information , Social Development Foundation, Delhi Personal information , http://www.sezindiainvest.com/SEZ_Locator/0235_Maharashtra_MADC_Nagpur.htm Media report , http://thehitavada.com/news-details/mihan-89-53-ha-land-not-yet-handed-over-to-madc Media report , http://www.sezindia.nic.in/writereaddata/pdf/ListofoperationalSEZs.pdf Government sources , http://madcindia.org/ Company sources , http://www.hindu.com/thehindu/holnus/004200711152132.htm Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -10865,72 +10865,25 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			In operation (production)
 		</field>
 		<field name="intended_size">
-			229
+			1173
 		</field>
 		<field name="contract_size">
-			None
+			728
 		</field>
 		<field name="production_size">
-			None
+			728
 		</field>
 		<field name="nature_of_the_deal">
 			Outright Purchase
 		</field>
 		<field name="data_source">
-			Personal information , Social Development Foundation, Delhi Personal information , 2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , http://www.midcindia.org/Pages/DefaultMIDC.aspx Government sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			583
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Maharashtra, Satara
-		</field>
-		<field name="investor_name">
-			Maharashtra Industrial Development Corporation Ltd
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			200
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			Outright Purchase
-		</field>
-		<field name="data_source">
-			Personal information , Social Development Foundation, Delhi Personal information , 2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2013-04-01 http://www.pscl.in/downloads/brochures/blueridge_april_2013.pdf Media report , Personal information , Social Development Foundation, Delhi Personal information , 2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , http://www.midcindia.org/Pages/DefaultMIDC.aspx Company sources , 2013-07-01 http://midcindia.org/Lists/Profile%20List/Attachments/17/SEZ%20Profile%20Hinjewadi%20July%202013001.pdf Company sources , 2007-04-03 http://www.hindustantimes.com/india-news/land-acquisition-problem-for-it-park/article1-213262.aspx Media report , 2012-05-05 http://www.sakaaltimes.com/NewsDetails.aspx?NewsId=5565900461558208816&amp;SectionId=5171561142064258099&amp;SectionName=Pune&amp;NewsDate=20120505&amp;NewsTitle=Farmers%20refuse%20to%20give%20land%20for%20IT%20Park%20at%20Hinjewadi Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -10947,7 +10900,7 @@
 			India
 		</field>
 		<field name="location">
-			Maharashtra, Latur
+			Latur, Maharashtra, India
 		</field>
 		<field name="investor_name">
 			Maharashtra Industrial Development Corporation Ltd
@@ -10959,7 +10912,7 @@
 			Agriculture
 		</field>
 		<field name="negotiation_status">
-			None
+			[2008] Intended (Under negotiation)
 		</field>
 		<field name="implementation_status">
 			None
@@ -10977,7 +10930,7 @@
 			Outright Purchase
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , Social Development Foundation, Delhi Personal information , http://www.sezindiainvest.com/SEZ_Locator/0217_Maharashtra_MIDC_Latur.htm Media report 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , Social Development Foundation, Delhi Personal information , http://www.sezindiainvest.com/SEZ_Locator/0217_Maharashtra_MIDC_Latur.htm Media report , http://latur.nic.in/html/industries.pdf Government sources , 2008-07-01 http://www.newmediacomm.com/publication/indo_us/julaug08/maharashtra.html Media report , http://www.ilfsindia.com/projects.aspx?prid=4&amp;catid=1&amp;slnk=107&amp;cid=5 Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -11088,22 +11041,22 @@
 			India
 		</field>
 		<field name="location">
-			Maharashtra, Indien
+			Juve Jaitapur, Maharashtra, India
 		</field>
 		<field name="investor_name">
-			Nuclear Power Corporation of India
+			None
 		</field>
 		<field name="investor_country">
-			India
+			None
 		</field>
 		<field name="intention">
 			Industry
 		</field>
 		<field name="negotiation_status">
-			[2013] Intended (Under negotiation)
+			[2010] Intended (Under negotiation)
 		</field>
 		<field name="implementation_status">
-			None
+			Project not started
 		</field>
 		<field name="intended_size">
 			1000
@@ -11118,7 +11071,7 @@
 			None
 		</field>
 		<field name="data_source">
-			http://www.landcoalition.org/cpl-blog/?p=5568 Media report , 2013-02-13 http://articles.timesofindia.indiatimes.com/2013-02-13/mumbai/37078191_1_jaitapur-madban-ratnagiri-district Media report , 2013-02-13 http://www.indianexpress.com/news/jaitapur-npower-projectaffected-to-get-rs-22-lakh-per-hectare/1073429/ Media report 
+			2010-12-06 http://online.wsj.com/news/articles/SB10001424052748704156304576002761899077484 Media report , 2013-02-13 http://articles.timesofindia.indiatimes.com/2013-02-13/mumbai/37078191_1_jaitapur-madban-ratnagiri-district Media report , 2013-02-13 http://archive.indianexpress.com/news/jaitapur-npower-projectaffected-to-get-rs-22-lakh-per-hectare/1073429/ Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -11144,16 +11097,16 @@
 			India
 		</field>
 		<field name="intention">
-			Industry
+			Tourism
 		</field>
 		<field name="negotiation_status">
 			None
 		</field>
 		<field name="implementation_status">
-			None
+			In operation (production)
 		</field>
 		<field name="intended_size">
-			1000
+			2500
 		</field>
 		<field name="contract_size">
 			116
@@ -11165,7 +11118,7 @@
 			Outright Purchase
 		</field>
 		<field name="data_source">
-			Personal information , Social Development Foundation, Delhi Personal information , http://www.sezindiainvest.com/SEZ_Locator/0295_Maharashtra_Ms.Pan_India_Paryatan_Ltd._Mumbai.htm Media report 
+			Personal information , Social Development Foundation, Delhi Personal information , http://www.sezindiainvest.com/SEZ_Locator/0295_Maharashtra_Ms.Pan_India_Paryatan_Ltd._Mumbai.htm Media report , 2010-01-01 Research Paper / Policy Report , 2008-02-18 http://www.terrorism.com/2014/04/23/10000-march-against-gorai-sez/ Media report , 2008-10-31 http://www.downtoearth.org.in/node/5177 Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -12454,7 +12407,7 @@
 			Karnataka, Mangalore
 		</field>
 		<field name="investor_name">
-			Mangalore SEZ Limited
+			Oil and Natural Gas Corporation Limited, Karnataka Industrial Areas Development Board (KIADB)
 		</field>
 		<field name="investor_country">
 			India
@@ -28133,7 +28086,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2012-02-28 Company sources , http://www.leiti.org.lr/doc/LIBERIA_FOREST_PRODUCTS_INC_AGREEMENT.pdf Contract , http://www.epoil.co.uk/operations.aspx Company sources , Company sources , http://www.epoil.co.uk/ Company sources , http://www.leiti.org.lr/doc/leiti4rp2.pdf Government sources , 2014-01-07 http://www.reuters.com/finance/stocks/companyProfile?symbol=PALO.L Media report 
+			http://www.leiti.org.lr/doc/LIBERIA_FOREST_PRODUCTS_INC_AGREEMENT.pdf Contract , http://www.epoil.co.uk/operations.aspx Company sources , Media report , http://www.epoil.co.uk/ Company sources , http://www.leiti.org.lr/doc/leiti4rp2.pdf Government sources , 2014-05-14 http://www.farmlandgrab.org/post/view/23503-small-community-in-liberia-stands-strong-against-land-grabbing#sthash.CfSGocNn.dpuf Media report 
 		</field>
 		<field name="contract_farming">
 			True
@@ -40232,10 +40185,10 @@
 			Mkushi, Zambia
 		</field>
 		<field name="investor_name">
-			Zeder
+			None
 		</field>
 		<field name="investor_country">
-			South Africa
+			None
 		</field>
 		<field name="intention">
 			Agriculture
@@ -40250,16 +40203,16 @@
 			10000
 		</field>
 		<field name="contract_size">
-			4000
+			4100
 		</field>
 		<field name="production_size">
-			1800
+			4100
 		</field>
 		<field name="nature_of_the_deal">
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2011-01-01 http://farmlandgrab.org/post/view/18181 Media report , http://www.privateequityafrica.com/uncategorized/chayton-sells-fund-to-zeder-changes-to-holding-company/ Media report , Company sources , http://www.howwemadeitinafrica.com/a-really-big-opportunity-inside-psgs-46m-zambian-farming-deal/18022/?fullpost=1 Media report 
+			2011-01-01 http://farmlandgrab.org/post/view/18181 Media report , http://www.privateequityafrica.com/uncategorized/chayton-sells-fund-to-zeder-changes-to-holding-company/ Media report , Company sources , http://www.howwemadeitinafrica.com/a-really-big-opportunity-inside-psgs-46m-zambian-farming-deal/18022/?fullpost=1 Media report , 2013-11-13 http://www.bdlive.co.za/business/agriculture/2013/11/13/agribusiness-investor-zeder-deepens-roots-in-zambia?crmid=crm2 Media report , http://www.zeder.co.za/index.php?q=node/5 Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -53063,10 +53016,10 @@
 			River Cess, Liberia
 		</field>
 		<field name="investor_name">
-			Equatorial Palm Oil plc
+			Equatorial Palm Oil plc, SIVA Group, Kuala Lumpur Kepong Berhad
 		</field>
 		<field name="investor_country">
-			United Kingdom of Great Britain and Northern Ireland
+			United Kingdom of Great Britain and Northern Ireland, India, Malaysia
 		</field>
 		<field name="intention">
 			Agriculture
@@ -58853,7 +58806,7 @@
 			Agriculture
 		</field>
 		<field name="negotiation_status">
-			[2011] Concluded (Contract signed)
+			[2009] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
 			None
@@ -58868,10 +58821,10 @@
 			None
 		</field>
 		<field name="nature_of_the_deal">
-			None
+			Lease / Concession
 		</field>
 		<field name="data_source">
-			2012-01-13 http://www.rspo.org/backup/sites/default/files/1%20%20RSPO%20Notification%20of%20New%20Planting_PT%20PAL_December%202011_v0-signed.pdf Company sources , 2012-03-26 http://www.finanznachrichten.de/pdf/20120326_222152_N21_24B97E4F5838B0A8482579CD0034CB18.1.pdf Company sources , 2012-01-13 http://www.rspo.org/backup/sites/default/files/2%20%20RSPO%20NPP_SEIA_HCV%20Summary%20Report_PT%20PAL_December%20%2711_revisi%203-final-signed.pdf Company sources , 2012-01-13 http://www.rspo.org/backup/sites/default/files/3%20%20RSPO%20NPP_Summary%20of%20Management%20Plan_PT%20PAL_December%20%2711_revisi%202-signed.pdf Company sources , 2013-04-19 http://investing.businessweek.com/research/stocks/private/snapshot.asp?privcapId=183129905 Media report , 2012-01-13 http://www.rspo.org/backup/content/noble-plantation-pte-ltd-pt-pusaka-agro-lestari-papua-province-indonesia-new-planting-assess Company sources , 2012-05-01 http://www.eia-international.org/wp-content/uploads/EIA_Clear_Cut_Exploitation_0512_FINAL.pdf Research Paper / Policy Report 
+			http://www.rspo.org/blog/topic/3/noble_plantation_pte_ltd_%28pt_pusaka_agro_lestari_papua_province_indonesia%29_new_planting_assessment Media report , 2011-11-01 http://www.rspo.org/_v2/file/3%20%20RSPO%20NPP_Summary%20of%20Management%20Plan_PT%20PAL_December%20%2711_revisi%202-signed.pdf Company sources , 2011-09-01 http://www.rspo.org/_v2/file/2%20%20RSPO%20NPP_SEIA_HCV%20Summary%20Report_PT%20PAL_December%20%2711_revisi%203-final-signed.pdf Company sources , 2012-01-10 http://www.rspo.org/_v2/file/1%20%20RSPO%20Notification%20of%20New%20Planting_PT%20PAL_December%202011_v0-signed.pdf Company sources , 2012-03-26 http://www.finanznachrichten.de/pdf/20120326_222152_N21_24B97E4F5838B0A8482579CD0034CB18.1.pdf Company sources , http://investing.businessweek.com/research/stocks/private/snapshot.asp?privcapId=183129905 Media report , 2012-05-01 http://www.eia-international.org/wp-content/uploads/EIA_Clear_Cut_Exploitation_0512_FINAL.pdf Research Paper / Policy Report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -64904,7 +64857,7 @@
 			Ghana
 		</field>
 		<field name="location">
-			Afram River, Ghana
+			Sene, Ghana
 		</field>
 		<field name="investor_name">
 			African Plantation for Sustainable Development Ghana Ltd.
@@ -64925,7 +64878,7 @@
 			450000
 		</field>
 		<field name="contract_size">
-			None
+			13376
 		</field>
 		<field name="production_size">
 			None
@@ -64934,13 +64887,13 @@
 			None
 		</field>
 		<field name="data_source">
-			http://www.ghanaweb.com/GhanaHomePage/features/artikel.php?ID=231389 Media report , http://www.modernghana.com/news/255694/1/kumawuhemaa-kontrehene-engage-in-dubious-450000-he.html Media report , http://www.hbs.edu/environment/mission-and-impact/Pages/profile-details.aspx?profile=elorentzen Media report 
+			http://www.ghanaweb.com/GhanaHomePage/features/artikel.php?ID=231389 Media report , http://www.modernghana.com/news/255694/1/kumawuhemaa-kontrehene-engage-in-dubious-450000-he.html Media report , http://www.hbs.edu/environment/mission-and-impact/Pages/profile-details.aspx?profile=elorentzen Media report , Research Paper / Policy Report 
 		</field>
 		<field name="contract_farming">
 			None
 		</field>
 		<field name="crop">
-			Trees
+			Eucalyptus
 		</field>
 	</item>
 	<item>
@@ -84023,6 +83976,429 @@
 		</field>
 		<field name="crop">
 			Barley, Wheat
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4341
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Ashanti, Ghana
+		</field>
+		<field name="investor_name">
+			None
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2012] Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			[2012] In operation (production)
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			5223
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			2014-04-18 IIED Personal information 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Corn (Maize), Rice
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4348
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Ashanti, Ghana
+		</field>
+		<field name="investor_name">
+			National Interest Co. Ltd. (NICOL)
+		</field>
+		<field name="investor_country">
+			Ghana
+		</field>
+		<field name="intention">
+			Forestry
+		</field>
+		<field name="negotiation_status">
+			[2010] Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			[2010] In operation (production)
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			5002
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			2014-04-18 IIED Personal information 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			None
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4358
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Sene, Ghana
+		</field>
+		<field name="investor_name">
+			Vita Farm Co. Ltd.
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			None
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			4487
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2014-04-18 IIED Personal information 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Jatropha
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4359
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Atebubu, Ghana
+		</field>
+		<field name="investor_name">
+			Ghana Farms
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			None
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			19453
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2014-04-18 IIED Personal information 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Corn (Maize)
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4360
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Amantin, Ghana
+		</field>
+		<field name="investor_name">
+			Akate Farms Ltd
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2010] Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			853
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2014-04-18 IIED Personal information 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Food crops (no specification)
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4362
+		</field>
+		<field name="target_country">
+			Ghana
+		</field>
+		<field name="location">
+			Atebubu, Ghana
+		</field>
+		<field name="investor_name">
+			African Plantation for Sustainable Development Ghana Ltd.
+		</field>
+		<field name="investor_country">
+			South Africa
+		</field>
+		<field name="intention">
+			Forestry
+		</field>
+		<field name="negotiation_status">
+			Concluded (Oral Agreement)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			9155
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			2014-04-18 IIED Personal information 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Eucalyptus
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4363
+		</field>
+		<field name="target_country">
+			Mozambique
+		</field>
+		<field name="location">
+			Chimoio, Mozambique
+		</field>
+		<field name="investor_name">
+			AgDevCo
+		</field>
+		<field name="investor_country">
+			United Kingdom of Great Britain and Northern Ireland
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2014] Intended (Expression of interest)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			318
+		</field>
+		<field name="contract_size">
+			None
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			http://ifcext.ifc.org/IFCExt/spiwebsite1.nsf/0/83290D02C51482EF85257C860064A4AB Research Paper / Policy Report , http://investing.businessweek.com/research/stocks/private/snapshot.asp?privcapId=51443497 Media report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			None
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4365
+		</field>
+		<field name="target_country">
+			Zambia
+		</field>
+		<field name="location">
+			Kawambwa, Zambia
+		</field>
+		<field name="investor_name">
+			None
+		</field>
+		<field name="investor_country">
+			None
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2014] Intended (Under negotiation)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			30000
+		</field>
+		<field name="contract_size">
+			None
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2014-05-20 http://www.farmlandgrab.org/post/view/23523-4-investors-eye-sugar-estates Media report 
+		</field>
+		<field name="contract_farming">
+			True
+		</field>
+		<field name="crop">
+			Sugar Cane
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4366
+		</field>
+		<field name="target_country">
+			Nigeria
+		</field>
+		<field name="location">
+			Nigeria
+		</field>
+		<field name="investor_name">
+			Dangote Industries
+		</field>
+		<field name="investor_country">
+			Nigeria
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2014] Intended (Under negotiation)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			380000
+		</field>
+		<field name="contract_size">
+			None
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2014-05-11 http://www.farmlandgrab.org/post/view/23493-dangote-group-pledges-to-invest-2-3bn-in-northern-nigeria Media report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Rice, Sugar Cane
 		</field>
 	</item>
 </data>
