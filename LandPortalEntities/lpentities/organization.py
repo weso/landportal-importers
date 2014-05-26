@@ -13,7 +13,8 @@ class Organization(object):
     '''
 
 
-    def __init__(self, chain_for_id, name=None, url=None, description=None, url_logo=None, is_part_of=None):
+    def __init__(self, chain_for_id, name=None, url=None, description_en=None, description_es=None,
+                 description_fr=None, url_logo=None, is_part_of=None):
         """
         Constructor
 
@@ -22,7 +23,9 @@ class Organization(object):
         self.name = name
         self.url = url
         self.is_part_of = is_part_of
-        self.description = description
+        self.description_en = description_en
+        self.description_es = description_es
+        self.description_fr = description_fr
         self.url_logo = url_logo
 
         self.data_sources = []
