@@ -93,7 +93,10 @@ class ModelObjectBuilder(object):
         result = Organization(chain_for_id=self._org_id)
         result.name = self._config.get("ORGANIZATION", "oecd_name")
         result.url = self._config.get("ORGANIZATION", "oecd_url")
-        result.description = self._config.get("ORGANIZATION", "oecd_desc")
+        result.description_en = self._read_config_value("ORGANIZATION", "oecd_desc_en")
+        result.description_es = self._read_config_value("ORGANIZATION", "oecd_desc_es")
+        result.description_fr = self._read_config_value("ORGANIZATION", "oecd_desc_fr")
+
         return result
 
     def _build_default_datasource(self):
