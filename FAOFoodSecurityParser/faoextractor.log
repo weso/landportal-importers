@@ -1,0 +1,7 @@
+2014-05-26 13:19:14,256 - faoextractor - INFO - Reading files...
+2014-05-26 13:19:53,355 - faoextractor - INFO - Done with Excel file Food_Security_Indicators.xlsx
+2014-05-26 13:19:54,654 - faoextractor - ERROR - OOPS! Something went wrong Error while persisting the builded xml. 
+2014-05-26 13:21:20,476 - faoextractor - INFO - Reading files...
+2014-05-26 13:21:59,312 - faoextractor - INFO - Done with Excel file Food_Security_Indicators.xlsx
+2014-05-26 13:22:03,328 - faoextractor - INFO - Updating ini file
+2014-05-26 13:22:03,329 - faoextractor - INFO - Done!
