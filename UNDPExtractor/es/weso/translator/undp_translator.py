@@ -115,6 +115,9 @@ class UNDPTranslator(object):
         organization.name = self._config.get("ORGANIZATION", "name")
         organization.url = self._config.get("ORGANIZATION", "url")
         organization.url_logo = self._config.get("ORGANIZATION", "url_logo")
+        organization.description_en = self._read_config_value("ORGANIZATION", "description_en")
+        organization.description_es = self._read_config_value("ORGANIZATION", "description_es")
+        organization.description_fr = self._read_config_value("ORGANIZATION", "description_fr")
         return organization
 
     def _create_datasource(self):

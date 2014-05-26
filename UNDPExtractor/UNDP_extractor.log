@@ -1727,3 +1727,39 @@
 2014-05-16 11:35:22,706 - UNDP_extractor - INFO - Ignoring row node. Cause: 
 2014-05-16 11:35:22,737 - UNDP_extractor - INFO - Ignoring row node. Cause: 
 2014-05-16 11:35:22,770 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:40,782 - UNDP_extractor - INFO - Initializing data extraction from UNDP...
+2014-05-26 12:20:40,792 - UNDP_extractor - INFO - Extracting data form Table 2: Human Development Index Trends, with URL http://data.undp.org/resource/efc4-gjvq.xml...
+2014-05-26 12:20:43,226 - UNDP_extractor - WARNING - Error during the extraction from Table 2: Human Development Index Trends. Cause: . Data from that table ignored.
+2014-05-26 12:20:43,226 - UNDP_extractor - INFO - Data extraction from UNDP done.
+2014-05-26 12:20:43,734 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,776 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,812 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,851 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,885 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,920 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,954 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:43,989 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:44,025 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:44,059 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:44,094 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:44,128 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:44,161 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:44,194 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:56,447 - UNDP_extractor - INFO - Initializing data extraction from UNDP...
+2014-05-26 12:20:56,447 - UNDP_extractor - INFO - Extracting data form Table 2: Human Development Index Trends, with URL http://data.undp.org/resource/efc4-gjvq.xml...
+2014-05-26 12:20:58,732 - UNDP_extractor - WARNING - Error during the extraction from Table 2: Human Development Index Trends. Cause: . Data from that table ignored.
+2014-05-26 12:20:58,732 - UNDP_extractor - INFO - Data extraction from UNDP done.
+2014-05-26 12:20:59,184 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,229 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,266 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,299 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,332 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,372 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,426 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,461 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,503 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,549 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,585 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,619 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,657 - UNDP_extractor - INFO - Ignoring row node. Cause: 
+2014-05-26 12:20:59,694 - UNDP_extractor - INFO - Ignoring row node. Cause: 
