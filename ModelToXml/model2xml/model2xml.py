@@ -24,7 +24,6 @@ from lpentities.region import Region
 import codecs
 
 import urllib
-import urllib2
 
 
 class ModelToXMLTransformer(object):
@@ -98,6 +97,9 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS = "import_process"
     IMPORT_PROCESS_ORGANIZATION_NAME = "organization_name"
     IMPORT_PROCESS_ORGANIZATION_URL = "organization_url"
+    IMPORT_PROCESS_ORGANIZATION_DESC_EN = "organization_description_en"
+    IMPORT_PROCESS_ORGANIZATION_DESC_ES = "organization_description_es"
+    IMPORT_PROCESS_ORGANIZATION_DESC_FR = "organization_description_fr"
     IMPORT_PROCESS_DATASOURCE = "datasource"
     IMPORT_PROCESS_DATASOURCE_ID_ATT = "id"
     IMPORT_PROCESS_TYPE = "type"
@@ -215,13 +217,15 @@ class ModelToXMLTransformer(object):
         """
         Returns the name of the original file (remove the directory names in case we need it).
         """
-        if self._import_process in [self.API, self.SCRAP]:
+        if self._import_process in [self.API, self.SCRAP]: #API, SCRAP
             return original_name
-        else:
-            if "/" in original_name:
+
+        else:  # Rest of import types
+
+            if "/" in original_name:  # Linux
                 arr = original_name.split("/")
                 return arr[len(arr) - 1]
-            elif "\\" in original_name:
+            elif "\\" in original_name:  # Windows
                 arr = original_name.split("\\")
                 return arr[len(arr) - 1]
             else:
@@ -253,8 +257,9 @@ class ModelToXMLTransformer(object):
         else:
             raise RuntimeError("Unrecognized type object in param path_to_original_file: " + type(self._path_to_original_file))
         file_zip.close()
-        with open(self._zip_file_name(), "rb") as file_content:
-            return file_content.read()
+        # with open(self._zip_file_name(), "rb") as file_content:
+        #     return file_content.read()
+        return open(self._zip_file_name(), "rb")
 
     def _write_file_to_zip_object(self, zip_object, path):
         zip_object.write(path, self._short_file_name(path))
@@ -664,6 +669,21 @@ class ModelToXMLTransformer(object):
         organization_url_node = Element(self.IMPORT_PROCESS_ORGANIZATION_URL)
         organization_url_node.text = self._datasource.organization.url
         metadata.append(organization_url_node)
+
+        #Organization_desc_en
+        organization_desc_en_node = Element(self.IMPORT_PROCESS_ORGANIZATION_DESC_EN)
+        organization_desc_en_node.text = self._datasource.organization.description_en
+        metadata.append(organization_desc_en_node)
+
+        #Organization_desc_es
+        organization_desc_es_node = Element(self.IMPORT_PROCESS_ORGANIZATION_DESC_ES)
+        organization_desc_es_node.text = self._datasource.organization.description_es
+        metadata.append(organization_desc_es_node)
+
+        #Organization_desc_fr
+        organization_desc_fr_node = Element(self.IMPORT_PROCESS_ORGANIZATION_DESC_FR)
+        organization_desc_fr_node.text = self._datasource.organization.description_fr
+        metadata.append(organization_desc_fr_node)
 
         #datasource
         datasource_node = Element(self.IMPORT_PROCESS_DATASOURCE)
