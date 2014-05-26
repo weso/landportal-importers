@@ -281,7 +281,9 @@ class FoncierImporter(object):
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
-        result.description = self._config.get("ORGANIZATION", "description")
+        result.description_en = self._read_config_value("ORGANIZATION", "description_en")
+        result.description_es = self._read_config_value("ORGANIZATION", "description_es")
+        result.description_fr = self._read_config_value("ORGANIZATION", "description_fr")
 
         return result
 
