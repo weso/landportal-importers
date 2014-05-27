@@ -54,6 +54,11 @@ class Parser(object):
         self._license = self._build_default_license()
 
 
+    def run(self):
+        self.extract_countries()
+        self.extract_observations()
+        self.model_to_xml()
+
 
     def model_to_xml(self):
         for datasource in self._user.organization.data_sources:
@@ -181,7 +186,7 @@ class Parser(object):
         
         return observation
     
-    def extract_observations(self, historic, requested_year):
+    def extract_observations(self):
         for data_source_name in self.data_sources:
             indicators_section = self.config.get('data_sources', data_source_name)
             requested_indicators = dict(self.config.items(indicators_section))
@@ -198,7 +203,7 @@ class Parser(object):
                                                    convert_to = self.config.get(indicator_code, "indicator_unit_type"))
                 indicator = self._build_indicator(indicator_code, dataset, measurement_unit)
                 
-                #print '\t' + indicator.name_en  + "--------------" + indicator.preferable_tendency + "-----------"
+                print '\t' + indicator.name_en  + "--------------" + indicator.preferable_tendency + "-----------"
                 for country in self.countries:
                     slice_object = self._build_slice(country, dataset, indicator)
                     dataset.add_slice(slice_object)  # TESTING EFFECT

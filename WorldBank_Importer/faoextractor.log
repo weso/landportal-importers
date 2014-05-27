@@ -1,3 +1,718 @@
 2014-05-26 13:51:55,135 - faoextractor - ERROR - OOPS! Something went wrong 'Logger' object has no attribute 'getboolean'
 2014-05-26 13:57:06,607 - faoextractor - ERROR - OOPS! Something went wrong No section: 'TRANSLATOR'
 2014-05-26 13:59:42,615 - faoextractor - ERROR - OOPS! Something went wrong 'Parser' object has no attribute 'run'
+2014-05-27 11:53:33,346 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeA9
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeL5
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso code1A
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeC9
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeC4
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeC5
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeJG
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeC6
+2014-05-27 11:53:34,957 - faoextractor - WARNING - No country matches found for iso codeC7
+2014-05-27 11:53:34,959 - faoextractor - WARNING - No country matches found for iso codeC8
+2014-05-27 11:53:34,959 - faoextractor - WARNING - No country matches found for iso codeS3
+2014-05-27 11:53:34,959 - faoextractor - WARNING - No country matches found for iso code4E
+2014-05-27 11:53:34,959 - faoextractor - WARNING - No country matches found for iso codeZ4
+2014-05-27 11:53:34,959 - faoextractor - WARNING - No country matches found for iso code7E
+2014-05-27 11:53:34,959 - faoextractor - WARNING - No country matches found for iso codeZ7
+2014-05-27 11:53:34,960 - faoextractor - WARNING - No country matches found for iso codeXC
+2014-05-27 11:53:34,960 - faoextractor - WARNING - No country matches found for iso codeEU
+2014-05-27 11:53:34,960 - faoextractor - WARNING - No country matches found for iso codeXD
+2014-05-27 11:53:34,960 - faoextractor - WARNING - No country matches found for iso codeXE
+2014-05-27 11:53:34,960 - faoextractor - WARNING - No country matches found for iso codeXY
+2014-05-27 11:53:34,960 - faoextractor - WARNING - No country matches found for iso codeKV
+2014-05-27 11:53:34,961 - faoextractor - WARNING - No country matches found for iso codeXJ
+2014-05-27 11:53:34,961 - faoextractor - WARNING - No country matches found for iso codeZJ
+2014-05-27 11:53:34,961 - faoextractor - WARNING - No country matches found for iso codeL4
+2014-05-27 11:53:34,961 - faoextractor - WARNING - No country matches found for iso codeXL
+2014-05-27 11:53:34,961 - faoextractor - WARNING - No country matches found for iso codeXM
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeXN
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeXO
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeL8
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeZQ
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeXP
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeXQ
+2014-05-27 11:53:34,963 - faoextractor - WARNING - No country matches found for iso codeXU
+2014-05-27 11:53:34,964 - faoextractor - WARNING - No country matches found for iso codeM2
+2014-05-27 11:53:34,964 - faoextractor - WARNING - No country matches found for iso codeXR
+2014-05-27 11:53:34,964 - faoextractor - WARNING - No country matches found for iso codeXS
+2014-05-27 11:53:34,964 - faoextractor - WARNING - No country matches found for iso codeOE
+2014-05-27 11:53:34,964 - faoextractor - WARNING - No country matches found for iso codeS4
+2014-05-27 11:53:34,966 - faoextractor - WARNING - No country matches found for iso codeS2
+2014-05-27 11:53:34,966 - faoextractor - WARNING - No country matches found for iso code8S
+2014-05-27 11:53:34,967 - faoextractor - WARNING - No country matches found for iso codeL7
+2014-05-27 11:53:34,967 - faoextractor - WARNING - No country matches found for iso codeZF
+2014-05-27 11:53:34,967 - faoextractor - WARNING - No country matches found for iso codeZG
+2014-05-27 11:53:34,967 - faoextractor - WARNING - No country matches found for iso codeS1
+2014-05-27 11:53:34,967 - faoextractor - WARNING - No country matches found for iso codeA4
+2014-05-27 11:53:34,969 - faoextractor - WARNING - No country matches found for iso codeTV
+2014-05-27 11:53:34,969 - faoextractor - WARNING - No country matches found for iso codeXT
+2014-05-27 11:53:34,970 - faoextractor - WARNING - No country matches found for iso code1W
+2014-05-27 11:53:34,970 - faoextractor - WARNING - No country matches found for iso codeA5
+2014-05-27 11:53:34,971 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:35,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Aruba, 2013
+2014-05-27 11:53:35,364 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:35,828 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Afghanistan, 2013
+2014-05-27 11:53:35,829 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:36,292 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Angola, 2013
+2014-05-27 11:53:36,295 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:36,992 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Albania, 2013
+2014-05-27 11:53:36,993 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2013
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2012
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2011
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2005
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2004
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2003
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2002
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2001
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2000
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1999
+2014-05-27 11:53:37,463 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1998
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1997
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1996
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1995
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1994
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1993
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1992
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1991
+2014-05-27 11:53:37,464 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1990
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1989
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1988
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1987
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1986
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1985
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1984
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1983
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1982
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1981
+2014-05-27 11:53:37,466 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1980
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1979
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1978
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1977
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1976
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1975
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1974
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1973
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1972
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1971
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1970
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1969
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1968
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1967
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1966
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1965
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1964
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1963
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1962
+2014-05-27 11:53:37,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1961
+2014-05-27 11:53:37,469 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1960
+2014-05-27 11:53:37,470 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:38,049 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), United Arab Emirates, 2013
+2014-05-27 11:53:38,051 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:38,509 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Argentina, 2013
+2014-05-27 11:53:38,513 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:39,030 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Armenia, 2013
+2014-05-27 11:53:39,032 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2013
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2012
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2011
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2010
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2009
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2008
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2007
+2014-05-27 11:53:39,479 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2006
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2005
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2004
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2003
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2002
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2001
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2000
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1999
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1998
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1997
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1996
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1995
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1994
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1993
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1992
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1991
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1990
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1989
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1988
+2014-05-27 11:53:39,480 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1987
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1986
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1985
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1984
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1983
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1982
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1981
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1980
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1979
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1978
+2014-05-27 11:53:39,482 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1977
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1976
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1975
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1974
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1973
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1972
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1971
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1970
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1969
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1968
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1967
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1966
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1965
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1964
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1963
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1962
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1961
+2014-05-27 11:53:39,483 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1960
+2014-05-27 11:53:39,486 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:39,970 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Antigua and Barbuda, 2013
+2014-05-27 11:53:39,973 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:40,433 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Australia, 2013
+2014-05-27 11:53:40,436 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:40,931 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Austria, 2013
+2014-05-27 11:53:40,934 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:41,532 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Azerbaijan, 2013
+2014-05-27 11:53:41,536 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:42,128 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Burundi, 2013
+2014-05-27 11:53:42,130 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:42,894 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Belgium, 2013
+2014-05-27 11:53:42,895 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:43,411 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Benin, 2013
+2014-05-27 11:53:43,414 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:43,869 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Burkina Faso, 2013
+2014-05-27 11:53:43,871 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:44,674 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bangladesh, 2013
+2014-05-27 11:53:44,677 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:45,138 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bulgaria, 2013
+2014-05-27 11:53:45,141 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:45,687 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bahrain, 2013
+2014-05-27 11:53:45,690 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:46,283 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bahamas, 2013
+2014-05-27 11:53:46,286 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:46,854 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bosnia and Herzegovina, 2013
+2014-05-27 11:53:46,857 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:47,473 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Belarus, 2013
+2014-05-27 11:53:47,474 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:48,056 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Belize, 2013
+2014-05-27 11:53:48,059 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:48,655 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 2013
+2014-05-27 11:53:48,655 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1999
+2014-05-27 11:53:48,655 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1998
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1997
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1996
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1994
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1993
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1992
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1991
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1990
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1989
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1988
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1987
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1986
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1985
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1984
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1983
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1982
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1981
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1980
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1979
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1978
+2014-05-27 11:53:48,657 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1977
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1976
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1975
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1974
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1973
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1972
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1971
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1970
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1969
+2014-05-27 11:53:48,658 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1968
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1967
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1966
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1965
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1964
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1963
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1962
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1961
+2014-05-27 11:53:48,660 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1960
+2014-05-27 11:53:48,661 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:49,467 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bolivia, 2013
+2014-05-27 11:53:49,469 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:49,911 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Brazil, 2013
+2014-05-27 11:53:49,913 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:50,372 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Barbados, 2013
+2014-05-27 11:53:50,375 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:50,976 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Brunei Darussalam, 2013
+2014-05-27 11:53:50,979 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:51,440 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bhutan, 2013
+2014-05-27 11:53:51,441 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:51,990 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Botswana, 2013
+2014-05-27 11:53:51,993 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:52,552 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Central African Republic, 2013
+2014-05-27 11:53:52,555 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:53:53,213 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Canada, 2013
+2014-05-27 11:53:53,214 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:17,348 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:18,288 - faoextractor - WARNING - No country matches found for iso codeA9
+2014-05-27 11:54:18,288 - faoextractor - WARNING - No country matches found for iso codeL5
+2014-05-27 11:54:18,288 - faoextractor - WARNING - No country matches found for iso code1A
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeC9
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeC4
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeC5
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeJG
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeC6
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeC7
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeC8
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeS3
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso code4E
+2014-05-27 11:54:18,289 - faoextractor - WARNING - No country matches found for iso codeZ4
+2014-05-27 11:54:18,290 - faoextractor - WARNING - No country matches found for iso code7E
+2014-05-27 11:54:18,290 - faoextractor - WARNING - No country matches found for iso codeZ7
+2014-05-27 11:54:18,290 - faoextractor - WARNING - No country matches found for iso codeXC
+2014-05-27 11:54:18,290 - faoextractor - WARNING - No country matches found for iso codeEU
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeXD
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeXE
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeXY
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeKV
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeXJ
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeZJ
+2014-05-27 11:54:18,292 - faoextractor - WARNING - No country matches found for iso codeL4
+2014-05-27 11:54:18,293 - faoextractor - WARNING - No country matches found for iso codeXL
+2014-05-27 11:54:18,293 - faoextractor - WARNING - No country matches found for iso codeXM
+2014-05-27 11:54:18,293 - faoextractor - WARNING - No country matches found for iso codeXN
+2014-05-27 11:54:18,293 - faoextractor - WARNING - No country matches found for iso codeXO
+2014-05-27 11:54:18,293 - faoextractor - WARNING - No country matches found for iso codeL8
+2014-05-27 11:54:18,295 - faoextractor - WARNING - No country matches found for iso codeZQ
+2014-05-27 11:54:18,295 - faoextractor - WARNING - No country matches found for iso codeXP
+2014-05-27 11:54:18,295 - faoextractor - WARNING - No country matches found for iso codeXQ
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeXU
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeM2
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeXR
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeXS
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeOE
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeS4
+2014-05-27 11:54:18,296 - faoextractor - WARNING - No country matches found for iso codeS2
+2014-05-27 11:54:18,298 - faoextractor - WARNING - No country matches found for iso code8S
+2014-05-27 11:54:18,298 - faoextractor - WARNING - No country matches found for iso codeL7
+2014-05-27 11:54:18,299 - faoextractor - WARNING - No country matches found for iso codeZF
+2014-05-27 11:54:18,299 - faoextractor - WARNING - No country matches found for iso codeZG
+2014-05-27 11:54:18,299 - faoextractor - WARNING - No country matches found for iso codeS1
+2014-05-27 11:54:18,299 - faoextractor - WARNING - No country matches found for iso codeA4
+2014-05-27 11:54:18,301 - faoextractor - WARNING - No country matches found for iso codeTV
+2014-05-27 11:54:18,301 - faoextractor - WARNING - No country matches found for iso codeXT
+2014-05-27 11:54:18,302 - faoextractor - WARNING - No country matches found for iso code1W
+2014-05-27 11:54:18,302 - faoextractor - WARNING - No country matches found for iso codeA5
+2014-05-27 11:54:18,303 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:18,555 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Aruba, 2013
+2014-05-27 11:54:18,558 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:18,811 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Afghanistan, 2013
+2014-05-27 11:54:18,813 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:19,180 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Angola, 2013
+2014-05-27 11:54:19,181 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:19,446 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Albania, 2013
+2014-05-27 11:54:19,447 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2013
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2012
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2011
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2005
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2004
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2003
+2014-05-27 11:54:19,839 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2002
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2001
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 2000
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1999
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1998
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1997
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1996
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1995
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1994
+2014-05-27 11:54:19,841 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1993
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1992
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1991
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1990
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1989
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1988
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1987
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1986
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1985
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1984
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1983
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1982
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1981
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1980
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1979
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1978
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1977
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1976
+2014-05-27 11:54:19,842 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1975
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1974
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1973
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1972
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1971
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1970
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1969
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1968
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1967
+2014-05-27 11:54:19,844 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1966
+2014-05-27 11:54:19,845 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1965
+2014-05-27 11:54:19,845 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1964
+2014-05-27 11:54:19,845 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1963
+2014-05-27 11:54:19,845 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1962
+2014-05-27 11:54:19,845 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1961
+2014-05-27 11:54:19,845 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Andorra, 1960
+2014-05-27 11:54:19,845 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:20,114 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), United Arab Emirates, 2013
+2014-05-27 11:54:20,117 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:20,384 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Argentina, 2013
+2014-05-27 11:54:20,387 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:20,653 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Armenia, 2013
+2014-05-27 11:54:20,654 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:21,038 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2013
+2014-05-27 11:54:21,038 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2012
+2014-05-27 11:54:21,038 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2011
+2014-05-27 11:54:21,038 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2010
+2014-05-27 11:54:21,038 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2009
+2014-05-27 11:54:21,038 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2008
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2007
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2006
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2005
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2004
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2003
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2002
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2001
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 2000
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1999
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1998
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1997
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1996
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1995
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1994
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1993
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1992
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1991
+2014-05-27 11:54:21,039 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1990
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1989
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1988
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1987
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1986
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1985
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1984
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1983
+2014-05-27 11:54:21,040 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1982
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1981
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1980
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1979
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1978
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1977
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1976
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1975
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1974
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1973
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1972
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1971
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1970
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1969
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1968
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1967
+2014-05-27 11:54:21,042 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1966
+2014-05-27 11:54:21,043 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1965
+2014-05-27 11:54:21,043 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1964
+2014-05-27 11:54:21,043 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1963
+2014-05-27 11:54:21,043 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1962
+2014-05-27 11:54:21,043 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1961
+2014-05-27 11:54:21,043 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), American Samoa, 1960
+2014-05-27 11:54:21,046 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:21,308 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Antigua and Barbuda, 2013
+2014-05-27 11:54:21,309 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:21,562 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Australia, 2013
+2014-05-27 11:54:21,565 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:21,819 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Austria, 2013
+2014-05-27 11:54:21,822 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:22,088 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Azerbaijan, 2013
+2014-05-27 11:54:22,092 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:22,457 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Burundi, 2013
+2014-05-27 11:54:22,460 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:22,713 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Belgium, 2013
+2014-05-27 11:54:22,716 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:23,121 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Benin, 2013
+2014-05-27 11:54:23,124 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:23,529 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Burkina Faso, 2013
+2014-05-27 11:54:23,530 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:23,795 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bangladesh, 2013
+2014-05-27 11:54:23,798 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:24,062 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bulgaria, 2013
+2014-05-27 11:54:24,065 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:24,342 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bahrain, 2013
+2014-05-27 11:54:24,344 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:24,608 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bahamas, 2013
+2014-05-27 11:54:24,611 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:24,890 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bosnia and Herzegovina, 2013
+2014-05-27 11:54:24,892 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:25,177 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Belarus, 2013
+2014-05-27 11:54:25,178 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:25,443 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Belize, 2013
+2014-05-27 11:54:25,444 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:25,721 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 2013
+2014-05-27 11:54:25,721 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1999
+2014-05-27 11:54:25,721 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1998
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1997
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1996
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1994
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1993
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1992
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1991
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1990
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1989
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1988
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1987
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1986
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1985
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1984
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1983
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1982
+2014-05-27 11:54:25,723 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1981
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1980
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1979
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1978
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1977
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1976
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1975
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1974
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1973
+2014-05-27 11:54:25,724 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1972
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1971
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1970
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1969
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1968
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1967
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1966
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1965
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1964
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1963
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1962
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1961
+2014-05-27 11:54:25,726 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bermuda, 1960
+2014-05-27 11:54:25,727 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:25,990 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bolivia, 2013
+2014-05-27 11:54:25,993 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:26,243 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Brazil, 2013
+2014-05-27 11:54:26,246 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:26,510 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Barbados, 2013
+2014-05-27 11:54:26,513 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:26,898 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Brunei Darussalam, 2013
+2014-05-27 11:54:26,901 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:27,167 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Bhutan, 2013
+2014-05-27 11:54:27,170 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:27,440 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Botswana, 2013
+2014-05-27 11:54:27,443 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:27,713 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Central African Republic, 2013
+2014-05-27 11:54:27,714 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:27,994 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Canada, 2013
+2014-05-27 11:54:27,997 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:28,684 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Switzerland, 2013
+2014-05-27 11:54:28,687 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:29,134 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Chile, 2013
+2014-05-27 11:54:29,137 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:29,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), China, 2013
+2014-05-27 11:54:29,581 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:30,036 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Côte d'Ivoire, 2013
+2014-05-27 11:54:30,038 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:30,653 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cameroon, 2013
+2014-05-27 11:54:30,654 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:31,572 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Democratic Republic of the Congo, 2013
+2014-05-27 11:54:31,573 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:32,019 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Congo, 2013
+2014-05-27 11:54:32,020 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:32,487 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Colombia, 2013
+2014-05-27 11:54:32,490 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:33,072 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Comoros, 2013
+2014-05-27 11:54:33,073 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:33,621 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cape Verde, 2013
+2014-05-27 11:54:33,622 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:34,193 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Costa Rica, 2013
+2014-05-27 11:54:34,194 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:34,716 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cuba, 2013
+2014-05-27 11:54:34,717 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2013
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2005
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2004
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2003
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2002
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2001
+2014-05-27 11:54:35,575 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 2000
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1999
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1998
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1997
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1996
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1995
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1994
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1993
+2014-05-27 11:54:35,576 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1992
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1991
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1990
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1989
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1988
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1987
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1986
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1985
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1984
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1983
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1982
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1981
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1980
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1979
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1978
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1977
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1976
+2014-05-27 11:54:35,578 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1975
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1974
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1973
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1972
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1971
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1970
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1969
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1968
+2014-05-27 11:54:35,579 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1967
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1966
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1965
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1964
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1963
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1962
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1961
+2014-05-27 11:54:35,581 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Curaþao, 1960
+2014-05-27 11:54:35,582 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:36,357 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2013
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2012
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2011
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2010
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2009
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2008
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2007
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2006
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2005
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2004
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2003
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2002
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2001
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 2000
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1999
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1998
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1997
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1996
+2014-05-27 11:54:36,358 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1995
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1994
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1993
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1992
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1991
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1990
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1989
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1988
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1987
+2014-05-27 11:54:36,359 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1986
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1985
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1984
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1983
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1982
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1981
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1980
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1979
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1978
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1977
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1976
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1975
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1974
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1973
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1972
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1971
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1970
+2014-05-27 11:54:36,361 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1969
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1968
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1967
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1966
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1965
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1964
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1963
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1962
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1961
+2014-05-27 11:54:36,362 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cayman Islands, 1960
+2014-05-27 11:54:36,365 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:37,003 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Cyprus, 2013
+2014-05-27 11:54:37,006 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:37,947 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Czech Republic, 2013
+2014-05-27 11:54:37,948 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:38,411 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Germany, 2013
+2014-05-27 11:54:38,414 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:38,874 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Djibouti, 2013
+2014-05-27 11:54:38,877 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2013
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2012
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2011
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2010
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2009
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2008
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2007
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2006
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2005
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2004
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2001
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 2000
+2014-05-27 11:54:39,315 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1999
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1998
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1996
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1995
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1994
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1993
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1991
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1990
+2014-05-27 11:54:39,316 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1989
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1988
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1986
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1985
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1984
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1983
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1981
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1980
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1979
+2014-05-27 11:54:39,318 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1978
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1977
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1976
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1975
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1974
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1973
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1971
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1970
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1969
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1968
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1967
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1966
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1965
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1964
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1963
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1962
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1961
+2014-05-27 11:54:39,319 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominica, 1960
+2014-05-27 11:54:39,322 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:39,772 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Denmark, 2013
+2014-05-27 11:54:39,773 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:40,216 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Dominican Republic, 2013
+2014-05-27 11:54:40,219 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:40,664 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Algeria, 2013
+2014-05-27 11:54:40,667 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:41,325 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Ecuador, 2013
+2014-05-27 11:54:41,328 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:41,931 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Egypt, 2013
+2014-05-27 11:54:41,937 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:42,437 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Eritrea, 2013
+2014-05-27 11:54:42,441 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:42,882 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Spain, 2013
+2014-05-27 11:54:42,884 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:43,346 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Estonia, 2013
+2014-05-27 11:54:43,348 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
+2014-05-27 11:54:43,792 - faoextractor - WARNING - Missing value for Fertility rate, total (births per woman), Ethiopia, 2013
+2014-05-27 11:54:43,793 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): api.worldbank.org
