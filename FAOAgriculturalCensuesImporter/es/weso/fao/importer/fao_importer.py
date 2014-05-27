@@ -73,7 +73,7 @@ class FaoImporter(object):
         self._relate_common_objects()  # Done
         self._default_computation = Computation(uri=Computation.RAW)
 
-    def run(self):
+        def run(self):
         """
         Steps:
 
@@ -96,18 +96,25 @@ class FaoImporter(object):
                 self._default_dataset.add_observation(obs)
                     
             # Send model for its trasnlation
-            # ModelToXMLTransformer construstor:
-            #       dataset, import_process, user, path_to_original_file, indicator_relations=None
-            translator = ModelToXMLTransformer(dataset=self._default_dataset,
-                                               import_process=ModelToXMLTransformer.API,
-                                               user=self._default_user)
-            #TODO: Not working version currently. Add path to original/s files
+            path_to_files = self._obtain_file_paths()
+            translator = ModelToXMLTransformer(dataset=self._default_dataset, 
+                                               import_process=ModelToXMLTransformer.XLS, 
+                                               user=self._default_user, 
+                                               path_to_original_file=path_to_files)
             translator.run()
         else:
             self._log.warning("No observations found")
             
         # And it is done. No return needed
 
+    def _obtain_file_paths(self):
+        paths=[]
+        
+        for file_name in self._config.get("PARSER", "file_names").split(","):
+            paths.append(os.path.join(self._xsl_reader._data_path, os.path.basename(file_name.strip())))
+        
+        return paths
+        
     def _build_xsl_reader(self):
         return XslReader()
 
