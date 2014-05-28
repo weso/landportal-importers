@@ -22,22 +22,30 @@ from es.weso.fao.ExcelManagement.excel_reader import XslReader
 
 __author__ = 'BorjaGB'
 
+
 class FaoImporter(object):
 
     def __init__(self, log, config, look_for_historical):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
+        self._org_id = self._config.get("TRANSLATOR", "org_id")
         if not look_for_historical:
             self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
+            self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+            self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+            self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+            self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+        else:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
         self._reconciler = CountryReconciler()
 
         # Initializing variable ids
-        self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
-        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
-        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
-        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+
+
 
         self.data_sources = dict(self._config.items('data_sources'))
         
@@ -235,7 +243,7 @@ class FaoImporter(object):
         return result
 
     def _build_default_organization(self):
-        result = Organization(chain_for_id=self._org_id)
+        result = Organization(chain_for_id=self._config.get("ORGANIZATION", "chain_for_id"))
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
