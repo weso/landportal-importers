@@ -144,7 +144,7 @@ class ModelObjectBuilder(object):
         return result
 
     def _build_default_organization(self):
-        result = Organization(chain_for_id=self._org_id)
+        result = Organization(chain_for_id=self._config.get("ORGANIZATION", "chain_for_id"))
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
