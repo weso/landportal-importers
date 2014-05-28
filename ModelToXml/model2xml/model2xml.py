@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 from lpentities.computation import Computation
 from lpentities.country import Country
 import zipfile
-import traceback
+
 
 try:
     from xml.etree.cElementTree import Element, ElementTree
@@ -218,7 +218,9 @@ class ModelToXMLTransformer(object):
         """
         Returns the name of the original file (remove the directory names in case we need it).
         """
-        if self._import_process in [self.API, self.SCRAP]: #API, SCRAP
+        if isinstance(original_name, list):  # Recursive, but only one time.
+            return self._short_file_name(self._zip_file_name())
+        elif self._import_process in [self.API, self.SCRAP]:  # API, SCRAP
             return original_name
 
         else:  # Rest of import types
