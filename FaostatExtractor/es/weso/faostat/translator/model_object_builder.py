@@ -82,7 +82,7 @@ class ModelObjectBuilder(object):
 
         #creating related objects
         #Organization
-        org = Organization(chain_for_id=self._org_id,
+        org = Organization(chain_for_id=self._config.get("ORGANIZATION", "chain_for_id"),
                            name=self._config.get("ORGANIZATION", "name"),
                            url=self._config.get("ORGANIZATION", "url"),
                            url_logo=self._config.get("ORGANIZATION", "url_logo"),
