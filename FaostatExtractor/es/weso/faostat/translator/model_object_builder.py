@@ -40,13 +40,15 @@ class ModelObjectBuilder(object):
         self._config = config
 
         self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._last_checked_year = self._config.get("HISTORICAL", "first_valid_year")
+
         if not look_for_historical:
+            self._last_checked_year = int(self._config.get("HISTORICAL", "first_valid_year"))
             self._obs_int = int(self._config.get("TRANSLATOR", "obs_int"))
             self._sli_int = int(self._config.get("TRANSLATOR", "sli_int"))
             self._dat_int = int(self._config.get("TRANSLATOR", "dat_int"))
             self._igr_int = int(self._config.get("TRANSLATOR", "igr_int"))
         else:
+            self._last_checked_year = 1900  # For instance.
             self._obs_int = 0
             self._sli_int = 0
             self._dat_int = 0
@@ -117,7 +119,7 @@ class ModelObjectBuilder(object):
         self.add_value_to_observation(new_observation, register)  # DONE
         self.add_computation_to_observation(new_observation, register)  # DONE
         self.add_reftime_to_observation(new_observation, register)  # DONE
-        self.add_issued_to_observation(new_observation, register)  # DONE
+        self.add_issued_to_observation(new_observation)  # DONE
 
 
         country.add_observation(new_observation)
@@ -131,7 +133,7 @@ class ModelObjectBuilder(object):
             self._last_checked_year = new_observation.ref_time.year
 
     @staticmethod
-    def add_issued_to_observation(observation, register):
+    def add_issued_to_observation(observation):
         #Adding time in which the observation has been treated by us
         observation.issued = Instant(datetime.now())
 
@@ -171,9 +173,6 @@ class ModelObjectBuilder(object):
         indicator = self._indicators_dict[register[TranslatorConst.ITEM_CODE]]
         observation.indicator = indicator
 
-
-    def _read_config_value(self, section, field):
-        return (self._config.get(section, field)).decode(encoding="utf-8")
 
     @staticmethod
     def _parse_preferable_tendency(tendency):
