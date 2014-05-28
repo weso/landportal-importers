@@ -35,15 +35,21 @@ def run():
     config = ConfigParser.RawConfigParser()
     config.read(config_path)
 
-    try:
-        fao_importer = FaoImporter(log, config, config.getboolean("TRANSLATOR", "historical_mode"))
-        fao_importer.run()
-        update_ini_file(config, config_path, fao_importer, log)
-        
-        log.info("Done!")
-    
-    except Exception as detail:
-        log.error("OOPS! Something went wrong %s" %detail)
+
+    fao_importer = FaoImporter(log, config, config.getboolean("TRANSLATOR", "historical_mode"))
+    fao_importer.run()
+    update_ini_file(config, config_path, fao_importer, log)
+
+    log.info("Done!")
+    # try:
+    #     fao_importer = FaoImporter(log, config, config.getboolean("TRANSLATOR", "historical_mode"))
+    #     fao_importer.run()
+    #     update_ini_file(config, config_path, fao_importer, log)
+    #
+    #     log.info("Done!")
+    #
+    # except Exception as detail:
+    #     log.error("OOPS! Something went wrong %s" %detail)
         
 
 if __name__ == '__main__':

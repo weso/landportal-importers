@@ -3,3 +3,41 @@
 2014-05-26 13:06:51,934 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
 2014-05-26 13:06:52,147 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
 2014-05-26 13:06:52,148 - faoextractor - ERROR - OOPS! Something went wrong __init__() takes at least 5 arguments (4 given)
+2014-05-28 13:25:46,092 - faoextractor - INFO - Reading files...
+2014-05-28 13:25:46,369 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 13:25:46,517 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 13:25:46,717 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 13:25:46,792 - faoextractor - ERROR - OOPS! Something went wrong Error while persisting the builded xml. 
+2014-05-28 13:28:46,614 - faoextractor - INFO - Reading files...
+2014-05-28 13:28:46,930 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 13:28:47,151 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 13:28:47,447 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 13:28:47,572 - faoextractor - ERROR - OOPS! Something went wrong Error while persisting the builded xml. 
+2014-05-28 13:30:07,818 - faoextractor - INFO - Reading files...
+2014-05-28 13:30:08,075 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 13:30:08,227 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 13:30:08,479 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 13:30:08,572 - faoextractor - ERROR - OOPS! Something went wrong Error while persisting the builded xml. cannot serialize ['C:\\Users\\Dani\\Documents\\EII\\WESO\\wesopace\\FAOAgriculturalCensuesImporter\\data\\Land_operated_by_tenure_type 2000.xls', 'C:\\Users\\Dani\\Documents\\EII\\WESO\\wesopace\\FAOAgriculturalCensuesImporter\\data\\Land_tenure 2000.xls', 'C:\\Users\\Dani\\Documents\\EII\\WESO\\wesopace\\FAOAgriculturalCensuesImporter\\data\\Land tenure_1970.1980.1990.xlsx'] (type list)
+2014-05-28 13:37:42,470 - faoextractor - INFO - Reading files...
+2014-05-28 13:37:42,717 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 13:37:42,862 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 13:37:43,059 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 13:37:43,132 - faoextractor - ERROR - OOPS! Something went wrong Error while persisting the builded xml. cannot serialize ['C:\\Users\\Dani\\Documents\\EII\\WESO\\wesopace\\FAOAgriculturalCensuesImporter\\data\\Land_operated_by_tenure_type 2000.xls', 'C:\\Users\\Dani\\Documents\\EII\\WESO\\wesopace\\FAOAgriculturalCensuesImporter\\data\\Land_tenure 2000.xls', 'C:\\Users\\Dani\\Documents\\EII\\WESO\\wesopace\\FAOAgriculturalCensuesImporter\\data\\Land tenure_1970.1980.1990.xlsx'] (type list)
+2014-05-28 14:56:14,963 - faoextractor - INFO - Reading files...
+2014-05-28 14:56:15,210 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 14:56:15,357 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 14:56:15,553 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 14:58:24,549 - faoextractor - INFO - Reading files...
+2014-05-28 14:58:24,832 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 14:58:24,999 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 14:58:25,233 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 14:58:53,407 - faoextractor - INFO - Reading files...
+2014-05-28 14:58:53,677 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 14:58:53,869 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 14:58:54,085 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 15:07:28,187 - faoextractor - INFO - Reading files...
+2014-05-28 15:07:28,516 - faoextractor - INFO - Done with Excel file Land_operated_by_tenure_type 2000.xls
+2014-05-28 15:07:28,716 - faoextractor - INFO - Done with Excel file  Land_tenure 2000.xls
+2014-05-28 15:07:29,009 - faoextractor - INFO - Done with Excel file  Land tenure_1970.1980.1990.xlsx
+2014-05-28 15:07:29,407 - faoextractor - INFO - Updating ini file
+2014-05-28 15:07:29,408 - faoextractor - INFO - Done!

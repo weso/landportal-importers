@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -73,7 +74,7 @@ class FaoImporter(object):
         self._relate_common_objects()  # Done
         self._default_computation = Computation(uri=Computation.RAW)
 
-        def run(self):
+    def run(self):
         """
         Steps:
 
@@ -92,7 +93,7 @@ class FaoImporter(object):
         # Generate observations and add it to the common objects
         observations = self._load_xsls()
         if len(observations) > 0:
-            for obs in observations :
+            for obs in observations:
                 self._default_dataset.add_observation(obs)
                     
             # Send model for its trasnlation
@@ -108,7 +109,7 @@ class FaoImporter(object):
         # And it is done. No return needed
 
     def _obtain_file_paths(self):
-        paths=[]
+        paths = []
         
         for file_name in self._config.get("PARSER", "file_names").split(","):
             paths.append(os.path.join(self._xsl_reader._data_path, os.path.basename(file_name.strip())))
@@ -321,9 +322,9 @@ class FaoImporter(object):
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
-        result.description_en = self._config.get("ORGANIZATION", "description_en")
-        result.description_es = self._config.get("ORGANIZATION", "description_es")
-        result.description_fr = self._config.get("ORGANIZATION", "description_fr")
+        result.description_en = self._read_config_value("ORGANIZATION", "description_en")
+        result.description_es = self._read_config_value("ORGANIZATION", "description_es")
+        result.description_fr = self._read_config_value("ORGANIZATION", "description_fr")
 
         return result
 
