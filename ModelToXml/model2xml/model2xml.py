@@ -57,7 +57,6 @@ class ModelToXMLTransformer(object):
         self._group_dic = {}
         self._indicator_relations = indicator_relations
         self._path_to_original_file = path_to_original_file
-        self._zip_file_name = self._zip_file_name()
         # One per indicator referred by the observations
 
         self._root = self._build_root()
@@ -101,6 +100,7 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_ORGANIZATION_DESC_EN = "organization_description_en"
     IMPORT_PROCESS_ORGANIZATION_DESC_ES = "organization_description_es"
     IMPORT_PROCESS_ORGANIZATION_DESC_FR = "organization_description_fr"
+    IMPORT_PROCESS_ORGANIZATION_ID = "organization_id"
     IMPORT_PROCESS_DATASOURCE = "datasource"
     IMPORT_PROCESS_DATASOURCE_ID_ATT = "id"
     IMPORT_PROCESS_TYPE = "type"
@@ -170,7 +170,7 @@ class ModelToXMLTransformer(object):
 
         #Persisting xml
         try:
-            paths = self._persist_tree()  #
+            paths = self._persist_tree()
         except BaseException as e:
             raise RuntimeError("Error while persisting the builded xml. " + e.message)
 
@@ -670,6 +670,10 @@ class ModelToXMLTransformer(object):
         organization_url_node = Element(self.IMPORT_PROCESS_ORGANIZATION_URL)
         organization_url_node.text = self._datasource.organization.url
         metadata.append(organization_url_node)
+        #organization_id
+        organization_id_node = Element(self.IMPORT_PROCESS_ORGANIZATION_ID)
+        organization_id_node.text = self._datasource.organization.organization_id
+        metadata.append(organization_id_node)
 
         #Organization_desc_en
         organization_desc_en_node = Element(self.IMPORT_PROCESS_ORGANIZATION_DESC_EN)
@@ -701,7 +705,7 @@ class ModelToXMLTransformer(object):
 
         #file_name
         file_name_node = Element(self.IMPORT_PROCESS_FILE_NAME)
-        file_name_node.text = self._short_file_name(self._zip_file_name)
+        file_name_node.text = self._short_file_name(self._path_to_original_file)
         metadata.append(file_name_node)
 
         #user
