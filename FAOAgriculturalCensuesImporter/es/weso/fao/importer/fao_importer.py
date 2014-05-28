@@ -28,16 +28,22 @@ class FaoImporter(object):
         self._log = log
         self._config = config
         self._look_for_historical = look_for_historical
+        self._org_id = self._config.get("TRANSLATOR", "org_id")
         if not self._look_for_historical:
             self._historical_year = self._config.getint("TRANSLATOR", "historical_year")
+            self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
+            self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
+            self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
+            self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+        else:
+            self._obs_int = 0
+            self._sli_int = 0
+            self._dat_int = 0
+            self._igr_int = 0
         self._reconciler = CountryReconciler()
 
         # Initializing variable ids
-        self._org_id = self._config.get("TRANSLATOR", "org_id")
-        self._obs_int = self._config.getint("TRANSLATOR", "obs_int")
-        self._sli_int = self._config.getint("TRANSLATOR", "sli_int")
-        self._dat_int = self._config.getint("TRANSLATOR", "dat_int")
-        self._igr_int = self._config.getint("TRANSLATOR", "igr_int")
+
 
         # Indicators code
         self.TNH = 0  # Total number of holdings
@@ -165,55 +171,55 @@ class FaoImporter(object):
                 year = self._build_ref_time_object(str(element[year_col]).replace("/", "-"))
                 
                 if self._filter_historical_observations(year):
-                    if (tnh_col != None):
+                    if tnh_col is not None:
                         tnh_result = self._build_observation_for_line(self.TNH, year, element[tnh_col], Value.INTEGER, country)
                         result.append(tnh_result)        
-                    if (tah_col != None):
+                    if tah_col is not None:
                         tah_result = self._build_observation_for_line(self.TAH, year, element[tah_col], Value.INTEGER, country)
                         result.append(tah_result)
-                    if (now_col != None):
+                    if now_col is not None:
                         now_result = self._build_observation_for_line(self.NOW, year, element[now_col], Value.INTEGER, country)
                         result.append(now_result)
-                    if (aow_col != None):
+                    if aow_col is not None:
                         aow_result = self._build_observation_for_line(self.AOW, year, element[aow_col], Value.INTEGER, country)
                         result.append(aow_result)
-                    if (nte_col != None):
+                    if nte_col is not None:
                         nte_result = self._build_observation_for_line(self.NTE, year, element[nte_col], Value.INTEGER, country)
                         result.append(nte_result)
-                    if (ate_col != None):
+                    if ate_col is not None:
                         ate_result = self._build_observation_for_line(self.ATE, year, element[ate_col], Value.INTEGER, country)
                         result.append(ate_result)
-                    if (not_col != None):
+                    if not_col is not None:
                         not_result = self._build_observation_for_line(self.NOT, year, element[not_col], Value.INTEGER, country)
                         result.append(not_result)
-                    if (aot_col != None):
+                    if aot_col is not None:
                         aot_result = self._build_observation_for_line(self.AOT, year, element[aot_col], Value.INTEGER, country)
                         result.append(aot_result)
-                    if (nmo_col != None):
+                    if nmo_col is not None:
                         nmo_result = self._build_observation_for_line(self.NMO, year, element[nmo_col], Value.INTEGER, country)
                         result.append(nmo_result)
-                    if (amo_col != None):
+                    if amo_col is not None:
                         amo_result = self._build_observation_for_line(self.AMO, year, element[amo_col], Value.INTEGER, country)
                         result.append(amo_result)
                     
-                    if (tnh_col != None):
-                        if (now_col != None):
+                    if tnh_col is not None:
+                        if now_col is not None:
                             result.append(self._build_observation_for_line(self.SNOW, year, self._calculate_percentage_of_data(tnh_result.value.value, now_result.value.value), Value.FLOAT, country))
-                        if (nte_col != None):
+                        if nte_col is not None:
                             result.append(self._build_observation_for_line(self.SNTE, year, self._calculate_percentage_of_data(tnh_result.value.value, nte_result.value.value), Value.FLOAT, country))
-                        if (not_col != None):
+                        if not_col is not None:
                             result.append(self._build_observation_for_line(self.SNOT, year, self._calculate_percentage_of_data(tnh_result.value.value, not_result.value.value), Value.FLOAT, country))
-                        if (nmo_col != None):
+                        if nmo_col is not None:
                             result.append(self._build_observation_for_line(self.SNMO, year, self._calculate_percentage_of_data(tnh_result.value.value, nmo_result.value.value), Value.FLOAT, country))
                             
-                    if (tah_col != None):                        
-                        if (aow_col != None):
+                    if tah_col is not None:
+                        if aow_col is not None:
                             result.append(self._build_observation_for_line(self.SAOW, year, self._calculate_percentage_of_data(tah_result.value.value, aow_result.value.value), Value.FLOAT, country))
-                        if (ate_col != None):
+                        if ate_col is not None:
                             result.append(self._build_observation_for_line(self.SATE, year, self._calculate_percentage_of_data(tah_result.value.value, ate_result.value.value), Value.FLOAT, country))
-                        if (aot_col != None):
+                        if aot_col is not None:
                             result.append(self._build_observation_for_line(self.SAOT, year, self._calculate_percentage_of_data(tah_result.value.value, aot_result.value.value), Value.FLOAT, country))
-                        if (amo_col != None):
+                        if amo_col is not None:
                             result.append(self._build_observation_for_line(self.SAMO, year, self._calculate_percentage_of_data(tah_result.value.value, amo_result.value.value), Value.FLOAT, country))
                         
         return result
@@ -234,7 +240,7 @@ class FaoImporter(object):
                                           aow_col = 5, ate_col = 7, aot_col = 9, amo_col = 11)
         
     def _calculate_percentage_of_data(self, total_number, partial_number):
-        if (total_number == None or partial_number == None) :
+        if total_number is None or partial_number is None:
             return None
         else:
             return (float(partial_number)/float(total_number)) * 100
@@ -274,9 +280,9 @@ class FaoImporter(object):
     def _build_value_object(value, value_type):
         try:
             if not (value is None or value == ""):
-                if (value_type == Value.INTEGER):
+                if value_type == Value.INTEGER:
                     int(value)
-                elif  (value_type == Value.FLOAT):
+                elif  value_type == Value.FLOAT:
                     float(value)
                 return Value(value=value,
                              value_type=value_type,
@@ -318,7 +324,7 @@ class FaoImporter(object):
         return result
 
     def _build_default_organization(self):
-        result = Organization(chain_for_id=self._org_id)
+        result = Organization(chain_for_id=self._config.get("ORGANIZATION", "chain_for_id"))
         result.name = self._config.get("ORGANIZATION", "name")
         result.url = self._config.get("ORGANIZATION", "url")
         result.url_logo = self._config.get("ORGANIZATION", "url_logo")
@@ -354,7 +360,7 @@ class FaoImporter(object):
         
         # Total Number of Holdings
         tnh_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "tnh_id"))
+                            int_for_id=self._config.get("INDICATOR", "tnh_id"))
         tnh_ind.name_en = self._read_config_value("INDICATOR", "tnh_name_en")
         tnh_ind.name_es = self._read_config_value("INDICATOR", "tnh_name_es")
         tnh_ind.name_fr = self._read_config_value("INDICATOR", "tnh_name_fr")
@@ -371,7 +377,7 @@ class FaoImporter(object):
                 
         # Total Area of Holdings
         tah_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "tah_id"))
+                            int_for_id=self._config.get("INDICATOR", "tah_id"))
         tah_ind.name_en = self._read_config_value("INDICATOR", "tah_name_en")
         tah_ind.name_es = self._read_config_value("INDICATOR", "tah_name_es")
         tah_ind.name_fr = self._read_config_value("INDICATOR", "tah_name_fr")
@@ -387,7 +393,7 @@ class FaoImporter(object):
         
         # Number Operated as Owner
         now_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "now_id"))
+                            int_for_id=self._config.get("INDICATOR", "now_id"))
         now_ind.name_en = self._read_config_value("INDICATOR", "now_name_en")
         now_ind.name_es = self._read_config_value("INDICATOR", "now_name_es")
         now_ind.name_fr = self._read_config_value("INDICATOR", "now_name_fr")
@@ -403,7 +409,7 @@ class FaoImporter(object):
         
         # Number Operated as Tenant
         nte_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "nte_id"))
+                            int_for_id=self._config.get("INDICATOR", "nte_id"))
         nte_ind.name_en = self._read_config_value("INDICATOR", "nte_name_en")
         nte_ind.name_es = self._read_config_value("INDICATOR", "nte_name_es")
         nte_ind.name_fr = self._read_config_value("INDICATOR", "nte_name_fr")
@@ -419,7 +425,7 @@ class FaoImporter(object):
 
         # Number Operated as Others
         not_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "not_id"))
+                            int_for_id=self._config.get("INDICATOR", "not_id"))
         not_ind.name_en = self._read_config_value("INDICATOR", "not_name_en")
         not_ind.name_es = self._read_config_value("INDICATOR", "not_name_es")
         not_ind.name_fr = self._read_config_value("INDICATOR", "not_name_fr")
@@ -435,7 +441,7 @@ class FaoImporter(object):
         
         # Area Operated as Owner
         aow_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "aow_id"))
+                            int_for_id=self._config.get("INDICATOR", "aow_id"))
         aow_ind.name_en = self._read_config_value("INDICATOR", "aow_name_en")
         aow_ind.name_es = self._read_config_value("INDICATOR", "aow_name_es")
         aow_ind.name_fr = self._read_config_value("INDICATOR", "aow_name_fr")
@@ -451,7 +457,7 @@ class FaoImporter(object):
         
         # Area Operated as Tenant
         ate_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "ate_id"))
+                            int_for_id=self._config.get("INDICATOR", "ate_id"))
         ate_ind.name_en = self._read_config_value("INDICATOR", "ate_name_en")
         ate_ind.name_es = self._read_config_value("INDICATOR", "ate_name_es")
         ate_ind.name_fr = self._read_config_value("INDICATOR", "ate_name_fr")
@@ -467,7 +473,7 @@ class FaoImporter(object):
 
         # Area Operated as Others
         aot_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "aot_id"))
+                            int_for_id=self._config.get("INDICATOR", "aot_id"))
         aot_ind.name_en = self._read_config_value("INDICATOR", "aot_name_en")
         aot_ind.name_es = self._read_config_value("INDICATOR", "aot_name_es")
         aot_ind.name_fr = self._read_config_value("INDICATOR", "aot_name_fr")
@@ -483,7 +489,7 @@ class FaoImporter(object):
 
         # Shares in Number Operated as Owner
         snow_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "snow_id"))
+                             int_for_id=self._config.get("INDICATOR", "snow_id"))
         snow_ind.name_en = self._read_config_value("INDICATOR", "snow_name_en")
         snow_ind.name_es = self._read_config_value("INDICATOR", "snow_name_es")
         snow_ind.name_fr = self._read_config_value("INDICATOR", "snow_name_fr")
@@ -499,7 +505,7 @@ class FaoImporter(object):
 
         # Shares in Number Operated as Tenant
         snte_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "snte_id"))
+                             int_for_id=self._config.get("INDICATOR", "snte_id"))
         snte_ind.name_en = self._read_config_value("INDICATOR", "snte_name_en")
         snte_ind.name_es = self._read_config_value("INDICATOR", "snte_name_es")
         snte_ind.name_fr = self._read_config_value("INDICATOR", "snte_name_fr")
@@ -515,7 +521,7 @@ class FaoImporter(object):
 
         # Shares in Number Operated as Others
         snot_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "snot_id"))
+                             int_for_id=self._config.get("INDICATOR", "snot_id"))
         snot_ind.name_en = self._read_config_value("INDICATOR", "snot_name_en")
         snot_ind.name_es = self._read_config_value("INDICATOR", "snot_name_es")
         snot_ind.name_fr = self._read_config_value("INDICATOR", "snot_name_fr")
@@ -531,7 +537,7 @@ class FaoImporter(object):
         
         # Shares in Area Operated as Owner
         saow_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "saow_id"))
+                             int_for_id=self._config.get("INDICATOR", "saow_id"))
         saow_ind.name_en = self._read_config_value("INDICATOR", "saow_name_en")
         saow_ind.name_es = self._read_config_value("INDICATOR", "saow_name_es")
         saow_ind.name_fr = self._read_config_value("INDICATOR", "saow_name_fr")
@@ -547,7 +553,7 @@ class FaoImporter(object):
 
         # Shares in Area Operated as Tenant
         sate_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "sate_id"))
+                             int_for_id=self._config.get("INDICATOR", "sate_id"))
         sate_ind.name_en = self._read_config_value("INDICATOR", "sate_name_en")
         sate_ind.name_es = self._read_config_value("INDICATOR", "sate_name_es")
         sate_ind.name_fr = self._read_config_value("INDICATOR", "sate_name_fr")
@@ -563,7 +569,7 @@ class FaoImporter(object):
 
         # Shares in Area Operated as Others
         saot_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "saot_id"))
+                             int_for_id=self._config.get("INDICATOR", "saot_id"))
         saot_ind.name_en = self._read_config_value("INDICATOR", "saot_name_en")
         saot_ind.name_es = self._read_config_value("INDICATOR", "saot_name_es")
         saot_ind.name_fr = self._read_config_value("INDICATOR", "saot_name_fr")
@@ -579,7 +585,7 @@ class FaoImporter(object):
 
         # Number operated under more than one form of tenure
         nmo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "nmo_id"))
+                            int_for_id=self._config.get("INDICATOR", "nmo_id"))
         nmo_ind.name_en = self._read_config_value("INDICATOR", "nmo_name_en")
         nmo_ind.name_es = self._read_config_value("INDICATOR", "nmo_name_es")
         nmo_ind.name_fr = self._read_config_value("INDICATOR", "nmo_name_fr")
@@ -595,7 +601,7 @@ class FaoImporter(object):
         
         # Shares number operated under more than one form of tenure
         snmo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "snmo_id"))
+                             int_for_id=self._config.get("INDICATOR", "snmo_id"))
         snmo_ind.name_en = self._read_config_value("INDICATOR", "snmo_name_en")
         snmo_ind.name_es = self._read_config_value("INDICATOR", "snmo_name_es")
         snmo_ind.name_fr = self._read_config_value("INDICATOR", "snmo_name_fr")
@@ -611,7 +617,7 @@ class FaoImporter(object):
 
         # Areas operated under more than one form of tenure
         amo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "amo_id"))
+                            int_for_id=self._config.get("INDICATOR", "amo_id"))
         amo_ind.name_en = self._read_config_value("INDICATOR", "amo_name_en")
         amo_ind.name_es = self._read_config_value("INDICATOR", "amo_name_es")
         amo_ind.name_fr = self._read_config_value("INDICATOR", "amo_name_fr")
@@ -627,7 +633,7 @@ class FaoImporter(object):
         
         # Shares number operated under more than one form of tenure
         samo_ind = Indicator(chain_for_id=self._org_id,
-                                     int_for_id=self._config.get("INDICATOR", "samo_id"))
+                             int_for_id=self._config.get("INDICATOR", "samo_id"))
         samo_ind.name_en = self._read_config_value("INDICATOR", "samo_name_en")
         samo_ind.name_es = self._read_config_value("INDICATOR", "samo_name_es")
         samo_ind.name_fr = self._read_config_value("INDICATOR", "samo_name_fr")
