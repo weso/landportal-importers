@@ -42,14 +42,16 @@ class XslReader(object):
         data_dictionary = {}
         
         data_dictionary["Name"] = worksheet.cell_value(1, 1).decode("UTF-8")
-        data_dictionary["Description"] = worksheet.cell_value(2, 1).decode("UTF-8")
-        data_dictionary["URL"] = worksheet.cell_value(3, 1).decode("UTF-8")
-        data_dictionary["Logo"] = worksheet.cell_value(4, 1).decode("UTF-8")
+        data_dictionary["Description_EN"] = worksheet.cell_value(2, 1).decode("UTF-8")
+        data_dictionary["Description_ES"] = worksheet.cell_value(3, 1).decode("UTF-8")
+        data_dictionary["Description_FR"] = worksheet.cell_value(4, 1).decode("UTF-8")
+        data_dictionary["URL"] = worksheet.cell_value(5, 1).decode("UTF-8")
+        data_dictionary["Logo"] = worksheet.cell_value(6, 1).decode("UTF-8")
         
-        data_dictionary["License_Name"] = worksheet.cell_value(7, 1).decode("UTF-8")
-        data_dictionary["License_Description"] = worksheet.cell_value(8, 1).decode("UTF-8")
-        data_dictionary["License_Republish"] = worksheet.cell_value(9, 1)
-        data_dictionary["License_URL"] = worksheet.cell_value(10, 1).decode("UTF-8")
+        data_dictionary["License_Name"] = worksheet.cell_value(9, 1).decode("UTF-8")
+        data_dictionary["License_Description"] = worksheet.cell_value(10, 1).decode("UTF-8")
+        data_dictionary["License_Republish"] = worksheet.cell_value(11, 1)
+        data_dictionary["License_URL"] = worksheet.cell_value(12, 1).decode("UTF-8")
         
         return data_dictionary
     

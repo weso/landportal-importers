@@ -132,7 +132,9 @@ class RawImporter(object):
                             name = self._organization_sheet_dictionary["Name"],
                             url = self._organization_sheet_dictionary["URL"],
                             url_logo = self._organization_sheet_dictionary["Logo"],
-                            description = self._organization_sheet_dictionary["Description"])
+                            description_en = self._organization_sheet_dictionary["Description_EN"],
+                            description_es = self._organization_sheet_dictionary["Description_ES"],
+                            description_fr = self._organization_sheet_dictionary["Description_FR"] )
 
     def _build_license(self):
         result = License()
