@@ -101,6 +101,7 @@ class ModelToXMLTransformer(object):
     IMPORT_PROCESS_ORGANIZATION_DESC_ES = "organization_description_es"
     IMPORT_PROCESS_ORGANIZATION_DESC_FR = "organization_description_fr"
     IMPORT_PROCESS_ORGANIZATION_ID = "organization_id"
+    # IMPORT_PROCESS_ORGANIZATION_URL_LOGO = "organization_logo"
     IMPORT_PROCESS_DATASOURCE = "datasource"
     IMPORT_PROCESS_DATASOURCE_ID_ATT = "id"
     IMPORT_PROCESS_TYPE = "type"
@@ -691,6 +692,11 @@ class ModelToXMLTransformer(object):
         organization_desc_fr_node = Element(self.IMPORT_PROCESS_ORGANIZATION_DESC_FR)
         organization_desc_fr_node.text = self._datasource.organization.description_fr
         metadata.append(organization_desc_fr_node)
+
+        # #Organization_url
+        # organization_logo_node = Element(self.IMPORT_PROCESS_ORGANIZATION_URL_LOGO)
+        # organization_logo_node.text = self._datasource.organization.url_logo
+        # metadata.append(organization_logo_node)
 
         #datasource
         datasource_node = Element(self.IMPORT_PROCESS_DATASOURCE)
