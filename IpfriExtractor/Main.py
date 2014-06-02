@@ -19,7 +19,7 @@ from es.weso.translator.ipfri_trasnlator import IpfriTranslator
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(filename='wbextractor.log', level=logging.INFO, 
+    logging.basicConfig(filename='ifpriextractor.log', level=logging.INFO,
                         format=FORMAT)
 
 def run():

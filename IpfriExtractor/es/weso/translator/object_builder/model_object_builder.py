@@ -90,11 +90,12 @@ class IpfriModelObjectBuilder(object):
 
         # Building organization
         new_organization = Organization(chain_for_id=self._org_id)
-        new_organization.name = self._config.get("ORGANIZATION", "name")
-        new_organization.url = self._config.get("ORGANIZATION", "url")
+        new_organization.name = self._read_config_value("ORGANIZATION", "name")
+        new_organization.url = self._read_config_value("ORGANIZATION", "url")
         new_organization.description_en = self._read_config_value("ORGANIZATION", "description_en")
         new_organization.description_es = self._read_config_value("ORGANIZATION", "description_es")
         new_organization.description_fr = self._read_config_value("ORGANIZATION", "description_fr")
+        # new_organization.url_logo = self._read_config_value("ORGANIZATION", "url_logo")
 
         new_organization.add_data_source(new_datasource)
 
@@ -149,12 +150,12 @@ class IpfriModelObjectBuilder(object):
         else:
             new_indicator = Indicator(chain_for_id=self._org_id,
                                       int_for_id=self._config.get("INDICATOR", begin_of_the_pattern + "_id"))
-            new_indicator.name_en = self._config.get("INDICATOR", begin_of_the_pattern + "_name_en")
-            new_indicator.name_es = self._config.get("INDICATOR", begin_of_the_pattern + "_name_es")
-            new_indicator.name_fr = self._config.get("INDICATOR", begin_of_the_pattern + "_name_fr")
-            new_indicator.description_en = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_en")
-            new_indicator.description_es = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_es")
-            new_indicator.description_fr = self._config.get("INDICATOR", begin_of_the_pattern + "_desc_fr")
+            new_indicator.name_en = self._read_config_value("INDICATOR", begin_of_the_pattern + "_name_en")
+            new_indicator.name_es = self._read_config_value("INDICATOR", begin_of_the_pattern + "_name_es")
+            new_indicator.name_fr = self._read_config_value("INDICATOR", begin_of_the_pattern + "_name_fr")
+            new_indicator.description_en = self._read_config_value("INDICATOR", begin_of_the_pattern + "_desc_en")
+            new_indicator.description_es = self._read_config_value("INDICATOR", begin_of_the_pattern + "_desc_es")
+            new_indicator.description_fr = self._read_config_value("INDICATOR", begin_of_the_pattern + "_desc_fr")
             new_indicator.measurement_unit = MeasurementUnit(name="%",
                                                              convert_to=MeasurementUnit.PERCENTAGE)
 
