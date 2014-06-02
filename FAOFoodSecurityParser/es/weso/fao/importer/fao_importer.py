@@ -303,10 +303,6 @@ class FaoImporter(object):
             return Indicator.DECREASE
         else:
             return Indicator.INCREASE
-        
-    def _read_config_value(self, section, field):
-        return (self._config.get(section, field)).decode(encoding="utf-8")
-
 
     def _relate_common_objects(self):
         self._default_organization.add_user(self._default_user)
