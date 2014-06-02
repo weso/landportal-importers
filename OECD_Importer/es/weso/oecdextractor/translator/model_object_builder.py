@@ -96,6 +96,7 @@ class ModelObjectBuilder(object):
         result.description_en = self._read_config_value("ORGANIZATION", "oecd_desc_en")
         result.description_es = self._read_config_value("ORGANIZATION", "oecd_desc_es")
         result.description_fr = self._read_config_value("ORGANIZATION", "oecd_desc_fr")
+        result.url_logo = self._read_config_value("ORGANIZATION", "oecd_url_logo")
 
         return result
 
