@@ -6,8 +6,9 @@ from requests.adapters import HTTPAdapter
 
 class RestXmlTracker(object):
 
-    def __init__(self, url_pattern, year_pattern, month_pattern):
-        self._url_pattern = url_pattern
+    def __init__(self, url_pattern_month, url_pattern_year, year_pattern, month_pattern):
+        self._url_pattern = url_pattern_month
+        self._url_pattern_year = url_pattern_year
         self._year_pattern = year_pattern
         self._month_pattern = month_pattern
 
@@ -22,8 +23,10 @@ class RestXmlTracker(object):
         return result
 
     def _prepare_url(self, year, month):
-        result = self._url_pattern.replace(self._year_pattern, str(year))
-        result = result.replace(self._month_pattern, str(month))
-        return result
+        if month is not None:
+            result = self._url_pattern.replace(self._year_pattern, str(year))
+            return result.replace(self._month_pattern, str(month))
+        else:
+            return self._url_pattern_year.replace(self._year_pattern, str(year))
 
 

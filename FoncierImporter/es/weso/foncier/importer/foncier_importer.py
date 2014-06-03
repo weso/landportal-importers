@@ -1,3 +1,5 @@
+from lpentities.year_interval import YearInterval
+
 __author__ = 'Dani'
 
 from lpentities.observation import Observation
@@ -113,7 +115,8 @@ class FoncierImporter(object):
         return self._config.get("IMPORTER", "url_api")
 
     def _build_xml_tracker(self):
-        return RestXmlTracker(url_pattern=self._config.get("IMPORTER", "url_pattern"),
+        return RestXmlTracker(url_pattern_month=self._config.get("IMPORTER", "url_pattern_month"),
+                              url_pattern_year=self._config.get("IMPORTER", "url_pattern_year"),
                               year_pattern=self._config.get("IMPORTER", "year_pattern"),
                               month_pattern=self._config.get("IMPORTER", "month_pattern"))
 
@@ -137,9 +140,25 @@ class FoncierImporter(object):
 
     def _build_observations_from_a_single_year(self, year):
         result = []
+        result += self._build_observation_for_a_whole_year(year)
         for month in range(1, 13):
             result += self._build_observation_from_a_concrete_month(year, month)
         return result
+
+    def _build_observation_for_a_whole_year(self, year):
+        """
+        Steps:
+         - Call the API and track the data from a whole year.
+         - Turn the xml into an intermediate structure (list or dict)
+         - build obs from that structure
+
+        """
+        xml_data = self._xml_tracker.track_xml(year, None)
+        register = self._xml_parser.turn_xml_into_register(xml_content=xml_data,
+                                                           year=year,
+                                                           month=None)
+        return self._build_observations_from_register(register)
+
 
     def _build_observation_from_a_concrete_month(self, year, month):
         """
@@ -223,7 +242,10 @@ class FoncierImporter(object):
 
     @staticmethod
     def _build_ref_time_object(year, month):
-        return MonthInterval(year=year, month=month)
+        if month is not None:
+            return MonthInterval(year=year, month=month)
+        else:
+            return YearInterval(year=year)
 
     def _build_issued_object(self):
         return Instant(datetime.now())
@@ -312,7 +334,7 @@ class FoncierImporter(object):
         titres_crees_ind.description_es = self._read_config_value("INDICATOR", "titres_desc_es")
         titres_crees_ind.description_fr = self._read_config_value("INDICATOR", "titres_desc_fr")
         titres_crees_ind.measurement_unit = default_measurement_unit
-        titres_crees_ind.topic = 'TEMP_TOPIC'
+        titres_crees_ind.topic = 'LAND_USE'
         titres_crees_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.TITRES_CREES] = titres_crees_ind
@@ -327,7 +349,7 @@ class FoncierImporter(object):
         mutations_ind.description_es = self._read_config_value("INDICATOR", "mutations_desc_es")
         mutations_ind.description_fr = self._read_config_value("INDICATOR", "mutations_desc_fr")
         mutations_ind.measurement_unit = default_measurement_unit
-        mutations_ind.topic = 'TEMP_TOPIC'
+        mutations_ind.topic = 'LAND_USE'
         mutations_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.MUTATIONS] = mutations_ind
@@ -342,7 +364,7 @@ class FoncierImporter(object):
         csj_ind.description_es = self._read_config_value("INDICATOR", "csj_desc_es")
         csj_ind.description_fr = self._read_config_value("INDICATOR", "csj_desc_fr")
         csj_ind.measurement_unit = default_measurement_unit
-        csj_ind.topic = 'TEMP_TOPIC'
+        csj_ind.topic = 'LAND_USE'
         csj_ind.preferable_tendency = Indicator.IRRELEVANT
 
         result[self.CSJ] = csj_ind
@@ -356,7 +378,7 @@ class FoncierImporter(object):
         reperages_ind.description_en = self._read_config_value("INDICATOR", "reperages_desc_en")
         reperages_ind.description_es = self._read_config_value("INDICATOR", "reperages_desc_es")
         reperages_ind.description_fr = self._read_config_value("INDICATOR", "reperages_desc_fr")
-        reperages_ind.topic = 'TEMP_TOPIC'
+        reperages_ind.topic = 'LAND_USE'
         reperages_ind.measurement_unit = default_measurement_unit
         reperages_ind.preferable_tendency = Indicator.IRRELEVANT
 
@@ -371,7 +393,7 @@ class FoncierImporter(object):
         bornages_ind.description_en = self._read_config_value("INDICATOR", "bornages_desc_en")
         bornages_ind.description_es = self._read_config_value("INDICATOR", "bornages_desc_es")
         bornages_ind.description_fr = self._read_config_value("INDICATOR", "bornages_desc_fr")
-        bornages_ind.topic = 'TEMP_TOPIC'
+        bornages_ind.topic = 'LAND_USE'
         bornages_ind.measurement_unit = default_measurement_unit
         bornages_ind.preferable_tendency = Indicator.IRRELEVANT
 
@@ -386,7 +408,7 @@ class FoncierImporter(object):
         rep_des_plans_ind.description_en = self._read_config_value("INDICATOR", "rep_des_plans_desc_en")
         rep_des_plans_ind.description_es = self._read_config_value("INDICATOR", "rep_des_plans_desc_es")
         rep_des_plans_ind.description_fr = self._read_config_value("INDICATOR", "rep_des_plans_desc_fr")
-        rep_des_plans_ind.topic = 'TEMP_TOPIC'
+        rep_des_plans_ind.topic = 'LAND_USE'
         rep_des_plans_ind.measurement_unit = default_measurement_unit
         rep_des_plans_ind.preferable_tendency = Indicator.IRRELEVANT
 
