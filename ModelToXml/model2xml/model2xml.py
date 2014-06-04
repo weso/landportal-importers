@@ -57,6 +57,7 @@ class ModelToXMLTransformer(object):
         self._group_dic = {}
         self._indicator_relations = indicator_relations
         self._path_to_original_file = path_to_original_file
+        self._zip_file_name = self._zip_file_name()
         # One per indicator referred by the observations
 
         self._root = self._build_root()
@@ -220,7 +221,7 @@ class ModelToXMLTransformer(object):
         Returns the name of the original file (remove the directory names in case we need it).
         """
         if isinstance(original_name, list):  # Recursive, but only one time.
-            return self._short_file_name(self._zip_file_name())
+            return self._short_file_name(self._zip_file_name)
         elif self._import_process in [self.API, self.SCRAP]:  # API, SCRAP
             return original_name
 
@@ -252,7 +253,7 @@ class ModelToXMLTransformer(object):
         return self._path_to_original_file
 
     def _persisted_file_original_content(self):
-        file_zip = zipfile.ZipFile(self._zip_file_name(), "w")
+        file_zip = zipfile.ZipFile(self._zip_file_name, "w")
         if isinstance(self._path_to_original_file, list):
             for path in self._path_to_original_file:
                 self._write_file_to_zip_object(file_zip, path)
@@ -263,7 +264,7 @@ class ModelToXMLTransformer(object):
         file_zip.close()
         # with open(self._zip_file_name(), "rb") as file_content:
         #     return file_content.read()
-        return open(self._zip_file_name(), "rb")
+        return open(self._zip_file_name, "rb")
 
     def _write_file_to_zip_object(self, zip_object, path):
         zip_object.write(path, self._short_file_name(path))
@@ -713,7 +714,7 @@ class ModelToXMLTransformer(object):
 
         #file_name
         file_name_node = Element(self.IMPORT_PROCESS_FILE_NAME)
-        file_name_node.text = self._short_file_name(self._path_to_original_file)
+        file_name_node.text = self._short_file_name(self._short_file_name(self._zip_file_name))
         metadata.append(file_name_node)
 
         #user
