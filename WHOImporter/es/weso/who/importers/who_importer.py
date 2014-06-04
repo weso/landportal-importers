@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 
 from lpentities.computation import Computation
 from lpentities.data_source import DataSource
@@ -15,10 +16,10 @@ from lpentities.year_interval import YearInterval
 from model2xml.model2xml import ModelToXMLTransformer
 from reconciler.country_reconciler import CountryReconciler
 
+from data import __data__
+from es.weso.who.importers.data_management.csv_downloader import CsvDownloader
 from es.weso.who.importers.data_management.csv_reader import CsvReader
-
-from .data_management.csv_downloader import CsvDownloader
-from .data_management.indicator_endpoint import IndicatorEndpoint
+from es.weso.who.importers.data_management.indicator_endpoint import IndicatorEndpoint
 
 
 __author__ = 'BorjaGB'
@@ -81,6 +82,7 @@ class WhoImporter(object):
          - Send it to model2xml
          - Actualize config values (ids and last checked)
         """
+        self._file_paths = []
         # Download csv file for specified indicators in config file
         self._download_csvs()
         
@@ -91,7 +93,7 @@ class WhoImporter(object):
                 self._default_dataset.add_observation(obs)
                     
             # Send model for its trasnlation
-            translator = ModelToXMLTransformer(self._default_dataset, "API_REST", self._default_user)
+            translator = ModelToXMLTransformer(dataset=self._default_dataset, import_process=ModelToXMLTransformer.API, user=self._default_user, path_to_original_file=self._file_paths)
             translator.run()
             
         else:
@@ -111,6 +113,8 @@ class WhoImporter(object):
     def _download_csvs(self):
         self._log.info("Downloading csv files...")
         for ind_end in self._indicators_endpoints:
+            self._file_paths.append(os.path.join(__data__.path(), os.path.basename(self._indicators_endpoints[ind_end].file_name)))
+            
             if self._csv_downloader.download_csv(self._indicators_endpoints[ind_end].indicator_code, self._indicators_endpoints[ind_end].profile, self._indicators_endpoints[ind_end].countries, self._indicators_endpoints[ind_end].regions, self._indicators_endpoints[ind_end].file_name) :
                 self._log.info("\tSUCCESS downloading: " + self._indicators_endpoints[ind_end].file_name)
             else:
