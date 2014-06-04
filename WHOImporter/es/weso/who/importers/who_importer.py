@@ -93,7 +93,9 @@ class WhoImporter(object):
                 self._default_dataset.add_observation(obs)
                     
             # Send model for its trasnlation
-            translator = ModelToXMLTransformer(dataset=self._default_dataset, import_process=ModelToXMLTransformer.API, user=self._default_user, path_to_original_file=self._file_paths)
+            translator = ModelToXMLTransformer(dataset=self._default_dataset, import_process=ModelToXMLTransformer.CSV,
+                                               user=self._default_user,
+                                               path_to_original_file=self._file_paths)
             translator.run()
             
         else:
