@@ -21,8 +21,10 @@ from lpentities.year_interval import YearInterval
 from lpentities.time import Time
 from lpentities.region import Region
 
-import codecs
+from ConfigParser import ConfigParser
 
+import codecs
+import os
 import urllib
 
 
@@ -59,6 +61,10 @@ class ModelToXMLTransformer(object):
         self._path_to_original_file = path_to_original_file
         self._zip_file_name = self._zip_file_name()
         # One per indicator referred by the observations
+
+        self._config = self._build_internal_config()
+        self._adapt_user()  # In the final version the user sent in the xml will be always the same.
+                            # The importers don't have to specify
 
         self._root = self._build_root()
 
@@ -184,22 +190,41 @@ class ModelToXMLTransformer(object):
             raise RuntimeError("Error while sending xml to the receiver module. " + e.message)
 
 
+    def _build_internal_config(self):
+        result = ConfigParser()
+        config_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'user.ini')
+        result.read(config_path)
+        return result
+
+
+    def _adapt_user(self):
+        """
+        This method changes the login of the user, to use always the same, not mattering the
+        object user received. It has been decided to make the importers work in that way.
+
+        """
+        self._user.user_id = self._config.get("USER", "login")
+        pass
+
     def _build_root(self):
         result = Element(self.ROOT)
         result.attrib[self.ROOT_ID] = self._dataset.dataset_id
         return result
 
     def _send_to_receiver(self, paths):
-        url = "http://156.35.82.103/receiver"
+        url = self._config.get("URL", "url")
         exceptions = []
         for file_path in paths:
             try:
                 with codecs.open(file_path, encoding="utf-8") as xml:
                     file_content = xml.read()
-                    data = urllib.urlencode({'xml': unicode(file_content).encode('utf-8')},
-                                            {'file': self._obtain_content_of_original_path()})
-                    # req = urllib2.Request(url, data)
-                    # resp = urllib2.urlopen(req)
+                    file_identifier = self._obtain_content_of_original_path()
+                    api_key = self._config.get("USER", "api_key")
+                    # req = requests.post(url=url,
+                    #                     data={'xml': unicode(file_content).encode('utf-8'),
+                    #                           'file': file_identifier,
+                    #                           'api_key': api_key})
+
             except BaseException as e:
                 e.message = 'File "{0}": {1}'.format(file_path, e.message)
                 exceptions.append(e)
