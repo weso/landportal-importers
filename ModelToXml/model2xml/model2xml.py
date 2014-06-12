@@ -34,7 +34,7 @@ class ModelToXMLTransformer(object):
     """
 
     XML = "XML"
-    XLS = "XML"
+    XLS = "XLS"
     CSV = "CSV"
     API = "API"
     JSON = "JSON"
