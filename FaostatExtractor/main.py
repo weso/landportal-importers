@@ -24,13 +24,14 @@ def configure_log():
                         format=FORMAT)
 
 
-def run(look_for_historical=True):
+def run():
 
         config = ConfigParser()
         config_path = "./files/configuration.ini"
         config.read(config_path)
         log = logging.getLogger('faostatlog')
         configure_log()
+        look_for_historical = config.getboolean("TRANSLATOR", "historical_mode")
         try:
             csv_extractor = FaostatExtractor(log, config)
             csv_extractor.run()
@@ -55,7 +56,7 @@ def run(look_for_historical=True):
 
 if __name__ == '__main__':
     try:
-        run(True)
+        run()
         print "Done!"
     except:
         print "Execution finalized with errors. Check logs."
