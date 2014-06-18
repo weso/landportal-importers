@@ -15,7 +15,7 @@ def get_model_object_time_from_parsed_string(original_time):
 def _get_model_object_interval(str_time):
     date_array = str_time.split("-")
     start_time = int(date_array[0])
-    end_time = _transform_twodigited_date_into_forudigited(date_array[1])
+    end_time = _transform_twodigited_date_into_forudigited_if_needed(date_array[1])
     return Interval(start_time=start_time, end_time=end_time)
 
 
@@ -23,7 +23,7 @@ def _get_model_object_year_interval(str_time):
     return YearInterval(year=int(float(str_time)))
 
 
-def _transform_twodigited_date_into_forudigited(two_digited_str):
+def _transform_twodigited_date_into_forudigited_if_needed(indef_digited_str):
     """
     We are turning the string into an int. Depending on its value, we add a quantity to that int, obtaining the year.
     Examples:
@@ -33,7 +33,9 @@ def _transform_twodigited_date_into_forudigited(two_digited_str):
         98 + 1900 = 1998. return 1998 as a year
 
     """
-    d2f = int(two_digited_str)
+    if len(indef_digited_str) == 4:
+        return int(indef_digited_str)
+    d2f = int(indef_digited_str)
     if d2f < 50:
         d2f += 2000
     elif d2f >= 50:
