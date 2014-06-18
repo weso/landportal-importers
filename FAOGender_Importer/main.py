@@ -31,7 +31,7 @@ def run():
     config.read("./files/configuration.ini")
     logger.info('Starting run')
     try:
-        extractor = FaoGenderExtractor(logger, config, True)
+        extractor = FaoGenderExtractor(logger, config, config.getboolean("TRANSLATOR", "historical_mode"))
         extractor.run()
     except BaseException as e:
         logger.error("Error: " + e.message)
