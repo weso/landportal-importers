@@ -42,7 +42,7 @@ def run():
             raise RuntimeError()
 
         try:
-            translator = OecdTranslator(logger, config, True)
+            translator = OecdTranslator(logger, config, config.getboolean("TRANSLATOR", "historical_mode"))
             translator.run()
 
         except BaseException as e:

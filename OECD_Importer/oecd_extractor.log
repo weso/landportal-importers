@@ -6080,3 +6080,101 @@
 2014-06-02 13:16:13,634 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
 2014-06-02 13:16:13,634 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
 2014-06-02 13:16:15,723 - main - INFO - Data has been successfully incropored to the system.
+2014-06-04 12:34:07,846 - main - INFO - Starting run
+2014-06-04 12:34:07,890 - main - INFO - Initializing process of downloading data...
+2014-06-04 12:34:07,999 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-06-04 12:34:11,157 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-06-04 12:34:12,167 - main - INFO - The data has been succesfully downloaded.
+2014-06-04 12:34:12,753 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,755 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,756 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,756 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,756 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,757 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,759 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,759 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,759 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,760 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,760 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,762 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,763 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,763 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,763 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,763 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,765 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,766 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,766 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,766 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,885 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,887 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,887 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,888 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,888 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,888 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,890 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,891 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,891 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,891 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,892 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,894 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,894 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,894 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,895 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,897 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,897 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,898 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,898 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:12,898 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-04 12:34:14,612 - main - INFO - Data has been successfully incropored to the system.
+2014-06-18 11:38:04,499 - main - INFO - Starting run
+2014-06-18 11:38:04,515 - main - INFO - Initializing process of downloading data...
+2014-06-18 11:38:04,545 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-06-18 11:38:06,068 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-06-18 11:38:07,108 - main - INFO - The data has been succesfully downloaded.
+2014-06-18 11:38:07,108 - main - ERROR - While trying to introduce raw info into our model: No option 'historical_mode' in section: 'TRANSLATOR'
+2014-06-18 11:39:03,895 - main - INFO - Starting run
+2014-06-18 11:39:03,898 - main - INFO - Initializing process of downloading data...
+2014-06-18 11:39:03,921 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-06-18 11:39:04,513 - requests.packages.urllib3.connectionpool - INFO - Starting new HTTP connection (1): stats.oecd.org
+2014-06-18 11:39:05,240 - main - INFO - The data has been succesfully downloaded.
+2014-06-18 11:39:05,742 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,743 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,743 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,743 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,743 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,744 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,746 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,746 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,746 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,747 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,747 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,749 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,750 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,750 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,750 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,750 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,752 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,753 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,753 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,753 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,858 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,858 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,858 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,859 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,859 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,861 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,861 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,861 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,862 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,862 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,864 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,865 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,865 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,865 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,865 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,867 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,868 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,868 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,868 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:05,869 - main - WARNING - Observation ignored. Unknown country while parsing observation. ISO3: SCG
+2014-06-18 11:39:07,260 - main - INFO - Data has been successfully incropored to the system.
