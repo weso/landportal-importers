@@ -35,7 +35,7 @@ def run():
         log.error("While extracting data from the source: " + e.message)
         raise RuntimeError()
     try:
-        xml_translator = IpfriTranslator(log, config, True)
+        xml_translator = IpfriTranslator(log, config, config.getboolean("TRANSLATOR", "historical_mode"))
         xml_translator.run()
     except BaseException as e:
         log.error("While trying to introduce raw info into our model: " + e.message)
