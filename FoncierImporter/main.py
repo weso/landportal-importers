@@ -25,7 +25,7 @@ def run():
     config.read("./files/configuration.ini")
 
     try:
-        foncier_importer = FoncierImporter(log, config, True)
+        foncier_importer = FoncierImporter(log, config, config.getboolean("TRANSLATOR", "historical_mode"))
         foncier_importer.run()
         log.info("Data successfully downloaded and incorpored to the system.")
     except BaseException as e:
