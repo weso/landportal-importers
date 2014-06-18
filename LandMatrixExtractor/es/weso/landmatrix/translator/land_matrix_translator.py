@@ -90,11 +90,11 @@ class LandMatrixTranslator(object):
 
     def _build_default_organization(self):
         result = Organization(chain_for_id=self._org_id)
-        result.name = self._config.get("ORGANIZATION", "name")
-        result.url = self._config.get("ORGANIZATION", "url")
-        result.description_en = self._config.get("ORGANIZATION", "description_en")
-        result.description_es = self._config.get("ORGANIZATION", "description_es")
-        result.description_fr = self._config.get("ORGANIZATION", "description_fr")
+        result.name = self._read_config_value("ORGANIZATION", "name")
+        result.url = self._read_config_value("ORGANIZATION", "url")
+        result.description_en = self._read_config_value("ORGANIZATION", "description_en")
+        result.description_es = self._read_config_value("ORGANIZATION", "description_es")
+        result.description_fr = self._read_config_value("ORGANIZATION", "description_fr")
 
         return result
 

@@ -24,11 +24,12 @@ def configure_log():
                         format=FORMAT)
 
 
-def run(look_for_historical=True):
+def run():
     configure_log()
     log = logging.getLogger("lmextractor")
     config = ConfigParser()
     config.read("./files/configuration.ini")
+    look_for_historical = config.getboolean("TRANSLATOR", "historical_mode")
     try:
         xml_extractor = LandMatrixExtractorXML(log, config)
         xml_extractor.run()
@@ -47,7 +48,7 @@ def run(look_for_historical=True):
 
 if __name__ == '__main__':
     try:
-        run(True)
+        run()
         print 'Done!'
     except BaseException as ex:
         print "Execution finalized with errors. Check log."

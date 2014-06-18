@@ -14,7 +14,7 @@
 			Government
 		</field>
 		<field name="investor_country">
-			Bangladesh
+			India
 		</field>
 		<field name="intention">
 			Agriculture
@@ -58,10 +58,10 @@
 			Noakhali, Bangladesh
 		</field>
 		<field name="investor_name">
-			Individual entrepreneurs
+			Individual entrepreneurs, Individual entrepreneurs
 		</field>
 		<field name="investor_country">
-			Bangladesh
+			Bangladesh, Niger
 		</field>
 		<field name="intention">
 			Agriculture
@@ -1241,7 +1241,7 @@
 		</field>
 		<field name="investor_name">
 			Global Agricultural Development (Cambodia) Co., Ltd
-
+, Unknown, Unknown
 		</field>
 		<field name="investor_country">
 			United States of America
@@ -4776,7 +4776,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Fruit, Onion, Peas, Pepper , Potatoes, Rice, Sweet Potatoes, Tea, Trees, Vegetables
+			Onion, Tea, Peas, Sweet Potatoes, Pepper , Corn (Maize), Fruit, Potatoes, Rice, Trees, Vegetables
 		</field>
 	</item>
 	<item>
@@ -7610,10 +7610,10 @@
 			Malaysia
 		</field>
 		<field name="investor_name">
-			BFP International (Biofuel Projects International)
+			BFP International (Biofuel Projects International), Cosmo Biofuels Sdn Bhd
 		</field>
 		<field name="investor_country">
-			Netherlands
+			Netherlands, Malaysia
 		</field>
 		<field name="intention">
 			Agriculture
@@ -8442,7 +8442,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Rice (hybrid), Sorghum
+			Sorghum, Corn (Maize), Rice (hybrid)
 		</field>
 	</item>
 	<item>
@@ -10618,10 +10618,10 @@
 			Tamnar, Chhattisgarh, India
 		</field>
 		<field name="investor_name">
-			None
+			Jindal Steel &amp; Power Ltd. (JSPL)
 		</field>
 		<field name="investor_country">
-			None
+			India
 		</field>
 		<field name="intention">
 			Industry
@@ -10656,53 +10656,6 @@
 	</item>
 	<item>
 		<field name="deal_id">
-			578
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Raighar, Orissa 764074, Indien
-		</field>
-		<field name="investor_name">
-			Jindal Steel
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			497
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			Lease / Concession
-		</field>
-		<field name="data_source">
-			Personal information , Ekta Parishad Personal information 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
 			579
 		</field>
 		<field name="target_country">
@@ -10712,10 +10665,10 @@
 			Naharpali, Chhattisgarh, India
 		</field>
 		<field name="investor_name">
-			None
+			Monnet Ispat and Energy Limited 
 		</field>
 		<field name="investor_country">
-			None
+			India
 		</field>
 		<field name="intention">
 			Industry
@@ -10750,53 +10703,6 @@
 	</item>
 	<item>
 		<field name="deal_id">
-			580
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Raigad, Maharashtra, India
-		</field>
-		<field name="investor_name">
-			Mahamumbai SEZ Ltd, Reliance Industries
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			[2008] Concluded (Oral Agreement)
-		</field>
-		<field name="implementation_status">
-			Project abandoned
-		</field>
-		<field name="intended_size">
-			2151
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			Outright Purchase
-		</field>
-		<field name="data_source">
-			Personal information , Social Development Foundation, Delhi Personal information , 2009-01-01 http://www.hindu.com/fline/fl2613/stories/20090703261311900.htm Media report , 2009-01-01 http://infochangeindia.org/trade-a-development/news-scan/raigad-farmers-hail-court-verdict-on-reliance-sez.html Media report , 2011-02-19 http://www.dnaindia.com/mumbai/report-reliance-special-economic-zone-in-raigad-scrapped-1509885 Media report 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
 			581
 		</field>
 		<field name="target_country">
@@ -10806,7 +10712,7 @@
 			Maharashtra, Nagpur, Mihan
 		</field>
 		<field name="investor_name">
-			City &amp; Industrial Development Corporation of Maharashtra Limited (CIDCO), Maharashtra Industrial Development Corporation Ltd
+			City &amp; Industrial Development Corporation of Maharashtra Limited (CIDCO), Maharashtra Industrial Development Corporation Ltd, Nagpur Improvement Trust (NIT), Maharashtra State Road Transport Corporation (MSRTC/ST), Nagpur Municipal Corporation (NMC)
 		</field>
 		<field name="investor_country">
 			India
@@ -10853,7 +10759,7 @@
 			Maharashtra, Pune, Hinjawadi
 		</field>
 		<field name="investor_name">
-			Maharashtra Industrial Development Corporation Ltd
+			Maharashtra Industrial Development Corporation Ltd, Infrastructure Leasing &amp; Financial Services Limited (IL&amp;FS)
 		</field>
 		<field name="investor_country">
 			India
@@ -10900,7 +10806,7 @@
 			Latur, Maharashtra, India
 		</field>
 		<field name="investor_name">
-			Maharashtra Industrial Development Corporation Ltd
+			Maharashtra Industrial Development Corporation Ltd, Infrastructure Leasing &amp; Financial Services Limited (IL&amp;FS)
 		</field>
 		<field name="investor_country">
 			India
@@ -11041,10 +10947,10 @@
 			Juve Jaitapur, Maharashtra, India
 		</field>
 		<field name="investor_name">
-			None
+			Areva S.A., Nuclear Power Corporation of India Ltd. (NPCIL)
 		</field>
 		<field name="investor_country">
-			None
+			France, India
 		</field>
 		<field name="intention">
 			Industry
@@ -12404,7 +12310,7 @@
 			Karnataka, Mangalore
 		</field>
 		<field name="investor_name">
-			Oil and Natural Gas Corporation Limited, Karnataka Industrial Areas Development Board (KIADB)
+			Infrastructure Leasing &amp; Financial Services Limited (IL&amp;FS), Oil and Natural Gas Corporation Limited, Karnataka Industrial Areas Development Board (KIADB), Kanara Chamber of Commerce &amp; Industry (KCCI)
 		</field>
 		<field name="investor_country">
 			India
@@ -12639,7 +12545,7 @@
 			Chhattisgarh, Raigarh, location: Dongamoha
 		</field>
 		<field name="investor_name">
-			Jindal Steel
+			Jindal Steel &amp; Power Ltd. (JSPL)
 		</field>
 		<field name="investor_country">
 			India
@@ -12666,7 +12572,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report , http://www.jindalpower.com/plant/overview.aspx Company sources 
+			2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report , http://www.jindalpower.com/plant/overview.aspx Company sources , 2014-01-01 http://www.jindalsteelpower.com/businesses/tamnar.html Company sources , 2013-09-24 http://www.thehindu.com/news/national/other-states/a-public-hearing-in-tamnar-against-the-public/article5163069.ece Media report , 2012-05-01 http://books.google.de/books?id=ds2ygUpp62IC&amp;pg=PA41&amp;lpg=PA41&amp;dq=Dongamoha&amp;source=bl&amp;ots=UWLnDyirNB&amp;sig=kYLgGpDU4fpzyes7GCrhWNB9xwA&amp;hl=de&amp;sa=X&amp;ei=LtGZU9fGPMeL4gSxtYHoBA&amp;ved=0CDUQ6AEwAg#v=onepage&amp;q=jindal&amp;f=false Other (Please specify in comment  field) , 2006-07-31 http://planningcommission.nic.in/aboutus/committee/wrkgrp11/wg11_landrel.doc Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -12686,22 +12592,22 @@
 			Chhattisgarh, Raigarh, location: Dongamoha
 		</field>
 		<field name="investor_name">
-			Jindal Steel
+			Jindal Steel &amp; Power Ltd. (JSPL)
 		</field>
 		<field name="investor_country">
 			India
 		</field>
 		<field name="intention">
-			None
+			Industry
 		</field>
 		<field name="negotiation_status">
-			Concluded (Contract signed)
+			Concluded (Contract signed), [2013] Intended (Under negotiation)
 		</field>
 		<field name="implementation_status">
 			In operation (production)
 		</field>
 		<field name="intended_size">
-			None
+			979
 		</field>
 		<field name="contract_size">
 			705
@@ -12713,54 +12619,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			654
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Chhattisgarh, Raigarh, location: Karwahi near Tamnar
-		</field>
-		<field name="investor_name">
-			Raipur Alloys and Steel
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			None
-		</field>
-		<field name="negotiation_status">
-			Concluded (Contract signed)
-		</field>
-		<field name="implementation_status">
-			In operation (production)
-		</field>
-		<field name="intended_size">
-			None
-		</field>
-		<field name="contract_size">
-			336
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report 
+			2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report , 2014-01-01 http://www.jindalsteelpower.com/businesses/tamnar.html Company sources , 2013-09-24 http://www.thehindu.com/news/national/other-states/a-public-hearing-in-tamnar-against-the-public/article5163069.ece Media report , 2006-07-31 http://planningcommission.nic.in/aboutus/committee/wrkgrp11/wg11_landrel.doc Government sources , 2012-05-01 http://books.google.de/books?id=ds2ygUpp62IC&amp;pg=PA41&amp;lpg=PA41&amp;dq=Dongamoha&amp;source=bl&amp;ots=UWLnDyirNB&amp;sig=kYLgGpDU4fpzyes7GCrhWNB9xwA&amp;hl=de&amp;sa=X&amp;ei=LtGZU9fGPMeL4gSxtYHoBA&amp;ved=0CDUQ6AEwAg#v=onepage&amp;q=Dongamoha&amp;f=false Other (Please specify in comment  field) 
 		</field>
 		<field name="contract_farming">
 			None
@@ -12780,7 +12639,7 @@
 			Maharashtra, Raigad
 		</field>
 		<field name="investor_name">
-			Government, Reliance Industries Limited
+			Reliance Industries Ltd (RIL)
 		</field>
 		<field name="investor_country">
 			India
@@ -12789,13 +12648,13 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			[2003] Intended (Expression of interest), [2005] Concluded (Oral Agreement)
+			[2003] Intended (Expression of interest), [2005] Concluded (Oral Agreement), [2009] Failed (Contract canceled), [2013] Intended (Under negotiation)
 		</field>
 		<field name="implementation_status">
-			None
+			[2013] Project not started
 		</field>
 		<field name="intended_size">
-			5000
+			10000
 		</field>
 		<field name="contract_size">
 			1874
@@ -12804,104 +12663,10 @@
 			None
 		</field>
 		<field name="nature_of_the_deal">
-			None
+			Outright Purchase
 		</field>
 		<field name="data_source">
-			2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report , 2011-06-22 http://www.indianurbaninfrastructure.com/?p=4085 Media report , 2009-06-06 http://infochangeindia.org/trade-a-development/news-scan/raigad-farmers-hail-court-verdict-on-reliance-sez.html Media report , 2011-06-22 http://www.hindustantimes.com/India-news/Mumbai/Reliance-SEZ-in-Raigad-gets-one-year-extension/Article1-712242.aspx Media report , 2009-07-30 http://sanhati.com/articles/1697/ Media report 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			656
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Visakhapatnam, Andhra Pradesh, Indien, Kakinada, Andhra Pradesh, Indien
-		</field>
-		<field name="investor_name">
-			Government
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			1400000
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2009-01-01 http://www.commercialpressuresonland.org/wp-content/uploads/utrecht-land-panel-july-2009.pdf Research Paper / Policy Report , https://www.merar.com/investors/investment-projects/real-estate/india/prime-location-apartments-development-in-east-godavari-district-kakinada-india/ Media report 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			657
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Kakinada, Andhra Pradesh, Indien
-		</field>
-		<field name="investor_name">
-			Government, State Government of Andhra Pradesh, private players
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			None
-		</field>
-		<field name="implementation_status">
-			[2012] Startup phase (no production)
-		</field>
-		<field name="intended_size">
-			60704
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2009-01-01 http://www.commercialpressuresonland.org/wp-content/uploads/utrecht-land-panel-july-2009.pdf Research Paper / Policy Report , 2013-03-20 http://www.appcpir.com/About%20APPCPIR.html Company sources , 2013-03-20 Company sources 
+			2013-06-25 http://www.hindustantimes.com/india-news/mumbai/mumbai-not-the-end-of-the-road-for-reliance-s-sez-in-raigad/article1-1081911.aspx Media report , 2011-01-01 http://www.landcoalition.org/sites/default/files/publication/909/RAVANERA_Asia_web_11.03.11.pdf Research Paper / Policy Report , 2011-06-22 http://www.indianurbaninfrastructure.com/?p=4085 Media report , 2009-06-06 http://infochangeindia.org/trade-a-development/news-scan/raigad-farmers-hail-court-verdict-on-reliance-sez.html Media report , 2011-06-22 http://www.hindustantimes.com/India-news/Mumbai/Reliance-SEZ-in-Raigad-gets-one-year-extension/Article1-712242.aspx Media report , 2009-07-30 http://sanhati.com/articles/1697/ Media report , 2009-06-01 http://www.hindu.com/fline/fl2613/stories/20090703261311900.htm Media report , 2011-02-19 http://www.dnaindia.com/mumbai/report-reliance-special-economic-zone-in-raigad-scrapped-1509885 Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -12918,7 +12683,7 @@
 			India
 		</field>
 		<field name="location">
-			Andhra Pradesh, Rangareddy Distt.
+			Hayathnagar, Hyderabad, Andhra Pradesh, India
 		</field>
 		<field name="investor_name">
 			Sanghi SEZ Private Limited
@@ -12930,16 +12695,16 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2006] Concluded (Oral Agreement), Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
 			None
 		</field>
 		<field name="intended_size">
-			202
+			1189
 		</field>
 		<field name="contract_size">
-			None
+			1189
 		</field>
 		<field name="production_size">
 			None
@@ -12948,7 +12713,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , http://www.sezindiainvest.com/SEZ_Locator/0077_Andhra_Pradesh_Sanghi_SEZ_Rangareddy_Distt.htm Media report , 2013-01-01 http://vsez.gov.in/vsez_wsp__sez_private.aspx Government sources , 2007-06-25 http://timesofindia.indiatimes.com/city/hyderabad/SEZ-brings-out-fissures-in-Cong/articleshow/2145984.cms Media report , 2007-08-13 http://hyderabad360.wordpress.com/2007/08/13/sanghi-sez-at-koheda-now-highly-unlikely/ Media report , 2007-08-13 https://hyderabad360.wordpress.com/2007/08/13/sanghi-group-told-to-give-up-excess-2000-acres/ Media report , 2007-09-08 https://hyderabad360.wordpress.com/2007/09/08/govt-all-set-to-bail-out-sanghi/ Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -12965,37 +12730,37 @@
 			India
 		</field>
 		<field name="location">
-			Andhra Pradesh, Visakhapatnam
+			Achutapuram, Andhra Pradesh 533435, India, Rambilli, Andhra Pradesh 531061, India
 		</field>
 		<field name="investor_name">
-			Brandix India Apparel City Private Limited (BIAC)
+			Brandix Lanka Limited
 		</field>
 		<field name="investor_country">
-			India
+			Sri Lanka
 		</field>
 		<field name="intention">
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2005] Concluded (Oral Agreement), Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			[2006] Startup phase (no production), [2013] In operation (production)
 		</field>
 		<field name="intended_size">
 			405
 		</field>
 		<field name="contract_size">
-			None
+			405
 		</field>
 		<field name="production_size">
 			None
 		</field>
 		<field name="nature_of_the_deal">
-			None
+			Lease / Concession
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2013-01-01 http://www.brandixapparelcity.com/Content.aspx?id=2&amp;Type=S&amp;Page=3 Company sources , 2013-02-15 http://timesofindia.indiatimes.com/city/visakhapatnam/Apparel-City-may-remain-a-pipe-dream/articleshow/18508328.cms Media report , 2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2006-07-14 http://www.hindu.com/2006/07/14/stories/2006071416000300.htm Media report , 2008-05-06 http://www.hindu.com/2008/05/06/stories/2008050659910500.htm Media report , 2010-05-30 http://www.thehindu.com/news/cities/Visakhapatnam/job-creation-a-daunting-task-for-brandix/article441926.ece Media report , http://www.brandix.com/brandix/biac.php Company sources , 2014-01-01 http://www.brandix.com/brandix/milestones_all.php Company sources , 2013-01-01 http://www.brandixapparelcity.com/Content.aspx?id=1&amp;Type=S&amp;Page=3 Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -13015,7 +12780,7 @@
 			Andhra Pradesh, Nellore District
 		</field>
 		<field name="investor_name">
-			Sri City Pvt. Ltd. (Satyavedu Reserve Infracity Private Limited)
+			Sri City Pvt. Ltd. 
 		</field>
 		<field name="investor_country">
 			India
@@ -13024,7 +12789,7 @@
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			Concluded (Oral Agreement)
 		</field>
 		<field name="implementation_status">
 			None
@@ -13033,7 +12798,7 @@
 			1023
 		</field>
 		<field name="contract_size">
-			None
+			1023
 		</field>
 		<field name="production_size">
 			None
@@ -13042,7 +12807,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , http://www.sezindiainvest.com/SEZ_Locator/0053_Andhra_Pradesh_Satyavedu_Reserve_Infracity_Private_Limited_Nellore_District.htm Media report , 2007-06-05 http://www.indiaprwire.com/businessnews/20070605/54849.htm Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -13062,34 +12827,34 @@
 			Andhra Pradesh, Chintavaram Village, Chillakur, Nellore District
 		</field>
 		<field name="investor_name">
-			MAS Fabric Park (India) Private Limited (MFP)
+			MAS Holdings
 		</field>
 		<field name="investor_country">
-			India
+			Sri Lanka
 		</field>
 		<field name="intention">
 			Industry
 		</field>
 		<field name="negotiation_status">
-			None
+			[2006] Concluded (Oral Agreement), [2008] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			[2011] Startup phase (no production)
 		</field>
 		<field name="intended_size">
 			229
 		</field>
 		<field name="contract_size">
-			None
+			304
 		</field>
 		<field name="production_size">
-			None
+			296
 		</field>
 		<field name="nature_of_the_deal">
 			None
 		</field>
 		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources 
+			2006-12-01 http://www.masholdings.com/news/archives-old.html Company sources , 2007-10-26 http://www.fibre2fashion.com/news/company-news/mas-holdings/newsdetails.aspx?news_id=43172&amp;page=1 Media report , 2013-03-04 http://pib.nic.in/newsite/PrintRelease.aspx?relid=92950 Government sources , http://www.hindu.com/thehindu/thscrip/print.pl?file=20100716271411000.htm&amp;date=fl2714/&amp;prd=fline&amp; Media report , 2011-04-11 http://www.thehindu.com/todays-paper/tp-national/tp-andhrapradesh/industries-should-hire-locals-minister/article1685962.ece Media report , 2014-01-20 http://www.newindianexpress.com/states/andhra_pradesh/Job-Promises-Investments-Falter-in-Nellore-District/2014/01/20/article2009567.ece Media report , http://www.sezindia.nic.in/writereaddata/pdf/listofformalapprovals.pdf Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -13203,10 +12968,10 @@
 			Andhra Pradesh, Visakhapatnam District, location: APIIC Industrial Park, Makavarapallem Mandal
 		</field>
 		<field name="investor_name">
-			None
+			Penna Cement Industries Ltd (PCIL), Ras Al Khaimah Investment Authority
 		</field>
 		<field name="investor_country">
-			None
+			India, United Arab Emirates
 		</field>
 		<field name="intention">
 			Industry
@@ -13344,7 +13109,7 @@
 			Gujarat, Dahej
 		</field>
 		<field name="investor_name">
-			Dahej SEZ Ltd. (M/s. Gujarat Industrial Development Corpn.), Oil and Natural Gas Corporation (ONGC) 
+			Dahej SEZ Ltd. (M/s. Gujarat Industrial Development Corpn.), Oil and Natural Gas Corporation (ONGC) , Gujarat Industrial Development Corporation (GIDC) 
 		</field>
 		<field name="investor_country">
 			India
@@ -13579,7 +13344,7 @@
 			Gujarat, Bharuch, location: Jambusar
 		</field>
 		<field name="investor_name">
-			Sterling Erection and Infrastructure Private Limited
+			Sterling Erection and Infrastructure Private Limited, Sandesara Group
 		</field>
 		<field name="investor_country">
 			India
@@ -13720,10 +13485,10 @@
 			Padubidri, Karnataka 574111, India
 		</field>
 		<field name="investor_name">
-			None
+			Tanti Holdings Private Limited
 		</field>
 		<field name="investor_country">
-			None
+			India
 		</field>
 		<field name="intention">
 			Industry
@@ -13955,10 +13720,10 @@
 			Maharashtra, Mumbai, location: 169, Aarey Milk Colony, Goregaon East
 		</field>
 		<field name="investor_name">
-			None
+			 Hoosain Nensey Nathoo &amp; Co.
 		</field>
 		<field name="investor_country">
-			None
+			India
 		</field>
 		<field name="intention">
 			Industry, Other, Tourism
@@ -14134,53 +13899,6 @@
 	</item>
 	<item>
 		<field name="deal_id">
-			694
-		</field>
-		<field name="target_country">
-			India
-		</field>
-		<field name="location">
-			Chennai, Tamil Nadu, India
-		</field>
-		<field name="investor_name">
-			Mahindra Group, Tamil Nadu Industrial Development Corporation Limited (TIDCO)
-		</field>
-		<field name="investor_country">
-			India
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			Concluded (Contract signed)
-		</field>
-		<field name="implementation_status">
-			[2002] Startup phase (no production), In operation (production)
-		</field>
-		<field name="intended_size">
-			607
-		</field>
-		<field name="contract_size">
-			None
-		</field>
-		<field name="production_size">
-			607
-		</field>
-		<field name="nature_of_the_deal">
-			None
-		</field>
-		<field name="data_source">
-			2005-01-01 http://www.sezindia.nic.in/writereaddata/pdf/ListofFormalapprovals.pdf Government sources , 2008-04-22 http://indiarealestatemonitor.com/property-news/mahindra-to-develop-mahindra-world-city-near-chennai/ Media report , http://www.gvpedia.com/Chennai/Mahindra-World-City-Top-Company.aspx Media report , http://www.mahindraworldcity.com/chennai_mwc_chennai_overview.aspx Company sources , 2006-01-01 http://www.tidco.com/mahindra.html Company sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
 			695
 		</field>
 		<field name="target_country">
@@ -14190,7 +13908,7 @@
 			Tamil Nadu, Tirunelvel, location: Nanguneri
 		</field>
 		<field name="investor_name">
-			Tamil Nadu Industrial Development Corporation Limited (TIDCO)
+			Tamil Nadu Industrial Development Corporation Limited (TIDCO), AMR India Limited
 		</field>
 		<field name="investor_country">
 			India
@@ -14284,7 +14002,7 @@
 			Tamil Nadu, Tiruvallur, location: Kattupalli village, near Ennor
 		</field>
 		<field name="investor_name">
-			L&amp;T Shipbuilding Limited, Tamil Nadu Industrial Development Corporation Limited (TIDCO)
+			L&amp;T Shipbuilding Limited, Larsen &amp; Toubro Ltd., Tamil Nadu Industrial Development Corporation Limited (TIDCO)
 		</field>
 		<field name="investor_country">
 			India
@@ -14787,7 +14505,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cereals (no specification), Rice (hybrid), Sorghum, Soya Beans, Wheat
+			Cereals (no specification), Sorghum, Rice (hybrid), Soya Beans, Wheat
 		</field>
 	</item>
 	<item>
@@ -14928,7 +14646,7 @@
 			None
 		</field>
 		<field name="crop">
-			Soya Beans, Sugar (no specification)
+			Sugar (no specification), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -15022,7 +14740,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Sorghum, Soya Beans
+			Sorghum, Corn (Maize), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -17387,10 +17105,10 @@
 			Chiapas, México
 		</field>
 		<field name="investor_name">
-			Government
+			Government, Government
 		</field>
 		<field name="investor_country">
-			Mexico
+			Mexico, India
 		</field>
 		<field name="intention">
 			Tourism
@@ -17937,7 +17655,7 @@
 			None
 		</field>
 		<field name="crop">
-			Vegetables, Rapeseed
+			Rapeseed, Vegetables
 		</field>
 	</item>
 	<item>
@@ -17984,7 +17702,7 @@
 			None
 		</field>
 		<field name="crop">
-			Vegetables, Flowers
+			Flowers, Vegetables
 		</field>
 	</item>
 	<item>
@@ -19112,7 +18830,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Oil Seeds, Sun Flower, Wheat
+			Sun Flower, Oil Seeds, Corn (Maize), Wheat
 		</field>
 	</item>
 	<item>
@@ -19300,7 +19018,7 @@
 			None
 		</field>
 		<field name="crop">
-			Oil Palm, Sugar (no specification)
+			Sugar (no specification), Oil Palm
 		</field>
 	</item>
 	<item>
@@ -19347,7 +19065,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Rapeseed, Sorghum, Sun Flower, Wheat
+			Sorghum, Sun Flower, Rapeseed, Corn (Maize), Wheat
 		</field>
 	</item>
 	<item>
@@ -19677,6 +19395,53 @@
 		</field>
 		<field name="crop">
 			Grains
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			997
+		</field>
+		<field name="target_country">
+			Russian Federation
+		</field>
+		<field name="location">
+			Ussuriysk, Primorsky Krai, Russia
+		</field>
+		<field name="investor_name">
+			Unknown
+		</field>
+		<field name="investor_country">
+			Republic of Korea
+		</field>
+		<field name="intention">
+			Agriculture, Industry
+		</field>
+		<field name="negotiation_status">
+			Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			[2008] Startup phase (no production), In operation (production)
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			7000
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			http://www.grain.org/front_files/landgrab-2008-en-annex.pdf Media report , 2012-03-20 http://russia-briefing.com/news/russia-to-lease-its-unused-farmland-to-asian-states.html/ Media report , 2012-02-20 http://ajw.asahi.com/article/behind_news/politics/AJ201202200054 Media report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Cereals (no specification), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -20475,7 +20240,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Rapeseed, Soya Beans, Sun Flower, Wheat
+			Sun Flower, Rapeseed, Corn (Maize), Soya Beans, Wheat
 		</field>
 	</item>
 	<item>
@@ -20710,7 +20475,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Soya Beans, Sugar beet, Sun Flower, Wheat
+			Barley, Sun Flower, Sugar beet, Corn (Maize), Soya Beans, Wheat
 		</field>
 	</item>
 	<item>
@@ -20851,7 +20616,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Rapeseed, Soya Beans, Sun Flower, Wheat
+			Barley, Sun Flower, Rapeseed, Corn (Maize), Soya Beans, Wheat
 		</field>
 	</item>
 	<item>
@@ -20945,7 +20710,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Peas, Rapeseed, Soya Beans, Sun Flower, Wheat
+			Barley, Sun Flower, Rapeseed, Peas, Corn (Maize), Soya Beans, Wheat
 		</field>
 	</item>
 	<item>
@@ -20992,7 +20757,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Peas, Rapeseed, Soya Beans, Sugar beet, Sun Flower, Wheat
+			Barley, Sun Flower, Rapeseed, Sugar beet, Peas, Corn (Maize), Soya Beans, Wheat
 		</field>
 	</item>
 	<item>
@@ -21086,7 +20851,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Peas, Potatoes, Rapeseed, Sugar beet, Wheat
+			Barley, Rapeseed, Sugar beet, Peas, Corn (Maize), Potatoes, Wheat
 		</field>
 	</item>
 	<item>
@@ -22778,7 +22543,7 @@
 			None
 		</field>
 		<field name="crop">
-			Jatropha, Rice, Sesame, Soya Beans, Sun Flower
+			Sun Flower, Sesame, Jatropha, Rice, Soya Beans
 		</field>
 	</item>
 	<item>
@@ -22919,7 +22684,7 @@
 			None
 		</field>
 		<field name="crop">
-			Jatropha, Sun Flower
+			Sun Flower, Jatropha
 		</field>
 	</item>
 	<item>
@@ -23430,7 +23195,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			Research Paper / Policy Report , Research Paper / Policy Report , http://heraklesfarms.com/locations.html Company sources , http://www.farmlandgrab.org/post/view/20496 Media report , http://www.rainforestfoundationuk.org/files/Seeds%20of%20Destruction,%20February%202013.pdf Research Paper / Policy Report , http://www.reuters.com/article/2013/05/22/cameroon-palm-idUSL6N0E344Q20130522 Media report , 2013-09-13 http://www.farmlandgrab.org/post/view/22565-cameroon-forest-people-alarmed-at-shifting-tactics-of-us-palm-oil-firm Media report , 2013-03-18 http://www.farmlandgrab.org/post/view/22581-will-cameroon-bear-the-brunt-of-herakles-implosion Media report , 2013-01-03 Research Paper / Policy Report , Media report , https://www.prc.cm/fr/actualites/actes/decrets/477-decret-n-2013-418-du-25-novembre-1013-portant-attribution-en-concession-provisoire-a-la-societe-sithe-global-sustainable-oils-limited-de-dix-10-dependances-du-domaine-national-de-superficie-totale-de-5-384-hectares Government sources , 2013-02-01 http://www.greenpeace.org/france/PageFiles/300718/Herakles%20Farms%20au%20Cameroun%20huile%20de%20palme%20.pdf Research Paper / Policy Report , 2013-11-13 http://www.grain.org/article/entries/4827-cameroon-activist-takes-on-land-grabber-from-wall-street-now-faces-imprisonment Media report , 2014-01-08 http://www.farmlandgrab.org/post/view/23006-us-palm-oil-company-fined-4-6m-in-discrimination-suit Media report , https://www.prc.cm/fr/actualites/actes/decrets/475-decret-n-2013-416-du-25-novembre-2013-portant-attribution-en-concession-provisoire-a-la-societe-sithe-global-sustainable-oils-limited-de-sept-07-dependances-du-domaine-national-de-superficie-totale-de-13-195-hectares Government sources , 2014-01-07 Media report , https://www.prc.cm/fr/actualites/actes/decrets/476-decret-n-2013-417-du-25-novembre-2013-portant-attribution-en-concession-provisoire-a-la-societe-sithe-global-sustainable-oils-limited-de-trois-03-dependances-du-domaine-national-de-superficie-totale-de-1-264-hectares Government sources 
+			Research Paper / Policy Report , Research Paper / Policy Report , http://heraklesfarms.com/locations.html Company sources , http://www.farmlandgrab.org/post/view/20496 Media report , http://www.rainforestfoundationuk.org/files/Seeds%20of%20Destruction,%20February%202013.pdf Research Paper / Policy Report , http://www.reuters.com/article/2013/05/22/cameroon-palm-idUSL6N0E344Q20130522 Media report , 2013-09-13 http://www.farmlandgrab.org/post/view/22565-cameroon-forest-people-alarmed-at-shifting-tactics-of-us-palm-oil-firm Media report , 2013-03-18 http://www.farmlandgrab.org/post/view/22581-will-cameroon-bear-the-brunt-of-herakles-implosion Media report , 2013-01-03 Research Paper / Policy Report , 2013-11-13 http://www.grain.org/article/entries/4827-cameroon-activist-takes-on-land-grabber-from-wall-street-now-faces-imprisonment Media report , Media report , 2014-05-27 http://farmlandgrab.org/post/view/23553-herakles-farms-champions-of-illegal-deforestation Media report , 2013-02-01 http://www.greenpeace.org/france/PageFiles/300718/Herakles%20Farms%20au%20Cameroun%20huile%20de%20palme%20.pdf Research Paper / Policy Report , https://www.prc.cm/fr/actualites/actes/decrets/476-decret-n-2013-417-du-25-novembre-2013-portant-attribution-en-concession-provisoire-a-la-societe-sithe-global-sustainable-oils-limited-de-trois-03-dependances-du-domaine-national-de-superficie-totale-de-1-264-hectares Government sources , 2014-01-08 http://www.farmlandgrab.org/post/view/23006-us-palm-oil-company-fined-4-6m-in-discrimination-suit Media report , https://www.prc.cm/fr/actualites/actes/decrets/477-decret-n-2013-418-du-25-novembre-1013-portant-attribution-en-concession-provisoire-a-la-societe-sithe-global-sustainable-oils-limited-de-dix-10-dependances-du-domaine-national-de-superficie-totale-de-5-384-hectares Government sources , 2014-01-07 Media report , https://www.prc.cm/fr/actualites/actes/decrets/475-decret-n-2013-416-du-25-novembre-2013-portant-attribution-en-concession-provisoire-a-la-societe-sithe-global-sustainable-oils-limited-de-sept-07-dependances-du-domaine-national-de-superficie-totale-de-13-195-hectares Government sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -23718,7 +23483,7 @@
 			None
 		</field>
 		<field name="crop">
-			Alfalfa, Corn (Maize), Dill, Fodder Plants, Potatoes, Wheat
+			Fodder Plants, Dill, Alfalfa, Corn (Maize), Potatoes, Wheat
 		</field>
 	</item>
 	<item>
@@ -23765,7 +23530,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Fodder Plants, Wheat
+			Fodder Plants, Corn (Maize), Wheat
 		</field>
 	</item>
 	<item>
@@ -23859,7 +23624,7 @@
 			None
 		</field>
 		<field name="crop">
-			Alfalfa, Barley, Corn (Maize), Wheat
+			Barley, Alfalfa, Corn (Maize), Wheat
 		</field>
 	</item>
 	<item>
@@ -24390,7 +24155,7 @@
 			Oromia, Ethiopia
 		</field>
 		<field name="investor_name">
-			Emami Biotech, Emani Group
+			Emami Group
 		</field>
 		<field name="investor_country">
 			India
@@ -24408,7 +24173,7 @@
 			None
 		</field>
 		<field name="contract_size">
-			40000
+			80000
 		</field>
 		<field name="production_size">
 			None
@@ -24417,7 +24182,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2008-01-01 http://www.melca-ethiopia.org/images/stories/Publication/Eth_Biofuel_Assessment-Final.pdf Research Paper / Policy Report , http://www.farmlandgrab.org/post/view/21230 Media report , http://www.emamibiotech.com/media/pressrelease/pr_ethiopia.pdf Company sources , 2012-10-26 http://www.thehindu.com/news/national/indian-firms-reap-bitter-harvest-in-africa/article4035546.ece Media report , http://www.farmlandgrab.org/post/view/22307 Media report 
+			2008-01-01 http://www.melca-ethiopia.org/images/stories/Publication/Eth_Biofuel_Assessment-Final.pdf Research Paper / Policy Report , http://www.farmlandgrab.org/post/view/21230 Media report , http://www.emamibiotech.com/media/pressrelease/pr_ethiopia.pdf Company sources , 2012-10-26 http://www.thehindu.com/news/national/indian-firms-reap-bitter-harvest-in-africa/article4035546.ece Media report , http://www.farmlandgrab.org/post/view/22307 Media report , 2014-05-23 GIZ Personal information 
 		</field>
 		<field name="contract_farming">
 			None
@@ -24437,7 +24202,7 @@
 			Gambella, Ethiopia
 		</field>
 		<field name="investor_name">
-			Karaturi Global Ltd, Karuturi Global Inc
+			Karaturi Global Ltd
 		</field>
 		<field name="investor_country">
 			India
@@ -24464,7 +24229,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2014-02-13 http://farmlandgrab.org/uploads/attachment/Karuturi_summary_20140213.pdf Media report , 2011-01-01 Research Paper / Policy Report , 2011-01-01 http://www.landcoalition.org/sites/default/files/publication/1021/EDC_Ethiopia_web_11.03.11.pdf Research Paper / Policy Report , 2010-01-01 http://www.ethiopianreview.com/pdf/001/The-Ethiopia-Macroeconomic-Handbook-2010.pdf Media report , Contract , Research Paper / Policy Report , http://www.ide.go.jp/English/Data/Africa_file/Company/ethiopia03.html Research Paper / Policy Report , http://www.theweekendleader.com/Success/513/A-rosy-picture.html Media report , 2012-06-02 http://www.businessworld.in/en/storypage/-/bw/indian-farmer%E2%80%99s-african-safari/415992.0/page/0 Media report , 2010-01-01 http://farmlandgrab.org/post/view/16786 Media report , 2010-01-01 http://www.guardian.co.uk/global-development/2013/feb/07/india-investors-forcing-ethiopians-off-land Media report , 2010-01-01 http://farmlandgrab.org/post/view/15602 Media report 
+			http://www.ide.go.jp/English/Data/Africa_file/Company/ethiopia03.html Research Paper / Policy Report , http://www.theweekendleader.com/Success/513/A-rosy-picture.html Media report , 2011-01-01 http://www.landcoalition.org/sites/default/files/publication/1021/EDC_Ethiopia_web_11.03.11.pdf Research Paper / Policy Report , 2010-01-01 http://www.guardian.co.uk/global-development/2013/feb/07/india-investors-forcing-ethiopians-off-land Media report , 2010-01-01 http://farmlandgrab.org/post/view/15602 Media report , 2010-01-01 http://farmlandgrab.org/post/view/16786 Media report , 2010-01-01 http://www.ethiopianreview.com/pdf/001/The-Ethiopia-Macroeconomic-Handbook-2010.pdf Media report , Contract , Research Paper / Policy Report , 2011-01-01 Research Paper / Policy Report , 2014-06-07 http://www.farmlandgrab.org/post/view/23597-foreclosure-notice-forces-karuturi-to-pay-off-25-percent-debt Media report , 2012-06-02 http://www.businessworld.in/en/storypage/-/bw/indian-farmer%E2%80%99s-african-safari/415992.0/page/0 Media report , 2014-02-13 http://farmlandgrab.org/uploads/attachment/Karuturi_summary_20140213.pdf Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -24846,7 +24611,7 @@
 			None
 		</field>
 		<field name="crop">
-			Banana, Pepper , Coffee Plant
+			Pepper , Banana, Coffee Plant
 		</field>
 	</item>
 	<item>
@@ -26141,7 +25906,7 @@
 			[2010] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			None
+			[2013] In operation (production)
 		</field>
 		<field name="intended_size">
 			None
@@ -26150,19 +25915,19 @@
 			3012
 		</field>
 		<field name="production_size">
-			None
+			70
 		</field>
 		<field name="nature_of_the_deal">
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2010-01-01 http://farmlandgrab.org/post/view/18595 Contract , 2011-01-01 http://www.bloomberg.com/news/2011-02-04/ethiopian-president-concerned-by-lease-of-forestry-land-for-agriculture.html Media report , 2011-04-03 http://www.2merkato.com/latest-ethiopian-tenders/2011/03/04/12808 Other (Please specify in comment  field) , http://corporatedir.com/company/verdanta-harvests-private-limited Other (Please specify in comment  field) 
+			2010-01-01 http://farmlandgrab.org/post/view/18595 Contract , 2011-01-01 http://www.bloomberg.com/news/2011-02-04/ethiopian-president-concerned-by-lease-of-forestry-land-for-agriculture.html Media report , 2011-04-03 http://www.2merkato.com/latest-ethiopian-tenders/2011/03/04/12808 Other (Please specify in comment  field) , http://corporatedir.com/company/verdanta-harvests-private-limited Other (Please specify in comment  field) , 2013-11-05 http://www.thehindu.com/news/international/world/attack-on-indianowned-farm-in-ethiopia-turns-spotlight-on-land-policy/article5314720.ece Media report , 2013-10-26 http://hereporterethiopia.com/index.php/news-headlines/item/1168-residents-in-gambella-set-indian-owned-farm-on-fire Media report 
 		</field>
 		<field name="contract_farming">
 			None
 		</field>
 		<field name="crop">
-			Tea, Coffee Plant, Eucalyptus
+			Coffee Plant, Eucalyptus, Tea
 		</field>
 	</item>
 	<item>
@@ -26549,13 +26314,13 @@
 			Ethiopia
 		</field>
 		<field name="location">
-			Oromia, Ethiopia
+			Ziway, Ethiopia
 		</field>
 		<field name="investor_name">
-			Sher-Holland, Afriflora
+			Afriflora, KKR &amp; Co. L.P.
 		</field>
 		<field name="investor_country">
-			Netherlands
+			Netherlands, United States of America
 		</field>
 		<field name="intention">
 			Agriculture
@@ -26579,7 +26344,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2006-01-01 http://nazret.com/blog/index.php/2006/10/10/ethiopia_sher_ethiopia_sparks_flower_shi Media report , LEI  Personal information , 2007-01-01 http://library.wur.nl/way/bestanden/clc/1891396.pdf Research Paper / Policy Report , 2008-01-01 http://www.eastafricaforum.net/2008/12/16/ethiopia-company-expands-flower-farms/ Media report , Government sources , Personal information , http://www.afriflora.nl/en/afriflora/sher-ethiopia Company sources 
+			2014-06-05 http://www.farmlandgrab.org/post/view/23589-kkr-makes-maiden-african-investment Media report , http://ir.kkr.com/media/media_releasedetail.cfm?ReleaseID=852684 Company sources , 2006-01-01 http://nazret.com/blog/index.php/2006/10/10/ethiopia_sher_ethiopia_sparks_flower_shi Media report , LEI  Personal information , 2007-01-01 http://library.wur.nl/way/bestanden/clc/1891396.pdf Research Paper / Policy Report , 2008-01-01 http://www.eastafricaforum.net/2008/12/16/ethiopia-company-expands-flower-farms/ Media report , Government sources , Personal information , http://www.afriflora.nl/en/afriflora/sher-ethiopia Company sources 
 		</field>
 		<field name="contract_farming">
 			None
@@ -26693,10 +26458,10 @@
 			Nsuta, Ghana
 		</field>
 		<field name="investor_name">
-			None
+			Hazel Mercantile Ltd. 
 		</field>
 		<field name="investor_country">
-			None
+			India
 		</field>
 		<field name="intention">
 			Agriculture
@@ -27351,7 +27116,7 @@
 			Naivasha, Kenya
 		</field>
 		<field name="investor_name">
-			Karuturi Global Inc
+			Karuturi Global Ltd, Karuturi Global Inc
 		</field>
 		<field name="investor_country">
 			India
@@ -27363,7 +27128,7 @@
 			[2007] Concluded (Contract signed)
 		</field>
 		<field name="implementation_status">
-			In operation (production)
+			[2014] Project abandoned
 		</field>
 		<field name="intended_size">
 			200
@@ -27378,7 +27143,7 @@
 			Outright Purchase
 		</field>
 		<field name="data_source">
-			http://businesstoday.intoday.in/story/karuturi-global-challenges-ram-karuturi-agriculture/1/23499.html Media report , 2008-01-01 http://media1.intoday.in/businesstoday/images/Karuturi-case-study-full.pdf Research Paper / Policy Report 
+			http://businesstoday.intoday.in/story/karuturi-global-challenges-ram-karuturi-agriculture/1/23499.html Media report , 2008-01-01 http://media1.intoday.in/businesstoday/images/Karuturi-case-study-full.pdf Research Paper / Policy Report , 2013-04-22 http://farmlandgrab.org/21964 Media report , 2014-02-14 http://www.grain.org/article/entries/4885-karuturi-the-iconic-landgrabber-flops Media report , 2014-02-13 http://farmlandgrab.org/uploads/attachment/Karuturi_summary_20140213.pdf Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -28230,7 +27995,7 @@
 			None
 		</field>
 		<field name="crop">
-			Grapes, Olives
+			Olives, Grapes
 		</field>
 	</item>
 	<item>
@@ -29184,10 +28949,10 @@
 			Brickaville, Madagascar
 		</field>
 		<field name="investor_name">
-			Oji Paper Co Ltd
+			Oji Paper Co Ltd, Government
 		</field>
 		<field name="investor_country">
-			Japan
+			Japan, Lao People's Democratic Republic
 		</field>
 		<field name="intention">
 			Forestry
@@ -29358,7 +29123,7 @@
 			None
 		</field>
 		<field name="crop">
-			Vegetables, Oil Seeds
+			Oil Seeds, Vegetables
 		</field>
 	</item>
 	<item>
@@ -31064,10 +30829,10 @@
 			Bilene, Mozambique, Inhambane, Mozambique
 		</field>
 		<field name="investor_name">
-			Energem Resources Inc
+			Energem Resources Inc, Spectre International
 		</field>
 		<field name="investor_country">
-			Canada
+			Canada, Kenya
 		</field>
 		<field name="intention">
 			Agriculture
@@ -31332,7 +31097,7 @@
 			None
 		</field>
 		<field name="crop">
-			Onion, Potatoes, Sugar Cane, Tomatoes, Vegetables
+			Onion, Tomatoes, Potatoes, Sugar Cane, Vegetables
 		</field>
 	</item>
 	<item>
@@ -33870,7 +33635,7 @@
 			None
 		</field>
 		<field name="crop">
-			Soya Beans, Cotton, Corn (Maize)
+			Cotton, Soya Beans, Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -34341,6 +34106,53 @@
 		</field>
 		<field name="crop">
 			Jatropha, Rice
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			1662
+		</field>
+		<field name="target_country">
+			Niger
+		</field>
+		<field name="location">
+			Tchin-Tabaradene, Niger
+		</field>
+		<field name="investor_name">
+			Individual entrepreneurs
+		</field>
+		<field name="investor_country">
+			Niger
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			In operation (production)
+		</field>
+		<field name="intended_size">
+			19600
+		</field>
+		<field name="contract_size">
+			19600
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Outright Purchase
+		</field>
+		<field name="data_source">
+			2011-01-01 Research Paper / Policy Report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			None
 		</field>
 	</item>
 	<item>
@@ -35092,7 +34904,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cassava (Maniok), Glucose Syrup
+			Glucose Syrup, Cassava (Maniok)
 		</field>
 	</item>
 	<item>
@@ -35153,10 +34965,10 @@
 			Kwara, Nigeria
 		</field>
 		<field name="investor_name">
-			None
+			Dawacom International Ltd
 		</field>
 		<field name="investor_country">
-			None
+			Nigeria
 		</field>
 		<field name="intention">
 			Agriculture
@@ -35609,7 +35421,7 @@
 			None
 		</field>
 		<field name="crop">
-			Alfalfa, Oil Seeds, Sorghum, Vegetables
+			Sorghum, Oil Seeds, Alfalfa, Vegetables
 		</field>
 	</item>
 	<item>
@@ -35844,7 +35656,7 @@
 			None
 		</field>
 		<field name="crop">
-			Alfalfa, Corn (Maize), Fruit, Peanut, Potatoes, Sorghum, Soya Beans, Sun Flower, Vegetables
+			Peanut, Sorghum, Sun Flower, Alfalfa, Corn (Maize), Fruit, Potatoes, Soya Beans, Vegetables
 		</field>
 	</item>
 	<item>
@@ -37395,7 +37207,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cassava (Maniok), Sweet Potatoes
+			Sweet Potatoes, Cassava (Maniok)
 		</field>
 	</item>
 	<item>
@@ -37583,7 +37395,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cassava (Maniok), Corn (Maize), Peanut, Rice, Sorghum
+			Peanut, Sorghum, Cassava (Maniok), Corn (Maize), Rice
 		</field>
 	</item>
 	<item>
@@ -37677,7 +37489,7 @@
 			None
 		</field>
 		<field name="crop">
-			Rice, Sesame, Sorghum
+			Sorghum, Sesame, Rice
 		</field>
 	</item>
 	<item>
@@ -37894,7 +37706,7 @@
 			[2010] In operation (production)
 		</field>
 		<field name="intended_size">
-			None
+			12140
 		</field>
 		<field name="contract_size">
 			5818
@@ -37906,7 +37718,7 @@
 			None
 		</field>
 		<field name="data_source">
-			2011-01-01 http://www.commercialpressuresonland.org/sites/default/files/110406_Land_Acquisition_Tanzania.pdf Research Paper / Policy Report , http://www.agrica.com/html/project1.html Company sources , http://www.norway.go.tz/News_and_events/News/News-from-the-Embassy/Norfund-invests-10-million-dollars-in-rice-production-in-Tanzania/ Company sources , http://udadisi.blogspot.com/2012/08/land-acquisitions-and-politics-of.html Media report , Personal information , 2013-06-18 Crowdsourcing , Research Paper / Policy Report 
+			2014-04-28 IIED Personal information , 2011-01-01 http://www.commercialpressuresonland.org/sites/default/files/110406_Land_Acquisition_Tanzania.pdf Research Paper / Policy Report , http://www.agrica.com/html/project1.html Company sources , http://www.norway.go.tz/News_and_events/News/News-from-the-Embassy/Norfund-invests-10-million-dollars-in-rice-production-in-Tanzania/ Company sources , http://udadisi.blogspot.com/2012/08/land-acquisitions-and-politics-of.html Media report , Personal information , 2013-06-18 Crowdsourcing , Research Paper / Policy Report 
 		</field>
 		<field name="contract_farming">
 			True
@@ -38329,7 +38141,7 @@
 			Outright Purchase
 		</field>
 		<field name="data_source">
-			2010-01-01 http://www.wrm.org.uy/countries/Africa/Oil_Palm_in_Africa.pdf Research Paper / Policy Report , 2011-01-01 http://www.umweltbuero-klagenfurt.at/sos/wp-content/uploads/Teilbericht_4a_Biomasse_Exner_Schlussversion.pdf Research Paper / Policy Report , 2011-01-01 http://www.oaklandinstitute.org/sites/oaklandinstitute.org/files/OI_country_report_tanzania.pdf Research Paper / Policy Report , http://centreofafricanstudies.wordpress.com/2012/09/30/farming-for-oil-in-tanzania/ Media report , http://www.brela-tz.org/?section=companies&amp;page=search Government sources , Research Paper / Policy Report 
+			2010-01-01 http://www.wrm.org.uy/countries/Africa/Oil_Palm_in_Africa.pdf Research Paper / Policy Report , 2011-01-01 http://www.umweltbuero-klagenfurt.at/sos/wp-content/uploads/Teilbericht_4a_Biomasse_Exner_Schlussversion.pdf Research Paper / Policy Report , 2011-01-01 http://www.oaklandinstitute.org/sites/oaklandinstitute.org/files/OI_country_report_tanzania.pdf Research Paper / Policy Report , http://centreofafricanstudies.wordpress.com/2012/09/30/farming-for-oil-in-tanzania/ Media report , http://www.brela-tz.org/?section=companies&amp;page=search Government sources , Research Paper / Policy Report , Company sources 
 		</field>
 		<field name="contract_farming">
 			True
@@ -39181,7 +38993,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Oil Seeds, Potatoes, Wheat
+			Barley, Oil Seeds, Corn (Maize), Potatoes, Wheat
 		</field>
 	</item>
 	<item>
@@ -40135,10 +39947,10 @@
 			Mkushi, Zambia
 		</field>
 		<field name="investor_name">
-			None
+			Zeder
 		</field>
 		<field name="investor_country">
-			None
+			South Africa
 		</field>
 		<field name="intention">
 			Agriculture
@@ -41451,10 +41263,10 @@
 			Agogo, Ghana
 		</field>
 		<field name="investor_name">
-			None
+			Scanfuel Ltd
 		</field>
 		<field name="investor_country">
-			None
+			Norway
 		</field>
 		<field name="intention">
 			Agriculture
@@ -42203,10 +42015,10 @@
 			Cabo Delgado, Mozambique
 		</field>
 		<field name="investor_name">
-			EcoDevelopment in Europe AB
+			EcoDevelopment in Europe AB, Government
 		</field>
 		<field name="investor_country">
-			Sweden
+			Sweden, United Republic of Tanzania
 		</field>
 		<field name="intention">
 			Agriculture
@@ -42236,7 +42048,7 @@
 			None
 		</field>
 		<field name="crop">
-			Jatropha, Sorghum, Sugar Cane
+			Sorghum, Jatropha, Sugar Cane
 		</field>
 	</item>
 	<item>
@@ -42471,7 +42283,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Cotton
+			Cotton, Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -42612,7 +42424,7 @@
 			None
 		</field>
 		<field name="crop">
-			Rice, Soya Beans, Wheat, Sorghum, Corn (Maize)
+			Sorghum, Rice, Soya Beans, Wheat, Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -42861,7 +42673,7 @@
 			Ad Douiem, Sudan
 		</field>
 		<field name="investor_name">
-			Citadel Capital 
+			Citadel Capital
 		</field>
 		<field name="investor_country">
 			Egypt
@@ -42988,7 +42800,7 @@
 			None
 		</field>
 		<field name="crop">
-			Wheat, Cotton, Sorghum, Sun Flower, Sugar Cane
+			Cotton, Sorghum, Sun Flower, Wheat, Sugar Cane
 		</field>
 	</item>
 	<item>
@@ -43002,10 +42814,10 @@
 			Sudan
 		</field>
 		<field name="investor_name">
-			National Pension Fund, Kenana Sugar Company, Government, AAAID
+			National Pension Fund, Kenana Sugar Company, Government, AAAID, Kuwait Investment Authority (KIA), Government
 		</field>
 		<field name="investor_country">
-			Sudan
+			Sudan, Kuwait, Saudi Arabia
 		</field>
 		<field name="intention">
 			Agriculture, Renewable Energy
@@ -43035,7 +42847,7 @@
 			True
 		</field>
 		<field name="crop">
-			Corn (Maize), Sesame, Sugar Cane, Sun Flower
+			Sun Flower, Sesame, Corn (Maize), Sugar Cane
 		</field>
 	</item>
 	<item>
@@ -43693,7 +43505,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Potatoes, Tomatoes
+			Tomatoes, Corn (Maize), Potatoes
 		</field>
 	</item>
 	<item>
@@ -44445,7 +44257,7 @@
 			True
 		</field>
 		<field name="crop">
-			Sugar Cane, Sugar (no specification)
+			Sugar (no specification), Sugar Cane
 		</field>
 	</item>
 	<item>
@@ -44774,7 +44586,7 @@
 			None
 		</field>
 		<field name="crop">
-			Banana, Bean, Citrus Fruits, Eucalyptus, Fruit, Pepper , Vegetables
+			Citrus Fruits, Pepper , Banana, Bean, Eucalyptus, Fruit, Vegetables
 		</field>
 	</item>
 	<item>
@@ -45009,7 +44821,7 @@
 			None
 		</field>
 		<field name="crop">
-			Bean, Corn (Maize), Fruit, Sesame, Sun Flower, Vegetables
+			Sun Flower, Sesame, Bean, Corn (Maize), Fruit, Vegetables
 		</field>
 	</item>
 	<item>
@@ -45117,10 +44929,10 @@
 			Malanga, Mozambique
 		</field>
 		<field name="investor_name">
-			None
+			Luambala Jatropha
 		</field>
 		<field name="investor_country">
-			None
+			China
 		</field>
 		<field name="intention">
 			Agriculture
@@ -45725,7 +45537,7 @@
 			Nigeria
 		</field>
 		<field name="location">
-			Nigeria
+			Kishi, Nigeria
 		</field>
 		<field name="investor_name">
 			Michelin, Edo State Government, Delta State Government, Ogun State Government, Ondo State Government, SIFCA
@@ -45755,7 +45567,7 @@
 			None
 		</field>
 		<field name="data_source">
-			Company sources 
+			http://www.michelin.co.uk/tyres/learn-share/tyre-basics/rubber-tree-cultivation Company sources , 2014-06-05 http://www.farmlandgrab.org/post/view/23595-foncier-plus-de-120-000-hectares-a-l-international-pour-tereos-bonduelle-et-michelin Media report , 2009-03-30 http://wrm.org.uy/articles-from-the-wrm-bulletin/section1/nigeria-michelins-rubber-plantations-destroyed-womens-livelihoods/ Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -46137,7 +45949,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Soya Beans, Wheat
+			Corn (Maize), Wheat, Soya Beans
 		</field>
 	</item>
 	<item>
@@ -46419,7 +46231,7 @@
 			None
 		</field>
 		<field name="crop">
-			Coffee Plant, Corn (Maize), Fruit, Onion, Potatoes, Soya Beans, Sun Flower, Wheat
+			Corn (Maize), Wheat, Onion, Soya Beans, Coffee Plant, Fruit, Sun Flower, Potatoes
 		</field>
 	</item>
 	<item>
@@ -46842,7 +46654,7 @@
 			None
 		</field>
 		<field name="crop">
-			Sugar Cane, Sorghum
+			Sorghum, Sugar Cane
 		</field>
 	</item>
 	<item>
@@ -46936,7 +46748,7 @@
 			None
 		</field>
 		<field name="crop">
-			Eucalyptus, Jatropha, Pepper , Rubber
+			Pepper , Eucalyptus, Jatropha, Rubber
 		</field>
 	</item>
 	<item>
@@ -47265,7 +47077,7 @@
 			None
 		</field>
 		<field name="crop">
-			Coffee Plant, Tea
+			Tea, Coffee Plant
 		</field>
 	</item>
 	<item>
@@ -47312,7 +47124,7 @@
 			None
 		</field>
 		<field name="crop">
-			Trees, Cacao, Coconut
+			Cacao, Coconut, Trees
 		</field>
 	</item>
 	<item>
@@ -47406,7 +47218,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cacao, Cassava (Maniok), Corn (Maize), Oil Palm, Sugar Cane
+			Corn (Maize), Sugar Cane, Cassava (Maniok), Oil Palm, Cacao
 		</field>
 	</item>
 	<item>
@@ -48111,7 +47923,7 @@
 			None
 		</field>
 		<field name="crop">
-			Citrus Fruits, Fruit, Grapes
+			Citrus Fruits, Grapes, Fruit
 		</field>
 	</item>
 	<item>
@@ -48205,7 +48017,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Cotton, Sugar Cane, Sun Flower, Wheat
+			Barley, Cotton, Sun Flower, Corn (Maize), Sugar Cane, Wheat
 		</field>
 	</item>
 	<item>
@@ -48252,7 +48064,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Peas, Sorghum, Sun Flower
+			Sorghum, Sun Flower, Peas, Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -48769,7 +48581,7 @@
 			None
 		</field>
 		<field name="crop">
-			Banana, Papaya, Pineapple
+			Papaya, Banana, Pineapple
 		</field>
 	</item>
 	<item>
@@ -50696,7 +50508,7 @@
 			None
 		</field>
 		<field name="crop">
-			Coffee Plant, Oil Palm, Rubber, Sugar Cane, Food crops (no specification), Tea
+			Tea, Coffee Plant, Oil Palm, Rubber, Sugar Cane, Food crops (no specification)
 		</field>
 	</item>
 	<item>
@@ -50979,53 +50791,6 @@
 		</field>
 		<field name="crop">
 			Eucalyptus, Pine, Teak
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
-			3407
-		</field>
-		<field name="target_country">
-			Cambodia
-		</field>
-		<field name="location">
-			San Dann district, Kampong Thom province
-		</field>
-		<field name="investor_name">
-			C.R.C.K Aphivath Caout Chouc Co.,Ltd
-		</field>
-		<field name="investor_country">
-			Viet Nam
-		</field>
-		<field name="intention">
-			Agriculture
-		</field>
-		<field name="negotiation_status">
-			[2010] Concluded (Contract signed)
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			None
-		</field>
-		<field name="contract_size">
-			6155
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			Lease / Concession
-		</field>
-		<field name="data_source">
-			http://www.opendevelopmentcambodia.net/concessions/profile/?id=136&amp;cat=0&amp;type=0&amp;map=elc&amp;tier=1 Government sources , 2013-02-14 http://www.opendevelopmentcambodia.net/agriculture/prey-lang-activists-halted-on-road/ Media report , 2011-08-18 http://www.licadho-cambodia.org/pressrelease.php?perm=255 Media report , http://www.vnrubbergroup.com/en/member_list.php?id=lao-cambodia Company sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			Rubber
 		</field>
 	</item>
 	<item>
@@ -51918,7 +51683,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Peanut, Rice, Sun Flower, Sweet Potatoes
+			Peanut, Sun Flower, Sweet Potatoes, Corn (Maize), Rice
 		</field>
 	</item>
 	<item>
@@ -52073,10 +51838,10 @@
 			Anambe, Senegal
 		</field>
 		<field name="investor_name">
-			None
+			Afrique Énergies Nouvelles
 		</field>
 		<field name="investor_country">
-			None
+			Cameroon
 		</field>
 		<field name="intention">
 			Agriculture
@@ -52200,7 +51965,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Sesame
+			Sesame, Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -55777,53 +55542,6 @@
 	</item>
 	<item>
 		<field name="deal_id">
-			3539
-		</field>
-		<field name="target_country">
-			Cambodia
-		</field>
-		<field name="location">
-			Kraya commune, Santuk district, Kampong Thom province
-		</field>
-		<field name="investor_name">
-			HuaYue Group co Ltd
-		</field>
-		<field name="investor_country">
-			China
-		</field>
-		<field name="intention">
-			Industry
-		</field>
-		<field name="negotiation_status">
-			[2009] Concluded (Contract signed)
-		</field>
-		<field name="implementation_status">
-			None
-		</field>
-		<field name="intended_size">
-			None
-		</field>
-		<field name="contract_size">
-			601
-		</field>
-		<field name="production_size">
-			None
-		</field>
-		<field name="nature_of_the_deal">
-			Lease / Concession
-		</field>
-		<field name="data_source">
-			http://www.opendevelopmentcambodia.net/concessions/profile/?id=630&amp;cat=0&amp;type=0&amp;map=elc&amp;tier=1 Government sources , 2012-06-01 http://www.cdri.org.kh/webdata/download/wp/wp60e.pdf Research Paper / Policy Report , http://www.huayuesd.com/en/zjhy.asp?zid=470 Company sources 
-		</field>
-		<field name="contract_farming">
-			None
-		</field>
-		<field name="crop">
-			None
-		</field>
-	</item>
-	<item>
-		<field name="deal_id">
 			3548
 		</field>
 		<field name="target_country">
@@ -58968,7 +58686,7 @@
 			None
 		</field>
 		<field name="crop">
-			Trees, Cacao
+			Cacao, Trees
 		</field>
 	</item>
 	<item>
@@ -63104,7 +62822,7 @@
 			None
 		</field>
 		<field name="crop">
-			Barley, Corn (Maize), Cotton, Fodder Plants, Sesame, Wheat
+			Fodder Plants, Barley, Cotton, Sesame, Corn (Maize), Wheat
 		</field>
 	</item>
 	<item>
@@ -63292,7 +63010,7 @@
 			None
 		</field>
 		<field name="crop">
-			Bean, Corn (Maize), Soya Beans, Sun Flower
+			Sun Flower, Bean, Corn (Maize), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -63762,7 +63480,7 @@
 			None
 		</field>
 		<field name="crop">
-			Canola, Corn (Maize), Soya Beans, Sun Flower
+			Sun Flower, Canola, Corn (Maize), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -63950,7 +63668,7 @@
 			True
 		</field>
 		<field name="crop">
-			Eucalyptus, Tea
+			Tea, Eucalyptus
 		</field>
 	</item>
 	<item>
@@ -65125,7 +64843,7 @@
 			None
 		</field>
 		<field name="crop">
-			Grains, Rapeseed, Sugar beet, Vegetables, Wheat
+			Rapeseed, Sugar beet, Grains, Vegetables, Wheat
 		</field>
 	</item>
 	<item>
@@ -65783,7 +65501,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cotton, Oil Seeds, Pulses
+			Pulses, Cotton, Oil Seeds
 		</field>
 	</item>
 	<item>
@@ -66770,7 +66488,7 @@
 			None
 		</field>
 		<field name="crop">
-			Accacia, Coconut, Eucalyptus, Pepper , Rubber, Tea, Teak, Trees
+			Tea, Accacia, Coconut, Pepper , Eucalyptus, Rubber, Teak, Trees
 		</field>
 	</item>
 	<item>
@@ -67287,7 +67005,7 @@
 			None
 		</field>
 		<field name="crop">
-			Bamboo, Sorghum
+			Sorghum, Bamboo
 		</field>
 	</item>
 	<item>
@@ -68321,7 +68039,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Cotton
+			Cotton, Corn (Maize)
 		</field>
 	</item>
 	<item>
@@ -68476,10 +68194,10 @@
 			Kilombero, Tanzania
 		</field>
 		<field name="investor_name">
-			None
+			Mufindi Paper Mills Limited
 		</field>
 		<field name="investor_country">
-			None
+			United Republic of Tanzania
 		</field>
 		<field name="intention">
 			Forestry
@@ -73021,7 +72739,7 @@
 			None
 		</field>
 		<field name="crop">
-			Rubber, Tea
+			Tea, Rubber
 		</field>
 	</item>
 	<item>
@@ -74713,7 +74431,7 @@
 			None
 		</field>
 		<field name="crop">
-			Jatropha, Peanut
+			Peanut, Jatropha
 		</field>
 	</item>
 	<item>
@@ -75512,7 +75230,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cassava (Maniok), Sorghum
+			Sorghum, Cassava (Maniok)
 		</field>
 	</item>
 	<item>
@@ -78238,7 +77956,7 @@
 			None
 		</field>
 		<field name="crop">
-			Cacao, Oil Palm, Rubber, Tea
+			Tea, Cacao, Oil Palm, Rubber
 		</field>
 	</item>
 	<item>
@@ -78849,7 +78567,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Onion, Pineapple, Sugar Cane
+			Onion, Corn (Maize), Pineapple, Sugar Cane
 		</field>
 	</item>
 	<item>
@@ -78990,7 +78708,7 @@
 			None
 		</field>
 		<field name="crop">
-			Coffee Plant, Corn (Maize), Cotton, Soya Beans
+			Cotton, Coffee Plant, Corn (Maize), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -80212,7 +79930,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Cotton, Soya Beans
+			Cotton, Corn (Maize), Soya Beans
 		</field>
 	</item>
 	<item>
@@ -80776,7 +80494,7 @@
 			None
 		</field>
 		<field name="crop">
-			Coffee Plant, Grains, Papaya
+			Papaya, Coffee Plant, Grains
 		</field>
 	</item>
 	<item>
@@ -83220,7 +82938,7 @@
 			None
 		</field>
 		<field name="crop">
-			Corn (Maize), Rice, Sorghum, Soya Beans
+			Sorghum, Corn (Maize), Rice, Soya Beans
 		</field>
 	</item>
 	<item>
@@ -83516,10 +83234,10 @@
 			Bafatá, Guinea-Bissau
 		</field>
 		<field name="investor_name">
-			None
+			Agrogeba
 		</field>
 		<field name="investor_country">
-			None
+			Spain
 		</field>
 		<field name="intention">
 			Agriculture
@@ -83789,6 +83507,53 @@
 	</item>
 	<item>
 		<field name="deal_id">
+			4331
+		</field>
+		<field name="target_country">
+			Egypt
+		</field>
+		<field name="location">
+			Egypt
+		</field>
+		<field name="investor_name">
+			Government
+		</field>
+		<field name="investor_country">
+			Egypt
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2014] Intended (Expression of interest)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			25000
+		</field>
+		<field name="contract_size">
+			None
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			None
+		</field>
+		<field name="data_source">
+			2014-04-24 http://www.farmlandgrab.org/post/view/23427-arab-investors-and-land-grabbers-wanted-by-egypt Media report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			None
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
 			4336
 		</field>
 		<field name="target_country">
@@ -83930,6 +83695,53 @@
 	</item>
 	<item>
 		<field name="deal_id">
+			4339
+		</field>
+		<field name="target_country">
+			Nigeria
+		</field>
+		<field name="location">
+			Cross River, Nigeria
+		</field>
+		<field name="investor_name">
+			Cross River State
+		</field>
+		<field name="investor_country">
+			Nigeria
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			[2014] Intended (Expression of interest)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			12129
+		</field>
+		<field name="contract_size">
+			None
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Outright Purchase
+		</field>
+		<field name="data_source">
+			2014-05-05 http://farmlandgrab.org/post/view/23472-nigerias-cross-river-state-plans-to-sell-5-cocoa-farms#sthash.n73aQLHE.dpuf Media report 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Cacao
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
 			4341
 		</field>
 		<field name="target_country">
@@ -83939,10 +83751,10 @@
 			Ashanti, Ghana
 		</field>
 		<field name="investor_name">
-			None
+			Hulstein Warren Co Ltd
 		</field>
 		<field name="investor_country">
-			None
+			United States of America
 		</field>
 		<field name="intention">
 			Agriculture
@@ -84221,10 +84033,10 @@
 			Chimoio, Mozambique
 		</field>
 		<field name="investor_name">
-			AgDevCo
+			 Hans Merensky Holdings, AgDevCo
 		</field>
 		<field name="investor_country">
-			United Kingdom of Great Britain and Northern Ireland
+			South Africa, United Kingdom of Great Britain and Northern Ireland
 		</field>
 		<field name="intention">
 			Agriculture
@@ -84268,10 +84080,10 @@
 			Kawambwa, Zambia
 		</field>
 		<field name="investor_name">
-			None
+			Government
 		</field>
 		<field name="investor_country">
-			None
+			Zambia
 		</field>
 		<field name="intention">
 			Agriculture
@@ -84362,10 +84174,10 @@
 			Illubabor, Ethiopia
 		</field>
 		<field name="investor_name">
-			None
+			Dubai World Africa Services, East Africa Agri-business Ltd
 		</field>
 		<field name="investor_country">
-			None
+			United Arab Emirates, Ethiopia
 		</field>
 		<field name="intention">
 			Agriculture
@@ -84389,7 +84201,7 @@
 			Lease / Concession
 		</field>
 		<field name="data_source">
-			2014-05-23 GIZ Personal information , 2009-04-10 http://www.reuters.com/article/2009/04/10/ozabs-ethiopia-tea-idAFJOE5390AV20090410 Media report 
+			2009-04-10 http://www.reuters.com/article/2009/04/10/ozabs-ethiopia-tea-idAFJOE5390AV20090410 Media report 
 		</field>
 		<field name="contract_farming">
 			None
@@ -84447,6 +84259,53 @@
 	</item>
 	<item>
 		<field name="deal_id">
+			4380
+		</field>
+		<field name="target_country">
+			Ethiopia
+		</field>
+		<field name="location">
+			Southern Nations, Nationalities, and People's Region, Ethiopia
+		</field>
+		<field name="investor_name">
+			Kanan Devan Hills Plantations
+		</field>
+		<field name="investor_country">
+			India
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			None
+		</field>
+		<field name="intended_size">
+			None
+		</field>
+		<field name="contract_size">
+			10000
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			2007-08-28 http://www.rediff.com/money/report/tea/20070828.htm Media report , http://kdhptea.com/ChundavurraiEstate.html Company sources 
+		</field>
+		<field name="contract_farming">
+			None
+		</field>
+		<field name="crop">
+			Tea
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
 			4381
 		</field>
 		<field name="target_country">
@@ -84490,6 +84349,53 @@
 		</field>
 		<field name="crop">
 			Food crops (no specification)
+		</field>
+	</item>
+	<item>
+		<field name="deal_id">
+			4384
+		</field>
+		<field name="target_country">
+			Malawi
+		</field>
+		<field name="location">
+			Salima, Malawi, Northern Region, Malawi
+		</field>
+		<field name="investor_name">
+			BXR Group, Merlin Partners LLP
+		</field>
+		<field name="investor_country">
+			Netherlands, United Kingdom of Great Britain and Northern Ireland
+		</field>
+		<field name="intention">
+			Agriculture
+		</field>
+		<field name="negotiation_status">
+			Concluded (Contract signed)
+		</field>
+		<field name="implementation_status">
+			[2013] In operation (production)
+		</field>
+		<field name="intended_size">
+			3434
+		</field>
+		<field name="contract_size">
+			434
+		</field>
+		<field name="production_size">
+			None
+		</field>
+		<field name="nature_of_the_deal">
+			Lease / Concession
+		</field>
+		<field name="data_source">
+			http://www.bxrgroup.com/selected-current-investments.php Company sources , http://www.merlinpartnersllp.com/ Company sources , http://ifcext.ifc.org/IFCExt/spiwebsite1.nsf/DocsByUNIDForPrint/21F6CD5ACECEC19685257CD6006FABF9?opendocument Research Paper / Policy Report , http://malawimangoes.com/ Company sources 
+		</field>
+		<field name="contract_farming">
+			True
+		</field>
+		<field name="crop">
+			Mango, Banana, Pineapple
 		</field>
 	</item>
 </data>
