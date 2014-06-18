@@ -21,11 +21,12 @@ from ConfigParser import ConfigParser
 
 
 
-def run(look_for_historical=True):
+def run():
     configure_log()
     config = ConfigParser()
     config.read("./files/configuration.ini")
     log = logging.getLogger("UNDP_extractor")
+    look_for_historical = config.getboolean("TRANSLATOR", "historical_mode")
     try:
         xml_extractor = UNDPExtractor(config, log, "xml")
         xml_extractor.run()
@@ -50,7 +51,7 @@ def configure_log():
 
 if __name__ == '__main__':
     try:
-        run(True)
+        run()
         print "Done!"
     except:
         print "Execution finalized with errors. Check log."
