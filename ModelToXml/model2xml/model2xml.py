@@ -25,7 +25,7 @@ from ConfigParser import ConfigParser
 
 import codecs
 import os
-import urllib
+import requests
 
 
 class ModelToXMLTransformer(object):
@@ -34,7 +34,7 @@ class ModelToXMLTransformer(object):
     """
 
     XML = "XML"
-    XLS = "XML"
+    XLS = "XLS"
     CSV = "CSV"
     API = "API"
     JSON = "JSON"
@@ -220,10 +220,12 @@ class ModelToXMLTransformer(object):
                     file_content = xml.read()
                     file_identifier = self._obtain_content_of_original_path()
                     api_key = self._config.get("USER", "api_key")
-                    # req = requests.post(url=url,
-                    #                     data={'xml': unicode(file_content).encode('utf-8'),
-                    #                           'file': file_identifier,
-                    #                           'api_key': api_key})
+                    req = requests.post(url=url,
+                                        data={'xml': unicode(file_content).encode('utf-8'),
+                                              'api_key': api_key},
+                                        files={'file': file_identifier})
+                    print req.status_code
+                    print req.text
 
             except BaseException as e:
                 e.message = 'File "{0}": {1}'.format(file_path, e.message)
