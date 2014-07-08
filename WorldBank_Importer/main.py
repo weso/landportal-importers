@@ -14,7 +14,7 @@ __author__ = 'BorjaGB'
 
 def configure_log():
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-    logging.basicConfig(filename='faoextractor.log', level=logging.INFO,
+    logging.basicConfig(filename='wbextractor.log', level=logging.INFO,
                         format=FORMAT)
 
 def update_ini_file(config, config_path, importer, log):
@@ -26,12 +26,12 @@ def update_ini_file(config, config_path, importer, log):
     
     if hasattr(importer, '_historical_year'):
         config.set("TRANSLATOR", 'historical_year', importer._historical_year)
-    with open("files/configuration.ini", 'wb') as configfile:
+    with open("config_path", 'wb') as configfile:
         config.write(configfile)
                 
 def run():
     configure_log()
-    log = logging.getLogger("faoextractor")
+    log = logging.getLogger("wbextractor")
     config_path = "es/weso/worldbank/configuration/api_access.ini"
     config = ConfigParser.RawConfigParser()
     config.read(config_path)
