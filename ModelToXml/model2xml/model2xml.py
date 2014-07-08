@@ -389,6 +389,7 @@ class ModelToXMLTransformer(object):
             elif type(data_slice.dimension) == Country:
                 country_node = Element(self.OBSERVATION_COUNTRY)
                 country_node.text = str(data_slice.dimension.iso3)  # It will have it
+                metadata_node.append(country_node)
             else:
                 raise RuntimeError("Unrecognized area type {0} while building slice. Impossible to generate xml".
                                    format(type(data_slice.dimension)))
