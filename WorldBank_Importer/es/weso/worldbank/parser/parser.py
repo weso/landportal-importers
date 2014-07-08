@@ -67,7 +67,7 @@ class Parser(object):
                     transformer = ModelToXMLTransformer(dataset,
                                                         ModelToXMLTransformer.API,
                                                         self._user,
-                                                        self.config.get("base_api"))
+                                                        self.config.get("URLs", "base_api"))
                     transformer.run()
                 else:
                     self.logger.warning("Dataset %s has no observations"%dataset.dataset_id)
