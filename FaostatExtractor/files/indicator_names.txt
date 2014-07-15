@@ -1,0 +1,8 @@
+#This file contains all the needed indicators from the complete downloaded list.
+#Each indicator should be placed in a single line. You can use comments
+#by starting a line with "#"
+
+Land area
+Agricultural area
+Arable land
+Forest area
