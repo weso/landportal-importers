@@ -236,6 +236,8 @@ class ModelToXMLTransformer(object):
         """
         Return the path to where the zip file with the original contente must be.
         """
+        if self._import_process in [self.API, self.SCRAP]:
+            return str(self._path_to_original_file)
         if isinstance(self._path_to_original_file, str) or isinstance(self._path_to_original_file, unicode):
             return self._path_to_original_file + ".zip"
         elif isinstance(self._path_to_original_file, list):
@@ -742,7 +744,7 @@ class ModelToXMLTransformer(object):
 
         #file_name
         file_name_node = Element(self.IMPORT_PROCESS_FILE_NAME)
-        file_name_node.text = self._short_file_name(self._short_file_name(self._zip_file_name))
+        file_name_node.text = self._short_file_name(self._zip_file_name)
         metadata.append(file_name_node)
 
         #user
