@@ -1,0 +1,13 @@
+COD=Congo, Dem. Rep.
+COG=Congo, Rep.
+EGY=Egypt, Arab Rep.
+IRN=Iran, Islamic Rep.
+MKD=Macedonia, FYR
+VEN=Venezuela, RB
+YEM=Yemen, Rep.
+PSE=Occupied Palestinian Territory
+VIR=Virgin Islands, United States
+VEN=Venezuela, Bolivarian Republic of
+USA=U.S.A
+VIR=Virgin Islands (US)
+MNP=Northern Mariana Isl.
